@@ -1,0 +1,532 @@
+#shopList{
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+.shopListHeader{
+    width: 95%;
+    height: 130px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-family: Calibri;
+}
+.topLink{
+    color: gray;
+    font-size: 25px;
+    display: block;
+}
+.listCateg{
+    display: none;
+}
+.sortDiv{
+    width: 220px;
+    height: auto;
+    position: relative;
+}
+.sortTop{
+    border: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
+    padding: 0 5px;
+    height: 40px;
+}
+.sortBottom{
+    position: absolute;
+    top: 103%;
+    left: 0;
+    width: 100%;
+    padding: 5px;
+    background-color: rgb(46, 46, 46);
+}
+
+.sortBottom p{
+    padding: 5px 10px;
+    border-bottom: 1px solid gray;
+}
+.shopListInset{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.shopCateg{
+    position: sticky;
+    top: 140px;
+    left: 0;
+    width: 23%;
+    height: 80vh;
+    border-right: 2px solid rgb(174, 174, 174);
+    padding: 0px 20px;
+    overflow-y: scroll;
+    display: block;
+}
+.shopCateg2{
+    display: none;
+}
+.categSection{
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+}
+.categSection h4{
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: left;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.categLink{
+    width: 85%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    border-bottom: 1px solid gray;
+}
+.categLink:hover{
+    background-color: rgb(43, 43, 43);
+}
+.categLink p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    color: white;
+}
+.shopListItem{
+    width: 77%;
+    height: auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+.listItem{
+    width: 330px;
+    height: 450px;
+    background-color: rgb(0, 0, 0);
+    margin: 0 10px 30px;
+}
+.itemImg{
+    width: 100%;
+    height: 70%;
+}
+.itemImage{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.itemInfo{
+    width: 100%;
+    height: 30%;
+    text-align: center;
+    padding-top: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.itemInfo h4{
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 500;
+    color: #ffe100;
+    font-size: 21px;
+}
+.itemInfo p{
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    font-size: 21px;
+    font-weight: 600;
+}
+.itemInfo button{
+    width: 100%;
+    height: 50px;
+    background-color: #ffe100;
+    color: black;
+    border: none;
+}
+.pagesDiv{
+    width: auto;
+    height: 50px;
+    display: flex;
+    margin: 10px auto;
+}
+.pagesDiv div{
+    width: 50px;
+    height: 100%;
+    border: 1px solid #ffe100;
+    margin: 0 5px;
+    color: white;
+    font-size: 20px;
+    display: grid;
+    place-items: center;
+}
+.pagesDiv div:hover{
+    background-color: #ffe100;
+    color: black;
+}
+.next{
+    background-color: #ffe100;
+}
+
+
+@media screen and (max-width: 800px) {
+    #shopList{
+        width: 100%;
+        height: auto;
+        background-color: black;
+    }
+    .shopListHeader{
+        width: 95%;
+        height: 130px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-family: Calibri;
+    }
+    .topLink{
+        color: gray;
+        font-size: 25px;
+        display: block;
+    }
+    .listCateg{
+        display: none;
+    }
+    .sortDiv{
+        width: 220px;
+        height: auto;
+        position: relative;
+    }
+    .sortTop{
+        border: 1px solid gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 220px;
+        padding: 0 5px;
+        height: 40px;
+    }
+    .sortBottom{
+        position: absolute;
+        top: 103%;
+        left: 0;
+        width: 100%;
+        padding: 5px;
+        background-color: rgb(46, 46, 46);
+    }
+    
+    .sortBottom p{
+        padding: 5px 10px;
+        border-bottom: 1px solid gray;
+    }
+    .shopListInset{
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    .shopCateg{
+        position: sticky;
+        top: 160px;
+        left: 0;
+        width: 25%;
+        height: 80vh;
+        border-right: 2px solid rgb(174, 174, 174);
+        padding: 0px 5px;
+        overflow-y: scroll;
+        display: block;
+    }
+    .shopCateg2{
+        display: none;
+    }
+    .categSection{
+        width: 100%;
+        height: auto;
+        margin-bottom: 25px;
+    }
+    .categSection h4{
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 18px;
+        color: white;
+        text-align: left;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    .categLink{
+        width: 100%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        margin-left: 0px;
+        border-bottom: 1px solid gray;
+        padding: 5px 0;
+    }
+    .categLink:hover{
+        background-color: black;
+    }
+    .categLink p{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 15px;
+        color: white;
+    }
+    .shopListItem{
+        width: 75%;
+        height: auto;
+        padding: 0 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    
+    }
+    .listItem{
+        width: 45%;
+        height: 370px;
+        background-color: rgb(0, 0, 0);
+        margin: 0 0px 30px;
+    }
+    .itemImg{
+        width: 100%;
+        height: 65%;
+    }
+    .itemImage{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .itemInfo{
+        width: 100%;
+        height: 35%;
+        text-align: center;
+        padding-top: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .itemInfo h4{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 500;
+        color: #ffe100;
+        font-size: 19px;
+    }
+    .itemInfo p{
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        font-size: 19px;
+        font-weight: 600;
+    }
+    .itemInfo button{
+        width: 100%;
+        height: 45px;
+        background-color: #ffe100;
+        color: black;
+        border: none;
+    }
+    .pagesDiv{
+        width: auto;
+        height: 40px;
+        display: flex;
+        margin: 10px auto;
+    }
+    .pagesDiv div{
+        width: 40px;
+        height: 100%;
+        border: 1px solid #ffe100;
+        margin: 0 5px;
+        color: white;
+        font-size: 20px;
+        display: grid;
+        place-items: center;
+    }
+    .pagesDiv div:hover{
+        background-color: #ffe100;
+        color: black;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #shopList{
+        width: 100%;
+        height: auto;
+        background-color: black;
+        
+    }
+    .shopListHeader{
+        width: 95%;
+        height: 130px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-family: Calibri;
+    }
+    .topLink{
+        color: gray;
+        font-size: 17px;
+        display: none;
+    }
+    .listCateg{
+        width: auto;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        font-family: Calibri;
+       background-color: #222222;
+       padding: 0px 10px;
+    }
+    .sortDiv{
+        width: 150px;
+        height: auto;
+        position: relative;
+    }
+    .sortTop{
+        border: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 0 5px;
+        height: 40px;
+    }
+    .sortBottom{
+        position: absolute;
+        top: 103%;
+        left: 0;
+        width: 100%;
+        padding: 5px;
+        background-color: rgb(46, 46, 46);
+        z-index: 10;
+    }
+    
+    .sortBottom p{
+        padding: 5px 10px;
+        border-bottom: 1px solid gray;
+    }
+    .shopListInset{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        position: relative;
+    }
+    .shopCateg{
+      display: none;
+    }
+    .shopCateg2{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: 10;
+        background-color: black;
+    }
+    .shopCateg2Inset{
+        width: 100%;
+        height: 100%;
+        padding: 10px 10px 20px;
+        position: relative;
+    }
+    .shopCateg2Close{
+        position: absolute;
+        top: 0px;
+        right: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .shopCateg2Close p{
+        background-color: white;
+        font-size: 10px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .categSection2 h4{
+        font-size: 20px;
+        color: white;
+        margin: 30px 0 10px;
+    }
+     .categLink2{
+        width: 85%;
+        height: 55px;
+        display: flex;
+        align-items: center;
+        margin-left: 30px;
+        border-bottom: 1px solid gray;
+    }
+    .shopListItem{
+        width: 100%;
+        height: auto;
+        padding: 0 0px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    
+    }
+    .listItem{
+        width: 48%;
+        height: 330px;
+        background-color: rgb(0, 0, 0);
+        margin: 0 0px 15px;
+    }
+    .itemImg{
+        width: 100%;
+        height: 55%;
+    }
+    .itemImage{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .itemInfo{
+        width: 100%;
+        height: 45%;
+        text-align: center;
+        padding-top: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .itemInfo h4{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 500;
+        color: #ffe100;
+        font-size: 17px;
+    }
+    .itemInfo p{
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .itemInfo button{
+        width: 100%;
+        height: 45px;
+        background-color: #ffe100;
+        color: black;
+        border: none;
+    }
+    .pagesDiv{
+        width: auto;
+        height: 40px;
+        display: flex;
+        margin: 10px auto;
+    }
+    .pagesDiv div{
+        width: 40px;
+        height: 100%;
+        border: 1px solid #ffe100;
+        margin: 0 5px;
+        color: white;
+        font-size: 18px;
+        display: grid;
+        place-items: center;
+    }
+    .pagesDiv div:hover{
+        background-color: black;
+        color: white;
+    }
+}
+
+

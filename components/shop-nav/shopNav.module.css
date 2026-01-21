@@ -1,0 +1,445 @@
+#shop1{
+    display: block;
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-color: black;
+    /* box-shadow: 0 3px 20px 2px gray; */
+    z-index: 20;
+    padding: 10px;
+    margin: 0;
+}
+#shop2{
+    display: none;
+}
+.shopContact{
+    width: 100%;
+    height: 30px;
+    background-color: white;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+.shopTitle{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shopSearchIcon{
+    width: 50%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    padding: 0 15px;
+    border-radius: 50px;
+}
+.shopSearchIcon input{
+    width: 95%;
+    height: 45px;
+    font-size: 19px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 15px;
+    border: none;
+    border-radius: 50px;
+}
+.shopSearchIcon input:focus{
+    outline: none;
+}
+
+.shopSearchCancel{
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    margin-left: 20px;
+    background-color: #ffe100;
+    border-radius: 50%;
+}
+.svgLogo1{
+    width: 250px;
+    height: 100%;
+    object-fit: cover;
+}
+.shopIconDiv{
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+.shopInset{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: grid;
+    place-items: center;
+   
+}
+.shopIconDiv P{
+    color: white;
+    margin-left: 10px;
+    font-size: 22px;
+}
+.shopIcon{
+    color: #ffe100;
+    width: 35px;
+    height: 35px;
+}
+.shopCount{
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-30%);
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #ffe100;
+}
+.shopLinks{
+    width: 85%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px auto 0;
+}
+.shopLink{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.shopLinkTop{
+    display: flex;
+    align-items: center;
+}
+.shopLinkTop p{
+    color: white;
+    margin-right: 10px;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 18px;
+}
+.shopLinkBottom{
+    position: absolute;
+    top: 135%;
+    left: 0;
+    width: 210px;
+    height: 0;
+    /* margin-top: 10px; */
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(38, 38, 38);
+    overflow: hidden;
+    transition: height 2s linear 1s;
+}
+.shopSublink{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 10px 5px;
+    color: white;
+    font-family: calibri;
+    border-bottom: 1px solid gray;
+}
+
+@media screen and (max-width: 800px) {
+    #shop1{
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: black;
+        z-index: 20;
+        padding: 10px 0;
+        margin: 0;
+        display: block;
+    }
+    #shop2{
+       display: none;
+    }
+    .shopContact{
+        width: 100%;
+        height: 30px;
+        background-color: white;
+        text-align: center;
+        display: grid;
+        place-items: center;
+    }
+    .shopTitle{
+        position: relative;
+        width: 100%;
+        height: 50px;
+        padding: 20px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .shopSearchIcon{
+        width: 45%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        padding: 0 15px;
+        border-radius: 50px;
+    }
+    .shopSearchIcon input{
+        width: 95%;
+        height: 40px;
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+        padding-left: 15px;
+        border: none;
+        border-radius: 50px;
+    }
+    .shopSearchIcon input:focus{
+        outline: none;
+    }
+    
+    .shopSearchCancel{
+        width: 50px;
+        height: 50px;
+        display: grid;
+        place-items: center;
+        margin-left: 20px;
+        background-color: #ffe100;
+        border-radius: 50%;
+    }
+    .shopTitle h1{
+        color: white;
+        font-size: 27px;
+        font-weight: 500px;
+    }
+    .shopTitle h1 span{
+        color: #ffe100;
+        font-size: 32px;
+    }
+    .shopIconDiv{
+        display: flex;
+        align-items: center;
+        z-index: 10;
+    }
+    .shopInset{
+        width: 35px;
+        height: 35px;
+        position: relative;
+        display: grid;
+        place-items: center;
+       
+    }
+    .shopIconDiv P{
+        color: white;
+        margin-left: 10px;
+        font-size: 18px;
+    }
+    .shopIcon{
+        color: #ffe100;
+    }
+    .shopCount{
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        color: #ffe100;
+    }
+    .shopLinks{
+        width: 97%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px auto 0;
+    }
+    .shopLink{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        margin: 0 10px;
+    }
+    .shopLinkTop{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .shopLinkTop p{
+        color: white;
+        margin-right: 10px;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 15px;
+    }
+    .shopLinkBottom{
+        position: absolute;
+        top: 135%;
+        left: 0;
+        width: 210px;
+        height: 0;
+        /* margin-top: 10px; */
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(38, 38, 38);
+        overflow: hidden;
+        transition: height 2s linear 1s;
+    }
+    .shopSublink{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        height: auto;
+        padding: 10px 5px;
+        color: white;
+        font-family: calibri;
+        border-bottom: 1px solid gray;
+    }
+}
+
+@media screen  and (max-width: 600px){
+    .shopContact{
+        width: 100%;
+        height: auto;
+        background-color: white;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        font-size: 13px;
+    }
+    #shop1{
+        display: none;
+    }
+    #shop2{
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-bottom: 20px;
+    }
+    .shop2Options{
+        width: 95%;
+        height: auto;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .shop2MenuIcon{
+        color: white;
+        width: 40px;
+        height: 35px;
+    }
+   
+    .svgLogo2{
+        width: 180px;
+        height: 100%;
+        object-fit: contain;
+    }
+    .shopIconDiv P{
+      display: none;
+    }
+    .shop2Icon{
+    color: #ffe100;
+    width: 32px;
+    height: 32px;
+}
+.shop2Count{
+    position: absolute;
+    top: -3px;
+    left: 50%;
+    transform: translateX(-30%);
+    width: 17px;
+    height: 17px;
+    font-size: 14px;
+    background-color: black;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: #ffe100;
+}
+    .shopSearchIcon{
+        width: 95%;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(255, 255, 255);
+        padding: 0 15px;
+        border-radius: 50px;
+        margin: 0 auto;
+    }
+    .shopSearchIcon input{
+        width: 95%;
+        height: 50px;
+        font-size: 18px;
+        font-family: 'Times New Roman', Times, serif;
+        padding-left: 15px;
+        border: none;
+        border-radius: 50px;
+    }
+    .shopSearchIcon input:focus{
+        outline: none;
+    }
+    .shop2Div{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        background-color: black;
+        z-index: 20;
+       
+    }
+    #shop2DivInset{
+        width: 100%;
+        height: 100%;
+    }
+    .shop2Div1{
+        width: 100%;
+        padding: 10px 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    .shop2Div1 h1{
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 23px;
+    }
+    .shop2Div1 h1 span{
+        color: #ffe100;
+        font-size: 25px;
+    }
+    .optClose{
+        position: fixed;
+        top: 25px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+    }
+    .shopNavLinks{
+        width: 100%;
+        height: 100px;
+        text-align: center;
+        color: white;
+        font-size: 25px;
+    }
+   
+}

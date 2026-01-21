@@ -1,0 +1,249 @@
+#contact{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    padding: 20px 40px;
+}
+#contact h1{
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    font-weight: 500;
+}
+.contactInset{
+    width: 90%;
+    height: 500px;
+    display: flex;
+    margin: 40px auto 20px;
+    justify-content: space-between;
+}
+.contactForm{
+    width: 47%;
+    height: 100%;
+    
+}
+.contForm{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.contForm label{
+    color: rgb(203, 203, 203);
+    text-align: center;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 31px;
+    margin-bottom: 20px;
+}
+.contForm input{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    font-size: 17px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.contForm input::placeholder{
+    font-size: 16px;
+}
+.contForm textarea{
+    padding: 10px;
+    font-family: calibri;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+.contForm input:focus{
+    outline: none;
+}
+.contForm textarea:focus{
+    outline: none;
+}
+.contForm button{
+    width: 40%;
+    padding: 15px;
+    background-color: #ffe100;
+    border: none;
+    font-family: 'Playfair Display', sans-serif;
+    border-radius: 15px;
+    font-size: 19px;
+}
+.contactImg{
+    display: block;
+    width: 45%;
+    height: 100%;
+    
+}
+.contactImage{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+@media screen and (max-width: 800px) {
+    #contact{
+        width: 100%;
+        height: auto;
+        background-color: rgb(0, 0, 0);
+        padding: 10px 10px;
+    }
+    #contact h1{
+        text-align: center;
+        font-size: 48px;
+        color: white;
+        font-weight: 500;
+    }
+    .contactInset{
+        width: 90%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto 20px;
+        justify-content: space-between;
+    }
+    .contactForm{
+        width: 100%;
+        height: auto;
+        
+    }
+    .contForm{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .contForm label{
+        color: rgb(203, 203, 203);
+        text-align: center;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .contForm input{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        font-size: 17px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+    .contForm input::placeholder{
+        font-size: 16px;
+    }
+    .contForm textarea{
+        padding: 10px;
+        font-family: calibri;
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+    .cont-form input:focus{
+        outline: none;
+    }
+    .contForm textarea:focus{
+        outline: none;
+    }
+    .contForm button{
+        width: 70%;
+        padding: 15px;
+        background-color: #ffe100;
+        border: none;
+        font-family: 'Playfair Display', sans-serif;
+        border-radius: 15px;
+        font-size: 19px;
+        margin: 0 auto;
+    }
+    .contactImg{
+        display: block;
+        width: 100%;
+        height: 400px;
+        margin-top: 10px;
+    }
+    .contactImage{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+     
+}
+
+@media screen and (max-width: 600px) {
+    #contact{
+        width: 100%;
+        height: auto;
+        background-color: rgb(0, 0, 0);
+        padding: 10px 5px;
+    }
+    #contact h1{
+        text-align: center;
+        font-size: 35px;
+        color: white;
+        font-weight: 600;
+    }
+    .contactInset{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto 20px;
+        justify-content: space-between;
+    }
+    .contactForm{
+        width: 100%;
+        height: auto;
+        
+    }
+    .contForm{
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    .contForm label{
+        color: rgb(203, 203, 203);
+        text-align: center;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    .contForm input{
+        width: 100%;
+        height: 50px;
+        margin-bottom: 15px;
+        padding-left: 10px;
+        font-size: 17px;
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+    }
+    .contForm input::placeholder{
+        font-size: 16px;
+    }
+    .contForm textarea{
+        padding: 10px;
+        font-family: calibri;
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+    .contForm input:focus{
+        outline: none;
+    }
+    .contForm textarea:focus{
+        outline: none;
+    }
+    .contForm button{
+        width: 70%;
+        padding: 15px;
+        background-color: #ffe100;
+        border: none;
+        font-family: 'Playfair Display', sans-serif;
+        border-radius: 15px;
+        font-size: 19px;
+        margin: 0 auto;
+    }
+    .contactImg{
+       display: none;
+    }
+    
+     
+}

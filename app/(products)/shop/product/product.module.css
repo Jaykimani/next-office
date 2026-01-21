@@ -1,0 +1,1286 @@
+#info{
+    width: 100%;
+    height: auto;
+    background-color: black;
+}
+.starIcon{
+    width: 27px;
+    height: 27px;
+}
+.infoInset{
+    width: 100%;
+    height: auto;
+}
+.imgInfo{
+    width: 85%;
+    height: 70vh;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.infoImg1{
+    width: auto;
+    height: 500px;
+    display: flex;
+    margin-right: 40px;
+}
+.infoImg2{
+    display: none;
+}
+.infoImgInset{
+    width: 120px;
+    height: 100%;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.infoSubimage{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 5px;
+}
+.infoSubimg{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.subActive{
+  border: 4px solid #ffe100;
+}
+.mainInfoImg{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin-left: 40px;
+}
+.mainInfoImage{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.imgMagnifierGlass {
+  position: absolute;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 200px;
+  height: 200px;
+}
+.infoInfo{
+    width: 47%;
+    height: 100%;
+}
+.infoLinks{
+    color: rgb(171, 171, 171);
+    font-family: Calibri;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.infoTitle{
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 600;
+    font-size: 42px;
+    color: #ffe100;
+}
+.infoReviews{
+    width: 50%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: #ffe100;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.infoReviews p{
+    margin-left: 10px;
+}
+.infoCost{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 30px;
+    
+}
+.infoCounter{
+    width: auto;
+    height: auto;
+    display: flex;
+}
+.infoCounter span{
+    width: 60px;
+    height: 40px;
+    color: white;
+    font-size: 23px;
+    display: grid;
+    place-items: center;
+    border: 1px solid gray;
+    margin-right: 3px;
+}
+.infoCart{
+    width: 50%;
+    height: 50px;
+    background-color: #ffe100;
+    color: black;
+    font-family: 'Playfair Display', sans-serif;
+    margin: 30px 0;
+    display: grid;
+    place-items: center;
+    font-size: 21px;
+    font-weight: 600;
+}
+.infoDelivery{
+    width: 100%;
+    height: auto;
+    color: white;
+    font-family: 'Abel', sans-serif;
+    margin-top: 40px;
+}
+.infoDelivery h4{
+    font-size: 23px;
+    font-family: 'Playfair Display', sans-serif;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+.infoDelivery p{
+    font-size: 20px;
+}
+.infoTags{
+    width: 100%;
+    height: auto;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+    margin-top: 30px;
+    font-size: 18px;
+}
+.infoTags span{
+    font-weight: 600;
+    font-size: 20px;
+    margin-right: 8px;
+}
+.descriptionReview{
+    width: 85%;
+    height: auto;
+    background-color: black;
+    margin: 30px auto;
+    padding: 40px 0 30px;
+}
+.descrevInset{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+.descrev{
+    width: 150px;
+    height: 50px;
+    color: white;
+    font-family: 'Playfair Display', sans-serif;
+    display: grid;
+    place-items: center;
+    margin: 0 10px;
+}
+.descrevActive{
+    color: #ffe100;
+    background-color: rgb(44, 44, 44);
+
+}
+.descContent{
+    width: 90%;
+    height: auto;
+    color: white;
+    margin: 30px auto;
+    display: none;
+}
+.descContent h4{
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 23px;
+    margin: 15px 0;
+    text-decoration: underline;
+}
+.descContent p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    line-height: 28px;
+}
+.reviewContent{
+    width: 90%;
+    height: auto;
+    margin: 30px auto;
+}
+.reviewContent h4{
+    color: white;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 23px;
+    margin: 25px 0;
+    text-decoration: underline;
+}
+.reviewContentInset{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+.revRatings{
+    width: 25%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 10px 0;
+    border-right: 1px solid rgb(83, 83, 83);
+    color: #ffe100;
+}
+.ratings{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.ratings p{
+    margin-left: 10px;
+    font-size: 18px;
+}
+.based{
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+.revComments{
+    width: 80%;
+    height: auto;
+    display: flex;
+    padding: 0 20px;
+    overflow-x: scroll;
+}
+/* .rev-comments::-webkit-scrollbar {
+    width: 10px;
+  } */
+.comment{
+    width: 400px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(45, 45, 45);
+    padding: 10px 20px;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+.comment h5{
+    font-family: 'Playfair Display', sans-serif;
+    color: white;
+    font-size: 23px;
+}
+.commentReviews{
+    display: flex;
+    align-items: center;
+    color: #ffe100;
+    font-size: 20px;
+}
+.comment p{
+    color: white;
+    font-size: 20px;
+}
+.writing{
+    font-family: 'Abel', serif;
+    margin-top: 30px;
+    font-size: 25px;
+    color: rgb(212, 212, 212);
+}
+.revBtns{
+    width: 100%;
+    height: auto;
+    display: flex;
+    margin: 40px 0;
+    justify-content: center;
+}
+.revBtns div{
+    padding: 20px 30px;
+    color: white;
+    font-family: 'Playfair Display', sans-serif;
+    border: 1px solid #ffe100;
+}
+.revForm{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.revForm input{
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    border: 1px solid gray;  
+    color: white;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    font-size: 18px;
+}
+.revForm input:focus{
+    outline: none;
+}
+.revForm input::placeholder{
+    color: gray;
+    font-size: 16px;
+}
+.formRatings{
+   width: 100%;
+   height: auto;
+}
+.formRatings p{
+    color:  gray;
+    padding-left: 5px;
+    font-size: 19px;
+    margin-top: 5px;
+}
+
+.formRat{
+    display: flex;
+    color: #ffe100;
+    margin: 5px 0 10px;
+}
+.revForm textarea{
+    width: 100%;
+    padding: 10px 20px;
+    font-family: calibri;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+}
+.revForm textarea:focus{
+    outline: none;
+}
+.revForm button{
+    width: 30%;
+    height: 60px;
+    background-color: #ffe100;
+    color: black;
+    margin: 20px auto;
+    border: none;
+    font-size: 20px;
+}
+.quote{
+    width: 100%;
+    height: auto;
+    background-color: #ffe100;
+    font-family: 'Playfair Display', sans-serif;
+    font-style: italic;
+    font-size: 45px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+.otherProducts{
+    width: 90%;
+    height: 90vh;
+    margin: 40px auto;
+    /* border: 1px solid #ffe100; */
+    border-radius: 30px;
+    padding: 30px;
+}
+.otherProducts h4{
+    font-family: 'Playfair Display', sans-serif;
+    color: white;
+    font-size: 30px;
+}
+.othersInset{
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    display: flex;
+
+}
+.othersDiv{
+    width: 300px;
+    height: auto;
+    margin-right: 25px;
+}
+.othersDiv img{
+    width: 300px;
+    height: 300px;
+    object-fit: fill;
+}
+.othersDiv h5{
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 24px;
+    color: #ffe100;
+    margin: 20px 0;
+    text-align: center;
+}
+.othersDiv p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.othersDiv button{
+    width: 100%;
+    height: 55px;
+    background-color: #ffe100;
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+}
+
+@media screen and (max-width: 800px) {
+    #info{
+        width: 100%;
+        height: auto;
+        background-color: black;
+    }
+    .infoInset{
+        width: 100%;
+        height: auto;
+    }
+    .imgInfo{
+        width: 100%;
+        height: auto;
+        margin: 50px auto 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .infoImg1{
+        width: auto;
+        height: 500px;
+        display: flex;
+        margin: 0 10px 30px;
+    }
+    .infoImg2{
+        display: none;
+    }
+    .infoImgInset{
+        width: 120px;
+        height: 100%;
+        margin-right: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+    .infoSubimage{
+        width: 120px;
+        height: 120px;
+        margin-bottom: 5px;
+    }
+    .infoSubimg{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    .subActive{
+      border: 4px solid #ffe100;
+    }
+    .mainInfoImg{
+        width: 80%;
+        height: 500px;
+        position: relative;
+        margin-left: 20px;
+    }
+    .mainInfoImage{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .imgMagnifierGlass {
+      position: absolute;
+      border-radius: 50%;
+      cursor: none;
+      /*Set the size of the magnifier glass:*/
+      width: 200px;
+      height: 200px;
+      display: none;
+    }
+    .infoInfo{
+        width: 90%;
+        height: 100%;
+    }
+    .infoLinks{
+        color: rgb(171, 171, 171);
+        font-family: Calibri;
+        font-size: 20px;
+        margin-bottom: 00px;
+    }
+    .infoTitle{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 600;
+        font-size: 42px;
+        color: #ffe100;
+    }
+    .infoReviews{
+        width: 50%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        color: #ffe100;
+        margin-bottom: 0px;
+        font-size: 20px;
+    }
+    .infoReviews p{
+        margin-left: 10px;
+    }
+    .infoCost{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 30px;
+        color: white;
+        font-weight: 600;
+        margin-bottom: 30px;
+        
+    }
+    .infoCounter{
+        width: auto;
+        height: auto;
+        display: flex;
+    }
+    .infoCounter span{
+        width: 60px;
+        height: 40px;
+        color: white;
+        font-size: 23px;
+        display: grid;
+        place-items: center;
+        border: 1px solid gray;
+        margin-right: 3px;
+    }
+    .infoCart{
+        width: 80%;
+        height: 50px;
+        background-color: #ffe100;
+        color: black;
+        font-family: 'Playfair Display', sans-serif;
+        margin: 30px 0;
+        display: grid;
+        place-items: center;
+        font-size: 21px;
+        font-weight: 600;
+    }
+    .infoDelivery{
+        width: 100%;
+        height: auto;
+        color: white;
+        font-family: 'Abel', sans-serif;
+        margin-top: 40px;
+    }
+    .infoDelivery h4{
+        font-size: 23px;
+        font-family: 'Playfair Display', sans-serif;
+        text-decoration: underline;
+        margin-bottom: 15px;
+    }
+    .infoDelivery p{
+        font-size: 20px;
+    }
+    .infoTags{
+        width: 100%;
+        height: auto;
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    .infoTags span{
+        font-weight: 600;
+        font-size: 20px;
+        margin-right: 8px;
+    }
+    .descriptionReview{
+        width: 95%;
+        height: auto;
+        background-color: black;
+        margin: 30px auto;
+        padding: 40px 0 30px;
+    }
+    .descrevInset{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .descrev{
+        width: 150px;
+        height: 50px;
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        display: grid;
+        place-items: center;
+        margin: 0 10px;
+    }
+    .descrevActive{
+        color: #ffe100;
+        background-color: rgb(44, 44, 44);
+    
+    }
+    .descContent{
+        width: 90%;
+        height: auto;
+        color: white;
+        margin: 30px auto;
+        display: none;
+    }
+    .descContent h4{
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 23px;
+        margin: 15px 0;
+        text-decoration: underline;
+    }
+    .descContent p{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 18px;
+        line-height: 28px;
+    }
+    .reviewContent{
+        width: 100%;
+        height: auto;
+        margin: 30px auto;
+    }
+    .reviewContent h4{
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 23px;
+        margin: 25px 0;
+        text-decoration: underline;
+    }
+    .reviewContentInset{
+        width: 100%;
+        height: auto;
+        display: flex;
+    }
+    .revRatings{
+        width: 25%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 20px 10px 0;
+        border-right: 1px solid rgb(83, 83, 83);
+        color: #ffe100;
+    }
+    .ratings{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    .ratings p{
+        margin-left: 10px;
+        font-size: 18px;
+    }
+    .based{
+        font-size: 20px;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .revComments{
+        width: 80%;
+        height: auto;
+        display: flex;
+        padding: 0 20px;
+        overflow-x: scroll;
+        align-items: center;
+    }
+    /* .rev-comments::-webkit-scrollbar {
+        width: 10px;
+      } */
+    .comment{
+        width: 400px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(45, 45, 45);
+        padding: 10px 20px;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+    .comment h5{
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        font-size: 23px;
+    }
+    .commentReviews{
+        display: flex;
+        align-items: center;
+        color: #ffe100;
+        font-size: 20px;
+    }
+    .comment p{
+        color: white;
+        font-size: 20px;
+    }
+    .writing{
+        font-family: 'Abel', serif;
+        margin-top: 30px;
+        font-size: 25px;
+    }
+    .revBtns{
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin: 40px 0;
+        justify-content: center;
+    }
+    .revBtns div{
+        padding: 20px 30px;
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        border: 1px solid #ffe100;
+    }
+    .revForm{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .revForm input{
+        width: 100%;
+        height: 60px;
+        background-color: transparent;
+        border: 1px solid gray;  
+        color: white;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        font-size: 18px;
+    }
+    .revForm input:focus{
+        outline: none;
+    }
+    .revForm input::placeholder{
+        color: gray;
+        font-size: 16px;
+    }
+    .formRatings{
+       width: 100%;
+       height: auto;
+    }
+    .formRatings p{
+        color:  gray;
+        padding-left: 5px;
+        font-size: 19px;
+        margin-top: 5px;
+    }
+    
+    .formRat{
+        display: flex;
+        color: #ffe100;
+        margin: 5px 0 10px;
+    }
+    .revForm textarea{
+        width: 100%;
+        padding: 10px 20px;
+        font-family: calibri;
+        font-size: 18px;
+        background-color: transparent;
+        color: white;
+    }
+    .revForm textarea:focus{
+        outline: none;
+    }
+    .revForm button{
+        width: 30%;
+        height: 60px;
+        background-color: #ffe100;
+        color: black;
+        margin: 20px auto;
+        border: none;
+        font-size: 20px;
+    }
+    .quote{
+    width: 100%;
+    height: auto;
+    background-color: #ffe100;
+    font-family: 'Playfair Display', sans-serif;
+    font-style: italic;
+    font-size: 35px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+    .otherProducts{
+        width: 100%;
+        height: 80vh;
+        margin: 40px auto;
+        /* border: 1px solid #ffe100; */
+        border-radius: 30px;
+        padding: 30px;
+    }
+    .otherProducts h4{
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        font-size: 30px;
+    }
+    .othersInset{
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+        display: flex;
+        overflow-x: scroll;
+    }
+    .othersDiv{
+        width: 250px;
+        height: auto;
+        margin-right: 25px;
+    }
+    .othersDiv img{
+        width: 250px;
+        height: 250px;
+        object-fit: fill;
+    }
+    .othersDiv h5{
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 24px;
+        color: #ffe100;
+        margin: 20px 0;
+        text-align: center;
+    }
+    .othersDiv p{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        color: white;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .othersDiv button{
+        width: 100%;
+        height: 55px;
+        background-color: #ffe100;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #info{
+        width: 100%;
+        height: auto;
+        background-color: black;
+    }
+    .infoInset{
+        width: 100%;
+        height: auto;
+    }
+    .imgInfo{
+        width: 100%;
+        height: auto;
+        margin: 50px auto 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .infoImg1{
+        display: none;
+    }
+    
+    .infoImgInset{
+        display: none;
+    }
+    .infoImg2{
+        display: flex;
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .mainImage{
+        width: 100%;
+        height: 80%;
+        position: relative;
+    }
+    .imgMagnifierGlass {
+        position: absolute;
+        border-radius: 50%;
+        cursor: none;
+        /*Set the size of the magnifier glass:*/
+        width: 100px;
+        height: 100px;
+        background-color: #ffe100;
+        z-index: 100;
+      }
+    .mainImageImg{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .otherImages{
+        width: 100%;
+        height: 18%;
+        display: flex;
+        justify-content: center;
+    }
+    .otherActive{
+        border: 3px solid #ffe100;
+    }
+    .imgSelect{
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        margin-right: 5px;
+    }
+    .infoInfo{
+        width: 90%;
+        height: 100%;
+    }
+    .infoLinks{
+        color: rgb(171, 171, 171);
+        font-family: Calibri;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    .infoTitle{
+        font-family: 'Playfair Display', sans-serif;
+        font-weight: 600;
+        font-size: 27px;
+        color: #ffe100;
+    }
+    .infoReviews{
+        width: 90%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        color: #ffe100;
+        margin-bottom: 0px;
+        font-size: 16px;
+    }
+    .infoReviews p{
+        margin-left: 10px;
+    }
+    .infoCost{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 25px;
+        color: white;
+        font-weight: 600;
+        margin-bottom: 20px;
+        
+    }
+    .infoCounter{
+        width: auto;
+        height: auto;
+        display: flex;
+    }
+    .infoCounter span{
+        width: 60px;
+        height: 40px;
+        color: white;
+        font-size: 23px;
+        display: grid;
+        place-items: center;
+        border: 1px solid gray;
+        margin-right: 3px;
+    }
+    .infoCart{
+        width: 90%;
+        height: 50px;
+        background-color: #ffe100;
+        color: black;
+        font-family: 'Playfair Display', sans-serif;
+        margin: 30px 0;
+        display: grid;
+        place-items: center;
+        font-size: 21px;
+        font-weight: 600;
+    }
+    .infoDelivery{
+        width: 100%;
+        height: auto;
+        color: white;
+        font-family: 'Abel', sans-serif;
+        margin-top: 40px;
+    }
+    .infoDelivery h4{
+        font-size: 23px;
+        font-family: 'Playfair Display', sans-serif;
+        text-decoration: underline;
+        margin-bottom: 15px;
+    }
+    .infoDelivery p{
+        font-size: 18px;
+    }
+    .infoTags{
+        width: 100%;
+        height: auto;
+        font-family: 'Times New Roman', Times, serif;
+        color: white;
+        margin-top: 30px;
+        font-size: 18px;
+    }
+    .infoTags span{
+        font-weight: 600;
+        font-size: 20px;
+        margin-right: 8px;
+    }
+    .descriptionReview{
+        width: 95%;
+        height: auto;
+        background-color: black;
+        margin: 20px auto;
+        padding: 10px 0 20px;
+    }
+    .descrevInset{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+    .descrev{
+        width: 150px;
+        height: 50px;
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        display: grid;
+        place-items: center;
+        margin: 0 10px;
+    }
+    .descrevActive{
+        color: #ffe100;
+        background-color: rgb(44, 44, 44);
+    
+    }
+    .descContent{
+        width: 90%;
+        height: auto;
+        color: white;
+        margin: 20px auto;
+        display: none;
+    }
+    .descContent h4{
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 20px;
+        margin: 15px 0;
+        text-decoration: underline;
+    }
+    .descContent p{
+        font-family: 'Abel', sans-serif;
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .reviewContent{
+        width: 100%;
+        height: auto;
+        margin: 30px auto;
+    }
+    .reviewContent h4{
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 22px;
+        margin: 25px 0 10px;
+        text-decoration: underline;
+        text-align: center;
+    }
+    .reviewContentInset{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .revRatings{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        padding: 10px 0;
+        border-right: none;
+        color: #ffe100;
+        margin-bottom: 20px;
+    }
+    .ratings{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: 10px;
+    }
+    .ratings p{
+        margin-left: 10px;
+        font-size: 18px;
+    }
+    .based{
+        font-size: 20px;
+        margin-top: 0px;
+        text-align: center;
+    }
+    .revComments{
+        width: 100%;
+        height: auto;
+        display: flex;
+        padding: 0 10px;
+        overflow-x: scroll;
+        align-items: center;
+    }
+    /* .rev-comments::-webkit-scrollbar {
+        width: 10px;
+      } */
+    .comment{
+        width: 300px;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(45, 45, 45);
+        padding: 10px 20px;
+        margin-right: 10px;
+        flex-shrink: 0;
+    }
+    .comment h5{
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .commentReviews{
+        display: flex;
+        align-items: center;
+        color: #ffe100;
+        font-size: 17px;
+    }
+    .comment p{
+        color: white;
+        font-size: 16px;
+    }
+    .writing{
+        font-family: 'Abel', serif;
+        margin-top: 30px;
+        font-size: 20px;
+        color: white;
+    }
+    .revBtns{
+        width: 100%;
+        height: auto;
+        display: flex;
+        margin: 40px 0;
+        justify-content: center;
+    }
+    .revBtns div{
+        padding: 20px 30px;
+        color: white;
+        font-family: 'Playfair Display', sans-serif;
+        border: 1px solid #ffe100;
+    }
+    .revForm{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .revForm input{
+        width: 100%;
+        height: 60px;
+        background-color: transparent;
+        border: 1px solid gray;  
+        color: white;
+        margin-bottom: 10px;
+        padding-left: 20px;
+        font-size: 17px;
+    }
+    .revForm input:focus{
+        outline: none;
+    }
+    .revForm input::placeholder{
+        color: gray;
+        font-size: 16px;
+    }
+    .formRatings{
+       width: 100%;
+       height: auto;
+    }
+    .formRatings p{
+        color:  gray;
+        padding-left: 5px;
+        font-size: 19px;
+        margin-top: 5px;
+    }
+    
+    .formRat{
+        display: flex;
+        color: #ffe100;
+        margin: 5px 0 10px;
+    }
+    .revForm textarea{
+        width: 100%;
+        padding: 10px 20px;
+        font-family: calibri;
+        font-size: 17px;
+        background-color: transparent;
+        color: white;
+    }
+    .revForm textarea:focus{
+        outline: none;
+    }
+    .revForm button{
+        width: 100%;
+        height: 60px;
+        background-color: #ffe100;
+        color: black;
+        margin: 20px auto;
+        border: none;
+        font-size: 20px;
+    }
+    .quote{
+    width: 100%;
+    height: auto;
+    background-color: #ffe100;
+    font-family: 'Playfair Display', sans-serif;
+    font-style: italic;
+    font-size: 21px;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+    .otherProducts{
+        width: 100%;
+        height: 80vh;
+        margin: 10px auto;
+        /* border: 1px solid #ffe100; */
+        border-radius: 30px;
+        padding: 10px;
+    }
+    .otherProducts h4{
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        font-size: 30px;
+    }
+    .othersInset{
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+        display: flex;
+        overflow-x: scroll;
+    }
+    .othersDiv{
+        width: 220px;
+        height: auto;
+        margin-right: 25px;
+    }
+    .othersDiv img{
+        width: 220px;
+        height: 220px;
+        object-fit: fill;
+    }
+    .othersDiv h5{
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 20px;
+        color: #ffe100;
+        margin: 10px 0;
+        text-align: center;
+    }
+    .othersDiv p{
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 20px;
+        color: white;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .othersDiv button{
+        width: 100%;
+        height: 55px;
+        background-color: #ffe100;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        border: none;
+    }
+}

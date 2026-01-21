@@ -1,0 +1,685 @@
+#featured{
+    width: 100%;
+    height: auto;
+    background-color: rgb(0, 0, 0);
+    display: grid;
+    place-items: center;
+    padding: 30px 0 10px;
+}
+.featureInset{
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    padding: 20px 0px 10px;
+}
+.featureInset h4{
+    text-align: center;
+    font-family: 'Playfair Display', sans-serif;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    font-size: 43px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.featureOptions1{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px 0;
+}
+.featureOptions2{
+    display: none;
+}
+/* .feature-options::-webkit-scrollbar {
+    width: 10px;
+  } */
+.featureOpt1{
+    display: flex;
+    width: 100%;
+    height: 550px;
+    margin: 0px 0px;
+    background-color: rgb(41, 41, 41);
+    position: relative;
+}
+
+.optImg1{
+    width: 65%;
+    height: 100%;
+    position: relative;
+    background-color: aliceblue;
+    
+
+}
+.optImg2{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    
+}
+.optImg1Img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.optImg2Img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.optInfo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    z-index: 3;
+}
+.optBtn1{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at left, rgba(0, 0, 0, 0)35%, rgba(0, 0, 0, 0.5)45%, rgba(0,0,0, 1) 70%);
+    z-index: 2;
+}
+.optDiv1{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+.optBtn1 h3{
+    font-family: 'Playfair Display', sans-serif;
+    color: white;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px; 
+}
+.optBtn1 ul li{
+    color: white;
+    font-size: 25px;
+    margin: 20px 0;
+    font-family: 'Abel', sans-serif;
+}
+.optBtn1 button{
+    font-family: 'Playfair Display', sans-serif;
+    width: 80%;
+    height: 70px;
+    background-color: #ffe100;
+    color: black;
+    font-size: 30px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.optBtn2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at right, rgba(0, 0, 0, 0)35%, rgba(0, 0, 0, 0.5)45%, rgba(0,0,0, 1) 75%);
+    z-index: 2;
+}
+.optDiv2{
+    width: 45%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+.optBtn2 h3{
+    font-family: 'Playfair Display', sans-serif;
+    color: white;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 30px; 
+}
+.optBtn2 ul li{
+    color: white;
+    font-size: 25px;
+    margin: 20px 0;
+    font-family: 'Abel', sans-serif;
+}
+.optBtn2 button{
+    font-family: 'Playfair Display', sans-serif;
+    width: 80%;
+    height: 70px;
+    background-color: #ffe100;
+    color: black;
+    font-size: 30px;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+#choice{
+    width: 100%;
+    height: auto;
+    background-color: black;
+    padding: 40px;
+}
+.choiceInset{
+    width: 70%;
+    height: auto;
+    margin: 0 auto;
+    color: white;
+    text-align: center;
+    font-family: 'Playfair Display', sans-serif;
+
+}
+.choiceInset h1{
+    font-size: 80px;
+    margin-bottom: 40px;
+}
+.choiceInset p{
+    font-size: 21px;
+    line-height: 30px;
+}
+.choiceInset p span{
+    color: #ffe100;
+}
+.choiceBtn{
+    width: 40%;
+    height: 60px;
+    background-color: #ffe100;
+    color: black;
+    margin: 50px auto 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 60px;
+}
+.choiceBtn p{
+    font-size: 23px;
+}
+#proof{
+    width: 100%;
+    height: 90vh;
+    background-color: black;
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+}
+.proofInset{
+    width: 25%;
+    height: 90%;
+    border: 1px solid #ffe100;
+}
+.proofTitle{
+    width: 100%;
+    height: 22%;
+    font-family: 'Playfair Display', sans-serif;
+    color: white;
+    font-size: 34px;
+    text-align: center;
+    font-weight: 500;
+    padding: 0 10px;
+    display: grid;
+    place-items: center;
+}
+.proofImg{
+    width: 100%;
+    height: 55%;
+}
+.proofImgImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.proofDesc{
+    width: 100%;
+    height: 22%;
+    font-family: 'Playfair Display', sans-serif;
+    color: white;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    padding: 0 20px;
+    font-size: 21px;
+}
+
+@media screen and (max-width: 800px) {
+    .featureInset{
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        padding: 20px 0px 10px;
+        overflow: hidden;
+    }
+    .featureOptions1{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px;
+    }
+    .featureOptions2{
+        display: none;
+    }
+    /* .feature-options::-webkit-scrollbar {
+        width: 10px;
+      } */
+      .featureOpt1{
+        display: flex;
+        width: 100%;
+        height: 350px;
+        margin: 20px 10px;
+        background-color: rgb(41, 41, 41);
+        position: relative;
+    }
+    
+    .optImg1{
+        width: 65%;
+        height: 100%;
+        position: relative;
+        background-color: aliceblue;
+        
+    
+    }
+    .optImg2{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 65%;
+        height: 100%;
+        
+    }
+    .optImg1Img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .optImg2Img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .optInfo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 25px;
+        text-align: center;
+        color: white;
+        z-index: 3;
+    }
+    .optBtn1{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at left, rgba(0, 0, 0, 0)35%, rgba(0, 0, 0, 0.5)45%, rgba(0,0,0, 1) 70%);
+        z-index: 2;
+    }
+    .optDiv1{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        float: right;
+    }
+    .optBtn1 h3{
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        font-style: italic;
+        text-decoration: underline;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px; 
+    }
+    .optBtn1 ul li{
+        color: white;
+        font-size: 19px;
+        margin: 10px 0;
+        font-family: 'Abel', sans-serif;
+    }
+    .optBtn1 button{
+        font-family: 'Playfair Display', sans-serif;
+        width: 80%;
+        height: 60px;
+        background-color: #ffe100;
+        color: black;
+        font-size: 23px;
+        border: none;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+    .optBtn2{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at right, rgba(0, 0, 0, 0)35%, rgba(0, 0, 0, 0.5)45%, rgba(0,0,0, 1) 75%);
+        z-index: 2;
+    }
+    .optDiv2{
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        float: left;
+    }
+    .optBtn2 h3{
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        font-style: italic;
+        text-decoration: underline;
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px; 
+    }
+    .optBtn2 ul li{
+        color: white;
+        font-size: 18px;
+        margin: 10px 0;
+        font-family: 'Abel', sans-serif;
+    }
+    .optBtn2 button{
+        font-family: 'Playfair Display', sans-serif;
+        width: 80%;
+        height: 60px;
+        background-color: #ffe100;
+        color: black;
+        font-size: 23px;
+        border: none;
+        border-radius: 20px;
+        margin-top: 20px;
+    }
+    #choice{
+        width: 100%;
+        height: auto;
+        background-color: black;
+        padding: 40px;
+    }
+    .choiceInset{
+        width: 80%;
+        height: auto;
+        margin: 0 auto;
+        color: white;
+        text-align: center;
+        font-family: 'Playfair Display', sans-serif;
+    
+    }
+    .choiceInset h1{
+        font-size: 70px;
+        margin-bottom: 40px;
+    }
+    .choiceInset p{
+        font-size: 19px;
+        line-height: 30px;
+    }
+    .choiceInset p span{
+        color: #ffe100;
+    }
+    .choiceBtn{
+        width: 40%;
+        height: 60px;
+        background-color: #ffe100;
+        color: black;
+        margin: 50px auto 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 60px;
+    }
+    .choiceBtn p{
+        font-size: 23px;
+    }
+    #proof{
+        width: 100%;
+        height: 80vh;
+        background-color: black;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .proofInset{
+        width: 32%;
+        height: 90%;
+        border: 1px solid #ffe100;
+    }
+    .proofTitle{
+        width: 100%;
+        height: 22%;
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        font-size: 26px;
+        text-align: center;
+        font-weight: 500;
+        padding: 0 10px;
+        display: grid;
+        place-items: center;
+    }
+    .proofImg{
+        width: 100%;
+        height: 55%;
+    }
+    .proofImgImg{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .proofDesc{
+        width: 100%;
+        height: 22%;
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        padding: 0 20px;
+        font-size: 17px;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    #featured{
+        width: 100%;
+        height: auto;
+        background-color: black;
+        display: grid;
+        place-items: center;
+        padding: 30px 0 10px;
+    }
+    .featureInset{
+        width: 95%;
+        height: auto;
+        border: 1px solid #ffe100;
+        border-radius: 20px;
+        padding: 20px 20px 10px;
+        overflow: hidden;
+    }
+    .featureInset h4{
+        text-align: center;
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        text-decoration: underline;
+        font-size: 25px;
+        font-weight: 500;
+        margin-bottom: 30px;
+    }
+    .featureOptions2{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-x: none;   
+    }
+    .featureOptions1{
+        display: none;
+    }
+    .featureOptions::-webkit-scrollbar {
+        width: 10px;
+      }
+    .featureOpt{
+        width: 95%;
+        height: 350px;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        margin: 10px 0;
+        min-width: 0;
+        flex-shrink: 0;
+    }
+    .optImg{
+        width: 100%;
+        height: 82%;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        position: relative;
+    }
+    .optImg::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.2);
+        z-index: 2;
+    }
+    .optImgPhone{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+    }
+    .optInfo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 22px;
+        text-align: center;
+        color: white;
+        z-index: 3;
+    }
+    .optBtn{
+        background-color: #ffe100;
+        width: 100%;
+        height: 18%;
+        display: grid;
+        place-items: center;
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 22px;
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+    }
+    #choice{
+        width: 100%;
+        height: auto;
+        background-color: black;
+        padding:40px 10px;
+    }
+    .choiceInset{
+        width: 93%;
+        height: auto;
+        margin: 0 auto;
+        color: white;
+        text-align: center;
+        font-family: 'Playfair Display', sans-serif;
+    
+    }
+    .choiceInset h1{
+        font-size: 40px;
+        margin-bottom: 40px;
+    }
+    .choiceInset p{
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .choiceInset p span{
+        color: #ffe100;
+    }
+    .choiceBtn{
+        width: 60%;
+        height: 60px;
+        background-color: #ffe100;
+        color: black;
+        margin: 50px auto 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-radius: 60px;
+    }
+    .choiceBtn p{
+        font-size: 21px;
+    }
+    #proof{
+        width: 100%;
+        height: auto;
+        background-color: black;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .proofInset{
+        width: 95%;
+        height: 450px;
+        border: 1px solid #ffe100;
+        margin: 10px 0;
+    }
+    .proofTitle{
+        width: 100%;
+        height: 22%;
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        font-weight: 500;
+        padding: 0 10px;
+        display: grid;
+        place-items: center;
+    }
+    .proofImg{
+        width: 100%;
+        height: 55%;
+    }
+    .proofImgImg{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .proofDesc{
+        width: 100%;
+        height: 22%;
+        font-family: 'Playfair Display', sans-serif;
+        color: white;
+        text-align: center;
+        display: grid;
+        place-items: center;
+        padding: 0 20px;
+        font-size: 16px;
+    }
+}
