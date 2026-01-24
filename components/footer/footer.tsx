@@ -1,4 +1,5 @@
 import styles from './footer.module.css'
+import Link from 'next/link';
 
 const Footer = () => {
   return (<>
@@ -9,10 +10,18 @@ const Footer = () => {
              <p>&copy; 2025 <span>Perfect</span>OfficeKE. All rights reserved.</p>
             </div>
             <div className={styles.footerRight}>
-             <p>Home</p>
-             <p>Shop</p>
-             <p>About US</p>
-             <p>Contact</p>
+            <Link href={'/home'} style={{textDecoration: 'none', color: 'white'}}>
+            <p>Home</p>
+            </Link>
+            <Link href={'/shop'} style={{textDecoration: 'none', color: 'white'}}>
+            <p>Shop</p>
+            </Link>
+             <Link href={'/contact'} style={{textDecoration: 'none', color: 'white'}}>
+            <p>Contact</p>
+            </Link>
+             <Link href={'/about'} style={{textDecoration: 'none', color: 'white'}}>
+            <p>About us</p>
+            </Link>
             </div>   
             </div>
             

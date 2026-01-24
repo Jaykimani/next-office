@@ -1,7 +1,10 @@
 import styles from './shop.module.css'
 import List from '@/components/list/list'
 
+
 const Shop = () => {
+
+
   return (<>
    <div id={styles.shopOuter}>
     <List />

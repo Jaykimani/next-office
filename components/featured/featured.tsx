@@ -1,6 +1,7 @@
 import styles from './featured.module.css';
 import Image from 'next/image';
 import { MdArrowForward } from "react-icons/md";
+import Link from 'next/link';
 
 const Featured = () => {
   return (
@@ -153,11 +154,12 @@ const Featured = () => {
           <div className={styles.choiceInset}>
             <h1>Why Choose Us?</h1>
             <p>At Office<span>Aura</span> KENYA, we believe that your office should be a reflection of your style, productivity, and professionalism. That's why we offer high-quality office decor and handpicked office accessories that transform any office space into a professional and inspiring environment. With exceptional customer service, fast shipping and competitive pricing, we make upgrading your workspace effortless. Shop now and create an office that works for you!</p>
+            <Link href={'/shop'} style={{textDecoration: 'none', color: 'black'}}>
             <div className={styles.choiceBtn}>
               <p>VISIT SHOP</p>
               <MdArrowForward style={{width: '40px', height: '40px'}}/>
-
             </div>
+            </Link>
           </div>
         </div>
 

@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar/navbar"
 import './global.css'
 import { Playfair, abel } from "./fonts" 
+import ScrollToTop from "@/components/scrollTop"
 
 export const metadata = {
     title : "Office app",
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html className={`${Playfair.variable} ${abel.variable}`}>
       <body>
+        <ScrollToTop />
         {children}
         </body>
     </html>

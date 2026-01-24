@@ -39,10 +39,14 @@ const Navbar = () => {
             <Image className={styles.svgLogo} src="/Component 5.svg" alt="office aura image" width={30} height={30}/>
             <div className={styles.navbarLinks}>
                 <div className={styles.navbarLink}>
+                  <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
                   <p>Home</p>
+                  </Link>
                 </div>
                 <div className={styles.navbarLink}>
+                  <Link href={'/shop'} style={{textDecoration: 'none', color: 'white'}}>
                   <p>Shop</p>
+                  </Link>
                 </div>
                 <div className={styles.navbarLink}>
                   <Link href={'/about'} style={{textDecoration: 'none', color: 'white'}}>
@@ -50,17 +54,21 @@ const Navbar = () => {
                   </Link>
                 </div>
                 <div className={styles.navbarLink}>
+                  <Link href={'/contact'} style={{textDecoration: 'none', color: 'white'}}>
                   <p>Contact</p>
+                  </Link>
                 </div>
             </div>
             </div>
-            <div className={styles.shopping}> 
+            <Link href={'/cart'}>
+             <div className={styles.shopping}> 
               <div className={styles.shoppingInset}>
               <FaShoppingCart style={{color : '#ffe100', width: '35px', height: '35px'}}/>  
               <span className={styles.shoppingCount}>0</span>
               </div>
               <p>KSH 100000.00</p>
             </div>
+            </Link>
         </div>
 
         <div id={styles.navbar2}>
@@ -72,26 +80,37 @@ const Navbar = () => {
 
             </div>
             <div className={styles.shopNavLinks}>
+              <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
                <h3>Home</h3>
+              </Link>
             </div>
             <div className={styles.shopNavLinks}>
+               <Link href={'/shop'} style={{textDecoration: 'none', color: 'white'}}>
                <h3>Shop</h3>
+              </Link>
             </div>
             <div className={styles.shopNavLinks}>
+               <Link href={'/contact'} style={{textDecoration: 'none', color: 'white'}}>
                <h3>Contact</h3>
+              </Link>
             </div>
             <div className={styles.shopNavLinks}>
+              <Link href={'/about'} style={{textDecoration: 'none', color: 'white'}}>
                <h3>About us</h3>
+              </Link>
             </div>
             </div>
          </div>
         <div className={styles.navbarInset2}>
              <Image className={styles.svgLogo} src="/Component 5.svg" alt="office aura image" width={500} height={300}/>
         <div className={styles.shopping}> 
-              <div className={styles.shoppingInset}>
+          <Link href={'/cart'} style={{textDecoration: 'none', color: 'white'}}>
+           <div className={styles.shoppingInset}>
               <FaShoppingCart style={{color : '#ffe100', width: '28px', height: '28px'}}/>  
               <span className={styles.shoppingCount}>5</span>
               </div>
+          </Link>
+             
               
             </div>
         </div>    

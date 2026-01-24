@@ -19,6 +19,7 @@ const ShopNav = () => {
     const [accent, setAccent] = useState(false);
     const [greenery, setGreenery] = useState(false);
     const [phoneOpt, setPhoneOpt] = useState(false);
+    const [shopMenu, setShopMenu] = useState(false);
     const search = useRef(null);
     const shop2DivInset = useRef<HTMLDivElement | null>(null);
    
@@ -79,7 +80,6 @@ const ShopNav = () => {
     }
     const handleCloseOpt = ()=>{
       setPhoneOpt(false);
-      window.scrollTo(0,0);
     }
 
 
@@ -89,8 +89,24 @@ const ShopNav = () => {
             <p>Email: josephkimani1998@gmail.com / Need help? Whatsapp us on 0704610605</p>
         </div>
         <div id={styles.shop1}>
+         <div className={styles.shopNavMenu} style={{display: shopMenu ? "block" : "none"}}>
+          <MdClose style={{color: "white", width: "45px", height: "45px", marginBottom: "10px"}} onClick={()=> setShopMenu(false)}/>
+           <Link href={'/'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
+           <h1>Home</h1>
+           </Link> 
+           <Link href={'/shop'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
+           <h1>Shop</h1>
+           </Link>
+           <Link href={'/contact'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
+           <h1>Contact</h1>
+           </Link>
+            <Link href={'/about'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
+           <h1>About us</h1>
+           </Link>
+         </div>
             
             <div className={styles.shopTitle}>
+              <HiMenuAlt2 style={{color: "white", width: "35px", height: "35px"}} onClick={()=> setShopMenu(true)}/> 
              <Link href={'/'} style={{textDecoration: "none", color: "black"}}>
              <Image className={styles.svgLogo1} src="/Component 5.svg" alt="" width={100} height={100} />
              </Link>
@@ -231,16 +247,24 @@ const ShopNav = () => {
 
             </div>
             <div className={styles.shopNavLinks}>
-               <h3>Home</h3>
+               <Link href={'/'} style={{textDecoration: "none", color: "white"}}>
+                <h3>Home</h3>
+               </Link>
             </div>
             <div className={styles.shopNavLinks}>
-               <h3>Shop</h3>
+               <Link href={'/shop'} style={{textDecoration: "none", color: "white"}}>
+                <h3>Shop</h3>
+               </Link>
             </div>
             <div className={styles.shopNavLinks}>
-               <h3>Contact</h3>
+               <Link href={'/contact'} style={{textDecoration: "none", color: "white"}}>
+                <h3>Contact</h3>
+               </Link>
             </div>
             <div className={styles.shopNavLinks}>
-               <h3>About us</h3>
+               <Link href={'/about'} style={{textDecoration: "none", color: "white"}}>
+                <h3>About us</h3>
+               </Link>
             </div>
             </div>
          </div>
@@ -250,11 +274,14 @@ const ShopNav = () => {
          <Image className={styles.svgLogo2} src="/Component 5.svg" alt="" width={100} height={100} />
          </Link>
          <div className={styles.shopIconDiv}>
-             <div className={styles.shopInset}>
+            <Link href={'/cart'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopInset}>
               <FaShoppingCart className={styles.shop2Icon} />
               <span className={styles.shop2Count}>0</span>
               </div>
               <p>KSH 0.00</p>
+            </Link>
+             
          </div>
          </div>
          <div className={styles.shopSearchIcon}>
