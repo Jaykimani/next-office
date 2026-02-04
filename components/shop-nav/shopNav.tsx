@@ -9,6 +9,7 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
 import Link from 'next/link';
 import Image from 'next/image';
+import { useCartStore } from '@/app/store';
 
 
 
@@ -22,7 +23,10 @@ const ShopNav = () => {
     const [shopMenu, setShopMenu] = useState(false);
     const search = useRef(null);
     const shop2DivInset = useRef<HTMLDivElement | null>(null);
-   
+    const count = useCartStore((state)=> state.count);
+    const items = useCartStore((state)=> state.items);
+    const subtotal = useCartStore((state)=> state.subtotal);
+
     useEffect(()=>{
       if(phoneOpt){
         if(shop2DivInset.current){
@@ -32,6 +36,10 @@ const ShopNav = () => {
       }
 
     }, [phoneOpt])
+
+    useEffect(()=>{
+
+    }, [items]);
 
     const handleDesk = ()=>{
         
@@ -118,18 +126,18 @@ const ShopNav = () => {
                <div className={styles.shopIconDiv}>
                <div className={styles.shopInset}>
                <FaShoppingCart className={styles.shopIcon} />
-              <span className={styles.shopCount}>10</span>
+              <span className={styles.shopCount}>{count}</span>
               </div>
-              <p>KSH 100000.00</p>
+              <p>KSh {subtotal}.00</p>
              </div>
                </Link>
              
             </div>
             <div className={styles.shopLinks}>
              <div className={styles.shopLink}>
-                <div className={styles.shopLinkTop}>
+                <div className={styles.shopLinkTop} onClick={handleDesk}>
                 <p>Office Desk Accessories</p>
-                <MdKeyboardArrowDown style={{color: "#ffe100", width:'25px', height: '25px', transform: desk ? 'rotate(180deg)' : 'rotate(0deg)'}} onClick={handleDesk}/>
+                <MdKeyboardArrowDown style={{color: "#ffe100", width:'25px', height: '25px', transform: desk ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: desk ? "auto" : "0"}}>
                    <div className={styles.shopSublink}>
@@ -150,9 +158,9 @@ const ShopNav = () => {
                 </div>    
              </div>
              <div className={styles.shopLink}>
-                <div className={styles.shopLinkTop}>
+                <div className={styles.shopLinkTop}  onClick={handleLighting}>
                 <p>Office Lighting Solutions</p>
-                <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: light ? 'rotate(180deg)' : 'rotate(0deg)'}}  onClick={handleLighting}/>
+                <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: light ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: light ? "auto" : "0"}}>
                    <div className={styles.shopSublink}>
@@ -170,9 +178,9 @@ const ShopNav = () => {
                 </div>    
              </div>
              <div className={styles.shopLink}>
-                <div className={styles.shopLinkTop}>
+                <div className={styles.shopLinkTop} onClick={handleWall}>
                 <p>Office Wall Accessories</p>
-                <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: wall ? 'rotate(180deg)' : 'rotate(0deg)'}} onClick={handleWall}/>
+                <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: wall ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: wall ? "auto" : "0"}}>
                    <div className={styles.shopSublink}>
@@ -190,33 +198,9 @@ const ShopNav = () => {
                 </div>    
              </div>
              <div className={styles.shopLink}>
-                <div className={styles.shopLinkTop}>
-                <p>Office Accents</p>
-                <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: accent ? 'rotate(180deg)' : 'rotate(0deg)'}} onClick={handleAccent}/>
-                </div>
-                <div className={styles.shopLinkBottom} style={{height: accent ? "auto" : "0"}}>
-                   <div className={styles.shopSublink}>
-                    <p>Rugs & Carpets</p>
-                   </div>
-                   <div className={styles.shopSublink}>
-                    <p>Wall papers</p>
-                   </div>
-                   <div className={styles.shopSublink}>
-                    <p>Desk mats</p>
-                   </div>
-                   <div className={styles.shopSublink}>
-                    <p>Bean bags</p>
-                   </div>
-                   <div className={styles.shopSublink}>
-                    <p>Throw pillows</p>
-                   </div>
-                
-                </div>    
-             </div>
-             <div className={styles.shopLink}>
-                <div className={styles.shopLinkTop}>
+                <div className={styles.shopLinkTop} onClick={handleGreenery}>
                 <p>Office Greenery Solutions</p>
-                <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: greenery ? 'rotate(180deg)' : 'rotate(0deg)'}} onClick={handleGreenery}/>
+                <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: greenery ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: greenery ? "auto" : "0"}}>
                    <div className={styles.shopSublink}>

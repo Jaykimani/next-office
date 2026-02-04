@@ -3,8 +3,23 @@ import { FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { buildConfig } from 'payload'
 import { Products, Media } from './app/(payload)/collections/products'
+import { Users } from './app/(payload)/collections/users'
+import { Orders } from './app/(payload)/collections/orders'
+
 
 export default buildConfig({
+  admin:{
+      user: Users.slug,
+      autoLogin: {
+        email: process.env.CMS_ADMIN_EMAIL,
+        password: process.env.CMS_ADMIN_PW
+      } 
+  },
+
+  // 👇 THIS IS IMPORTANT
+  typescript: {
+    outputFile: './payload-types.ts',
+  },
   // If you'd like to use Rich Text, pass your editor here
   editor: lexicalEditor({
     features: ({defaultFeatures}) => [
@@ -14,7 +29,7 @@ export default buildConfig({
 }),
 
   // Define and configure your collections in this array
-  collections: [Products, Media],
+  collections: [Products, Media, Users, Orders],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || '',

@@ -6,11 +6,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { FaShoppingCart } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
+import { useCartStore } from '@/app/store';
 
 
 const Navbar = () => {
     const [phoneOption, setPhoneOption] = useState(false);
     const shop2DivInsetHome = useRef<HTMLDivElement | null>(null);
+    const {count, subtotal} = useCartStore((state) => state);
 
     useEffect(()=>{
           if(phoneOption){
@@ -64,9 +66,9 @@ const Navbar = () => {
              <div className={styles.shopping}> 
               <div className={styles.shoppingInset}>
               <FaShoppingCart style={{color : '#ffe100', width: '35px', height: '35px'}}/>  
-              <span className={styles.shoppingCount}>0</span>
+              <span className={styles.shoppingCount}>{count}</span>
               </div>
-              <p>KSH 100000.00</p>
+              <p>KSh {subtotal}.00</p>
             </div>
             </Link>
         </div>

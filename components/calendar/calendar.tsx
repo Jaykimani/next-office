@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from './calendar.module.css';
 import { MdArrowBackIos } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
+import { useCartStore } from "@/app/store";
 
 function Calendar() {
   const[date, setDate] = useState('');
@@ -14,7 +15,7 @@ function Calendar() {
   const calendarCurrentDate =useRef<HTMLParagraphElement>(null);
   const calendarCurrentYear =useRef<HTMLParagraphElement>(null);
   const calendarDates = useRef<HTMLUListElement>(null);
-
+  const {addCheckoutShippingDate} = useCartStore((state)=> state);
 
 
 useEffect(()=>{
@@ -215,9 +216,10 @@ useEffect(()=>{
          
             item.addEventListener('click', (e: any)=>{
                 item.style.backgroundColor = '#ffe100';
-            
+                
                 let selectedDay = e.currentTarget.innerHTML + '/' + monthNum + '/' + year;
                 let selectCheck = monthNum + '/' + e.currentTarget.innerHTML + '/' + year;
+                
                 setDate(selectedDay);
                 setCheckDate(selectCheck);
                 
@@ -260,6 +262,12 @@ useEffect(()=>{
 
 
 }, [count]);
+
+useEffect(()=>{
+  
+    addCheckoutShippingDate(date);
+
+}, [date])
 
 
  const handleNext = ()=>{

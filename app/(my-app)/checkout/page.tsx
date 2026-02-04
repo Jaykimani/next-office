@@ -1,7 +1,19 @@
+"use client"
+
 import styles from './checkout.module.css';
 import Image from 'next/image';
+import { useCartStore } from '@/app/store';
+import { useEffect } from 'react';
 
 function Checkout() {
+    const {checkout} = useCartStore((state) => state);
+
+    useEffect(()=>{
+       console.log(checkout);
+       
+    }, [])
+
+
     return (
         <>
         <div id={styles.checkout}>
@@ -22,51 +34,43 @@ function Checkout() {
                   <input type="text" placeholder='Area name or Street name'/>
                   <input type="text" placeholder='Building name/Apartment name/Estate name'/>
                   <input type="text" placeholder='Office/Room/Apartment/House number'/>
-                  <h5>Additional Information</h5>
+                  <input type="text" placeholder='Optional: Nearby landmart e.g opposite sarit centre'/>
+                  <h5>Additional Information(Optional)</h5>
                   <textarea name="" id="" cols={30} rows={5}></textarea>
                 </form>
                 
               </div>
               <div className={styles.customerOrder}>
                <h4 className={styles.customH4}>YOUR ORDER</h4>
-               <div className={styles.orderDiv}>
+               {checkout?.checkoutItems.map((item)=>{
+                  return(
+                    <div className={styles.orderDiv}>
                 <div className={styles.orderInformation}>
-                  <p>Modern Luxury Desk Lamp</p>
-                  <p>x 2</p>
+                  <p>{item.name}</p>
+                  <p>x {item.count}</p>
                 </div>
                 <div className={styles.orderSubtotal}>
-                   <h4>KSh 10,000.00</h4>
+                   <h4>KSh {item.total.toLocaleString('en-US')}</h4>
                 </div>
                </div>
-               <div className={styles.orderDiv}>
-                <div className={styles.orderInformation}>
-                  <p>Modern Luxury Desk Lamp</p>
-                  <p>x 2</p>
-                </div>
-                <div className={styles.orderSubtotal}>
-                   <h4>KSh 10,000.00</h4>
-                </div>
-               </div>
-               <div className={styles.orderDiv}>
-                <div className={styles.orderInformation}>
-                  <p>Modern Luxury Desk Lamp</p>
-                  <p>x 2</p>
-                </div>
-                <div className={styles.orderSubtotal}>
-                   <h4>KSh 10,000.00</h4>
-                </div>
+               )
+                })}
+               
+               <div className={styles.orderTotal}>
+                <h4>Subtotal:</h4>
+                <p>KSh {checkout.subtotal.toLocaleString('en-US')}.00</p>
                </div>
                <div className={styles.orderTotal}>
-                <h4>SUBTOTAL:</h4>
-                <p>KSh 30,000.00</p>
+                <h4>Shipping Fee:</h4>
+                <p>Ksh 0.00</p>
                </div>
                <div className={styles.orderTotal}>
-                <h4>Shipping</h4>
+                <h4>TOTAL:</h4>
                 <p>Ksh 0.00</p>
                </div>
                <div className={styles.orderNotice}>
                 <input type="checkbox" name="" id="" />
-                <p>If you are facing issues placing your order, please check this option and click on “Place Order” and our team will reach out to you A.S.A.P.</p>
+                <p>If you are facing issues placing your order, please check this option and click “Place Order”. Our team will reach out to you A.S.A.P.</p>
                </div>
                <button type="submit" className={styles.placeOrder}>PLACE ORDER</button>
                <button type="submit" className={styles.cancelOrder}>CANCEL ORDER</button>

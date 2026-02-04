@@ -8,8 +8,20 @@ import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdClose } from "react-icons/md";
 import Categories from '@/categories';
+import type { Product } from '@/payload-types';
+import { Media } from '@/payload-types';
+import Link from 'next/link';
 
-function List() {
+interface ProductsProps {
+allProducts : Product[];
+}
+
+function mediaIsObject(media: number | Media) : media is Media {
+  return typeof media !== 'number'
+  
+}
+
+function List({ allProducts }: ProductsProps) {
     const [sort, setSort] = useState(false);
     const [categSort, setCategSort] = useState(false);
 
@@ -90,129 +102,31 @@ function List() {
               </div>
              </div>
              <div className={styles.shopListItem}>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item1.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Luxury Marbel Glode Decor</h4>
-                      <p>KSH 10,000/=</p>
-                      <button>ADD TO CART</button>
-                     
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item1.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Luxury Marbel Glode Decor</h4>
-                      <p>KSH 10,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item2.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Modern Desk Lamp</h4>
-                      <p>KSH 8,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item1.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Luxury Marbel Glode Decor</h4>
-                      <p>KSH 10,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item2.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Modern Desk Lamp</h4>
-                      <p>KSH 8,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item2.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Modern Desk Lamp</h4>
-                      <p>KSH 8,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item2.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Modern Desk Lamp</h4>
-                      <p>KSH 8,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item2.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Modern Desk Lamp</h4>
-                      <p>KSH 8,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item2.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Modern Desk Lamp</h4>
-                      <p>KSH 8,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item2.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Modern Desk Lamp</h4>
-                      <p>KSH 8,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item2.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Modern Desk Lamp</h4>
-                      <p>KSH 8,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
-                <div className={styles.listItem}>
-                    <div className={styles.itemImg}>
-                     <Image className={styles.itemImage} src="/item2.jpg" alt="" width={200} height={200} />
-                    </div>
-                    <div className={styles.itemInfo}>
-                      <h4>Modern Desk Lamp</h4>
-                      <p>KSH 8,000/=</p>
-                      <button>ADD TO CART</button>
-                    </div>
-                </div>
+              <div className={styles.shopListItemInset}>
+b             {allProducts?.map((item)=>{
+                if(!mediaIsObject(item.images[0]))  return null
+               
 
-                <div className={styles.pagesDiv}>
+               return (
+                    <Link key={item.id} href={`/shop/${item.slug}`} style={{textDecoration: 'none'}}>
+                     <div className={styles.listItem}>
+                    <div className={styles.itemImg}>
+                      {item.images[0]?.url && (
+                      <Image className={styles.itemImage} src={item.images[0].url} alt="" width={200} height={200} />
+                      )}
+                    </div>
+                    <div className={styles.itemInfo}>
+                      <h4>{item.name?.length > 30 ? item.name.substring(0, 27) + '...' : item.name}</h4>
+                      <p>KSh {item.price.toLocaleString('en-US')}/=</p>
+                      <button>View Item</button> 
+                    </div>
+                </div>
+                    </Link>
+                   
+              )})}
+               
+              </div>
+              <div className={styles.pagesDiv}>
                   <div>1</div>
                   <div>2</div>
                   <div>3</div>
@@ -221,8 +135,12 @@ function List() {
 
                 </div>
 
+               
+
              </div>
+              
             </div>
+            
         </div>
         </>
     )

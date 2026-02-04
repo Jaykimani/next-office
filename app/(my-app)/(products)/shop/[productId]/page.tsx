@@ -8,13 +8,19 @@ import { FaMinus } from "react-icons/fa6";
 import { MdStar } from "react-icons/md";
 import { MdStarHalf } from "react-icons/md";
 import { MdStarBorder } from "react-icons/md";
+import {use} from 'react'
+import type { Product } from '@/payload-types';
+import { Media } from '@/payload-types';
+import { useCartStore } from '@/app/store';
+import { log } from 'console';
 
-function magnify(zoom, id) {
+
+function magnify(zoom, url) {
 
   
   
   var img = document.getElementById('main-img')as HTMLCanvasElement;
-  console.log(img);
+
   
   
   /*create magnifier glass:*/
@@ -22,7 +28,7 @@ function magnify(zoom, id) {
 
   if(img && glass){
  /*set background properties for the magnifier glass:*/
-  glass.style.backgroundImage = `url('/item${id}.jpg')`;
+  glass.style.backgroundImage = `url(${url})`;
   glass.style.backgroundRepeat = "no-repeat";
   glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
   var bw = 3;
@@ -75,9 +81,13 @@ function magnify(zoom, id) {
  
 }
 
+function mediaIsObject(media: number | Media) : media is Media {
+  return typeof media !== 'number'
+  
+}
 
-function Info() {
-    const [imageId, setImageId] = useState(1);
+function Info({params} : {params: Promise<{productId : String}>}) {
+   const [imageURL, setImageURL] = useState<string | null>(null);
     const [showMag, setShowMag] = useState(false);
     let [counter , setCounter] = useState(1);
     let [counter2, setCounter2] = useState(1);
@@ -91,8 +101,33 @@ function Info() {
     const [review, setReview] = useState(false);
     const [quiz, setQuiz] = useState(false);
     const [showForm, setShowForm] = useState(false);
+    const [cartSuccess, setCartSuccess] = useState(false);
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);
+    const [product, setProduct] = useState<Product | null>(null);
+    const {addItem, editSubtotal} = useCartStore((state) => state)
+
+    const {productId} = use(params);
+     useEffect(() => {
+ 
+    async function fetchProduct() {
+      const res = await fetch(`/api/shop/${productId}`);
+
+      if (!res.ok) {
+        setProduct(null);
+        return;
+      }
+      
+      const data = await res.json();
+      
+      setProduct(data[0]);
+      setImageURL(data[0].images[0].url)
+      magnify(3, data[0].images[0].url);
+    }
+
+    fetchProduct();
+  }, [productId]);
+    
 
     const minSwipeDistance = 50; 
 
@@ -124,22 +159,10 @@ function Info() {
 
     useEffect(()=>{
         window.scrollTo(0,0)
-       
+        
     }, []);
 
-    useEffect(()=>{
-      let images = document.querySelectorAll(".info-subimage");
-        let imagesArr = Array.from(images);
-        
-        imagesArr.forEach((img)=>{
-            if (Number(img.getAttribute('id')) === imageId) {
-                img.classList.add('sub-active');
-            } else {
-               img.classList.remove('sub-active');
-            }
-        })
-
-    }, [imageId]);
+ 
 
     useEffect(()=>{
 
@@ -164,11 +187,11 @@ function Info() {
 
   }, [counter2]);
 
-    useEffect(()=>{
+    // useEffect(()=>{
       
-      magnify(3, imageId);
+    //   magnify(3, 1);
       
-    }, [])
+    // }, [])
 
     const handleMouseEnter = ()=>{
       setShowMag(true);   
@@ -178,12 +201,23 @@ function Info() {
     }
 
     const handleSubimage = (e: any)=>{
-      console.log('hellooo');
-      
+     
        let imageId = Number(e.currentTarget.getAttribute('id'));
-       setImageId(imageId);
-
-       magnify(3, imageId);
+       
+       let imageUrl = product?.images.find((img)=>{
+             if(!mediaIsObject(img)){
+             return null
+           }
+          return img.id === imageId;    
+                  
+       } );
+      if (typeof imageUrl === 'object' && imageUrl?.url) {
+          setImageURL(imageUrl.url);
+          magnify(3, imageUrl.url);
+        }
+      
+       
+       
     }
 
     const handleAddCounter = ()=>{
@@ -256,6 +290,37 @@ function Info() {
          
     }
 
+    const handleAddToCart = ()=>{
+     if (typeof product?.images[0] === 'object' && product.images[0]?.url) {
+      const cartObject = {
+        id: product?.name,
+        name: product?.name,
+        price: product?.price,
+        total: product?.price && counter * product?.price,
+        image: product?.images[0].url,
+        count: counter,
+      }
+      
+      try {
+         addItem(cartObject);
+         editSubtotal();
+         setCartSuccess(true);
+
+         setTimeout(() => {
+          setCartSuccess(false);
+         }, 3000);
+      } catch (error) {
+         console.log(error);
+         
+      }
+     
+     
+      
+     }
+     
+  
+    }
+
 
     return (
         <>
@@ -264,22 +329,20 @@ function Info() {
         <div className={styles.imgInfo}>
           <div className={styles.infoImg1}>
             <div className={styles.infoImgInset}>
-              <div id='1' className={`${styles.infoSubimage} ${styles.subActive}`} onClick={handleSubimage}>
-              <Image className={styles.infoSubimg} src={`/item1.jpg`} alt="" width={200} height={200} />
+              {product?.images.map((img)=>{
+                 if(!mediaIsObject(img))  return null
+                 
+                return (
+               <div key={img?.id} id={String(img?.id)} className={`${styles.infoSubimage}`} onClick={handleSubimage}>
+              {img?.url && <Image className={styles.infoSubimg} src={img?.url} alt="" width={200} height={200} />}  
               </div>
-              <div id='2' className={styles.infoSubimage} onClick={handleSubimage}>
-              <Image className={styles.infoSubimg} src="/item2.jpg" alt="" width={200} height={200} />
-              </div>
-              <div className={styles.infoSubimage} onClick={handleSubimage}>
-              <Image className={styles.infoSubimg} src="/item1.jpg" alt="" width={200} height={200} />
-              </div>
-              <div id='5' className={styles.infoSubimage} onClick={handleSubimage}>
-              <Image className={styles.infoSubimg} src="/item5.jpg" alt="" width={200} height={200} />
-              </div>
+                )
+              })}
+              
             </div>
             <div className={styles.mainInfoImg} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <div id='magnifier' className={styles.imgMagnifierGlass} style={{opacity: showMag ? '1' : '0'}}></div>
-            <Image id='main-img' className={styles.mainInfoImage} src={`/item${imageId}.jpg`} alt="" width={500} height={500}/>
+            {imageURL && <Image id='main-img' className={styles.mainInfoImage} src={imageURL} alt="" width={500} height={500}/>}
             </div>
           </div>
           <div className={styles.infoImg2}>
@@ -294,8 +357,8 @@ function Info() {
         </div>
           </div>
           <div className={styles.infoInfo}>
-          <p className={styles.infoLinks}>Home / Shop / Desk Accessories / </p>
-          <p className={styles.infoTitle}>Luxury Marble Globe Decor</p>
+          <p className={styles.infoLinks}>Home / Shop / {product?.category} / </p>
+          <p className={styles.infoTitle}>{product?.name}</p>
           <div className={styles.infoReviews}>
            <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
            <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
@@ -304,18 +367,18 @@ function Info() {
            <span><MdStarBorder className={styles.starIcon} fontSize='medium'/></span>
            <p>2 Reviews</p>
           </div>
-          <p className={styles.infoCost}>KSH 8,000.00/=</p>
+          <p className={styles.infoCost}>KSH {product?.price.toLocaleString('en-US')}.00/=</p>
           <div className={styles.infoCounter}>
             <span onClick={handleMinusCounter}><FaMinus style={{color: "white"}} /></span>
             <span>{counter}</span>
             <span onClick={handleAddCounter}><FaPlus style={{color: "white"}} /></span>
           </div>
-          <div className={styles.infoCart}>
-           <p>ADD TO CART</p>
+          <div className={styles.infoCart} style={{backgroundColor: cartSuccess ? "black" : "#ffe100", color: cartSuccess ? "#ffe100" : "black"}} onClick={handleAddToCart}>
+           {cartSuccess ? <p>ITEM ADDED!</p> : <p>ADD TO CART</p>}
           </div>
           <div className={styles.infoDelivery}>
            <h4>Delivery Information</h4>
-           <p>This product will be delivered within 24hrs after order.</p>
+           <p>{product?.delivery.deliveryTime}</p>
           </div>
           </div>
          </div>

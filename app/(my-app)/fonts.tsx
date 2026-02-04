@@ -1,6 +1,5 @@
 import { Playfair_Display } from 'next/font/google';
 import { Abel } from 'next/font/google';
-
 // Example Google Font
 export const Playfair = Playfair_Display({
   subsets: ['latin'],

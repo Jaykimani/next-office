@@ -69,8 +69,9 @@ export interface Config {
   collections: {
     products: Product;
     media: Media;
-    'payload-kv': PayloadKv;
     users: User;
+    orders: Order;
+    'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -79,8 +80,9 @@ export interface Config {
   collectionsSelect: {
     products: ProductsSelect<false> | ProductsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
+    orders: OrdersSelect<false> | OrdersSelect<true>;
+    'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -125,9 +127,26 @@ export interface UserAuthOperations {
 export interface Product {
   id: number;
   name: string;
+  slug?: string | null;
   images: (number | Media)[];
   price: number;
-  category: 'accessories' | 'lighting' | 'wall-decor' | 'greenery';
+  category: 'accessories' | 'lighting-solutions' | 'wall-accessories' | 'office-greenery';
+  'Accessories Subcategory'?:
+    | (
+        | 'desk-organisers'
+        | 'desk-gadgets'
+        | 'productivity-writing-tools'
+        | 'ergonomic-comfort-accessories'
+        | 'aesthetics-personalized'
+      )
+    | null;
+  'Lighting Solutions Subcategory'?:
+    | ('desk-lamps' | 'overhead-fixtures' | 'wall-mounted-fixtures' | 'stand-alone-fixtures')
+    | null;
+  'Wall Accessories Subcategory'?: ('wall-art-posters' | 'wall-clocks' | 'wall-mounted-Shelves') | null;
+  'Office Greenery Subcategory'?:
+    | ('potted-plants' | 'wall-vertical-greenery' | 'artificial-greenery' | 'outdoor-greenery')
+    | null;
   stock: number;
   delivery: {
     deliveryTime: string;
@@ -196,6 +215,9 @@ export interface Media {
  */
 export interface User {
   id: number;
+  role: 'admin' | 'user';
+  fullName?: string | null;
+  phone?: string | null;
   updatedAt: string;
   createdAt: string;
   email: string;
@@ -213,6 +235,37 @@ export interface User {
       }[]
     | null;
   password?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "orders".
+ */
+export interface Order {
+  id: number;
+  orderNumber: string;
+  status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
+  user?: (number | null) | User;
+  items: {
+    product: number | Product;
+    name: string;
+    price: number;
+    quantity: number;
+    id?: string | null;
+  }[];
+  subtotal: number;
+  deliveryFee?: number | null;
+  total: number;
+  delivery: {
+    fullName: string;
+    phone: string;
+    address: string;
+    city: string;
+    notes?: string | null;
+  };
+  paymentMethod?: ('card' | 'mobile_money' | 'cod') | null;
+  paymentReference?: string | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -249,6 +302,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'users';
         value: number | User;
+      } | null)
+    | ({
+        relationTo: 'orders';
+        value: number | Order;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -298,9 +355,14 @@ export interface PayloadMigration {
  */
 export interface ProductsSelect<T extends boolean = true> {
   name?: T;
+  slug?: T;
   images?: T;
   price?: T;
   category?: T;
+  'Accessories Subcategory'?: T;
+  'Lighting Solutions Subcategory'?: T;
+  'Wall Accessories Subcategory'?: T;
+  'Office Greenery Subcategory'?: T;
   stock?: T;
   delivery?:
     | T
@@ -354,17 +416,12 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "payload-kv_select".
- */
-export interface PayloadKvSelect<T extends boolean = true> {
-  key?: T;
-  data?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "users_select".
  */
 export interface UsersSelect<T extends boolean = true> {
+  role?: T;
+  fullName?: T;
+  phone?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -381,6 +438,48 @@ export interface UsersSelect<T extends boolean = true> {
         createdAt?: T;
         expiresAt?: T;
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "orders_select".
+ */
+export interface OrdersSelect<T extends boolean = true> {
+  orderNumber?: T;
+  status?: T;
+  user?: T;
+  items?:
+    | T
+    | {
+        product?: T;
+        name?: T;
+        price?: T;
+        quantity?: T;
+        id?: T;
+      };
+  subtotal?: T;
+  deliveryFee?: T;
+  total?: T;
+  delivery?:
+    | T
+    | {
+        fullName?: T;
+        phone?: T;
+        address?: T;
+        city?: T;
+        notes?: T;
+      };
+  paymentMethod?: T;
+  paymentReference?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "payload-kv_select".
+ */
+export interface PayloadKvSelect<T extends boolean = true> {
+  key?: T;
+  data?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
