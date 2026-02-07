@@ -12,7 +12,7 @@ import {use} from 'react'
 import type { Product } from '@/payload-types';
 import { Media } from '@/payload-types';
 import { useCartStore } from '@/app/store';
-import { log } from 'console';
+import { RichTextRenderer } from '@/components/RichText';
 
 
 function magnify(zoom, url) {
@@ -119,6 +119,7 @@ function Info({params} : {params: Promise<{productId : String}>}) {
       }
       
       const data = await res.json();
+      console.log(data);
       
       setProduct(data[0]);
       setImageURL(data[0].images[0].url)
@@ -393,15 +394,15 @@ function Info({params} : {params: Promise<{productId : String}>}) {
           </div>
           <div className={styles.descContent} style={{display: mainDesc ? "block" : "none"}}>
            <h4>Product Description</h4>
-           <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
-           <h4>Dimensions</h4>
-           <p>33cm Height * 30cm Width</p>
+           <RichTextRenderer content={product?.description.productInformation} />
+           {product?.description.dimensions && <h4>Dimensions</h4>}
+           <p>{product?.description.dimensions}</p>
            <h4>Structural Frame</h4>
-           <p>Wooden base, Aluminium Frames, Marble Globe</p>
+           <p>{product?.description.structuralMaterial}</p>
            <h4>Color</h4>
-           <p>Gold and Black</p>
+           <p>{product?.description.color}</p>
            <h4>Care Instructions</h4>
-           <p>Wipe of dust with dump cloth.</p>
+           <p>{product?.description.careInstructions}</p>
           </div>
           <div className={styles.reviewContent} style={{display: mainRev ? "block" : "none"}}> 
             <h4>Customer Reviews</h4>

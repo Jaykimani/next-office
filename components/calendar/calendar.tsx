@@ -6,6 +6,7 @@ import { MdArrowBackIos } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
 import { useCartStore } from "@/app/store";
 
+
 function Calendar() {
   const[date, setDate] = useState('');
   const[checkDate, setCheckDate] = useState('');
@@ -264,8 +265,15 @@ useEffect(()=>{
 }, [count]);
 
 useEffect(()=>{
-  
-    addCheckoutShippingDate(date);
+
+    try {
+         addCheckoutShippingDate({shippingDate: date});
+          
+    } catch (error) {
+        console.log(error);
+        
+    }
+    
 
 }, [date])
 

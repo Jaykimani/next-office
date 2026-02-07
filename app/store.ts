@@ -35,7 +35,7 @@ type CartStore = {
     updateMinusQuantityTotal: (name: string) => void;
     updateAddQuantityTotal: (name: string) => void;
     addCheckoutInformation : (data: CheckoutInfo) => void;
-    addCheckoutShippingDate : (data: string) => void;
+    addCheckoutShippingDate : (data: Partial<CartStore["checkout"]>) => void;
 }
 
 export const useCartStore = create<CartStore>((set)=>({
@@ -83,13 +83,14 @@ export const useCartStore = create<CartStore>((set)=>({
         checkoutItems: [...data.checkoutItems],
         subtotal: data.subtotal,
         instructions: data.instructions ? data.instructions : '',
-        shipping: data.shipping
+        shipping: data.shipping,
+        shippingDate: data.shippingDate
          }
     })),
     addCheckoutShippingDate: (data) => set((state) => ({
         checkout: {
             ...state.checkout,
-            shippingDate: data
+            ...data,
         }
     }))
 }))

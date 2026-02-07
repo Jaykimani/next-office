@@ -7,7 +7,7 @@ const Footer = () => {
             <div className={styles.footerInset}>
             <div className={styles.footerLeft}>
              <h1>Quick Links</h1>
-             <p>&copy; 2025 <span>Perfect</span>OfficeKE. All rights reserved.</p>
+             <p>&copy; 2025 Office<span>Aura</span>. All rights reserved.</p>
             </div>
             <div className={styles.footerRight}>
             <Link href={'/home'} style={{textDecoration: 'none', color: 'white'}}>

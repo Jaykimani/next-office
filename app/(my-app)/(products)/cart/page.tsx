@@ -16,7 +16,8 @@ import { log } from 'console';
 function Cart() {
     const [calendar, setCalendar] = useState(false);
     const [shipping, setShipping] = useState('')
-    const {count, items, subtotal, removeItem, editSubtotal, deleteAll, updateAddQuantityTotal, updateMinusQuantityTotal, addCheckoutInformation} = useCartStore((state)=> state);
+    const [shippingDate, setShippingDate] = useState('');
+    const {count, items, subtotal, checkout, removeItem, editSubtotal, deleteAll, updateAddQuantityTotal, updateMinusQuantityTotal, addCheckoutInformation} = useCartStore((state)=> state);
     const specialInstructions = useRef<HTMLTextAreaElement>(null);
 
 
@@ -63,7 +64,8 @@ function Cart() {
             checkoutItems : newItemArr,
             subtotal : subtotal,
             instructions : specialInstructions.current && specialInstructions.current.value,
-            shipping : shipping,
+            shipping: shipping,
+            shippingDate: checkout.shippingDate === '' ? shippingDate : checkout.shippingDate
         }
 
         try {
@@ -72,10 +74,10 @@ function Cart() {
             console.log('cart data could not be added:', error);
             
         }
-        
-        
+           
         
     }
+
 
 
 
@@ -119,18 +121,18 @@ function Cart() {
                  <textarea ref={specialInstructions} name="" id="" rows={5}></textarea>
                 </div>
                 <div className={styles.cartShipping}>
-                    <p className={styles.shippingTitle}>Shipping</p> 
+                    <p className={styles.shippingTitle}>Delivery</p> 
                     <div>
-                     <input type="radio" name="shipping-btn" id="soon" onChange={()=> setShipping('delivery')}/>
-                     <label htmlFor="soon">Nairobi Delivery(Same/Next day)</label>
+                     <input type="radio" name="shipping-btn" id="nairobi" onChange={()=> {setShipping('Within Nairobi'); setShippingDate('same/next day')}}/>
+                     <label htmlFor="nairobi">Within Nairobi</label>
                     </div>
                      <div>
-                     <input type="radio" name="shipping-btn" id="soon" onChange={()=> setShipping('delivery')}/>
-                     <label htmlFor="soon">Outside Nairobi(2 - 4 days)</label>
+                     <input type="radio" name="shipping-btn" id="outside" onChange={()=> {setShipping('Outside Nairobi'); setShippingDate('2 - 4 days')}}/>
+                     <label htmlFor="outside">Outside Nairobi</label>
                     </div>
                     <div>
-                    <input type="radio" name="shipping-btn" id="date"  onChange={()=> setShipping('self pick-up')}/>
-                    <label htmlFor="date">Self Pick-up(within Nairobi)</label>
+                    <input type="radio" name="shipping-btn" id="self"  onChange={()=> {setShipping('Self pick-up'); setShippingDate('same/next day')}}/>
+                    <label htmlFor="self">Self Pick-up</label>
                     </div>
                 </div>
                 <div className={styles.cartCalendar} style={{height: calendar ? "auto" : "70px"}}>
