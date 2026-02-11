@@ -121,7 +121,7 @@
     width: 50%;
     height: 50px;
     font-family: 'Playfair Display', sans-serif;
-    margin: 30px 0;
+    margin: 30px 0 15px;
     display: grid;
     place-items: center;
     font-size: 21px;
@@ -200,9 +200,10 @@
     text-decoration: underline;
 }
 .descContent p{
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
     line-height: 28px;
+    color: rgb(140, 140, 140);
 }
 .reviewContent{
     width: 90%;
@@ -216,75 +217,7 @@
     margin: 25px 0;
     text-decoration: underline;
 }
-.reviewContentInset{
-    width: 100%;
-    height: auto;
-    display: flex;
-}
-.revRatings{
-    width: 25%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 10px 20px 10px 0;
-    border-right: 1px solid rgb(83, 83, 83);
-    color: #ffe100;
-}
-.ratings{
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.ratings p{
-    margin-left: 10px;
-    font-size: 18px;
-}
-.based{
-    font-size: 20px;
-    margin-top: 10px;
-    text-align: center;
-}
-.revComments{
-    width: 80%;
-    height: auto;
-    display: flex;
-    padding: 0 20px;
-    overflow-x: scroll;
-}
-/* .rev-comments::-webkit-scrollbar {
-    width: 10px;
-  } */
-.comment{
-    width: 400px;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(45, 45, 45);
-    padding: 10px 20px;
-    margin-right: 10px;
-    flex-shrink: 0;
-}
-.comment h5{
-    font-family: 'Playfair Display', sans-serif;
-    color: white;
-    font-size: 23px;
-}
-.commentReviews{
-    display: flex;
-    align-items: center;
-    color: #ffe100;
-    font-size: 20px;
-}
-.comment p{
-    color: white;
-    font-size: 20px;
-}
-.writing{
-    font-family: 'Abel', serif;
-    margin-top: 30px;
-    font-size: 25px;
-    color: rgb(212, 212, 212);
-}
+
 .revBtns{
     width: 100%;
     height: auto;
@@ -915,8 +848,8 @@
         border: 3px solid #ffe100;
     }
     .imgSelect{
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         object-fit: cover;
         margin-right: 5px;
     }
@@ -1070,82 +1003,7 @@
         text-decoration: underline;
         text-align: center;
     }
-    .reviewContentInset{
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-    }
-    .revRatings{
-        width: 100%;
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        padding: 10px 0;
-        border-right: none;
-        color: #ffe100;
-        margin-bottom: 20px;
-    }
-    .ratings{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        margin-bottom: 10px;
-    }
-    .ratings p{
-        margin-left: 10px;
-        font-size: 18px;
-    }
-    .based{
-        font-size: 20px;
-        margin-top: 0px;
-        text-align: center;
-    }
-    .revComments{
-        width: 100%;
-        height: auto;
-        display: flex;
-        padding: 0 10px;
-        overflow-x: scroll;
-        align-items: center;
-    }
-    /* .rev-comments::-webkit-scrollbar {
-        width: 10px;
-      } */
-    .comment{
-        width: 300px;
-        height: 250px;
-        display: flex;
-        flex-direction: column;
-        background-color: rgb(45, 45, 45);
-        padding: 10px 20px;
-        margin-right: 10px;
-        flex-shrink: 0;
-    }
-    .comment h5{
-        font-family: 'Playfair Display', sans-serif;
-        color: white;
-        font-size: 20px;
-        margin-bottom: 5px;
-    }
-    .commentReviews{
-        display: flex;
-        align-items: center;
-        color: #ffe100;
-        font-size: 17px;
-    }
-    .comment p{
-        color: white;
-        font-size: 16px;
-    }
-    .writing{
-        font-family: 'Abel', serif;
-        margin-top: 30px;
-        font-size: 20px;
-        color: white;
-    }
+
     .revBtns{
         width: 100%;
         height: auto;

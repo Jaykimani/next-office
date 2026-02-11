@@ -1,6 +1,7 @@
 import type { CollectionConfig } from 'payload';
 
-  const categoriesAndSubcats = [
+
+  const categories = [
   {
     label: 'Accessories',
     value: 'accessories',
@@ -22,6 +23,26 @@ import type { CollectionConfig } from 'payload';
   // ... other categories
 ];
 
+  const subcategories = [
+              { label: 'Desk Organisers', value: 'desk-organisers' }, 
+              { label: 'Desk Gadgets', value: 'desk-gadgets' },
+              { label: 'Productivity/Writing Tools', value: 'productivity-writing-tools' },
+              { label: 'Ergonomic/Comfort Accessories', value: 'ergonomic-comfort-accessories' },
+              { label: 'Aesthetics/Personalized Items', value: 'aesthetics-personalized' },
+              { label: 'Desk Lamps', value: 'desk-lamps' }, 
+              { label: 'Overhead Fixtures', value: 'overhead-fixtures' },
+              { label: 'Wall-mounted Fixtures', value: 'wall-mounted-fixtures' },
+              { label: 'Stand-alone Fixtures', value: 'stand-alone-fixtures' },
+              { label: 'Wall Art/Posters', value: 'wall-art-posters' }, 
+              { label: 'Wall Clocks', value: 'wall-clocks' },
+              { label: 'Wall-mounted Shelves', value: 'wall-mounted-Shelves' },
+              { label: 'Potted Plants', value: 'potted-plants' }, 
+              { label: 'Wall/Vertical Greenery', value: 'wall-vertical-greenery' },
+              { label: 'Artifial Greenery', value: 'artificial-greenery' },
+              { label: 'Outdoor Greenery', value: 'outdoor-greenery' }
+
+  ]
+
 export const Products: CollectionConfig = {
   slug: 'products',
 
@@ -33,7 +54,6 @@ export const Products: CollectionConfig = {
   access: {
     read: () => true, // public products
   },
-
 
 
   fields: [
@@ -98,63 +118,18 @@ export const Products: CollectionConfig = {
       name: 'category',
       type: 'select',
       required: true,
-      options: categoriesAndSubcats.map(({ label, value }) => ({ label, value })),
+      options: categories.map(({ label, value }) => ({ label, value })),
       index: true,
     },
 
     {
-  name: 'Accessories Subcategory',
+  name: 'subcategory',
   type: 'select',
-  options: [{ label: 'Desk Organisers', value: 'desk-organisers' }, 
-              { label: 'Desk Gadgets', value: 'desk-gadgets' },
-              { label: 'Productivity/Writing Tools', value: 'productivity-writing-tools' },
-              { label: 'Ergonomic/Comfort Accessories', value: 'ergonomic-comfort-accessories' },
-              { label: 'Aesthetics/Personalized Items', value: 'aesthetics-personalized' }],
-  admin: {
-    condition: (_, siblingData) =>
-      siblingData?.category === 'accessories',
-  },
+  options: subcategories.map(({ label, value }) => ({ label, value })),
+  
 },  
-   {
-  name: 'Lighting Solutions Subcategory',
-  type: 'select',
-  options: [{ label: 'Desk Lamps', value: 'desk-lamps' }, 
-              { label: 'Overhead Fixtures', value: 'overhead-fixtures' },
-              { label: 'Wall-mounted Fixtures', value: 'wall-mounted-fixtures' },
-              { label: 'Stand-alone Fixtures', value: 'stand-alone-fixtures' }],
-  admin: {
-    condition: (_, siblingData) =>
-      siblingData?.category === 'lighting-solutions',
-  },
-},
-       {
-  name: 'Wall Accessories Subcategory',
-  type: 'select',
-  options: [{ label: 'Wall Art/Posters', value: 'wall-art-posters' }, 
-              { label: 'Wall Clocks', value: 'wall-clocks' },
-              { label: 'Wall-mounted Shelves', value: 'wall-mounted-Shelves' }],
-  admin: {
-    condition: (_, siblingData) =>
-      siblingData?.category === 'wall-accessories',
-  },
-},
-    {
-  name: 'Office Greenery Subcategory',
-  type: 'select',
-  options: [{ label: 'Potted Plants', value: 'potted-plants' }, 
-              { label: 'Wall/Vertical Greenery', value: 'wall-vertical-greenery' },
-              { label: 'Artifial Greenery', value: 'artificial-greenery' },
-              { label: 'Outdoor Greenery', value: 'outdoor-greenery' }],
-  admin: {
-    condition: (_, siblingData) =>
-      siblingData?.category === 'office-greenery',
-  },
-}, 
    
-
-
-
-    /**
+/**
      * STOCK
      */
     {
@@ -238,28 +213,15 @@ export const Products: CollectionConfig = {
     /**
      * REVIEWS
      */
-    {
-      name: 'reviews',
-      type: 'array',
-      fields: [
-        {
-          name: 'user',
-          type: 'relationship',
-          relationTo: 'users',
-        },
-        {
-          name: 'rating',
-          type: 'number',
-          min: 1,
-          max: 5,
-          required: true,
-        },
-        {
-          name: 'comment',
-          type: 'textarea',
-        },
-      ],
-    },
+   {
+  name: 'reviews',
+  type: 'relationship',
+  relationTo: 'reviews',
+  hasMany: true,
+  admin: {
+    description: 'All reviews for this product',
+  },
+},
 
     /**
      * AUTO FIELDS

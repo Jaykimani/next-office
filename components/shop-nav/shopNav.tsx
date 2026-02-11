@@ -2,7 +2,6 @@
 
 import styles from './shopNav.module.css'
 import { useState, useRef, useEffect} from 'react';
-import { MdOutlineSearch } from "react-icons/md";
 import { FaShoppingCart } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiMenuAlt2 } from "react-icons/hi";
@@ -10,18 +9,16 @@ import { MdClose } from "react-icons/md";
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCartStore } from '@/app/store';
-
+import SearchInput from '../searchInput/search';
 
 
 const ShopNav = () => {
     const [desk, setDesk] = useState(false);
     const [light, setLight] = useState(false);
     const [wall, setWall] = useState(false);
-    const [accent, setAccent] = useState(false);
     const [greenery, setGreenery] = useState(false);
     const [phoneOpt, setPhoneOpt] = useState(false);
     const [shopMenu, setShopMenu] = useState(false);
-    const search = useRef(null);
     const shop2DivInset = useRef<HTMLDivElement | null>(null);
     const count = useCartStore((state)=> state.count);
     const items = useCartStore((state)=> state.items);
@@ -46,7 +43,6 @@ const ShopNav = () => {
         setDesk(!desk);
         setLight(false);
         setWall(false);
-        setAccent(false);
         setGreenery(false);
     }
     const handleLighting = (e: any)=>{
@@ -54,7 +50,6 @@ const ShopNav = () => {
         setDesk(false);
         setLight(!light);
         setWall(false);
-        setAccent(false);
         setGreenery(false);
     }
     const handleWall = (e: any)=>{
@@ -62,23 +57,14 @@ const ShopNav = () => {
         setDesk(false);
         setLight(false);
         setWall(!wall);
-        setAccent(false);
         setGreenery(false);
     }
-    const handleAccent = (e: any)=>{
-
-        setDesk(false);
-        setLight(false);
-        setWall(false);
-        setAccent(!accent);
-        setGreenery(false);
-    }
+  
     const handleGreenery = (e: any)=>{
         
         setDesk(false);
         setLight(false);
         setWall(false);
-        setAccent(false);
         setGreenery(!greenery);
     }
 
@@ -88,6 +74,14 @@ const ShopNav = () => {
     }
     const handleCloseOpt = ()=>{
       setPhoneOpt(false);
+    }
+
+    const handleSubcategory = (e: any) => {
+      setDesk(false);
+        setLight(false);
+        setWall(false);
+        setGreenery(false);
+      
     }
 
 
@@ -118,10 +112,7 @@ const ShopNav = () => {
              <Link href={'/'} style={{textDecoration: "none", color: "black"}}>
              <Image className={styles.svgLogo1} src="/Component 5.svg" alt="" width={100} height={100} />
              </Link>
-             <div className={styles.shopSearchIcon}>
-               <input type="text" name="" id="" placeholder="I'm looking for ...." ref={search}/>
-               <MdOutlineSearch style={{color: "black", width: '35px', height: '35px'}}/>
-               </div>
+             <SearchInput />
                <Link href={'/cart'} style={{textDecoration: "none"}}>
                <div className={styles.shopIconDiv}>
                <div className={styles.shopInset}>
@@ -136,25 +127,35 @@ const ShopNav = () => {
             <div className={styles.shopLinks}>
              <div className={styles.shopLink}>
                 <div className={styles.shopLinkTop} onClick={handleDesk}>
-                <p>Office Desk Accessories</p>
+                <p>Office Accessories & Gadgets</p>
                 <MdKeyboardArrowDown style={{color: "#ffe100", width:'25px', height: '25px', transform: desk ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: desk ? "auto" : "0"}}>
-                   <div className={styles.shopSublink}>
+                    <Link href={'/shop/subcategory/desk-organisers'} style={{textDecoration: "none", color: "white"}}>
+                    <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Desk Organizers</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                    </Link>
+                    <Link href={'/shop/subcategory/productivity-writing-tools'} style={{textDecoration: "none", color: "white"}}>
+                    <div className={styles.shopSublink}  onClick={handleSubcategory}>
                     <p>Productivity & Writing tools</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                   <Link href={'/shop/subcategory/ergonomic-comfort-accessories'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Ergonomics & Comfort Accessories</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                   <Link href={'/shop/subcategory/aesthetics-personalized'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} >
                     <p>Aesthetic & Personalized Items</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                    <Link href={'/shop/subcategory/desk-gadgets'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink}  onClick={handleSubcategory}>
                     <p>Office Desk Gadgets</p>
                    </div>
+                   </Link>
                 </div>    
              </div>
              <div className={styles.shopLink}>
@@ -163,18 +164,26 @@ const ShopNav = () => {
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: light ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: light ? "auto" : "0"}}>
-                   <div className={styles.shopSublink}>
+                  <Link href={'/shop/subcategory/desk-lamps'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink}  onClick={handleSubcategory}>
                     <p>Desk Lamps</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                   <Link href={'/shop/subcategory/overhead-fixtures'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Overhead fixtures</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                   <Link href={'/shop/subcategory/wall-mounted-fixtures'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory} >
                     <p>Wall-mounted fixtures</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                   <Link href={'/shop/subcategory/stand-alone-fixtures'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Stand-alone fixtures</p>
                    </div>
+                   </Link>
                 </div>    
              </div>
              <div className={styles.shopLink}>
@@ -183,18 +192,21 @@ const ShopNav = () => {
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: wall ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: wall ? "auto" : "0"}}>
-                   <div className={styles.shopSublink}>
+                  <Link href={'/shop/subcategory/wall-art-posters'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Wall Art & Posters</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                   <Link href={'/shop/subcategory/wall-clocks'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Wall Clocks</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                   <Link href={'/shop/subcategory/wall-mounted-Shelves'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Wall Mounted Shelves</p>
                    </div>
-                   <div className={styles.shopSublink}>
-                    <p>Wall Mounted Planters</p>
-                   </div>
+                   </Link>
                 </div>    
              </div>
              <div className={styles.shopLink}>
@@ -203,18 +215,21 @@ const ShopNav = () => {
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: greenery ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: greenery ? "auto" : "0"}}>
-                   <div className={styles.shopSublink}>
+                  <Link href={'/shop/subcategory/potted-plants'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Potted Plants</p>
                    </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                   <Link href={'/shop/subcategory/wall-vertical-greenery'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Wall & Vertical Greenery</p>
                    </div>
-                   <div className={styles.shopSublink}>
-                    <p>Artificial Greenery</p>
-                   </div>
-                   <div className={styles.shopSublink}>
+                   </Link>
+                   <Link href={'/shop/subcategory/outdoor-greenery'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Outdoor Office Greenery</p>
                    </div>
+                   </Link>
                 </div>    
              </div>
              
@@ -230,22 +245,22 @@ const ShopNav = () => {
             <MdClose className={styles.optClose} style={{color: 'white'}} fontSize='large' onClick={handleCloseOpt}/>
 
             </div>
-            <div className={styles.shopNavLinks}>
+            <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
                <Link href={'/'} style={{textDecoration: "none", color: "white"}}>
                 <h3>Home</h3>
                </Link>
             </div>
-            <div className={styles.shopNavLinks}>
+            <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
                <Link href={'/shop'} style={{textDecoration: "none", color: "white"}}>
                 <h3>Shop</h3>
                </Link>
             </div>
-            <div className={styles.shopNavLinks}>
+            <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
                <Link href={'/contact'} style={{textDecoration: "none", color: "white"}}>
                 <h3>Contact</h3>
                </Link>
             </div>
-            <div className={styles.shopNavLinks}>
+            <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
                <Link href={'/about'} style={{textDecoration: "none", color: "white"}}>
                 <h3>About us</h3>
                </Link>
@@ -268,10 +283,7 @@ const ShopNav = () => {
              
          </div>
          </div>
-         <div className={styles.shopSearchIcon}>
-               <input type="text" name="" id="" placeholder="I'm looking for ...." ref={search}/>
-               <MdOutlineSearch fontSize='large' style={{color: "black"}}/>
-        </div>
+         <SearchInput />
         </div>
         </>
     )

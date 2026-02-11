@@ -5,7 +5,8 @@ import { buildConfig } from 'payload'
 import { Products, Media } from './app/(payload)/collections/products'
 import { Users } from './app/(payload)/collections/users'
 import { Orders } from './app/(payload)/collections/orders'
-
+import { Messages } from './app/(payload)/collections/messages'
+import { Reviews } from './app/(payload)/collections/reviews'
 
 export default buildConfig({
   admin:{
@@ -29,7 +30,7 @@ export default buildConfig({
 }),
 
   // Define and configure your collections in this array
-  collections: [Products, Media, Users, Orders],
+  collections: [Products, Media, Users, Orders, Messages, Reviews],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || '',

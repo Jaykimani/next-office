@@ -71,6 +71,8 @@ export interface Config {
     media: Media;
     users: User;
     orders: Order;
+    messages: Message;
+    reviews: Review;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -82,6 +84,8 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     users: UsersSelect<false> | UsersSelect<true>;
     orders: OrdersSelect<false> | OrdersSelect<true>;
+    messages: MessagesSelect<false> | MessagesSelect<true>;
+    reviews: ReviewsSelect<false> | ReviewsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -131,21 +135,25 @@ export interface Product {
   images: (number | Media)[];
   price: number;
   category: 'accessories' | 'lighting-solutions' | 'wall-accessories' | 'office-greenery';
-  'Accessories Subcategory'?:
+  subcategory?:
     | (
         | 'desk-organisers'
         | 'desk-gadgets'
         | 'productivity-writing-tools'
         | 'ergonomic-comfort-accessories'
         | 'aesthetics-personalized'
+        | 'desk-lamps'
+        | 'overhead-fixtures'
+        | 'wall-mounted-fixtures'
+        | 'stand-alone-fixtures'
+        | 'wall-art-posters'
+        | 'wall-clocks'
+        | 'wall-mounted-Shelves'
+        | 'potted-plants'
+        | 'wall-vertical-greenery'
+        | 'artificial-greenery'
+        | 'outdoor-greenery'
       )
-    | null;
-  'Lighting Solutions Subcategory'?:
-    | ('desk-lamps' | 'overhead-fixtures' | 'wall-mounted-fixtures' | 'stand-alone-fixtures')
-    | null;
-  'Wall Accessories Subcategory'?: ('wall-art-posters' | 'wall-clocks' | 'wall-mounted-Shelves') | null;
-  'Office Greenery Subcategory'?:
-    | ('potted-plants' | 'wall-vertical-greenery' | 'artificial-greenery' | 'outdoor-greenery')
     | null;
   stock: number;
   delivery: {
@@ -179,14 +187,10 @@ export interface Product {
     color: string;
     careInstructions?: string | null;
   };
-  reviews?:
-    | {
-        user?: (number | null) | User;
-        rating: number;
-        comment?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  /**
+   * All reviews for this product
+   */
+  reviews?: (number | Review)[] | null;
   averageRating?: number | null;
   updatedAt: string;
   createdAt: string;
@@ -208,6 +212,31 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews".
+ */
+export interface Review {
+  id: number;
+  title: string;
+  /**
+   * Select the product this review belongs to
+   */
+  product: number | Product;
+  /**
+   * Rating out of 5 stars
+   */
+  rating: number;
+  authorName: string;
+  authorEmail: string;
+  reviewText: string;
+  /**
+   * Check to approve this review before displaying
+   */
+  approved?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -269,6 +298,19 @@ export interface Order {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "messages".
+ */
+export interface Message {
+  id: number;
+  name: string;
+  phone: string;
+  email: string;
+  content: string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -306,6 +348,14 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'orders';
         value: number | Order;
+      } | null)
+    | ({
+        relationTo: 'messages';
+        value: number | Message;
+      } | null)
+    | ({
+        relationTo: 'reviews';
+        value: number | Review;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -359,10 +409,7 @@ export interface ProductsSelect<T extends boolean = true> {
   images?: T;
   price?: T;
   category?: T;
-  'Accessories Subcategory'?: T;
-  'Lighting Solutions Subcategory'?: T;
-  'Wall Accessories Subcategory'?: T;
-  'Office Greenery Subcategory'?: T;
+  subcategory?: T;
   stock?: T;
   delivery?:
     | T
@@ -385,14 +432,7 @@ export interface ProductsSelect<T extends boolean = true> {
         color?: T;
         careInstructions?: T;
       };
-  reviews?:
-    | T
-    | {
-        user?: T;
-        rating?: T;
-        comment?: T;
-        id?: T;
-      };
+  reviews?: T;
   averageRating?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -470,6 +510,33 @@ export interface OrdersSelect<T extends boolean = true> {
       };
   paymentMethod?: T;
   paymentReference?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "messages_select".
+ */
+export interface MessagesSelect<T extends boolean = true> {
+  name?: T;
+  phone?: T;
+  email?: T;
+  content?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "reviews_select".
+ */
+export interface ReviewsSelect<T extends boolean = true> {
+  title?: T;
+  product?: T;
+  rating?: T;
+  authorName?: T;
+  authorEmail?: T;
+  reviewText?: T;
+  approved?: T;
   updatedAt?: T;
   createdAt?: T;
 }

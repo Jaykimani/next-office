@@ -49,28 +49,6 @@
     justify-content: space-between;
     align-items: center;
 }
-.shopSearchIcon{
-    width: 50%;
-    height: 45px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(255, 255, 255);
-    padding: 0 15px;
-    border-radius: 50px;
-}
-.shopSearchIcon input{
-    width: 95%;
-    height: 45px;
-    font-size: 19px;
-    font-family: 'Times New Roman', Times, serif;
-    padding-left: 15px;
-    border: none;
-    border-radius: 50px;
-}
-.shopSearchIcon input:focus{
-    outline: none;
-}
 
 .shopSearchCancel{
     width: 50px;
@@ -395,29 +373,7 @@
     border-radius: 50%;
     color: #ffe100;
 }
-    .shopSearchIcon{
-        width: 95%;
-        height: 50px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgb(255, 255, 255);
-        padding: 0 15px;
-        border-radius: 50px;
-        margin: 0 auto;
-    }
-    .shopSearchIcon input{
-        width: 95%;
-        height: 50px;
-        font-size: 18px;
-        font-family: 'Times New Roman', Times, serif;
-        padding-left: 15px;
-        border: none;
-        border-radius: 50px;
-    }
-    .shopSearchIcon input:focus{
-        outline: none;
-    }
+
     .shop2Div{
         position: fixed;
         top: 0;

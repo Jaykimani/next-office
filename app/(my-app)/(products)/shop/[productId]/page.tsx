@@ -2,17 +2,20 @@
 
 import styles from './product.module.css';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { MdStar } from "react-icons/md";
 import { MdStarHalf } from "react-icons/md";
 import { MdStarBorder } from "react-icons/md";
+import Whatsapp from '@/components/whatsappCTA/whatsapp';
 import {use} from 'react'
 import type { Product } from '@/payload-types';
 import { Media } from '@/payload-types';
 import { useCartStore } from '@/app/store';
 import { RichTextRenderer } from '@/components/RichText';
+import { submitReview } from '@/lib/createReviews';
+import Reviews from '@/components/reviews/reviews';
 
 
 function magnify(zoom, url) {
@@ -96,10 +99,11 @@ function Info({params} : {params: Promise<{productId : String}>}) {
     const [icon3, setIcon3] = useState(false);
     const [icon4, setIcon4] = useState(false);
     const [icon5, setIcon5] = useState(false);
+    const [rating, setRating] = useState(0);
+    const [status, setStatus] = useState('');
     const [mainDesc, setMainDesc] = useState(true);
     const [mainRev, setMainRev] = useState(false);
     const [review, setReview] = useState(false);
-    const [quiz, setQuiz] = useState(false);
     const [showForm, setShowForm] = useState(false);
     const [cartSuccess, setCartSuccess] = useState(false);
     const [touchStart, setTouchStart] = useState(null);
@@ -119,7 +123,6 @@ function Info({params} : {params: Promise<{productId : String}>}) {
       }
       
       const data = await res.json();
-      console.log(data);
       
       setProduct(data[0]);
       setImageURL(data[0].images[0].url)
@@ -240,15 +243,11 @@ function Info({params} : {params: Promise<{productId : String}>}) {
     const handleReview = ()=>{
       setShowForm(true);
       setReview(true);
-      setQuiz(false);
-    }
-    const handleQuestion = ()=>{
-      setShowForm(true);
-      setQuiz(true);
-      setReview(false);
+      
     }
 
     const handleIcon1 = ()=>{
+      setRating(1)
       setIcon1(true);
       setIcon2(false);
       setIcon3(false);
@@ -256,6 +255,7 @@ function Info({params} : {params: Promise<{productId : String}>}) {
       setIcon5(false);
     }
     const handleIcon2 = ()=>{
+      setRating(2)
       setIcon1(true);
       setIcon2(true);
       setIcon3(false);
@@ -263,6 +263,7 @@ function Info({params} : {params: Promise<{productId : String}>}) {
       setIcon5(false);
     }
     const handleIcon3 = ()=>{
+      setRating(3);
       setIcon1(true);
       setIcon2(true);
       setIcon3(true);
@@ -270,6 +271,7 @@ function Info({params} : {params: Promise<{productId : String}>}) {
       setIcon5(false);
     } 
     const handleIcon4 = ()=>{
+      setRating(4);
       setIcon1(true);
       setIcon2(true);
       setIcon3(true);
@@ -277,6 +279,7 @@ function Info({params} : {params: Promise<{productId : String}>}) {
       setIcon5(false);
     } 
     const handleIcon5 = ()=>{
+      setRating(5);
       setIcon1(true);
       setIcon2(true);
       setIcon3(true);
@@ -284,12 +287,7 @@ function Info({params} : {params: Promise<{productId : String}>}) {
       setIcon5(true);
     }
 
-    const handleImageClick = (e: any)=>{
-         const imageClicked = e.currentTarget.getAttribute('id');
-         const imageId = Number(imageClicked);
-         setCounter2(imageId)
-         
-    }
+
 
     const handleAddToCart = ()=>{
      if (typeof product?.images[0] === 'object' && product.images[0]?.url) {
@@ -314,12 +312,33 @@ function Info({params} : {params: Promise<{productId : String}>}) {
          console.log(error);
          
       }
-     
-     
-      
+       
      }
      
-  
+    }
+
+    const handleReviewSubmit = async (e) => {
+       e.preventDefault();
+      
+          const formData = new FormData(e.currentTarget)
+          if (!product?.id) throw new Error("No product selected")
+
+          const data = {
+            product: product.id,
+            title: formData.get("full-name") as string,
+            rating: rating,
+            authorName: formData.get("full-name") as string,
+            authorEmail: formData.get("email-phone") as string,
+            reviewText: formData.get("review-content") as string
+          }
+      
+          const result = await submitReview(data)
+
+          if (result.success) {
+            setStatus("Message delivered")
+          } else {
+            setStatus("Something went wrong, please try again.")
+          }
     }
 
 
@@ -348,13 +367,18 @@ function Info({params} : {params: Promise<{productId : String}>}) {
           </div>
           <div className={styles.infoImg2}>
           <div className={styles.mainImage} onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>
-            <Image className={styles.mainImageImg} src={`/item${counter2}.jpg`} alt="" width={500} height={500} />
+            {imageURL && <Image className={styles.mainImageImg} src={imageURL} alt="" width={500} height={500} />}
         </div>
         <div className={styles.otherImages}>
-            <Image id="1" className={`${styles.otherActive} ${styles.imgSelect}`} src='/item1.jpg' alt="" width={200} height={200} onClick={handleImageClick}/>
-            <Image id="2" className={styles.imgSelect} src='/item2.jpg' alt="" width={200} height={200} onClick={handleImageClick}/>
-            <Image id="3" className={styles.imgSelect} src='/item3.jpg' alt="" width={200} height={200} onClick={handleImageClick}/>
-            <Image id="5" className={styles.imgSelect} src='/item5.jpg' alt="" width={200} height={200} onClick={handleImageClick}/>
+           {product?.images.map((img)=>{
+                 if(!mediaIsObject(img))  return null
+                 
+                return (
+                img?.url && <Image key={img?.id} id={String(img?.id)} className={`${styles.imgSelect}`} src={img?.url} alt="" width={200} height={200} onClick={handleSubimage}/>
+
+                )
+              })}
+            
         </div>
           </div>
           <div className={styles.infoInfo}>
@@ -377,6 +401,7 @@ function Info({params} : {params: Promise<{productId : String}>}) {
           <div className={styles.infoCart} style={{backgroundColor: cartSuccess ? "black" : "#ffe100", color: cartSuccess ? "#ffe100" : "black"}} onClick={handleAddToCart}>
            {cartSuccess ? <p>ITEM ADDED!</p> : <p>ADD TO CART</p>}
           </div>
+          {product && <Whatsapp product={product} phoneNumber='254704610605'/> }
           <div className={styles.infoDelivery}>
            <h4>Delivery Information</h4>
            <p>{product?.delivery.deliveryTime}</p>
@@ -401,128 +426,36 @@ function Info({params} : {params: Promise<{productId : String}>}) {
            <p>{product?.description.structuralMaterial}</p>
            <h4>Color</h4>
            <p>{product?.description.color}</p>
-           <h4>Care Instructions</h4>
+           {product?.description.careInstructions && <h4>Care Instructions</h4>}
            <p>{product?.description.careInstructions}</p>
+           <h4>Return policy</h4>
+           <p>Visit our Return policy page</p>
           </div>
           <div className={styles.reviewContent} style={{display: mainRev ? "block" : "none"}}> 
             <h4>Customer Reviews</h4>
-            <div className={styles.reviewContentInset}>
-            <div className={styles.revRatings}>
-              <div className={styles.ratings}>
-                <div>
-                <MdStar className={styles.starIcon} />
-               <MdStar className={styles.starIcon} />
-               <MdStar className={styles.starIcon} />
-               <MdStar className={styles.starIcon} />
-               <MdStar className={styles.starIcon} />
-                </div>
-               <p>2 Reviews</p>
-              </div>
-              <div className={styles.ratings}>
-                <div>
-                <MdStar className={styles.starIcon} />
-                <MdStar className={styles.starIcon} />
-               <MdStar className={styles.starIcon} />
-               <MdStar className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-                </div>
-               <p>1 Reviews</p>
-              </div>
-              <div className={styles.ratings}>
-                <div>
-                <MdStar className={styles.starIcon} />
-               <MdStar className={styles.starIcon} />
-               <MdStar className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-                </div>
-               <p>0 Reviews</p>
-              </div>
-              <div className={styles.ratings}>
-                <div>
-                <MdStar className={styles.starIcon} />
-               <MdStar className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-                </div>
-               <p>0 Reviews</p>
-              </div>
-              <div className={styles.ratings}>
-                <div>
-                <MdStar className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-               <MdStarBorder className={styles.starIcon} />
-                </div> 
-               <p>0 Reviews</p>
-              </div>
-              <p className={styles.based}>Based on 3 reviews</p>
-            </div>
-            <div className={styles.revComments}>
-              <div className={styles.comment}>
-               <h5>Joseph Kimani</h5>
-               <div className={styles.commentReviews}>
-                <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStarHalf className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStarBorder className={styles.starIcon} fontSize='medium'/></span>
-              </div>
-              <p>1/1/2025</p>
-              <text className={styles.writing}>"Professional customer service and quick delivery"</text>
-              </div>
-              <div className={styles.comment}>
-               <h5>Joseph Kimani</h5>
-               <div className={styles.commentReviews}>
-                <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStarHalf className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStarBorder className={styles.starIcon} fontSize='medium'/></span>
-              </div>
-              <p>1/1/2025</p>
-              <text className={styles.writing}>"Professional customer service and quick delivery"</text>
-              </div>
-              <div className={styles.comment}>
-               <h5>Joseph Kimani</h5>
-               <div className={styles.commentReviews}>
-                <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStarHalf className={styles.starIcon} fontSize='medium'/></span>
-                <span><MdStarBorder className={styles.starIcon} fontSize='medium'/></span>
-              </div>
-              <p>1/1/2025</p>
-              <text className={styles.writing}>"Professional customer service and quick delivery"</text>
-              </div>
-            </div>
-            </div>
+            {product?.id && <Reviews productId={product?.id}/>}
             <div className={styles.revBtns}>
              <div onClick={handleReview} style={{background: review ? "rgb(44, 44, 44)" : "transparent"}}>
              <p>Write a Review</p>
              </div>
-             <div onClick={handleQuestion} style={{background: quiz ? "rgb(44, 44, 44)" : "transparent"}}>
-              <p>Ask a Question</p>
-             </div>
             </div>
-            <div className={styles.revForm} style={{display : showForm ? "block" : "none"}}>
-              <input type="text" name="" id="" placeholder='Full Name'/>
-              <input type="text" name="" id="" placeholder='Email/Phone number'/>
-              <div className={styles.formRatings} style={{display: review ? "block" : "none"}}>
+              <form onSubmit={handleReviewSubmit} className={styles.revForm} style={{display : showForm ? "block" : "none"}}>
+              
+              <input type="text" name="full-name" id="" placeholder='Full Name'/>
+              <input type="text" name="email-phone" id="" placeholder='Email/Phone number'/>
+              <div className={styles.formRatings}>
                 <p>Rating</p>
                 <div className={styles.formRat}>
-                <div onClick={handleIcon1}>{icon1 ? <MdStar className={styles.starIcon} fontSize='large'/> : <MdStarBorder className={styles.starIcon} fontSize='large'/>}</div>
-                <div onClick={handleIcon2}>{icon2 ? <MdStar className={styles.starIcon} fontSize='large'/> : <MdStarBorder className={styles.starIcon} fontSize='large'/>}</div>
-                <div onClick={handleIcon3}>{icon3 ? <MdStar className={styles.starIcon} fontSize='large'/> : <MdStarBorder className={styles.starIcon} fontSize='large'/>}</div>
-                <div onClick={handleIcon4}>{icon4 ? <MdStar className={styles.starIcon} fontSize='large'/> : <MdStarBorder className={styles.starIcon} fontSize='large'/>}</div>
-                <div onClick={handleIcon5}>{icon5 ? <MdStar className={styles.starIcon} fontSize='large'/> : <MdStarBorder className={styles.starIcon} fontSize='large'/>}</div>
+                <div onClick={handleIcon1}>{icon1 ? <MdStar className={styles.starIcon} style={{width: '30px', height: '30px'}}/> : <MdStarBorder className={styles.starIcon} style={{width: '30px', height: '30px'}}/>}</div>
+                <div onClick={handleIcon2}>{icon2 ? <MdStar className={styles.starIcon} style={{width: '30px', height: '30px'}}/> : <MdStarBorder className={styles.starIcon} style={{width: '30px', height: '30px'}}/>}</div>
+                <div onClick={handleIcon3}>{icon3 ? <MdStar className={styles.starIcon} style={{width: '30px', height: '30px'}}/> : <MdStarBorder className={styles.starIcon} style={{width: '30px', height: '30px'}}/>}</div>
+                <div onClick={handleIcon4}>{icon4 ? <MdStar className={styles.starIcon} style={{width: '30px', height: '30px'}}/> : <MdStarBorder className={styles.starIcon} style={{width: '30px', height: '30px'}}/>}</div>
+                <div onClick={handleIcon5}>{icon5 ? <MdStar className={styles.starIcon} style={{width: '30px', height: '30px'}}/> : <MdStarBorder className={styles.starIcon} style={{width: '30px', height: '30px'}}/>}</div>
                 </div>
               </div>
-              <textarea name="" id="" cols={30} rows={7} placeholder={quiz ? "Ask a Question" : "Write a Review" }></textarea>
+              <textarea name="review-content" id="" cols={30} rows={7} placeholder= "Write a Review" ></textarea>
               <button type="submit">Submit</button>
-            </div>
+            </form>
           </div>
          </div>
          <div className={styles.quote}>

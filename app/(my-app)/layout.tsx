@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar/navbar"
 import './global.css'
-import { Playfair, abel } from "./fonts" 
+import { Playfair, abel, roboto } from "./fonts" 
 import ScrollToTop from "@/components/scrollTop"
 
 export const metadata = {
@@ -14,7 +14,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={`${Playfair.variable} ${abel.variable}`}>
+    <html className={`${Playfair.variable} ${abel.variable} ${roboto.variable}`}>
       <body>
         <ScrollToTop />
         {children}
