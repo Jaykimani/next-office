@@ -133,7 +133,7 @@ function List({ allProducts }: ProductsProps) {
                
 
                return (
-                    <Link key={item.id} href={`/shop/${item.slug}`} style={{textDecoration: 'none'}}>
+                    <Link key={item.id} href={`/shop/${item.id}`} style={{textDecoration: 'none'}}>
                      <div className={styles.listItem}>
                     <div className={styles.itemImg}>
                       {item.images[0]?.url && (

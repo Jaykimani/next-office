@@ -8,7 +8,7 @@ const payload = await getPayload({config});
     const data = await payload.find({
     collection: 'products',
     where: {
-        slug:  { equals: productId }
+        id:  { equals: productId }
     } // The slug of your 
     
   });

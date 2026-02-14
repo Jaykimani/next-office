@@ -17,6 +17,10 @@
     align-items: center;
     margin-bottom: 10px;
 }
+.starIcon{
+    width: 20px;
+    height: 20px;
+}
 .ratings p{
     margin-left: 10px;
     font-size: 18px;
@@ -24,7 +28,7 @@
 .based{
     font-size: 20px;
     margin-top: 10px;
-    text-align: center;
+    text-align: left;
 }
 .revComments{
     width: 80%;
@@ -49,13 +53,14 @@
 .comment h5{
     font-family: 'Playfair Display', sans-serif;
     color: white;
-    font-size: 23px;
+    font-size: 21px;
 }
 .commentReviews{
     display: flex;
     align-items: center;
     color: #ffe100;
     font-size: 20px;
+    margin: 5px 0;
 }
 .comment p{
     color: white;

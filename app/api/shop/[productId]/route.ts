@@ -2,7 +2,7 @@
 import { NextResponse } from 'next/server';
 import { getSingleProduct } from '@/lib/getSingleProduct';
 
-export async function GET(_req: Request, { params }: { params: Promise<{ productId: string }> }) {
+export async function GET(_req: Request, { params }: { params: Promise<{ productId: number }> }) {
   const { productId } = await params; // ✅ unwrap the Promise
 
 

@@ -10,6 +10,7 @@ const Footer = () => {
              <p>&copy; 2025 Office<span>Aura</span>. All rights reserved.</p>
             </div>
             <div className={styles.footerRight}>
+            <div className={styles.footerRightInset}>
             <Link href={'/home'} style={{textDecoration: 'none', color: 'white'}}>
             <p>Home</p>
             </Link>
@@ -22,6 +23,18 @@ const Footer = () => {
              <Link href={'/about'} style={{textDecoration: 'none', color: 'white'}}>
             <p>About us</p>
             </Link>
+            </div>
+            <div className={styles.footerRightInset}>
+            <Link href={'/shipping-delivery'} style={{textDecoration: 'none', color: 'white'}}>
+             <p>Shipping & Delivery</p>
+            </Link>
+
+             <p>Shipping & Delivery</p>
+             <p>Terms & Conditions</p>
+             <p>Frequently Asked Questions(FAQS)</p>
+             <p>Privacy Policy</p>
+             <p>Cookie Policy</p>
+            </div>
             </div>   
             </div>
             

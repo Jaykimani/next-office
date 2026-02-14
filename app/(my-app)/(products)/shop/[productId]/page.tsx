@@ -16,6 +16,7 @@ import { useCartStore } from '@/app/store';
 import { RichTextRenderer } from '@/components/RichText';
 import { submitReview } from '@/lib/createReviews';
 import Reviews from '@/components/reviews/reviews';
+import Similar from '@/components/similarproducts/similar';
 
 
 function magnify(zoom, url) {
@@ -100,7 +101,8 @@ function Info({params} : {params: Promise<{productId : String}>}) {
     const [icon4, setIcon4] = useState(false);
     const [icon5, setIcon5] = useState(false);
     const [rating, setRating] = useState(0);
-    const [status, setStatus] = useState('');
+    const [status, setStatus]= useState('');
+    const [overall, setOverall] = useState({ratings: [0], people: 0});
     const [mainDesc, setMainDesc] = useState(true);
     const [mainRev, setMainRev] = useState(false);
     const [review, setReview] = useState(false);
@@ -109,22 +111,34 @@ function Info({params} : {params: Promise<{productId : String}>}) {
     const [touchStart, setTouchStart] = useState(null);
     const [touchEnd, setTouchEnd] = useState(null);
     const [product, setProduct] = useState<Product | null>(null);
+     const [reviews, setReviews] = useState<any []>([])
     const {addItem, editSubtotal} = useCartStore((state) => state)
+    const revform = useRef<HTMLFormElement>(null);
 
     const {productId} = use(params);
      useEffect(() => {
  
     async function fetchProduct() {
       const res = await fetch(`/api/shop/${productId}`);
-
+      
       if (!res.ok) {
         setProduct(null);
         return;
       }
       
       const data = await res.json();
+      const rev = await fetch(`/api/reviews?productId=${data[0].id}`)
+      const revData = await rev.json()
+      if(revData){
+        let sum = revData.reduce((acc, item)=> acc + item.rating, 0);
+       let overall = Math.ceil(sum / revData.length);
+
+       setOverall({ratings: [overall], people: revData.length})
+      }
+      
       
       setProduct(data[0]);
+      setReviews(revData);
       setImageURL(data[0].images[0].url)
       magnify(3, data[0].images[0].url);
     }
@@ -286,6 +300,13 @@ function Info({params} : {params: Promise<{productId : String}>}) {
       setIcon4(true);
       setIcon5(true);
     }
+    const handleNoIcon = ()=>{
+      setIcon1(false);
+      setIcon2(false);
+      setIcon3(false);
+      setIcon4(false);
+      setIcon5(false);
+    }
 
 
 
@@ -336,6 +357,11 @@ function Info({params} : {params: Promise<{productId : String}>}) {
 
           if (result.success) {
             setStatus("Message delivered")
+            revform.current?.reset();
+            handleNoIcon();
+            setTimeout(() => {
+              setStatus('')
+            }, 2000);
           } else {
             setStatus("Something went wrong, please try again.")
           }
@@ -384,14 +410,25 @@ function Info({params} : {params: Promise<{productId : String}>}) {
           <div className={styles.infoInfo}>
           <p className={styles.infoLinks}>Home / Shop / {product?.category} / </p>
           <p className={styles.infoTitle}>{product?.name}</p>
-          <div className={styles.infoReviews}>
-           <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-           <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-           <span><MdStar className={styles.starIcon} fontSize='medium'/></span>
-           <span><MdStarHalf className={styles.starIcon} fontSize='medium'/></span>
-           <span><MdStarBorder className={styles.starIcon} fontSize='medium'/></span>
-           <p>2 Reviews</p>
-          </div>
+           {overall.ratings.map((rate)=>{
+            const list: React.ReactNode[] = [];
+
+               for (let i = 0; i < 5; i++) {
+                if(i < rate){
+                list.push(<span key={i}><MdStar className={styles.starIcon} style={{width: '20px', height: '20px'}}/></span>);
+                }else{
+                list.push(<span key={i}><MdStarBorder className={styles.starIcon} style={{width: '20px', height: '20px'}}/></span>);
+                }
+               }
+
+               return(
+                <div key={rate} className={styles.infoReviews}>
+               {list}
+               <p>{overall.people} Reviews</p>
+               </div>
+               )
+          })}
+         
           <p className={styles.infoCost}>KSH {product?.price.toLocaleString('en-US')}.00/=</p>
           <div className={styles.infoCounter}>
             <span onClick={handleMinusCounter}><FaMinus style={{color: "white"}} /></span>
@@ -433,15 +470,15 @@ function Info({params} : {params: Promise<{productId : String}>}) {
           </div>
           <div className={styles.reviewContent} style={{display: mainRev ? "block" : "none"}}> 
             <h4>Customer Reviews</h4>
-            {product?.id && <Reviews productId={product?.id}/>}
+            <Reviews reviews={reviews}/>
             <div className={styles.revBtns}>
              <div onClick={handleReview} style={{background: review ? "rgb(44, 44, 44)" : "transparent"}}>
              <p>Write a Review</p>
              </div>
             </div>
-              <form onSubmit={handleReviewSubmit} className={styles.revForm} style={{display : showForm ? "block" : "none"}}>
+              <form ref={revform} onSubmit={handleReviewSubmit} className={styles.revForm} style={{display : showForm ? "block" : "none"}}>
               
-              <input type="text" name="full-name" id="" placeholder='Full Name'/>
+              <input type="text" name="full-name" id="" placeholder='Full Name' />
               <input type="text" name="email-phone" id="" placeholder='Email/Phone number'/>
               <div className={styles.formRatings}>
                 <p>Rating</p>
@@ -454,42 +491,14 @@ function Info({params} : {params: Promise<{productId : String}>}) {
                 </div>
               </div>
               <textarea name="review-content" id="" cols={30} rows={7} placeholder= "Write a Review" ></textarea>
-              <button type="submit">Submit</button>
+              {status !== '' ? <h4 style={{padding: '20px', color: 'black', backgroundColor: '#ffe100'}}>{status}</h4> : <button type="submit">Submit</button>}
             </form>
           </div>
          </div>
          <div className={styles.quote}>
          <h1>TRANSFORM YOUR WORKSPACE</h1>
         </div>
-         <div className={styles.otherProducts}>
-          <h4>You may also like:</h4>
-          <div className={styles.othersInset}>
-            <div className={styles.othersDiv}>
-              <Image src="/item2.jpg" alt="" width={500} height={500} />
-              <h5>Modern Desktop Lamp</h5>
-              <p>KSH 10,000/=</p>
-              <button>ADD TO CART</button>
-            </div>
-            <div className={styles.othersDiv}>
-              <Image src="/item2.jpg" alt="" width={500} height={500} />
-              <h5>Modern Desktop Lamp</h5>
-              <p>KSH 10,000/=</p>
-              <button>ADD TO CART</button>
-            </div>
-            <div className={styles.othersDiv}>
-              <Image src="/item2.jpg" alt="" width={500} height={500} />
-              <h5>Modern Desktop Lamp</h5>
-              <p>KSH 10,000/=</p>
-              <button>ADD TO CART</button>
-            </div>
-            <div className={styles.othersDiv}>
-              <Image src="/item2.jpg" alt="" width={500} height={500} />
-              <h5>Modern Desktop Lamp</h5>
-              <p>KSH 10,000/=</p>
-              <button>ADD TO CART</button>
-            </div> 
-          </div>
-         </div>
+         {product?.subcategory && <Similar subcategory = {product?.subcategory} id = {product?.id}/>}
         </div>
         </div>
     
