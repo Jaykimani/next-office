@@ -28,9 +28,12 @@ const Footer = () => {
             <Link href={'/shipping-delivery'} style={{textDecoration: 'none', color: 'white'}}>
              <p>Shipping & Delivery</p>
             </Link>
-
-             <p>Shipping & Delivery</p>
+             <Link href={'/terms-conditions'} style={{textDecoration: 'none', color: 'white'}}>
              <p>Terms & Conditions</p>
+             </Link>
+             <Link href={'/return-refund'} style={{textDecoration: 'none', color: 'white'}}>
+             <p>Returns & Refunds policy</p>
+             </Link>
              <p>Frequently Asked Questions(FAQS)</p>
              <p>Privacy Policy</p>
              <p>Cookie Policy</p>

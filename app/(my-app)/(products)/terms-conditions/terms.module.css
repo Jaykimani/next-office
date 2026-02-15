@@ -1,0 +1,146 @@
+.terms{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 30px 0;
+}
+.termsInset{
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+    color: rgb(0, 0, 0);
+}
+.termsInset h1{
+    font-size: 45px;
+    margin-top: 30px;
+    text-align: center;
+    text-decoration: underline;
+}
+.termsInset h2{
+    font-size: 35px;
+}
+.termsInset p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 35px;
+    margin-top: 15px;
+}
+.termsInset p span{
+    font-size: 20px;
+    font-weight: 600;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(82, 82, 82);
+    margin: 30px 0;
+}
+.termsInset ul{
+    margin: 20px 50px;
+    font-family: Calibri;
+    font-size: 20px;
+}
+.termsInset ul li{
+    margin: 5px;
+}
+.termsInset ul li span{
+    font-weight: 600;
+}
+
+@media screen and (max-width: 800px) {
+    .terms{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 30px 0;
+}
+.termsInset{
+    width: 90%;
+    height: auto;
+    margin: 30px auto;
+    color: rgb(0, 0, 0);
+}
+.termsInset h1{
+    font-size: 40px;
+    margin-top: 30px;
+}
+.termsInset h2{
+    font-size: 28px;
+}
+.termsInset p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    line-height: 30px;
+    margin-top: 15px;
+}
+.termsInset p span{
+    font-size: 18px;
+    font-weight: 600;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(82, 82, 82);
+    margin: 25px 0;
+}
+.termsInset ul{
+    margin: 20px 50px;
+    font-family: Calibri;
+    font-size: 17px;
+}
+.termsInset ul li{
+    margin: 5px;
+}
+.termsInset ul li span{
+    font-weight: 600;
+}
+}
+
+@media screen and (max-width: 600px) {
+    .terms{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.termsInset{
+    width: 95%;
+    height: auto;
+    margin: 30px auto;
+    color: rgb(0, 0, 0);
+}
+.termsInset h1{
+    font-size: 30px;
+    margin-top: 30px;
+}
+.termsInset h2{
+    font-size: 23px;
+}
+.termsInset p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 28px;
+    margin-top: 10px;
+}
+.termsInset p span{
+    font-size: 16px;
+    font-weight: 600;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(82, 82, 82);
+    margin: 25px 0;
+}
+.termsInset ul{
+    margin: 20px 30px;
+    font-family: Calibri;
+    font-size: 15px;
+}
+.termsInset ul li{
+    margin: 5px;
+}
+.termsInset ul li span{
+    font-weight: 600;
+}
+}

@@ -2,6 +2,8 @@ import styles from './shipping.module.css'
 import type { Metadata } from "next";
 import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
+import { BiWorld } from "react-icons/bi";
+
 
 export const metadata: Metadata = {
   title: "Shipping & Delivery Policy | Office Aura Kenya",
@@ -159,6 +161,7 @@ const page = () => {
       <p>For delivery inquiries, order updates, or support, reach out to us:</p>
       <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeaura.co.ke</span></p>
       <p><FaPhoneAlt style={{marginRight: '10px', color: "green"}}/> Whatsapp: <span>+254 704 610 605</span></p>
+      <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <span>www.officeaura.co.ke/contact</span></p>
       <p>Response time: 24–48 hours</p>
       <div className={styles.divider}></div>
       <h2>Office Aura Kenya — Office Décor Delivered Nationwide</h2>
