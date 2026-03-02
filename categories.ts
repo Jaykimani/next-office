@@ -2,107 +2,107 @@ export const Categories  = [
     {
     id: 1,
     title: 'Office Accessories',
-    links: ['Desk Organizers', 'Productivity & Writing Tools', 'Ergonomics & Comfort Accessories', 'Aesthetic & Personalized Items', 'Office Desk Gadgets']
+    links: [{ id: 'Office Desk Organisers', name: 'office-desk-organisers' },
+            { id: 'Office Desk Gadgets', name: 'office-desk-gadgets' },
+            { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
+            { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' }, 
+             { id: 'Office Aesthetics/Personalized Items', name: 'office-aesthetics-personalized-accessories' },]
     },
     {
         id: 2,
         title: 'Office Lighting Solutions',
-        links: ['Desk Lamps', 'Overhead fixtures', 'Wall-mounted fixtures', 'Stand-alone fixtures']
+        links: [{ id: 'Office Desk Lamps', name: 'office-desk-lamps' },
+           { id: 'Office Overhead Lighting', name: 'office-overhead-lighting' },
+            { id: 'Office Wall-mounted Lighting', name: 'office-wall-mounted-lighting' },
+             { id: 'Office Stand-alone Lighting', name: 'office-stand-alone-lightingh' },]
     },
     {
         id: 3,
         title: 'Office Wall Accessories',
-        links: ['Wall Art & Posters', 'Wall Clocks', 'Wall Mounted Shelves']
+        links: [{ id: 'Office Wall Art/Posters', name: 'office-wall-art-posters' },
+           { id: 'Office Wall Clocks', name: 'office-wall-clocks' },
+            { id: 'Office Wall-mounted Shelves', name: 'office-wall-mounted-Shelves' },]
     },
     {
         id: 5,
         title: 'Office Greenery Solutions',
-        links: ['Potted Plants', 'Wall & Vertical greenery', 'Outdoor office greenery']
+        links: [{ id: 'Potted Office Plants', name: 'potted-office-plants' },
+           { id: 'Wall/Vertical Office Greenery', name: 'wall-vertical-office-greenery' },
+           { id: 'Artificial Office Greenery', name: 'artificial-office-greenery' },
+           { id: 'Natural Office Greenery', name: 'natural-office-greenery' },
+            { id: 'Outdoor Office Greenery', name: 'outdoor-office-greenery' }
+          ]
     },
 
 ];
 
 
 export const Subcategory = [
-     {
-        id: 'desk-organisers',
-        name: 'Desk Organizers'
-     }, 
-     {
-        id: 'productivity-writing-tools',
-        name: 'Productivity & Writing Tools'
-     },
-     {
-        id: 'ergonomic-comfort-accessories',
-        name: 'Ergonomics & Comfort Accessories'
-     },
-     {
-        id: 'aesthetics-personalized',
-        name: 'Aesthetic & Personalized Items'
-     }, 
-     {
-        id: 'desk-gadgets',
-        name: 'Office Desk Gadgets'
-     },
-     {
-        id: 'desk-lamps',
-        name: 'Desk Lamps'
-     },
-     {
-        id: 'overhead-fixtures',
-        name: 'Overhead fixtures'
-     },
-     {
-        id: 'wall-mounted-fixtures',
-        name: 'Wall-mounted fixtures'
-     },
-     {
-        id: 'stand-alone-fixtures',
-        name: 'Stand-alone fixtures'
-     },
-     {
-        id: 'wall-art-posters',
-        name: 'Wall Art & Posters'
-     },
-     {
-        id: 'wall-clocks',
-        name: 'Wall Clocks'
-     },
-     {
-        id: 'wall-mounted-Shelves',
-        name: 'Wall Mounted Shelves'
-     },
-     {
-        id: 'potted-plants',
-        name: 'Potted Plants'
-     },
-     {
-        id: 'wall-vertical-greenery',
-        name: 'Wall & Vertical greenery'
-     },
-     {
-        id: 'outdoor-greenery',
-        name: 'Outdoor office greenery'
-     }
-
+              { id: 'Office Desk Organisers', name: 'office-desk-organisers' }, 
+              { id: 'Office Desk Gadgets', name: 'office-desk-gadgets' },
+              { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
+              { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
+              { id: 'Office Aesthetics/Personalized Items', name: 'office-aesthetics-personalized-accessories' },
+              { id: 'Office Desk Lamps', name: 'office-desk-lamps' }, 
+              { id: 'Office Overhead Lighting', name: 'office-overhead-lighting' },
+              { id: 'Office Wall-mounted Lighting', name: 'office-wall-mounted-lighting' },
+              { id: 'Office Stand-alone Lighting', name: 'office-stand-alone-lightingh' },
+              { id: 'Office Wall Art/Posters', name: 'office-wall-art-posters' }, 
+              { id: 'Office Wall Clocks', name: 'office-wall-clocks' },
+              { id: 'Office Wall-mounted Shelves', name: 'office-wall-mounted-Shelves' },
+              { id: 'Potted Office Plants', name: 'potted-office-plants' }, 
+              { id: 'Wall/Vertical Office Greenery', name: 'wall-vertical-office-greenery' },
+              { id: 'Artificial Office Greenery', name: 'artificial-office-greenery' },
+              { id: 'Natural Office Greenery', name: 'natural-office-greenery' },
+              { id: 'Outdoor Office Greenery', name: 'outdoor-office-greenery' }
 
 ]
+export const shopCategory = [
+   {
+    name: 'Office Accessories',
+    url: 'office-accessories',
+  },
+  {
+    name: 'Office Lighting Solutions',
+    url: 'office-lighting-solutions',
+ 
+  },
+   {
+    name: 'Office Wall Accessories',
+    url: 'office-wall-accessories',
+   
+  },
+  {
+    name: 'Office Greenery',
+    url: 'office-greenery',
+  },
+]
 
-export const Shopby = [
+export const shopVibe= [
    {
-      name: 'Shop by Category',
-      links: ['Office accessories', 'Office lighting', 'Office Wall accessories', 'Office greenery']
+      name: 'Minimalist Vibe',
+      url: 'minimalist-office-vibe' 
    },
-   {
-      name: 'Shop by vibe',
-      links: ['Minimalist', 'Executive/CEO', 'Modern professional', 'Eco-friendly/Nature inspired', 'Creative studio', 'Cozy & Warm',  ]
+    {
+      name: 'Executive/CEO Vibe',
+      url: 'executive-office-vibe'
    },
-   {
-      name: 'Shop by popularity',
-      links: ['Most popular', 'Most rated']
+    {
+      name: 'Modern professional Vibe',
+      url: 'modern-professional-office-vibe' 
    },
-   {
-      name: 'Shop by price',
-      links: ['Low to High', 'High to Low']
+    {
+      name: 'Creative studio Vibe',
+      url: 'creative-studio-office-vibe' 
+   },
+    {
+      name: 'Nature inspired Vibe',
+      url: 'nature-inspired-office-vibe' 
    }
 ]
+
+
+export const shopPopularity = ['Most popular', 'Most rated'];
+
+export const shopPrice = ['Low to High', 'High to Low']
+

@@ -24,8 +24,8 @@
     font-size: 25px;
 }
 .returnsInset p{
-    font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
     line-height: 30px;
     margin-top: 15px;
 }
@@ -41,8 +41,8 @@
 }
 .returnsInset ul{
     margin: 20px 50px;
-    font-family: Calibri;
-    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 21px;
 }
 .returnsInset ul li{
     margin: 5px;
@@ -72,7 +72,7 @@
     font-size: 28px;
 }
 .returnsInset p{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
     line-height: 30px;
     margin-top: 15px;
@@ -89,7 +89,7 @@
 }
 .returnsInset ul{
     margin: 20px 50px;
-    font-family: Calibri;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 17px;
 }
 .returnsInset ul li{
@@ -124,7 +124,7 @@
     font-size: 19px;
 }
 .returnsInset p{
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
     line-height: 28px;
     margin-top: 10px;
@@ -141,7 +141,7 @@
 }
 .returnsInset ul{
     margin: 20px 30px;
-    font-family: Calibri;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 15px;
 }
 .returnsInset ul li{

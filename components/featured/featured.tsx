@@ -21,9 +21,9 @@ const Featured = () => {
                           <li>Productivity & Writing tools</li>
                           <li>Ergonomics & Comfort Accessories</li>
                           <li>Aesthetics & Personalized Items</li>
-                          <li>Office Desk Gadgets & Mats</li>
+                          <li>Office Desk Gadgets</li>
                         </ul>
-                        <Link className={styles.featuredLink} href={'/shop/category/accessories'} style={{textDecoration: 'none'}}>
+                        <Link className={styles.featuredLink} href={'/shop/category/office-accessories'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
                         </Link>
                         </div>
@@ -37,7 +37,7 @@ const Featured = () => {
                           <li>Wall-mounted fixtures</li>
                           <li>Stand-alone fixtures</li>
                         </ul>
-                         <Link className={styles.featuredLink} href={'/shop/category/lighting-solutions'} style={{textDecoration: 'none'}}>
+                         <Link className={styles.featuredLink} href={'/shop/category/office-lighting-solutions'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
                         </Link>
                         </div>
@@ -58,7 +58,7 @@ const Featured = () => {
                           <li>Wall Mounted Shelves</li>
                           <li>Wall Mounted Planters</li>
                         </ul>
-                         <Link className={styles.featuredLink} href={'/shop/category/wall-accessories'} style={{textDecoration: 'none'}}>
+                         <Link className={styles.featuredLink} href={'/shop/category/office-wall-accessories'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
                         </Link>
                         </div>
@@ -67,10 +67,10 @@ const Featured = () => {
                         <div className={styles.optDiv}>
                         <h3>Office Greenery Solutions</h3>
                         <ul>
-                          <li>Potted plants</li>
-                          <li>Wall & Vertical greenery</li>
+                          <li>Desk greenery</li>
                           <li>Artificial greenery</li>
-                          <li>Outdoor Office greenery</li>
+                          <li>Natural greenery</li>
+                          <li>Planters & Pots</li>
                         </ul>
                          <Link className={styles.featuredLink} href={'/shop/category/office-greenery'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
@@ -87,7 +87,7 @@ const Featured = () => {
                          <Image className={styles.optImgPhone} src="/accessories2.jpg" alt="office desk accessories" width={500} height={500} />
                          <p className={styles.optInfo}>Office Desk Accessories</p>
                       </div>
-                      <Link href={'/shop/category/accessories'} style={{textDecoration: 'none', color: 'black'}}>
+                      <Link href={'/shop/category/office-accessories'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
                         <p>SHOP NOW</p>
                       </div>
@@ -98,7 +98,7 @@ const Featured = () => {
                          <Image className={styles.optImgPhone} src="/lighting.jpg" alt="office lighting solutions" width={500} height={500}/>
                          <p className={styles.optInfo}>Office Lighting Solutions</p>
                       </div>
-                     <Link href={'/shop/category/lighting-solutions'} style={{textDecoration: 'none', color: 'black'}}>
+                     <Link href={'/shop/category/office-lighting-solutions'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
                         <p>SHOP NOW</p>
                       </div>
@@ -109,7 +109,7 @@ const Featured = () => {
                          <Image className={styles.optImgPhone} src="/wall3.jpg" alt="office wall accessories" width={500} height={500} />
                          <p className={styles.optInfo}>Office Wall Accessories</p>
                       </div>
-                     <Link href={'/shop/category/wall-accessories'} style={{textDecoration: 'none', color: 'black'}}>
+                     <Link href={'/shop/category/office-wall-accessories'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
                         <p>SHOP NOW</p>
                       </div>

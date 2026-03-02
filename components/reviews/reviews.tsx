@@ -6,7 +6,6 @@ import { MdStarHalf } from "react-icons/md";
 import { MdStarBorder } from "react-icons/md";
 
 type Review = {
-  product: number
   title: string
   rating: number
   authorName: string

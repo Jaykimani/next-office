@@ -2,6 +2,7 @@
 import styles from './quiz.module.css'
 import Image from 'next/image';
 import { MdAddCircle } from "react-icons/md";
+import Link from 'next/link';
 
 const Quiz = () => {
   
@@ -82,7 +83,7 @@ const Quiz = () => {
                 </div>
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>We want you to love your purchase! If you’re not completely satisfied, we offer a hassle-free return policy within [X] days of delivery. To learn more about our return policy, click here.</p>
+                 <p>We want you to love your purchase! If you’re not completely satisfied, we offer a hassle-free return policy within 7 days of delivery. To learn more about our return policy, <Link href={'/return-refund'}>click here</Link>.</p>
                 </div>
               </div>
               <div className={styles.quizDiv} onClick={handleQuiz}>

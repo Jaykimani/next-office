@@ -5,13 +5,36 @@ import { FaRegClock } from "react-icons/fa6";
 import { FaTruckFast } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import Contact from '@/components/contact/contact';
+import type { Metadata } from "next";
 
-
-export const metadata = {
-  title: "Contact Office Aura | Office Interior Décor & Accessories Experts in Kenya",
+export const metadata: Metadata = {
+  title: "Contact Office Aura Kenya | Office Décor Support & Delivery Help",
   description:
-    "Contact Office Aura for office interior décor and office accessories solutions in Kenya. We offer nationwide delivery, décor bundles, and corporate office styling.",
+    "Reach Office Aura Kenya for customer support, office décor inquiries, delivery assistance across Nairobi and Kenya, corporate orders, and workspace styling solutions.",
+
+  keywords: [
+    "contact Office Aura Kenya",
+    "office décor shop Nairobi contact",
+    "workspace accessories Kenya support",
+    "office interior décor customer service",
+    "Office Aura WhatsApp number",
+    "corporate office décor Kenya",
+  ],
+
+  openGraph: {
+    title: "Contact Us | Office Aura Kenya",
+    description:
+      "Get in touch with Office Aura Kenya for office décor support, delivery questions, corporate orders, and workspace styling assistance.",
+    url: "https://www.officeaura.co.ke/contact",
+    siteName: "Office Aura Kenya",
+    type: "website",
+  },
+
+  alternates: {
+    canonical: "https://www.officeaura.co.ke/contact",
+  },
 };
+
 
 const page = () => {
   return (

@@ -1,0 +1,154 @@
+.infoImg1{
+    width: auto;
+    height: 500px;
+    display: flex;
+    margin-right: 40px;
+}
+.infoImg2{
+    display: none;
+}
+.infoImgInset{
+    width: 120px;
+    height: 100%;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.infoSubimage{
+    width: 120px;
+    height: 120px;
+    margin-bottom: 5px;
+}
+.infoSubimg{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.subActive{
+  border: 4px solid #ffe100;
+}
+.mainInfoImg{
+    width: 500px;
+    height: 500px;
+    position: relative;
+    margin-left: 40px;
+}
+.mainInfoImage{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.imgMagnifierGlass {
+  position: absolute;
+  border-radius: 50%;
+  cursor: none;
+  /*Set the size of the magnifier glass:*/
+  width: 200px;
+  height: 200px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .infoImg1{
+        width: auto;
+        height: 500px;
+        display: flex;
+        margin: 0 10px 30px;
+    }
+    .infoImg2{
+        display: none;
+    }
+    .infoImgInset{
+        width: 120px;
+        height: 100%;
+        margin-right: 5px;
+        display: flex;
+        flex-direction: column;
+    }
+    .infoSubimage{
+        width: 120px;
+        height: 120px;
+        margin-bottom: 5px;
+    }
+    .infoSubimg{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+    }
+    .subActive{
+      border: 4px solid #ffe100;
+    }
+    .mainInfoImg{
+        width: 80%;
+        height: 500px;
+        position: relative;
+        margin-left: 20px;
+    }
+    .mainInfoImage{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .imgMagnifierGlass {
+      position: absolute;
+      border-radius: 50%;
+      cursor: none;
+      /*Set the size of the magnifier glass:*/
+      width: 200px;
+      height: 200px;
+      display: none;
+    }  
+}
+
+@media screen and (max-width: 600px) {
+    .infoImg1{
+        display: none;
+    }
+    
+    .infoImgInset{
+        display: none;
+    }
+    .infoImg2{
+        display: flex;
+        width: 95%;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .mainImage{
+        width: 100%;
+        height: 80%;
+        position: relative;
+    }
+    .imgMagnifierGlass {
+        position: absolute;
+        border-radius: 50%;
+        cursor: none;
+        /*Set the size of the magnifier glass:*/
+        width: 100px;
+        height: 100px;
+        background-color: #ffe100;
+        z-index: 100;
+      }
+    .mainImageImg{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .otherImages{
+        width: 100%;
+        height: 18%;
+        display: flex;
+        justify-content: center;
+    }
+    .otherActive{
+        border: 3px solid #ffe100;
+    }
+    .imgSelect{
+        width: 45px;
+        height: 45px;
+        object-fit: cover;
+        margin-right: 5px;
+    }
+}

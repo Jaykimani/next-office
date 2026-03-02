@@ -5,4 +5,43 @@
             scroll-behavior: smooth;
             -webkit-tap-highlight-color: transparent;
 }
+.whatsapp-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: rgb(0, 180, 0);
+    z-index: 200;
+    border-radius: 50px;
+    color: white;
+    font-size: 17px;
+}
+.whats-logo{
+    margin-right: 7px;
+    color: white;
+    width: 30px;
+    height: 30px;
+}
+.chat{
+    display: block;
+}
+
+@media screen and (max-width: 600px) {
+    .whatsapp-btn{
+        padding: 0px;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: grid;
+        place-items: center;
+    }
+    .chat{
+        display: none;
+    }
+    .whats-logo{
+        margin-right: 0;
+    }
+}
          

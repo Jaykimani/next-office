@@ -73,6 +73,7 @@ export interface Config {
     orders: Order;
     messages: Message;
     reviews: Review;
+    categories: Category;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -86,6 +87,7 @@ export interface Config {
     orders: OrdersSelect<false> | OrdersSelect<true>;
     messages: MessagesSelect<false> | MessagesSelect<true>;
     reviews: ReviewsSelect<false> | ReviewsSelect<true>;
+    categories: CategoriesSelect<false> | CategoriesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -134,27 +136,38 @@ export interface Product {
   slug?: string | null;
   images: (number | Media)[];
   price: number;
-  category: 'accessories' | 'lighting-solutions' | 'wall-accessories' | 'office-greenery';
-  subcategory?:
-    | (
-        | 'desk-organisers'
-        | 'desk-gadgets'
-        | 'productivity-writing-tools'
-        | 'ergonomic-comfort-accessories'
-        | 'aesthetics-personalized'
-        | 'desk-lamps'
-        | 'overhead-fixtures'
-        | 'wall-mounted-fixtures'
-        | 'stand-alone-fixtures'
-        | 'wall-art-posters'
-        | 'wall-clocks'
-        | 'wall-mounted-Shelves'
-        | 'potted-plants'
-        | 'wall-vertical-greenery'
-        | 'artificial-greenery'
-        | 'outdoor-greenery'
-      )
-    | null;
+  category: 'office-accessories' | 'office-lighting-solutions' | 'office-wall-accessories' | 'office-greenery';
+  /**
+   * Select one or more subcategories
+   */
+  subcategories: (
+    | 'office-desk-organisers'
+    | 'office-desk-gadgets'
+    | 'office-productivity-writing-tools'
+    | 'office-ergonomic-comfort-accessories'
+    | 'office-aesthetics-personalized-accessories'
+    | 'office-desk-lamps'
+    | 'office-overhead-lighting'
+    | 'office-wall-mounted-lighting'
+    | 'office-stand-alone-lighting'
+    | 'office-wall-art-posters'
+    | 'office-wall-clocks'
+    | 'office-wall-mounted-Shelves'
+    | 'office-desk-greenery'
+    | 'artificial-office-greenery'
+    | 'natural-office-greenery'
+    | 'office-planters-and-pots'
+  )[];
+  /**
+   * Select one or more subcategories
+   */
+  vibe: (
+    | 'minimalist-office-vibe'
+    | 'executive-office-vibe'
+    | 'modern-professional-office-vibe'
+    | 'creative-studio-office-vibe'
+    | 'nature-inspired-office-vibe'
+  )[];
   stock: number;
   delivery: {
     deliveryTime: string;
@@ -183,8 +196,8 @@ export interface Product {
       [k: string]: unknown;
     };
     dimensions?: string | null;
-    structuralMaterial: string;
-    color: string;
+    structuralMaterial?: string | null;
+    color?: string | null;
     careInstructions?: string | null;
   };
   /**
@@ -311,6 +324,20 @@ export interface Message {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories".
+ */
+export interface Category {
+  id: number;
+  name: string;
+  slug?: string | null;
+  type: 'category' | 'subcategory' | 'vibe';
+  description: string;
+  'page-description': string;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -356,6 +383,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'reviews';
         value: number | Review;
+      } | null)
+    | ({
+        relationTo: 'categories';
+        value: number | Category;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -409,7 +440,8 @@ export interface ProductsSelect<T extends boolean = true> {
   images?: T;
   price?: T;
   category?: T;
-  subcategory?: T;
+  subcategories?: T;
+  vibe?: T;
   stock?: T;
   delivery?:
     | T
@@ -537,6 +569,19 @@ export interface ReviewsSelect<T extends boolean = true> {
   authorEmail?: T;
   reviewText?: T;
   approved?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "categories_select".
+ */
+export interface CategoriesSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  type?: T;
+  description?: T;
+  'page-description'?: T;
   updatedAt?: T;
   createdAt?: T;
 }

@@ -7,13 +7,13 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdClose } from "react-icons/md";
-import {Categories, Subcategory, Shopby} from '@/categories';
+import {Categories, Subcategory, shopVibe, shopCategory, shopPopularity, shopPrice} from '@/categories';
 import type { Product } from '@/payload-types';
 import { Media } from '@/payload-types';
 import Link from 'next/link';
 
 interface ProductsProps {
-allProducts : Product[];
+productsArr : Product[];
 }
 
 function mediaIsObject(media: number | Media) : media is Media {
@@ -21,7 +21,7 @@ function mediaIsObject(media: number | Media) : media is Media {
   
 }
 
-function List({ allProducts }: ProductsProps) {
+function List({ productsArr }: ProductsProps) {
     const [shopSort, setShopsort] = useState(false);
     const [categSort, setCategSort] = useState(false);
 
@@ -50,11 +50,39 @@ function List({ allProducts }: ProductsProps) {
             </div>
             <div className={styles.shopListInset}>
              <div className={styles.shopCateg}>
-              {Shopby?.map((item)=>{
+              
+              <div className={styles.categSection}>
+               <h4>Shop by Category</h4>
+               {shopCategory.map((link)=>{
                 return (
-                <div key={item.name} className={styles.categSection}>
-               <h4>{item.name}</h4>
-               {item.links?.map((link)=>{
+               <Link key={link.name}  href={`/shop/category/${link.url}`} style={{textDecoration: 'none'}}>
+               <div className={styles.categLink}>
+               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
+               <p>{link.name}</p>
+               </div>
+               </Link>   
+               
+                )
+               })}
+               
+              </div>
+              <div className={styles.categSection}>
+               <h4>Shop by Vibe</h4>
+               {shopVibe.map((link)=>{
+                return (
+                <Link key={link.name} href={`/shop/vibe/${link.url}`} style={{textDecoration: 'none'}}>
+               <div className={styles.categLink}>
+               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
+               <p>{link.name}</p>
+               </div>
+               </Link>
+                )
+               })}
+               
+              </div>
+              <div className={styles.categSection}>
+               <h4>Shop by Popularity</h4>
+               {shopPopularity.map((link)=>{
                 return (
                <div key={link} className={styles.categLink}>
                <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
@@ -64,8 +92,19 @@ function List({ allProducts }: ProductsProps) {
                })}
                
               </div>
+              <div className={styles.categSection}>
+               <h4>Shop by Price</h4>
+               {shopPrice.map((link)=>{
+                return (
+               <div key={link} className={styles.categLink}>
+               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
+               <p>{link}</p>
+               </div>
                 )
-              })}
+               })}
+               
+              </div>
+              
              </div>
              <div className={styles.shopCateg2} style={{display: categSort ? 'block' : 'none'}}>
               <div className={styles.shopCateg2Inset}>
@@ -78,17 +117,12 @@ function List({ allProducts }: ProductsProps) {
                 <div key={item.id} className={styles.categSection2}>
                <h4>{item.title}</h4>
                {item.links?.map((link)=>{
-                let categId = Subcategory?.find((categ)=>{
-                  
-                 return categ.name === link
-                });
-                let ID = categId?.id;
                 
                 return (
-               <Link key={link} href={`/shop/subcategory/${ID}`} style={{textDecoration: "none", color: "white"}}>
+               <Link key={link.id} href={`/shop/subcategory/${link.name}`} style={{textDecoration: "none", color: "white"}}>
                <div className={styles.categLink2}>
                <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
-               <p style={{color: 'white'}}>{link}</p>
+               <p style={{color: 'white'}}>{link.id}</p>
                </div>
                </Link>
                
@@ -106,11 +140,25 @@ function List({ allProducts }: ProductsProps) {
               <MdClose style={{color: 'white', width: '35px', height: '35px'}} onClick={()=>{setShopsort(false)}}/>
               <p>close</p>
               </div>
-             {Shopby?.map((item)=>{
+               <div className={styles.categSection2}>
+               <h4>Shop by Vibe</h4>
+               {shopVibe.map((link)=>{
+            
                 return (
-                <div key={item.name} className={styles.categSection2}>
-               <h4>{item.name}</h4>
-               {item.links?.map((link)=>{
+               <Link key={link.name} href={`/shop/vibe/${link.url}`} style={{textDecoration: 'none'}}>
+                <div className={styles.categLink2}>
+               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
+               <p style={{color: 'white'}}>{link.name}</p>
+               </div>
+               </Link>
+              
+                )
+               })}
+               
+              </div>
+               <div className={styles.categSection2}>
+               <h4>Shop by Popularity</h4>
+               {shopPopularity.map((link)=>{
             
                 return (
                <div key={link} className={styles.categLink2}>
@@ -122,13 +170,26 @@ function List({ allProducts }: ProductsProps) {
                })}
                
               </div>
+               <div className={styles.categSection2}>
+               <h4>Shop by Price </h4>
+               {shopPrice.map((link)=>{
+            
+                return (
+               <div key={link} className={styles.categLink2}>
+               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
+               <p style={{color: 'white'}}>{link}</p>
+               </div>
+               
                 )
-              })}
+               })}
+               
+              </div>
+             
               </div>
              </div>
              <div className={styles.shopListItem}>
               <div className={styles.shopListItemInset}>
-            {allProducts?.map((item)=>{
+            {productsArr?.map((item)=>{
                 if(!mediaIsObject(item.images[0]))  return null
                
 
@@ -151,17 +212,7 @@ function List({ allProducts }: ProductsProps) {
               )})}
                
               </div>
-              <div className={styles.pagesDiv}>
-                  <div>1</div>
-                  <div>2</div>
-                  <div>3</div>
-                  <div>4</div>
-                  <div className={styles.next}><MdKeyboardDoubleArrowRight style={{color:"black"}}/></div>
-
-                </div>
-
-               
-
+            
              </div>
               
             </div>

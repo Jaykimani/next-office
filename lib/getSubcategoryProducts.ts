@@ -8,8 +8,11 @@ const payload = await getPayload({config});
     const data = await payload.find({
     collection: 'products',
     depth: 1,
+    pagination: false,
     where: {
-        subcategory:  { equals: category }
+        subcategories: {
+        contains: category,
+      },
     },
      select:{
       id: true,
@@ -21,6 +24,7 @@ const payload = await getPayload({config});
     
   });
    let product = data.docs;
+   
    
    return product ?? 'not found';
 

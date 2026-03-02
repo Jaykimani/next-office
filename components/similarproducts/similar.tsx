@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from 'react'
 import styles from './similar.module.css'
 import { Media } from '@/payload-types';
@@ -32,6 +34,7 @@ const Similar = ({id, subcategory}: similarProps) => {
 
     useEffect(()=>{
       
+      
       async function fetchSubproducts(){
       const productsData = await fetch(`/api/subcategory?subcategory=${subcategory}`)
       const products = await productsData.json();
@@ -65,7 +68,7 @@ const Similar = ({id, subcategory}: similarProps) => {
                   <Image src={product.images[0].url} alt="" width={500} height={500} />
                 }
               
-              <h5>{product.name}</h5>
+              <h5>{product.name?.length > 24 ? product.name.substring(0, 21) + '...' : product.name}</h5>
               <p>KSH {product.price.toLocaleString('en-US')}/=</p>
               <button>ADD TO CART</button>
                </div>

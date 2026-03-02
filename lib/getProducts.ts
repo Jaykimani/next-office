@@ -1,7 +1,7 @@
 import {getPayload} from 'payload';
 import config from '@payload-config';
 
-export async function getProductsList (){
+export async function getProductsList (page, limit){
 const payload = await getPayload({config});
 
   try {
@@ -9,6 +9,8 @@ const payload = await getPayload({config});
     collection: 'products', // The slug of your
     depth: 1, 
     sort: 'id',
+    page,
+    limit,
     select:{
       id: true,
       slug: true,
@@ -17,10 +19,11 @@ const payload = await getPayload({config});
       price: true
     }
   });
-   let productsList = data.docs;
-   return productsList ?? [];
+  
+   let productsList = data;
+   return productsList
   } catch (error) {
     console.error('Failed to get products list:', error)
-    return []
+    return
   }
 }

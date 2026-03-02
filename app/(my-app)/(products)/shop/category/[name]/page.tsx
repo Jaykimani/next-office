@@ -1,8 +1,49 @@
 import styles from './category.module.css'
 import List from '@/components/list/list'
 import { getCategoryProducts } from '@/lib/getCategoryProducts';
-import { getSubcategoryProducts } from '@/lib/getSubcategoryProducts';
-import { log } from 'console';
+import { getCategoryType } from '@/lib/getCategoryType';
+import { Metadata } from 'next'
+
+
+type Props = {
+  params: Promise<{ name: string }>
+}
+
+export async function generateMetadata(
+  { params }: Props
+): Promise<Metadata> {
+  const { name } = await params
+  
+  let category = await getCategoryType(name)
+  let categInfo = category?.docs[0];
+  
+
+  return {
+    metadataBase: new URL('https://yourdomain.com'),
+
+    title: `${categInfo?.name} in Kenya | Office Aura`,
+    description: categInfo?.description,
+
+    alternates: {
+      canonical: `/shop/category/${categInfo?.slug}`,
+    },
+
+    openGraph: {
+      title: `${categInfo?.name} | Office Aura`,
+      description: categInfo?.description,
+      url: `/shop/category/${categInfo?.slug}`,
+      siteName: 'Office Aura',
+      type: 'website',
+    },
+
+    twitter: {
+      card: 'summary_large_image',
+      title: `${categInfo?.name} | Office Aura`,
+      description: categInfo?.description
+    },
+  }
+}
+
 
 const Category = async({
   params,
@@ -14,20 +55,67 @@ const Category = async({
   
 
   const Products = await getCategoryProducts(name);
-  
+  let category = await getCategoryType(name)
+  let categInfo = category?.docs[0];
 
  const allProducts =
   typeof Products === 'string'
     ? []
     : Products;
   
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: categInfo?.name,
+    description: categInfo?.name,
+    url: `https://yourdomain.com/shop/category/${categInfo?.slug}`,
+  }
+
+  const breadcrumbData = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://yourdomain.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Shop',
+        item: 'https://yourdomain.com/shop',
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: categInfo?.name,
+      },
+    ],
+  }  
 
   return (<>
    <div id={styles.shopOuter}>
-    <List allProducts = {allProducts}/>
+    {/* CollectionPage Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+
+      {/* Breadcrumb Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbData),
+        }}
+        />
+      <List productsArr = {allProducts}/>
         <div className={styles.shopInfo}>
-            <h4>Why invest in the right office decor?</h4>
-            <p>Beyond mere aesthetics, the right office setup significantly impacts your daily work experience. A well-organized and visually appealing office environment can boost morale, reduce stress, and enhance focus, ultimately leading to increased efficiency. From ergonomic accessories that promote comfort, to stylish decor that reflects your personal or company brand, investing in your office space is an investment in your success. Explore our wide range of office solutions including office desk accessories, office lighting solutions, office wall accessories and office greenery solutions today and discover how the perfect blend of functionality and style can create a workspace you'll love. Elevate your office, elevate your work. Find the ideal office decor and office accessories to optimize your workspace and achieve peak performance.</p>
+            <h4>Why invest in the right {categInfo?.name}?</h4>
+            <p>{categInfo?.['page-description']}</p>
         </div>
         </div>
         <div className={styles.quote}>

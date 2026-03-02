@@ -1,26 +1,65 @@
-import { NextResponse } from 'next/server'
-import { getPayloadClient } from '@/payloadClient'
+import { NextRequest, NextResponse } from "next/server";
+import { getPayload } from "payload";
+import config from "@/payload.config";
 
-export async function GET(req: Request) {
-  const { searchParams } = new URL(req.url)
+export async function GET(req: NextRequest) {
+  try {
+    const payload = await getPayload({ config });
+    const { searchParams } = new URL(req.url);
 
-  const query = searchParams.get('q')
+    const q = searchParams.get("q")?.trim();
 
-  if (!query) {
-    return NextResponse.json([])
-  }
+    if (!q) {
+      return NextResponse.json({
+        products: [],
+        categories: [],
+      });
+    }
 
-  const payload = await getPayloadClient()
-
-  const results = await payload.find({
-    collection: 'products',
-    where: {
-      name: {
-        like: query,
+    // 🔎 1️⃣ Search Products
+    const products = await payload.find({
+      collection: "products",
+      where: {  
+           name: { contains: q } ,
       },
-    },
-    limit: 10,
-  })
+      limit: 5,
+      depth: 1,
+    });
+    
 
-  return NextResponse.json(results.docs)
+    // 🔎 2️⃣ Search Categories
+    const categories = await payload.find({
+      collection: "categories",
+      where: {
+         name: { contains: q },
+      },
+      limit: 5,
+    });
+
+
+    // 🎯 Format results
+    const formattedProducts = products.docs.map((p: any) => ({
+      title: p.name,
+      url: `/shop/${p.id}`,
+    }));
+
+    const formattedCategories = categories.docs.map((c: any) => ({
+      title: c.name,
+      url: `/shop/${c.type}/${c.slug}`,
+    }));
+
+
+    return NextResponse.json({
+      products: formattedProducts,
+      categories: formattedCategories,
+    });
+
+  } catch (error) {
+    console.error("Premium Search Error:", error);
+
+    return NextResponse.json(
+      { error: "Something went wrong." },
+      { status: 500 }
+    );
+  }
 }

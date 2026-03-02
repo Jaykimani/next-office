@@ -3,17 +3,17 @@ import type { CollectionConfig } from 'payload';
 
   const categories = [
   {
-    label: 'Accessories',
-    value: 'accessories',
+    label: 'Office Accessories',
+    value: 'office-accessories',
   },
   {
-    label: 'Lighting Solutions',
-    value: 'lighting-solutions',
+    label: 'Office Lighting Solutions',
+    value: 'office-lighting-solutions',
  
   },
    {
-    label: 'Wall Accessories',
-    value: 'wall-accessories',
+    label: 'Office Wall Accessories',
+    value: 'office-wall-accessories',
    
   },
   {
@@ -24,23 +24,30 @@ import type { CollectionConfig } from 'payload';
 ];
 
   const subcategories = [
-              { label: 'Desk Organisers', value: 'desk-organisers' }, 
-              { label: 'Desk Gadgets', value: 'desk-gadgets' },
-              { label: 'Productivity/Writing Tools', value: 'productivity-writing-tools' },
-              { label: 'Ergonomic/Comfort Accessories', value: 'ergonomic-comfort-accessories' },
-              { label: 'Aesthetics/Personalized Items', value: 'aesthetics-personalized' },
-              { label: 'Desk Lamps', value: 'desk-lamps' }, 
-              { label: 'Overhead Fixtures', value: 'overhead-fixtures' },
-              { label: 'Wall-mounted Fixtures', value: 'wall-mounted-fixtures' },
-              { label: 'Stand-alone Fixtures', value: 'stand-alone-fixtures' },
-              { label: 'Wall Art/Posters', value: 'wall-art-posters' }, 
-              { label: 'Wall Clocks', value: 'wall-clocks' },
-              { label: 'Wall-mounted Shelves', value: 'wall-mounted-Shelves' },
-              { label: 'Potted Plants', value: 'potted-plants' }, 
-              { label: 'Wall/Vertical Greenery', value: 'wall-vertical-greenery' },
-              { label: 'Artifial Greenery', value: 'artificial-greenery' },
-              { label: 'Outdoor Greenery', value: 'outdoor-greenery' }
+              { label: 'Office Desk Organisers', value: 'office-desk-organisers' }, 
+              { label: 'Office Desk Gadgets', value: 'office-desk-gadgets' },
+              { label: 'Office Productivity/Writing Tools', value: 'office-productivity-writing-tools' },
+              { label: 'Office Ergonomic/Comfort Accessories', value: 'office-ergonomic-comfort-accessories' },
+              { label: 'Office Aesthetics/Personalized Items', value: 'office-aesthetics-personalized-accessories' },
+              { label: 'Office Desk Lamps', value: 'office-desk-lamps' }, 
+              { label: 'Office Overhead Lighting', value: 'office-overhead-lighting' },
+              { label: 'Office Wall-mounted Lighting', value: 'office-wall-mounted-lighting' },
+              { label: 'Office Stand-alone Lighting', value: 'office-stand-alone-lighting' },
+              { label: 'Office Wall Art/Posters', value: 'office-wall-art-posters' }, 
+              { label: 'Office Wall Clocks', value: 'office-wall-clocks' },
+              { label: 'Office Wall-mounted Shelves', value: 'office-wall-mounted-Shelves' },
+              { label: 'Office Desk Greenery', value: 'office-desk-greenery' }, 
+              { label: 'Artificial Office Greenery', value: 'artificial-office-greenery' },
+              { label: 'Natural Office Greenery', value: 'natural-office-greenery' },
+              { label: 'Office Planters and Pots', value: 'office-planters-and-pots' }
 
+  ]
+  const vibes = [
+              { label: 'Minimalist Offfice Vibe', value: 'minimalist-office-vibe' }, 
+              { label: 'Executive/CEO Office Vibe', value: 'executive-office-vibe' },
+              { label: 'Modern Professional Office Viobe', value: 'modern-professional-office-vibe' },
+              { label: 'Creative Studio Office Vibe', value: 'creative-studio-office-vibe' },
+              { label: 'Nature Inspired Office Vibe', value: 'nature-inspired-office-vibe' },          
   ]
 
 export const Products: CollectionConfig = {
@@ -123,11 +130,26 @@ export const Products: CollectionConfig = {
     },
 
     {
-  name: 'subcategory',
+  name: 'subcategories',
   type: 'select',
+  hasMany: true,
+  required: true,
   options: subcategories.map(({ label, value }) => ({ label, value })),
-  
+  admin: {
+    description: 'Select one or more subcategories',
+  },
 },  
+
+ {
+  name: 'vibe',
+  type: 'select',
+  hasMany: true,
+  required: true,
+  options: vibes.map(({ label, value }) => ({ label, value })),
+  admin: {
+    description: 'Select one or more subcategories',
+  },
+}, 
    
 /**
      * STOCK
@@ -196,12 +218,10 @@ export const Products: CollectionConfig = {
         {
           name: 'structuralMaterial',
           type: 'text',
-          required: true
         },
         {
           name: 'color',
           type: 'text',
-          required: true
         },
         {
           name: 'careInstructions',
@@ -244,3 +264,4 @@ export const Media: CollectionConfig = {
   },
   fields: [],
 }
+

@@ -1,0 +1,154 @@
+.privacy{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 30px 0;
+    cursor: pointer;
+}
+.privacyInset{
+    width: 80%;
+    height: auto;
+    margin: 30px auto;
+    color: rgb(0, 0, 0);
+}
+.privacyInset h1{
+    font-size: 45px;
+    margin: 30px 0;
+    text-align: center;
+    text-decoration: underline;
+}
+.privacyInset h2{
+    font-size: 35px;
+}
+.privacyInset h3{
+    font-size: 25px;
+    margin-top: 15px;
+}
+.privacyInset p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 15px;
+}
+.privacyInset p span{
+    font-size: 22px;
+    font-weight: 600;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(82, 82, 82);
+    margin: 30px 0;
+}
+.privacyInset ul{
+    margin: 20px 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+.privacyInset ul li{
+    margin: 5px;
+}
+.privacyInset ul li span{
+    font-weight: 600;
+}
+
+@media screen and (max-width: 800px) {
+    .privacy{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 30px 0;
+}
+.privacyInset{
+    width: 90%;
+    height: auto;
+    margin: 30px auto;
+    color: rgb(0, 0, 0);
+}
+.privacyInset h1{
+    font-size: 40px;
+    margin-top: 30px;
+}
+.privacyInset h2{
+    font-size: 28px;
+}
+.privacyInset p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+    line-height: 30px;
+    margin-top: 15px;
+}
+.privacyInset p span{
+    font-size: 18px;
+    font-weight: 600;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(82, 82, 82);
+    margin: 25px 0;
+}
+.privacyInset ul{
+    margin: 20px 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+.privacyInset ul li{
+    margin: 5px;
+}
+.privacyInset ul li span{
+    font-weight: 600;
+}
+}
+
+@media screen and (max-width: 600px) {
+    .privacy{
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+}
+.privacyInset{
+    width: 95%;
+    height: auto;
+    margin: 30px auto;
+    color: rgb(0, 0, 0);
+}
+.privacyInset h1{
+    font-size: 30px;
+    margin-top: 30px;
+}
+.privacyInset h2{
+    font-size: 23px;
+}
+.privacyInset h3{
+    font-size: 19px;
+}
+.privacyInset p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    line-height: 28px;
+    margin-top: 10px;
+}
+.privacyInset p span{
+    font-size: 16px;
+    font-weight: 600;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(82, 82, 82);
+    margin: 25px 0;
+}
+.privacyInset ul{
+    margin: 20px 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+.privacyInset ul li{
+    margin: 5px;
+}
+.privacyInset ul li span{
+    font-weight: 600;
+}
+}

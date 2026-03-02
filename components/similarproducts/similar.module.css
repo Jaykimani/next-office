@@ -1,7 +1,7 @@
 .otherProducts{
     width: 90%;
     height: 90vh;
-    margin: 40px auto;
+    margin: 30px auto;
     /* border: 1px solid #ffe100; */
     border-radius: 30px;
     padding: 30px;
@@ -14,34 +14,46 @@
 .othersInset{
     width: 100%;
     height: auto;
-    margin-top: 40px;
+    margin-top: 30px;
     display: flex;
-
+    overflow-x: scroll;
 }
+.othersInset::-webkit-scrollbar {
+    width: 7px;
+    background-color: rgb(63, 63, 63);
+    border-radius: 20px;
+  }
+ .othersInset::-webkit-scrollbar-thumb {
+    background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+    border: 4px solid rgba(0, 0, 0, 0); /* Border color matches the background/container background */
+    background-clip: padding-box;
+  } 
 .othersDiv{
-    width: 300px;
-    height: auto;
+    width: 320px;
+    height: 500px;
     margin-right: 25px;
+    background-color: rgb(28, 28, 28);
 }
 .othersDiv img{
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    height: 320px;
     object-fit: fill;
 }
 .othersDiv h5{
     font-family: 'Playfair Display', sans-serif;
     font-size: 24px;
     color: #ffe100;
-    margin: 20px 0;
-    text-align: center;
+    margin: 20px 10px;
+    text-align: left;
 }
 .othersDiv p{
     font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     color: white;
     font-weight: 600;
-    margin-bottom: 20px;
-    text-align: center;
+    margin:0 10px 20px;
+    text-align: left;
 }
 .othersDiv button{
     width: 100%;
