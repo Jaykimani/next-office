@@ -10,7 +10,6 @@ import { MdCalendarMonth } from "react-icons/md";
 import Calendar from '@/components/calendar/calendar';
 import Link from 'next/link';
 import { useCartStore } from '@/app/store';
-import { log } from 'console';
 
 
 function Cart() {

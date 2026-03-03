@@ -49,10 +49,10 @@ const page = () => {
         <p>Office Aura is an online store in Kenya offering a wide range of:</p>
         <ul>
             <li>Office interior décor</li>
-            <li>Modern desk accessories</li>
-            <li>Workspace organization products</li>
-            <li>Executive office styling essentials</li>
-            <li>Home office decoration solutions</li>
+            <li>Modern office and desk accessories</li>
+            <li>Workspace productivity & organization products</li>
+            <li>Office styling essentials</li>
+            <li>Office decoration solutions</li>
         </ul>
         <p>We are your one-stop shop for creating a beautiful and productive workspace.</p>
         <div className={styles.divider}></div>
@@ -89,7 +89,7 @@ const page = () => {
         <div className={styles.divider}></div>
         <h2>5. Can I pay using M-Pesa?</h2>
         <p>Yes. Office Aura supports <span>M-Pesa payments</span>, making it convenient for customers across Kenya.</p>
-        <p>We also support other payment options where available, including card payments.</p>
+        <p>We also support other payment options where available, including cash payments and card payments.</p>
         <div className={styles.divider}></div>
         <h2>6. Do you offer Cash on Delivery in Kenya?</h2>
         <p>Cash on Delivery may be available for select locations or special arrangements.</p>
@@ -98,13 +98,12 @@ const page = () => {
         <h2>7. What types of office décor products do you sell?</h2>
         <p>Office Aura offers everything you need for office interior styling, including:</p>
         <ul>
-            <li>Desk organizers</li>
-            <li>Wall art and office prints</li>
+            <li>Desk top accessories and gadgets</li>
+            <li>Office Wall accessories e.g Wall art and office prints</li>
             <li>Modern office lighting</li> 
             <li>Planters and greenery décor</li>
-            <li>Executive desk accessories</li>
-            <li>Minimalist workspace essentials</li> 
-            <li>Eco-friendly office accessories</li>
+            <li>Vibe-based workspace essentials e.g Minimalist, Executive</li> 
+            <li>Eco-friendly office décor and accessories</li>
         </ul>
         <p>We curate products that match different office vibes and atmospheres.</p>
         <div className={styles.divider}></div>
@@ -151,7 +150,7 @@ const page = () => {
         <p>Please visit our <Link href={'/return-refund'}>Returns & Refund Policy</Link> page for full details.</p>
         <div className={styles.divider}></div>
         <h2>12. What if my order arrives damaged?</h2>
-        <p>If your office décor item arrives damaged, contact us within 48 hours with:</p>
+        <p>If your ordered item arrives damaged, contact us within 48 hours with:</p>
          <ul>
             <li>Your order number</li>
             <li>Photos of the product and packaging</li>
