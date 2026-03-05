@@ -5,9 +5,10 @@
 }
 .revRatings{
     width: 25%;
-    height: auto;
+    height: 250px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     padding: 10px 20px 10px 0;
     border-right: 1px solid rgb(83, 83, 83);
     color: #ffe100;
@@ -18,8 +19,8 @@
     margin-bottom: 10px;
 }
 .starIcon{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
 }
 .ratings p{
     margin-left: 10px;
@@ -42,13 +43,14 @@
   } */
 .comment{
     width: 400px;
-    height: auto;
+    height: 250px;
     display: flex;
     flex-direction: column;
     background-color: rgb(45, 45, 45);
     padding: 10px 20px;
     margin-right: 10px;
     flex-shrink: 0;
+    overflow-y: scroll;
 }
 .comment h5{
     font-family: 'Playfair Display', sans-serif;

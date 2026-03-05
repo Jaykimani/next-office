@@ -2,7 +2,7 @@
 
 import styles from './cart.module.css'
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FaPlus } from "react-icons/fa6";
 import { FaMinus } from "react-icons/fa6";
 import { MdOutlineCancel } from "react-icons/md";
@@ -16,8 +16,21 @@ function Cart() {
     const [calendar, setCalendar] = useState(false);
     const [shipping, setShipping] = useState('')
     const [shippingDate, setShippingDate] = useState('');
+    const [shippingFee, setShippingFee] = useState(0);
     const {count, items, subtotal, checkout, removeItem, editSubtotal, deleteAll, updateAddQuantityTotal, updateMinusQuantityTotal, addCheckoutInformation} = useCartStore((state)=> state);
     const specialInstructions = useRef<HTMLTextAreaElement>(null);
+
+    
+    useEffect(()=>{
+        if (shipping === 'Within Nairobi') {
+            setShippingFee(300)
+        }else if (shipping === 'Outside Nairobi') {
+            setShippingFee(700)
+        }else if (shipping === 'Self pick-up') {
+            setShippingFee(0);
+        }
+
+    }, [shipping]);
 
 
     const handleCalendar = ()=>{
@@ -25,12 +38,13 @@ function Cart() {
     }
 
     const handleDeleteItem = (e: any) =>{
-        let itemId = e.currentTarget.id;
+        let itemId = Number(e.currentTarget.id);
     
         let newCart = items?.filter((item)=>{
           return item.id !== itemId
         });
-                
+
+    
         removeItem(newCart);
         editSubtotal();
         
@@ -50,8 +64,11 @@ function Cart() {
     }
 
     const handleCheckoutInfo = ()=>{
+        let total = subtotal + shippingFee;
+        
         let newItemArr = items.map((item)=>{
             let newObj = {
+                id: item.id,
                 name: item.name,
                 count: item.count,
                 total: item.total
@@ -64,7 +81,9 @@ function Cart() {
             subtotal : subtotal,
             instructions : specialInstructions.current && specialInstructions.current.value,
             shipping: shipping,
-            shippingDate: checkout.shippingDate === '' ? shippingDate : checkout.shippingDate
+            shippingDate: checkout.shippingDate === '' ? shippingDate : checkout.shippingDate,
+            shippingFee: shippingFee,
+            total: total
         }
 
         try {
@@ -103,7 +122,7 @@ function Cart() {
                      </div>
                     </div>  
                     </div>
-                    <MdOutlineCancel id={item.id} style={{color: 'red', width: '35px', height: '35px', marginLeft: '30px'}} onClick={handleDeleteItem}/>
+                    <MdOutlineCancel id={String(item.id)} style={{color: 'red', width: '35px', height: '35px', marginLeft: '30px'}} onClick={handleDeleteItem}/>
                    </div>
                        )
 

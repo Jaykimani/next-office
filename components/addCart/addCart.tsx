@@ -32,7 +32,7 @@ const AddCart = ({product}: addcartProps) => {
      const handleAddToCart = ()=>{
          if (typeof product?.images[0] === 'object' && product.images[0]?.url) {
           const cartObject = {
-            id: product?.name,
+            id: product?.id,
             name: product?.name,
             price: product?.price,
             total: product?.price && counter * product?.price,

@@ -285,27 +285,37 @@ export interface User {
 export interface Order {
   id: number;
   orderNumber: string;
+  DeliveryDate: string;
   status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
-  user?: (number | null) | User;
+  paymentStatus: 'unpaid' | 'paid' | 'failed' | 'refunded';
+  paymentMethod?: ('mpesa' | 'card' | 'bank' | 'cod') | null;
+  transactionId?: string | null;
+  customer: {
+    name: string;
+    email: string;
+    phone: string;
+  };
+  deliveryAddress: {
+    city: string;
+    areaStreet: string;
+    building?: string | null;
+    officeNumber?: string | null;
+    landmark?: string | null;
+    AdditionalDeliveryInformation?: string | null;
+  };
   items: {
     product: number | Product;
     name: string;
     price: number;
     quantity: number;
+    subtotal: number;
     id?: string | null;
   }[];
+  AdditionalOrderInformation?: string | null;
   subtotal: number;
-  deliveryFee?: number | null;
+  shipping?: number | null;
   total: number;
-  delivery: {
-    fullName: string;
-    phone: string;
-    address: string;
-    city: string;
-    notes?: string | null;
-  };
-  paymentMethod?: ('card' | 'mobile_money' | 'cod') | null;
-  paymentReference?: string | null;
+  adminNotes?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -517,8 +527,28 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface OrdersSelect<T extends boolean = true> {
   orderNumber?: T;
+  DeliveryDate?: T;
   status?: T;
-  user?: T;
+  paymentStatus?: T;
+  paymentMethod?: T;
+  transactionId?: T;
+  customer?:
+    | T
+    | {
+        name?: T;
+        email?: T;
+        phone?: T;
+      };
+  deliveryAddress?:
+    | T
+    | {
+        city?: T;
+        areaStreet?: T;
+        building?: T;
+        officeNumber?: T;
+        landmark?: T;
+        AdditionalDeliveryInformation?: T;
+      };
   items?:
     | T
     | {
@@ -526,22 +556,14 @@ export interface OrdersSelect<T extends boolean = true> {
         name?: T;
         price?: T;
         quantity?: T;
+        subtotal?: T;
         id?: T;
       };
+  AdditionalOrderInformation?: T;
   subtotal?: T;
-  deliveryFee?: T;
+  shipping?: T;
   total?: T;
-  delivery?:
-    | T
-    | {
-        fullName?: T;
-        phone?: T;
-        address?: T;
-        city?: T;
-        notes?: T;
-      };
-  paymentMethod?: T;
-  paymentReference?: T;
+  adminNotes?: T;
   updatedAt?: T;
   createdAt?: T;
 }

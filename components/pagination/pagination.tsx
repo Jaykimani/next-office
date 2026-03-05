@@ -17,8 +17,7 @@ export default function Pagination({ currentPage, totalPages }: Props) {
 
   const [pagesArr, setPagesArr] = useState<number[]>([]);
   const router = useRouter();
-  console.log(totalPages);
-  
+ 
   
   useEffect(()=>{
     if (totalPages >= 5) {

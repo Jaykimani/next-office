@@ -9,10 +9,61 @@ import { createOrder } from '@/lib/createOrder';
 function Checkout() {
     const {checkout} = useCartStore((state) => state);
 
-    useEffect(()=>{
-       console.log(checkout.shippingDate);
-       
-    }, [])
+
+    const handleCreateOrder = async(e)=>{
+      e.preventDefault();
+      const formData = new FormData(e.currentTarget);
+
+      const {customer, delivery} = await createOrder(formData);
+      
+      
+ 
+      let items = checkout.checkoutItems.map((item)=>{
+            let newObj = {
+                id: item.id,
+                count: item.count,
+            }
+         return newObj
+        });
+
+      const shipping = checkout.shippingFee;  
+      const deliveryDate = checkout.shippingDate
+      const orderInstructions = checkout.instructions
+       try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          customer,
+          delivery,
+          items,
+          orderInstructions,
+          shipping,
+          deliveryDate
+        }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        throw new Error(data.error || "Checkout failed")
+      }
+
+      console.log("Order created:", data.orderId)
+
+      // ✅ Redirect to success page
+      // window.location.href = `/order-success?order=${data.orderNumber}`
+
+    } catch (err: any) {
+      // setError(err.message)
+      console.log(err);
+      
+    } finally {
+      // setLoading(false)
+    }
+  }
 
 
     return (
@@ -23,7 +74,7 @@ function Checkout() {
             <Image className={styles.svgLogo3} src="/Component 6.svg" alt="" width={200} height={200} />
             </div>
           <div className={styles.line}></div>
-            <form action={createOrder} className={styles.checkoutDiv}>
+            <form className={styles.checkoutDiv} onSubmit={handleCreateOrder}>
               <div className={styles.billShip}>
                 <div className={styles.billingForm}>
                   <h4>BILLING & SHIPPING</h4>
@@ -36,7 +87,7 @@ function Checkout() {
                   <input type="text" name='building-name' placeholder='Building name/Apartment name/Estate name'/>
                   <input type="text" name='office-number' placeholder='Office/Room/Apartment/House number'/>
                   <input type="text" name='landmark' placeholder='Optional: Nearby landmark e.g opposite sarit centre'/>
-                  <h5>Additional Information(Optional)</h5>
+                  <h5>Additional Delivery Information(Optional)</h5>
                   <textarea name="additional-info" id="" cols={30} rows={5}></textarea>
                 </div>
                 
@@ -63,11 +114,11 @@ function Checkout() {
                </div>
                <div className={styles.orderTotal}>
                 <h4>Shipping Fee:</h4>
-                <p>Ksh 0.00</p>
+                <p>KSh {checkout.shippingFee.toLocaleString('en-US')}.00</p>
                </div>
                <div className={styles.orderTotal}>
                 <h4>TOTAL:</h4>
-                <p style={{fontWeight: '600', fontSize: '20px'}}>Ksh 0.00</p>
+                <p style={{fontWeight: '600', fontSize: '20px'}}>KSh {checkout.total.toLocaleString('en-US')}.00</p>
                </div>
                <div className={styles.orderTotal}>
                 <h4>Delivery:</h4>
@@ -104,7 +155,7 @@ function Checkout() {
                 <p>If you are facing issues placing your order, please check this option and click “Place Order”. Our team will reach out to you A.S.A.P.</p>
                </div>
                <button type="submit" className={styles.placeOrder}>PLACE ORDER</button>
-               <button type="submit" className={styles.cancelOrder}>CANCEL ORDER</button>
+               <button type="button" className={styles.cancelOrder}>CANCEL ORDER</button>
 
               </div>
             </form>
