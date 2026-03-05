@@ -125,7 +125,7 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      orderId: createdOrder.id,
+      orderNumber: orderNumber,
       total,
     });
 

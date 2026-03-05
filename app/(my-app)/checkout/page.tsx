@@ -51,10 +51,9 @@ function Checkout() {
         throw new Error(data.error || "Checkout failed")
       }
 
-      console.log("Order created:", data.orderId)
+      console.log("Order created:", data.orderNumber)
 
-      // ✅ Redirect to success page
-      // window.location.href = `/order-success?order=${data.orderNumber}`
+      window.location.href = `/order-success/${data.orderNumber}`
 
     } catch (err: any) {
       // setError(err.message)
