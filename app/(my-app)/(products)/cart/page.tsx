@@ -113,7 +113,7 @@ function Cart() {
                     <Image src={item.image} alt="" width={200} height={200}/>
                     <div className={styles.cartInfo}>
                     <div className={styles.cartInfoPhone}>
-                     {item.name?.length > 17 ? <h4>{item.name.substring(0, 15)}...<span>(@{item.price}/=)</span></h4> : <h4>{item.name} <span>(@{item.price}/=)</span></h4>}
+                     {item.name?.length > 17 ? <h4>{item.name.substring(0, 13)}...(@{item.price}/=)</h4> : <h4>{item.name} (@{item.price}/=)</h4>}
                     <p className={styles.cartPrice}>Ksh {item.total}/=</p>
                      <div className={styles.cartCounter}>
                       <span className={styles.first} onClick={() =>handleCartMinus(item.name)}><FaMinus fontSize='small'/></span>
@@ -122,7 +122,7 @@ function Cart() {
                      </div>
                     </div>  
                     </div>
-                    <MdOutlineCancel id={String(item.id)} style={{color: 'red', width: '35px', height: '35px', marginLeft: '30px'}} onClick={handleDeleteItem}/>
+                    <MdOutlineCancel id={String(item.id)} style={{color: 'red', width: '35px', height: '35px', marginLeft: '20px'}} onClick={handleDeleteItem}/>
                    </div>
                        )
 
@@ -141,7 +141,7 @@ function Cart() {
                 <div className={styles.cartShipping}>
                     <p className={styles.shippingTitle}>Delivery</p> 
                     <div>
-                     <input type="radio" name="shipping-btn" id="nairobi" onChange={()=> {setShipping('Within Nairobi'); setShippingDate('same/next day')}}/>
+                     <input type="radio" name="shipping-btn" id="nairobi" onChange={()=> {setShipping('Within Nairobi'); setShippingDate('1 - 2 days')}}/>
                      <label htmlFor="nairobi">Within Nairobi</label>
                     </div>
                      <div>
@@ -156,7 +156,7 @@ function Cart() {
                 <div className={styles.cartCalendar} style={{height: calendar ? "auto" : "70px"}}>
                     <div className={styles.cartCalendarInset} onClick={handleCalendar}>
                     <p>Click Here to pick specific delivery/pick-up date! IF ANY!</p>
-                    <MdCalendarMonth style={{color: "black", width:'32px', height: '32px'}}/>
+                    <MdCalendarMonth style={{color: "black", width:'40px', height: '40px'}}/>
                     </div>
                     <Calendar />
                 </div>

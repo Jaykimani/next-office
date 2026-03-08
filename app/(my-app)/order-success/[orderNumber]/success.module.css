@@ -4,6 +4,9 @@
     margin: 40px auto;
     cursor: pointer;
 }
+.breaker{
+    display: none;
+}
 .successTop{
     width: 100%;
     height: auto;
@@ -129,6 +132,9 @@
     background-color: gray;
     margin: 30px 0;
 }
+.divider1{
+    display: none;
+}
 .contact{
     width: 100%;
     height: auto;
@@ -147,6 +153,339 @@
 }
 .contactInfo p{
     margin: 10px;
+}
+
+@media screen and (max-width: 800px) {
+   .success{
+    width: 95%;
+    height: auto;
+    margin: 40px auto;
+    cursor: pointer;
+}
+.successTop{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-family: 'Calibri', sans-serif;
+}
+.successImg{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+}
+.successTop h1{
+    font-size: 32px;
+}
+.successTop p {
+    margin: 10px 0;
+    color: rgb(72, 72, 72);
+}
+.orderNumber{
+    width: 70%;
+    padding: 8px 8px;
+    background-color: rgb(230, 230, 230);
+    margin: 15px auto;
+    border-radius: 20px;
+}
+.successInset{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px 0;
+}
+.orderSummary{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+.orderSummary h4{
+    font-family: Calibri;
+    display: flex;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    padding: 8px 10px;
+}
+.productDetails{
+    margin-top: 10px;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 8px 10px;
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+.productDetails h5{
+    font-size: 17px;
+}
+.product{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.productTotal{
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.productSubtotal{
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(230, 230, 230);
+    font-family: Calibri;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.productSubtotal p{
+    margin: 10px 0;
+}
+.productSubtotalTitles{
+    width: 70%;
+    height: 100%;
+    text-align: right;
+}
+.productSubtotalCosts{
+    width: 28%;
+    height: 100%;
+    text-align: right;
+}
+.deliveryInfo{
+    width: 90%;
+    height: auto;
+    margin:  0 auto;
+}
+.deliveryInformation{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.deliveryInformation h4{
+    font-family: Calibri;
+    display: flex;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    padding: 8px 10px;
+    margin-bottom: 10px;
+}
+.deliveryInformation p{
+    margin: 10px;
+    font-family: Calibri;
+}
+.customer{
+    width: 48%;
+    height: auto;
+}
+.shipping{
+    width: 48%;
+    height: auto;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(211, 211, 211);
+    margin: 30px 0;
+}
+.divider1{
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(211, 211, 211);
+    margin: 30px 0;
+}
+.contact{
+    width: 100%;
+    height: auto;
+}
+.contact h4{
+    font-family: Calibri;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+}
+.contactInfo{
+    display: flex;
+}
+.contactInfo div{
+    margin-right: 10px;
+}
+.contactInfo p{
+    margin: 10px;
+} 
+}
+
+@media screen and (max-width: 600px) {
+  .success{
+    width: 95%;
+    height: auto;
+    margin: 40px auto;
+    cursor: pointer;
+}
+.breaker{
+    display: block;
+}
+.successTop{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-family: 'Calibri', sans-serif;
+}
+.successImg{
+    width: 70px;
+    height: 70px;
+    margin-bottom: 15px;
+}
+.successTop h1{
+    font-size: 30px;
+}
+.successTop p {
+    margin: 10px 0;
+    color: rgb(72, 72, 72);
+}
+.orderNumber{
+    width: 100%;
+    padding: 8px 8px;
+    background-color: rgb(230, 230, 230);
+    margin: 15px auto;
+    border-radius: 20px;
+}
+.successInset{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px 0;
+}
+.orderSummary{
+    width: 97%;
+    height: auto;
+    margin: 0 auto;
+}
+.orderSummary h4{
+    font-family: Calibri;
+    display: flex;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    padding: 8px 10px;
+}
+.productDetails{
+    margin-top: 10px;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px 8px 10px;
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+.productDetails h5{
+    font-size: 17px;
+}
+.product{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.productTotal{
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.productSubtotal{
+    width: 100%;
+    padding: 15px;
+    background-color: rgb(230, 230, 230);
+    font-family: Calibri;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.productSubtotal p{
+    margin: 10px 0;
+}
+.productSubtotalTitles{
+    width: 50%;
+    height: 100%;
+    text-align: right;
+}
+.productSubtotalCosts{
+    width: 48%;
+    height: 100%;
+    text-align: right;
+}
+.deliveryInfo{
+    width: 98%;
+    height: auto;
+    margin:  0 auto;
+}
+.deliveryInformation{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.deliveryInformation h4{
+    font-family: Calibri;
+    display: flex;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    padding: 8px 10px;
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+.deliveryInformation p{
+    margin: 15px 10px;
+    font-family: Calibri;
+    font-size: 15px;
+}
+.customer{
+    width: 100%;
+    height: auto;
+}
+.shipping{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
+.divider{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(211, 211, 211);
+    margin: 30px 0;
+}
+.divider1{
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgb(211, 211, 211);
+    margin: 30px 0;
+}
+.contact{
+    width: 100%;
+    height: auto;
+}
+.contact h4{
+    font-family: Calibri;
+    display: flex;
+    align-items: center;
+    padding: 8px 10px;
+}
+.contactInfo{
+    display: flex;
+}
+.contactInfo div{
+    margin-right: 10px;
+}
+.contactInfo p{
+    margin: 10px;
+} 
 }
 
 

@@ -288,7 +288,7 @@ export interface Order {
   DeliveryDate: string;
   status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
   paymentStatus: 'unpaid' | 'paid' | 'failed' | 'refunded';
-  paymentMethod?: ('mpesa' | 'card' | 'bank' | 'cod') | null;
+  paymentMethod?: ('mpesa' | 'airtel' | 'card' | 'bank' | 'cod') | null;
   transactionId?: string | null;
   customer: {
     name: string;

@@ -43,8 +43,7 @@ const page = () => {
         <div className={styles.contactInset}>
          <h1>Contact OfficeAura – Office Interior Décor in Kenya</h1>
          <p className={styles.headerP}>Looking for professional office interior décor and office accessories in Kenya?
-Contact Office Aura for expert guidance, décor bundles, and nationwide delivery.
-We serve home offices, startups, and corporate spaces across Kenya.</p>
+          Contact Office Aura for expert guidance, décor bundles, and nationwide delivery. We serve home offices, startups, and corporate spaces across Kenya.</p>
 
         <h2>Reach out</h2>
         <div className={styles.contactInformation}>

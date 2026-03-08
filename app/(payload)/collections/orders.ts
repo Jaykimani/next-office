@@ -80,6 +80,7 @@ export const Orders: CollectionConfig = {
       type: "select",
       options: [
         { label: "M-Pesa", value: "mpesa" },
+        {label: "Airtel-money", value: "airtel"},
         { label: "Card", value: "card" },
         { label: "Bank Transfer", value: "bank" },
         { label: "Cash on Delivery", value: "cod" },

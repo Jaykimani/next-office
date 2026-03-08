@@ -286,7 +286,7 @@ const ShopNav = () => {
             <Link href={'/cart'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopInset}>
               <FaShoppingCart className={styles.shop2Icon} />
-              <span className={styles.shop2Count}>0</span>
+              <span className={styles.shop2Count}>{count}</span>
               </div>
               <p>KSH 0.00</p>
             </Link>

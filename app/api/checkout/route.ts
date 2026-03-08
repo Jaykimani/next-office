@@ -8,13 +8,19 @@ type CartItem = {
   id: number;
   count: number;
 };
+type PaymentMethod =
+  | "mpesa"
+  | "airtel"
+  | "card"
+  | "bank"
+  | "cod"
 
 export async function POST(req: NextRequest) {
   try {
     const payload = await getPayload({ config });
 
     const body = await req.json();
-    const { customer, delivery, items, orderInstructions, shipping, deliveryDate } = body as {
+    const { customer, delivery, items, orderInstructions, shipping, deliveryDate, paymentMethod } = body as {
       customer: {
         name: string;
         email: string;
@@ -32,7 +38,8 @@ export async function POST(req: NextRequest) {
        items: CartItem[];
        orderInstructions: string;
        shipping: number,
-       deliveryDate: string
+       deliveryDate: string,
+       paymentMethod: PaymentMethod
     };
 
     if (!items || items.length === 0) {
@@ -102,6 +109,7 @@ export async function POST(req: NextRequest) {
         DeliveryDate: deliveryDate,
         status: "pending",
         paymentStatus: "unpaid",
+        paymentMethod,
         customer,
         deliveryAddress: delivery,
         items: orderItems,
@@ -111,6 +119,8 @@ export async function POST(req: NextRequest) {
         total,
       },
     });
+
+    
 
     // 📦 4️⃣ Optional: Reduce Stock
     for (const item of orderItems) {

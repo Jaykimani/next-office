@@ -3,12 +3,12 @@
 import styles from './checkout.module.css';
 import Image from 'next/image';
 import { useCartStore } from '@/app/store';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { createOrder } from '@/lib/createOrder';
 
 function Checkout() {
     const {checkout} = useCartStore((state) => state);
-
+    const [payment, setPayment] =useState('');
 
     const handleCreateOrder = async(e)=>{
       e.preventDefault();
@@ -29,6 +29,9 @@ function Checkout() {
       const shipping = checkout.shippingFee;  
       const deliveryDate = checkout.shippingDate
       const orderInstructions = checkout.instructions
+      const paymentMethod = payment
+     
+      
        try {
       const res = await fetch("/api/checkout", {
         method: "POST",
@@ -41,7 +44,8 @@ function Checkout() {
           items,
           orderInstructions,
           shipping,
-          deliveryDate
+          deliveryDate,
+          paymentMethod
         }),
       })
 
@@ -65,6 +69,7 @@ function Checkout() {
   }
 
 
+
     return (
         <>
         <div id={styles.checkout}>
@@ -79,7 +84,7 @@ function Checkout() {
                   <h4>BILLING & SHIPPING</h4>
                   <h5>Delivery Information</h5>
                   <input type="text" name="full-name" id="" placeholder='Full Name'/>
-                  <input type="text" name='phone-number' placeholder='Phone Number'/>
+                  <input type="text" name='phone-number' placeholder='Phone Number(in the format: 0704******)'/>
                   <input type="text" name='email-address' placeholder='Email Address'/>
                   <input type="text" name='city-town' placeholder='City / Town'/>
                   <input type="text" name='area-street' placeholder='Area name or Street name'/>
@@ -131,21 +136,26 @@ function Checkout() {
                <h4>PAYMENT:</h4>
                <div className={styles.paymentInset}>
                 <div className={styles.paymentDiv}>
-                  <Image className={styles.paymentImg} src="/cash-in-hand.jpg" alt="cash-payment" width={100} height={100}/>
-                  <p>Cash payment</p>
+                  <input type="radio" name="paymaent-btn" id="cash" onChange={()=> setPayment('cod')} style={{width: '20px', height: '20px', marginRight: '20px', accentColor: 'red'}}/>
+                <label htmlFor="cash"><Image className={styles.paymentImg} src="/cash-in-hand.jpg" alt="cash-payment" width={100} height={100}/>Cash Payment</label>
                 </div>
                 <div className={styles.paymentDiv}>
-                  <Image className={styles.paymentImg} src="/mpesa3.jpg" alt="cash-payment" width={100} height={100}/>
-                  <p>M-pesa till number</p>
+                  <input type="radio" name="paymaent-btn" id="mpesa" onChange={()=> setPayment('mpesa')} style={{width: '20px', height: '20px', marginRight: '20px', accentColor: 'red'}}/>
+                <label htmlFor="mpesa"><Image className={styles.paymentImg} src="/mpesa3.jpg" alt="cash-payment" width={100} height={100}/>M-pesa till number</label>
                 </div>
-                  <div className={styles.paymentDiv}>
-                     <Image className={styles.paymentImg} src="/airtel.jpg" alt="cash-payment" width={100} height={100}/>
-                     <p>Airtel money</p>
-                  </div>
-                  <div className={styles.paymentDiv}>
-                    <Image className={styles.paymentImg} src="/card.png" alt="cash-payment" width={100} height={100}/>
-                    <p>Credit card</p>
-                  </div>
+                <div className={styles.paymentDiv}>
+                  <input type="radio" name="paymaent-btn" id="airtel" onChange={()=> setPayment('airtel')} style={{width: '20px', height: '20px', marginRight: '20px',  accentColor: 'red'}}/>
+                <label htmlFor="airtel"><Image className={styles.paymentImg} src="/airtel.jpg" alt="cash-payment" width={100} height={100}/>Airtel Money</label>
+                </div>
+                <div className={styles.paymentDiv}>
+                  <input type="radio" name="paymaent-btn" id="credit" onChange={()=> setPayment('card')} style={{width: '20px', height: '20px', marginRight: '20px', accentColor: 'red'}}/>
+                <label htmlFor="credit"><Image className={styles.paymentImg} src="/card.png" alt="cash-payment" width={100} height={100}/>Credit Card</label>
+                </div>
+                <div className={styles.paymentDiv}>
+                  <input type="radio" name="paymaent-btn" id="bank" onChange={()=> setPayment('bank')} style={{width: '20px', height: '20px', marginRight: '20px', accentColor: 'red'}}/>
+                <label htmlFor="bank"><Image className={styles.paymentImg} src="/bank.png" alt="cash-payment" width={100} height={100}/>Bank Transfer</label>
+                </div>
+                 
                   
                </div>
                </div>
