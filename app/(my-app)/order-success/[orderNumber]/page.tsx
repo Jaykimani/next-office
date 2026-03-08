@@ -75,13 +75,15 @@ export default async function OrderSuccess({ params }: Props) {
   " " +
   date.toLocaleTimeString();
 
+  const location =  data.deliveryAddress.building && data.deliveryAddress.officeNumber ? `${data.deliveryAddress.city}, ${data.deliveryAddress.areaStreet}, ${data.deliveryAddress.building}, ${data.deliveryAddress.officeNumber}` : `${data.deliveryAddress.city}, ${data.deliveryAddress.areaStreet}`;
+
   const whatsappPhone = formatKenyanNumber(data.customer.phone);
  const ordermessage = {
     orderNumber: data.orderNumber,
     customerName: data.customer.name,
     items: data.items,
     total: data.total,
-    location: `${data.deliveryAddress.city}, ${data.deliveryAddress.areaStreet}, ${data.deliveryAddress.building}, ${data.deliveryAddress.officeNumber}`,
+    location: location,
     timeline: data.DeliveryDate,
     payment : data.paymentMethod
    }
@@ -106,7 +108,7 @@ ${items}
 
 Total: KSh ${data.total.toLocaleString('en-us')}/=
 
-Order Location is ${data.deliveryAddress.city}.
+Delivry Location is ${location}.
 
 Your delivery timeline is ${data.DeliveryDate}.
 
@@ -120,14 +122,14 @@ Cutomer whatsapp confirmation: ${whatsappConfirm}
 
     const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTHTOKEN)
 
-  //  client.messages
-  //   .create({
-  //       body: message,
-  //       from: 'whatsapp:+14155238886',
-  //       to: 'whatsapp:+254704610605'
-  //   })
-  //   .then(message => console.log(message.sid))
-  //   .catch((error) => console.error('Error:', error));
+   client.messages
+    .create({
+        body: message,
+        from: 'whatsapp:+14155238886',
+        to: 'whatsapp:+254704610605'
+    })
+    .then(message => console.log(message.sid))
+    .catch((error) => console.error('Error:', error));
     
     
   } catch (error) {

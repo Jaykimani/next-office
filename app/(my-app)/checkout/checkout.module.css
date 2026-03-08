@@ -1,13 +1,13 @@
 #checkout{
     width: 100%;
     height: auto;
-    background-color: #e8e8e8;
+    background-color: #ffffff;
     padding: 30px 50px;
 }
 .checkoutInset{
     width: 80%;
     height: auto;
-    background-color: rgb(255, 250, 230);
+    background-color: rgb(211, 211, 211);
     margin: 0 auto;
     padding: 40px;
 }

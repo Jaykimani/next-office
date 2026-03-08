@@ -9,6 +9,14 @@ import { createOrder } from '@/lib/createOrder';
 function Checkout() {
     const {checkout} = useCartStore((state) => state);
     const [payment, setPayment] =useState('');
+    const [inputs, setInputs] = useState(false);
+
+    useEffect(()=>{
+      if (checkout.shipping === 'Self pick-up') {
+        setInputs(true);
+      }
+
+    }, [checkout])
 
     const handleCreateOrder = async(e)=>{
       e.preventDefault();
@@ -82,15 +90,15 @@ function Checkout() {
               <div className={styles.billShip}>
                 <div className={styles.billingForm}>
                   <h4>BILLING & SHIPPING</h4>
-                  <h5>Delivery Information</h5>
+                  <h5>Delivery Information (Please fill all fields)</h5>
                   <input type="text" name="full-name" id="" placeholder='Full Name'/>
                   <input type="text" name='phone-number' placeholder='Phone Number(in the format: 0704******)'/>
                   <input type="text" name='email-address' placeholder='Email Address'/>
                   <input type="text" name='city-town' placeholder='City / Town'/>
                   <input type="text" name='area-street' placeholder='Area name or Street name'/>
-                  <input type="text" name='building-name' placeholder='Building name/Apartment name/Estate name'/>
-                  <input type="text" name='office-number' placeholder='Office/Room/Apartment/House number'/>
-                  <input type="text" name='landmark' placeholder='Optional: Nearby landmark e.g opposite sarit centre'/>
+                  {!inputs && <input type="text" name='building-name' placeholder='Building name/Apartment name/Estate name'/>}
+                  {!inputs && <input type="text" name='office-number' placeholder='Office/Room/Apartment/House number'/>}
+                  {!inputs && <input type="text" name='landmark' placeholder='Optional: Nearby landmark e.g opposite sarit centre'/>}
                   <h5>Additional Delivery Information(Optional)</h5>
                   <textarea name="additional-info" id="" cols={30} rows={5}></textarea>
                 </div>

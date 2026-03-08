@@ -8,7 +8,7 @@ import { FaMinus } from "react-icons/fa6";
 import { MdOutlineCancel } from "react-icons/md";
 import { MdCalendarMonth } from "react-icons/md";
 import Calendar from '@/components/calendar/calendar';
-import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { useCartStore } from '@/app/store';
 
 
@@ -19,6 +19,8 @@ function Cart() {
     const [shippingFee, setShippingFee] = useState(0);
     const {count, items, subtotal, checkout, removeItem, editSubtotal, deleteAll, updateAddQuantityTotal, updateMinusQuantityTotal, addCheckoutInformation} = useCartStore((state)=> state);
     const specialInstructions = useRef<HTMLTextAreaElement>(null);
+    const [caution, setCaution] = useState('');
+    const router = useRouter();
 
     
     useEffect(()=>{
@@ -64,7 +66,13 @@ function Cart() {
     }
 
     const handleCheckoutInfo = ()=>{
-        let total = subtotal + shippingFee;
+        if(items.length === 0){
+         setCaution('Your Cart is Empty!');
+        }else if(shipping == ''){
+            setCaution('Please select delivery location')
+        }else{
+          
+            let total = subtotal + shippingFee;
         
         let newItemArr = items.map((item)=>{
             let newObj = {
@@ -88,12 +96,14 @@ function Cart() {
 
         try {
             addCheckoutInformation(data);
+            router.push('/checkout');
         } catch (error) {
             console.log('cart data could not be added:', error);
             
         }
-           
+        }
         
+       
     }
 
 
@@ -160,9 +170,13 @@ function Cart() {
                     </div>
                     <Calendar />
                 </div>
-                <Link href={'/checkout'} style={{textDecoration: 'none'}}>
+                {caution && <div className={styles.caution}>
+                   <p>{caution}</p>
+                </div>}
+                
+                
                 <button type="submit" className={styles.cartCheckout} onClick={handleCheckoutInfo}>PROCEED TO CHECKOUT</button>
-                </Link>
+        
                 <button type="submit" className={styles.cartCancel} onClick={handleCancelOrder}>CANCEL ORDER</button>
                 </div>
 
