@@ -26,11 +26,10 @@ export const Categories  = [
     {
         id: 5,
         title: 'Office Greenery Solutions',
-        links: [{ id: 'Potted Office Plants', name: 'potted-office-plants' },
-           { id: 'Wall/Vertical Office Greenery', name: 'wall-vertical-office-greenery' },
-           { id: 'Artificial Office Greenery', name: 'artificial-office-greenery' },
-           { id: 'Natural Office Greenery', name: 'natural-office-greenery' },
-            { id: 'Outdoor Office Greenery', name: 'outdoor-office-greenery' }
+        links: [ { id: 'Office Desk Greenery', name: 'office-desk-greenery' }, 
+              { id: 'Artificial Office Greenery', name: 'artificial-office-greenery' },
+              { id: 'Natural Office Greenery', name: 'natural-office-greenery' },
+              { id: 'Office Planters and Pots', name: 'office-planters-and-pots' }
           ]
     },
 

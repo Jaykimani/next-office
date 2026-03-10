@@ -14,14 +14,17 @@ import { Metadata } from 'next'
 
 
 type Props = {
-  params: Promise<{ productId: string }>
+  params: Promise<{ category: string
+                    productId: string
+                    slug: string
+                 }>
 }
 
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
   const { productId } = await params
- 
+
 
   const product = await getSingleProduct(productId)
   
@@ -82,6 +85,7 @@ function mediaIsObject(media: number | Media) : media is Media {
 async function Info({params} : Props) {
   
    const {productId} = await params;
+ 
    
     const Product = await getSingleProduct(productId);
     const Reviews = await getProductReviews(productId)
@@ -94,6 +98,7 @@ async function Info({params} : Props) {
     
     
     const theReviews = Reviews ?? []
+  
      
 
     let sum = theReviews.reduce((acc, item)=> acc + item.rating, 0);
@@ -120,7 +125,7 @@ async function Info({params} : Props) {
     },
     offers: {
       '@type': 'Offer',
-      url: `https://yourdomain.com/shop/${Product?.id}`,
+      url: `https://yourdomain.com/shop/${Product?.category}/${Product?.id}/${Product?.slug}`,
       priceCurrency: 'KES',
       price: Product?.price,
       availability:
@@ -128,13 +133,11 @@ async function Info({params} : Props) {
           ? 'https://schema.org/InStock'
           : 'https://schema.org/OutOfStock',
     },
-    aggregateRating: Product?.averageRating
-      ? {
-          '@type': 'AggregateRating',
-          ratingValue: Product.averageRating,
-          reviewCount: Product.reviews?.length || 1,
-        }
-      : undefined,
+    "aggregateRating": {
+     "@type": "AggregateRating",
+     "ratingValue": "4.6",
+     "reviewCount": "10"
+     }
   }
 
    

@@ -19,7 +19,8 @@ const payload = await getPayload({config});
       slug: true,
       name: true,
       images: true,
-      price: true
+      price: true,
+      category: true
     } // The slug of your 
     
   });

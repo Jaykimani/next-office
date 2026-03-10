@@ -9,6 +9,7 @@ import { createOrder } from '@/lib/createOrder';
 function Checkout() {
     const {checkout} = useCartStore((state) => state);
     const [payment, setPayment] =useState('');
+    const [caution , setCaution] = useState(false);
     const [inputs, setInputs] = useState(false);
 
     useEffect(()=>{
@@ -20,7 +21,11 @@ function Checkout() {
 
     const handleCreateOrder = async(e)=>{
       e.preventDefault();
-      const formData = new FormData(e.currentTarget);
+      if(payment === ''){
+        setCaution(true)
+      }else{
+        setCaution(false)
+        const formData = new FormData(e.currentTarget);
 
       const {customer, delivery} = await createOrder(formData);
       
@@ -74,6 +79,8 @@ function Checkout() {
     } finally {
       // setLoading(false)
     }
+      }
+      
   }
 
 
@@ -90,7 +97,7 @@ function Checkout() {
               <div className={styles.billShip}>
                 <div className={styles.billingForm}>
                   <h4>BILLING & SHIPPING</h4>
-                  <h5>Delivery Information (Please fill all fields)</h5>
+                  <h5>Delivery Information <span style={{color: 'red', fontSize: '12px'}}>(Please fill all fields)</span></h5>
                   <input type="text" name="full-name" id="" placeholder='Full Name'/>
                   <input type="text" name='phone-number' placeholder='Phone Number(in the format: 0704******)'/>
                   <input type="text" name='email-address' placeholder='Email Address'/>
@@ -141,7 +148,7 @@ function Checkout() {
                 <p style={{color: 'gray', fontFamily: 'Times New Roman, Times, serif', fontWeight: '400', fontSize: '18px'}}>{checkout.shippingDate}</p>
                </div>
                <div className={styles.checkoutPayments}>
-               <h4>PAYMENT:</h4>
+               <h4>PAYMENT METHOD:</h4>
                <div className={styles.paymentInset}>
                 <div className={styles.paymentDiv}>
                   <input type="radio" name="paymaent-btn" id="cash" onChange={()=> setPayment('cod')} style={{width: '20px', height: '20px', marginRight: '20px', accentColor: 'red'}}/>
@@ -171,6 +178,9 @@ function Checkout() {
                 <input type="checkbox" name="" id="" />
                 <p>If you are facing issues placing your order, please check this option and click “Place Order”. Our team will reach out to you A.S.A.P.</p>
                </div>
+               {caution && <div className={styles.caution}>
+                <p>Please select payment method</p>
+               </div>}
                <button type="submit" className={styles.placeOrder}>PLACE ORDER</button>
                <button type="button" className={styles.cancelOrder}>CANCEL ORDER</button>
 

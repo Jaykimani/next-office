@@ -45,7 +45,7 @@ import type { CollectionConfig } from 'payload';
   const vibes = [
               { label: 'Minimalist Offfice Vibe', value: 'minimalist-office-vibe' }, 
               { label: 'Executive/CEO Office Vibe', value: 'executive-office-vibe' },
-              { label: 'Modern Professional Office Viobe', value: 'modern-professional-office-vibe' },
+              { label: 'Modern Professional Office Vibe', value: 'modern-professional-office-vibe' },
               { label: 'Creative Studio Office Vibe', value: 'creative-studio-office-vibe' },
               { label: 'Nature Inspired Office Vibe', value: 'nature-inspired-office-vibe' },          
   ]
@@ -78,7 +78,6 @@ export const Products: CollectionConfig = {
     {
   name: 'slug',
   type: 'text',
-  unique: true,
   admin: {
     position: 'sidebar',
   },

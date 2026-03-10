@@ -192,9 +192,9 @@ function List({ productsArr }: ProductsProps) {
             {productsArr?.map((item)=>{
                 if(!mediaIsObject(item.images[0]))  return null
                
-
+                  
                return (
-                    <Link key={item.id} href={`/shop/${item.id}`} style={{textDecoration: 'none'}}>
+                    <Link key={item.id} href={`/shop/${item.category}/${item.id}/${item.slug}`} style={{textDecoration: 'none'}}>
                      <div className={styles.listItem}>
                     <div className={styles.itemImg}>
                       {item.images[0]?.url && (

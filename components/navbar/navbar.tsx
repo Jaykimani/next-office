@@ -109,7 +109,7 @@ const Navbar = () => {
           <Link href={'/cart'} style={{textDecoration: 'none', color: 'white'}}>
            <div className={styles.shoppingInset}>
               <FaShoppingCart style={{color : '#ffe100', width: '28px', height: '28px'}}/>  
-              <span className={styles.shoppingCount}>5</span>
+              <span className={styles.shoppingCount}>{count}</span>
               </div>
           </Link>
              

@@ -108,7 +108,7 @@ ${items}
 
 Total: KSh ${data.total.toLocaleString('en-us')}/=
 
-Delivry Location is ${location}.
+Delivery Location is ${location}.
 
 Your delivery timeline is ${data.DeliveryDate}.
 

@@ -215,14 +215,9 @@ const ShopNav = () => {
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: greenery ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: greenery ? "auto" : "0"}}>
-                  <Link href={'/shop/subcategory/potted-office-plants'} style={{textDecoration: "none", color: "white"}}>
+                  <Link href={'/shop/subcategory/office-desk-greenery'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Potted Office Plants</p>
-                   </div>
-                   </Link>
-                   <Link href={'/shop/subcategory/wall-vertical-office-greenery'} style={{textDecoration: "none", color: "white"}}>
-                   <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Wall & Vertical Office Greenery</p>
+                    <p>Office Desk Greenery</p>
                    </div>
                    </Link>
                     <Link href={'/shop/subcategory/artificial-office-greenery'} style={{textDecoration: "none", color: "white"}}>
@@ -235,9 +230,9 @@ const ShopNav = () => {
                     <p>Natural Office Greenery</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/outdoor-office-greenery'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/subcategory/office-planters-and-pots'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Outdoor Office Greenery</p>
+                    <p>Office Planters and Pots</p>
                    </div>
                    </Link>
                 </div>    

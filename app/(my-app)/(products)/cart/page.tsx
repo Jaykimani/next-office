@@ -145,7 +145,7 @@ function Cart() {
                 <p className={styles.total}>{subtotal.toLocaleString('en-US')}Ksh</p> 
                 </div>  
                 <div className={styles.orderInstructions}>
-                 <p>Add Special Order Instructions</p>
+                 <p>Add Special Order Instructions (Optional)</p>
                  <textarea ref={specialInstructions} name="" id="" rows={5}></textarea>
                 </div>
                 <div className={styles.cartShipping}>
