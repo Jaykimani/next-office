@@ -136,20 +136,19 @@ export interface Product {
   slug?: string | null;
   images: (number | Media)[];
   price: number;
-  category: 'office-accessories' | 'office-lighting-solutions' | 'office-wall-accessories' | 'office-greenery';
+  category: 'office-accessories' | 'office-electronics-gadgets' | 'office-wall-accessories' | 'office-greenery';
   /**
    * Select one or more subcategories
    */
   subcategories: (
-    | 'office-desk-organisers'
-    | 'office-desk-gadgets'
+    | 'office-desk-organizers'
     | 'office-productivity-writing-tools'
     | 'office-ergonomic-comfort-accessories'
-    | 'office-aesthetics-personalized-accessories'
-    | 'office-desk-lamps'
-    | 'office-overhead-lighting'
-    | 'office-wall-mounted-lighting'
-    | 'office-stand-alone-lighting'
+    | 'office-aesthetics-personalized-décor'
+    | 'office-desk-lighting-gadgets'
+    | 'office-charging-power-accessories'
+    | 'office-computer-accessories'
+    | 'office-cable-management-tech'
     | 'office-wall-art-posters'
     | 'office-wall-clocks'
     | 'office-wall-mounted-Shelves'

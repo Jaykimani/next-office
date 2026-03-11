@@ -20,8 +20,7 @@ const Featured = () => {
                           <li>Desk Organizers</li>
                           <li>Productivity & Writing tools</li>
                           <li>Ergonomics & Comfort Accessories</li>
-                          <li>Aesthetics & Personalized Items</li>
-                          <li>Office Desk Gadgets</li>
+                          <li>Aesthetics & Personalized Décor</li>
                         </ul>
                         <Link className={styles.featuredLink} href={'/shop/category/office-accessories'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
@@ -30,20 +29,20 @@ const Featured = () => {
                     </div>
                     <div className={styles.featureOpt1}>
                         <div className={styles.optDiv}>
-                        <h3>Office Lighting Solutions</h3>
+                        <h3>Office Electronics & Gadgets</h3>
                         <ul>
-                          <li>Desk Lamps</li>
-                          <li>Overhead fixtures</li>
-                          <li>Wall-mounted fixtures</li>
-                          <li>Stand-alone fixtures</li>
+                          <li>Desk Lighting & Gadgets</li>
+                          <li>Charging & Power Accessories</li>
+                          <li>Computer Accessories</li>
+                          <li>Cable Management Tech</li>
                         </ul>
-                         <Link className={styles.featuredLink} href={'/shop/category/office-lighting-solutions'} style={{textDecoration: 'none'}}>
+                         <Link className={styles.featuredLink} href={'/shop/category/office-electronics-gadgets'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
                         </Link>
                         </div>
                       
                       <div className={styles.optImg}> 
-                      <Image className={styles.optImgImg} src="/lighting.jpg" alt="office lighting solutions" width={500} height={500}/>
+                      <Image className={styles.optImgImg} src="/lighting2.jpg" alt="office lighting solutions" width={500} height={500}/>
                       </div>
                     </div>
                     <div className={styles.featureOpt1}>
@@ -85,7 +84,7 @@ const Featured = () => {
                     <div className={styles.featureOpt}>
                       <div className={styles.optImg}> 
                          <Image className={styles.optImgPhone} src="/accessories2.jpg" alt="office desk accessories" width={500} height={500} />
-                         <p className={styles.optInfo}>Office Desk Accessories</p>
+                         <p className={styles.optInfo}>Office Accessories</p>
                       </div>
                       <Link href={'/shop/category/office-accessories'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
@@ -96,9 +95,9 @@ const Featured = () => {
                     <div className={styles.featureOpt}>
                       <div className={styles.optImg}> 
                          <Image className={styles.optImgPhone} src="/lighting.jpg" alt="office lighting solutions" width={500} height={500}/>
-                         <p className={styles.optInfo}>Office Lighting Solutions</p>
+                         <p className={styles.optInfo}>Office Electronics & Gadgets</p>
                       </div>
-                     <Link href={'/shop/category/office-lighting-solutions'} style={{textDecoration: 'none', color: 'black'}}>
+                     <Link href={'/shop/category/office-electronics-gadgets'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
                         <p>SHOP NOW</p>
                       </div>

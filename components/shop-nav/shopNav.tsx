@@ -131,7 +131,7 @@ const ShopNav = () => {
                 <MdKeyboardArrowDown style={{color: "#ffe100", width:'25px', height: '25px', transform: desk ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: desk ? "auto" : "0"}}>
-                    <Link href={'/shop/subcategory/office-desk-organisers'} style={{textDecoration: "none", color: "white"}}>
+                    <Link href={'/shop/subcategory/office-desk-organizers'} style={{textDecoration: "none", color: "white"}}>
                     <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Office Desk Organizers</p>
                    </div>
@@ -146,42 +146,37 @@ const ShopNav = () => {
                     <p>Office Ergonomics & Comfort Accessories</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-aesthetics-personalized-accessories'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/subcategory/office-aesthetics-personalized-décor'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} >
-                    <p>Office Aesthetic & Personalized Items</p>
-                   </div>
-                   </Link>
-                    <Link href={'/shop/subcategory/office-desk-gadgets'} style={{textDecoration: "none", color: "white"}}>
-                   <div className={styles.shopSublink}  onClick={handleSubcategory}>
-                    <p>Office Desk Gadgets</p>
+                    <p>Office Aesthetic & Personalized Décor</p>
                    </div>
                    </Link>
                 </div>    
              </div>
              <div className={styles.shopLink}>
                 <div className={styles.shopLinkTop}  onClick={handleLighting}>
-                <p>Office Lighting Solutions</p>
+                <p>Office Electronics & Gadgets</p>
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: light ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: light ? "auto" : "0"}}>
-                  <Link href={'/shop/subcategory/office-desk-lamps'} style={{textDecoration: "none", color: "white"}}>
+                  <Link href={'/shop/subcategory/office-desk-lighting-gadgets'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink}  onClick={handleSubcategory}>
-                    <p>Office Desk Lamps</p>
+                    <p>Office Desk Lighting & Gadgets</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-overhead-lighting'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/subcategory/office-charging-power-accessories'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Overhead fixtures</p>
+                    <p>Office Charging & Power Accessories</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-wall-mounted-lighting'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/subcategory/office-computer-accessories'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory} >
-                    <p>Office Wall-mounted fixtures</p>
+                    <p>Office Computer Accessories</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-stand-alone-lighting'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/subcategory/office-cable-management-tech'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Stand-alone fixtures</p>
+                    <p>Office Cable Management Tech</p>
                    </div>
                    </Link>
                 </div>    

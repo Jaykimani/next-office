@@ -2,19 +2,18 @@ export const Categories  = [
     {
     id: 1,
     title: 'Office Accessories',
-    links: [{ id: 'Office Desk Organisers', name: 'office-desk-organisers' },
-            { id: 'Office Desk Gadgets', name: 'office-desk-gadgets' },
+    links: [{ id: 'Office Desk Organizers', name: 'office-desk-organizers' },
             { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
             { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' }, 
-             { id: 'Office Aesthetics/Personalized Items', name: 'office-aesthetics-personalized-accessories' },]
+             { id: 'Office Aesthetics/Personalized Décor', name: 'office-aesthetics-personalized-décor' },]
     },
     {
         id: 2,
-        title: 'Office Lighting Solutions',
-        links: [{ id: 'Office Desk Lamps', name: 'office-desk-lamps' },
-           { id: 'Office Overhead Lighting', name: 'office-overhead-lighting' },
-            { id: 'Office Wall-mounted Lighting', name: 'office-wall-mounted-lighting' },
-             { id: 'Office Stand-alone Lighting', name: 'office-stand-alone-lightingh' },]
+        title: 'Office Electronics & Gadgets',
+        links: [ { id: 'Office Desk Lighting & Gadgets', name: 'office-desk-lighting-gadgets' }, 
+              { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
+              { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
+              { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' },]
     },
     {
         id: 3,
@@ -41,11 +40,11 @@ export const Subcategory = [
               { id: 'Office Desk Gadgets', name: 'office-desk-gadgets' },
               { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
               { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
-              { id: 'Office Aesthetics/Personalized Items', name: 'office-aesthetics-personalized-accessories' },
-              { id: 'Office Desk Lamps', name: 'office-desk-lamps' }, 
-              { id: 'Office Overhead Lighting', name: 'office-overhead-lighting' },
-              { id: 'Office Wall-mounted Lighting', name: 'office-wall-mounted-lighting' },
-              { id: 'Office Stand-alone Lighting', name: 'office-stand-alone-lightingh' },
+              { id: 'Office Aesthetics/Personalized Décor', name: 'office-aesthetics-personalized-décor' },
+              { id: 'Office Desk Lighting & Gadgets', name: 'office-desk-lighting-gadgets' }, 
+              { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
+              { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
+              { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' },
               { id: 'Office Wall Art/Posters', name: 'office-wall-art-posters' }, 
               { id: 'Office Wall Clocks', name: 'office-wall-clocks' },
               { id: 'Office Wall-mounted Shelves', name: 'office-wall-mounted-Shelves' },
@@ -62,8 +61,8 @@ export const shopCategory = [
     url: 'office-accessories',
   },
   {
-    name: 'Office Lighting Solutions',
-    url: 'office-lighting-solutions',
+    name: 'Office Electronics & Gadgets',
+    url: 'office-electronics-gadgets',
  
   },
    {

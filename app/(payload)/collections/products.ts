@@ -7,8 +7,8 @@ import type { CollectionConfig } from 'payload';
     value: 'office-accessories',
   },
   {
-    label: 'Office Lighting Solutions',
-    value: 'office-lighting-solutions',
+    label: 'Office Electronics & Gadgets',
+    value: 'office-electronics-gadgets',
  
   },
    {
@@ -24,15 +24,14 @@ import type { CollectionConfig } from 'payload';
 ];
 
   const subcategories = [
-              { label: 'Office Desk Organisers', value: 'office-desk-organisers' }, 
-              { label: 'Office Desk Gadgets', value: 'office-desk-gadgets' },
+              { label: 'Office Desk Organizers', value: 'office-desk-organizers' }, 
               { label: 'Office Productivity/Writing Tools', value: 'office-productivity-writing-tools' },
               { label: 'Office Ergonomic/Comfort Accessories', value: 'office-ergonomic-comfort-accessories' },
-              { label: 'Office Aesthetics/Personalized Items', value: 'office-aesthetics-personalized-accessories' },
-              { label: 'Office Desk Lamps', value: 'office-desk-lamps' }, 
-              { label: 'Office Overhead Lighting', value: 'office-overhead-lighting' },
-              { label: 'Office Wall-mounted Lighting', value: 'office-wall-mounted-lighting' },
-              { label: 'Office Stand-alone Lighting', value: 'office-stand-alone-lighting' },
+              { label: 'Office Aesthetics/Personalized Décor', value: 'office-aesthetics-personalized-décor' },
+              { label: 'Office Desk Lighting & Gadgets', value: 'office-desk-lighting-gadgets' }, 
+              { label: 'Office Charging & Power Accessories', value: 'office-charging-power-accessories' },
+              { label: 'Office Computer Accessories', value: 'office-computer-accessories' },
+              { label: 'Office Cable Management Tech', value: 'office-cable-management-tech' },
               { label: 'Office Wall Art/Posters', value: 'office-wall-art-posters' }, 
               { label: 'Office Wall Clocks', value: 'office-wall-clocks' },
               { label: 'Office Wall-mounted Shelves', value: 'office-wall-mounted-Shelves' },
