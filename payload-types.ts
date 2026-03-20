@@ -256,7 +256,7 @@ export interface Review {
  */
 export interface User {
   id: number;
-  role: 'admin' | 'user';
+  role: 'admin' | 'manager' | 'user';
   fullName?: string | null;
   phone?: string | null;
   updatedAt: string;

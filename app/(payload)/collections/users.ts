@@ -1,9 +1,12 @@
 import type { CollectionConfig } from 'payload'
 import type { User } from '@payload-types'
+// import { adminAccess } from '@/access/adminAccess'
 
 export const Users: CollectionConfig = {
   slug: 'users',
-  auth: true, // ✅ enables login, password hashing, sessions
+  auth: {
+    tokenExpiration: 60 * 60 * 24, // 1 hour
+  }, // ✅ enables login, password hashing, sessions
 
   admin: {
     useAsTitle: 'email',
@@ -17,7 +20,7 @@ export const Users: CollectionConfig = {
     // Users can read themselves, admins can read all
     read: ({ req }) => {
     const user = req.user as User | null
-      if (user?.role === 'admin') return true
+      if (user?.role === 'admin' || user?.role === 'manager') return true
 
       return {
         id: {
@@ -28,7 +31,7 @@ export const Users: CollectionConfig = {
 
     // Users can update themselves, admins can update all
     update: ({ req }) => {
-      if (req.user?.role === 'admin') return true
+      if (req.user?.role === 'admin' || req.user?.role === 'manager') return true
 
       return {
         id: {
@@ -50,7 +53,8 @@ export const Users: CollectionConfig = {
       defaultValue: 'user',
       options: [
         { label: 'Admin', value: 'admin' },
-        { label: 'User', value: 'user' },
+        { label: 'Manager', value: 'manager' },
+        { label: 'User', value: 'user' }
       ],
       access: {
         create: ({ req }) => req.user?.role === 'admin',

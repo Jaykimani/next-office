@@ -20,12 +20,12 @@ function About() {
         <div className={styles.aboutContent}>
          <div className={styles.aboutContentSect}>
          <h2>Your One-Stop Shop for Office Interior Decoration</h2>
-         <p><span>Office Aura</span> is a Kenyan-based online store specializing in office interior décor and workspace styling solutions. We help individuals, startups, and businesses across Kenya create beautiful, functional, and inspiring office spaces with ease.
+         <p><span>Office Aura</span> is a Kenyan-based online store specializing in office interior décor, workspace accessories and styling solutions. We help individuals, startups, and businesses across Kenya create beautiful, functional, and inspiring office spaces with ease.
          <br></br>From home offices to corporate workspaces, we provide everything you need to transform your office into a space that reflects professionalism, productivity, and style.</p>
         </div>  
         <div className={styles.aboutContentSect}>
         <h2>Who we are?</h2>
-        <p><span>Office Aura</span> was founded with a simple idea:  To make office décor in Kenya easier to find, easier to choose, and easier to afford.<br></br>We noticed that many professionals struggled to source quality office décor, often needing to visit multiple stores or settle for limited options. Office Aura was created to bring office interior decoration solutions under one roof, accessible through a convenient online shopping experience.</p>
+        <p>Office Aura was founded with a simple idea: <br></br> <span>To make office décor and office essentials in Kenya easier to source, easier to choose, and easier to afford.</span><br></br>We noticed that many professionals struggled to source quality office décor and essentials, often needing to visit multiple stores or settle for limited options. Office Aura was created to bring office interior decoration solutions under one roof, accessible through a convenient online shopping experience.</p>
         </div> 
         <div className={styles.aboutContentSect}>
             <h2>What we offer?</h2>

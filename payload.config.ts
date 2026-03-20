@@ -12,10 +12,6 @@ import { Categories } from './app/(payload)/collections/categories'
 export default buildConfig({
   admin:{
       user: Users.slug,
-      autoLogin: {
-        email: process.env.CMS_ADMIN_EMAIL,
-        password: process.env.CMS_ADMIN_PW
-      } 
   },
 
   // 👇 THIS IS IMPORTANT

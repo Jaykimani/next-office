@@ -60,6 +60,11 @@ const Navbar = () => {
                   <p>Contact</p>
                   </Link>
                 </div>
+                <div className={styles.navbarLink}>
+              <Link href={'/blogs'} style={{textDecoration: 'none', color: 'white'}}>
+               <p>Blogs</p>
+              </Link>
+            </div>
             </div>
             </div>
             <Link href={'/cart'}>
@@ -99,6 +104,11 @@ const Navbar = () => {
             <div className={styles.shopNavLinks}>
               <Link href={'/about'} style={{textDecoration: 'none', color: 'white'}}>
                <h3>About us</h3>
+              </Link>
+            </div>
+             <div className={styles.shopNavLinks}>
+              <Link href={'/blogs'} style={{textDecoration: 'none', color: 'white'}}>
+               <h3>Blogs</h3>
               </Link>
             </div>
             </div>
