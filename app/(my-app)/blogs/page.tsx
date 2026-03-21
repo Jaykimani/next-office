@@ -1,7 +1,8 @@
 import styles from './blogs.module.css';
 import Navbar from '@/components/navbar/navbar';
 import Image from 'next/image';
-import Link from 'next/link';
+import BlogCTA from '@/components/blogCTA/blogCTA';
+import Footer from '@/components/footer/footer';
 
 const page = () => {
   return (<>
@@ -109,26 +110,16 @@ const page = () => {
           <div className={styles.featuredInfo}>
            <span>Published on: 10/02/2026 </span>
            <h2>Best Desk Accessories to Improve Productivity (2026)</h2>
-           <p>A cluttered desk leads to a cluttered mind. The right desk accessories can significantly ...</p>
+           <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form ...</p>
            <div className={styles.featuredInfoBtn}>Read More...</div>
           </div>
        </div>
 
      </div>
   </div>
-  <div className={styles.shopCTA}>
-    <div className={styles.shopCTAImg}>
-      <Image className={styles.shopCTAImgImg} src="/landing.png" alt="office aura image" width={300} height={300}/>
-    </div>
-    <div className={styles.shopCTAInfo}>
-     <h2>Elevate Your Workspace with Stylish Office Decor & Accessories<span>!!</span></h2>
-          <Link href={'/shop'} style={{textDecoration : 'none', color: 'black'}}>
-          <div className={styles.shoppingBtn}>
-          <p>SHOP NOW</p>
-          </div>
-          </Link>
-    </div>
-  </div>
+  <BlogCTA />
+
+  <Footer />
   </>
     
   )

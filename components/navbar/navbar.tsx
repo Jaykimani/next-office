@@ -40,31 +40,21 @@ const Navbar = () => {
             <div className={styles.navLinks}>
             <Image className={styles.svgLogo} src="/Component 5.svg" alt="office aura image" width={30} height={30}/>
             <div className={styles.navbarLinks}>
-                <div className={styles.navbarLink}>
-                  <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
+                  <Link className={styles.navbarLink} href={'/'} style={{textDecoration: 'none'}}>
                   <p>Home</p>
                   </Link>
-                </div>
-                <div className={styles.navbarLink}>
-                  <Link href={'/shop'} style={{textDecoration: 'none', color: 'white'}}>
+                  <Link className={styles.navbarLink} href={'/shop'} style={{textDecoration: 'none'}}>
                   <p>Shop</p>
                   </Link>
-                </div>
-                <div className={styles.navbarLink}>
-                  <Link href={'/about'} style={{textDecoration: 'none', color: 'white'}}>
+                  <Link className={styles.navbarLink} href={'/about'} style={{textDecoration: 'none'}}>
                   <p>About</p>
                   </Link>
-                </div>
-                <div className={styles.navbarLink}>
-                  <Link href={'/contact'} style={{textDecoration: 'none', color: 'white'}}>
+                  <Link className={styles.navbarLink} href={'/contact'} style={{textDecoration: 'none'}}>
                   <p>Contact</p>
                   </Link>
-                </div>
-                <div className={styles.navbarLink}>
-              <Link href={'/blogs'} style={{textDecoration: 'none', color: 'white'}}>
+              <Link className={styles.navbarLink} href={'/blogs'} style={{textDecoration: 'none'}}>
                <p>Blogs</p>
               </Link>
-            </div>
             </div>
             </div>
             <Link href={'/cart'}>
@@ -77,6 +67,7 @@ const Navbar = () => {
             </div>
             </Link>
         </div>
+        
 
         <div id={styles.navbar2}>
             <div className={styles.shop2Div} style={{display: phoneOption ? 'block' : 'none'}}>

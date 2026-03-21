@@ -1,0 +1,84 @@
+.shopCTA{
+    width: 100%;
+    height: 450px;
+    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('/blogcta.jpg');
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    place-items: center;
+}
+
+.shopCTAInfo{
+    width: 80%;
+    padding: 30px;
+    text-align: center;
+}
+.shopCTAInfo h1{
+    color: #ffe100;
+    text-align: center;
+    font-size: 75px;
+    font-weight: 700;
+}
+.shopCTAInfo h4{
+    color: white;
+    font-size: 23px;
+    margin: 20px 0;
+    font-family: 'Abel', sans-serif;
+    font-weight: 400;
+}
+.shoppingBtn{
+    width: 50%;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.504);
+    color: #ffe100;
+    font-size: 25px;
+    border-radius: 50px;
+    margin: 60px auto 0;
+    display: grid;
+    place-items: center;
+    border: 1px solid #ffe100;
+}
+.shoppingBtn p {
+    color: #ffe100;
+    font-family: 'Playfair Display', sans-serif;
+}
+.newsletter{
+    width: 100%;
+    height: 60vh;
+    display: grid;
+    place-items: center;
+}
+.newsletterInset{
+    text-align: center;
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #ffe60036;
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 20px;
+    cursor: pointer;
+}
+.newsletter h1{
+    font-size: 35px;
+    margin-bottom: 0px;
+}
+.newsletter input{
+    width: 50%;
+    height: 60px;
+    border-radius: 50px;
+    padding-left: 20px;
+    font-size: 20px;
+}
+.subscribe{
+    width: 40%;
+    height: 60px;
+    font-size: 22px;
+    background-color: #ffe100;
+    margin: 0px auto;
+    display: grid;
+    place-items: center;
+}

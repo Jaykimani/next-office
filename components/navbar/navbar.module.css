@@ -38,6 +38,9 @@
     place-items: center;
     font-size: 18px;
 }
+.navbarLink:hover{
+    color: #ffe100;
+}
 .shopping{
     position: absolute;
     right: 5%;
