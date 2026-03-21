@@ -74,6 +74,7 @@ export interface Config {
     messages: Message;
     reviews: Review;
     categories: Category;
+    blogs: Blog;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -88,6 +89,7 @@ export interface Config {
     messages: MessagesSelect<false> | MessagesSelect<true>;
     reviews: ReviewsSelect<false> | ReviewsSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    blogs: BlogsSelect<false> | BlogsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -347,6 +349,56 @@ export interface Category {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blogs".
+ */
+export interface Blog {
+  id: number;
+  title: string;
+  slug?: string | null;
+  featuredImage: number | Media;
+  category:
+    | 'office-setup'
+    | 'office-styling'
+    | 'productivity'
+    | 'buying-guides'
+    | 'startup-corporate-solutions'
+    | 'workspace-tech-tools';
+  author?: string | null;
+  publishedDate: string;
+  excerpt: string;
+  content: {
+    root: {
+      type: string;
+      children: {
+        type: any;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
+  featured?: boolean | null;
+  /**
+   * Example: 5 minutes
+   */
+  readTime?: string | null;
+  seo?: {
+    metaTitle?: string | null;
+    metaDescription?: string | null;
+    /**
+     * Comma separated keywords
+     */
+    keywords?: string | null;
+  };
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -396,6 +448,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'categories';
         value: number | Category;
+      } | null)
+    | ({
+        relationTo: 'blogs';
+        value: number | Blog;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -603,6 +659,31 @@ export interface CategoriesSelect<T extends boolean = true> {
   type?: T;
   description?: T;
   'page-description'?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "blogs_select".
+ */
+export interface BlogsSelect<T extends boolean = true> {
+  title?: T;
+  slug?: T;
+  featuredImage?: T;
+  category?: T;
+  author?: T;
+  publishedDate?: T;
+  excerpt?: T;
+  content?: T;
+  featured?: T;
+  readTime?: T;
+  seo?:
+    | T
+    | {
+        metaTitle?: T;
+        metaDescription?: T;
+        keywords?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

@@ -8,6 +8,7 @@ import { Orders } from './app/(payload)/collections/orders'
 import { Messages } from './app/(payload)/collections/messages'
 import { Reviews } from './app/(payload)/collections/reviews'
 import { Categories } from './app/(payload)/collections/categories'
+import { Blogs } from './app/(payload)/collections/blogs'
 
 export default buildConfig({
   admin:{
@@ -27,7 +28,7 @@ export default buildConfig({
 }),
 
   // Define and configure your collections in this array
-  collections: [Products, Media, Users, Orders, Messages, Reviews, Categories],
+  collections: [Products, Media, Users, Orders, Messages, Reviews, Categories, Blogs],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || '',

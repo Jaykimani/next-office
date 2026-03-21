@@ -3,16 +3,120 @@
     height: 120px;
     background: linear-gradient( to right, rgba(0, 0 ,0 , 0.5), rgba(0, 0 ,0 , 0.5)), url('/landing.png');
     background-size: cover;
+    background-position: center;
     padding: 20px;
+    margin-bottom: 50px;
 }
 .blogInset{
-    width: 85%;
+    width: 95%;
     height: auto;
     display: flex;
+    justify-content: space-between;
     margin: 30px auto;
 }
 .blogInsetContent{
+    width: 77%;
+    height: auto;
+    border-right: 1px solid rgb(192, 192, 192);
+    padding: 15px 25px;
+}
+.published{
     width: 80%;
     height: auto;
-    border-right: 1px solid black;
+    display: flex;
+    font-family: 'Abel', sans-serif;
+    color: rgb(136, 136, 136);
+}
+.published p{
+    margin-right: 45px;
+}
+.published p span{
+    margin-left: 10px;
+}
+.blogInsetContent h1{
+    font-size: 45px;
+    margin: 30px 0 40px;
+    text-decoration: underline;
+}
+.blogInsetImage{
+    width: 100%;
+    height: 500px;
+}
+.blogInsetImg{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+.content{
+    width: 100%;
+    height: auto;
+    padding-right: 15px;
+    margin: 40px 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 25px;
+}
+.blogInsetSide{
+    width: 23%;
+    height: auto;
+    padding: 10px 15px;
+}
+.sideHeading{
+    margin-bottom: 15px;
+    text-align: center;
+}
+.featuredPost{
+    width: 100%;
+    height: 250px;
+   padding-bottom: 15px;
+    margin-bottom: 15px;
+    border: 1px solid rgb(201, 201, 201);
+    cursor: pointer;
+}
+
+.featuredImg{
+    width: 100%;
+    height: 150px;
+   
+}
+.featuredImgImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.featuredInfo{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px 15px;
+}
+.featuredInfo span{
+    font-family: 'Abel', sans-serif;
+    color: #a5a5a5;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+.featuredInfo h2{
+    text-decoration: underline;
+    font-size: 18px;
+    font-weight: 500;
+    
+}
+.featuredInfo p{
+    font-family: 'Roboto', sans-serif;
+    color: #636363;
+    font-size: 15px;
+   
+}
+.featuredInfoBtn{
+    width: 50%;
+    height: 35px;
+    margin: 15px auto 0;
+    text-align: center;
+    color: #847500;
+    text-decoration: underline;
+    border: 1px solid #847500;
+    display: grid;
+    place-items: center;
+    border-radius: 40px;
 }
