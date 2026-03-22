@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     margin: 30px auto;
+    padding-left: 30px;
 }
 .blogInsetContent{
     width: 77%;
@@ -25,7 +26,7 @@
     height: auto;
     display: flex;
     font-family: 'Abel', sans-serif;
-    color: rgb(136, 136, 136);
+    color: rgb(88, 88, 88);
 }
 .published p{
     margin-right: 45px;
@@ -35,6 +36,7 @@
 }
 .blogInsetContent h1{
     font-size: 45px;
+    font-family: "Oswald", sans-serif;
     margin: 30px 0 40px;
     text-decoration: underline;
 }
@@ -50,10 +52,36 @@
 .content{
     width: 100%;
     height: auto;
-    padding-right: 15px;
+    padding: 0 15px;
     margin: 40px 0;
-    font-family: 'Roboto', sans-serif;
+   font-family: "Roboto", sans-serif;
     line-height: 25px;
+}
+.content p{
+    margin: 15px 0;
+    font-size: 17px;
+}
+.content h2{
+    font-size: 26px;
+    margin: 20px 0;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+}
+.content h4{
+    font-size: 22px;
+    margin: 15px 0;
+    font-family: "Oswald", sans-serif; 
+    font-weight: 500;
+}
+.content ul{
+    margin-left: 50px;
+}
+.content ol{
+    margin-left: 50px;
+}
+.content ul li, .content ol li{
+    margin: 10px 20px;
+    font-size: 17px;
 }
 .blogInsetSide{
     width: 23%;

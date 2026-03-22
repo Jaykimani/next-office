@@ -28,7 +28,7 @@ export default buildConfig({
 }),
 
   // Define and configure your collections in this array
-  collections: [Products, Media, Users, Orders, Messages, Reviews, Categories, Blogs],
+  collections: [Users, Messages, Categories, Products, Media, Orders, Reviews, Blogs],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || '',

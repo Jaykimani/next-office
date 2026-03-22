@@ -52,7 +52,7 @@ const Category = async({
 }) => {
 
    const { name } = await params
-  
+   
 
   const Products = await getCategoryProducts(name);
   let category = await getCategoryType(name)

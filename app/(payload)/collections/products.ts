@@ -261,5 +261,8 @@ export const Media: CollectionConfig = {
     mimeTypes: ['image/*'],
   },
   fields: [],
+  access: {
+  read: () => true, // ✅ allow public access
+}
 }
 

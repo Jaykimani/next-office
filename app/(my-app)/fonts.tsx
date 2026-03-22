@@ -1,6 +1,7 @@
 import { Playfair_Display } from 'next/font/google';
 import { Abel } from 'next/font/google';
 import { Roboto } from 'next/font/google';
+import { Oswald } from 'next/font/google';
 // Example Google Font
 export const Playfair = Playfair_Display({
   subsets: ['latin'],
@@ -20,4 +21,11 @@ export const roboto = Roboto({
   subsets: ['latin'], // Specify the necessary subsets
   display: 'swap', // 'swap' ensures fallback font is used until Abel loads
   variable: '--font-roboto', 
-})
+});
+
+export const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['400', '700'], // Specify weights
+  variable: '--font-oswald', // Optional: for Tailwind integration
+});
+

@@ -88,6 +88,7 @@ async function Info({params} : Props) {
  
    
     const Product = await getSingleProduct(productId);
+    
     const Reviews = await getProductReviews(productId)
     const imagesArr: string[] =
     Product?.images

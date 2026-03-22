@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar/navbar"
 import './global.css'
-import { Playfair, abel, roboto } from "./fonts" 
+import { Playfair, abel, roboto, oswald} from "./fonts" 
 import ScrollToTop from "@/components/scrollTop"
 import type { Metadata } from "next";
 
@@ -105,7 +105,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className={`${Playfair.variable} ${abel.variable} ${roboto.variable}`}>
+    <html className={`${Playfair.variable} ${abel.variable} ${roboto.variable} ${oswald.variable}`}>
       <body>
         <script
   type="application/ld+json"
