@@ -176,8 +176,8 @@ const Blog = async({params} : Props) => {
     </div>
     <div className={styles.blogInsetSide}>
       <p className={styles.sideHeading}>MORE INSIGHTS</p>
-
-      {newCategory.map((post)=>{
+      <div className={styles.sideBlogs}>
+{newCategory.map((post)=>{
 
          const postImage = getMediaUrl(post.featuredImage);
          const date = new Date(`${post.createdAt}`);
@@ -205,7 +205,9 @@ const Blog = async({params} : Props) => {
         )
       })}
     
+      </div>
 
+      
     </div>
 
   </div>

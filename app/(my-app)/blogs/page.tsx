@@ -176,15 +176,7 @@ const itemListSchema = {
           )
       })}
        
- <div className={styles.featuredPost}>
-          <div className={styles.featuredImg}>
-            <Image className={styles.featuredImgImg} src="/lighting.jpg" alt="office aura image" width={300} height={300}/>
-          </div>
-          <div className={styles.featuredInfo}>
-           <span>Published on: 10/02/2026 </span>
-           <h2>Best Desk Accessories to Improve Productivity (2026)</h2>
-          </div>
-       </div>
+
      </div>
   </div>
   <BlogCTA />
