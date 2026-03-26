@@ -18,7 +18,8 @@ const payload = await getPayload({config});
       images: true,
       price: true,
       category: true
-    } // The slug of your 
+    },
+    limit: 100 // The slug of your 
     
   });
    let product = data.docs;

@@ -33,6 +33,22 @@
     margin: 30px auto;
     display: none;
 }
+.prodDesc{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+.prodDesc p{
+    color: white;
+}
+.prodDesc ul{
+    font-family: 'Roboto', sans-serif;
+    margin-left: 40px;
+}
+.prodDesc ul li{
+    margin-top: 15px;
+    line-height: 25px;
+}
 .descContent h4{
     font-family: 'Playfair Display', sans-serif;
     font-size: 23px;
@@ -43,7 +59,7 @@
     font-family: 'Roboto', sans-serif;
     font-size: 17px;
     line-height: 28px;
-    color: rgb(140, 140, 140);
+    color: rgb(255, 255, 255);
 }
 .reviewContent{
     width: 90%;

@@ -194,14 +194,14 @@ export interface Product {
   price: number;
   category: 'office-accessories' | 'office-electronics-gadgets' | 'office-wall-accessories' | 'office-greenery';
   /**
-   * Select one or more subcategories
+   * Select one subcategories
    */
-  subcategories: (
+  subcategories:
     | 'office-desk-organizers'
     | 'office-productivity-writing-tools'
     | 'office-ergonomic-comfort-accessories'
     | 'office-aesthetics-personalized-décor'
-    | 'office-desk-lighting-gadgets'
+    | 'office-desk-lighting-productivity'
     | 'office-charging-power-accessories'
     | 'office-computer-accessories'
     | 'office-cable-management-tech'
@@ -211,18 +211,19 @@ export interface Product {
     | 'office-desk-greenery'
     | 'artificial-office-greenery'
     | 'natural-office-greenery'
-    | 'office-planters-and-pots'
-  )[];
+    | 'office-planters-and-pots';
   /**
    * Select one or more subcategories
    */
-  vibe: (
-    | 'minimalist-office-vibe'
-    | 'executive-office-vibe'
-    | 'modern-professional-office-vibe'
-    | 'creative-studio-office-vibe'
-    | 'nature-inspired-office-vibe'
-  )[];
+  vibe?:
+    | (
+        | 'minimalist-office-vibe'
+        | 'executive-office-vibe'
+        | 'modern-professional-office-vibe'
+        | 'creative-studio-office-vibe'
+        | 'nature-inspired-office-vibe'
+      )[]
+    | null;
   stock: number;
   delivery: {
     deliveryTime: string;

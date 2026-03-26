@@ -10,7 +10,7 @@ export const Categories  = [
     {
         id: 2,
         title: 'Office Electronics & Gadgets',
-        links: [ { id: 'Office Desk Lighting & Gadgets', name: 'office-desk-lighting-gadgets' }, 
+        links: [ { id: 'Desk Lighting & Productivity Tech', name: 'office-desk-lighting-productivity' }, 
               { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
               { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
               { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' },]
@@ -41,7 +41,7 @@ export const Subcategory = [
               { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
               { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
               { id: 'Office Aesthetics/Personalized Décor', name: 'office-aesthetics-personalized-décor' },
-              { id: 'Office Desk Lighting & Gadgets', name: 'office-desk-lighting-gadgets' }, 
+              { id: 'Office Desk Lighting & Productivity Tech', name: 'office-desk-lighting-productivity' }, 
               { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
               { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
               { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' },

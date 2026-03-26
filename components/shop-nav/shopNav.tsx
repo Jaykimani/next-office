@@ -159,9 +159,9 @@ const ShopNav = () => {
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: light ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{height: light ? "auto" : "0"}}>
-                  <Link href={'/shop/subcategory/office-desk-lighting-gadgets'} style={{textDecoration: "none", color: "white"}}>
+                  <Link href={'/shop/subcategory/office-desk-lighting-productivity'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink}  onClick={handleSubcategory}>
-                    <p>Office Desk Lighting & Gadgets</p>
+                    <p>Desk Lighting & Productivity Tech</p>
                    </div>
                    </Link>
                    <Link href={'/shop/subcategory/office-charging-power-accessories'} style={{textDecoration: "none", color: "white"}}>

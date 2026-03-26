@@ -4,6 +4,7 @@ import config from '@payload-config';
 export async function getSubcategoryProducts (category){
 const payload = await getPayload({config});
 
+
   try {
     const data = await payload.find({
     collection: 'products',
@@ -11,8 +12,8 @@ const payload = await getPayload({config});
     pagination: false,
     where: {
         subcategories: {
-        contains: category,
-      },
+            equals: category,
+        }
     },
      select:{
       id: true,
@@ -21,11 +22,11 @@ const payload = await getPayload({config});
       images: true,
       price: true,
       category: true
-    } // The slug of your 
+    },
+    limit: 100 // The slug of your 
     
   });
    let product = data.docs;
-   
    
    return product ?? 'not found';
 

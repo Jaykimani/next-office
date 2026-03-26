@@ -85,9 +85,9 @@ function mediaIsObject(media: number | Media) : media is Media {
 async function Info({params} : Props) {
   
    const {productId} = await params;
- 
    
     const Product = await getSingleProduct(productId);
+
     
     const Reviews = await getProductReviews(productId)
     const imagesArr: string[] =
@@ -187,7 +187,7 @@ async function Info({params} : Props) {
          <div className={styles.quote}>
          <h1>TRANSFORM YOUR WORKSPACE</h1>
         </div>
-         {Product?.subcategories && <Similar subcategory = {Product?.subcategories[0]} id = {Product?.id}/>}
+         {Product?.subcategories && <Similar subcategory = {Product?.subcategories} id = {Product?.id}/>}
         </div>
 
          <script

@@ -1,6 +1,8 @@
 import {getPayload} from 'payload';
 import config from '@payload-config';
 
+
+
 export async function getProductsList (page, limit){
 const payload = await getPayload({config});
 

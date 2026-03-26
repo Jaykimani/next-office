@@ -7,7 +7,7 @@ import Reviews from '@/components/reviews/reviews';
 import { MdStar } from "react-icons/md";
 import { MdStarBorder } from "react-icons/md";
 import type { Product, Review } from '@/payload-types';
-
+import Link from 'next/link';
 
 interface ProductsProps {
 product : Product;
@@ -137,17 +137,21 @@ const Descrev = ({product, reviews}: ProductsProps) => {
           </div>
           <div className={styles.descContent} style={{display: mainDesc ? "block" : "none"}}>
            <h4>Product Description</h4>
+           <div className={styles.prodDesc}>
            <RichTextRenderer content={product?.description.productInformation} />
+           </div>
            {product?.description.dimensions && <h4>Dimensions</h4>}
            <p>{product?.description.dimensions}</p>
-           <h4>Structural Frame</h4>
+           {product?.description.structuralMaterial && <h4>Structural Frame</h4>}
            <p>{product?.description.structuralMaterial}</p>
-           <h4>Color</h4>
+           {product?.description.color && <h4>Color</h4>}
            <p>{product?.description.color}</p>
            {product?.description.careInstructions && <h4>Care Instructions</h4>}
            <p>{product?.description.careInstructions}</p>
            <h4>Return policy</h4>
+           <Link href={'/return-refund'}>
            <p>Visit our Return policy page</p>
+           </Link>
           </div>
           <div className={styles.reviewContent} style={{display: mainRev ? "block" : "none"}}> 
             <h4>Customer Reviews</h4>

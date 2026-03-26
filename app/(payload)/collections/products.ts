@@ -28,7 +28,7 @@ import type { CollectionConfig } from 'payload';
               { label: 'Office Productivity/Writing Tools', value: 'office-productivity-writing-tools' },
               { label: 'Office Ergonomic/Comfort Accessories', value: 'office-ergonomic-comfort-accessories' },
               { label: 'Office Aesthetics/Personalized Décor', value: 'office-aesthetics-personalized-décor' },
-              { label: 'Office Desk Lighting & Gadgets', value: 'office-desk-lighting-gadgets' }, 
+              { label: 'Office Desk Lighting & Productivity Tech', value: 'office-desk-lighting-productivity' }, 
               { label: 'Office Charging & Power Accessories', value: 'office-charging-power-accessories' },
               { label: 'Office Computer Accessories', value: 'office-computer-accessories' },
               { label: 'Office Cable Management Tech', value: 'office-cable-management-tech' },
@@ -130,11 +130,10 @@ export const Products: CollectionConfig = {
     {
   name: 'subcategories',
   type: 'select',
-  hasMany: true,
   required: true,
   options: subcategories.map(({ label, value }) => ({ label, value })),
   admin: {
-    description: 'Select one or more subcategories',
+    description: 'Select one subcategories',
   },
 },  
 
@@ -142,7 +141,6 @@ export const Products: CollectionConfig = {
   name: 'vibe',
   type: 'select',
   hasMany: true,
-  required: true,
   options: vibes.map(({ label, value }) => ({ label, value })),
   admin: {
     description: 'Select one or more subcategories',

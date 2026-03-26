@@ -5,8 +5,9 @@ import { getSubcategoryProducts } from '@/lib/getSubcategoryProducts'
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url)
   const subcategory = searchParams.get('subcategory');
-
-
+   console.log(subcategory);
+   
+ 
   const products = await getSubcategoryProducts(subcategory);
 
  

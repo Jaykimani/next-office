@@ -30,6 +30,7 @@ function mediaIsObject(media: number | Media) : media is Media {
 
 const Similar = ({id, subcategory}: similarProps) => {
 
+  
     const [productsList, setProductsList] = useState<Product[]>([]);
 
     useEffect(()=>{
@@ -38,6 +39,8 @@ const Similar = ({id, subcategory}: similarProps) => {
       async function fetchSubproducts(){
       const productsData = await fetch(`/api/subcategory?subcategory=${subcategory}`)
       const products = await productsData.json();
+      console.log(products);
+      
 
       let productArr = products.filter(item => item.id !== id);
 

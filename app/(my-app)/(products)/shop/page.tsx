@@ -61,13 +61,33 @@ type Props = {
   }>
 }
 
+function seededShuffle(array: any[], seed: number) {
+  let random = () => {
+    seed = (seed * 9301 + 49297) % 233280
+    return seed / 233280
+  }
+
+  const arr = [...array]
+
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1))
+    ;[arr[i], arr[j]] = [arr[j], arr[i]]
+  }
+
+  return arr
+}
+
 const Shop = async({ searchParams }: Props) => {
   const params = await searchParams
 
   const page = Number(params.page) || 1
  
-  const allProducts = await getProductsList(page, 7);
-  const productsArr = allProducts?.docs;
+  const allProducts = await getProductsList(page, 12);
+  const resArr = allProducts?.docs;
+
+  const today = new Date().getDate()
+
+const productsArr = resArr && seededShuffle(resArr, today)
   
 
   return (<>

@@ -55,6 +55,7 @@ const Category = async({
 
    const { name } = await params
   
+  
   const Products = await getSubcategoryProducts(name);
   let category = await getCategoryType(name)
   let categInfo = category?.docs[0];
