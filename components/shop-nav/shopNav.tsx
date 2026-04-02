@@ -45,10 +45,36 @@ const ShopNav = () => {
         setWall(false);
         setGreenery(false);
     }
-    const handleLighting = (e: any)=>{
+    const handleDeskEnter = (e: any)=>{
+      
+       setDesk(true);
+        setLight(false);
+        setWall(false);
+        setGreenery(false);
+    }
+    const handleDeskLeave = ()=>{
+       setDesk(false);
+        setLight(false);
+        setWall(false);
+        setGreenery(false);
+    }
+     const handlelighting = ()=>{
+       setDesk(false);
+        setLight(!light);
+        setWall(false);
+        setGreenery(false);
+    }
+    const handleLightingEnter = (e: any)=>{
 
         setDesk(false);
-        setLight(!light);
+        setLight(true);
+        setWall(false);
+        setGreenery(false);
+    }
+    const handleLightingLeave = (e: any)=>{
+
+        setDesk(false);
+        setLight(false);
         setWall(false);
         setGreenery(false);
     }
@@ -59,6 +85,20 @@ const ShopNav = () => {
         setWall(!wall);
         setGreenery(false);
     }
+     const handleWallEnter = (e: any)=>{
+
+        setDesk(false);
+        setLight(false);
+        setWall(true);
+        setGreenery(false);
+    }
+     const handleWallLeave = (e: any)=>{
+
+        setDesk(false);
+        setLight(false);
+        setWall(false);
+        setGreenery(false);
+    }
   
     const handleGreenery = (e: any)=>{
         
@@ -66,6 +106,20 @@ const ShopNav = () => {
         setLight(false);
         setWall(false);
         setGreenery(!greenery);
+    }
+    const handleGreeneryEnter = (e: any)=>{
+        
+        setDesk(false);
+        setLight(false);
+        setWall(false);
+        setGreenery(true);
+    }
+    const handleGreeneryLeave = (e: any)=>{
+        
+        setDesk(false);
+        setLight(false);
+        setWall(false);
+        setGreenery(false);
     }
 
     const handleOpenOpt = ()=>{
@@ -125,12 +179,12 @@ const ShopNav = () => {
              
             </div>
             <div className={styles.shopLinks}>
-             <div className={styles.shopLink}>
-                <div className={styles.shopLinkTop} onClick={handleDesk}>
+             <div className={styles.shopLink} onClick={handleDesk} onMouseEnter={handleDeskEnter} onMouseLeave={handleDeskLeave}>
+                <div className={styles.shopLinkTop} >
                 <p>Office Accessories & Gadgets</p>
                 <MdKeyboardArrowDown style={{color: "#ffe100", width:'25px', height: '25px', transform: desk ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
-                <div className={styles.shopLinkBottom} style={{height: desk ? "auto" : "0"}}>
+                <div className={styles.shopLinkBottom} style={{display: desk ? "flex" : "none"}}>
                     <Link href={'/shop/subcategory/office-desk-organizers'} style={{textDecoration: "none", color: "white"}}>
                     <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Office Desk Organizers</p>
@@ -146,19 +200,19 @@ const ShopNav = () => {
                     <p>Office Ergonomics & Comfort Accessories</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-aesthetics-personalized-décor'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/subcategory/office-aesthetics-personalized-decor'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} >
                     <p>Office Aesthetic & Personalized Décor</p>
                    </div>
                    </Link>
                 </div>    
              </div>
-             <div className={styles.shopLink}>
-                <div className={styles.shopLinkTop}  onClick={handleLighting}>
+             <div className={styles.shopLink}  onMouseEnter={handleLightingEnter} onMouseLeave={handleLightingLeave}>
+                <div className={styles.shopLinkTop} onClick={handlelighting}>
                 <p>Office Electronics & Gadgets</p>
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: light ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
-                <div className={styles.shopLinkBottom} style={{height: light ? "auto" : "0"}}>
+                <div className={styles.shopLinkBottom} style={{display: light ? "flex" : "none"}}>
                   <Link href={'/shop/subcategory/office-desk-lighting-productivity'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink}  onClick={handleSubcategory}>
                     <p>Desk Lighting & Productivity Tech</p>
@@ -181,12 +235,12 @@ const ShopNav = () => {
                    </Link>
                 </div>    
              </div>
-             <div className={styles.shopLink}>
+             <div className={styles.shopLink} onMouseEnter={handleWallEnter} onMouseLeave={handleWallLeave}>
                 <div className={styles.shopLinkTop} onClick={handleWall}>
                 <p>Office Wall Accessories</p>
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: wall ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
-                <div className={styles.shopLinkBottom} style={{height: wall ? "auto" : "0"}}>
+                <div className={styles.shopLinkBottom} style={{display: wall ? "flex" : "none"}}>
                   <Link href={'/shop/subcategory/office-wall-art-posters'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Office Wall Art & Posters</p>
@@ -204,12 +258,12 @@ const ShopNav = () => {
                    </Link>
                 </div>    
              </div>
-             <div className={styles.shopLink}>
+             <div className={styles.shopLink} onMouseEnter={handleGreeneryEnter} onMouseLeave={handleGreeneryLeave}>
                 <div className={styles.shopLinkTop} onClick={handleGreenery}>
                 <p>Office Greenery Solutions</p>
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: greenery ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
-                <div className={styles.shopLinkBottom} style={{height: greenery ? "auto" : "0"}}>
+                <div className={styles.shopLinkBottom} style={{display: greenery ? "flex" : "none"}}>
                   <Link href={'/shop/subcategory/office-desk-greenery'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
                     <p>Office Desk Greenery</p>

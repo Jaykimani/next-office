@@ -9,14 +9,31 @@ type Props = {
   params: Promise<{ name: string }>
 }
 
+function seededShuffle(array: any[], seed: number) {
+  let random = () => {
+    seed = (seed * 9301 + 49297) % 233280
+    return seed / 233280
+  }
+
+  const arr = [...array]
+
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(random() * (i + 1))
+    ;[arr[i], arr[j]] = [arr[j], arr[i]]
+  }
+
+  return arr
+}
+
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
   const { name } = await params
+
   
   let category = await getCategoryType(name)
   let categInfo = category?.docs[0];
-  
+   
 
   const description =
     `Shop ${categInfo?.name} at Office Aura Kenya. Premium office accessories and decor.`
@@ -61,10 +78,15 @@ const Category = async({
   let categInfo = category?.docs[0];
    
 
- const allProducts =
+const products =
   typeof Products === 'string'
     ? []
     : Products;
+
+  
+  const today = new Date().getDate()
+
+const allProducts = seededShuffle(products, today)  
 
   const structuredData = {
     '@context': 'https://schema.org',

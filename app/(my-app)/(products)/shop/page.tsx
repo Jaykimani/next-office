@@ -82,7 +82,7 @@ const Shop = async({ searchParams }: Props) => {
 
   const page = Number(params.page) || 1
  
-  const allProducts = await getProductsList(page, 12);
+  const allProducts = await getProductsList(page, 30);
   const resArr = allProducts?.docs;
 
   const today = new Date().getDate()

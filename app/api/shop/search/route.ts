@@ -40,7 +40,7 @@ export async function GET(req: NextRequest) {
     // 🎯 Format results
     const formattedProducts = products.docs.map((p: any) => ({
       title: p.name,
-      url: `/shop/${p.id}`,
+      url: `/shop/${p.category}/${p.id}/${p.slug}`,
     }));
 
     const formattedCategories = categories.docs.map((c: any) => ({

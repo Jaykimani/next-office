@@ -27,7 +27,7 @@ import type { CollectionConfig } from 'payload';
               { label: 'Office Desk Organizers', value: 'office-desk-organizers' }, 
               { label: 'Office Productivity/Writing Tools', value: 'office-productivity-writing-tools' },
               { label: 'Office Ergonomic/Comfort Accessories', value: 'office-ergonomic-comfort-accessories' },
-              { label: 'Office Aesthetics/Personalized Décor', value: 'office-aesthetics-personalized-décor' },
+              { label: 'Office Aesthetics/Personalized Décor', value: 'office-aesthetics-personalized-decor' },
               { label: 'Office Desk Lighting & Productivity Tech', value: 'office-desk-lighting-productivity' }, 
               { label: 'Office Charging & Power Accessories', value: 'office-charging-power-accessories' },
               { label: 'Office Computer Accessories', value: 'office-computer-accessories' },

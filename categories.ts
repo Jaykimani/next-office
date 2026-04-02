@@ -5,7 +5,7 @@ export const Categories  = [
     links: [{ id: 'Office Desk Organizers', name: 'office-desk-organizers' },
             { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
             { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' }, 
-             { id: 'Office Aesthetics/Personalized Décor', name: 'office-aesthetics-personalized-décor' },]
+             { id: 'Office Aesthetics/Personalized Décor', name: 'office-aesthetics-personalized-decor' },]
     },
     {
         id: 2,
@@ -40,7 +40,7 @@ export const Subcategory = [
               { id: 'Office Desk Gadgets', name: 'office-desk-gadgets' },
               { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
               { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
-              { id: 'Office Aesthetics/Personalized Décor', name: 'office-aesthetics-personalized-décor' },
+              { id: 'Office Aesthetics/Personalized Décor', name: 'office-aesthetics-personalized-decor' },
               { id: 'Office Desk Lighting & Productivity Tech', name: 'office-desk-lighting-productivity' }, 
               { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
               { id: 'Office Computer Accessories', name: 'office-computer-accessories' },

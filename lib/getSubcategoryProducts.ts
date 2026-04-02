@@ -1,7 +1,7 @@
 import {getPayload} from 'payload';
 import config from '@payload-config';
 
-export async function getSubcategoryProducts (category){
+export async function getSubcategoryProducts (name){
 const payload = await getPayload({config});
 
 
@@ -12,7 +12,7 @@ const payload = await getPayload({config});
     pagination: false,
     where: {
         subcategories: {
-            equals: category,
+            equals: name,
         }
     },
      select:{

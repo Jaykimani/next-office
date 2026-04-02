@@ -200,7 +200,7 @@ export interface Product {
     | 'office-desk-organizers'
     | 'office-productivity-writing-tools'
     | 'office-ergonomic-comfort-accessories'
-    | 'office-aesthetics-personalized-décor'
+    | 'office-aesthetics-personalized-decor'
     | 'office-desk-lighting-productivity'
     | 'office-charging-power-accessories'
     | 'office-computer-accessories'

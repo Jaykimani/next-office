@@ -31,6 +31,8 @@ const SearchInput = () => {
 
       const res = await fetch(`/api/shop/search?q=${query}`)
       const data = await res.json()
+      console.log(data);
+      
       
       setResults([...data?.products, ...data?.categories])
       setbar(true)

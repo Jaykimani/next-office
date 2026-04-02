@@ -202,8 +202,8 @@ function List({ productsArr }: ProductsProps) {
                       )}
                     </div>
                     <div className={styles.itemInfo}>
-                      <h4>{item.name?.length > 30 ? item.name.substring(0, 27) + '...' : item.name}</h4>
-                      <p>KSh {item.price.toLocaleString('en-US')}/=</p>
+                      <h4>{item.name?.length > 30 ? item.name.substring(0, 67) + '...' : item.name}</h4>
+                      <p><span>KSh</span> {item.price.toLocaleString('en-US')}/=</p>
                       <button>View Item</button> 
                     </div>
                 </div>
