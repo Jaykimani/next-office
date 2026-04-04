@@ -11,18 +11,8 @@ export const Orders: CollectionConfig = {
   },
 
   access: {
-    read: ({ req }) => {
-      // Allow admin to read all
-      if (req.user) return true;
-
-      // Allow users to read their own orders (if auth added later)
-      return {
-        email: {
-          equals: req.user?.email,
-        },
-      };
-    },
     create: () => true, // created via API
+    read: ({ req }) => !!req.user,
     update: ({ req }) => !!req.user, // admin only
     delete: ({ req }) => !!req.user,
   },
