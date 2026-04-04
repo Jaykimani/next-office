@@ -39,9 +39,8 @@ const Similar = ({id, subcategory}: similarProps) => {
       async function fetchSubproducts(){
       const productsData = await fetch(`/api/subcategory?subcategory=${subcategory}`)
       const products = await productsData.json();
-      console.log(products);
-      
-
+    
+  
       let productArr = products.filter(item => item.id !== id);
 
       setProductsList(productArr);
