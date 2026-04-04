@@ -198,7 +198,7 @@ function List({ productsArr }: ProductsProps) {
                      <div className={styles.listItem}>
                     <div className={styles.itemImg}>
                       {item.images[0]?.url && (
-                      <Image className={styles.itemImage} src={item.images[0].url} alt="" width={200} height={200} />
+                      <Image className={styles.itemImage} src={`${process.env.NEXT_PUBLIC_SERVER_URL}${item.images[0].url}`} alt="" width={200} height={200} />
                       )}
                     </div>
                     <div className={styles.itemInfo}>
