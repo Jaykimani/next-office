@@ -84,7 +84,15 @@ const Featured = () => {
                     <div className={styles.featureOpt}>
                       <div className={styles.optImg}> 
                          <Image className={styles.optImgPhone} src="/accessories2.jpg" alt="office desk accessories" width={500} height={500} />
-                         <p className={styles.optInfo}>Office Accessories</p>
+                         <div className={styles.optInfo}>
+                           <h4>Office Accessories</h4>
+                            <p>Aesthetic,Personalized Decor</p>
+                            <p>Ergonomic,Comfort accessories</p>
+                            <p>Productivity/writing tools</p>
+                            <p>Desk Organizers</p> 
+
+                         </div>
+                         
                       </div>
                       <Link href={'/shop/category/office-accessories'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
@@ -95,7 +103,14 @@ const Featured = () => {
                     <div className={styles.featureOpt}>
                       <div className={styles.optImg}> 
                          <Image className={styles.optImgPhone} src="/lighting.jpg" alt="office lighting solutions" width={500} height={500}/>
-                         <p className={styles.optInfo}>Office Electronics & Gadgets</p>
+                         <div className={styles.optInfo}>
+                           <h4>Office Electronics & Gadgets</h4>
+                            <p>Desk Lighting & Gadgets</p>
+                          <p>Charging & Power Accessories</p>
+                          <p>Computer Accessories</p>
+                          <p>Cable Management Tech</p>
+
+                         </div>
                       </div>
                      <Link href={'/shop/category/office-electronics-gadgets'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>

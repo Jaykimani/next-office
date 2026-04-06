@@ -70,7 +70,10 @@ export interface Config {
     users: User;
     messages: Message;
     categories: Category;
-    products: Product;
+    'office-interior-decor': OfficeInteriorDecor;
+    'office-greenery': OfficeGreenery;
+    'office-workspace-accessories': OfficeWorkspaceAccessory;
+    'office-electronics': OfficeElectronic;
     media: Media;
     orders: Order;
     reviews: Review;
@@ -85,7 +88,10 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     messages: MessagesSelect<false> | MessagesSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
-    products: ProductsSelect<false> | ProductsSelect<true>;
+    'office-interior-decor': OfficeInteriorDecorSelect<false> | OfficeInteriorDecorSelect<true>;
+    'office-greenery': OfficeGreenerySelect<false> | OfficeGreenerySelect<true>;
+    'office-workspace-accessories': OfficeWorkspaceAccessoriesSelect<false> | OfficeWorkspaceAccessoriesSelect<true>;
+    'office-electronics': OfficeElectronicsSelect<false> | OfficeElectronicsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     orders: OrdersSelect<false> | OrdersSelect<true>;
     reviews: ReviewsSelect<false> | ReviewsSelect<true>;
@@ -184,34 +190,22 @@ export interface Category {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "products".
+ * via the `definition` "office-interior-decor".
  */
-export interface Product {
+export interface OfficeInteriorDecor {
   id: number;
   name: string;
   slug?: string | null;
   images: (number | Media)[];
   price: number;
-  category: 'office-accessories' | 'office-electronics-gadgets' | 'office-wall-accessories' | 'office-greenery';
   /**
    * Select one subcategories
    */
   subcategories:
-    | 'office-desk-organizers'
-    | 'office-productivity-writing-tools'
-    | 'office-ergonomic-comfort-accessories'
-    | 'office-aesthetics-personalized-decor'
-    | 'office-desk-lighting-productivity'
-    | 'office-charging-power-accessories'
-    | 'office-computer-accessories'
-    | 'office-cable-management-tech'
-    | 'office-wall-art-posters'
-    | 'office-wall-clocks'
-    | 'office-wall-mounted-Shelves'
-    | 'office-desk-greenery'
-    | 'artificial-office-greenery'
-    | 'natural-office-greenery'
-    | 'office-planters-and-pots';
+    | 'office-desk-shelf-décor'
+    | 'office-ambient-lighting-decorative-lights'
+    | 'office-wall-décor-accessories'
+    | 'office-personalized-statement-décor';
   /**
    * Select one or more subcategories
    */
@@ -260,7 +254,6 @@ export interface Product {
    * All reviews for this product
    */
   reviews?: (number | Review)[] | null;
-  averageRating?: number | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -292,7 +285,23 @@ export interface Review {
   /**
    * Select the product this review belongs to
    */
-  product: number | Product;
+  product:
+    | {
+        relationTo: 'office-interior-decor';
+        value: number | OfficeInteriorDecor;
+      }
+    | {
+        relationTo: 'office-greenery';
+        value: number | OfficeGreenery;
+      }
+    | {
+        relationTo: 'office-workspace-accessories';
+        value: number | OfficeWorkspaceAccessory;
+      }
+    | {
+        relationTo: 'office-electronics';
+        value: number | OfficeElectronic;
+      };
   /**
    * Rating out of 5 stars
    */
@@ -304,6 +313,205 @@ export interface Review {
    * Check to approve this review before displaying
    */
   approved?: boolean | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-greenery".
+ */
+export interface OfficeGreenery {
+  id: number;
+  name: string;
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select one subcategories
+   */
+  subcategories: 'office-desk-greenery' | 'office-statement-greenery' | 'greenery-sets-styled-combos';
+  /**
+   * Select one or more subcategories
+   */
+  vibe?:
+    | (
+        | 'minimalist-office-vibe'
+        | 'executive-office-vibe'
+        | 'modern-professional-office-vibe'
+        | 'creative-studio-office-vibe'
+        | 'nature-inspired-office-vibe'
+      )[]
+    | null;
+  stock: number;
+  delivery: {
+    deliveryTime: string;
+    pickupAvailable?: boolean | null;
+  };
+  tags?:
+    | {
+        tag: string;
+        id?: string | null;
+      }[]
+    | null;
+  description: {
+    productInformation: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    dimensions?: string | null;
+    structuralMaterial?: string | null;
+    color?: string | null;
+    careInstructions?: string | null;
+  };
+  /**
+   * All reviews for this product
+   */
+  reviews?: (number | Review)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-workspace-accessories".
+ */
+export interface OfficeWorkspaceAccessory {
+  id: number;
+  name: string;
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select one subcategories
+   */
+  subcategories:
+    | 'office-ergonomic-comfort-accessories'
+    | 'office-desk-essentials-utility-tools'
+    | 'office-productivity-writing-tools'
+    | 'office-desk-organizer-storage';
+  /**
+   * Select one or more subcategories
+   */
+  vibe?:
+    | (
+        | 'minimalist-office-vibe'
+        | 'executive-office-vibe'
+        | 'modern-professional-office-vibe'
+        | 'creative-studio-office-vibe'
+        | 'nature-inspired-office-vibe'
+      )[]
+    | null;
+  stock: number;
+  delivery: {
+    deliveryTime: string;
+    pickupAvailable?: boolean | null;
+  };
+  tags?:
+    | {
+        tag: string;
+        id?: string | null;
+      }[]
+    | null;
+  description: {
+    productInformation: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    dimensions?: string | null;
+    structuralMaterial?: string | null;
+    color?: string | null;
+    careInstructions?: string | null;
+  };
+  /**
+   * All reviews for this product
+   */
+  reviews?: (number | Review)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-electronics".
+ */
+export interface OfficeElectronic {
+  id: number;
+  name: string;
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select one subcategories
+   */
+  subcategories: 'office-charging-power-accessories' | 'office-computer-accessories' | 'office-cable-management-tech';
+  /**
+   * Select one or more subcategories
+   */
+  vibe?:
+    | (
+        | 'minimalist-office-vibe'
+        | 'executive-office-vibe'
+        | 'modern-professional-office-vibe'
+        | 'creative-studio-office-vibe'
+        | 'nature-inspired-office-vibe'
+      )[]
+    | null;
+  stock: number;
+  delivery: {
+    deliveryTime: string;
+    pickupAvailable?: boolean | null;
+  };
+  tags?:
+    | {
+        tag: string;
+        id?: string | null;
+      }[]
+    | null;
+  description: {
+    productInformation: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    dimensions?: string | null;
+    structuralMaterial?: string | null;
+    color?: string | null;
+    careInstructions?: string | null;
+  };
+  /**
+   * All reviews for this product
+   */
+  reviews?: (number | Review)[] | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -333,7 +541,23 @@ export interface Order {
     AdditionalDeliveryInformation?: string | null;
   };
   items: {
-    product: number | Product;
+    product:
+      | {
+          relationTo: 'office-interior-decor';
+          value: number | OfficeInteriorDecor;
+        }
+      | {
+          relationTo: 'office-greenery';
+          value: number | OfficeGreenery;
+        }
+      | {
+          relationTo: 'office-workspace-accessories';
+          value: number | OfficeWorkspaceAccessory;
+        }
+      | {
+          relationTo: 'office-electronics';
+          value: number | OfficeElectronic;
+        };
     name: string;
     price: number;
     quantity: number;
@@ -435,8 +659,20 @@ export interface PayloadLockedDocument {
         value: number | Category;
       } | null)
     | ({
-        relationTo: 'products';
-        value: number | Product;
+        relationTo: 'office-interior-decor';
+        value: number | OfficeInteriorDecor;
+      } | null)
+    | ({
+        relationTo: 'office-greenery';
+        value: number | OfficeGreenery;
+      } | null)
+    | ({
+        relationTo: 'office-workspace-accessories';
+        value: number | OfficeWorkspaceAccessory;
+      } | null)
+    | ({
+        relationTo: 'office-electronics';
+        value: number | OfficeElectronic;
       } | null)
     | ({
         relationTo: 'media';
@@ -548,14 +784,13 @@ export interface CategoriesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "products_select".
+ * via the `definition` "office-interior-decor_select".
  */
-export interface ProductsSelect<T extends boolean = true> {
+export interface OfficeInteriorDecorSelect<T extends boolean = true> {
   name?: T;
   slug?: T;
   images?: T;
   price?: T;
-  category?: T;
   subcategories?: T;
   vibe?: T;
   stock?: T;
@@ -581,7 +816,117 @@ export interface ProductsSelect<T extends boolean = true> {
         careInstructions?: T;
       };
   reviews?: T;
-  averageRating?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-greenery_select".
+ */
+export interface OfficeGreenerySelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  images?: T;
+  price?: T;
+  subcategories?: T;
+  vibe?: T;
+  stock?: T;
+  delivery?:
+    | T
+    | {
+        deliveryTime?: T;
+        pickupAvailable?: T;
+      };
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  description?:
+    | T
+    | {
+        productInformation?: T;
+        dimensions?: T;
+        structuralMaterial?: T;
+        color?: T;
+        careInstructions?: T;
+      };
+  reviews?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-workspace-accessories_select".
+ */
+export interface OfficeWorkspaceAccessoriesSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  images?: T;
+  price?: T;
+  subcategories?: T;
+  vibe?: T;
+  stock?: T;
+  delivery?:
+    | T
+    | {
+        deliveryTime?: T;
+        pickupAvailable?: T;
+      };
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  description?:
+    | T
+    | {
+        productInformation?: T;
+        dimensions?: T;
+        structuralMaterial?: T;
+        color?: T;
+        careInstructions?: T;
+      };
+  reviews?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-electronics_select".
+ */
+export interface OfficeElectronicsSelect<T extends boolean = true> {
+  name?: T;
+  slug?: T;
+  images?: T;
+  price?: T;
+  subcategories?: T;
+  vibe?: T;
+  stock?: T;
+  delivery?:
+    | T
+    | {
+        deliveryTime?: T;
+        pickupAvailable?: T;
+      };
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  description?:
+    | T
+    | {
+        productInformation?: T;
+        dimensions?: T;
+        structuralMaterial?: T;
+        color?: T;
+        careInstructions?: T;
+      };
+  reviews?: T;
   updatedAt?: T;
   createdAt?: T;
 }

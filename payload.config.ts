@@ -2,7 +2,11 @@ import sharp from 'sharp'
 import { FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { postgresAdapter } from '@payloadcms/db-postgres'
 import { buildConfig } from 'payload'
-import { Products, Media } from './app/(payload)/collections/products'
+import { OfficeElectronics } from './app/(payload)/collections/electronics'
+import { OfficeInteriorDecor } from './app/(payload)/collections/decor'
+import { OfficeGreenery} from './app/(payload)/collections/greenery'
+import { OfficeWorkspaceAccessories } from './app/(payload)/collections/accessories'
+import { Media } from './app/(payload)/collections/media'
 import { Users } from './app/(payload)/collections/users'
 import { Orders } from './app/(payload)/collections/orders'
 import { Messages } from './app/(payload)/collections/messages'
@@ -26,9 +30,9 @@ export default buildConfig({
       FixedToolbarFeature()
     ]
 }),
-serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
+// serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
   // Define and configure your collections in this array
-  collections: [Users, Messages, Categories, Products, Media, Orders, Reviews, Blogs],
+  collections: [Users, Messages, Categories, OfficeInteriorDecor, OfficeGreenery, OfficeWorkspaceAccessories, OfficeElectronics, Media, Orders, Reviews, Blogs],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || '',

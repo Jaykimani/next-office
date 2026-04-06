@@ -160,9 +160,9 @@ async function Info({params} : Props) {
 
                for (let i = 0; i < 5; i++) {
                 if(i < rate){
-                list.push(<span key={i}><MdStar className={styles.starIcon} style={{width: '25px', height: '25px'}}/></span>);
+                list.push(<span key={i}><MdStar className={styles.starIcon} style={{width: '28px', height: '28px'}}/></span>);
                 }else{
-                list.push(<span key={i}><MdStarBorder className={styles.starIcon} style={{width: '25px', height: '25px'}}/></span>);
+                list.push(<span key={i}><MdStarBorder className={styles.starIcon} style={{width: '28px', height: '28px'}}/></span>);
                 }
                }
 

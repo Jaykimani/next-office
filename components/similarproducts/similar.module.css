@@ -145,8 +145,11 @@
     }
     .othersDiv{
         width: 220px;
-        height: auto;
+        height: 400px;
         margin-right: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
     .othersDiv img{
         width: 220px;
@@ -155,18 +158,20 @@
     }
     .othersDiv h5{
         font-family: 'Playfair Display', sans-serif;
-        font-size: 20px;
+        font-size: 17px;
         color: #ffe100;
         margin: 10px 0;
-        text-align: center;
+        text-align: left;
+        padding: 0 10px;
     }
     .othersDiv p{
         font-family: 'Times New Roman', Times, serif;
-        font-size: 20px;
+        font-size: 18px;
         color: white;
         font-weight: 600;
         margin-bottom: 20px;
-        text-align: center;
+        text-align: left;
+        padding: 0 10px;
     }
     .othersDiv button{
         width: 100%;

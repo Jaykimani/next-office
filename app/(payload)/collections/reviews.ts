@@ -22,9 +22,13 @@ export const Reviews: CollectionConfig = {
     {
       name: 'product',
       type: 'relationship',
-      relationTo: 'products', // your products collection slug
+      relationTo: [
+        'office-interior-decor',
+        'office-greenery',
+        'office-workspace-accessories',
+        'office-electronics'
+      ], // your products collection slug
       required: true,
-      hasMany: false,
       admin: {
         description: 'Select the product this review belongs to',
       },

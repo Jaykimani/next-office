@@ -1,44 +1,14 @@
 import type { CollectionConfig } from 'payload';
 
 
-  const categories = [
-  {
-    label: 'Office Accessories',
-    value: 'office-accessories',
-  },
-  {
-    label: 'Office Electronics & Gadgets',
-    value: 'office-electronics-gadgets',
- 
-  },
-   {
-    label: 'Office Wall Accessories',
-    value: 'office-wall-accessories',
-   
-  },
-  {
-    label: 'Office Greenery',
-    value: 'office-greenery',
-  },
-  // ... other categories
-];
+  
 
   const subcategories = [
-              { label: 'Office Desk Organizers', value: 'office-desk-organizers' }, 
-              { label: 'Office Productivity/Writing Tools', value: 'office-productivity-writing-tools' },
-              { label: 'Office Ergonomic/Comfort Accessories', value: 'office-ergonomic-comfort-accessories' },
-              { label: 'Office Aesthetics/Personalized Décor', value: 'office-aesthetics-personalized-decor' },
-              { label: 'Office Desk Lighting & Productivity Tech', value: 'office-desk-lighting-productivity' }, 
-              { label: 'Office Charging & Power Accessories', value: 'office-charging-power-accessories' },
-              { label: 'Office Computer Accessories', value: 'office-computer-accessories' },
-              { label: 'Office Cable Management Tech', value: 'office-cable-management-tech' },
-              { label: 'Office Wall Art/Posters', value: 'office-wall-art-posters' }, 
-              { label: 'Office Wall Clocks', value: 'office-wall-clocks' },
-              { label: 'Office Wall-mounted Shelves', value: 'office-wall-mounted-Shelves' },
-              { label: 'Office Desk Greenery', value: 'office-desk-greenery' }, 
-              { label: 'Artificial Office Greenery', value: 'artificial-office-greenery' },
-              { label: 'Natural Office Greenery', value: 'natural-office-greenery' },
-              { label: 'Office Planters and Pots', value: 'office-planters-and-pots' }
+              { label: 'Office Desk & Shelf Décor', value: 'office-desk-shelf-décor' },
+              { label: 'Office Ambient Lighting & Decorative Lights', value: 'office-ambient-lighting-decorative-lights' }, 
+              { label: 'Office Wall Décor & Accessories', value: 'office-wall-décor-accessories' }, 
+              { label: 'Office Personalized & Statement Décor', value: 'office-personalized-statement-décor' },
+              
 
   ]
   const vibes = [
@@ -49,8 +19,8 @@ import type { CollectionConfig } from 'payload';
               { label: 'Nature Inspired Office Vibe', value: 'nature-inspired-office-vibe' },          
   ]
 
-export const Products: CollectionConfig = {
-  slug: 'products',
+export const OfficeInteriorDecor: CollectionConfig = {
+  slug: 'office-interior-decor',
 
   admin: {
     useAsTitle: 'name',
@@ -119,13 +89,6 @@ export const Products: CollectionConfig = {
     /**
      * CATEGORY
      */
-    {
-      name: 'category',
-      type: 'select',
-      required: true,
-      options: categories.map(({ label, value }) => ({ label, value })),
-      index: true,
-    },
 
     {
   name: 'subcategories',
@@ -239,28 +202,7 @@ export const Products: CollectionConfig = {
   },
 },
 
-    /**
-     * AUTO FIELDS
-     */
-    {
-      name: 'averageRating',
-      type: 'number',
-      admin: {
-        readOnly: true,
-      },
-    },
   ],
 }
 
-
-export const Media: CollectionConfig = {
-  slug: 'media',
-  upload: {
-    mimeTypes: ['image/*'],
-  },
-  fields: [],
-  access: {
-  read: () => true, // ✅ allow public access
-}
-}
 

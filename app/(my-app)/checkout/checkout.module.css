@@ -410,7 +410,7 @@
 .checkoutInset{
     width: 100%;
     height: auto;
-    background-color: rgb(211, 211, 211);
+    background-color: rgb(241, 241, 241);
     margin: 0 auto;
     padding: 10px;
 }
@@ -519,15 +519,30 @@
 .orderInformation{
     display: flex;
     flex-direction: column;
+    width: 60%;
 }
 .orderInformation p{
     font-size: 16px;
-    color: #7a7a7a;
+    color: #545454;
+    margin-top: 20px;
 }
 .orderSubtotal h4{
     font-weight: 600;
     font-size: 16px;
     color: black;
+}
+.shippingFeeSec{
+     width: 100%;
+    height: auto;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.shippingFeeSec p{
+   font-weight: 400;
+    font-size: 17px;
+    font-family: 'Montserrat', sans-serif;
 }
 .orderTotal{
     width: 100%;

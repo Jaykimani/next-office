@@ -512,7 +512,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.2);
+        background-color: rgba(0, 0, 0, 0.4);
         z-index: 2;
     }
     .optImgPhone{
@@ -524,14 +524,24 @@
     }
     .optInfo{
         position: absolute;
+        width: 90%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-family: 'Playfair Display', sans-serif;
-        font-size: 22px;
-        text-align: center;
         color: white;
         z-index: 3;
+       
+    }
+    .optInfo h4{
+        font-family: 'Playfair Display', sans-serif;
+        font-size: 23px;
+        font-weight: 700;
+    }
+    .optInfo p{
+        font-size: 18px;
+        text-align: center;
+        margin-bottom: 15px;
+        font-family: 'Abel', sans-serif;
     }
     .optBtn{
         background-color: #ffe100;

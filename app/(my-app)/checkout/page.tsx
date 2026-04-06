@@ -131,7 +131,7 @@ function Checkout() {
                 <h4>Subtotal:</h4>
                 <p style={{fontWeight: '600', fontSize: '18px'}}>KSh {checkout.subtotal.toLocaleString('en-US')}.00</p>
                </div>
-               <div className={styles.orderTotal}>
+               <div className={styles.shippingFeeSec}>
                 <h4>Shipping Fee:</h4>
                 <p>KSh {checkout.shippingFee.toLocaleString('en-US')}.00</p>
                </div>
@@ -141,11 +141,11 @@ function Checkout() {
                </div>
                <div className={styles.orderTotal}>
                 <h4>Delivery:</h4>
-                <p style={{color: 'gray', fontFamily: 'Times New Roman, Times, serif', fontWeight: '400', fontSize: '18px'}}>{checkout.shipping}</p>
+                <p style={{color: '#545454', fontFamily: 'Times New Roman, Times, serif', fontWeight: '400', fontSize: '18px'}}>{checkout.shipping}</p>
                </div>
                <div className={styles.orderTotal}>
                 <h4>Delivery Date:</h4>
-                <p style={{color: 'gray', fontFamily: 'Times New Roman, Times, serif', fontWeight: '400', fontSize: '18px'}}>{checkout.shippingDate}</p>
+                <p style={{color: '#545454', fontFamily: 'Times New Roman, Times, serif', fontWeight: '400', fontSize: '18px'}}>{checkout.shippingDate}</p>
                </div>
                <div className={styles.checkoutPayments}>
                <h4>PAYMENT METHOD:</h4>

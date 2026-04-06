@@ -21,6 +21,7 @@ type Product = {
   slug: string
   images: URL[]
   price: number
+  category: string
 }
 
 function mediaIsObject(media: number | Media) : media is Media {
@@ -42,7 +43,7 @@ const Similar = ({id, subcategory}: similarProps) => {
     
   
       let productArr = products.filter(item => item.id !== id);
-
+      
       setProductsList(productArr);
 
       }
@@ -63,7 +64,7 @@ const Similar = ({id, subcategory}: similarProps) => {
                    : null;
 
               return (
-                <Link key={product.id} href={`/shop/${product?.id}`} style={{textDecoration: 'none'}}>
+                <Link key={product.id} href={`/shop/${product?.category}/${product?.id}/${product?.slug}`} style={{textDecoration: 'none'}}>
                <div className={styles.othersDiv}>
                 {
                   product.images[0]?.url &&
