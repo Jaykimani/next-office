@@ -34,6 +34,15 @@ export const OfficeGreenery: CollectionConfig = {
     /**
      * NAME
      */
+      {
+  name: "category",
+  type: "text",
+  defaultValue: "office-greenery",
+  admin: {
+    readOnly: true,
+    hidden: true,
+  },
+},
     {
       name: 'name',
       type: 'text',
@@ -88,7 +97,7 @@ export const OfficeGreenery: CollectionConfig = {
      */
 
     {
-  name: 'subcategories',
+  name: 'subcategory',
   type: 'select',
   required: true,
   options: subcategories.map(({ label, value }) => ({ label, value })),

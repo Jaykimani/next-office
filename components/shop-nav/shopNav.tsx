@@ -181,107 +181,102 @@ const ShopNav = () => {
             <div className={styles.shopLinks}>
              <div className={styles.shopLink} onClick={handleDesk} onMouseEnter={handleDeskEnter} onMouseLeave={handleDeskLeave}>
                 <div className={styles.shopLinkTop} >
-                <p>Office Accessories & Gadgets</p>
+                <p>Office Interior Décor</p>
                 <MdKeyboardArrowDown style={{color: "#ffe100", width:'25px', height: '25px', transform: desk ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{display: desk ? "flex" : "none"}}>
-                    <Link href={'/shop/subcategory/office-desk-organizers'} style={{textDecoration: "none", color: "white"}}>
+                    <Link href={'/shop/office-interior-decor/office-desk-shelf-decor'} style={{textDecoration: "none", color: "white"}}>
                     <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Desk Organizers</p>
+                    <p>Office Desk & Shelf Décor</p>
                    </div>
                     </Link>
-                    <Link href={'/shop/subcategory/office-productivity-writing-tools'} style={{textDecoration: "none", color: "white"}}>
+                    <Link href={'/shop/office-interior-decor/office-ambient-lighting-decorative-lights'} style={{textDecoration: "none", color: "white"}}>
                     <div className={styles.shopSublink}  onClick={handleSubcategory}>
-                    <p>Office Productivity & Writing tools</p>
+                    <p>Office Ambient Lighting & Decorative Lights</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-ergonomic-comfort-accessories'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/office-interior-decor/office-wall-decor-accessories'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Ergonomics & Comfort Accessories</p>
+                    <p>Office Wall Décor & Accessories</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-aesthetics-personalized-decor'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/office-interior-decor/office-personalized-statement-decor'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} >
-                    <p>Office Aesthetic & Personalized Décor</p>
+                    <p>Office Personalized & Statement Décor</p>
                    </div>
                    </Link>
                 </div>    
              </div>
              <div className={styles.shopLink}  onMouseEnter={handleLightingEnter} onMouseLeave={handleLightingLeave}>
                 <div className={styles.shopLinkTop} onClick={handlelighting}>
-                <p>Office Electronics & Gadgets</p>
+                <p>Office Greenery Solutions</p>
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: light ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{display: light ? "flex" : "none"}}>
-                  <Link href={'/shop/subcategory/office-desk-lighting-productivity'} style={{textDecoration: "none", color: "white"}}>
+                  <Link href={'/shop/office-greenery/office-desk-greenery'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink}  onClick={handleSubcategory}>
-                    <p>Desk Lighting & Productivity Tech</p>
+                    <p>Office Desk Greenery</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-charging-power-accessories'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/office-greenery/office-statement-greenery'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Charging & Power Accessories</p>
+                    <p>Office Statement Greenery</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-computer-accessories'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/office-greenery/greenery-sets-styled-combos'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory} >
-                    <p>Office Computer Accessories</p>
-                   </div>
-                   </Link>
-                   <Link href={'/shop/subcategory/office-cable-management-tech'} style={{textDecoration: "none", color: "white"}}>
-                   <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Cable Management Tech</p>
+                    <p>Greenery Sets & Styled Combos</p>
                    </div>
                    </Link>
                 </div>    
              </div>
              <div className={styles.shopLink} onMouseEnter={handleWallEnter} onMouseLeave={handleWallLeave}>
                 <div className={styles.shopLinkTop} onClick={handleWall}>
-                <p>Office Wall Accessories</p>
+                <p>Office Workspace Accessories</p>
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: wall ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{display: wall ? "flex" : "none"}}>
-                  <Link href={'/shop/subcategory/office-wall-art-posters'} style={{textDecoration: "none", color: "white"}}>
+                  <Link href={'/shop/office-workspace-accessories/office-ergonomic-comfort-accessories'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Wall Art & Posters</p>
+                    <p>Office Ergonomic/Comfort Accessories</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-wall-clocks'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/office-workspace-accessories/office-desk-essentials-utility-tools'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Wall Clocks</p>
+                    <p>Office Desk Essentials/Utility Tools</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/subcategory/office-wall-mounted-Shelves'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/office-workspace-accessories/office-productivity-writing-tools'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Wall Mounted Shelves</p>
+                    <p>Office Productivity/Writing Tools</p>
+                   </div>
+                   </Link>
+                    <Link href={'/shop/office-workspace-accessories/office-desk-organizer-storage'} style={{textDecoration: "none", color: "white"}}>
+                   <div className={styles.shopSublink} onClick={handleSubcategory}>
+                    <p>Office Desk Organizers & Storage</p>
                    </div>
                    </Link>
                 </div>    
              </div>
              <div className={styles.shopLink} onMouseEnter={handleGreeneryEnter} onMouseLeave={handleGreeneryLeave}>
                 <div className={styles.shopLinkTop} onClick={handleGreenery}>
-                <p>Office Greenery Solutions</p>
+                <p>Office Electronics</p>
                 <MdKeyboardArrowDown fontSize='medium' style={{color: "#ffe100", width:'25px', height: '25px', transform: greenery ? 'rotate(180deg)' : 'rotate(0deg)'}} />
                 </div>
                 <div className={styles.shopLinkBottom} style={{display: greenery ? "flex" : "none"}}>
-                  <Link href={'/shop/subcategory/office-desk-greenery'} style={{textDecoration: "none", color: "white"}}>
+                  <Link href={'/shop/office-electronics/office-charging-power-accessories'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Desk Greenery</p>
+                    <p>Office Charging & Power Accessories</p>
                    </div>
                    </Link>
-                    <Link href={'/shop/subcategory/artificial-office-greenery'} style={{textDecoration: "none", color: "white"}}>
+                    <Link href={'/shop/office-electronics/office-computer-accessories'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Artificial Office Greenery</p>
+                    <p>Office Computer Accessories</p>
                    </div>
                    </Link>
-                    <Link href={'/shop/subcategory/natural-office-greenery'} style={{textDecoration: "none", color: "white"}}>
+                    <Link href={'/shop/office-electronics/office-cable-management-tech'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Natural Office Greenery</p>
-                   </div>
-                   </Link>
-                   <Link href={'/shop/subcategory/office-planters-and-pots'} style={{textDecoration: "none", color: "white"}}>
-                   <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Planters and Pots</p>
+                    <p>Office Cable Management Tech</p>
                    </div>
                    </Link>
                 </div>    

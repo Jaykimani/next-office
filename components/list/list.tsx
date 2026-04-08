@@ -55,7 +55,7 @@ function List({ productsArr }: ProductsProps) {
                <h4>Shop by Category</h4>
                {shopCategory.map((link)=>{
                 return (
-               <Link key={link.name}  href={`/shop/category/${link.url}`} style={{textDecoration: 'none'}}>
+               <Link key={link.name}  href={`/shop/${link.url}`} style={{textDecoration: 'none'}}>
                <div className={styles.categLink}>
                <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
                <p>{link.name}</p>
@@ -115,11 +115,11 @@ function List({ productsArr }: ProductsProps) {
              {Categories?.map((item)=>{
                 return (
                 <div key={item.id} className={styles.categSection2}>
-               <h4>{item.title}</h4>
+               <h4>{item.title.id}</h4>
                {item.links?.map((link)=>{
                 
                 return (
-               <Link key={link.id} href={`/shop/subcategory/${link.name}`} style={{textDecoration: "none", color: "white"}}>
+               <Link key={link.id} href={`/shop/${item.title.name}/${link.name}`} style={{textDecoration: "none", color: "white"}}>
                <div className={styles.categLink2}>
                <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
                <p style={{color: 'white'}}>{link.id}</p>
@@ -194,7 +194,7 @@ function List({ productsArr }: ProductsProps) {
                
                   
                return (
-                    <Link key={item.id} href={`/shop/${item.category}/${item.id}/${item.slug}`} style={{textDecoration: 'none'}}>
+                    <Link key={item.id} href={`/shop/${item.category}/${item.subcategory}/${item.id}/${item.slug}`} style={{textDecoration: 'none'}}>
                      <div className={styles.listItem}>
                     <div className={styles.itemImg}>
                       {item.images[0]?.url && (

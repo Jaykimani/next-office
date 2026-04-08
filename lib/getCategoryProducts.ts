@@ -6,18 +6,16 @@ const payload = await getPayload({config});
 
   try {
     const data = await payload.find({
-    collection: 'products',
+    collection: category,
     depth: 1,
-    where: {
-        category:  { equals: category }
-    },
      select:{
       id: true,
       slug: true,
       name: true,
       images: true,
       price: true,
-      category: true
+      category: true,
+      subcategory: true
     },
     limit: 100 // The slug of your 
     

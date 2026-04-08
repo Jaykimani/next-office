@@ -1,34 +1,33 @@
 export const Categories  = [
     {
     id: 1,
-    title: 'Office Accessories',
-    links: [{ id: 'Office Desk Organizers', name: 'office-desk-organizers' },
-            { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
-            { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' }, 
-             { id: 'Office Aesthetics/Personalized Décor', name: 'office-aesthetics-personalized-decor' },]
+    title: { id: 'Office Interior Décor', name: 'office-interior-decor' },
+    links: [{ id: 'Office Desk & Shelf Décor', name: 'office-desk-shelf-decor' },
+            { id: 'Office Ambient Lighting & Decorative Lights', name: 'office-ambient-lighting-decorative-lights' },
+            { id: 'Office Wall Décor & Accessories', name: 'office-wall-decor-accessories' }, 
+             { id: 'Office Personalized & Statement Décor', name: 'office-personalized-statement-decor' },]
     },
     {
         id: 2,
-        title: 'Office Electronics & Gadgets',
-        links: [ { id: 'Desk Lighting & Productivity Tech', name: 'office-desk-lighting-productivity' }, 
-              { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
-              { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
-              { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' },]
+        title: { id: 'Office Greenery Solutions', name: 'office-greenery' },
+        links: [ { id: 'Office Desk Greenery', name: 'office-desk-greenery' }, 
+              { id: 'Office Statement Greenery', name: 'office-statement-greenery' },
+              { id: 'Greenery Sets & Styled Combos', name: 'greenery-sets-styled-combos' },]
     },
     {
         id: 3,
-        title: 'Office Wall Accessories',
-        links: [{ id: 'Office Wall Art/Posters', name: 'office-wall-art-posters' },
-           { id: 'Office Wall Clocks', name: 'office-wall-clocks' },
-            { id: 'Office Wall-mounted Shelves', name: 'office-wall-mounted-Shelves' },]
+        title: { id: 'Office Workspace Accessories', name: 'office-workspace-accessories' },
+        links: [{ id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
+              { id: 'Office Desk Essentials/Utility Tools', name: 'office-desk-essentials-utility-tools' },
+              { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
+              { id: 'Office Desk Organizers & Storage', name: 'office-desk-organizer-storage' }]
     },
     {
         id: 5,
-        title: 'Office Greenery Solutions',
-        links: [ { id: 'Office Desk Greenery', name: 'office-desk-greenery' }, 
-              { id: 'Artificial Office Greenery', name: 'artificial-office-greenery' },
-              { id: 'Natural Office Greenery', name: 'natural-office-greenery' },
-              { id: 'Office Planters and Pots', name: 'office-planters-and-pots' }
+        title: { id: 'Office Electronics', name: 'office-electronics' },
+        links: [ { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
+              { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
+              { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' }
           ]
     },
 
@@ -36,43 +35,39 @@ export const Categories  = [
 
 
 export const Subcategory = [
-              { id: 'Office Desk Organisers', name: 'office-desk-organisers' }, 
-              { id: 'Office Desk Gadgets', name: 'office-desk-gadgets' },
-              { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
+              { id: 'Office Desk & Shelf Décor', name: 'office-desk-shelf-decor' },
+              { id: 'Office Ambient Lighting & Decorative Lights', name: 'office-ambient-lighting-decorative-lights' },
+              { id: 'Office Wall Décor & Accessories', name: 'office-wall-decor-accessories' }, 
+              { id: 'Office Personalized & Statement Décor', name: 'office-personalized-statement-decor' },
+              { id: 'Office Desk Greenery', name: 'office-desk-greenery' }, 
+              { id: 'Office Statement Greenery', name: 'office-statement-greenery' },
+              { id: 'Greenery Sets & Styled Combos', name: 'greenery-sets-styled-combos' },
               { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
-              { id: 'Office Aesthetics/Personalized Décor', name: 'office-aesthetics-personalized-decor' },
-              { id: 'Office Desk Lighting & Productivity Tech', name: 'office-desk-lighting-productivity' }, 
+              { id: 'Office Desk Essentials/Utility Tools', name: 'office-desk-essentials-utility-tools' },
+              { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
+              { id: 'Office Desk Organizers & Storage', name: 'office-desk-organizer-storage' },
               { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
               { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
-              { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' },
-              { id: 'Office Wall Art/Posters', name: 'office-wall-art-posters' }, 
-              { id: 'Office Wall Clocks', name: 'office-wall-clocks' },
-              { id: 'Office Wall-mounted Shelves', name: 'office-wall-mounted-Shelves' },
-              { id: 'Potted Office Plants', name: 'potted-office-plants' }, 
-              { id: 'Wall/Vertical Office Greenery', name: 'wall-vertical-office-greenery' },
-              { id: 'Artificial Office Greenery', name: 'artificial-office-greenery' },
-              { id: 'Natural Office Greenery', name: 'natural-office-greenery' },
-              { id: 'Outdoor Office Greenery', name: 'outdoor-office-greenery' }
-
+              { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' }
 ]
 export const shopCategory = [
    {
-    name: 'Office Accessories',
-    url: 'office-accessories',
+    name: 'Office Interior Décor',
+    url: 'office-interior-decor',
   },
   {
-    name: 'Office Electronics & Gadgets',
-    url: 'office-electronics-gadgets',
+    name: 'Office Greenery Solutions',
+    url: 'office-greenery',
  
   },
    {
-    name: 'Office Wall Accessories',
-    url: 'office-wall-accessories',
+    name: 'Office Workspace Accessories',
+    url: 'office-workspace-accessories',
    
   },
   {
-    name: 'Office Greenery',
-    url: 'office-greenery',
+    name: 'Office Electronics',
+    url: 'office-electronics',
   },
 ]
 

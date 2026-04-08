@@ -33,6 +33,15 @@ export const OfficeElectronics: CollectionConfig = {
     /**
      * NAME
      */
+      {
+  name: "category",
+  type: "text",
+  defaultValue: "office-electronics",
+  admin: {
+    readOnly: true,
+    hidden: true,
+  },
+},
     {
       name: 'name',
       type: 'text',
@@ -86,7 +95,7 @@ export const OfficeElectronics: CollectionConfig = {
      * CATEGORY
      */
     {
-  name: 'subcategories',
+  name: 'subcategory',
   type: 'select',
   required: true,
   options: subcategories.map(({ label, value }) => ({ label, value })),

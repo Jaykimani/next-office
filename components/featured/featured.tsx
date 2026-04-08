@@ -12,89 +12,92 @@ const Featured = () => {
                 <div className={styles.featureOptions1}>
                 <div className={styles.featureOpt1}>
                       <div className={styles.optImg}> 
-                        <Image className={styles.optImgImg} src="/accessories2.jpg" alt="office aura image" width={500} height={500}/>
+                        <Image className={styles.optImgImg} src="/wall3.jpg" alt="office aura image" width={500} height={500}/>
                       </div>
                         <div className={styles.optDiv}>
-                        <h3>Office Desk Accessories</h3>
-                        <ul>
-                          <li>Desk Organizers</li>
-                          <li>Productivity & Writing tools</li>
-                          <li>Ergonomics & Comfort Accessories</li>
-                          <li>Aesthetics & Personalized Décor</li>
-                        </ul>
-                        <Link className={styles.featuredLink} href={'/shop/category/office-accessories'} style={{textDecoration: 'none'}}>
+                        <h3>Office Interior Décor</h3>
+                        <div>
+                          <p>Office Desk & Shelf Décor</p>
+                          <p>Office Ambient Lighting & Decorative Lights</p>
+                          <p>Office Wall Décor & Accessories</p>
+                          <p>Office Personalized & Statement Décor</p>
+                        </div>
+                         
+                        <Link className={styles.featuredLink} href={'/shop/office-interior-decor'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
                         </Link>
                         </div>
                     </div>
                     <div className={styles.featureOpt1}>
+                      <div className={styles.optImg}> 
+                      <Image className={styles.optImgImg} src="/greenery.jpg" alt="office lighting solutions" width={500} height={500}/>
+                      </div>
                         <div className={styles.optDiv}>
-                        <h3>Office Electronics & Gadgets</h3>
-                        <ul>
-                          <li>Desk Lighting & Gadgets</li>
-                          <li>Charging & Power Accessories</li>
-                          <li>Computer Accessories</li>
-                          <li>Cable Management Tech</li>
-                        </ul>
-                         <Link className={styles.featuredLink} href={'/shop/category/office-electronics-gadgets'} style={{textDecoration: 'none'}}>
+                        <h3>Office Greenery</h3>
+                        <div>
+                          <p>Office Desk Greenery</p>
+                          <p>Office Statement Greenery</p>
+                          <p>Office Greenery Sets & Styled Combos</p>
+                        </div>
+                         <Link className={styles.featuredLink} href={'/shop/office-greenery'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
                         </Link>
                         </div>
                       
-                      <div className={styles.optImg}> 
-                      <Image className={styles.optImgImg} src="/lighting2.jpg" alt="office lighting solutions" width={500} height={500}/>
-                      </div>
+                      
                     </div>
                     <div className={styles.featureOpt1}>
                       <div className={styles.optImg}> 
-                      <Image className={styles.optImgImg} src="/wall3.jpg" alt="office wall accessories" width={500} height={500}/>
+                      <Image className={styles.optImgImg} src="/accessories2.jpg" alt="office wall accessories" width={500} height={500}/>
                       </div>
                         <div className={styles.optDiv}>
-                        <h3>Office Wall Accessories</h3>
-                        <ul>
-                          <li>Wall Art & Poasters</li>
-                          <li>Wall Clocks</li>
-                          <li>Wall Mounted Shelves</li>
-                          <li>Wall Mounted Planters</li>
-                        </ul>
-                         <Link className={styles.featuredLink} href={'/shop/category/office-wall-accessories'} style={{textDecoration: 'none'}}>
+                        <h3>Workspace Accessories</h3>
+                        <div>
+                          <p>Ergonomic & Comfort Accessories</p>
+                          <p>Desk Essentials & Utility Tools</p>
+                          <p>Productivity & Writing Tools</p>
+                          <p>Office Desk Organizers & Storage</p>
+                        </div>
+                         <Link className={styles.featuredLink} href={'/shop/office-workspace-accessories'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
                         </Link>
                         </div>
                     </div> 
                     <div className={styles.featureOpt1}>
+                       <div className={styles.optImg}> 
+                      <Image className={styles.optImgImg} src="/lighting2.jpg" alt="office accent accessories" width={500} height={500}/>
+                      </div>
                         <div className={styles.optDiv}>
-                        <h3>Office Greenery Solutions</h3>
-                        <ul>
-                          <li>Desk greenery</li>
-                          <li>Artificial greenery</li>
-                          <li>Natural greenery</li>
-                          <li>Planters & Pots</li>
-                        </ul>
-                         <Link className={styles.featuredLink} href={'/shop/category/office-greenery'} style={{textDecoration: 'none'}}>
+                        <h3>Office Electronics</h3>
+                       <div>
+                          <p>Office Charging & Power Accessories</p>
+                          <p>Office Computer Accessories</p>
+                          <p>Office Cable Management Tech</p>
+                        </div>
+                         <Link className={styles.featuredLink} href={'/shop/office-electronics'} style={{textDecoration: 'none'}}>
                         <div>SHOP NOW</div>
                         </Link>
                         </div>
-                      <div className={styles.optImg}> 
-                      <Image className={styles.optImgImg} src="/greenery.jpg" alt="office accent accessories" width={500} height={500}/>
-                      </div>
+                     
                     </div>
                 </div>
                 <div className={styles.featureOptions2}>
                     <div className={styles.featureOpt}>
                       <div className={styles.optImg}> 
-                         <Image className={styles.optImgPhone} src="/accessories2.jpg" alt="office desk accessories" width={500} height={500} />
+                         <Image className={styles.optImgPhone} src="/decor.jpg" alt="office desk accessories" width={500} height={500} />
                          <div className={styles.optInfo}>
-                           <h4>Office Accessories</h4>
-                            <p>Aesthetic,Personalized Decor</p>
-                            <p>Ergonomic,Comfort accessories</p>
-                            <p>Productivity/writing tools</p>
-                            <p>Desk Organizers</p> 
-
+                           <h4>Office Interior Décor</h4>
+                           <ul>
+                          <li>Office Desk & Shelf Décor</li>
+                          <li>Office Ambient Lighting & Decorative Lights</li>
+                          <li>Office Wall Décor & Accessories</li>
+                          <li>Office Personalized & Statement Décor</li> 
+                           </ul>
+                          
                          </div>
                          
                       </div>
-                      <Link href={'/shop/category/office-accessories'} style={{textDecoration: 'none', color: 'black'}}>
+                      <Link href={'/shop/office-interior-decor'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
                         <p>SHOP NOW</p>
                       </div>
@@ -104,15 +107,17 @@ const Featured = () => {
                       <div className={styles.optImg}> 
                          <Image className={styles.optImgPhone} src="/lighting.jpg" alt="office lighting solutions" width={500} height={500}/>
                          <div className={styles.optInfo}>
-                           <h4>Office Electronics & Gadgets</h4>
-                            <p>Desk Lighting & Gadgets</p>
-                          <p>Charging & Power Accessories</p>
-                          <p>Computer Accessories</p>
-                          <p>Cable Management Tech</p>
+                           <h4>Office Greenery</h4>
+                           <ul>
+                           <li>Office Desk Greenery</li>
+                          <li>Office Statement Greenery</li>
+                          <li>Office Greenery Sets & Styled Combos</li>
+                           </ul>
+                         
 
                          </div>
                       </div>
-                     <Link href={'/shop/category/office-electronics-gadgets'} style={{textDecoration: 'none', color: 'black'}}>
+                     <Link href={'/shop/office-greenery'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
                         <p>SHOP NOW</p>
                       </div>
@@ -121,9 +126,18 @@ const Featured = () => {
                     <div className={styles.featureOpt}>
                       <div className={styles.optImg}> 
                          <Image className={styles.optImgPhone} src="/wall3.jpg" alt="office wall accessories" width={500} height={500} />
-                         <p className={styles.optInfo}>Office Wall Accessories</p>
+                         <div className={styles.optInfo}>
+                         <h4>Workspace Accessories</h4>
+                         <ul>
+                          <li>Ergonomic & Comfort Accessories</li>
+                          <li>Desk Essentials & Utility Tools</li>
+                          <li>Productivity & Writing Tools</li>
+                          <li>Office Desk Organizers & Storage</li>
+                         </ul>
+                         
+                          </div>
                       </div>
-                     <Link href={'/shop/category/office-wall-accessories'} style={{textDecoration: 'none', color: 'black'}}>
+                     <Link href={'/shop/office-workspace-accessories'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
                         <p>SHOP NOW</p>
                       </div>
@@ -132,9 +146,16 @@ const Featured = () => {
                     <div className={styles.featureOpt}>
                       <div className={styles.optImg}> 
                          <Image className={styles.optImgPhone} src="/greenery.jpg" alt="office plants and greenery solutions" width={500} height={500}/>
-                         <p className={styles.optInfo}>Office Greenery Solutions</p>
+                          <div className={styles.optInfo}>
+                         <h4>Office Electronics</h4>
+                         <ul>
+                          <li>Office Charging & Power Accessories</li>
+                          <li>Office Computer Accessories</li>
+                          <li>Office Cable Management Tech</li>
+                         </ul>
+                          </div>
                       </div>
-                    <Link href={'/shop/category/office-greenery'} style={{textDecoration: 'none', color: 'black'}}>
+                    <Link href={'/shop/category/office-electronics'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
                         <p>SHOP NOW</p>
                       </div>

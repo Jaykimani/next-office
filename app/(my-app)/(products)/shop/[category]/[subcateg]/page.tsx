@@ -6,7 +6,7 @@ import { Metadata } from 'next'
 
 
 type Props = {
-  params: Promise<{ name: string }>
+  params: Promise<{ category: string, subcateg: string }>
 }
 
 function seededShuffle(array: any[], seed: number) {
@@ -28,10 +28,10 @@ function seededShuffle(array: any[], seed: number) {
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
-  const { name } = await params
+  const { subcateg } = await params
 
   
-  let category = await getCategoryType(name)
+  let category = await getCategoryType(subcateg)
   let categInfo = category?.docs[0];
    
 
@@ -67,15 +67,15 @@ export async function generateMetadata(
 const Category = async({
   params,
 }: {
-  params: Promise<{ name: string }>
+  params: Promise<{ category: string, subcateg: string }>
 }) => {
 
-   const { name } = await params
+   const { category, subcateg } = await params
   
   
-  const Products = await getSubcategoryProducts(name);
-  let category = await getCategoryType(name)
-  let categInfo = category?.docs[0];
+  const Products = await getSubcategoryProducts(category, subcateg);
+  let categData = await getCategoryType(subcateg)
+  let categInfo = categData?.docs[0];
    
 
 const products =

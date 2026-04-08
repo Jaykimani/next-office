@@ -4,10 +4,10 @@ import type { CollectionConfig } from 'payload';
   
 
   const subcategories = [
-              { label: 'Office Desk & Shelf Décor', value: 'office-desk-shelf-décor' },
+              { label: 'Office Desk & Shelf Décor', value: 'office-desk-shelf-decor' },
               { label: 'Office Ambient Lighting & Decorative Lights', value: 'office-ambient-lighting-decorative-lights' }, 
-              { label: 'Office Wall Décor & Accessories', value: 'office-wall-décor-accessories' }, 
-              { label: 'Office Personalized & Statement Décor', value: 'office-personalized-statement-décor' },
+              { label: 'Office Wall Décor & Accessories', value: 'office-wall-decor-accessories' }, 
+              { label: 'Office Personalized & Statement Décor', value: 'office-personalized-statement-decor' },
               
 
   ]
@@ -34,9 +34,20 @@ export const OfficeInteriorDecor: CollectionConfig = {
 
   fields: [
     
+    
     /**
      * NAME
+     * 
      */
+    {
+  name: "category",
+  type: "text",
+  defaultValue: "office-interior-decor",
+  admin: {
+    readOnly: true,
+    hidden: true,
+  },
+},
     {
       name: 'name',
       type: 'text',
@@ -91,7 +102,7 @@ export const OfficeInteriorDecor: CollectionConfig = {
      */
 
     {
-  name: 'subcategories',
+  name: 'subcategory',
   type: 'select',
   required: true,
   options: subcategories.map(({ label, value }) => ({ label, value })),

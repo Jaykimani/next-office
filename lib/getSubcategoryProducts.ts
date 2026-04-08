@@ -1,18 +1,19 @@
 import {getPayload} from 'payload';
 import config from '@payload-config';
 
-export async function getSubcategoryProducts (name){
+
+export async function getSubcategoryProducts (category, subcateg){
 const payload = await getPayload({config});
 
 
   try {
     const data = await payload.find({
-    collection: 'products',
+    collection: category,
     depth: 1,
     pagination: false,
     where: {
-        subcategories: {
-            equals: name,
+        subcategory: {
+            equals: subcateg,
         }
     },
      select:{
@@ -21,7 +22,8 @@ const payload = await getPayload({config});
       name: true,
       images: true,
       price: true,
-      category: true
+      category: true,
+      subcategory: true
     },
     limit: 100 // The slug of your 
     

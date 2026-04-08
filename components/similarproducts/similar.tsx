@@ -8,6 +8,7 @@ import Link from 'next/link'
 
 type similarProps = {
   id: number
+  category: string
   subcategory: string
 }
 
@@ -29,7 +30,7 @@ function mediaIsObject(media: number | Media) : media is Media {
   
 }
 
-const Similar = ({id, subcategory}: similarProps) => {
+const Similar = ({id, category, subcategory}: similarProps) => {
 
   
     const [productsList, setProductsList] = useState<Product[]>([]);
@@ -38,7 +39,7 @@ const Similar = ({id, subcategory}: similarProps) => {
       
       
       async function fetchSubproducts(){
-      const productsData = await fetch(`/api/subcategory?subcategory=${subcategory}`)
+      const productsData = await fetch(`/api/subcategory?category=${category}&subcategory=${subcategory}`)
       const products = await productsData.json();
     
   

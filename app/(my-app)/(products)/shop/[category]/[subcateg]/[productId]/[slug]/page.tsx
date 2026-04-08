@@ -15,6 +15,7 @@ import { Metadata } from 'next'
 
 type Props = {
   params: Promise<{ category: string
+                    subcateg: string
                     productId: string
                     slug: string
                  }>
@@ -187,7 +188,7 @@ async function Info({params} : Props) {
          <div className={styles.quote}>
          <h1>TRANSFORM YOUR WORKSPACE</h1>
         </div>
-         {Product?.subcategories && <Similar subcategory = {Product?.subcategories} id = {Product?.id}/>}
+         {Product?.subcategory && Product?.category && <Similar category = {Product?.category} subcategory = {Product?.subcategory} id = {Product?.id}/>}
         </div>
 
          <script

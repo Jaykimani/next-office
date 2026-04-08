@@ -1,13 +1,9 @@
 import type { CollectionConfig } from 'payload';
 
 
-  const subcategories = [
-              { label: 'Office Ergonomic/Comfort Accessories', value: 'office-ergonomic-comfort-accessories' },
-              { label: 'Office Desk Essentials/Utility Tools', value: 'office-desk-essentials-utility-tools' },
-              { label: 'Office Productivity/Writing Tools', value: 'office-productivity-writing-tools' },
-              { label: 'Office Desk Organizers & Storage', value: 'office-desk-organizer-storage' },
+  const subcategories = [            
+            
               
-
   ]
   const vibes = [
               { label: 'Minimalist Offfice Vibe', value: 'minimalist-office-vibe' }, 
@@ -17,8 +13,8 @@ import type { CollectionConfig } from 'payload';
               { label: 'Nature Inspired Office Vibe', value: 'nature-inspired-office-vibe' },          
   ]
 
-export const OfficeWorkspaceAccessories: CollectionConfig = {
-  slug: 'office-workspace-accessories',
+export const Products: CollectionConfig = {
+  slug: 'products',
 
   admin: {
     useAsTitle: 'name',
@@ -38,7 +34,6 @@ export const OfficeWorkspaceAccessories: CollectionConfig = {
       {
   name: "category",
   type: "text",
-  defaultValue: "office-workspace-accessories",
   admin: {
     readOnly: true,
     hidden: true,
@@ -96,7 +91,6 @@ export const OfficeWorkspaceAccessories: CollectionConfig = {
     /**
      * CATEGORY
      */
-
     {
   name: 'subcategory',
   type: 'select',

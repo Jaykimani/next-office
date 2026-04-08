@@ -70,6 +70,7 @@ export interface Config {
     users: User;
     messages: Message;
     categories: Category;
+    products: Product;
     'office-interior-decor': OfficeInteriorDecor;
     'office-greenery': OfficeGreenery;
     'office-workspace-accessories': OfficeWorkspaceAccessory;
@@ -88,6 +89,7 @@ export interface Config {
     users: UsersSelect<false> | UsersSelect<true>;
     messages: MessagesSelect<false> | MessagesSelect<true>;
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
+    products: ProductsSelect<false> | ProductsSelect<true>;
     'office-interior-decor': OfficeInteriorDecorSelect<false> | OfficeInteriorDecorSelect<true>;
     'office-greenery': OfficeGreenerySelect<false> | OfficeGreenerySelect<true>;
     'office-workspace-accessories': OfficeWorkspaceAccessoriesSelect<false> | OfficeWorkspaceAccessoriesSelect<true>;
@@ -190,10 +192,11 @@ export interface Category {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "office-interior-decor".
+ * via the `definition` "products".
  */
-export interface OfficeInteriorDecor {
+export interface Product {
   id: number;
+  category?: string | null;
   name: string;
   slug?: string | null;
   images: (number | Media)[];
@@ -201,11 +204,7 @@ export interface OfficeInteriorDecor {
   /**
    * Select one subcategories
    */
-  subcategories:
-    | 'office-desk-shelf-décor'
-    | 'office-ambient-lighting-decorative-lights'
-    | 'office-wall-décor-accessories'
-    | 'office-personalized-statement-décor';
+  subcategory: string;
   /**
    * Select one or more subcategories
    */
@@ -318,10 +317,11 @@ export interface Review {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "office-greenery".
+ * via the `definition` "office-interior-decor".
  */
-export interface OfficeGreenery {
+export interface OfficeInteriorDecor {
   id: number;
+  category?: string | null;
   name: string;
   slug?: string | null;
   images: (number | Media)[];
@@ -329,7 +329,77 @@ export interface OfficeGreenery {
   /**
    * Select one subcategories
    */
-  subcategories: 'office-desk-greenery' | 'office-statement-greenery' | 'greenery-sets-styled-combos';
+  subcategory:
+    | 'office-desk-shelf-decor'
+    | 'office-ambient-lighting-decorative-lights'
+    | 'office-wall-decor-accessories'
+    | 'office-personalized-statement-decor';
+  /**
+   * Select one or more subcategories
+   */
+  vibe?:
+    | (
+        | 'minimalist-office-vibe'
+        | 'executive-office-vibe'
+        | 'modern-professional-office-vibe'
+        | 'creative-studio-office-vibe'
+        | 'nature-inspired-office-vibe'
+      )[]
+    | null;
+  stock: number;
+  delivery: {
+    deliveryTime: string;
+    pickupAvailable?: boolean | null;
+  };
+  tags?:
+    | {
+        tag: string;
+        id?: string | null;
+      }[]
+    | null;
+  description: {
+    productInformation: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    dimensions?: string | null;
+    structuralMaterial?: string | null;
+    color?: string | null;
+    careInstructions?: string | null;
+  };
+  /**
+   * All reviews for this product
+   */
+  reviews?: (number | Review)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-greenery".
+ */
+export interface OfficeGreenery {
+  id: number;
+  category?: string | null;
+  name: string;
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select one subcategories
+   */
+  subcategory: 'office-desk-greenery' | 'office-statement-greenery' | 'greenery-sets-styled-combos';
   /**
    * Select one or more subcategories
    */
@@ -387,6 +457,7 @@ export interface OfficeGreenery {
  */
 export interface OfficeWorkspaceAccessory {
   id: number;
+  category?: string | null;
   name: string;
   slug?: string | null;
   images: (number | Media)[];
@@ -394,7 +465,7 @@ export interface OfficeWorkspaceAccessory {
   /**
    * Select one subcategories
    */
-  subcategories:
+  subcategory:
     | 'office-ergonomic-comfort-accessories'
     | 'office-desk-essentials-utility-tools'
     | 'office-productivity-writing-tools'
@@ -456,6 +527,7 @@ export interface OfficeWorkspaceAccessory {
  */
 export interface OfficeElectronic {
   id: number;
+  category?: string | null;
   name: string;
   slug?: string | null;
   images: (number | Media)[];
@@ -463,7 +535,7 @@ export interface OfficeElectronic {
   /**
    * Select one subcategories
    */
-  subcategories: 'office-charging-power-accessories' | 'office-computer-accessories' | 'office-cable-management-tech';
+  subcategory: 'office-charging-power-accessories' | 'office-computer-accessories' | 'office-cable-management-tech';
   /**
    * Select one or more subcategories
    */
@@ -659,6 +731,10 @@ export interface PayloadLockedDocument {
         value: number | Category;
       } | null)
     | ({
+        relationTo: 'products';
+        value: number | Product;
+      } | null)
+    | ({
         relationTo: 'office-interior-decor';
         value: number | OfficeInteriorDecor;
       } | null)
@@ -784,14 +860,53 @@ export interface CategoriesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "office-interior-decor_select".
+ * via the `definition` "products_select".
  */
-export interface OfficeInteriorDecorSelect<T extends boolean = true> {
+export interface ProductsSelect<T extends boolean = true> {
+  category?: T;
   name?: T;
   slug?: T;
   images?: T;
   price?: T;
-  subcategories?: T;
+  subcategory?: T;
+  vibe?: T;
+  stock?: T;
+  delivery?:
+    | T
+    | {
+        deliveryTime?: T;
+        pickupAvailable?: T;
+      };
+  tags?:
+    | T
+    | {
+        tag?: T;
+        id?: T;
+      };
+  description?:
+    | T
+    | {
+        productInformation?: T;
+        dimensions?: T;
+        structuralMaterial?: T;
+        color?: T;
+        careInstructions?: T;
+      };
+  reviews?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-interior-decor_select".
+ */
+export interface OfficeInteriorDecorSelect<T extends boolean = true> {
+  category?: T;
+  name?: T;
+  slug?: T;
+  images?: T;
+  price?: T;
+  subcategory?: T;
   vibe?: T;
   stock?: T;
   delivery?:
@@ -824,11 +939,12 @@ export interface OfficeInteriorDecorSelect<T extends boolean = true> {
  * via the `definition` "office-greenery_select".
  */
 export interface OfficeGreenerySelect<T extends boolean = true> {
+  category?: T;
   name?: T;
   slug?: T;
   images?: T;
   price?: T;
-  subcategories?: T;
+  subcategory?: T;
   vibe?: T;
   stock?: T;
   delivery?:
@@ -861,11 +977,12 @@ export interface OfficeGreenerySelect<T extends boolean = true> {
  * via the `definition` "office-workspace-accessories_select".
  */
 export interface OfficeWorkspaceAccessoriesSelect<T extends boolean = true> {
+  category?: T;
   name?: T;
   slug?: T;
   images?: T;
   price?: T;
-  subcategories?: T;
+  subcategory?: T;
   vibe?: T;
   stock?: T;
   delivery?:
@@ -898,11 +1015,12 @@ export interface OfficeWorkspaceAccessoriesSelect<T extends boolean = true> {
  * via the `definition` "office-electronics_select".
  */
 export interface OfficeElectronicsSelect<T extends boolean = true> {
+  category?: T;
   name?: T;
   slug?: T;
   images?: T;
   price?: T;
-  subcategories?: T;
+  subcategory?: T;
   vibe?: T;
   stock?: T;
   delivery?:
