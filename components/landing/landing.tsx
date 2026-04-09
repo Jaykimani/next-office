@@ -7,12 +7,8 @@ const Landing = () => {
         <div id={styles.landing}>
           <Navbar />
         <div className={styles.landingContent}>
-          <h2>Elevate Your Workspace with Stylish Office Decor & Accessories<span>!!</span></h2>
-          <Link href={'/shop'} style={{textDecoration : 'none', color: 'black'}}>
-          <div className={styles.landingBtn}>
-          <p>SHOP NOW</p>
-          </div>
-          </Link>
+          <h2>Elev<span>A</span>te Yo<span>U</span>r Workspace with Stylish Office Déco<span>R</span> & <span>A</span>ccessories<span>!!</span></h2>
+          
         </div>
         </div>
   )    

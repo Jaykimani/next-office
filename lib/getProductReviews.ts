@@ -1,7 +1,7 @@
 import {getPayload} from 'payload';
 import config from '@payload-config';
 
-export async function getProductReviews (productId){
+export async function getProductReviews (category, productId){
 const payload = await getPayload({config});
 
   try {
@@ -9,7 +9,10 @@ const payload = await getPayload({config});
     collection: 'reviews',
     where: {
       product: {
-        equals: productId,
+       equals: {
+        relationTo: category,
+        value: productId,
+      },
       },
       approved: {
         equals: true,

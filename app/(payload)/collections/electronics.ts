@@ -146,21 +146,13 @@ export const OfficeElectronics: CollectionConfig = {
       ],
     },
 
-    /**
-     * TAGS
-     */
-    {
-      name: 'tags',
-      type: 'array',
-      index: true,
-      fields: [
-        {
-          name: 'tag',
-          type: 'text',
-          required: true,
-        },
-      ],
-    },
+    
+   {
+  name: "tags",
+  type: "text",
+  hasMany: true,
+  index: true
+},
 
     /**
      * DESCRIPTION

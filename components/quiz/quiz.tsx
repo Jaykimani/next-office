@@ -27,85 +27,143 @@ const Quiz = () => {
   return (
     <>
         <div id={styles.quiz}>
-            <div className={styles.quizImg}>
-              <Image className={styles.quizImage} src="/quiz.jpg" alt=""  width={500} height={500}/>
-            </div>
+            
             <div className={styles.quizInset}>
-              <h1>Frequently Asked Questions(FAQs)</h1>
+              <h1>Frequently Asked Questions(FAQs) About Office Aura in Kenya</h1>
               <div className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>What types of office decor and accessories do you sell?</h4>
+                <h4>What is Office Aura?</h4>
                 <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>We offer a wide range of modern office decor and accessories, including office desk accessories, stylish desk organizers, wall art, LED desk lamps, office accents like bean bags and carpets, office plants and greenery and more. Whether you’re looking to enhance productivity or add a touch of elegance to your workspace, we have the perfect items for you.</p>
+                 <p><span>Office Aura</span> is a Kenyan online store that specializes in <span>office décor, desk accessories, workspace tools, and productivity essentials</span> designed to help professionals create stylish and efficient workspaces. Whether you are setting up a <span>corporate office, startup workspace, or home office</span> in Kenya, Office Aura offers curated products that improve organization, comfort, and workspace aesthetics.</p>
                 </div>
               </div>
               <div className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop}>
-                <h4>Do you offer fast shipping on office decor and accessories?</h4>
+                <h4>What products can I buy from Office Aura?</h4>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>              
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>Yes! We provide fast and reliable shipping so you can upgrade your workspace without delays. Our shipping partners ensure quick delivery, and most orders arrive within [X] business days. You can track your order in real-time for added convenience.</p>
+                 <p>Office Aura offers a wide range of <span>office accessories and workspace upgrades</span>, including:</p>
+                 <ul>
+                  <li>Desk organizers and storage solutions</li>
+                  <li>Office wall art and posters</li>
+                  <li>Artificial office plants and greenery</li>
+                  <li>Desk lighting and ambient workspace lights</li>
+                  <li>Productivity tools like planners and notebooks</li>
+                  <li>Ergonomic comfort accessories</li>
+                 </ul>
+                 <p>All products are carefully selected to help professionals in Kenya create <span>modern, functional, and inspiring workspaces.</span></p>
                 </div>
               </div>
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop}>
-                <h4>Do you offer discounts on bulk office decor purchases?</h4>
+                <h4>Do you deliver office accessories across Kenya?</h4>
                 <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>                </div>
                 <div className={styles.quizBottom}>
-                 <p>Absolutely! We provide bulk discounts for businesses, home offices, and co-working spaces. If you're furnishing an entire office, contact us for special pricing and exclusive deals on large orders.</p>
+                 <p>Yes. <span>Office Aura delivers office décor and workspace accessories across Kenya.</span></p>
+                 <p>Our primary delivery area is <span>Nairobi</span>, where orders are fulfilled quickly. We also ship to other towns and cities across the country so professionals everywhere can upgrade their <span>home office or workplace setup.</span></p>
+                 <p>Delivery times and options may vary depending on your location.</p>
                 </div>
               </div>
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>How can I choose the right office decor for my workspace?</h4>
+                <h4>Who are Office Aura products designed for?</h4>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>Choosing the right office decor depends on your style, space, and work needs. Consider factors like ergonomics, lighting, color psychology, and storage solutions. Our blog offers expert tips on office design trends and how to create a productive work environment.</p>
+                 <p>Office Aura products are designed for anyone looking to improve their workspace, including:</p>
+                 <ul>
+                  <li>Corporate offices</li>
+                  <li>Startups and small businesses</li>
+                  <li>Remote workers and freelancers</li>
+                  <li>Students setting up study desks</li>
+                  <li>Professionals upgrading their home office</li>
+                 </ul>
+                 <p>Our goal is to make it easy for people in Kenya to <span>build productive and aesthetically pleasing workspaces.</span></p>
                 </div>
               </div>
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop}>
-                <h4>What is your return policy for office furniture and accessories?</h4>
+                <h4>How can Office Aura help improve my workspace?</h4>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>We want you to love your purchase! If you’re not completely satisfied, we offer a hassle-free return policy within 7 days of delivery. To learn more about our return policy, <Link href={'/return-refund'}>click here</Link>.</p>
+                 <p>Office Aura focuses on products that <span>enhance productivity, organization, and workspace comfort</span>. Our desk accessories, organizers, and décor solutions help you:</p>
+                 <ul>
+                  <li>Reduce desk clutter</li>
+                  <li>Stay organized and focused</li>
+                  <li>Improve workspace aesthetics</li>
+                  <li>Create a comfortable and inspiring work environment</li>
+                 </ul>
+                 <p>A well-designed workspace can help boost <span>focus, creativity, and daily productivity.</span></p>
                 </div>
               </div>
               <div className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>Do you offer eco-friendly office decor options?</h4>
+                <h4>Can I create a complete desk setup using Office Aura products?</h4>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>Yes! We care about sustainability and offer a selection of eco-friendly office decor made from recycled materials, bamboo, and sustainable wood. Browse our green office solutions to create a stylish and environmentally friendly workspace.</p>
+                 <p>Yes. Office Aura offers a variety of products that allow you to build a <span>complete desk setup</span>, including:</p>
+                 <ul>
+                  <li>Desk organizers and storage tools</li>
+                  <li>Productivity planners and writing tools</li>
+                  <li>Desk lighting and accessories</li>
+                  <li>Office décor and wall art</li>
+                  <li>Workspace greenery</li>
+                 </ul>
+                 <p>You can mix and match products to create a <span>modern desk setup tailored to your style and workflow.</span></p>
                 </div>
               </div>
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>How can I stay updated on new office decor trends and promotions?</h4>
+                <h4>What makes Office Aura different from other office accessory stores in Kenya?</h4>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>Follow us on [social media links] to receive daily inspiration and workspace ideas as well as updates on the latest office decor trends, exclusive discounts, and special promotions.</p>
+                 <p>Office Aura focuses on <span>curated workspace solutions rather than random office supplies</span>. Our store is designed to help customers easily find products that improve both <span>workspace productivity and aesthetics.</span></p>
+                 <p>We focus on:</p>
+                 <ul>
+                  <li>Modern office décor and accessories</li>
+                  <li>Practical desk organization tools</li>
+                  <li>Workspace upgrades for professionals in Kenya</li>
+                  <li>Curated products that work well together</li>
+                 </ul>
+                 <p>This approach makes it easier to build a <span>clean, organized, and inspiring workspace.</span></p>
+                </div>
+              </div>
+                   <div  className={styles.quizDiv} onClick={handleQuiz}>
+                <div className={styles.quizTop} >
+                <h4>How do I choose the right office accessories for my desk?</h4>
+                 <div className='showIcon'>
+                <MdAddCircle className={styles.add} fontSize='large'/>
+                </div>
+                </div>
+                <div className={styles.quizBottom}>
+                 <p>When selecting office accessories, consider the following:</p>
+                 <ul>
+                  <li><span>Organization</span>: Use desk organizers and storage tools to reduce clutter.</li>
+                  <li><span>Productivity</span>: Add planners, notebooks, and writing tools.</li>
+                  <li><span>Comfort</span>: Include ergonomic accessories like wrist rests or laptop stands.</li>
+                  <li><span>Aesthetics</span>: Use wall art, desk décor, and plants to personalize your workspace.</li>
+                 </ul>
+                 <p>This approach makes it easier to build a <span>clean, organized, and inspiring workspace.</span></p>
                 </div>
               </div>
             </div>

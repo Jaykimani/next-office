@@ -215,6 +215,8 @@
         font-size: 17px;
         font-family: 'Times New Roman', Times, serif;
         color: white;
+        background-color: transparent;
+        outline: none;
     }
     .contForm input::placeholder{
         font-size: 16px;
@@ -224,6 +226,7 @@
         font-family: calibri;
         font-size: 17px;
         margin-bottom: 15px;
+        background-color: transparent;
     }
     .contForm input:focus{
         outline: none;

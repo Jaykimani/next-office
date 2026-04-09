@@ -1,8 +1,17 @@
 "use server"
 import { getPayloadClient } from '@/payloadClient'
 
+type ProductCollection =
+  | "office-interior-decor"
+  | "office-greenery"
+  | "office-workspace-accessories"
+  | "office-electronics";
+
 export async function submitReview(data: {
-  product: number
+  product: {
+    relationTo: ProductCollection
+    value: number
+  }
   title: string
   rating: number
   authorName: string

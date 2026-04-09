@@ -2,7 +2,10 @@ import type { CollectionConfig } from 'payload';
 
 
   const subcategories = [            
-            
+             { label: 'Office Desk & Shelf Décor', value: 'office-desk-shelf-decor' },
+              { label: 'Office Ambient Lighting & Decorative Lights', value: 'office-ambient-lighting-decorative-lights' }, 
+              { label: 'Office Wall Décor & Accessories', value: 'office-wall-decor-accessories' }, 
+              { label: 'Office Personalized & Statement Décor', value: 'office-personalized-statement-decor' },
               
   ]
   const vibes = [
@@ -92,14 +95,10 @@ export const Products: CollectionConfig = {
      * CATEGORY
      */
     {
-  name: 'subcategory',
-  type: 'select',
-  required: true,
-  options: subcategories.map(({ label, value }) => ({ label, value })),
-  admin: {
-    description: 'Select one subcategories',
-  },
-},  
+  name: "subcategory",
+  type: "text",
+  index: true
+},
 
  {
   name: 'vibe',
@@ -147,17 +146,11 @@ export const Products: CollectionConfig = {
      * TAGS
      */
     {
-      name: 'tags',
-      type: 'array',
-      index: true,
-      fields: [
-        {
-          name: 'tag',
-          type: 'text',
-          required: true,
-        },
-      ],
-    },
+  name: "tags",
+  type: "text",
+  hasMany: true,
+  index: true
+},
 
     /**
      * DESCRIPTION

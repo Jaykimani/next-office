@@ -17,17 +17,17 @@ type Props = {
   params: Promise<{ category: string
                     subcateg: string
                     productId: string
-                    slug: string
+                    productSlug: string
                  }>
 }
 
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
-  const { productId } = await params
+  const {category, productId } = await params
 
 
-  const product = await getSingleProduct(productId)
+  const product = await getSingleProduct(category, productId)
   
   
   if (!product) {
@@ -85,12 +85,12 @@ function mediaIsObject(media: number | Media) : media is Media {
 
 async function Info({params} : Props) {
   
-   const {productId} = await params;
+   const {category, productId, productSlug} = await params;
    
-    const Product = await getSingleProduct(productId);
-
+    const Product = await getSingleProduct(category, productId);
+   
     
-    const Reviews = await getProductReviews(productId)
+    const Reviews = await getProductReviews(category, productId)
     const imagesArr: string[] =
     Product?.images
     ?.map((img) =>

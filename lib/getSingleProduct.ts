@@ -1,12 +1,12 @@
 import {getPayload} from 'payload';
 import config from '@payload-config';
 
-export async function getSingleProduct (productId){
+export async function getSingleProduct (category, productId){
 const payload = await getPayload({config});
 
   try {
     const data = await payload.find({
-    collection: 'products',
+    collection: category,
     where: {
         id:  { equals: productId }
     } // The slug of your 

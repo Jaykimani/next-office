@@ -14,6 +14,12 @@ product : Product;
 reviews : Review[]
 }
 
+type ProductCollection =
+  | "office-interior-decor"
+  | "office-greenery"
+  | "office-workspace-accessories"
+  | "office-electronics";
+
 const Descrev = ({product, reviews}: ProductsProps) => {
 
     const [icon1, setIcon1] = useState(false);
@@ -100,11 +106,14 @@ const Descrev = ({product, reviews}: ProductsProps) => {
        e.preventDefault();
       
           const formData = new FormData(e.currentTarget)
-          if (!product?.id) throw new Error("No product selected")
+          if (!product?.category) throw new Error("No product selected")
 
           const data = {
-            product: product.id,
             title: formData.get("full-name") as string,
+            product: {
+            relationTo: product?.category as ProductCollection,
+            value: product?.id,
+            },
             rating: rating,
             authorName: formData.get("full-name") as string,
             authorEmail: formData.get("email-phone") as string,

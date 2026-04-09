@@ -1,7 +1,7 @@
 #navbar{
     display: block;
     width: 97%;
-    height: 70px;
+    height: 80px;
     background-color: rgba(0, 0, 0, 0.7);
     margin: 0px auto;
     border-radius: 50px;
@@ -20,7 +20,7 @@
 }
 .svgLogo{
     width: auto;
-    height: 70px;
+    height: 80px;
     object-fit: cover;
 }
 .navbarLinks{

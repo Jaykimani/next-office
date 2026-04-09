@@ -201,10 +201,7 @@ export interface Product {
   slug?: string | null;
   images: (number | Media)[];
   price: number;
-  /**
-   * Select one subcategories
-   */
-  subcategory: string;
+  subcategory?: string | null;
   /**
    * Select one or more subcategories
    */
@@ -222,12 +219,7 @@ export interface Product {
     deliveryTime: string;
     pickupAvailable?: boolean | null;
   };
-  tags?:
-    | {
-        tag: string;
-        id?: string | null;
-      }[]
-    | null;
+  tags?: string[] | null;
   description: {
     productInformation: {
       root: {
@@ -351,12 +343,7 @@ export interface OfficeInteriorDecor {
     deliveryTime: string;
     pickupAvailable?: boolean | null;
   };
-  tags?:
-    | {
-        tag: string;
-        id?: string | null;
-      }[]
-    | null;
+  tags?: string[] | null;
   description: {
     productInformation: {
       root: {
@@ -417,12 +404,7 @@ export interface OfficeGreenery {
     deliveryTime: string;
     pickupAvailable?: boolean | null;
   };
-  tags?:
-    | {
-        tag: string;
-        id?: string | null;
-      }[]
-    | null;
+  tags?: string[] | null;
   description: {
     productInformation: {
       root: {
@@ -487,12 +469,7 @@ export interface OfficeWorkspaceAccessory {
     deliveryTime: string;
     pickupAvailable?: boolean | null;
   };
-  tags?:
-    | {
-        tag: string;
-        id?: string | null;
-      }[]
-    | null;
+  tags?: string[] | null;
   description: {
     productInformation: {
       root: {
@@ -553,12 +530,7 @@ export interface OfficeElectronic {
     deliveryTime: string;
     pickupAvailable?: boolean | null;
   };
-  tags?:
-    | {
-        tag: string;
-        id?: string | null;
-      }[]
-    | null;
+  tags?: string[] | null;
   description: {
     productInformation: {
       root: {
@@ -877,12 +849,7 @@ export interface ProductsSelect<T extends boolean = true> {
         deliveryTime?: T;
         pickupAvailable?: T;
       };
-  tags?:
-    | T
-    | {
-        tag?: T;
-        id?: T;
-      };
+  tags?: T;
   description?:
     | T
     | {
@@ -915,12 +882,7 @@ export interface OfficeInteriorDecorSelect<T extends boolean = true> {
         deliveryTime?: T;
         pickupAvailable?: T;
       };
-  tags?:
-    | T
-    | {
-        tag?: T;
-        id?: T;
-      };
+  tags?: T;
   description?:
     | T
     | {
@@ -953,12 +915,7 @@ export interface OfficeGreenerySelect<T extends boolean = true> {
         deliveryTime?: T;
         pickupAvailable?: T;
       };
-  tags?:
-    | T
-    | {
-        tag?: T;
-        id?: T;
-      };
+  tags?: T;
   description?:
     | T
     | {
@@ -991,12 +948,7 @@ export interface OfficeWorkspaceAccessoriesSelect<T extends boolean = true> {
         deliveryTime?: T;
         pickupAvailable?: T;
       };
-  tags?:
-    | T
-    | {
-        tag?: T;
-        id?: T;
-      };
+  tags?: T;
   description?:
     | T
     | {
@@ -1029,12 +981,7 @@ export interface OfficeElectronicsSelect<T extends boolean = true> {
         deliveryTime?: T;
         pickupAvailable?: T;
       };
-  tags?:
-    | T
-    | {
-        tag?: T;
-        id?: T;
-      };
+  tags?: T;
   description?:
     | T
     | {

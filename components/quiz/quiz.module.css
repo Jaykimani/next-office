@@ -1,13 +1,26 @@
 #quiz{
     width: 100%;
     height: auto;
-    background-color: black;
+    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('/quiz.jpg');
+    background-size: cover;
+    background-position: center;
     cursor: pointer;
+    padding: 40px 0;
 }
 .quizImg{
     width: 100%;
     height: 300px;
+    position: relative;
 }
+.quizImg::after{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 .quizImage{
     width: 100%;
     height: 100%;
@@ -19,15 +32,14 @@
     border: 1px solid #ffe100;
     border-radius: 20px;
     margin: 0 auto;
-    transform: translateY(-120px);
     padding: 30px 20px;
-
+    z-index: 5;
 }
 .quizInset h1{
     color: white;
     text-align: center;
     font-family: 'Playfair Display', sans-serif;
-    font-size: 53px;
+    font-size: 45px;
     margin-bottom: 40px;
 }
 .quizDiv{
@@ -68,8 +80,25 @@
     height: auto;
     color: white;
     padding: 15px 15px;
+    
+}
+.quizBottom p{
+    font-family: 'Calibri', sans-serif;
     font-size: 20px;
-    line-height: 26px;
+    line-height: 30px;
+    font-weight: 300;
+}
+.quizBottom span{
+    font-weight: bold;
+}
+.quizBottom ul{
+    margin: 20px 50px;
+}
+.quizBottom ul li{
+        font-family: 'Calibri', sans-serif;
+    height: 35px;
+    font-size: 20px;
+      font-weight: 300;
 }
 .quote{
     width: 100%;
@@ -162,7 +191,7 @@
         border: 1px solid #ffe100;
         border-radius: 20px;
         margin: 0 auto;
-        transform: translateY(-120px);
+        transform: translateY(0px);
         padding: 30px 10px;
     }
     .quizInset h1{
@@ -203,9 +232,26 @@
         height: auto;
         color: white;
         padding: 15px 15px;
-        font-size: 15px;
-        line-height: 26px;
     }
+    .quizBottom p{
+    font-family: 'Calibri', sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    font-weight: 300;
+}
+.quizBottom span{
+    font-weight: bold;
+}
+.quizBottom ul{
+    margin: 20px 20px;
+}
+.quizBottom ul li{
+      font-family: 'Calibri', sans-serif;
+      height: 30px;
+      font-size: 16px;
+      font-weight: 300;
+      margin-bottom: 20px;
+}
     .quote{
         width: 100%;
         height: auto;

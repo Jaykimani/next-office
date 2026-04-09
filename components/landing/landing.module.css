@@ -1,7 +1,7 @@
 #landing{
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 50vh;
     background: linear-gradient( to right, rgba(0, 0 ,0 , 0.5), rgba(0, 0 ,0 , 0.5)), url('/landing.png');
     background-size: cover;
     background-position: center;
@@ -9,23 +9,22 @@
 }
 .landingContent{
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 90%;
     height: auto;
 }
 .landingContent h2{
     font-family: var(--font-inter), sans-serif;
-    color: white;
+    color: #ffffff;
     font-size: 75px;
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
 }
 .landingContent h2 span{
     color: #ffe100;
     font-style: italic;
-
 }
 .landingBtn{
     width: 40%;
@@ -74,7 +73,7 @@
     #landing{
         position: relative;
         width: 100%;
-        height: 75vh;
+        height: 65vh;
         background: linear-gradient( to right, rgba(0, 0 ,0 , 0.3), rgba(0, 0 ,0 , 0.3)), url('/landing.png');
         background-size: cover;
         background-position: center;
