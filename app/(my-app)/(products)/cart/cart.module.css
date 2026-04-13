@@ -55,12 +55,22 @@
     align-items: center;
 
 }
+.cartNameVar{
+    display: flex;
+    flex-direction: column;
+}
+.cartNameVar h5{
+    text-decoration: underline;
+    font-size: 18px;
+    margin-top: 5px;
+}
 .cartInfo h4{
     font-family: 'Playfair Display', sans-serif;
     color: #000000; 
     font-size: 22px;
     font-weight: 400;
 }
+
 .cartInfo span{
     font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
@@ -438,7 +448,7 @@
 
 .cartItem{
     width: 100%;
-    height: 110px;
+    height: 140px;
     display: flex;
     margin: 20px auto;
     align-items: center;
@@ -466,6 +476,11 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-left: 15px;
+}
+.cartNameVar h5{
+    text-decoration: underline;
+    font-size: 16px;
+    margin-top: 5px;
 }
 .cartInfo h4{
     font-family: 'Playfair Display', sans-serif;

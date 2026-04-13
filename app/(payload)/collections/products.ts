@@ -48,6 +48,11 @@ export const Products: CollectionConfig = {
       required: true,
       index: true,
     },
+    {
+  name: "subcategory",
+  type: "text",
+  index: true
+},
 
     {
   name: 'slug',
@@ -95,9 +100,41 @@ export const Products: CollectionConfig = {
      * CATEGORY
      */
     {
-  name: "subcategory",
-  type: "text",
-  index: true
+  name: "variation",
+  type: "select",
+  required: false,
+  options: [
+    { label: "Color", value: "color" },
+    { label: "Size", value: "size" },
+  ],
+  admin: {
+    description: "Select the type of variation for this product(Optional)",
+  },
+},
+{
+  name: "variants",
+  type: "array",
+  required: false,
+  fields: [
+    {
+      name: "option",
+      type: "text",
+      required: true,
+      admin: {
+        description: "e.g. Small, Medium, Large, Black, White",
+      },
+    },
+    {
+      name: "price",
+      type: "number",
+      required: true,
+    },
+    {
+      name: "stock",
+      type: "number",
+      required: false,
+    },
+  ],
 },
 
  {

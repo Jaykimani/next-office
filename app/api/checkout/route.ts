@@ -4,9 +4,17 @@ import { NextRequest, NextResponse } from "next/server";
 import { getPayload } from "payload";
 import config from "@/payload.config";
 
+type ProductCollection =
+  | "office-interior-decor"
+  | "office-greenery"
+  | "office-workspace-accessories"
+  | "office-electronics"
+
 type CartItem = {
   id: number;
+  category: ProductCollection;
   count: number;
+  variant: string;
 };
 type PaymentMethod =
   | "mpesa"
@@ -15,12 +23,15 @@ type PaymentMethod =
   | "bank"
   | "cod"
 
+
+
+
 export async function POST(req: NextRequest) {
   try {
     const payload = await getPayload({ config });
 
     const body = await req.json();
-    const { customer, delivery, items, orderInstructions, shipping, deliveryDate, paymentMethod } = body as {
+    const { customer, delivery, items, orderInstructions, shipping, deliveryDate, shippingType, paymentMethod } = body as {
       customer: {
         name: string;
         email: string;
@@ -29,6 +40,7 @@ export async function POST(req: NextRequest) {
       };
       delivery: {
        city: string;
+       route: string;
         areaStreet: string;
         building: string;
         officeNumber: string;
@@ -39,6 +51,7 @@ export async function POST(req: NextRequest) {
        orderInstructions: string;
        shipping: number,
        deliveryDate: string,
+       shippingType: string,
        paymentMethod: PaymentMethod
     };
 
@@ -49,26 +62,48 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 🔎 1️⃣ Fetch products securely from DB
-    const productIDs = items.map((item) => item.id);
+    console.log(items);
+    
 
-    const products = await payload.find({
-      collection: "products",
-      where: {
-        id: {
-          in: productIDs,
-        },
-      },
-      limit: 100,
-    });
+   const results = await Promise.all(
+      items.map(async (item) => {
+        const product = await payload.findByID({
+          collection: item.category,
+          id: item.id,
+        })
+        
+      if (!product) return null
 
+        // 🔐 Validate variant
+        let selectedVariant
+
+        if (item.variant && product.variants?.length !== 0) {
+          selectedVariant = product?.variants?.find(
+            (v: any) => v.option === item.variant
+          )
+        }
+
+        return {
+          id: product.id,
+          category: product.category,
+          name: product.name,
+          slug: product.slug,
+          variant: selectedVariant?.option || '',
+          price: selectedVariant?.price || product.price,
+          stock: product.stock
+          // Use variant price if exists, else fallback
+        }
+      })
+    )
+
+  
     let subtotal = 0;
     const orderItems: any[] = [];
 
     // 🔐 2️⃣ Validate & recalculate totals
     for (const item of items) {
-      const product = products.docs.find(
-        (p: any) => p.id === item.id
+      const product = results.find(
+        (p: any) => p.category === item.category && p.id === item.id
       );
 
       if (!product) {
@@ -89,9 +124,13 @@ export async function POST(req: NextRequest) {
       subtotal += itemTotal;
 
       orderItems.push({
-        product: product.id,
-        name: product.name,
+        product: {
+             relationTo: product.category,
+             value: product.id
+        },
+       name: product.name,
         price: product.price,
+        variant: product.variant || '',
         quantity: item.count,
         subtotal: itemTotal,
       });
@@ -99,7 +138,7 @@ export async function POST(req: NextRequest) {
 
     const total = subtotal + shipping;
 
-    // 🧾 3️⃣ Create Order
+    // // 🧾 3️⃣ Create Order
     const orderNumber = `Ord-${Date.now()}`;
 
     const createdOrder = await payload.create({
@@ -107,6 +146,7 @@ export async function POST(req: NextRequest) {
       data: {
         orderNumber,
         DeliveryDate: deliveryDate,
+        ShippingType: shippingType,
         status: "pending",
         paymentStatus: "unpaid",
         paymentMethod,
@@ -123,15 +163,15 @@ export async function POST(req: NextRequest) {
     
 
     // 📦 4️⃣ Optional: Reduce Stock
-    for (const item of orderItems) {
-      await payload.update({
-        collection: "products",
-        id: item.product,
-        data: {
-          stock: undefined, // remove if you don’t track stock
-        },
-      });
-    }
+    // for (const item of orderItems) {
+    //   await payload.update({
+    //     collection: "products",
+    //     id: item.product,
+    //     data: {
+    //       stock: undefined, // remove if you don’t track stock
+    //     },
+    //   });
+    // }
 
     return NextResponse.json({
       success: true,

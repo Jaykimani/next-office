@@ -4,7 +4,6 @@ export async function createOrder(formData : FormData) {
     const name = formData.get("full-name") as string;
     const number = formData.get("phone-number") as string;
     const email = formData.get("email-address") as string;
-    const city = formData.get("city-town") as string;
     const areaStreet = formData.get("area-street") as string;
     const building = formData.get("building-name") as string;
     const officeNumber = formData.get("office-number") as string;
@@ -19,7 +18,6 @@ export async function createOrder(formData : FormData) {
     }
 
     let deliveryInfo = {
-        city: city,
         areaStreet: areaStreet,
         building: building,
         officeNumber: officeNumber,

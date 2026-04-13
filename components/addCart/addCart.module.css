@@ -1,3 +1,43 @@
+.infoCost{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 25px;
+    
+}
+.variationsDiv{
+    width: 90%;
+    height: auto;
+    margin-bottom: 25px;
+    cursor: pointer;
+}
+.variationsDiv h4{
+    color: white;
+    font-family: 'Playfair Display', sans-serif;
+    margin-bottom: 15px;
+    font-size: 17px;
+    text-decoration: underline;
+    font-weight: 400;
+}
+.variants{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.variant{
+    height: 40px;
+    width: auto;
+    min-width: 100px;
+    border: 1px solid white;
+    color: white;
+    display: grid;
+    place-items: center;
+    margin-bottom: 5px;
+    padding: 0 8px;
+}
+
 .infoCounter{
     width: auto;
     height: auto;

@@ -175,7 +175,6 @@ async function Info({params} : Props) {
                )
           })}
          
-          <p className={styles.infoCost}>KSH {Product?.price.toLocaleString('en-US')}.00/=</p>
           {Product && <AddCart product = {Product} />}
           {Product && <Whatsapp product={Product} phoneNumber='254704610605'/> }
           <div className={styles.infoDelivery}>

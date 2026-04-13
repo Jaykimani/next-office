@@ -31,7 +31,7 @@ function Cart() {
         }else if (shipping === 'Self pick-up') {
             setShippingFee(0);
         }
-
+      
     }, [shipping]);
 
 
@@ -78,8 +78,10 @@ function Cart() {
             let newObj = {
                 id: item.id,
                 name: item.name,
+                category: item.category,
                 count: item.count,
-                total: item.total
+                total: item.total,
+                variant: item.variation
             }
          return newObj
         });
@@ -119,11 +121,14 @@ function Cart() {
                     {items?.map((item)=>{
 
                        return(
-                    <div key={item.id} className={styles.cartItem}>
+                    <div key={items.indexOf(item)} className={styles.cartItem}>
                     <Image src={item.image} alt="" width={200} height={200}/>
                     <div className={styles.cartInfo}>
                     <div className={styles.cartInfoPhone}>
+                    <div className={styles.cartNameVar}>
                      {item.name?.length > 17 ? <h4>{item.name.substring(0, 13)}...(@{item.price}/=)</h4> : <h4>{item.name} (@{item.price}/=)</h4>}
+                     <h5>{item.variation}</h5>
+                    </div>
                     <p className={styles.cartPrice}>Ksh {item.total}/=</p>
                      <div className={styles.cartCounter}>
                       <span className={styles.first} onClick={() =>handleCartMinus(item.name)}><FaMinus fontSize='small'/></span>

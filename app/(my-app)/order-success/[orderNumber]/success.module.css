@@ -118,6 +118,29 @@
     margin: 10px;
     font-family: Calibri;
 }
+.additionalShippingInfo{
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.additionalShippingInfo h4{
+    font-family: Calibri;
+    display: flex;
+    align-items: center;
+    background-color: rgb(230, 230, 230);
+    padding: 8px 10px;
+    margin-bottom: 10px;
+}
+.additionalShippingInfo p{
+    margin: 10px;
+    font-family: Calibri;
+}
+.addShipInfo{
+    width: 48%;
+}
+
 .customer{
     width: 48%;
     height: auto;

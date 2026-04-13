@@ -198,10 +198,25 @@ export interface Product {
   id: number;
   category?: string | null;
   name: string;
+  subcategory?: string | null;
   slug?: string | null;
   images: (number | Media)[];
   price: number;
-  subcategory?: string | null;
+  /**
+   * Select the type of variation for this product(Optional)
+   */
+  variation?: ('color' | 'size') | null;
+  variants?:
+    | {
+        /**
+         * e.g. Small, Medium, Large, Black, White
+         */
+        option: string;
+        price: number;
+        stock?: number | null;
+        id?: string | null;
+      }[]
+    | null;
   /**
    * Select one or more subcategories
    */
@@ -315,9 +330,6 @@ export interface OfficeInteriorDecor {
   id: number;
   category?: string | null;
   name: string;
-  slug?: string | null;
-  images: (number | Media)[];
-  price: number;
   /**
    * Select one subcategories
    */
@@ -326,6 +338,24 @@ export interface OfficeInteriorDecor {
     | 'office-ambient-lighting-decorative-lights'
     | 'office-wall-decor-accessories'
     | 'office-personalized-statement-decor';
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select the type of variation for this product(Optional)
+   */
+  variation?: ('color' | 'size') | null;
+  variants?:
+    | {
+        /**
+         * e.g. Small, Medium, Large, Black, White
+         */
+        option: string;
+        price: number;
+        stock?: number | null;
+        id?: string | null;
+      }[]
+    | null;
   /**
    * Select one or more subcategories
    */
@@ -380,13 +410,28 @@ export interface OfficeGreenery {
   id: number;
   category?: string | null;
   name: string;
-  slug?: string | null;
-  images: (number | Media)[];
-  price: number;
   /**
    * Select one subcategories
    */
   subcategory: 'office-desk-greenery' | 'office-statement-greenery' | 'greenery-sets-styled-combos';
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select the type of variation for this product(Optional)
+   */
+  variation?: ('color' | 'size') | null;
+  variants?:
+    | {
+        /**
+         * e.g. Small, Medium, Large, Black, White
+         */
+        option: string;
+        price: number;
+        stock?: number | null;
+        id?: string | null;
+      }[]
+    | null;
   /**
    * Select one or more subcategories
    */
@@ -441,9 +486,6 @@ export interface OfficeWorkspaceAccessory {
   id: number;
   category?: string | null;
   name: string;
-  slug?: string | null;
-  images: (number | Media)[];
-  price: number;
   /**
    * Select one subcategories
    */
@@ -452,6 +494,24 @@ export interface OfficeWorkspaceAccessory {
     | 'office-desk-essentials-utility-tools'
     | 'office-productivity-writing-tools'
     | 'office-desk-organizer-storage';
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select the type of variation for this product(Optional)
+   */
+  variation?: ('color' | 'size') | null;
+  variants?:
+    | {
+        /**
+         * e.g. Small, Medium, Large, Black, White
+         */
+        option: string;
+        price: number;
+        stock?: number | null;
+        id?: string | null;
+      }[]
+    | null;
   /**
    * Select one or more subcategories
    */
@@ -506,13 +566,28 @@ export interface OfficeElectronic {
   id: number;
   category?: string | null;
   name: string;
-  slug?: string | null;
-  images: (number | Media)[];
-  price: number;
   /**
    * Select one subcategories
    */
   subcategory: 'office-charging-power-accessories' | 'office-computer-accessories' | 'office-cable-management-tech';
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select the type of variation for this product(Optional)
+   */
+  variation?: ('color' | 'size') | null;
+  variants?:
+    | {
+        /**
+         * e.g. Small, Medium, Large, Black, White
+         */
+        option: string;
+        price: number;
+        stock?: number | null;
+        id?: string | null;
+      }[]
+    | null;
   /**
    * Select one or more subcategories
    */
@@ -567,6 +642,7 @@ export interface Order {
   id: number;
   orderNumber: string;
   DeliveryDate: string;
+  ShippingType: string;
   status: 'pending' | 'processing' | 'shipped' | 'delivered' | 'cancelled';
   paymentStatus: 'unpaid' | 'paid' | 'failed' | 'refunded';
   paymentMethod?: ('mpesa' | 'airtel' | 'card' | 'bank' | 'cod') | null;
@@ -578,7 +654,8 @@ export interface Order {
   };
   deliveryAddress: {
     city: string;
-    areaStreet: string;
+    route?: string | null;
+    areaStreet?: string | null;
     building?: string | null;
     officeNumber?: string | null;
     landmark?: string | null;
@@ -604,6 +681,7 @@ export interface Order {
         };
     name: string;
     price: number;
+    variant?: string | null;
     quantity: number;
     subtotal: number;
     id?: string | null;
@@ -837,10 +915,19 @@ export interface CategoriesSelect<T extends boolean = true> {
 export interface ProductsSelect<T extends boolean = true> {
   category?: T;
   name?: T;
+  subcategory?: T;
   slug?: T;
   images?: T;
   price?: T;
-  subcategory?: T;
+  variation?: T;
+  variants?:
+    | T
+    | {
+        option?: T;
+        price?: T;
+        stock?: T;
+        id?: T;
+      };
   vibe?: T;
   stock?: T;
   delivery?:
@@ -870,10 +957,19 @@ export interface ProductsSelect<T extends boolean = true> {
 export interface OfficeInteriorDecorSelect<T extends boolean = true> {
   category?: T;
   name?: T;
+  subcategory?: T;
   slug?: T;
   images?: T;
   price?: T;
-  subcategory?: T;
+  variation?: T;
+  variants?:
+    | T
+    | {
+        option?: T;
+        price?: T;
+        stock?: T;
+        id?: T;
+      };
   vibe?: T;
   stock?: T;
   delivery?:
@@ -903,10 +999,19 @@ export interface OfficeInteriorDecorSelect<T extends boolean = true> {
 export interface OfficeGreenerySelect<T extends boolean = true> {
   category?: T;
   name?: T;
+  subcategory?: T;
   slug?: T;
   images?: T;
   price?: T;
-  subcategory?: T;
+  variation?: T;
+  variants?:
+    | T
+    | {
+        option?: T;
+        price?: T;
+        stock?: T;
+        id?: T;
+      };
   vibe?: T;
   stock?: T;
   delivery?:
@@ -936,10 +1041,19 @@ export interface OfficeGreenerySelect<T extends boolean = true> {
 export interface OfficeWorkspaceAccessoriesSelect<T extends boolean = true> {
   category?: T;
   name?: T;
+  subcategory?: T;
   slug?: T;
   images?: T;
   price?: T;
-  subcategory?: T;
+  variation?: T;
+  variants?:
+    | T
+    | {
+        option?: T;
+        price?: T;
+        stock?: T;
+        id?: T;
+      };
   vibe?: T;
   stock?: T;
   delivery?:
@@ -969,10 +1083,19 @@ export interface OfficeWorkspaceAccessoriesSelect<T extends boolean = true> {
 export interface OfficeElectronicsSelect<T extends boolean = true> {
   category?: T;
   name?: T;
+  subcategory?: T;
   slug?: T;
   images?: T;
   price?: T;
-  subcategory?: T;
+  variation?: T;
+  variants?:
+    | T
+    | {
+        option?: T;
+        price?: T;
+        stock?: T;
+        id?: T;
+      };
   vibe?: T;
   stock?: T;
   delivery?:
@@ -1019,6 +1142,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface OrdersSelect<T extends boolean = true> {
   orderNumber?: T;
   DeliveryDate?: T;
+  ShippingType?: T;
   status?: T;
   paymentStatus?: T;
   paymentMethod?: T;
@@ -1034,6 +1158,7 @@ export interface OrdersSelect<T extends boolean = true> {
     | T
     | {
         city?: T;
+        route?: T;
         areaStreet?: T;
         building?: T;
         officeNumber?: T;
@@ -1046,6 +1171,7 @@ export interface OrdersSelect<T extends boolean = true> {
         product?: T;
         name?: T;
         price?: T;
+        variant?: T;
         quantity?: T;
         subtotal?: T;
         id?: T;

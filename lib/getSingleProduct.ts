@@ -14,6 +14,7 @@ const payload = await getPayload({config});
   });
    let product = data.docs;
    
+   
    return product[0]
   } catch (error) {
     console.error('Failed to get products list:', error)

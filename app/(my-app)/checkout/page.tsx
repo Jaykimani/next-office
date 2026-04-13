@@ -5,18 +5,43 @@ import Image from 'next/image';
 import { useCartStore } from '@/app/store';
 import { useEffect, useState } from 'react';
 import { createOrder } from '@/lib/createOrder';
+import { IoMdArrowDropdown } from "react-icons/io";
+import { Destinations, Towns } from '@/shippingfees';
+
 
 function Checkout() {
     const {checkout} = useCartStore((state) => state);
     const [payment, setPayment] =useState('');
     const [caution , setCaution] = useState(false);
     const [inputs, setInputs] = useState(false);
-
+    const [city, setCity] = useState('');
+    const [destination, setDestination] = useState("");
+    const [openCity, setOpenCity] = useState(false);
+    const [openDestination, setOpenDestination] = useState(false);
+    const [shippingFee, setShippingFee] = useState(0);
+    const [shippingtype, setShippingtype] = useState('');    
+    
     useEffect(()=>{
       if (checkout.shipping === 'Self pick-up') {
         setInputs(true);
+        setDestination('Pick up location to be confirmed via call/whatsapp');
+        setShippingFee(0);
+        setShippingtype("Self pick-up")
       }
-
+      if (checkout.shipping === 'Within Nairobi' || checkout.shipping === 'Self pick-up') {
+        setCity("Nairobi")
+      }
+      if (checkout.shipping === 'Within Nairobi') {
+        setDestination('Tap to select general route');
+        setShippingtype("Delivery")
+      }
+      if (checkout.shipping === 'Outside Nairobi') {
+        setCity('"Tap to select City/Town"')
+        setDestination('');
+        setShippingFee(1000);
+        setShippingtype("Delivery")
+      }
+      
     }, [checkout])
 
     const handleCreateOrder = async(e)=>{
@@ -29,35 +54,44 @@ function Checkout() {
 
       const {customer, delivery} = await createOrder(formData);
       
-      
- 
+      const newDelivery = {
+          ...delivery,
+          city: city,
+          route: destination
+      }
+
       let items = checkout.checkoutItems.map((item)=>{
+        
             let newObj = {
                 id: item.id,
+                category: item.category,
                 count: item.count,
+                variant: item.variant
             }
          return newObj
         });
 
-      const shipping = checkout.shippingFee;  
+      const shipping = shippingFee; 
+      const shippingType = shippingtype; 
       const deliveryDate = checkout.shippingDate
       const orderInstructions = checkout.instructions
       const paymentMethod = payment
      
       
        try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/checkout`, {
+      const res = await fetch(`/api/checkout`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
           customer,
-          delivery,
+          delivery: newDelivery,
           items,
           orderInstructions,
           shipping,
           deliveryDate,
+          shippingType,
           paymentMethod
         }),
       })
@@ -68,6 +102,7 @@ function Checkout() {
         throw new Error(data.error || "Checkout failed")
       }
 
+     
       console.log("Order created:", data.orderNumber)
 
       window.location.href = `/order-success/${data.orderNumber}`
@@ -101,8 +136,39 @@ function Checkout() {
                   <input type="text" name="full-name" id="" placeholder='Full Name'/>
                   <input type="text" name='phone-number' placeholder='Phone Number(in the format: 0704******)'/>
                   <input type="text" name='email-address' placeholder='Email Address'/>
-                  <input type="text" name='city-town' placeholder='City / Town'/>
-                  <input type="text" name='area-street' placeholder='Area name or Street name'/>
+                  <div className={styles.cityDiv}>
+                     <div className={styles.cityTop} onClick={()=> {setOpenCity(!openCity); setOpenDestination(false)}}>
+                      <p>{city}</p>
+                      <IoMdArrowDropdown style={{width: "20px", height: '20px'}}/>
+                     </div>
+                     {openCity && <div className={styles.cityBottom} >
+                      {Towns?.map((town)=>{
+                        return (
+                        <div key={town} className={styles.cities} onClick={()=>{setCity(town); setOpenCity(false)}}>
+                           <p>{town}</p>
+                      </div>
+                        )
+                      })}
+                      
+                     </div>}
+                  </div>
+                  {checkout.shipping === 'Outside Nairobi' || checkout.shipping === 'Self pick-up' || <div className={styles.cityDiv}>
+                     <div className={styles.cityTop} onClick={()=> {setOpenDestination(!openDestination); setOpenCity(false)}}>
+                      <p>{destination}</p>
+                      <IoMdArrowDropdown style={{width: "20px", height: '20px'}}/>
+                     </div>
+                     {openDestination && <div className={styles.cityBottom} >
+                      {Destinations?.map((town)=>{
+                        return (
+                        <div key={town.location} className={styles.cities} onClick={()=>{setDestination(town.location); setOpenDestination(false); setShippingFee(town.fee)}}>
+                           <p style={{fontSize: "16px"}}>{town.location}</p>
+                      </div>
+                        )
+                      })}
+                      
+                     </div>}
+                  </div>}
+                  {!inputs && <input type="text" name='area-street' placeholder='Area name or Street name'/>}
                   {!inputs && <input type="text" name='building-name' placeholder='Building name/Apartment name/Estate name'/>}
                   {!inputs && <input type="text" name='office-number' placeholder='Office/Room/Apartment/House number'/>}
                   {!inputs && <input type="text" name='landmark' placeholder='Optional: Nearby landmark e.g opposite sarit centre'/>}
@@ -133,11 +199,11 @@ function Checkout() {
                </div>
                <div className={styles.shippingFeeSec}>
                 <h4>Shipping Fee:</h4>
-                <p>KSh {checkout.shippingFee.toLocaleString('en-US')}.00</p>
+                <p>KSh {shippingFee.toLocaleString('en-US')}.00</p>
                </div>
                <div className={styles.orderTotal}>
                 <h4>TOTAL:</h4>
-                <p style={{fontWeight: '600', fontSize: '20px'}}>KSh {checkout.total.toLocaleString('en-US')}.00</p>
+                <p style={{fontWeight: '600', fontSize: '20px'}}>KSh {(checkout.subtotal + shippingFee).toLocaleString('en-US')}.00</p>
                </div>
                <div className={styles.orderTotal}>
                 <h4>Delivery:</h4>
@@ -181,7 +247,7 @@ function Checkout() {
                {caution && <div className={styles.caution}>
                 <p>Please select payment method</p>
                </div>}
-               <button type="submit" className={styles.placeOrder}>PLACE ORDER</button>
+               <button type="submit" className={styles.placeOrder} >PLACE ORDER</button>
                <button type="button" className={styles.cancelOrder}>CANCEL ORDER</button>
 
               </div>

@@ -33,6 +33,11 @@ export const Orders: CollectionConfig = {
       type: "text",
       required: true,
     },
+    {
+      name: "ShippingType",
+      type: "text",
+      required: true,
+    },
 
     {
       name: "status",
@@ -117,7 +122,8 @@ export const Orders: CollectionConfig = {
       type: "group",
       fields: [
         { name: "city", type: "text", required: true },
-        { name: "areaStreet", type: "text", required: true },
+        { name: "route", type: "text" },
+        { name: "areaStreet", type: "text" },
         { name: "building", type: "text" },
         { name: "officeNumber", type: "text" },
         { name: "landmark", type: "text" },
@@ -154,6 +160,11 @@ export const Orders: CollectionConfig = {
           name: "price",
           type: "number",
           required: true,
+        },
+        {
+          name: "variant",
+          type: "text",
+          required: false,
         },
         {
           name: "quantity",

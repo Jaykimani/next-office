@@ -54,7 +54,15 @@ export const OfficeInteriorDecor: CollectionConfig = {
       required: true,
       index: true,
     },
-
+ {
+  name: 'subcategory',
+  type: 'select',
+  required: true,
+  options: subcategories.map(({ label, value }) => ({ label, value })),
+  admin: {
+    description: 'Select one subcategories',
+  },
+},  
     {
   name: 'slug',
   type: 'text',
@@ -102,14 +110,42 @@ export const OfficeInteriorDecor: CollectionConfig = {
      */
 
     {
-  name: 'subcategory',
-  type: 'select',
-  required: true,
-  options: subcategories.map(({ label, value }) => ({ label, value })),
+  name: "variation",
+  type: "select",
+  required: false,
+  options: [
+    { label: "Color", value: "color" },
+    { label: "Size", value: "size" },
+  ],
   admin: {
-    description: 'Select one subcategories',
+    description: "Select the type of variation for this product(Optional)",
   },
-},  
+},
+{
+  name: "variants",
+  type: "array",
+  required: false,
+  fields: [
+    {
+      name: "option",
+      type: "text",
+      required: true,
+      admin: {
+        description: "e.g. Small, Medium, Large, Black, White",
+      },
+    },
+    {
+      name: "price",
+      type: "number",
+      required: true,
+    },
+    {
+      name: "stock",
+      type: "number",
+      required: false,
+    },
+  ],
+},
 
  {
   name: 'vibe',

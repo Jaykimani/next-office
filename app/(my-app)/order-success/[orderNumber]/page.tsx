@@ -6,6 +6,8 @@ import { FaHouseUser } from "react-icons/fa";
 import { FaShippingFast } from "react-icons/fa";
 import { FaRegCreditCard } from "react-icons/fa";
 import { MdContactPhone } from "react-icons/md";
+import { FaRoute } from "react-icons/fa";
+import { IoIosInformationCircle } from "react-icons/io";
 import Link from 'next/link';
 import { getPayload } from "payload"
 import config from "@payload-config"
@@ -66,7 +68,6 @@ export default async function OrderSuccess({ params }: Props) {
   }
 
   const data = order.docs[0]
-  console.log(data);
   
 
   const date = new Date(data.createdAt);
@@ -133,7 +134,7 @@ Cutomer whatsapp confirmation: ${whatsappConfirm}
     
     
   } catch (error) {
-    console.log(error);
+    console.log("error sending message");
     
   }
 
@@ -161,25 +162,38 @@ Cutomer whatsapp confirmation: ${whatsappConfirm}
                  <p>{data.customer.email}</p>
              </div>
              <div className={styles.shipping}>
-                <h4><FaHouseUser style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Shipping Address</h4>
-                <p>{data.deliveryAddress.city}</p>
-                <p>{data.deliveryAddress.areaStreet}</p>
-                <p>{data.deliveryAddress.building}</p>
-                <p>{data.deliveryAddress.officeNumber}</p>
-                <p>{data.deliveryAddress.landmark}</p>
+               <h4><FaRegCreditCard style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Payment Method</h4>
+                <p>{data.paymentMethod == 'cod' ? 'Cash On Delivery' : data.paymentMethod == 'mpesa' ? 'M-pesa till number' : data.paymentMethod == 'airtel' ? 'Airtel Money' : data.paymentMethod == 'card' ? 'Credit Card' : 'Bank Transfer'}</p>
+                
              </div>
              </div>
              <div className={styles.deliveryInformation}>
              <div className={styles.customer}>
-                <h4><FaShippingFast style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Shipping Timeline</h4>
-                <p>{data.DeliveryDate}</p>
+              <h4><IoIosInformationCircle style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Shipping Type</h4>
+                <p>{data.ShippingType}</p>
+                
                 
              </div>
              <div className={styles.shipping}>
-                <h4><FaRegCreditCard style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Payment Method</h4>
-                <p>{data.paymentMethod == 'cod' ? 'Cash On Delivery' : data.paymentMethod == 'mpesa' ? 'M-pesa till number' : data.paymentMethod == 'airtel' ? 'Airtel Money' : data.paymentMethod == 'card' ? 'Credit Card' : 'Bank Transfer'}</p>
+               <h4><FaHouseUser style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Shipping Address</h4>
+                <p>{data.deliveryAddress.city}</p>
+
+                <p>{data.deliveryAddress.areaStreet}</p>
+                <p>{data.deliveryAddress.building}</p>
+                <p>{data.deliveryAddress.officeNumber}</p>
+                <p>{data.deliveryAddress.landmark}</p>
                 
              </div>
+             </div>
+             <div className={styles.additionalShippingInfo}>
+              <div className={styles.addShipInfo}>
+                <h4><FaShippingFast style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Shipping Timeline</h4>
+                <p>{data.DeliveryDate}</p>
+              </div>
+              <div className={styles.addShipInfo}>
+                <h4><FaRoute style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Additional Shipping Information</h4>
+                <p>{data.deliveryAddress.route}</p>
+              </div>
              </div>
              <div className={styles.divider1}></div>
             </div>

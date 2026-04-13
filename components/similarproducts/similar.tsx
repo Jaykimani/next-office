@@ -23,6 +23,7 @@ type Product = {
   images: URL[]
   price: number
   category: string
+  subcategory: string
 }
 
 function mediaIsObject(media: number | Media) : media is Media {
@@ -63,9 +64,9 @@ const Similar = ({id, category, subcategory}: similarProps) => {
               typeof product.images[0] === "object"
                ? product.images[0].url
                    : null;
-
+               
               return (
-                <Link key={product.id} href={`/shop/${product?.category}/${product?.id}/${product?.slug}`} style={{textDecoration: 'none'}}>
+                <Link key={product.id} href={`/shop/${product?.category}/${product?.subcategory}/${product?.id}/${product?.slug}`} style={{textDecoration: 'none'}}>
                <div className={styles.othersDiv}>
                 {
                   product.images[0]?.url &&

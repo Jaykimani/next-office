@@ -3,17 +3,21 @@ import {create} from 'zustand';
 type CartItems = {
     id: number;
     name: string;
+    category: string;
     price: number;
     total: number;
     image: string;
     count: number;
+    variation: string
 }
 
 type CheckoutObj ={
-    id: number,
+    id: number;
     name : string;
+    category: string;
     count : number;
     total : number;
+    variant : string;
 }
 
 type CheckoutInfo = {
@@ -23,7 +27,7 @@ type CheckoutInfo = {
     shipping: string;
     shippingDate?: string;
     shippingFee: number;
-    total: number
+
 }
 
 type CartStore = {
@@ -52,7 +56,6 @@ export const useCartStore = create<CartStore>((set)=>({
         shipping: '',
         shippingDate: '',
         shippingFee: 0,
-        total: 0
     },
     addItem: (item) => set((state) => ({
         count: state.items.length + 1,
@@ -91,7 +94,6 @@ export const useCartStore = create<CartStore>((set)=>({
         shipping: data.shipping,
         shippingDate: data.shippingDate,
         shippingFee: data.shippingFee,
-        total: data.total
         }
     })),
     addCheckoutShippingDate: (data) => set((state) => ({
