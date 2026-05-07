@@ -69,7 +69,7 @@ export default async function OrderSuccess({ params }: Props) {
 
   const data = order.docs[0]
   
-
+  
   const date = new Date(data.createdAt);
   const formatted =
   date.toLocaleDateString() +
@@ -83,6 +83,8 @@ export default async function OrderSuccess({ params }: Props) {
     orderNumber: data.orderNumber,
     customerName: data.customer.name,
     items: data.items,
+    subtotal: data.subtotal,
+    shipping: data.shipping,
     total: data.total,
     location: location,
     timeline: data.DeliveryDate,
@@ -106,6 +108,10 @@ Order Number: ${orderNumber}
 
 Items Ordered:
 ${items}
+
+Subtotal: Ksh ${data.subtotal.toLocaleString('en-us')}/=
+
+Shipping Fee: Ksh ${data.shipping && data.shipping.toLocaleString('en-us')}/=
 
 Total: KSh ${data.total.toLocaleString('en-us')}/=
 
@@ -200,16 +206,16 @@ Cutomer whatsapp confirmation: ${whatsappConfirm}
              
             <div className={styles.orderSummary}>
                 <h4><MdStickyNote2 style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/> ORDER SUMMARY</h4>
-                {data.items?.map((item)=>{
+                {data.items?.map((item, index)=>{
                     return(
-                <div key={item.id} className={styles.productDetails}>
+                <div key={index} className={styles.productDetails}>
                     <div className={styles.product}>
                      <h5>{item.name}</h5>
                     <p>Price: {item.price.toLocaleString('en-US')}KSh</p>
-                     <p>Qty: 3</p>
+                     <p>Qty: {item.quantity}</p>
                     </div>
                     <div className={styles.productTotal}>
-                     <h5>KSh {item.subtotal.toLocaleString('en-US')}/=</h5>
+                     <h5>KSh {item.subtotal.toLocaleString('en-US')}.00</h5>
                     </div> 
                 </div>
                     )

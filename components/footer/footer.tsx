@@ -23,6 +23,9 @@ const Footer = () => {
              <Link href={'/about'} style={{textDecoration: 'none', color: 'white'}}>
             <p>About us</p>
             </Link>
+            <Link href={'/blogs'} style={{textDecoration: 'none', color: 'white'}}>
+            <p>Blogs</p>
+            </Link>
             </div>
             <div className={styles.footerRightInset}>
             <Link href={'/shipping-delivery'} style={{textDecoration: 'none', color: 'white'}}>

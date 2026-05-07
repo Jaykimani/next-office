@@ -32,6 +32,7 @@
     background-color: rgb(255, 255, 255);
     padding: 10px 20px;
     z-index: 100;
+    overflow-y: scroll;
 }
 .resultDiv{
     width: 100%;
@@ -79,17 +80,23 @@
     .shopSearchIcon input:focus{
         outline: none;
     }
+    .searchResults{
+      max-height: 450px;
+    }
     .resultDiv h4{
     font-size: 18px;
     margin: 15px 0 0px;
 }
     .searchRes{
     width: 100%;
-    height: 50px;
+    height: auto;
     color: rgb(0, 0, 0);
     font-size: 17px;
     display: flex;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+}
+.searchRes:hover{
+    background-color: transparent;
 }
 }

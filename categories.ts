@@ -24,7 +24,7 @@ export const Categories  = [
     },
     {
         id: 5,
-        title: { id: 'Office Electronics', name: 'office-electronics' },
+        title: { id: 'Office Electronics Solutions', name: 'office-electronics' },
         links: [ { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
               { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
               { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' }

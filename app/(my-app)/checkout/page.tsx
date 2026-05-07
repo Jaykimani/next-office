@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 import { createOrder } from '@/lib/createOrder';
 import { IoMdArrowDropdown } from "react-icons/io";
 import { Destinations, Towns } from '@/shippingfees';
+import { ThreeDot } from 'react-loading-indicators';
+import Link from 'next/link';
 
 
 function Checkout() {
@@ -19,7 +21,8 @@ function Checkout() {
     const [openCity, setOpenCity] = useState(false);
     const [openDestination, setOpenDestination] = useState(false);
     const [shippingFee, setShippingFee] = useState(0);
-    const [shippingtype, setShippingtype] = useState('');    
+    const [shippingtype, setShippingtype] = useState('');
+    const [orderSubmit,  setOrderSubmit] = useState(false)    
     
     useEffect(()=>{
       if (checkout.shipping === 'Self pick-up') {
@@ -46,6 +49,7 @@ function Checkout() {
 
     const handleCreateOrder = async(e)=>{
       e.preventDefault();
+      setOrderSubmit(true)
       if(payment === ''){
         setCaution(true)
       }else{
@@ -179,9 +183,9 @@ function Checkout() {
               </div>
               <div className={styles.customerOrder}>
                <h4 className={styles.customH4}>YOUR ORDER</h4>
-               {checkout?.checkoutItems.map((item)=>{
+               {checkout?.checkoutItems.map((item, index)=>{
                   return(
-                    <div key={item.name} className={styles.orderDiv}>
+                    <div key={index} className={styles.orderDiv}>
                 <div className={styles.orderInformation}>
                   <p>{item.name}</p>
                   <p>x {item.count}</p>
@@ -247,9 +251,11 @@ function Checkout() {
                {caution && <div className={styles.caution}>
                 <p>Please select payment method</p>
                </div>}
-               <button type="submit" className={styles.placeOrder} >PLACE ORDER</button>
+               <button type="submit" className={styles.placeOrder}>{orderSubmit ? <ThreeDot variant="pulsate" color="#ffffff" size="medium" text="" textColor="" /> : "PLACE ORDER"}</button>
+               <Link href={'/order-cancel'}>
                <button type="button" className={styles.cancelOrder}>CANCEL ORDER</button>
-
+               </Link>
+               
               </div>
             </form>
 

@@ -50,34 +50,30 @@ function List({ productsArr }: ProductsProps) {
             </div>
             <div className={styles.shopListInset}>
              <div className={styles.shopCateg}>
-              
               <div className={styles.categSection}>
-               <h4>Shop by Category</h4>
-               {shopCategory.map((link)=>{
+               {Categories?.map((item)=>{
                 return (
-               <Link key={link.name}  href={`/shop/${link.url}`} style={{textDecoration: 'none'}}>
+               <div key={item.title.id} className={styles.categoriesDiv}>
+               <Link href={`/shop/${item.title.name}`} style={{textDecoration: "none", color: "#ffe100"}}>
+               <h4>{item.title.id}</h4>
+               </Link>
+               
+               {item.links?.map((link)=>{
+                
+                return (
+               <Link key={link.id} href={`/shop/${item.title.name}/${link.name}`} style={{textDecoration: "none", color: "white"}}>
                <div className={styles.categLink}>
                <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
-               <p>{link.name}</p>
-               </div>
-               </Link>   
-               
-                )
-               })}
-               
-              </div>
-              <div className={styles.categSection}>
-               <h4>Shop by Vibe</h4>
-               {shopVibe.map((link)=>{
-                return (
-                <Link key={link.name} href={`/shop/vibe/${link.url}`} style={{textDecoration: 'none'}}>
-               <div className={styles.categLink}>
-               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
-               <p>{link.name}</p>
+               <p style={{color: 'white'}}>{link.id}</p>
                </div>
                </Link>
+               
                 )
                })}
+               </div>
+              
+                )
+              })}
                
               </div>
               <div className={styles.categSection}>
@@ -114,8 +110,11 @@ function List({ productsArr }: ProductsProps) {
               </div>
              {Categories?.map((item)=>{
                 return (
-                <div key={item.id} className={styles.categSection2}>
-               <h4>{item.title.id}</h4>
+                <div key={item.title.id} className={styles.categSection2}>
+              <Link href={`/shop/${item.title.name}`} style={{textDecoration: "none", color: "#ffe100"}}>
+              <h4>{item.title.id}</h4>
+              </Link>  
+               
                {item.links?.map((link)=>{
                 
                 return (
@@ -139,22 +138,6 @@ function List({ productsArr }: ProductsProps) {
               <div className={styles.shopCateg2Close} >
               <MdClose style={{color: 'white', width: '35px', height: '35px'}} onClick={()=>{setShopsort(false)}}/>
               <p>close</p>
-              </div>
-               <div className={styles.categSection2}>
-               <h4>Shop by Vibe</h4>
-               {shopVibe.map((link)=>{
-            
-                return (
-               <Link key={link.name} href={`/shop/vibe/${link.url}`} style={{textDecoration: 'none'}}>
-                <div className={styles.categLink2}>
-               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
-               <p style={{color: 'white'}}>{link.name}</p>
-               </div>
-               </Link>
-              
-                )
-               })}
-               
               </div>
                <div className={styles.categSection2}>
                <h4>Shop by Popularity</h4>

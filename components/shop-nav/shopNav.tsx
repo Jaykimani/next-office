@@ -159,6 +159,9 @@ const ShopNav = () => {
             <Link href={'/about'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
            <h1>About us</h1>
            </Link>
+            <Link href={'/blogs'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
+           <h1>Blogs</h1>
+           </Link>
          </div>
             
             <div className={styles.shopTitle}>
@@ -312,6 +315,11 @@ const ShopNav = () => {
             <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
                <Link href={'/about'} style={{textDecoration: "none", color: "white"}}>
                 <h3>About us</h3>
+               </Link>
+            </div>
+             <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
+               <Link href={'/blogs'} style={{textDecoration: "none", color: "white"}}>
+                <h3>Blogs</h3>
                </Link>
             </div>
             </div>

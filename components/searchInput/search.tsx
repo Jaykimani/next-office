@@ -74,35 +74,7 @@ const handleSearchClose = ()=>{
                <input ref={searchIn} type="text" name="" id="" value={value} placeholder="I'm looking for ...." onChange={(e) => {setQuery(e.target.value);  setValue(e.target.value)}}/>
                {bar ? <MdClose style={{color: "black", width: '35px', height: '35px'}} onClick={handleSearchClose}/> : <MdOutlineSearch style={{color: "black", width: '35px', height: '35px'}}/> }
                <div className={styles.searchResults} style={{display: bar ? "block" : "none"}}>
-                {results?.products?.length > 0 && (
-                 <div className={styles.resultDiv}>
-                  <h4>Products</h4>
-                  {results?.products?.map((prod: any)=>{
-                    return (
-                    <Link key={prod.name} href={`/shop/${prod.category}/${prod.subcategory}/${prod.id}/${prod.slug}`} onClick={()=>{setbar(false); setValue('')}}>
-                     <p className={styles.searchRes}>{prod.name}</p>
-                    </Link>
-                    
-                    )
-                  })}
-                  
-                </div>
-                )}
-                
-               {results?.subcategories?.length > 0 && (
-                 <div className={styles.resultDiv}>
-                  <h4>Subcategories</h4>
-                  {results.subcategories.map((sub)=>{
-                    return (
-                     <Link key={sub.linkId} href={`/shop/${sub.categoryName}/${sub.linkName}`} onClick={()=>{setbar(false); setValue('')}}>
-                     <p className={styles.searchRes}>{sub.linkId}</p>
-                     </Link> 
-                     
-                    )
-                  })}
-                  
-                </div>
-                )}
+
                 {results?.tags?.length > 0 && (
                  <div className={styles.resultDiv}>
                   <h4>Tags</h4>
@@ -118,6 +90,7 @@ const handleSearchClose = ()=>{
                   
                 </div>
                 )}
+
                 {results?.categories?.length > 0 && (
                  <div className={styles.resultDiv}>
                   <h4>Categories</h4>
@@ -132,6 +105,37 @@ const handleSearchClose = ()=>{
                   
                 </div>
                 )}
+
+                 {results?.subcategories?.length > 0 && (
+                 <div className={styles.resultDiv}>
+                  <h4>Subcategories</h4>
+                  {results.subcategories.map((sub)=>{
+                    return (
+                     <Link key={sub.linkId} href={`/shop/${sub.categoryName}/${sub.linkName}`} onClick={()=>{setbar(false); setValue('')}}>
+                     <p className={styles.searchRes}>{sub.linkId}</p>
+                     </Link> 
+                     
+                    )
+                  })}
+                  
+                </div>
+                )}
+                
+                {results?.products?.length > 0 && (
+                 <div className={styles.resultDiv}>
+                  <h4>Products</h4>
+                  {results?.products?.map((prod: any)=>{
+                    return (
+                    <Link key={prod.name} href={`/shop/${prod.category}/${prod.subcategory}/${prod.id}/${prod.slug}`} onClick={()=>{setbar(false); setValue('')}}>
+                     <p className={styles.searchRes}>{prod.name}</p>
+                    </Link>
+                    
+                    )
+                  })}
+                  
+                </div>
+                )}
+                
                  
                </div>
                </div>

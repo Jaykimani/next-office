@@ -105,7 +105,7 @@ const Navbar = () => {
             </div>
          </div>
         <div className={styles.navbarInset2}>
-             <Image className={styles.svgLogo} src="/Component 5.svg" alt="office aura image" width={500} height={300}/>
+        <Image className={styles.svgLogo} src="/Component 5.svg" alt="office aura image" width={500} height={300}/>
         <div className={styles.shopping}> 
           <Link href={'/cart'} style={{textDecoration: 'none', color: 'white'}}>
            <div className={styles.shoppingInset}>

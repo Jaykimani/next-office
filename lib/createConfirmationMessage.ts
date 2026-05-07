@@ -2,6 +2,8 @@ export function createCustomerConfirmationMessage(order: {
   orderNumber: string
   customerName: string
   items: { name: string; price: number; quantity: number }[]
+  subtotal: number;
+  shipping: number | null | undefined;
   total: number
   location: string
   timeline: string
@@ -23,7 +25,11 @@ Your Order Number: ${order.orderNumber}
 Items Ordered:
 ${items}
 
-Total: KSh ${order.total.toLocaleString('en-us')}
+Subtotal: KSh ${order.subtotal.toLocaleString('en-us')}/=
+
+Shipping Fee: KSh ${order.shipping && order.shipping.toLocaleString('en-us')}/=
+
+Grand Total: KSh ${order.total.toLocaleString('en-us')}/=
 
 Your delivery location is ${order.location}
 

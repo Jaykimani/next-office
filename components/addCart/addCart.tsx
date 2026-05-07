@@ -52,7 +52,6 @@ const AddCart = ({product}: addcartProps) => {
           }
           
           try {
-            console.log('yeeey');
             
              addItem(cartObject);
              editSubtotal();

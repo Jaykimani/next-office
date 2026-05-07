@@ -16,7 +16,9 @@ const productCollections: ProductCollection[]  = [
 
 export async function getTagProducts(tag){
 const payload = await getPayload({config});
-console.log(tag);
+let newTag = tag.replace(/-/g, " ");
+
+
 
    if (!tag) return []
   try {
@@ -25,7 +27,7 @@ console.log(tag);
       payload.find({
         collection,
         where: {
-              tags: { contains: tag },
+              tags: { contains: newTag },
         },
         select:{
       id: true,
@@ -41,7 +43,7 @@ console.log(tag);
   )
      
    let product = results.flatMap((r) => r.docs);
-   
+  
    
    return product ?? 'not found';
 

@@ -15,7 +15,7 @@ const Featured = () => {
                         <Image className={styles.optImgImg} src="/wall3.jpg" alt="office aura image" width={500} height={500}/>
                       </div>
                         <div className={styles.optDiv}>
-                        <h3>Office Interior Décor</h3>
+                        <h3>Office Interior Décor & Accessories</h3>
                         <div>
                           <p>Office Desk & Shelf Décor</p>
                           <p>Office Ambient Lighting & Decorative Lights</p>
@@ -33,7 +33,7 @@ const Featured = () => {
                       <Image className={styles.optImgImg} src="/greenery.jpg" alt="office lighting solutions" width={500} height={500}/>
                       </div>
                         <div className={styles.optDiv}>
-                        <h3>Office Greenery</h3>
+                        <h3>Office Greenery Solutions</h3>
                         <div>
                           <p>Office Desk Greenery</p>
                           <p>Office Statement Greenery</p>
@@ -48,10 +48,10 @@ const Featured = () => {
                     </div>
                     <div className={styles.featureOpt1}>
                       <div className={styles.optImg}> 
-                      <Image className={styles.optImgImg} src="/accessories2.jpg" alt="office wall accessories" width={500} height={500}/>
+                      <Image className={styles.optImgImg} src="/accessories3.jpg" alt="office wall accessories" width={500} height={500}/>
                       </div>
                         <div className={styles.optDiv}>
-                        <h3>Workspace Accessories</h3>
+                        <h3>Office Workspace Accessories</h3>
                         <div>
                           <p>Ergonomic & Comfort Accessories</p>
                           <p>Desk Essentials & Utility Tools</p>
@@ -68,7 +68,7 @@ const Featured = () => {
                       <Image className={styles.optImgImg} src="/lighting2.jpg" alt="office accent accessories" width={500} height={500}/>
                       </div>
                         <div className={styles.optDiv}>
-                        <h3>Office Electronics</h3>
+                        <h3>Office Electronics Solutions</h3>
                        <div>
                           <p>Office Charging & Power Accessories</p>
                           <p>Office Computer Accessories</p>
@@ -86,7 +86,7 @@ const Featured = () => {
                       <div className={styles.optImg}> 
                          <Image className={styles.optImgPhone} src="/decor.jpg" alt="office desk accessories" width={500} height={500} />
                          <div className={styles.optInfo}>
-                           <h4>Office Interior Décor</h4>
+                           <h4>Office Interior Décor & Accessories</h4>
                            <ul>
                           <li>Office Desk & Shelf Décor</li>
                           <li>Office Ambient Lighting & Decorative Lights</li>
@@ -107,7 +107,7 @@ const Featured = () => {
                       <div className={styles.optImg}> 
                          <Image className={styles.optImgPhone} src="/lighting.jpg" alt="office lighting solutions" width={500} height={500}/>
                          <div className={styles.optInfo}>
-                           <h4>Office Greenery</h4>
+                           <h4>Office Greenery Solutions</h4>
                            <ul>
                            <li>Office Desk Greenery</li>
                           <li>Office Statement Greenery</li>
@@ -155,7 +155,7 @@ const Featured = () => {
                          </ul>
                           </div>
                       </div>
-                    <Link href={'/shop/category/office-electronics'} style={{textDecoration: 'none', color: 'black'}}>
+                    <Link href={'/shop/office-electronics'} style={{textDecoration: 'none', color: 'black'}}>
                        <div className={styles.optBtn}>
                         <p>SHOP NOW</p>
                       </div>
@@ -167,9 +167,10 @@ const Featured = () => {
         </div>
 
         <div id={styles.choice}>
-          <div className={styles.choiceInset}>
-            <h1>Why Choose Us?</h1>
-            <p>At Office<span>Aura</span> KENYA, we believe that your office should be a reflection of your style, productivity, and professionalism. That's why we offer high-quality office décor and handpicked office accessories that transform any office space into a professional and inspiring environment. With exceptional customer service, fast shipping and competitive pricing, we make upgrading your workspace effortless. Shop now and create an office that works for you!</p>
+          <div className={styles.choice1}>
+            <div className={styles.choiceInset}>
+            <h1>Why Choose Office Aura Kenya?</h1>
+            <p>Office Aura is your trusted destination for <span>office décor and office accessories</span> in Kenya, offering a carefully curated selection of <span>desk accessories, workspace tools, and modern office styling solutions</span> for corporate, startups, and home offices. Whether you’re looking for <span>desk accessories in Nairobi</span>, stylish office <span>wall décor</span>, or practical <span>workspace accessories in Kenya</span>, we make it easy to upgrade your environment with products that combine function, comfort, and aesthetic appeal. We provide <span>fast delivery in Nairobi and nationwide shipping across Kenya</span>, convenient <span>M-Pesa payment options</span>, and responsive <span>WhatsApp support</span> to ensure a smooth shopping experience. From <span>home office setups</span> in Kenya to complete workspace transformations, Office Aura helps you create a productive, organized, and inspiring workspace.</p>
             <Link href={'/shop'} style={{textDecoration: 'none', color: 'black'}}>
             <div className={styles.choiceBtn}>
               <p>VISIT SHOP</p>
@@ -177,6 +178,20 @@ const Featured = () => {
             </div>
             </Link>
           </div>
+          </div>
+          <div className={styles.choice2}>
+          <div className={styles.choiceInset}>
+            <h1>Why Choose Office Aura Kenya?</h1>
+            <p>Office Aura is your go-to store for <span>office décor and office accessories in Kenya</span>, offering modern <span>desk accessories in Nairobi</span> and <span>workspace accessories</span> for home offices, startups, and corporate spaces. We provide <span>fast delivery across Kenya</span>, easy <span>M-Pesa payments</span>, and reliable <span>WhatsApp support</span> to help you create a stylish, organized, and productive workspace.</p>
+            <Link href={'/shop'} style={{textDecoration: 'none', color: 'black'}}>
+            <div className={styles.choiceBtn}>
+              <p>VISIT SHOP</p>
+              <MdArrowForward style={{width: '40px', height: '40px'}}/>
+            </div>
+            </Link>
+          </div>
+          </div>
+          
         </div>
 
         <div id={styles.proof}>

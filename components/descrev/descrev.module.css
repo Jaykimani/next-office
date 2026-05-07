@@ -38,6 +38,10 @@
     height: auto;
     margin-bottom: 20px;
 }
+.prodDesc img{
+    width: 95%;
+    margin: 20px 30px;
+}
 .prodDesc p{
     color: white;
 }
