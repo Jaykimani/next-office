@@ -196,6 +196,7 @@ export const OfficeInteriorDecor: CollectionConfig = {
   name: "tags",
   type: "text",
   hasMany: true,
+  required: true,
   index: true
 },
 

@@ -53,25 +53,31 @@
 .productDetails{
     margin-top: 10px;
     width: 100%;
-    height: 80px;
+    height: auto;
     display: flex;
     justify-content: space-between;
     padding: 0 20px 8px 10px;
     border-bottom: 1px solid rgb(210, 210, 210);
+    position: relative;
 }
 .productDetails h5{
     font-size: 17px;
 }
 .product{
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
+.product p{
+    margin-top: 10px;
+}
 .productTotal{
-    height: 100%;
-    display: grid;
-    place-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+   
 }
 .productSubtotal{
     width: 100%;
@@ -233,7 +239,7 @@
 .productDetails{
     margin-top: 10px;
     width: 100%;
-    height: 80px;
+    height: auto;
     display: flex;
     justify-content: space-between;
     padding: 0 20px 8px 10px;
@@ -249,9 +255,9 @@
     justify-content: space-around;
 }
 .productTotal{
-    height: 100%;
-    display: grid;
-    place-items: center;
+    position: absolute;
+    bottom: 10px;
+    right: 0;
 }
 .productSubtotal{
     width: 100%;
@@ -399,14 +405,16 @@
 .productDetails{
     margin-top: 10px;
     width: 100%;
-    height: 90px;
+    height: auto;
     display: flex;
     justify-content: space-between;
     padding: 0 10px 8px 10px;
     border-bottom: 1px solid rgb(210, 210, 210);
+    position: relative;
 }
 .productDetails h5{
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 600;
 }
 .product{
     height: 100%;
@@ -418,8 +426,9 @@
     font-size: 14px;
 }
 .productTotal{
-    height: 100%;
-    text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right:10px;
 
 }
 .productSubtotal{

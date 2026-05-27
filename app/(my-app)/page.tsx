@@ -1,4 +1,5 @@
 import Landing from "@/components/landing/landing"
+import Services from "@/components/services/services"
 import Featured from "@/components/featured/featured"
 import Quiz from "@/components/quiz/quiz"
 import Testimony from "@/components/testimony/testimony"
@@ -155,6 +156,7 @@ export default function Home(){
     </div>
     
     <Landing />
+    <Services />
     <Featured />
     <Quiz />  
     <Testimony /> 

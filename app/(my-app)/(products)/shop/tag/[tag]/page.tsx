@@ -54,7 +54,7 @@ const Tags = async({
    const newTag = decodeURIComponent(tag)
    
   const Products = await getTagProducts(newTag);
-  console.log(Products);
+  
   
  const allProducts =
   typeof Products === 'string'

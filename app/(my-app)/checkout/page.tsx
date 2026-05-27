@@ -165,7 +165,7 @@ function Checkout() {
                       {Destinations?.map((town)=>{
                         return (
                         <div key={town.location} className={styles.cities} onClick={()=>{setDestination(town.location); setOpenDestination(false); setShippingFee(town.fee)}}>
-                           <p style={{fontSize: "16px"}}>{town.location}</p>
+                           <p>{town.location}</p>
                       </div>
                         )
                       })}

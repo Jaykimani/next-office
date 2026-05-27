@@ -36,12 +36,21 @@ const Navbar = () => {
 
   return (
     <>
-        <div id={styles.navbar}>
+        <nav id={styles.navbar}>
             <div className={styles.navLinks}>
             <Image className={styles.svgLogo} src="/Component 5.svg" alt="office aura image" width={30} height={30}/>
             <div className={styles.navbarLinks}>
                   <Link className={styles.navbarLink} href={'/'} style={{textDecoration: 'none'}}>
                   <p>Home</p>
+                  </Link>
+                  <Link className={styles.navbarLink} href={'/restock-services'} style={{textDecoration: 'none'}}>
+                  <p>Restock Services</p>
+                  </Link>
+                  <Link className={styles.navbarLink} href={'/'} style={{textDecoration: 'none'}}>
+                  <p>Employee Kits</p>
+                  </Link>
+                  <Link className={styles.navbarLink} href={'/'} style={{textDecoration: 'none'}}>
+                  <p>Event Packs</p>
                   </Link>
                   <Link className={styles.navbarLink} href={'/shop'} style={{textDecoration: 'none'}}>
                   <p>Shop</p>
@@ -66,10 +75,10 @@ const Navbar = () => {
               <p>KSh {subtotal}.00</p>
             </div>
             </Link>
-        </div>
+        </nav>
         
 
-        <div id={styles.navbar2}>
+        <nav id={styles.navbar2}>
             <div className={styles.shop2Div} style={{display: phoneOption ? 'block' : 'none'}}>
             <div ref={shop2DivInsetHome} id={styles.shop2DivInset}>
             <div className={styles.shop2Div1}>
@@ -80,6 +89,21 @@ const Navbar = () => {
             <div className={styles.shopNavLinks}>
               <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
                <h3>Home</h3>
+              </Link>
+            </div>
+             <div className={styles.shopNavLinks}>
+              <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
+               <h3>Restock Services</h3>
+              </Link>
+            </div>
+             <div className={styles.shopNavLinks}>
+              <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
+               <h3>Employee Kits</h3>
+              </Link>
+            </div>
+             <div className={styles.shopNavLinks}>
+              <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
+               <h3>Event Packs</h3>
               </Link>
             </div>
             <div className={styles.shopNavLinks}>
@@ -122,7 +146,7 @@ const Navbar = () => {
                <div className={styles.div2}></div>
                <div className={styles.div3}></div>
               </div>
-        </div>
+        </nav>
         </>
   )
 }

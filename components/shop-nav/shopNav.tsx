@@ -254,11 +254,7 @@ const ShopNav = () => {
                     <p>Office Productivity/Writing Tools</p>
                    </div>
                    </Link>
-                    <Link href={'/shop/office-workspace-accessories/office-desk-organizer-storage'} style={{textDecoration: "none", color: "white"}}>
-                   <div className={styles.shopSublink} onClick={handleSubcategory}>
-                    <p>Office Desk Organizers & Storage</p>
-                   </div>
-                   </Link>
+                   
                 </div>    
              </div>
              <div className={styles.shopLink} onMouseEnter={handleGreeneryEnter} onMouseLeave={handleGreeneryLeave}>

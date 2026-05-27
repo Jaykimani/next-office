@@ -373,7 +373,7 @@ export interface OfficeInteriorDecor {
     deliveryTime: string;
     pickupAvailable?: boolean | null;
   };
-  tags?: string[] | null;
+  tags: string[];
   description: {
     productInformation: {
       root: {
@@ -449,7 +449,7 @@ export interface OfficeGreenery {
     deliveryTime: string;
     pickupAvailable?: boolean | null;
   };
-  tags?: string[] | null;
+  tags: string[];
   description: {
     productInformation: {
       root: {
@@ -492,8 +492,7 @@ export interface OfficeWorkspaceAccessory {
   subcategory:
     | 'office-ergonomic-comfort-accessories'
     | 'office-desk-essentials-utility-tools'
-    | 'office-productivity-writing-tools'
-    | 'office-desk-organizer-storage';
+    | 'office-productivity-writing-tools';
   slug?: string | null;
   images: (number | Media)[];
   price: number;
@@ -529,7 +528,7 @@ export interface OfficeWorkspaceAccessory {
     deliveryTime: string;
     pickupAvailable?: boolean | null;
   };
-  tags?: string[] | null;
+  tags: string[];
   description: {
     productInformation: {
       root: {
@@ -605,7 +604,7 @@ export interface OfficeElectronic {
     deliveryTime: string;
     pickupAvailable?: boolean | null;
   };
-  tags?: string[] | null;
+  tags: string[];
   description: {
     productInformation: {
       root: {

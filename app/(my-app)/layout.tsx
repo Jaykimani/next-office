@@ -1,79 +1,79 @@
 import Navbar from "@/components/navbar/navbar"
-import './global.css'
+import './global.css';
 import { Playfair, abel, roboto, oswald} from "./fonts" 
 import ScrollToTop from "@/components/scrollTop"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Office Aura Kenya | Office Décor & Workspace Accessories Online Store",
+  metadataBase: new URL("https://www.officeaura.co.ke"),
+
+  title: {
+    default: "Office Aura Kenya | Workplace Solutions & Office Restock Services",
+    template: "%s | Office Aura Kenya",
+  },
+
   description:
-    "Office Aura Kenya is your one-stop shop for modern office décor, desk accessories, and workspace styling solutions. Shop minimalist, executive, and professional office interior decorations with delivery across Nairobi and Kenya.",
+    "Office Aura Kenya provides office restock services, employee experience kits, and corporate event fulfillment packs. We help businesses stay productive with reliable workplace solutions in Kenya.",
 
   keywords: [
-    "office décor Kenya",
-    "office accessories Nairobi",
-    "workspace decoration Kenya",
-    "desk accessories Kenya",
-    "executive office décor",
-    "minimalist office interior",
-    "Office Aura Kenya",
-    "office interior styling shop",
-    "office essentials Kenya"
+    "office supplies Kenya",
+    "office restock Nairobi",
+    "workplace solutions Kenya",
+    "employee kits Kenya",
+    "corporate event packs Kenya",
+    "office supplies delivery Kenya"
   ],
 
   openGraph: {
-    title: "Office Aura Kenya | Office Décor & Workspace Accessories",
+    title: "Office Aura Kenya | Workplace Solutions",
     description:
-      "Shop modern office décor, desk accessories, and workspace styling essentials. Office Aura Kenya delivers across Nairobi and nationwide.",
+      "Office restock services, employee kits, and event fulfillment packs for modern Kenyan businesses.",
     url: "https://www.officeaura.co.ke",
     siteName: "Office Aura Kenya",
     type: "website",
-    locale: "en_KE",
-
-    images: [
-      {
-        url: "https://www.officeaura.co.ke/og-home.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Office Aura Kenya – Office Décor & Workspace Accessories",
-      },
-    ],
+    locale: "en_KE"
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Office Aura Kenya | Office Décor & Desk Accessories",
+    title: "Office Aura Kenya",
     description:
-      "Your one-stop shop for office décor and workspace accessories delivered across Kenya.",
-    images: ["https://www.officeaura.co.ke/og-home.jpg"],
+      "Workplace solutions: office restocking, employee kits, and corporate event packs in Kenya."
+  },
+
+  robots: {
+    index: true,
+    follow: true
   },
 
   alternates: {
-    canonical: "https://www.officeaura.co.ke",
-  },
+    canonical: "https://www.officeaura.co.ke"
+  }
 };
+
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "LocalBusiness",
       "@id": "https://www.officeaura.co.ke/#localbusiness",
-      name: "Office Aura",
-      url: "https://www.officeaura.co.ke",
-      telephone: "+254704610605",
-      image: "https://www.officeaura.co.ke/logo.png",
-      description:
-        "Office Aura is a curated marketplace for modern office décor and workspace accessories based in Nairobi, delivering across Kenya.",
-      address: {
+      "name": "Office Aura Kenya",
+      "url": "https://www.officeaura.co.ke",
+      "telephone": "+254704610605",
+      "image": "https://www.officeaura.co.ke/logo.png",
+      "description": "Office Aura Kenya is a workplace solutions company offering office restock services, employee experience kits, and corporate event fulfillment packs for businesses across Kenya.",
+      "address": {
         "@type": "PostalAddress",
-        addressLocality: "Nairobi",
-        addressCountry: "KE"
+        "addressLocality": "Nairobi",
+        "addressRegion": "Nairobi County",
+        "addressCountry": "KE"
       },
-      areaServed: {
+      "areaServed": {
         "@type": "Country",
-        name: "Kenya"
+        "name": "Kenya"
       },
-      sameAs: [
+      "priceRange": "KES",
+      "sameAs": [
         "https://www.instagram.com/officeaura",
         "https://www.linkedin.com/company/officeaura"
       ]
@@ -81,19 +81,48 @@ const schema = {
     {
       "@type": "WebSite",
       "@id": "https://www.officeaura.co.ke/#website",
-      url: "https://www.officeaura.co.ke",
-      name: "Office Aura",
-      description:
-        "Curated modern office décor and accessories marketplace in Nairobi with nationwide delivery.",
-      publisher: {
+      "url": "https://www.officeaura.co.ke",
+      "name": "Office Aura Kenya",
+      "description": "Workplace solutions company in Kenya offering office restocking, employee kits, and corporate event fulfillment services.",
+      "publisher": {
         "@id": "https://www.officeaura.co.ke/#localbusiness"
       },
-      potentialAction: {
+      "potentialAction": {
         "@type": "SearchAction",
-        target:
-          "https://www.officeaura.co.ke/search?q={search_term_string}",
+        "target": "https://www.officeaura.co.ke/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://www.officeaura.co.ke/#restock-service",
+      "name": "Office Restock Services",
+      "provider": {
+        "@id": "https://www.officeaura.co.ke/#localbusiness"
+      },
+      "areaServed": "Kenya",
+      "description": "Scheduled office supply restocking service including stationery, printer ink, pantry items, cleaning supplies, and IT consumables for businesses in Kenya."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.officeaura.co.ke/#employee-kits",
+      "name": "Employee Experience Kits",
+      "provider": {
+        "@id": "https://www.officeaura.co.ke/#localbusiness"
+      },
+      "areaServed": "Kenya",
+      "description": "Custom employee onboarding kits, remote work kits, and branded corporate kits designed to improve workplace experience and productivity."
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.officeaura.co.ke/#event-packs",
+      "name": "Corporate Event Fulfillment Packs",
+      "provider": {
+        "@id": "https://www.officeaura.co.ke/#localbusiness"
+      },
+      "areaServed": "Kenya",
+      "description": "End-to-end corporate event kits for conferences, workshops, seminars, training sessions, and product launches across Kenya."
     }
   ]
 };

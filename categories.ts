@@ -20,7 +20,7 @@ export const Categories  = [
         links: [{ id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
               { id: 'Office Desk Essentials/Utility Tools', name: 'office-desk-essentials-utility-tools' },
               { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
-              { id: 'Office Desk Organizers & Storage', name: 'office-desk-organizer-storage' }]
+              ]
     },
     {
         id: 5,
@@ -45,7 +45,6 @@ export const Subcategory = [
               { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
               { id: 'Office Desk Essentials/Utility Tools', name: 'office-desk-essentials-utility-tools' },
               { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
-              { id: 'Office Desk Organizers & Storage', name: 'office-desk-organizer-storage' },
               { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
               { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
               { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' }

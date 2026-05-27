@@ -6,32 +6,35 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Office Aura Kenya",
+   title: "Office Aura Kenya FAQs | Office Restock, Employee Kits & Event Packs",
   description:
-    "Office Aura Kenya FAQs: Learn about office décor delivery timelines, M-Pesa payments, shipping fees, return policies, and shopping for workspace accessories across Kenya.",
-
+    "Find answers about Office Aura Kenya’s office restock services, employee experience kits, and corporate event fulfillment packs. Learn how we help businesses in Kenya streamline office supplies and workplace operations.",
   keywords: [
-    "office décor Kenya FAQ",
-    "Office Aura FAQs",
-    "desk accessories delivery Nairobi",
-    "office décor online shop Kenya",
-    "M-Pesa office décor payments",
-    "returns policy office accessories Kenya",
-    "workspace styling Kenya questions",
+    "office aura kenya faq",
+    "office restock services kenya",
+    "office supplies nairobi",
+    "employee kits kenya",
+    "corporate event packs kenya",
+    "workplace solutions kenya",
+    "office restocking kenya"
   ],
-
   openGraph: {
-    title: "FAQs | Office Aura Kenya",
+    title: "Office Aura Kenya FAQs | Workplace Solutions & Office Restock",
     description:
-      "Get answers about Office Aura Kenya delivery, payments, returns, and shopping for office décor and workspace accessories nationwide.",
-    url: "https://www.officeaura.co.ke/faqs",
+      "Get answers about Office Aura Kenya’s office restock services, employee kits, and corporate event fulfillment packs for businesses across Kenya.",
+    url: "https://yourdomain.co.ke/faqs",
     siteName: "Office Aura Kenya",
-    type: "website",
+    type: "website"
   },
-
+  twitter: {
+    card: "summary",
+    title: "Office Aura Kenya FAQs | Workplace Solutions",
+    description:
+      "Learn about Office Aura Kenya’s office restock services, employee kits, and event fulfillment packs for modern workplaces in Kenya."
+  },
   alternates: {
-    canonical: "https://www.officeaura.co.ke/faqs",
-  },
+    canonical: "https://yourdomain.co.ke/faqs"
+  }
 };
 
 
@@ -46,143 +49,143 @@ const page = () => {
       "name": "What is Office Aura Kenya?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura is a Kenyan online store that specializes in office décor, desk accessories, workspace tools, and productivity essentials designed to help professionals create stylish and efficient workspaces. Whether you are setting up a corporate office, startup workspace, or home office in Kenya, Office Aura offers curated products that improve organization, comfort, and workspace aesthetics. We are your one-stop shop for creating a beautiful and productive workspace."
+        "text": "Office Aura Kenya is a modern workplace solutions company that provides office restock services, employee experience kits, event fulfillment packs, and office accessories for businesses across Kenya. We help companies keep their workplaces productive, organized, and fully equipped through reliable supply and fulfillment solutions."
       }
     },
     {
       "@type": "Question",
-      "name": "What products can I buy from Office Aura?",
+      "name": "What office restock services do you offer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura offers a wide range of office accessories and workspace upgrades, including desk and shelf decorations, wall art and office prints, desk lighting and ambient workspace lights, office plants and greenery, productivity tools like planners and notebooks, and ergonomic comfort accessories. All products are carefully selected to help professionals in Kenya create modern, functional, and inspiring workspaces."
+        "text": "We provide recurring office restocking services for businesses, including stationery supplies, printing paper, printer ink, pantry essentials, cleaning products, IT consumables, and other workplace essentials. Our services are designed to help companies avoid shortages and improve operational efficiency."
       }
     },
     {
       "@type": "Question",
-      "name": "Who are Office Aura products designed for?",
+      "name": "Do you offer scheduled office supply deliveries in Kenya?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura products are designed for anyone looking to improve their workspace, including corporate offices, startups and small businesses, remote workers and freelancers, students setting up study desks, and professionals upgrading their home office. Our goal is to make it easy for people in Kenya to build productive and aesthetically pleasing workspaces."
+        "text": "Yes. Office Aura offers scheduled office supply deliveries for businesses in Nairobi and across Kenya. Companies can choose weekly, bi-weekly, or monthly restock plans depending on their workplace needs."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you deliver office décor across Kenya?",
+      "name": "What are employee experience kits?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Office Aura delivers nationwide across Kenya, including Nairobi, Mombasa, Kisumu, Nakuru, Eldoret, Thika, and other towns. We make it easy to shop for office décor and accessories online in Kenya and receive it at your doorstep."
+        "text": "Employee experience kits are professionally curated workplace packages designed to improve onboarding, productivity, and employee satisfaction. These kits may include notebooks, pens, branded merchandise, desk accessories, water bottles, laptop accessories, and customized packaging."
       }
     },
     {
       "@type": "Question",
-      "name": "How long does delivery take in Kenya?",
+      "name": "Can employee kits be customized with company branding?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Delivery times depend on your location. Nairobi deliveries take 1 to 2 business days, other towns take 2 to 5 business days, and remote areas may take up to 7 business days. We provide updates through WhatsApp or SMS once your order is dispatched."
+        "text": "Yes. We offer customized employee kits with company logos, branded packaging, personalized employee names, branded merchandise, and tailored product selections to match your company culture and branding requirements."
       }
     },
     {
       "@type": "Question",
-      "name": "How much is shipping within Nairobi and other counties?",
+      "name": "What are event fulfillment packs?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Shipping fees depend on your delivery location, package size and weight, and the courier partner used. Delivery charges are shown at checkout or confirmed by our support team before dispatch."
+        "text": "Event fulfillment packs are curated kits prepared for conferences, workshops, seminars, trainings, corporate events, and product launches. These packs may include notebooks, pens, lanyards, tote bags, event materials, branded merchandise, and attendee essentials."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I pay using M-Pesa?",
+      "name": "Do you provide branded corporate event kits in Kenya?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Office Aura supports M-Pesa payments, making it convenient for customers across Kenya. We also support other payment options where available, including cash payments and card payments."
+        "text": "Yes. We provide branded corporate event kits and fulfillment solutions for businesses, NGOs, startups, schools, agencies, and organizations across Kenya. We can customize event packs to match your brand identity and event objectives."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you offer Cash on Delivery in Kenya?",
+      "name": "Can I order office supplies in bulk for my company?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cash on Delivery may be available for select locations or special arrangements. Please contact us via WhatsApp to confirm if this option is available for your area."
+        "text": "Absolutely. Office Aura specializes in bulk office supply fulfillment for businesses of all sizes, including SMEs, startups, NGOs, coworking spaces, clinics, schools, and corporate offices with reliable bulk supply solutions."
       }
     },
     {
       "@type": "Question",
-      "name": "How can Office Aura help improve my workspace?",
+      "name": "Do you deliver office supplies outside Nairobi?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura focuses on products that enhance productivity, organization, and workspace comfort. Our desk accessories, organizers, and décor solutions help reduce desk clutter, improve organization, enhance workspace aesthetics, and create a comfortable and inspiring work environment. A well-designed workspace can boost focus, creativity, and daily productivity."
+        "text": "Yes. We offer delivery services within Nairobi and nationwide shipping across Kenya for office supplies, employee kits, and event fulfillment packs."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I create a complete desk setup using Office Aura products?",
+      "name": "How do I place an order with Office Aura Kenya?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Office Aura offers a variety of products that allow you to build a complete desk setup, including desk organizers, productivity planners, desk lighting, office décor, and workspace greenery. You can mix and match products to create a modern desk setup tailored to your style and workflow."
+        "text": "You can place an order by contacting us through our website, inquiry forms, WhatsApp, email, or phone. Our team will guide you through product selection, quotations, customization options, and delivery arrangements."
       }
     },
     {
       "@type": "Question",
-      "name": "Can businesses and corporate offices order in bulk?",
+      "name": "Do you offer emergency office restocking services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Office Aura supports corporate and bulk office décor and accessories orders for office renovations, workspace branding projects, new company setups, and boardrooms or executive suites. Contact us for customized quotations and delivery arrangements."
+        "text": "Yes. Office Aura provides emergency office restock support to help businesses quickly replenish essential supplies and avoid operational disruptions."
       }
     },
     {
       "@type": "Question",
-      "name": "What is your return policy?",
+      "name": "Who can benefit from Office Aura’s services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We accept returns within 7 days of delivery for eligible items, provided they are unused, in original packaging, and returned with proof of purchase. Damaged or incorrect items must be reported within 48 hours. Please visit our Returns and Refund Policy page for full details."
+        "text": "Our services are ideal for SMEs, startups, NGOs, law firms, agencies, clinics, schools, coworking spaces, and corporate organizations looking for reliable workplace supply and fulfillment solutions in Kenya."
       }
     },
     {
       "@type": "Question",
-      "name": "What if my order arrives damaged?",
+      "name": "What types of products are included in office restock services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "If your order arrives damaged, contact us within 48 hours with your order number and photos of the product and packaging. We will arrange a replacement or refund according to our policy."
+        "text": "Office restock services include stationery supplies, notebooks, pens, printer paper, toner and ink cartridges, pantry supplies, drinking water, tissues, cleaning products, desk accessories, cables, batteries, and other workplace essentials."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I cancel or change my order after placing it?",
+      "name": "Do you offer subscription-based office supply services?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Orders can be changed or canceled only if they have not yet been dispatched. Please contact our support team as soon as possible after placing your order."
+        "text": "Yes. Office Aura offers flexible subscription-based office restock services that allow businesses to receive recurring deliveries based on their consumption and operational needs."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I contact Office Aura Kenya?",
+      "name": "Why should businesses choose Office Aura Kenya?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "You can contact Office Aura via email at support@officeaura.co.ke, WhatsApp at +254 704 610 605, or through the contact page on our website. Our team responds within 24 to 48 hours."
+        "text": "Office Aura Kenya combines office restocking, employee experience kits, and event fulfillment services under one modern workplace solutions brand. We focus on quality, reliability, customization, and helping businesses maintain productive work environments."
       }
     },
     {
       "@type": "Question",
-      "name": "Why should I buy office décor from Office Aura Kenya?",
+      "name": "Can you support corporate onboarding for multiple employees?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura is trusted by customers across Kenya because we offer stylish and modern office accessories, affordable workspace décor solutions, fast delivery in Nairobi and nationwide, M-Pesa-friendly checkout, responsive customer support via WhatsApp, and curated products designed for every workspace style."
+        "text": "Yes. We can prepare and fulfill onboarding kits for teams of all sizes, including personalized packaging, branded materials, and coordinated delivery for new employee onboarding programs."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you have a physical shop location?",
+      "name": "Do you provide workplace solutions for remote and hybrid teams?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura currently operates primarily as an online store, allowing us to serve customers across Kenya efficiently. Pickup options may be available depending on location, so please contact us for details."
+        "text": "Yes. Office Aura offers remote work kits and hybrid workspace solutions designed to help employees stay productive whether they are working from home, remotely, or in-office."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I stay updated on new arrivals and offers?",
+      "name": "How can Office Aura help improve workplace productivity?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To stay updated on the latest office décor trends in Kenya, you can follow us on Instagram, join our WhatsApp updates list, or subscribe to our email newsletter. New products and décor bundles are added regularly."
+        "text": "By ensuring businesses always have the supplies, tools, and employee support materials they need, Office Aura helps reduce operational interruptions, improve organization, enhance employee experience, and create more efficient workplaces."
       }
     }
   ]
@@ -199,168 +202,78 @@ const page = () => {
       }}
     />
      <div className={styles.faqsInset}>
-        <h1>Frequently Asked Questions (FAQ) — Office Aura Kenya</h1>
-        <p>Welcome to the <span>Office Aura Kenya FAQ page</span>.</p>
-        <p>Office Aura Kenya answers common questions about office décor & accessories, delivery in Nairobi, M-Pesa payments, workspace styling products, and nationwide shipping across Kenya.</p>
-        <p>Here you’ll find answers to the most common questions about shopping for office décor, desk accessories, and workspace interior decoration solutions in Kenya.</p>
-        <p>If you need more help, feel free to contact us anytime via WhatsApp or email.</p>
-        <div className={styles.divider}></div>
+        <h1>Frequently Asked Questions (FAQs) — Office Aura Kenya</h1>
+        
         <h2>1. What is Office Aura Kenya?</h2>
-        <p>Office Aura is a Kenyan online store that specializes in <span>office décor, desk accessories, workspace tools, and productivity essentials</span> designed to help professionals create stylish and efficient workspaces. Whether you are setting up a <span>corporate office, startup workspace, or home office</span> in Kenya, Office Aura offers curated products that improve organization, comfort, and workspace aesthetics.</p>
-        <p>We are your one-stop shop for creating a beautiful and productive workspace.</p>
+        <p>Office Aura Kenya is a modern workplace solutions company that provides <span>office restock services, employee experience kits, event fulfillment packs, and office accessories</span> for businesses across Kenya. We help companies keep their workplaces productive, organized, and fully equipped through reliable supply and fulfillment solutions.</p>
         <div className={styles.divider}></div>
-        <h2>2. What products can I buy from Office Aura?</h2>
-        <p>Office Aura offers a wide range of <span>office accessories and workspace upgrades</span>, including:</p>
-        <ul>
-            <li>Office desk and shelf decorations and accessories</li>
-            <li>Office Wall accessories e.g Wall art and office prints</li>
-            <li>Desk lighting and ambient workspace lights</li> 
-            <li>Office plants and greenery</li>
-            <li>Productivity tools like planners and notebooks</li> 
-            <li>Ergonomic comfort accessories</li>
-        </ul>
-        <p>All products are carefully selected to help professionals in Kenya create <span>modern, functional, and inspiring workspaces.</span></p>
+        <h2>2. What office restock services do you offer?</h2>
+        <p>We provide recurring office restocking services for businesses, including:</p>
+                 <ul>
+                  <li>Stationery supplies</li>
+                  <li>Printing papers & printer essentials</li>
+                  <li>Pantry and Hydration essentials</li>
+                  <li>Hygiene and Cleaning products</li>
+                  <li>IT consumables</li>
+                  <li>Other workspace essentials</li>
+                 </ul>
+                 <p>Our services are designed to help companies avoid shortages and improve operational efficiency.</p>
         <div className={styles.divider}></div>
-        <h2>3. Who are Office Aura products designed for?</h2>
-        <p>Office Aura products are designed for anyone looking to improve their workspace, including:</p>
-        <ul>
-            <li>Corporate offices</li>
-            <li>Startups and small businesses</li>
-            <li>Remote workers and freelancers</li> 
-            <li>Students setting up study desks</li>
-            <li>Professionals upgrading their home office</li> 
-        </ul>
-        <p>Our goal is to make it easy for people in Kenya to build <span>productive and aesthetically pleasing workspaces</span>.</p>
+        <h2>3. Do you offer scheduled office supply deliveries in Kenya?</h2>
+        <p>Yes. Office Aura offers scheduled office supply deliveries for businesses in Nairobi and across Kenya. Companies can schedule when to receive their supplies or subscribe to our weekly, bi-weekly, or monthly restock plans depending on their workplace needs.</p>
         <div className={styles.divider}></div>
-        <h2>4. Do you deliver office décor across Kenya?</h2>
-        <p>Yes. Office Aura delivers nationwide across Kenya, including:</p>
-        <ul>
-        <li>Nairobi</li>
-        <li>Mombasa</li>
-        <li>Kisumu</li>
-        <li>Nakuru</li>
-        <li>Eldoret</li>
-        <li>Thika</li>
-        <li>And other towns across Kenya</li>
-      </ul>
-      <p>We make it easy to shop for office décor and accessories online in Kenya and receive it at your doorstep.</p>
+        <h2>4. What are employee experience kits?</h2>
+        <p>Employee experience kits are professionally curated workplace packages designed to improve onboarding, productivity, and employee satisfaction. These kits may include notebooks, pens, branded merchandise, desk accessories, water bottles, laptop accessories, and customized packaging.</p>
       <div className={styles.divider}></div>
-      <h2>5. How long does delivery take in Kenya?</h2>
-      <p>Delivery times depend on your location:</p>
-      <ul>
-            <li>Nairobi: <span>1–2 business days</span></li>
-            <li>Other towns: <span>2–5 business days</span></li>
-            <li>Remote areas: <span>Up to 7 business days</span></li>  
-        </ul>
-        <p>We provide updates through WhatsApp or SMS once your order is dispatched.</p>
+      <h2>5. Can employee kits be customized with company branding?</h2>
+      <p>Yes. We offer customized employee kits with company logos, branded packaging, personalized employee names, branded merchandise, and tailored product selections to match your company culture and branding requirements.</p>
         <div className={styles.divider}></div>
-        <h2>6. How much is shipping within Nairobi and other counties?</h2>
-        <p>Shipping fees depend on:</p>
-        <ul>
-            <li>Your delivery location</li>
-            <li>Package size and weight</li>
-            <li>Courier partner used</li>  
-        </ul>
-        <p>Delivery charges are shown at checkout or confirmed by our support team before dispatch.</p>
+        <h2>6. What are event fulfillment packs?</h2>
+        <p>Event fulfillment packs are curated kits prepared for conferences, workshops, seminars, trainings, corporate events, and product launches. These packs may include notebooks, pens, lanyards, tote bags, event materials, branded merchandise, and attendee essentials.</p>
         <div className={styles.divider}></div>
-        <h2>7. Can I pay using M-Pesa?</h2>
-        <p>Yes. Office Aura supports <span>M-Pesa payments</span>, making it convenient for customers across Kenya.</p>
-        <p>We also support other payment options where available, including cash payments and card payments.</p>
+        <h2>7. Do you provide branded corporate event kits in Kenya?</h2>
+        <p>Yes. We provide branded corporate event kits and fulfillment solutions for businesses, NGOs, startups, schools, agencies, and organizations across Kenya. We can customize event packs to match your brand identity and event objectives.</p>
         <div className={styles.divider}></div>
-        <h2>8. Do you offer Cash on Delivery in Kenya?</h2>
-        <p>Cash on Delivery may be available for select locations or special arrangements.</p>
-        <p>Please contact us via WhatsApp to confirm if this option is available for your area.</p>
+        <h2>8. Can I order office supplies in bulk for my company?</h2>
+        <p>Absolutely. Office Aura specializes in bulk office supply fulfillment for businesses of all sizes. We support SMEs, startups, NGOs, coworking spaces, clinics, schools, and corporate offices with reliable bulk supply solutions.</p>
         <div className={styles.divider}></div> 
-        <h2>9. How can Office Aura help improve my workspace?</h2>
-        <p>Office Aura focuses on products that enhance <span>productivity, organization, and workspace comfort</span>. Our desk accessories, organizers, and décor solutions help you:</p>
-         <ul>
-            <li>Reduce desk clutter</li>
-            <li>Stay organized and focused</li>
-            <li>Improve workspace aesthetic</li> 
-            <li>Create a comfortable and inspiring work environment</li>
-        </ul>
-        <p>A well-designed workspace can help boost <span>focus, creativity, and daily productivity.</span></p>
+        <h2>9. Do you deliver office supplies outside Nairobi?</h2>
+        <p>Yes. We offer delivery services within Nairobi and nationwide shipping across Kenya for office supplies, employee kits, and event fulfillment packs.</p>
         <div className={styles.divider}></div>
-        <h2>10. Can I create a complete desk setup using Office Aura products?</h2>
-        <p>Yes. Office Aura offers a variety of products that allow you to <span>build a complete desk setup</span>, including:</p>
-         <ul>
-            <li>Desk organizers and storage tools</li>
-            <li>Productivity planners and writing tools</li>
-            <li>Desk lighting and accessories</li> 
-            <li>Office décor and wall art</li>
-            <li>Workspace greenery</li>
-        </ul>
-        <p>You can mix and match products to create a <span>modern desk setup tailored to your style and workflow.</span></p>
+        <h2>10. How do I place an order with Office Aura Kenya?</h2>
+        <p>You can place an order by contacting us through our website, inquiry forms, WhatsApp, email, or phone. Our team will guide you through product selection, quotations, customization options, and delivery arrangements.</p>
         <div className={styles.divider}></div>
-        <h2>11. Can businesses and corporate offices order in bulk?</h2>
-        <p>Absolutely. Office Aura supports corporate and bulk office décor & accessories orders for:</p>
-        <ul>
-            <li>Office renovations</li>
-            <li>Workspace branding projects</li>
-            <li>New company setups</li> 
-            <li>Boardrooms and executive suites</li>
-        </ul>
-        <p>Contact us for customized quotations and delivery arrangements.</p>
+        <h2>11. Do you offer emergency office restocking services?</h2>
+        <p>Yes. We understand that businesses sometimes run out of essential supplies unexpectedly. Office Aura provides emergency office restock support to help minimize disruptions and keep your operations running smoothly.</p>
         <div className={styles.divider}></div>
-        <h2>12. What is your return policy?</h2>
-        <p>We accept returns within <span>7 days of delivery</span> for eligible items, provided they are:</p>
-         <ul>
-            <li>Unused</li>
-            <li>In original packaging</li>
-            <li>Returned with proof of purchase</li> 
-        </ul>
-        <p>Damaged or incorrect items must be reported within <span>48 hours</span>.</p>
-        <p>Please visit our <Link href={'/return-refund'}>Returns & Refund Policy</Link> page for full details.</p>
+        <h2>12. Who can benefit from Office Aura’s services?</h2>
+        <p>Our services are ideal for SMEs, startups, NGOs, law firms, agencies, clinics, schools, coworking spaces, and corporate organizations looking for reliable workplace supply and fulfillment solutions in Kenya.</p>
         <div className={styles.divider}></div>
-        <h2>13. What if my order arrives damaged?</h2>
-        <p>If your ordered item arrives damaged, contact us within 48 hours with:</p>
-         <ul>
-            <li>Your order number</li>
-            <li>Photos of the product and packaging</li>
-        </ul>
-        <p>We will arrange a replacement or refund according to our policy.</p>
+        <h2>13. What types of products are included in office restock services?</h2>
+        <p>Our office restock services may include stationery supplies, notebooks, pens, printer paper, toner and ink cartridges, pantry supplies, drinking water, tissues, cleaning products, desk accessories, cables, batteries, and other workplace essentials..</p>
         <div className={styles.divider}></div>
-        <h2>14. Can I cancel or change my order after placing it?</h2>
-        <p>Orders can be changed or canceled only if they have not yet been dispatched.</p>
-        <p>Please contact our support team as soon as possible after placing your order.</p>
+        <h2>14. Do you offer subscription-based office supply services?</h2>
+        <p>Yes. We are building flexible office restock subscription plans that allow businesses to receive recurring deliveries based on their workplace consumption and operational needs.</p>
         <div className={styles.divider}></div>
-        <h2>15. How do I contact Office Aura Kenya?</h2>
-        <p>You can reach us anytime through:</p>
-         <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeaura.co.ke</span></p>
-         <p><FaPhoneAlt style={{marginRight: '10px', color: "green"}}/> Whatsapp: <span>+254 704 610 605</span></p>
-         <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <span>www.officeaura.co.ke/contact</span></p>
-         <p>Our team responds within 24–48 hours</p>
-         <div className={styles.divider}></div>
-         <h2>16. Why should I buy office décor from Office Aura Kenya?</h2>
-         <p>Office Aura is trusted by customers across Kenya because we offer:</p>
-          <ul>
-            <li>Stylish, modern office interior accessories</li>
-            <li>Affordable workspace décor solutions</li>
-            <li>Fast delivery in Nairobi and nationwide</li> 
-            <li>M-Pesa-friendly checkout</li>
-            <li>Customer support via WhatsApp</li>
-            <li>Curated products for every office vibe</li> 
-        </ul>
-        <p>We are committed to helping you create an inspiring workspace.</p>
+        <h2>15. Why should businesses choose Office Aura Kenya?</h2>
+        <p>Office Aura Kenya combines office restocking, employee experience kits, and event fulfillment services under one modern workplace solutions brand. We focus on quality products, dependable delivery, customized solutions, and helping businesses create productive and professional work environments.</p>
         <div className={styles.divider}></div>
-        <h2>17. Do you have a physical shop location?</h2>
-        <p>Office Aura currently operates primarily as an online store, allowing us to serve customers across Kenya efficiently.</p>
-        <p>Pickup options may be available depending on location — contact us for details.</p>
+         <h2>16. Can you support corporate onboarding for multiple employees?</h2>
+         <p>Yes. We can prepare and fulfill onboarding kits for teams of all sizes, including personalized packaging, branded materials, and coordinated delivery for new employee onboarding programs.</p>
         <div className={styles.divider}></div>
-        <h2>18. How do I stay updated on new arrivals and offers?</h2>
-        <p>To stay updated on the latest office décor trends in Kenya, you can:</p>
-         <ul>
-            <li>•	Follow us on Instagram</li>
-            <li>•	Join our WhatsApp updates list</li>
-            <li>•	Subscribe to our email newsletter</li> 
-        </ul>
-        <p>New products and décor bundles are added regularly.</p>
+        <h2>17. Do you provide workplace solutions for remote and hybrid teams?</h2>
+        <p>Yes. Office Aura offers remote work kits and hybrid workspace solutions designed to help employees stay productive whether they are working from home, remotely, or in-office.</p>
+        <div className={styles.divider}></div>
+        <h2>18. How can Office Aura help improve workplace productivity?</h2>
+        <p>By ensuring businesses always have the supplies, tools, and employee support materials they need, Office Aura helps reduce operational interruptions, improve organization, enhance employee experience, and create more efficient workplaces.</p>
         <div className={styles.divider}></div>
         <h2>Still Have Questions?</h2>
         <p>We’re happy to help.</p>
         <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeaura.co.ke</span></p>
-        <p><FaPhoneAlt style={{marginRight: '10px', color: "green"}}/> Whatsapp: <span>+254 704 610 605</span></p>
-        <p>Thank you for choosing <span>Office Aura Kenya — your one-stop shop for office décor and workspace accessories delivered nationwide.</span></p>
+         <p><FaPhoneAlt style={{marginRight: '10px', color: "green"}}/> Whatsapp: <span>+254 704 610 605</span></p>
+         <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <Link href={'/contact'}><span>www.officeaura.co.ke/contact</span></Link></p>
+         <p>Our team responds A.S.A.P</p>
+        <p>Thank you for choosing <span>Office Aura Kenya.</span></p>
      </div>
 
     </div>

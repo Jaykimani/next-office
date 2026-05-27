@@ -14,6 +14,15 @@ const Footer = () => {
             <Link href={'/home'} style={{textDecoration: 'none', color: 'white'}}>
             <p>Home</p>
             </Link>
+             <Link href={'/restock-services'} style={{textDecoration: 'none', color: 'white'}}>
+            <p>Restock Services</p>
+            </Link>
+             <Link href={'/employee-kits'} style={{textDecoration: 'none', color: 'white'}}>
+            <p>Employee Kits</p>
+            </Link>
+             <Link href={'/event-packs'} style={{textDecoration: 'none', color: 'white'}}>
+            <p>Event Packs</p>
+            </Link>
             <Link href={'/shop'} style={{textDecoration: 'none', color: 'white'}}>
             <p>Shop</p>
             </Link>

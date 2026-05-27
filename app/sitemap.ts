@@ -1,42 +1,28 @@
-import { MetadataRoute } from 'next'
-import { getPayloadClient } from '@/payloadClient'
+import { MetadataRoute } from "next";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const payload = await getPayloadClient()
-
-  // Fetch products
-  const productsResult = await payload.find({
-    collection: 'products',
-    limit: 1000,
-    depth: 0,
-  })
-
-  const products = productsResult.docs ?? []
-
-  const productUrls: MetadataRoute.Sitemap = products.map((product) => ({
-    url: `https://yourdomain.com/shop/${product.slug}`,
-    lastModified: new Date(product.updatedAt),
-    changeFrequency: 'weekly',
-    priority: 0.8,
-  }))
+export default function sitemap(): MetadataRoute.Sitemap {
+  const baseUrl = "https://www.officeaura.co.ke";
 
   return [
-    // Homepage
     {
-      url: 'https://yourdomain.com',
+      url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1.0,
     },
-
-    // Shop page
     {
-      url: 'https://yourdomain.com/shop',
+      url: `${baseUrl}/restock-services`,
       lastModified: new Date(),
-      changeFrequency: 'daily',
-      priority: 0.9,
     },
-
-    ...productUrls,
-  ]
+    {
+      url: `${baseUrl}/employee-kits`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/event-packs`,
+      lastModified: new Date(),
+    },
+    {
+      url: `${baseUrl}/faqs`,
+      lastModified: new Date(),
+    }
+  ];
 }

@@ -187,6 +187,7 @@ export const OfficeElectronics: CollectionConfig = {
   name: "tags",
   type: "text",
   hasMany: true,
+  required: true,
   index: true
 },
 

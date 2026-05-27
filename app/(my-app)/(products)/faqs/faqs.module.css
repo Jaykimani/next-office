@@ -12,25 +12,25 @@
     color: rgb(0, 0, 0);
 }
 .faqsInset h1{
-    font-size: 45px;
-    margin: 30px 0;
+    font-size: 47px;
+    margin: 30px 0 50PX;
     text-align: center;
     text-decoration: underline;
 }
 .faqsInset h2{
-    font-size: 35px;
+    font-size: 33px;
 }
 .faqsInset h3{
     font-size: 25px;
 }
 .faqsInset p{
    font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 20px;
+    line-height: 34px;
     margin-top: 15px;
 }
 .faqsInset p span{
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
 }
 .divider{
@@ -42,7 +42,7 @@
 .faqsInset ul{
     margin: 20px 50px;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 18px;
+    font-size: 20px;
 }
 .faqsInset ul li{
     margin: 5px;

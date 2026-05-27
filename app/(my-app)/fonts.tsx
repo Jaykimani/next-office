@@ -17,7 +17,7 @@ export const abel = Abel({
 });
 
 export const roboto = Roboto({
-  weight: '400', // Abel is only available in 400 weight
+ // Abel is only available in 400 weight
   subsets: ['latin'], // Specify the necessary subsets
   display: 'swap', // 'swap' ensures fallback font is used until Abel loads
   variable: '--font-roboto', 

@@ -5,7 +5,7 @@ import type { CollectionConfig } from 'payload';
               { label: 'Office Ergonomic/Comfort Accessories', value: 'office-ergonomic-comfort-accessories' },
               { label: 'Office Desk Essentials/Utility Tools', value: 'office-desk-essentials-utility-tools' },
               { label: 'Office Productivity/Writing Tools', value: 'office-productivity-writing-tools' },
-              { label: 'Office Desk Organizers & Storage', value: 'office-desk-organizer-storage' },
+          
               
 
   ]
@@ -192,6 +192,7 @@ export const OfficeWorkspaceAccessories: CollectionConfig = {
   name: "tags",
   type: "text",
   hasMany: true,
+  required: true,
   index: true
 },
 

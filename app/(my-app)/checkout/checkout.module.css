@@ -510,7 +510,7 @@
     text-align: center;
 }
 .billingForm input{
-    height: 45px;
+    height: 50px;
     margin-bottom: 20px;
     border: none;
     border-radius: 5px;
@@ -545,6 +545,46 @@
     box-shadow: 1px 1px 3px rgb(68, 68, 68);
     outline: none;
 }
+.cityDiv{
+    width: 100%;
+    height: 60px;
+    background-color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgb(184, 184, 184);
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+.cityTop{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.cityDiv p{
+    margin: 0;
+    font-size: 16px;
+}
+.cityBottom{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 500px;
+    background-color: white;
+    z-index: 5;
+    overflow-y: scroll;
+}
+.cities{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
 .customerOrder{
     width: 100%;
     height: auto;
@@ -568,16 +608,22 @@
     margin-top: 10px;
     padding: 10px 0;
     border-bottom: 2px solid white;
+    position: relative;
 }
 .orderInformation{
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 85%;
 }
 .orderInformation p{
     font-size: 16px;
     color: #545454;
     margin-top: 20px;
+}
+.orderSubtotal{
+    position: absolute;
+    bottom: 0;
+    right: 5px;
 }
 .orderSubtotal h4{
     font-weight: 600;

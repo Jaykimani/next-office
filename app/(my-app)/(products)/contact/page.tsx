@@ -8,42 +8,93 @@ import Contact from '@/components/contact/contact';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Office Aura Kenya | Office Décor Support & Delivery Help",
+  title: "Contact Office Aura Kenya | Office Restock & Workplace Solutions",
   description:
-    "Reach Office Aura Kenya for customer support, office décor inquiries, delivery assistance across Nairobi and Kenya, corporate orders, and workspace styling solutions.",
-
+    "Get in touch with Office Aura Kenya for office restock services, employee experience kits, and corporate event fulfillment packs across Kenya.",
   keywords: [
-    "contact Office Aura Kenya",
-    "office décor shop Nairobi contact",
-    "workspace accessories Kenya support",
-    "office interior décor customer service",
-    "Office Aura WhatsApp number",
-    "corporate office décor Kenya",
+    "office aura contact",
+    "office supplies kenya contact",
+    "office restock kenya",
+    "workplace solutions kenya contact",
+    "employee kits kenya",
+    "corporate event packs kenya"
   ],
-
   openGraph: {
-    title: "Contact Us | Office Aura Kenya",
+    title: "Contact Office Aura Kenya",
     description:
-      "Get in touch with Office Aura Kenya for office décor support, delivery questions, corporate orders, and workspace styling assistance.",
-    url: "https://www.officeaura.co.ke/contact",
+      "Reach Office Aura Kenya for workplace solutions including office restocking, employee kits, and event fulfillment services.",
+    url: "https://yourdomain.co.ke/contact",
     siteName: "Office Aura Kenya",
-    type: "website",
+    type: "website"
   },
-
+  twitter: {
+    card: "summary",
+    title: "Contact Office Aura Kenya",
+    description:
+      "Get in touch for office restock services, employee kits, and corporate event packs in Kenya."
+  },
   alternates: {
-    canonical: "https://www.officeaura.co.ke/contact",
-  },
+    canonical: "https://yourdomain.co.ke/contact"
+  }
 };
 
 
 const page = () => {
+
+   const schema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://www.officeaura.co.ke/#localbusiness",
+        name: "Office Aura Kenya",
+        url: "https://www.officeaura.co.ke",
+        telephone: "+254704610605",
+        image: "https://www.officeaura.co.ke/logo.png",
+        description:
+          "Office Aura Kenya is a workplace solutions company offering office restock services, employee kits, and event fulfillment packs across Kenya.",
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Nairobi",
+          addressRegion: "Nairobi County",
+          addressCountry: "KE"
+        },
+        areaServed: {
+          "@type": "Country",
+          name: "Kenya"
+        },
+        contactPoint: [
+          {
+            "@type": "ContactPoint",
+            telephone: "+254704610605",
+            contactType: "customer support",
+            areaServed: "KE",
+            availableLanguage: ["English", "Swahili"]
+          },
+          {
+            "@type": "ContactPoint",
+            telephone: "+254704610605",
+            contactType: "sales",
+            areaServed: "KE",
+            availableLanguage: ["English", "Swahili"]
+          }
+        ]
+      }
+    ]
+  };
+
+
   return (
+    
     <main className={styles.contactMain}>
-      <Contact />
+       <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+      
         <div className={styles.contactInset}>
-         <h1>Contact OfficeAura – Office Interior Décor in Kenya</h1>
-         <p className={styles.headerP}>Looking for professional office interior décor and office accessories in Kenya?
-          Contact Office Aura for expert guidance, décor bundles, and nationwide delivery. We serve home offices, startups, and corporate spaces across Kenya.</p>
+         <h1>Contact OfficeAura – A workspace solutions company in Kenya</h1>
+         <p className={styles.headerP}>Office Aura Kenya is a workplace solutions company offering office restock services, employee kits, and event fulfillment packs across Kenya.</p>
 
         <h2>Reach out</h2>
         <div className={styles.contactInformation}>
@@ -101,7 +152,7 @@ const page = () => {
 </p>
 
         </div>
-        
+      <Contact />  
 
 
     </main>

@@ -1,7 +1,7 @@
 #quiz{
     width: 100%;
     height: auto;
-    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('/quiz.jpg');
+    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('/quiz2.jpg');
     background-size: cover;
     background-position: center;
     cursor: pointer;
