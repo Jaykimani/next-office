@@ -1,44 +1,45 @@
-import Navbar from "@/components/navbar/navbar"
+
 import './global.css';
 import { Playfair, abel, roboto, oswald} from "./fonts" 
 import ScrollToTop from "@/components/scrollTop"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.officeaura.co.ke"),
+  metadataBase: new URL("https://www.officeflow.co.ke"),
 
-  title: {
-    default: "Office Aura Kenya | Workplace Solutions & Office Restock Services",
-    template: "%s | Office Aura Kenya",
-  },
-
+   title: "OfficeFlow Kenya | Office Restock & Workplace Supply Services",
   description:
-    "Office Aura Kenya provides office restock services, employee experience kits, and corporate event fulfillment packs. We help businesses stay productive with reliable workplace solutions in Kenya.",
-
+    "OfficeFlow Kenya provides reliable office restock services in Nairobi and across Kenya. We supply stationery, printing paper, pantry items, cleaning products, and IT consumables through scheduled workplace delivery systems.",
   keywords: [
+    "office restock services Kenya",
+    "office supplies Nairobi",
     "office supplies Kenya",
-    "office restock Nairobi",
-    "workplace solutions Kenya",
-    "employee kits Kenya",
-    "corporate event packs Kenya",
-    "office supplies delivery Kenya"
+    "workplace supplies Kenya",
+    "corporate office supplies Nairobi",
+    "office stationery supplies Kenya",
+    "office printing paper supplies Kenya",
+    "office printer supplies Kenya",
+    "office pantry supplies Kenya",
+    "office cleaning supplies Kenya",
+    "office consumables Kenya",
+    "business office supplies Kenya"
   ],
 
   openGraph: {
-    title: "Office Aura Kenya | Workplace Solutions",
+    title: "OfficeFlow Kenya | Office Restock Services",
     description:
-      "Office restock services, employee kits, and event fulfillment packs for modern Kenyan businesses.",
-    url: "https://www.officeaura.co.ke",
-    siteName: "Office Aura Kenya",
+      "Keep your workplace fully stocked with OfficeFlow Kenya. Reliable office restock services for businesses in Nairobi and across Kenya.",
+    url: "https://officeflow.co.ke",
+    siteName: "OfficeFlow",
     type: "website",
     locale: "en_KE"
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Office Aura Kenya",
+    title: "OfficeFlow Kenya | Office Restock Services",
     description:
-      "Workplace solutions: office restocking, employee kits, and corporate event packs in Kenya."
+      "Reliable office restock services in Nairobi and Kenya for stationery, pantry, cleaning, and IT consumables."
   },
 
   robots: {
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://www.officeaura.co.ke"
+    canonical: "https://www.officeflow.co.ke"
   }
 };
 
@@ -55,75 +56,76 @@ const schema = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "@id": "https://www.officeaura.co.ke/#localbusiness",
-      "name": "Office Aura Kenya",
-      "url": "https://www.officeaura.co.ke",
-      "telephone": "+254704610605",
-      "image": "https://www.officeaura.co.ke/logo.png",
-      "description": "Office Aura Kenya is a workplace solutions company offering office restock services, employee experience kits, and corporate event fulfillment packs for businesses across Kenya.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Nairobi",
-        "addressRegion": "Nairobi County",
-        "addressCountry": "KE"
-      },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Kenya"
-      },
-      "priceRange": "KES",
-      "sameAs": [
-        "https://www.instagram.com/officeaura",
-        "https://www.linkedin.com/company/officeaura"
-      ]
+      "@type": "Organization",
+      "name": "OfficeFlow",
+      "url": "https://officeflow.co.ke",
+      "description": "OfficeFlow Kenya provides workplace restock services for businesses in Nairobi and across Kenya, supplying stationery, pantry items, cleaning products, and IT consumables.",
+      "areaServed": "Kenya",
+      "sameAs": []
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.officeaura.co.ke/#website",
-      "url": "https://www.officeaura.co.ke",
-      "name": "Office Aura Kenya",
-      "description": "Workplace solutions company in Kenya offering office restocking, employee kits, and corporate event fulfillment services.",
-      "publisher": {
-        "@id": "https://www.officeaura.co.ke/#localbusiness"
-      },
+      "name": "OfficeFlow",
+      "url": "https://officeflow.co.ke",
       "potentialAction": {
         "@type": "SearchAction",
-        "target": "https://www.officeaura.co.ke/search?q={search_term_string}",
+        "target": "https://officeflow.co.ke/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       }
     },
-
     {
       "@type": "Service",
-      "@id": "https://www.officeaura.co.ke/#restock-service",
       "name": "Office Restock Services",
       "provider": {
-        "@id": "https://www.officeaura.co.ke/#localbusiness"
+        "@type": "Organization",
+        "name": "OfficeFlow"
       },
-      "areaServed": "Kenya",
-      "description": "Scheduled office supply restocking service including stationery, printer ink, pantry items, cleaning supplies, and IT consumables for businesses in Kenya."
+      "serviceType": "Workplace Supply & Office Restocking",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Kenya"
+        },
+        {
+          "@type": "City",
+          "name": "Nairobi"
+        }
+      ],
+      "description": "OfficeFlow provides scheduled office restock services in Kenya including stationery, printing supplies, pantry items, cleaning products, and IT consumables for businesses."
     },
     {
-      "@type": "Service",
-      "@id": "https://www.officeaura.co.ke/#employee-kits",
-      "name": "Employee Experience Kits",
-      "provider": {
-        "@id": "https://www.officeaura.co.ke/#localbusiness"
-      },
-      "areaServed": "Kenya",
-      "description": "Custom employee onboarding kits, remote work kits, and branded corporate kits designed to improve workplace experience and productivity."
+      "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://www.officeflow.co.ke/#organization",
+
+  name: "OfficeFlow",
+  url: "https://www.officeflow.co.ke",
+  image: "https://www.officeflow.co.ke/logo.png",
+
+  description:
+    "OfficeFlow Kenya provides office restock services and workplace supply solutions for businesses in Nairobi and across Kenya.",
+
+  telephone: "+254704610605",
+  email: "support@officeflow.co.ke",
+
+  priceRange: "$$",
+
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Nairobi",
+    addressCountry: "KE"
+  },
+
+  areaServed: [
+    {
+      "@type": "City",
+      name: "Nairobi"
     },
     {
-      "@type": "Service",
-      "@id": "https://www.officeaura.co.ke/#event-packs",
-      "name": "Corporate Event Fulfillment Packs",
-      "provider": {
-        "@id": "https://www.officeaura.co.ke/#localbusiness"
-      },
-      "areaServed": "Kenya",
-      "description": "End-to-end corporate event kits for conferences, workshops, seminars, training sessions, and product launches across Kenya."
+      "@type": "Country",
+      name: "Kenya"
     }
+  ]
+    }  
   ]
 };
 

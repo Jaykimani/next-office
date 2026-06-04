@@ -6,44 +6,113 @@ import { BiWorld } from "react-icons/bi";
 
 
 export const metadata: Metadata = {
-  title: "Shipping & Delivery Policy | Office Aura Kenya",
+ title: "Shipping & Delivery | OfficeFlow Office Restock Services Kenya",
   description:
-    "Office Aura Kenya offers fast and reliable delivery of office décor, desk accessories, and workspace essentials across Nairobi and nationwide. Learn about shipping fees, timelines, and tracking.",
-
+    "Learn about OfficeFlow Kenya’s office restock delivery services in Nairobi and across Kenya. We deliver stationery, printing supplies, pantry items, cleaning products, and IT consumables through fast and reliable workplace supply systems.",
   keywords: [
-    "office décor delivery Kenya",
-    "shipping policy Nairobi",
-    "office accessories delivery",
-    "Office Aura shipping",
-    "workspace décor Kenya",
-    "online office shop Kenya",
+    "office supplies delivery Kenya",
+    "office delivery Nairobi",
+    "office restock delivery Kenya",
+    "office supplies Nairobi delivery",
+    "workplace supplies Kenya delivery",
+    "corporate office supplies delivery Kenya",
+    "office stationery supplies Kenya",
+    "office A4 printing paper supplies Kenya",
+    "office printer supplies Kenya",
+    "office cleaning supplies Kenya",
+    "office pantry supplies Kenya"
   ],
 
   openGraph: {
-    title: "Shipping & Delivery Policy | Office Aura Kenya",
+    title: "OfficeFlow Shipping & Delivery Kenya | Office Restock Services",
     description:
-      "Discover Office Aura Kenya’s delivery timelines, shipping fees, and nationwide courier services for office décor and accessories.",
-    url: "https://www.officeaura.co.ke/shipping-delivery",
-    siteName: "Office Aura Kenya",
+      "Reliable office supply delivery and restock services in Nairobi and across Kenya. Fast, scheduled workplace deliveries for businesses.",
+    url: "https://your-domain.com/shipping-delivery",
+    siteName: "OfficeFlow",
     type: "website",
+    locale: "en_KE"
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "OfficeFlow Shipping & Delivery Kenya",
+    description:
+      "Fast and reliable office restock delivery services in Nairobi and Kenya for businesses and workplaces."
   },
 
   alternates: {
-    canonical: "https://www.officeaura.co.ke/shipping-delivery",
-  },
+    canonical: "https://your-domain.com/shipping-delivery"
+  }
 };
 
 
 const page = () => {
-  return(
-    <div className={styles.shippingDelivery}>
+  
+  const schema ={
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+       "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "Shipping & Delivery", "item": "https://www.officeflow.co.ke/shipping-delivery" }
+  ]
+    },
+    {
+      "@type": "Service",
+      "name": "OfficeFlow Shipping & Delivery",
+      "provider": {
+        "@type": "Organization",
+        "name": "OfficeFlow"
+      },
+      "serviceType": "Office Supply Delivery and Workplace Restock Services",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Nairobi"
+        },
+        {
+          "@type": "Country",
+          "name": "Kenya"
+        }
+      ],
+      "description": "OfficeFlow provides reliable office restock delivery services in Nairobi and across Kenya, supplying stationery, pantry items, cleaning products, printing materials, and IT consumables to businesses."
+    },
+    {
+      "@type": "LocalBusiness",
+      "name": "OfficeFlow Kenya",
+      "url": "https://your-domain.com",
+      "areaServed": "Nairobi, Kenya",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Nairobi",
+        "addressCountry": "KE"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "name": "Shipping & Delivery - OfficeFlow",
+      "url": "https://your-domain.com/shipping-delivery",
+      "description": "Information about OfficeFlow office restock delivery services in Kenya."
+    }
+  ]
+}
+
+  return(<>
+      <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(schema),
+  }}
+/>
+    <main className={styles.shippingDelivery}>
      <div className={styles.shippingInset}>
-      <h1>Shipping & Delivery Policy — Office Aura Kenya</h1>
-      <p>At <span>Office Aura Kenya</span>, we are committed to delivering stylish and high-quality office décor and accessories to customers across Kenya quickly, safely, and reliably.</p>
-      <p>This Shipping & Delivery Policy explains our delivery timelines, shipping fees, and what to expect when ordering from www.officeaura.co.ke.</p>
+      <h1>Shipping & Delivery — OfficeFlow Kenya</h1>
+      <p>At OfficeFlow Kenya, we provide reliable office restock delivery services for businesses in Nairobi and across Kenya. We ensure workplaces stay fully stocked with essential office supplies including stationery, printing materials, pantry items, cleaning products, and IT consumables through fast and structured delivery systems.</p>
+      <p>This page explains how our office supply delivery and restock system works, including timelines, coverage, and what businesses can expect when partnering with OfficeFlow.</p>
       <div className={styles.divider}></div>
-      <h2>Nationwide Shipping Across Kenya</h2>
-      <p>Office Aura offers delivery services to customers in:</p>
+      <h2>Nationwide Office Supply Delivery in Kenya</h2>
+      <p>OfficeFlow delivers office restock supplies to businesses across Kenya, including:</p>
       <ul>
         <li>Nairobi</li>
         <li>Mombasa</li>
@@ -53,16 +122,16 @@ const page = () => {
         <li>Thika</li>
         <li>And other towns across Kenya</li>
       </ul>
-      <p>Whether you are shopping for <span>home office accessories</span> or furnishing an entire corporate workspace, we deliver nationwide.</p>
+      <p>Whether you run a small office, SME, NGO, or corporate headquarters, we ensure your workplace stays consistently supplied through our structured restock system.</p>
       <div className={styles.divider}></div>
       <h2>Delivery Timeframes</h2>
       <p>Delivery times depend on your location:</p>
       <h3>1. Nairobi Delivery</h3>
-      <p>Orders within Nairobi are typically delivered within:</p>
+      <p>For businesses in Nairobi, OfficeFlow offers:</p>
       <ul>
-        <li><span>Same Day or Next Day Delivery</span> (depending on order time)</li>
+        <li>Same-day or next-day delivery (depending on restock schedule)</li>
+        <li>Standard delivery within 1–2 business days</li>
       </ul>
-      <p>Estimated timeline: <span>1–2 business days</span></p>
       <h3>2. Delivery Outside Nairobi</h3>
       <p>For towns and counties outside Nairobi, delivery usually takes:</p>
       <p>Estimated timeline: <span>2–5 business days</span></p>
@@ -94,17 +163,25 @@ const page = () => {
         <li>Pickup Option (if available)</li>
       </ul>
       <div className={styles.divider}></div>
-      <h2>Same-Day Delivery (Nairobi Only)</h2>
-      <p>Office Aura may offer same-day delivery within Nairobi for eligible orders placed before a specified cut-off time.</p>
+      <h2>Priority & Scheduled Restock Delivery</h2>
+      <p>OfficeFlow offers:</p>
+      <h3>Nairobi Priority Delivery</h3>
+      <p>Fast delivery for urgent office supply needs in Nairobi.</p>
       <p>To confirm availability, contact us via WhatsApp: <span>  0704610605</span></p>
+      <h3>Scheduled Restock Delivery</h3>
+      <p>Weekly, bi-weekly, or monthly delivery based on your office usage.</p>
+      <h3>Corporate Delivery Plans</h3>
+      <p>Custom delivery schedules for SMEs, corporates, NGOs, and institutions.</p>
       <div className={styles.divider}></div>
-      <h2>Cash on Delivery vs Prepayment</h2>
-      <p>To ensure fast and secure delivery, most Office Aura orders require prepayment via:</p>
+      <h2>Payment Options</h2>
+      <p>To ensure smooth delivery operations, OfficeFlow supports:</p>
       <ul>
-        <li><span>M-Pesa Paybill / Till</span></li>
+        <li>Cash on-delivery</li>
+        <li>M-Pesa payments</li>
         <li>Card payment (if available)</li>
+        <li>Invoice-based monthly billing (Business Accounts)</li>
       </ul>
-      <p>Cash on Delivery may be available for select locations or special arrangements.</p>
+      <p>For corporate clients, we offer monthly invoicing and consolidated procurement billing.</p>
       <div className={styles.divider}></div>
       <h2>Tracking Your Delivery</h2>
       <p>Once your order has been dispatched, we will provide updates via:</p>
@@ -113,16 +190,18 @@ const page = () => {
         <li>WhatsApp support</li>
         <li>Courier tracking (where available)</li>
       </ul>
-      <p>We want every customer in Kenya to feel confident shopping for office décor online.</p>
+      <p>We want every customer in Kenya to feel confident shopping with officeflow Kenya.</p>
       <div className={styles.divider}></div>
       <h2>Delivery Address Requirements</h2>
       <p>To avoid delays, please ensure your delivery details include:</p>
       <ul>
-        <li>Full name</li>
+        <li>Business name</li>
+        <li>Contact person's Full name</li>
         <li>Active phone number</li>
         <li>Town/City and County</li>
-        <li>Building name or street</li>
+        <li>Office location (building, floor, landmark)</li>
         <li>Nearby landmark (optional but helpful)</li>
+        <li>Delivery instructions (if any)</li>
       </ul>
       <p>Example:</p>
       <p>“Westlands, near Sarit Centre, ABC Plaza, 3rd Floor”</p>
@@ -133,13 +212,13 @@ const page = () => {
         <ul>
         <li>Incorrect address</li>
         <li>Customer unreachable</li>
-        <li>Missed pickup</li>
+        <li>Restricted access to office</li>
       </ul>
       <p>The courier may reschedule delivery or return the package.</p>
       <p>Additional delivery charges may apply for repeated attempts.</p>
       <div className={styles.divider}></div>
-      <h2>Damaged Packages During Delivery</h2>
-      <p>We take great care in packaging your office décor items.</p>
+      <h2>Damaged or Incorrect Supplies</h2>
+      <p>We take care to ensure all office supplies are properly packed and delivered.</p>
       <p>If your package arrives damaged, please contact us within <span>48 hours</span> with:</p>
       <ul>
         <li>Order number</li>
@@ -148,33 +227,19 @@ const page = () => {
       </ul>
       <p>We will assist with a replacement or return according to our Return Policy.</p>
       <div className={styles.divider}></div>
-      <h2>Corporate & Bulk Office Deliveries</h2>
-      <p>For corporate office décor orders, bulk purchases, or workspace setup bundles, Office Aura offers customized delivery arrangements.</p>
-      <p>Please contact us for:</p>
-       <ul>
-        <li>Office delivery scheduling</li>
-        <li>Installation coordination (if applicable)</li>
-        <li>Bulk shipping discounts</li>
-      </ul>
-      <div className={styles.divider}></div>
-      <h2>Customer Support for Shipping Questions</h2>
+      <h2>Support and Delivery inquiries</h2>
       <p>For delivery inquiries, order updates, or support, reach out to us:</p>
-      <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeaura.co.ke</span></p>
+      <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeflow.co.ke</span></p>
       <p><FaPhoneAlt style={{marginRight: '10px', color: "green"}}/> Whatsapp: <span>+254 704 610 605</span></p>
-      <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <span>www.officeaura.co.ke/contact</span></p>
+      <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <span>www.officeflow.co.ke/contact</span></p>
       <p>Response time: 24–48 hours</p>
       <div className={styles.divider}></div>
-      <h2>Office Aura Kenya — Office Décor Delivered Nationwide</h2>
-      <p>Thank you for choosing Office Aura, your trusted online destination for:</p>
-      <ul>
-        <li>Office interior décor in Kenya</li>
-        <li>Modern desk accessories</li>
-        <li>Executive office styling solutions</li>
-        <li>Nationwide delivery of workspace essentials</li>
-      </ul>
-      <p>We are proud to help you create beautiful and productive workspaces anywhere in Kenya.</p>
+      <h2>OfficeFlow Kenya — Office Supplies Delivered Nationwide</h2>
+      <p>OfficeFlow provides reliable office supply delivery and office restock services in Nairobi and across Kenya. We help businesses maintain uninterrupted operations by delivering stationery, printing materials, pantry supplies, cleaning products, and IT consumables through structured and scheduled delivery systems designed for modern workplace.</p>
+      
      </div>
-    </div>
+    </main>
+    </>
   )
 }
 

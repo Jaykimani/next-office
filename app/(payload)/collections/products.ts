@@ -1,20 +1,6 @@
 import type { CollectionConfig } from 'payload';
 
 
-  const subcategories = [            
-             { label: 'Office Desk & Shelf Décor', value: 'office-desk-shelf-decor' },
-              { label: 'Office Ambient Lighting & Decorative Lights', value: 'office-ambient-lighting-decorative-lights' }, 
-              { label: 'Office Wall Décor & Accessories', value: 'office-wall-decor-accessories' }, 
-              { label: 'Office Personalized & Statement Décor', value: 'office-personalized-statement-decor' },
-              
-  ]
-  const vibes = [
-              { label: 'Minimalist Offfice Vibe', value: 'minimalist-office-vibe' }, 
-              { label: 'Executive/CEO Office Vibe', value: 'executive-office-vibe' },
-              { label: 'Modern Professional Office Vibe', value: 'modern-professional-office-vibe' },
-              { label: 'Creative Studio Office Vibe', value: 'creative-studio-office-vibe' },
-              { label: 'Nature Inspired Office Vibe', value: 'nature-inspired-office-vibe' },          
-  ]
 
 export const Products: CollectionConfig = {
   slug: 'products',
@@ -137,15 +123,6 @@ export const Products: CollectionConfig = {
   ],
 },
 
- {
-  name: 'vibe',
-  type: 'select',
-  hasMany: true,
-  options: vibes.map(({ label, value }) => ({ label, value })),
-  admin: {
-    description: 'Select one or more subcategories',
-  },
-}, 
    
 /**
      * STOCK

@@ -1,18 +1,13 @@
 export const Categories  = [
     {
     id: 1,
-    title: { id: 'Office Interior Décor', name: 'office-interior-decor' },
-    links: [{ id: 'Office Desk & Shelf Décor', name: 'office-desk-shelf-decor' },
-            { id: 'Office Ambient Lighting & Decorative Lights', name: 'office-ambient-lighting-decorative-lights' },
-            { id: 'Office Wall Décor & Accessories', name: 'office-wall-decor-accessories' }, 
-             { id: 'Office Personalized & Statement Décor', name: 'office-personalized-statement-decor' },]
-    },
-    {
-        id: 2,
-        title: { id: 'Office Greenery Solutions', name: 'office-greenery' },
-        links: [ { id: 'Office Desk Greenery', name: 'office-desk-greenery' }, 
-              { id: 'Office Statement Greenery', name: 'office-statement-greenery' },
-              { id: 'Greenery Sets & Styled Combos', name: 'greenery-sets-styled-combos' },]
+    title: { id: 'Office Supply Products', name: 'office-supplies' },
+    links: [ { id: 'Stationery & Writing Supplies', name: 'stationery-writing-supplies' },
+              { id: 'Printing & Paper Supplies', name: 'printing-paper-supplies' }, 
+              { id: 'Printer & Ink Supplies', name: 'printer-ink-supplies' }, 
+              { id: 'Pantry & Hydration Supplies', name: 'pantry-hydration-supplies' },
+              { id: 'Cleaning & Hygiene Supplies', name: 'cleaning-hygiene-supplies' },
+              { id: 'IT & Tech Supplies', name: 'it-tech-supplies' },]
     },
     {
         id: 3,
@@ -35,13 +30,12 @@ export const Categories  = [
 
 
 export const Subcategory = [
-              { id: 'Office Desk & Shelf Décor', name: 'office-desk-shelf-decor' },
-              { id: 'Office Ambient Lighting & Decorative Lights', name: 'office-ambient-lighting-decorative-lights' },
-              { id: 'Office Wall Décor & Accessories', name: 'office-wall-decor-accessories' }, 
-              { id: 'Office Personalized & Statement Décor', name: 'office-personalized-statement-decor' },
-              { id: 'Office Desk Greenery', name: 'office-desk-greenery' }, 
-              { id: 'Office Statement Greenery', name: 'office-statement-greenery' },
-              { id: 'Greenery Sets & Styled Combos', name: 'greenery-sets-styled-combos' },
+              { id: 'Stationery & Writing Supplies', name: 'stationery-writing-supplies' },
+              { id: 'Printing & Paper Supplies', name: 'printing-paper-supplies' }, 
+              { id: 'Printer & Ink Supplies', name: 'printer-ink-supplies' }, 
+              { id: 'Pantry & Hydration Supplies', name: 'pantry-hydration-supplies' },
+              { id: 'Cleaning & Hygiene Supplies', name: 'cleaning-hygiene-supplies' },
+              { id: 'IT & Tech Supplies', name: 'it-tech-supplies' },
               { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
               { id: 'Office Desk Essentials/Utility Tools', name: 'office-desk-essentials-utility-tools' },
               { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
@@ -50,13 +44,9 @@ export const Subcategory = [
               { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' }
 ]
 export const shopCategory = [
-   {
-    name: 'Office Interior Décor',
-    url: 'office-interior-decor',
-  },
   {
-    name: 'Office Greenery Solutions',
-    url: 'office-greenery',
+    name: 'Office Supplies',
+    url: 'office-supplies',
  
   },
    {
@@ -70,28 +60,6 @@ export const shopCategory = [
   },
 ]
 
-export const shopVibe= [
-   {
-      name: 'Minimalist Vibe',
-      url: 'minimalist-office-vibe' 
-   },
-    {
-      name: 'Executive/CEO Vibe',
-      url: 'executive-office-vibe'
-   },
-    {
-      name: 'Modern professional Vibe',
-      url: 'modern-professional-office-vibe' 
-   },
-    {
-      name: 'Creative studio Vibe',
-      url: 'creative-studio-office-vibe' 
-   },
-    {
-      name: 'Nature inspired Vibe',
-      url: 'nature-inspired-office-vibe' 
-   }
-]
 
 
 export const shopPopularity = ['Most popular', 'Most rated'];

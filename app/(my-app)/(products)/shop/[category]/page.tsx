@@ -141,7 +141,7 @@ const allProducts = seededShuffle(products, today)
         </div>
         </div>
         <div className={styles.quote}>
-         <h1>TRANSFORM YOUR WORKSPACE</h1>
+         <h1>SIMPLIFY.SUPPORT.SUCCEED</h1>
         </div>
   </>
   

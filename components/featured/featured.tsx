@@ -118,15 +118,15 @@ const Featured = () => {
         <div id={styles.choice}>
           <div className={styles.choice1}>
             <div className={styles.choiceInset}>
-            <h1>Why Choose Office Aura Kenya?</h1>
-            <p>Office Aura Kenya is your trusted partner for modern workspace solutions, offering professional office restock services, employee workspace kits, and event fulfillment packs for businesses, startups, and corporate teams across Kenya. From branded onboarding kits and productivity-focused workspace essentials to curated seminar and conference packs, we help businesses create organized, professional, and engaging workplace experiences. Whether you need recurring office supplies in Nairobi, customized employee experience kits, or fully branded corporate event packs in Kenya, Office Aura delivers reliable service, modern presentation, fast delivery, convenient M-Pesa payment options, and responsive WhatsApp support to help your team stay productive, prepared, and professionally equipped.</p>
+            <h1>Why Choose officeflow Kenya?</h1>
+            <p>OfficeFlow Kenya provides reliable office supply and restock services for businesses across Kenya, helping workplaces stay fully stocked and productive. We simplify office procurement by supplying and restocking essential workplace items including stationery, printing paper, pantry supplies, cleaning products, and IT consumables through convenient delivery solutions. Whether you're a startup, SME, NGO, or corporate office, our customized restock services help reduce procurement time, prevent supply shortages, and keep your operations running smoothly. For businesses looking for dependable office supplies in Nairobi and professional workplace support throughout Kenya, OfficeFlow is your trusted office restock partner.</p>
             
           </div>
           </div>
           <div className={styles.choice2}>
           <div className={styles.choiceInset}>
-            <h1>Why Choose Office Aura Kenya?</h1>
-            <p>Office Aura Kenya provides modern workspace solutions for businesses and professionals through office restock services, employee workspace kits, and event fulfillment packs. From branded onboarding kits to recurring office essentials and corporate event packs, we help teams stay productive, organized, and professionally equipped across Kenya.</p>
+            <h1>Why Choose OfficeFlow Kenya?</h1>
+            <p>OfficeFlow Kenya helps businesses across Kenya stay fully stocked with essential workplace supplies through reliable office restock services. From stationery and printing paper to pantry, cleaning, and IT consumables, we simplify procurement, prevent supply shortages, and keep your workplace running smoothly with convenient delivery solutions.</p>
           </div>
           </div>
           

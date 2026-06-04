@@ -144,8 +144,7 @@ export const Orders: CollectionConfig = {
           name: "product",
           type: "relationship",
           relationTo: [
-        'office-interior-decor',
-        'office-greenery',
+         'office-supplies',   
         'office-workspace-accessories',
         'office-electronics'
       ],

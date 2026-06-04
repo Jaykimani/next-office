@@ -21,7 +21,8 @@
     font-size: 33px;
 }
 .faqsInset h3{
-    font-size: 25px;
+    font-size: 22px;
+    margin-top: 15px;
 }
 .faqsInset p{
    font-family: 'Times New Roman', Times, serif;
@@ -45,9 +46,20 @@
     font-size: 20px;
 }
 .faqsInset ul li{
-    margin: 5px;
+    margin: 8px;
 }
 .faqsInset ul li span{
+    font-weight: 600;
+}
+.faqsInset ol{
+    margin: 20px 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+.faqsInset ol li{
+    margin: 5px;
+}
+.faqsInset ol li span{
     font-weight: 600;
 }
 
@@ -96,6 +108,17 @@
     margin: 5px;
 }
 .faqsInset ul li span{
+    font-weight: 600;
+}
+.faqsInset ol{
+    margin: 20px 50px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 17px;
+}
+.faqsInset ol li{
+    margin: 5px;
+}
+.faqsInset ol li span{
     font-weight: 600;
 }
 }
@@ -148,6 +171,17 @@
     margin: 5px;
 }
 .faqsInset ul li span{
+    font-weight: 600;
+}
+.faqsInset ol{
+    margin: 20px 30px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+.faqsInset ol li{
+    margin: 5px;
+}
+.faqsInset ol li span{
     font-weight: 600;
 }
 }

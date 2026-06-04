@@ -7,10 +7,12 @@ import Image from 'next/image';
 import { FaShoppingCart } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { useCartStore } from '@/app/store';
+import { FaUserTie } from "react-icons/fa";
 
 
 const ServiceNav = () => {
     const [phoneOption, setPhoneOption] = useState(false);
+    const [login, setLogin] = useState(false);
     const shop2DivInsetHome = useRef<HTMLDivElement | null>(null);
     const {count, subtotal} = useCartStore((state) => state);
 
@@ -45,15 +47,6 @@ const ServiceNav = () => {
                   <Link className={styles.navbarLink} href={'/'} style={{textDecoration: 'none'}}>
                   <p>Home</p>
                   </Link>
-                  <Link className={styles.navbarLink} href={'/restock-services'} style={{textDecoration: 'none'}}>
-                  <p>Restock Services</p>
-                  </Link>
-                  <Link className={styles.navbarLink} href={'/'} style={{textDecoration: 'none'}}>
-                  <p>Employee Kits</p>
-                  </Link>
-                  <Link className={styles.navbarLink} href={'/'} style={{textDecoration: 'none'}}>
-                  <p>Event Packs</p>
-                  </Link>
                   <Link className={styles.navbarLink} href={'/shop'} style={{textDecoration: 'none'}}>
                   <p>Shop</p>
                   </Link>
@@ -67,16 +60,38 @@ const ServiceNav = () => {
                <p>Blogs</p>
               </Link>
             </div>
-            </div>
-            <Link href={'/cart'}>
              <div className={styles.shopping}> 
+              <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)}>
+              <div className={styles.loginTop}>
+              <FaUserTie style={{color : '#ffe100', width: '35px', height: '35px'}}/>
+              <div>
+                <p>WELCOME</p>
+                <p>Sign in/Register</p>
+              </div>
+              </div>
+              <div className={styles.loginDropdown} style={{display: login ? "block" : "none"}}  onMouseLeave={() => setLogin(false)}>
+              <div>Login</div>
+              <Link href={'/my-account'} style={{textDecoration: 'none', color: 'white'}}>
+              <div>Register</div>
+              </Link>
+              
+              </div>
+              </div>
+               <Link href={'/cart'} style={{textDecoration: 'none'}}>
+              <div className={styles.outerShopping}>
               <div className={styles.shoppingInset}>
               <FaShoppingCart style={{color : '#ffe100', width: '35px', height: '35px'}}/>  
               <span className={styles.shoppingCount}>{count}</span>
               </div>
-              <p>KSh {subtotal}.00</p>
+              <p>KSh {subtotal}.00/=</p>
+              </div>
+              </Link>
+              </div>
             </div>
-            </Link>
+           
+             
+              
+            
         </nav>
         
 
@@ -93,21 +108,7 @@ const ServiceNav = () => {
                <h3>Home</h3>
               </Link>
             </div>
-             <div className={styles.shopNavLinks}>
-              <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
-               <h3>Restock Services</h3>
-              </Link>
-            </div>
-             <div className={styles.shopNavLinks}>
-              <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
-               <h3>Employee Kits</h3>
-              </Link>
-            </div>
-             <div className={styles.shopNavLinks}>
-              <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
-               <h3>Event Packs</h3>
-              </Link>
-            </div>
+             
             <div className={styles.shopNavLinks}>
                <Link href={'/shop'} style={{textDecoration: 'none', color: 'white'}}>
                <h3>Shop</h3>

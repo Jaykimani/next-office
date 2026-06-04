@@ -1,92 +1,76 @@
 .servicesMain{
     width: 100%;
     height: auto;
-    background-color: black;
-    padding: 30px 0;
+    padding: 40px;
     cursor: pointer;
 }
-.servicesInset{
-    width: 98%;
-    height: auto;
-    border-radius: 50px;
-    border: 1px solid #ffe100;
-    margin: 0px auto;
-    padding: 20px 0 40px;
-}
-.servicesInset h2{
-    color: white;
-    font-size: 45px;
+.servicesMain h1{
     text-align: center;
-    margin-bottom: 40px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 45px;
     text-decoration: underline;
+    margin-bottom: 50px;
 }
-.offers{
-    width: 95%;
-    height: 550px;
-    background-color: white;
-    margin: 0 auto 0;
+.servicesInset{
+    width: 100%;
+    height: auto;
     display: flex;
-    padding: 0px 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-.offersImage{
-    width: 50%;
-    height: 100%;
+.feature{
+    width: 32%;
+    min-height: 650px;
+    height: auto;
+    margin-bottom: 30px;
 }
-.offersImg{
+.featureImage{
+    width: 100%;
+    height: 40%;
+}
+.featureImg{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
-.offersInfo{
-    width: 50%;
-    height: 100%;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+.featureInfo{
+    width: 100%;
+    text-align: center;
+    padding: 30px 20px 10px;
 }
-.offersInfo h3{
-    font-family: 'Playfair Display', sans-serif;
-    font-size: 45px;
-    text-decoration: underline #ffe100;
-
+.featureInfo h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    margin-bottom: 20px;
+    text-decoration: underline #ffe100 2px;
 }
-.offersInfo p{
+.featureList{
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     line-height: 30px;
+    height: 120px;
 }
-.offersInfo p span{
-    font-weight: bold;
-}
-.offerButtons{
+.shopbtn{
     width: 100%;
-    height: auto;
-    display: flex;
-   
-}
-.offerButtons p {
-     font-size: 16px;
-}
-.offerBtn1{
-    width: 30%;
-    height: 50px;
+    height: 60px;
     background-color: #ffe100;
     color: black;
     border-radius: 10px;
-    display: grid;
-    place-items: center;
-    text-decoration: underline;
-}
-.offerBtn2{
-    width: 35%;
-    height: 50px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-left: 20px;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.whatsappbtn{
+    width: 100%;
+    height: 60px;
+    background-color: #00ff1a;
+    color: black;
     border-radius: 10px;
-    background-color: rgb(0, 253, 0);
-     font-size: 13px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
 }

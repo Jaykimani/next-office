@@ -1,4 +1,4 @@
-import Landing from "@/components/landing/landing"
+import Restock from "@/components/restock/restock"
 import Services from "@/components/services/services"
 import Featured from "@/components/featured/featured"
 import Quiz from "@/components/quiz/quiz"
@@ -9,40 +9,44 @@ import { FaWhatsapp } from "react-icons/fa";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Office Aura | Modern Office Décor & Accessories Nairobi",
+ title: "OfficeFlow Kenya | Office Supplies & Office Restock Services in Nairobi",
   description:
-    "Shop curated modern office décor and workspace accessories in Nairobi. Office Aura delivers stylish office furniture and décor across Kenya.",
-  
+    "OfficeFlow provides office supplies and office restock services in Nairobi and across Kenya. We supply stationery, printing paper, pantry items, cleaning products, and workplace essentials for businesses.",
+
   keywords: [
-    "office décor Nairobi",
-    "office accessories Kenya",
-    "modern office decor & accessories Kenya",
-    "corporate office accessories Kenya",
-    "workspace décor Nairobi",
-    "corporate office décor Kenya",
-    "minimalist office décor Nairobi",
+    "office supplies Nairobi",
+    "office supplies Kenya",
+    "office restock services Kenya",
+    "workplace supplies Kenya",
+    "office consumables Nairobi",
+    "business office supplies Kenya",
+    "corporate office supplies Nairobi",
+    "office delivery Nairobi",
+    "office stationery Kenya",
+    "office pantry supplies Kenya"
   ],
 
   alternates: {
-    canonical: "https://www.officeaura.co.ke",
+    canonical: "https://www.officeflow.co.ke",
   },
 
   openGraph: {
-    title: "Office Aura – Curated Office Décor Marketplace",
+    title: "OfficeFlow Kenya | Office Supplies & Restock Services",
     description:
-      "Discover modern office décor, executive desk setups, and workspace accessories in Nairobi. Delivered across Kenya.",
-    url: "https://www.officeaura.co.ke",
-    siteName: "Office Aura",
+      "Reliable office supplies and restock services for businesses in Nairobi and across Kenya. Keep your workplace fully stocked with OfficeFlow.",
+    url: "https://www.officeflow.co.ke",
+    siteName: "OfficeFlow",
     locale: "en_KE",
     type: "website",
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Office Aura | Modern Office Décor Nairobi",
+    title: "OfficeFlow Kenya",
     description:
-      "Curated office décor and workspace accessories delivered in Nairobi and across Kenya.",
+      "Office supplies and office restock services in Nairobi and Kenya for modern businesses.",
   },
+
   robots: {
     index: true,
     follow: true,
@@ -56,7 +60,7 @@ export const metadata: Metadata = {
     }
   },
 
-  metadataBase: new URL("https://www.officeaura.co.ke"),
+  metadataBase: new URL("https://www.officeflow.co.ke"),
 };
 
 
@@ -65,72 +69,118 @@ export default function Home(){
 
   const faqData = {
   "@context": "https://schema.org",
+  "@graph" :[
+    {
+      "@type": "WebPage",
+  "@id": "https://www.officeflow.co.ke/#homepage",
+  url: "https://www.officeflow.co.ke",
+  name: "OfficeFlow Kenya",
+   about: {
+    "@id": "https://www.officeflow.co.ke/#organization"
+  }
+    },
+    {
+       "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.officeflow.co.ke"
+    }
+  ],
+   "about": {
+    "@id": "https://www.officeflow.co.ke/#organization"
+  }
+    },
+  {
   "@type": "FAQPage",
+   "about": {
+    "@id": "https://www.officeflow.co.ke/#organization"
+  },
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What is Office Aura?",
+      "name": "What is OfficeFlow Kenya?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura is a Kenyan online store that specializes in office decor, desk accessories, workspace tools, and productivity essentials designed to help professionals create stylish and efficient workspaces. Whether you are setting up a corporate office, startup workspace, or home office in Kenya, Office Aura offers curated products that improve organization, comfort, and workspace aesthetics."
+        "text": "OfficeFlow Kenya is a workplace supply and office restock company that helps businesses stay fully stocked with office supplies. We provide office stationery, printing materials, pantry supplies, cleaning products, IT consumables, and other workplace essentials to businesses across Nairobi and Kenya."
       }
     },
     {
       "@type": "Question",
-      "name": "What products can I buy from Office Aura?",
+      "name": "Do you deliver office supplies in Nairobi?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura offers a wide range of office accessories and workspace upgrades including desk organizers, office wall art and posters, artificial office plants, desk lighting, productivity tools like planners and notebooks, and ergonomic comfort accessories designed to improve workspace organization and productivity."
+        "text": "Yes. We provide office supply delivery throughout Nairobi, including CBD, Westlands, Upper Hill, Kilimani, Karen, Gigiri, Industrial Area, and surrounding business districts."
       }
     },
     {
       "@type": "Question",
-      "name": "Do you deliver office accessories across Kenya?",
+      "name": "What office supplies do you provide?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Office Aura delivers office decor and workspace accessories across Kenya. Our primary delivery area is Nairobi where orders are fulfilled quickly, but we also ship to other cities and towns so professionals across Kenya can upgrade their home offices and workspaces."
+        "text": "We supply a wide range of workplace essentials, including stationery and writing supplies, printing paper and envelopes, printer ink and toner, pantry and beverage supplies, cleaning and hygiene products, IT consumables and accessories, and workplace safety supplies."
       }
     },
     {
       "@type": "Question",
-      "name": "Who are Office Aura products designed for?",
+      "name": "How does OfficeFlow work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura products are designed for corporate offices, startups, remote workers, freelancers, students, and professionals who want to improve their desk setup or create a modern and productive home office in Kenya."
+        "text": "OfficeFlow is designed to make it easy for businesses to get the office supplies they need. Customers can either order office essentials as needed through our website or create a custom restock plan for scheduled deliveries and ongoing workplace supply management."
       }
     },
     {
       "@type": "Question",
-      "name": "How can Office Aura help improve my workspace?",
+      "name": "What is a custom restock plan?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura provides desk accessories, organizers, workspace decor, and productivity tools that help reduce clutter, improve organization, increase focus, and create a comfortable and inspiring workspace environment."
+        "text": "A custom restock plan is a personalized office supply program based on your business requirements and usage patterns. Instead of manually reordering supplies every time stock runs low, OfficeFlow helps create a structured supply schedule tailored to your workplace."
+      }
+    },
+     {
+      "@type": "Question",
+      "name": "How can I request an office restock plan from OfficeFlow?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can contact OfficeFlow through our website, WhatsApp, or quote request form to discuss your office requirements and receive a customized workplace restock plan."
       }
     },
     {
       "@type": "Question",
-      "name": "Can I create a complete desk setup using Office Aura products?",
+      "name": "Can I set up recurring office deliveries?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Office Aura offers desk organizers, productivity planners, desk lighting, workspace decor, and office greenery that can be combined to create a complete desk setup for offices, startups, or home workspaces."
+        "text": "Yes. Businesses using custom restock plans can choose weekly, bi-weekly, monthly, or customized delivery schedules based on their office requirements."
       }
     },
     {
       "@type": "Question",
-      "name": "What makes Office Aura different from other office accessory stores in Kenya?",
+      "name": "How long does delivery take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Office Aura focuses on curated workspace solutions rather than generic office supplies. Our store helps customers find modern office decor, desk accessories, and productivity tools that work together to create organized, stylish, and efficient workspaces."
+        "text": "Delivery within Nairobi typically takes 1 to 2 business days. Deliveries outside Nairobi generally take 2 to 5 business days depending on location."
+      }
+    },
+     {
+      "@type": "Question",
+      "name": "Who can use OfficeFlow's office restock services?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our services are ideal for startups, SMEs, corporate offices, NGOs, schools, clinics, law firms, agencies, and coworking spaces in Nairobi and across Kenya."
       }
     },
     {
       "@type": "Question",
-      "name": "How do I choose the right office accessories for my desk?",
+      "name": "Why should businesses choose OfficeFlow?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "To choose the right office accessories, focus on organization, productivity, comfort, and workspace aesthetics. Desk organizers help reduce clutter, planners and notebooks improve productivity, ergonomic accessories increase comfort, and decor like wall art or plants personalize your workspace."
+        "text": "OfficeFlow helps businesses save time, reduce procurement stress, and avoid supply shortages through reliable workplace supply solutions. Whether you need a one-time order or a complete workplace restock system, OfficeFlow provides a reliable solution for keeping your business fully supplied."
       }
     }
+  ]
+}
   ]
 }
 
@@ -155,7 +205,8 @@ export default function Home(){
     <p className="chat">Chat with us</p>
     </div>
     
-    <Landing />
+
+    <Restock />
     <Services />
     <Featured />
     <Quiz />  

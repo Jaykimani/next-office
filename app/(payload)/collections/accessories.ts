@@ -143,15 +143,6 @@ export const OfficeWorkspaceAccessories: CollectionConfig = {
 },
    
 
- {
-  name: 'vibe',
-  type: 'select',
-  hasMany: true,
-  options: vibes.map(({ label, value }) => ({ label, value })),
-  admin: {
-    description: 'Select one or more subcategories',
-  },
-}, 
    
 /**
      * STOCK

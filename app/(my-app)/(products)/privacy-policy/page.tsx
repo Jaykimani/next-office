@@ -5,169 +5,221 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Office Aura Kenya",
+  title: "Privacy Policy | OfficeFlow Kenya",
   description:
-    "Review Office Aura Kenya’s Privacy Policy covering customer data collection, cookies, secure payments, and how we protect your information when shopping for office décor and accessories online in Kenya.",
+    "Learn how OfficeFlow Kenya collects, uses, stores, and protects personal information when you use our website, office supply services, and workplace restock solutions.",
 
   keywords: [
-    "Office Aura privacy policy",
-    "office décor shop Kenya privacy",
-    "customer data protection Kenya",
-    "Supabase privacy compliance",
-    "Payload CMS privacy policy",
-    "cookies policy office accessories",
-    "online store privacy Kenya",
+    "OfficeFlow privacy policy",
+    "OfficeFlow data protection",
+    "office supplies Kenya privacy policy",
+    "office restock services privacy policy",
+    "workplace supplies Kenya privacy",
+    "OfficeFlow customer data policy"
   ],
 
+  alternates: {
+    canonical: "https://www.officeflow.co.ke/privacy-policy",
+  },
+
   openGraph: {
-    title: "Privacy Policy | Office Aura Kenya",
+    title: "Privacy Policy | OfficeFlow Kenya",
     description:
-      "Learn how Office Aura Kenya collects, uses, and protects your personal information when shopping for office décor and workspace accessories online.",
-    url: "https://www.officeaura.co.ke/privacy-policy",
-    siteName: "Office Aura Kenya",
+      "Read OfficeFlow Kenya's Privacy Policy and learn how we collect, use, store, and protect customer information.",
+    url: "https://www.officeflow.co.ke/privacy-policy",
+    siteName: "OfficeFlow",
+    locale: "en_KE",
     type: "website",
   },
 
-  alternates: {
-    canonical: "https://www.officeaura.co.ke/privacy-policy",
+  twitter: {
+    card: "summary",
+    title: "Privacy Policy | OfficeFlow Kenya",
+    description:
+      "Learn how OfficeFlow Kenya protects your information and privacy.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
 
 const page = () => {
-  return (
-    <div className={styles.privacy}>
+
+  const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+       "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.officeflow.co.ke/privacy-policy" }
+  ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.officeflow.co.ke/privacy-policy",
+      "url": "https://www.officeflow.co.ke/privacy-policy",
+      "name": "Privacy Policy",
+      "isPartOf": {
+        "@id": "https://www.officeflow.co.ke/#website"
+      },
+      "about": {
+        "@id": "https://www.officeflow.co.ke/#organization"
+      },
+      "description":
+        "OfficeFlow Kenya's Privacy Policy."
+    }
+  ]
+};
+
+  return (<>
+    <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify(schema),
+  }}
+/>
+    <main className={styles.privacy}>
         <div className={styles.privacyInset}>
-            <h1>Privacy Policy — Office Aura Kenya</h1>
-            <p>At <span>Office Aura Kenya</span>, we value your privacy and are committed to protecting your personal information.</p>
-            <p>This Privacy Policy explains how we collect, use, store, and protect customer data when you visit or shop on <span>www.officeaura.co.ke</span>.</p>
+            <h1>Privacy Policy — OfficeFlow Kenya</h1>
+            <p><span>Last Updated: 01/06/2026</span></p>
+            <p>At OfficeFlow Kenya ("OfficeFlow", "we", "our", or "us"), we respect your privacy and are committed to protecting the personal information you share with us.</p>
+            <p>This Privacy Policy explains how we collect, use, store, and protect information when you visit our website, place an order, request a quotation, contact us, or use our office restock services.</p>
+            <p>By using our website or services, you agree to the practices described in this Privacy Policy.</p>
             <div className={styles.divider}></div>
-            <h2>1. About Office Aura Kenya</h2>
-            <p>Office Aura is an online store providing:</p>
+            <h2>1. Information We Collect</h2>
+            <p>We may collect information that you voluntarily provide, including:</p>
+            <h3>a) Personal Information</h3>
             <ul>
-                <li>Office décor and interior accessories</li>
-                <li>Desk organization solutions</li>
-                <li>Workspace styling products</li>
-                <li>Corporate office decoration essentials</li>
-            </ul>
-            <p>We deliver across Kenya, including Nairobi and other major towns.</p>
-            <div className={styles.divider}></div>
-            <h2>2. Information We Collect</h2>
-            <p>When you browse our website or place an order, we may collect the following personal information:</p>
-            <h3>a) Customer Information</h3>
-             <ul>
                 <li>Full name</li>
+                <li>Email address</li>
                 <li>Phone number</li>
-                <li>Email address (optional)</li>
-                <li>Delivery address and location details</li>
+                <li>Company or organization name</li>
+                <li>Delivery address</li>
+                <li>Billing information</li>
+                <li>Communication preferences</li>
             </ul>
-            <h3>b) Order Information</h3>
-             <ul>
-                <li>Products purchased</li>
-                <li>Order history</li>
-                <li>Delivery preferences</li>
-            </ul>
-            <h3>c) Payment Information</h3>
-            <p>Payments are processed securely through third-party providers such as M-Pesa or card payment platforms.</p>
-            <p>Office Aura does <span>not</span> store your full payment details.</p>
-            <h3>d) Technical Data</h3>
-            <p>We may automatically collect:</p>
-             <ul>
-                <li>IP address</li>
-                <li>Browser type</li>
-                <li>Device information</li>
-                <li>Pages visited on our website</li>
-            </ul>
-            <p>This helps us improve your shopping experience.</p>
-            <div className={styles.divider}></div>
-            <h2>3. How We Use Your Information</h2>
-            <p>We use customer information to:</p>
+            <h3>b) Business Information</h3>
+            <p>For business customers and Business Accounts, we may collect:</p>
             <ul>
-                <li>Process and deliver orders across Kenya</li>
-                <li>Provide customer support via email or WhatsApp</li>
-                <li>Send order confirmations and delivery updates</li>
-                <li>Improve our products, services, and website performance</li>
+              <li>Company details</li>
+              <li>Procurement requirements</li>
+              <li>Delivery schedules</li>
+              <li>Office supply preferences</li>
+              <li>Account management information</li>
+            </ul>
+            <h3>c) Website Usage Information</h3>
+            <p>When you visit our website, certain information may be collected automatically, including:</p>
+            <ul>
+              <li>IP address</li>
+              <li>Browser type</li>
+              <li>Device information</li>
+              <li>Pages visited</li>
+              <li>Time spent on the website</li>
+              <li>Referring websites</li>
+            </ul>
+            <p>This information helps us improve our services and website experience.</p>
+            <div className={styles.divider}></div>
+            <h2>2. How We Use Your Information</h2>
+            <p>We use information collected to:</p>
+             <ul>
+                <li>Process and fulfill orders</li>
+                <li>Deliver office supplies and workplace essentials</li>
+                <li>Respond to inquiries and support requests</li>
+                <li>Provide quotations and business proposals</li>
+                <li>Manage Business Accounts and custom restock plans</li>
+                <li>Improve our website and services</li>
+                <li>Send service-related communications</li>
                 <li>Prevent fraud and unauthorized activity</li>
+                <li>Comply with legal obligations</li>
             </ul>
-            <p>We do not sell or rent your personal information to third parties.</p>
             <div className={styles.divider}></div>
-            <h2>4. Cookies & Tracking Technologies</h2>
-            <p>Office Aura uses cookies to enhance your browsing experience.</p>
-            <p>Cookies help us:</p>
-             <ul>
-                <li>Remember items in your cart</li>
-                <li>Understand how visitors use our site</li>
-                <li>Improve website speed and functionality</li>
-                <li>Support analytics and marketing efforts</li>
-            </ul>
-            <p>You can disable cookies in your browser settings, but some features of the website may not function properly.</p>
-            <div className={styles.divider}></div>
-            <h2>5. Data Storage & Website Technology</h2>
-            <p>To operate our e-commerce platform, we use trusted tools including:</p>
-            <h3>Payload CMS</h3>
-            <p>Payload is used to manage website content, product listings, and order-related information.</p>
-            <h3>Supabase</h3>
-            <p>Supabase is used as a secure database for storing customer orders, account data (if applicable), and website records</p>
-            <p>Both services follow modern security standards to protect user information.</p>
-            <div className={styles.divider}></div>
-            <h2>6. Sharing of Personal Information</h2>
-            <p>We may share limited customer information only with trusted service providers such as:</p>
+            <h2>3. Marketing Communications</h2>
+            <p>With your consent, we may send:</p>
             <ul>
-                <li>Delivery and courier partners</li>
-                <li>Payment processing providers</li>
-                <li>Website hosting and analytics tools</li>
+                <li>Service updates</li>
+                <li>Promotional offers</li>
+                <li>Product announcements</li>
+                <li>Business solutions and workplace supply recommendations</li>
             </ul>
-            <p>These partners are only given the information necessary to complete their services.</p>
+            <p>You may unsubscribe from marketing communications at any time by contacting us or following the unsubscribe instructions provided in our messages.</p>
             <div className={styles.divider}></div>
-            <h2>7. Data Protection & Security</h2>
-            <p>Office Aura Kenya takes appropriate measures to safeguard your information, including:</p>
+            <h2>4. Cookies and Similar Technologies</h2>
+            <p>Our website may use cookies and similar technologies to:</p>
              <ul>
-                <li>Secure HTTPS encryption</li>
-                <li>Restricted access to customer records</li>
-                <li>Secure third-party payment processing</li>
-                <li>Modern cloud security practices through Supabase</li>
+                <li>Improve website functionality</li>
+                <li>Remember user preferences</li>
+                <li>Analyze website performance</li>
+                <li>Understand visitor behavior</li>
             </ul>
-            <p>However, no online platform can guarantee 100% security</p>
+            <p>You can modify your browser settings to refuse cookies; however, some website features may not function properly.</p>
             <div className={styles.divider}></div>
-            <h2>8. Your Rights Under Data Protection Laws</h2>
-            <p>In line with the <span>Kenya Data Protection Act (2019)</span>, you have the right to:</p>
+            <h2>5. Sharing of Information</h2>
+            <p>OfficeFlow does not sell, rent, or trade your personal information to third parties.</p>
+            <p>We may share information with trusted service providers when necessary to:</p>
             <ul>
-                <li>Request access to your personal data</li>
+              <li>Process payments</li>
+              <li>Deliver products</li>
+              <li>Host our website</li>
+              <li>Provide technical support</li>
+              <li>Comply with legal requirements</li>
+            </ul>
+            <p>These service providers are only permitted to use information for the specific services they perform on our behalf.</p>
+            <div className={styles.divider}></div>
+            <h2>6. Data Security</h2>
+            <p>We take reasonable administrative, technical, and organizational measures to protect your information against unauthorized access, loss, misuse, disclosure, or alteration.</p>  
+            <p>However, no internet transmission or electronic storage system can be guaranteed to be completely secure.</p>
+            <div className={styles.divider}></div>
+            <h2>7. Data Retention</h2>
+            <p>We retain information for as long as necessary to:</p>
+             <ul>
+                <li>Fulfill orders and services</li>
+                <li>Maintain business records</li>
+                <li>Support Business Accounts</li>
+                <li>Meet legal, accounting, and regulatory obligations</li>
+            </ul>
+            <p>When information is no longer required, we will securely delete or anonymize it where appropriate.</p>
+            <div className={styles.divider}></div>
+            <h2>8. Your Privacy Rights</h2>
+            <p>You may request to:</p>
+            <ul>
+                <li>Access the information we hold about you</li>
                 <li>Correct inaccurate information</li>
-                <li>Request deletion of your data (where applicable)</li>
+                <li>Update your contact details</li>
+                <li>Request deletion of information where legally permissible</li>
                 <li>Withdraw consent for marketing communications</li>
             </ul>
-            <p>To make such requests, contact us using the details below.</p>
+            <p>Requests may be submitted using the contact information provided below.</p>
             <div className={styles.divider}></div>
-            <h2>9. Marketing Communications</h2>
-            <p>We may occasionally send updates about:</p>
-            <ul>
-                <li>New office décor arrivals</li>
-                <li>Discounts or promotions</li>
-                <li>Workspace styling tips</li>
-            </ul>
-            <p>You may opt out at any time by contacting us or using an unsubscribe option where available.</p>
+            <h2>9. Third-Party Links</h2>
+            <p>Our website may contain links to third-party websites.</p>
+            <p>OfficeFlow is not responsible for the privacy practices, content, or policies of external websites. We encourage users to review the privacy policies of any third-party sites they visit.</p>
             <div className={styles.divider}></div>
-            <h2>10. Third-Party Links</h2>
-            <p>Our website may contain links to third-party platforms such as payment providers or social media pages.</p>
-            <p>Office Aura Kenya is not responsible for the privacy practices of external websites.</p>
+            <h2>10. Children's Privacy</h2>
+            <p>OfficeFlow's services are intended for businesses and individuals aged 18 years or older.</p>
+            <p>We do not knowingly collect personal information from children.</p>
             <div className={styles.divider}></div>
-            <h2>11. Children’s Privacy</h2>
-            <p>Office Aura does not knowingly collect personal information from children under the age of 18.</p>
-            <p>If you believe a child has provided data, please contact us for removal.</p>
+            <h2>11. International Data Transfers</h2>
+            <p>Where necessary, information may be processed or stored using trusted service providers located outside Kenya.</p>
+            <p>We take reasonable measures to ensure that appropriate safeguards are in place to protect personal information.</p>
             <div className={styles.divider}></div>
-            <h2>12. Policy Updates</h2>
+            <h2>12. Changes to This Privacy Policy</h2>
             <p>We may update this Privacy Policy from time to time to reflect changes in our services or legal requirements.</p>
-            <p>Updates will be posted on this page with a revised effective date.</p>
+            <p>Any changes will be published on this page together with the updated revision date.</p>
+            <p>Continued use of our website or services after changes are posted constitutes acceptance of the revised policy.</p>
             <div className={styles.divider}></div>
-            <h2>13. Contact Office Aura Kenya</h2>
+            <h2>13. Contact OfficeFlow Kenya</h2>
             <p>If you have questions about this Privacy Policy or how we handle your data, please contact us:</p>
-            <h3>Office Aura Kenya Support</h3>
-             <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeaura.co.ke</span></p>
+            <h3>OfficeFlow Kenya Support</h3>
+             <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeflow.co.ke</span></p>
             <p><FaPhoneAlt style={{marginRight: '10px', color: "green"}}/> Whatsapp: <span>+254 704 610 605</span></p>
-            <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <span>www.officeaura.co.ke/contact</span></p>
+            <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <span>www.officeflow.co.ke/contact</span></p>
         </div>
-    </div>
+    </main>
+      </>
   )
 }
 

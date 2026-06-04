@@ -7,7 +7,7 @@ import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { MdClose } from "react-icons/md";
-import {Categories, Subcategory, shopVibe, shopCategory, shopPopularity, shopPrice} from '@/categories';
+import {Categories, shopPopularity, shopPrice} from '@/categories';
 import type { Product } from '@/payload-types';
 import { Media } from '@/payload-types';
 import Link from 'next/link';

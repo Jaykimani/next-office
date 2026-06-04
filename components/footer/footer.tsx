@@ -7,22 +7,14 @@ const Footer = () => {
             <div className={styles.footerInset}>
             <div className={styles.footerLeft}>
              <h1>Quick Links</h1>
-             <p>&copy; 2025 Office<span>Aura</span>. All rights reserved.</p>
+             <p>&copy; 2026 Office<span>Flow</span>. All rights reserved.</p>
             </div>
             <div className={styles.footerRight}>
             <div className={styles.footerRightInset}>
             <Link href={'/home'} style={{textDecoration: 'none', color: 'white'}}>
             <p>Home</p>
             </Link>
-             <Link href={'/restock-services'} style={{textDecoration: 'none', color: 'white'}}>
-            <p>Restock Services</p>
-            </Link>
-             <Link href={'/employee-kits'} style={{textDecoration: 'none', color: 'white'}}>
-            <p>Employee Kits</p>
-            </Link>
-             <Link href={'/event-packs'} style={{textDecoration: 'none', color: 'white'}}>
-            <p>Event Packs</p>
-            </Link>
+            
             <Link href={'/shop'} style={{textDecoration: 'none', color: 'white'}}>
             <p>Shop</p>
             </Link>
@@ -40,7 +32,7 @@ const Footer = () => {
             <Link href={'/shipping-delivery'} style={{textDecoration: 'none', color: 'white'}}>
              <p>Shipping & Delivery</p>
             </Link>
-             <Link href={'/terms-conditions'} style={{textDecoration: 'none', color: 'white'}}>
+             <Link href={'/terms-and-conditions'} style={{textDecoration: 'none', color: 'white'}}>
              <p>Terms & Conditions</p>
              </Link>
              <Link href={'/return-refund'} style={{textDecoration: 'none', color: 'white'}}>
@@ -52,10 +44,7 @@ const Footer = () => {
              <Link href={'/privacy-policy'} style={{textDecoration: 'none', color: 'white'}}>
              <p>Privacy Policy</p>
              </Link>
-             <Link href={'/cookie-policy'} style={{textDecoration: 'none', color: 'white'}}>
-             <p>Cookie Policy</p>
-             </Link> 
-            </div>
+              </div>
             </div>   
             </div>
             

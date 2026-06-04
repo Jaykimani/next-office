@@ -1,14 +1,15 @@
 #about{
     width: 100%;
     height: auto;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
+    padding-top: 20px;
 }
 .aboutHeading{
     text-align: center;
     font-family: 'Playfair Display', sans-serif;
     margin: 30px 0;
     font-size: 45px;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 .aboutHeading span{
     color: #ffe100;
@@ -24,13 +25,13 @@
     border-bottom: 1px solid rgba(165, 165, 165, 0.568);
 }
 .aboutContent h2{
-    color: white;
-    font-family: 'Playfair Display', sans-serif;
+    color: rgb(0, 0, 0);
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 30px;
 }
 .aboutContent p{
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Roboto', sans-serif;
     margin: 20px auto;
     line-height: 40px;
@@ -46,7 +47,7 @@
     margin: 0 auto;
 }
 .aboutContent ul li{
-    color: white;
+    color: rgb(0, 0, 0);
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     margin: 15px;

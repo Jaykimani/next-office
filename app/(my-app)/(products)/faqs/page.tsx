@@ -5,278 +5,394 @@ import { MdEmail } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { BiWorld } from "react-icons/bi";
 
+
 export const metadata: Metadata = {
-   title: "Office Aura Kenya FAQs | Office Restock, Employee Kits & Event Packs",
+  title: "Frequently Asked Questions | OfficeFlow Kenya",
   description:
-    "Find answers about Office Aura Kenya’s office restock services, employee experience kits, and corporate event fulfillment packs. Learn how we help businesses in Kenya streamline office supplies and workplace operations.",
+    "Find answers about OfficeFlow Kenya's office supplies, office restock services, delivery across Nairobi and Kenya, custom restock plans, business accounts, payments, and workplace supply solutions.",
+
   keywords: [
-    "office aura kenya faq",
-    "office restock services kenya",
-    "office supplies nairobi",
-    "employee kits kenya",
-    "corporate event packs kenya",
-    "workplace solutions kenya",
-    "office restocking kenya"
+    "OfficeFlow FAQs",
+    "office supplies Nairobi FAQ",
+    "office restock services Kenya",
+    "office supplies Kenya",
+    "office delivery Nairobi",
+    "custom restock plans Kenya",
+    "business office supplies Kenya",
+    "workplace supplies Kenya",
+    "office consumables Kenya",
+    "corporate office supplies Nairobi"
   ],
-  openGraph: {
-    title: "Office Aura Kenya FAQs | Workplace Solutions & Office Restock",
-    description:
-      "Get answers about Office Aura Kenya’s office restock services, employee kits, and corporate event fulfillment packs for businesses across Kenya.",
-    url: "https://yourdomain.co.ke/faqs",
-    siteName: "Office Aura Kenya",
-    type: "website"
-  },
-  twitter: {
-    card: "summary",
-    title: "Office Aura Kenya FAQs | Workplace Solutions",
-    description:
-      "Learn about Office Aura Kenya’s office restock services, employee kits, and event fulfillment packs for modern workplaces in Kenya."
-  },
+
   alternates: {
-    canonical: "https://yourdomain.co.ke/faqs"
-  }
+    canonical: "https://www.officeflow.co.ke/faqs",
+  },
+
+  openGraph: {
+    title: "FAQs | OfficeFlow Kenya",
+    description:
+      "Answers to common questions about office supplies, office restock services, delivery, business accounts, and workplace supply solutions in Kenya.",
+    url: "https://www.officeflow.co.ke/faqs",
+    siteName: "OfficeFlow",
+    locale: "en_KE",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "OfficeFlow Kenya FAQs",
+    description:
+      "Get answers about OfficeFlow office supplies, custom restock plans, delivery, and business supply solutions across Kenya.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 
 const page = () => {
 
-  const structuredData = {
+  const schema = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@graph": [
     {
-      "@type": "Question",
-      "name": "What is Office Aura Kenya?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Office Aura Kenya is a modern workplace solutions company that provides office restock services, employee experience kits, event fulfillment packs, and office accessories for businesses across Kenya. We help companies keep their workplaces productive, organized, and fully equipped through reliable supply and fulfillment solutions."
-      }
+      "@type": "FAQPage",
+      "@id": "https://www.officeflow.co.ke/faqs",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is OfficeFlow Kenya?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OfficeFlow Kenya is a workplace supply and office restock company that helps businesses stay fully stocked with office supplies, printing materials, pantry items, cleaning products, and workplace essentials."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you deliver office supplies in Nairobi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OfficeFlow provides office supply delivery throughout Nairobi including CBD, Westlands, Upper Hill, Kilimani, Karen, Gigiri, Industrial Area, and surrounding business districts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer office supply delivery outside Nairobi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OfficeFlow delivers office supplies and workplace essentials across Kenya including Mombasa, Kisumu, Nakuru, Eldoret, Thika, and other towns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What office supplies do you provide?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We supply stationery, printing paper, printer consumables, pantry supplies, cleaning products, IT consumables, and workplace safety essentials."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does OfficeFlow work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Businesses can either order office essentials as needed or create a custom restock plan with scheduled deliveries and ongoing workplace supply management."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a custom restock plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A custom restock plan is a personalized office supply program based on your business requirements and usage patterns, helping prevent supply shortages and simplify procurement."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I create a custom restock plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contact OfficeFlow, share your office requirements and frequently used products, choose a delivery schedule, and our team will create a tailored restock program."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I set up recurring office deliveries?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Businesses can choose weekly, bi-weekly, monthly, or customized delivery schedules through a custom restock plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who can use OfficeFlow services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OfficeFlow serves SMEs, startups, corporate offices, NGOs, schools, clinics, hospitals, law firms, agencies, and coworking spaces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does delivery take?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Delivery within Nairobi typically takes 1–2 business days while deliveries outside Nairobi generally take 2–5 business days depending on location."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment methods do you accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We accept M-Pesa, bank transfers, and invoice-based payments for approved business accounts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What are Business Accounts?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Business Accounts provide benefits such as monthly invoicing, scheduled deliveries, recurring supply management, and dedicated account support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What happens if an item is out of stock?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We may recommend an alternative product, adjust the order with approval, or provide a refund where applicable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if I receive a damaged or incorrect item?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Contact us within 48 hours of delivery with your order details and supporting photos. We will review the issue and arrange a replacement, correction, or refund where appropriate."
+          }
+        },
+       
+        {
+          "@type": "Question",
+          "name": "How do I place an order?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Orders can be placed through our website, inquiry forms, WhatsApp, email, or by requesting a custom quotation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why should businesses choose OfficeFlow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OfficeFlow helps businesses save time, reduce procurement stress, avoid supply shortages, and simplify workplace supply management through reliable delivery and custom restock solutions."
+          }
+        }
+      ]
     },
     {
-      "@type": "Question",
-      "name": "What office restock services do you offer?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We provide recurring office restocking services for businesses, including stationery supplies, printing paper, printer ink, pantry essentials, cleaning products, IT consumables, and other workplace essentials. Our services are designed to help companies avoid shortages and improve operational efficiency."
-      }
+      "@type": "Organization",
+      "@id": "https://www.officeflow.co.ke/#organization",
+      "name": "OfficeFlow",
+      "url": "https://www.officeflow.co.ke",
+      "description": "OfficeFlow Kenya provides office supplies, workplace essentials, and office restock services for businesses across Nairobi and Kenya."
     },
     {
-      "@type": "Question",
-      "name": "Do you offer scheduled office supply deliveries in Kenya?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Office Aura offers scheduled office supply deliveries for businesses in Nairobi and across Kenya. Companies can choose weekly, bi-weekly, or monthly restock plans depending on their workplace needs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are employee experience kits?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Employee experience kits are professionally curated workplace packages designed to improve onboarding, productivity, and employee satisfaction. These kits may include notebooks, pens, branded merchandise, desk accessories, water bottles, laptop accessories, and customized packaging."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can employee kits be customized with company branding?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We offer customized employee kits with company logos, branded packaging, personalized employee names, branded merchandise, and tailored product selections to match your company culture and branding requirements."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What are event fulfillment packs?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Event fulfillment packs are curated kits prepared for conferences, workshops, seminars, trainings, corporate events, and product launches. These packs may include notebooks, pens, lanyards, tote bags, event materials, branded merchandise, and attendee essentials."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you provide branded corporate event kits in Kenya?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We provide branded corporate event kits and fulfillment solutions for businesses, NGOs, startups, schools, agencies, and organizations across Kenya. We can customize event packs to match your brand identity and event objectives."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can I order office supplies in bulk for my company?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. Office Aura specializes in bulk office supply fulfillment for businesses of all sizes, including SMEs, startups, NGOs, coworking spaces, clinics, schools, and corporate offices with reliable bulk supply solutions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you deliver office supplies outside Nairobi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We offer delivery services within Nairobi and nationwide shipping across Kenya for office supplies, employee kits, and event fulfillment packs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I place an order with Office Aura Kenya?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can place an order by contacting us through our website, inquiry forms, WhatsApp, email, or phone. Our team will guide you through product selection, quotations, customization options, and delivery arrangements."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you offer emergency office restocking services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Office Aura provides emergency office restock support to help businesses quickly replenish essential supplies and avoid operational disruptions."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Who can benefit from Office Aura’s services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Our services are ideal for SMEs, startups, NGOs, law firms, agencies, clinics, schools, coworking spaces, and corporate organizations looking for reliable workplace supply and fulfillment solutions in Kenya."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What types of products are included in office restock services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Office restock services include stationery supplies, notebooks, pens, printer paper, toner and ink cartridges, pantry supplies, drinking water, tissues, cleaning products, desk accessories, cables, batteries, and other workplace essentials."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you offer subscription-based office supply services?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Office Aura offers flexible subscription-based office restock services that allow businesses to receive recurring deliveries based on their consumption and operational needs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why should businesses choose Office Aura Kenya?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Office Aura Kenya combines office restocking, employee experience kits, and event fulfillment services under one modern workplace solutions brand. We focus on quality, reliability, customization, and helping businesses maintain productive work environments."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you support corporate onboarding for multiple employees?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We can prepare and fulfill onboarding kits for teams of all sizes, including personalized packaging, branded materials, and coordinated delivery for new employee onboarding programs."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you provide workplace solutions for remote and hybrid teams?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. Office Aura offers remote work kits and hybrid workspace solutions designed to help employees stay productive whether they are working from home, remotely, or in-office."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can Office Aura help improve workplace productivity?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "By ensuring businesses always have the supplies, tools, and employee support materials they need, Office Aura helps reduce operational interruptions, improve organization, enhance employee experience, and create more efficient workplaces."
-      }
+       "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://www.officeflow.co.ke/faqs" }
+  ]
     }
   ]
-}
+};
 
 
-  return (
-    <div className={styles.faqs}>
-      <script
+  return (<>
+ 
+    <script
       id="faq-schema"
       type="application/ld+json"
       dangerouslySetInnerHTML={{
-        __html: JSON.stringify(structuredData),
+        __html: JSON.stringify(schema),
       }}
     />
+    <div className={styles.faqs}>
+      
      <div className={styles.faqsInset}>
-        <h1>Frequently Asked Questions (FAQs) — Office Aura Kenya</h1>
-        
-        <h2>1. What is Office Aura Kenya?</h2>
-        <p>Office Aura Kenya is a modern workplace solutions company that provides <span>office restock services, employee experience kits, event fulfillment packs, and office accessories</span> for businesses across Kenya. We help companies keep their workplaces productive, organized, and fully equipped through reliable supply and fulfillment solutions.</p>
+        <h1>Frequently Asked Questions (FAQs) — OfficeFlow Kenya</h1>
+        <p>Find answers to common questions about OfficeFlow Kenya's office supplies, workplace restock services, delivery options, business accounts, and workplace supply solutions for businesses in Nairobi and across Kenya.</p>
         <div className={styles.divider}></div>
-        <h2>2. What office restock services do you offer?</h2>
-        <p>We provide recurring office restocking services for businesses, including:</p>
-                 <ul>
-                  <li>Stationery supplies</li>
-                  <li>Printing papers & printer essentials</li>
-                  <li>Pantry and Hydration essentials</li>
-                  <li>Hygiene and Cleaning products</li>
-                  <li>IT consumables</li>
-                  <li>Other workspace essentials</li>
-                 </ul>
-                 <p>Our services are designed to help companies avoid shortages and improve operational efficiency.</p>
+        <h2>1. What is OfficeFlow Kenya?</h2>
+        <p>OfficeFlow Kenya is a workplace supply and office restock company that helps businesses stay fully stocked with essential office supplies. We provide office stationery, printing materials, pantry supplies, cleaning products, IT consumables, and other workplace essentials to businesses across Nairobi and Kenya.</p>
         <div className={styles.divider}></div>
-        <h2>3. Do you offer scheduled office supply deliveries in Kenya?</h2>
-        <p>Yes. Office Aura offers scheduled office supply deliveries for businesses in Nairobi and across Kenya. Companies can schedule when to receive their supplies or subscribe to our weekly, bi-weekly, or monthly restock plans depending on their workplace needs.</p>
+        <h2>2. Do you deliver office supplies in Nairobi?</h2>
+        <p>Yes. We provide office supply delivery throughout Nairobi, including areas such as CBD, Westlands, Upper Hill, Kilimani, Karen, Gigiri, Industrial Area, and surrounding business districts.</p>
         <div className={styles.divider}></div>
-        <h2>4. What are employee experience kits?</h2>
-        <p>Employee experience kits are professionally curated workplace packages designed to improve onboarding, productivity, and employee satisfaction. These kits may include notebooks, pens, branded merchandise, desk accessories, water bottles, laptop accessories, and customized packaging.</p>
+        <h2>3. Do you offer office supply delivery outside Nairobi?</h2>
+        <p>Yes. OfficeFlow delivers office supplies and workplace essentials across Kenya, including Mombasa, Kisumu, Nakuru, Eldoret, Thika, and other towns and business hubs.</p>
+        <div className={styles.divider}></div>
+        <h2>4. What office supplies do you provide?</h2>
+        <p>We supply everything a modern workplace needs, including:</p>
+        <ul>
+          <li>Office stationery (pens, notebooks, files)</li>
+          <li>Printing paper and envelopes</li>
+          <li>Printer ink and toner</li>
+          <li>Pantry supplies (tea, coffee, sugar, water)</li>
+          <li>Cleaning and hygiene products</li>
+          <li>IT consumables (cables, adapters, batteries)</li>
+        </ul>
       <div className={styles.divider}></div>
-      <h2>5. Can employee kits be customized with company branding?</h2>
-      <p>Yes. We offer customized employee kits with company logos, branded packaging, personalized employee names, branded merchandise, and tailored product selections to match your company culture and branding requirements.</p>
+      <h2>5. How does OfficeFlow work?</h2>
+      <p>OfficeFlow is designed to make it easy for businesses to get the office supplies they need.</p>
+      <p>You can either:</p>
+      <ul>
+        <li>Order office essentials as needed through our website, similar to a traditional office supplies store.</li>
+        <li>Create a custom restock plan for scheduled deliveries and ongoing workplace supply management.</li>
+      </ul>
+      <p>Whether you need a one-time purchase or a long-term restock solution, OfficeFlow helps businesses stay supplied with stationery, printing materials, pantry items, cleaning products, and IT consumables.</p>
         <div className={styles.divider}></div>
-        <h2>6. What are event fulfillment packs?</h2>
-        <p>Event fulfillment packs are curated kits prepared for conferences, workshops, seminars, trainings, corporate events, and product launches. These packs may include notebooks, pens, lanyards, tote bags, event materials, branded merchandise, and attendee essentials.</p>
+        <h2>6. What is a custom restock plan?</h2>
+        <p>A custom restock plan is a personalized office supply program designed around your business's specific needs and usage patterns.</p>
+        <p>Instead of placing orders every time supplies run low, we help you create a recurring supply schedule for the products your workplace uses most often.</p>
+        <p>A custom restock plan may include:</p>
+        <ul>
+          <li>Stationery and office supplies</li>
+          <li>Printing paper and printer consumables</li>
+          <li>Pantry and beverage supplies</li>
+          <li>Cleaning and hygiene products</li>
+          <li>IT consumables and accessories</li>
+        </ul>
+        <p>The goal is to reduce procurement workload and ensure your office never runs out of essential supplies.</p>
         <div className={styles.divider}></div>
-        <h2>7. Do you provide branded corporate event kits in Kenya?</h2>
-        <p>Yes. We provide branded corporate event kits and fulfillment solutions for businesses, NGOs, startups, schools, agencies, and organizations across Kenya. We can customize event packs to match your brand identity and event objectives.</p>
+        <h2>7. How do I create a custom restock plan?</h2>
+        <p>Creating a custom restock plan is simple:</p>
+        <ol>
+          <li>Contact the OfficeFlow team.</li>
+          <li>Tell us about your office size and supply requirements.</li>
+          <li>Share the products your workplace uses regularly.</li>
+          <li>Choose a delivery schedule that works for your business.</li>
+          <li>We create a tailored restock plan and delivery program.</li>
+        </ol>
+        <p>Our team can recommend suitable products, quantities, and delivery frequencies based on your business needs.</p>
         <div className={styles.divider}></div>
-        <h2>8. Can I order office supplies in bulk for my company?</h2>
-        <p>Absolutely. Office Aura specializes in bulk office supply fulfillment for businesses of all sizes. We support SMEs, startups, NGOs, coworking spaces, clinics, schools, and corporate offices with reliable bulk supply solutions.</p>
+        <h2>8. Can I set up recurring office deliveries?</h2>
+        <p>Yes. Businesses using a custom restock plan can choose:</p>
+        <ul>
+          <li>Weekly deliveries</li>
+          <li>Bi-weekly deliveries</li>
+          <li>Monthly deliveries</li>
+          <li>Customized delivery schedules</li>
+        </ul>
+        <p>Recurring deliveries help ensure your workplace remains fully stocked without the need for constant reordering.</p>
         <div className={styles.divider}></div> 
-        <h2>9. Do you deliver office supplies outside Nairobi?</h2>
-        <p>Yes. We offer delivery services within Nairobi and nationwide shipping across Kenya for office supplies, employee kits, and event fulfillment packs.</p>
+        <h2>9. Who can use OfficeFlow services?</h2>
+        <p>Our services are designed for:</p>
+        <ul>
+          <li>SMEs</li>
+          <li>Startups</li>
+          <li>Corporate offices</li>
+          <li>NGOs</li>
+          <li>Schools and educational institutions</li>
+          <li>Clinics and hospitals</li>
+          <li>Law firms</li>
+          <li>Agencies and coworking spaces</li>
+        </ul>
+        <p>Whether you're a small team or a large organization, OfficeFlow can support your workplace supply needs.</p>
         <div className={styles.divider}></div>
-        <h2>10. How do I place an order with Office Aura Kenya?</h2>
-        <p>You can place an order by contacting us through our website, inquiry forms, WhatsApp, email, or phone. Our team will guide you through product selection, quotations, customization options, and delivery arrangements.</p>
+        <h2>10. How long does delivery take?</h2>
+        <p>Delivery times depend on your location:</p>
+        <h3>Nairobi</h3>
+        <ul>
+          <li>Same-day or next-day delivery may be available for eligible orders.</li>
+          <li>Standard delivery typically takes 1–2 business days.</li>
+        </ul>
+        <h3>Outside Nairobi</h3>
+        <ul>
+          <li>Most deliveries take 2–5 business days.</li>
+        </ul>
+        <h3>Remote Areas</h3>
+        <ul>
+          <li>Delivery may take 4–7 business days depending on location.</li>
+        </ul>
         <div className={styles.divider}></div>
-        <h2>11. Do you offer emergency office restocking services?</h2>
-        <p>Yes. We understand that businesses sometimes run out of essential supplies unexpectedly. Office Aura provides emergency office restock support to help minimize disruptions and keep your operations running smoothly.</p>
+        <h2>11. What payment methods do you accept?</h2>
+        <p>We currently support:</p>
+        <ul>
+          <li>Cash on delivery</li>
+          <li>M-Pesa</li>
+          <li>Bank transfers</li>
+          <li>Invoice-based payments for approved business accounts</li>
+        </ul>
+        <p>Additional payment options may be introduced in the future.</p>
         <div className={styles.divider}></div>
-        <h2>12. Who can benefit from Office Aura’s services?</h2>
-        <p>Our services are ideal for SMEs, startups, NGOs, law firms, agencies, clinics, schools, coworking spaces, and corporate organizations looking for reliable workplace supply and fulfillment solutions in Kenya.</p>
+        <h2>12. What are Business Accounts?</h2>
+        <p>Business Accounts are designed for organizations that require ongoing workplace supplies.</p>
+        <p>Benefits may include:</p>
+        <ul>
+          <li>Monthly invoicing</li>
+          <li>Scheduled deliveries</li>
+          <li>Simplified procurement</li>
+          <li>Recurring supply management</li>
+          <li>Dedicated account support</li>
+        </ul>
+        <p>Business Accounts help companies manage office supplies more efficiently.</p>
         <div className={styles.divider}></div>
-        <h2>13. What types of products are included in office restock services?</h2>
-        <p>Our office restock services may include stationery supplies, notebooks, pens, printer paper, toner and ink cartridges, pantry supplies, drinking water, tissues, cleaning products, desk accessories, cables, batteries, and other workplace essentials..</p>
+        <h2>13. What happens if an item is out of stock?</h2>
+        <p>If a product becomes unavailable, we may:</p>
+        <ul>
+          <li>Recommend a suitable alternative</li>
+          <li>Adjust the order with your approval</li>
+          <li>Provide a refund where applicable</li>
+        </ul>
+        <p>We always aim to find the best solution with minimal disruption.</p>
         <div className={styles.divider}></div>
-        <h2>14. Do you offer subscription-based office supply services?</h2>
-        <p>Yes. We are building flexible office restock subscription plans that allow businesses to receive recurring deliveries based on their workplace consumption and operational needs.</p>
+        <h2>14. What if I receive a damaged or incorrect item?</h2>
+        <p>If you receive a damaged, defective, or incorrect item:</p>
+        <ul>
+          <li>Contact us within 48 hours of delivery.</li>
+          <li>Provide your order details.</li>
+          <li>Share photographs of the item and packaging if applicable.</li>
+        </ul>
+        <p>Our team will review the issue and arrange a replacement, correction, or refund where appropriate.</p>
         <div className={styles.divider}></div>
-        <h2>15. Why should businesses choose Office Aura Kenya?</h2>
-        <p>Office Aura Kenya combines office restocking, employee experience kits, and event fulfillment services under one modern workplace solutions brand. We focus on quality products, dependable delivery, customized solutions, and helping businesses create productive and professional work environments.</p>
+        <h2>15. How do I place an order?</h2>
+        <p>You can place an order by:</p>
+        <ul>
+          <li>Ordering through our website</li>
+          <li>Submitting an inquiry form</li>
+          <li>Contacting us via WhatsApp</li>
+          <li>Emailing our team</li>
+          <li>Requesting a custom quotation</li>
+        </ul>
+        <p>For businesses with ongoing requirements, we recommend discussing a custom restock plan.</p>
         <div className={styles.divider}></div>
-         <h2>16. Can you support corporate onboarding for multiple employees?</h2>
-         <p>Yes. We can prepare and fulfill onboarding kits for teams of all sizes, including personalized packaging, branded materials, and coordinated delivery for new employee onboarding programs.</p>
-        <div className={styles.divider}></div>
-        <h2>17. Do you provide workplace solutions for remote and hybrid teams?</h2>
-        <p>Yes. Office Aura offers remote work kits and hybrid workspace solutions designed to help employees stay productive whether they are working from home, remotely, or in-office.</p>
-        <div className={styles.divider}></div>
-        <h2>18. How can Office Aura help improve workplace productivity?</h2>
-        <p>By ensuring businesses always have the supplies, tools, and employee support materials they need, Office Aura helps reduce operational interruptions, improve organization, enhance employee experience, and create more efficient workplaces.</p>
+         <h2>16. Why should businesses choose OfficeFlow?</h2>
+         <p>OfficeFlow helps businesses save time, reduce procurement stress, and avoid supply shortages through reliable workplace supply solutions.</p>
+         <p>Businesses choose OfficeFlow because we offer:</p>
+         <ul>
+          <li>Office supplies delivery across Nairobi and Kenya</li>
+          <li>Custom restock plans</li>
+          <li>Recurring supply management</li>
+          <li>Workplace convenience</li>
+          <li>Bulk office supply fulfillment</li>
+          <li>Business-friendly procurement solutions</li>
+         </ul>
+         <p>Whether you need a one-time order or a complete workplace restock system, OfficeFlow provides a reliable solution for keeping your business fully supplied.</p>
         <div className={styles.divider}></div>
         <h2>Still Have Questions?</h2>
         <p>We’re happy to help.</p>
-        <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeaura.co.ke</span></p>
+        <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeflow.co.ke</span></p>
          <p><FaPhoneAlt style={{marginRight: '10px', color: "green"}}/> Whatsapp: <span>+254 704 610 605</span></p>
-         <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <Link href={'/contact'}><span>www.officeaura.co.ke/contact</span></Link></p>
+         <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <Link href={'/contact'}><span>www.officeflow.co.ke/contact</span></Link></p>
          <p>Our team responds A.S.A.P</p>
         <p>Thank you for choosing <span>Office Aura Kenya.</span></p>
      </div>
 
     </div>
+     </>
   )
 }
 
