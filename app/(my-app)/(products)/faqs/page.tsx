@@ -193,13 +193,6 @@ const page = () => {
       ]
     },
     {
-      "@type": "Organization",
-      "@id": "https://www.officeflow.co.ke/#organization",
-      "name": "OfficeFlow",
-      "url": "https://www.officeflow.co.ke",
-      "description": "OfficeFlow Kenya provides office supplies, workplace essentials, and office restock services for businesses across Nairobi and Kenya."
-    },
-    {
        "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },

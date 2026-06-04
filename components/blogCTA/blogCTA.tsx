@@ -8,7 +8,7 @@ const BlogCTA = () => {
     <div className={styles.shopCTAInfo}>
      <h1>Need Office Supplies for Your Business?</h1>
      <h4>OfficeFlow provides office supplies and office restock services for businesses across Nairobi and Kenya.</h4>
-          <Link href={'/shop'} style={{textDecoration : 'none', color: 'black'}}>
+          <Link href={'/'} style={{textDecoration : 'none', color: 'black'}}>
           <div className={styles.shoppingBtn}>
           <p>ORDER NOW</p>
           </div>

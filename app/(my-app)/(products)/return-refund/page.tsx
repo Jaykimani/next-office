@@ -63,14 +63,6 @@ const page = () => {
       "url": "https://www.officeflow.co.ke/returns-refunds",
       "description":
         "OfficeFlow Kenya's Returns & Refunds Policy covering replacements, refunds, damaged items, and delivery issues."
-    },
-    {
-      "@type": "Organization",
-      "@id": "https://www.officeflow.co.ke/#organization",
-      "name": "OfficeFlow",
-      "url": "https://www.officeflow.co.ke",
-      "description":
-        "OfficeFlow Kenya provides office restock services and workplace supply solutions for businesses across Nairobi and Kenya."
     }
   ]
 };

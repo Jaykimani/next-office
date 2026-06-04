@@ -73,26 +73,7 @@ const schema = {
         "query-input": "required name=search_term_string"
       }
     },
-    {
-      "@type": "Service",
-      "name": "Office Restock Services",
-      "provider": {
-        "@type": "Organization",
-        "name": "OfficeFlow"
-      },
-      "serviceType": "Workplace Supply & Office Restocking",
-      "areaServed": [
-        {
-          "@type": "Country",
-          "name": "Kenya"
-        },
-        {
-          "@type": "City",
-          "name": "Nairobi"
-        }
-      ],
-      "description": "OfficeFlow provides scheduled office restock services in Kenya including stationery, printing supplies, pantry items, cleaning products, and IT consumables for businesses."
-    },
+    
     {
       "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": "https://www.officeflow.co.ke/#organization",

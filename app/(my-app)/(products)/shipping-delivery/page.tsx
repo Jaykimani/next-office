@@ -79,17 +79,6 @@ const page = () => {
       "description": "OfficeFlow provides reliable office restock delivery services in Nairobi and across Kenya, supplying stationery, pantry items, cleaning products, printing materials, and IT consumables to businesses."
     },
     {
-      "@type": "LocalBusiness",
-      "name": "OfficeFlow Kenya",
-      "url": "https://your-domain.com",
-      "areaServed": "Nairobi, Kenya",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Nairobi",
-        "addressCountry": "KE"
-      }
-    },
-    {
       "@type": "WebPage",
       "name": "Shipping & Delivery - OfficeFlow",
       "url": "https://your-domain.com/shipping-delivery",

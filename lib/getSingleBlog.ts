@@ -25,7 +25,7 @@ const payload = await getPayload({config});
       title: true,
       featuredImage: true,
       category: true,
-      createdAt: true
+      createdAt: true,
       },
       sort: "-createdAt",
       limit: 5,

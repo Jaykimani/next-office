@@ -80,6 +80,7 @@ const Blog = async({params} : Props) => {
   const {name, category} = await params;
 
   const {mainBlog, categoryBlogs} = await getSingleBlog(name, category);
+  
   const newCategory = categoryBlogs.filter(blog => blog.id !== mainBlog?.id);
   const date = new Date(`${mainBlog?.createdAt}`);
   const formatted = date.toLocaleString("en-GB", {
@@ -90,33 +91,40 @@ const Blog = async({params} : Props) => {
            minute: "2-digit"
          });
   const blogImage = getMediaUrl(mainBlog?.featuredImage);
-       
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: mainBlog?.title,
-    description: mainBlog?.excerpt,
-    image: blogImage,
-    author: {
-      '@type': 'Organization',
-      name: mainBlog?.author || 'OfficeFlow Kenya',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'OfficeFlow',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.officeflow.co.ke/logo.png',
-      },
-    },
-    datePublished: mainBlog?.publishedDate,
-    dateModified: mainBlog?.updatedAt,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
-    },
-  };
 
+  const blogPostingSchema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+
+  "@id": `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
+
+  headline: mainBlog?.title,
+
+  description: mainBlog?.excerpt,
+
+  image: blogImage,
+
+  datePublished: mainBlog?.publishedDate,
+
+  dateModified: mainBlog?.updatedAt,
+
+  author: {
+    "@type": "Organization",
+    name: "OfficeFlow",
+  },
+
+  publisher: {
+    "@id": "https://www.officeflow.co.ke/#organization",
+  },
+
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
+  },
+
+  keywords: mainBlog?.seo?.keywords,
+};
+       
   const breadcrumbSchema = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
@@ -130,12 +138,6 @@ const Blog = async({params} : Props) => {
     {
       '@type': 'ListItem',
       position: 2,
-      name: mainBlog?.category,
-      item: `https://www.officeflow.co.ke/blogs/${mainBlog?.category}`,
-    },
-    {
-      '@type': 'ListItem',
-      position: 3,
       name: mainBlog?.title,
       item: `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
     },
@@ -146,7 +148,7 @@ const Blog = async({params} : Props) => {
    <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(articleSchema),
+          __html: JSON.stringify(blogPostingSchema),
         }}
       />
      <script

@@ -1,7 +1,7 @@
 .servicesMain{
     width: 100%;
     height: auto;
-    padding: 40px;
+    padding: 40px 40px 0;
     cursor: pointer;
 }
 .servicesMain h1{

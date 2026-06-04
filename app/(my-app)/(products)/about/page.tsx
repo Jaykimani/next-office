@@ -82,7 +82,7 @@ function About() {
         <div className={styles.aboutContent}>
          <div className={styles.aboutContentSect}>
          <h2>A smarter way to keep Kenyan workplaces fully stocked and running efficiently.</h2>
-         <p>OfficeFlow Kenya is a workplace restock service provider offering office supplies and structured supply management solutions for businesses in Nairobi and across Kenya. We help organizations maintain uninterrupted operations by providing stationery, printing supplies, pantry items, cleaning products, and IT consumables through scheduled and reliable delivery systems.</p>
+         <p>OfficeFlow Kenya is a workplace supplies and restock service provider offering office supplies and structured supply management solutions for businesses in Nairobi and across Kenya. We help organizations maintain uninterrupted operations by providing stationery, printing supplies, pantry items, cleaning products, and IT consumables through scheduled and reliable delivery systems.</p>
         </div>  
         <div className={styles.aboutContentSect}>
         <h2>Who we are?</h2>

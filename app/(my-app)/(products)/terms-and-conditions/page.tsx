@@ -64,14 +64,6 @@ const page = () => {
       description:
         "Terms & Conditions governing the use of OfficeFlow Kenya's website and office restock services."
     },
-    {
-      "@type": "Organization",
-      "@id": "https://www.officeflow.co.ke/#organization",
-      name: "OfficeFlow",
-      url: "https://www.officeflow.co.ke",
-      description:
-        "OfficeFlow Kenya provides office restock services and workplace supply solutions for businesses across Nairobi and Kenya."
-    }
   ]
 };
 
