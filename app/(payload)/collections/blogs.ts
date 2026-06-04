@@ -55,12 +55,10 @@ export const Blogs: CollectionConfig = {
       type: 'select',
       required: true,
       options: [
-         { label: 'Office Setup Ideas', value: 'office-setup' },
-         { label: 'Office Styling & Decor Tips', value: 'office-styling' },
-        { label: 'Productivity Tips', value: 'productivity' },
-        { label: 'Buying Guides', value: 'buying-guides' },
-        { label: 'Startup & Corporate Office Solutions', value: 'startup-corporate-solutions' },
-        { label: 'Workspace Tech & Tools', value: 'workspace-tech-tools' },
+         { label: 'Office Supplies', value: 'office-supplies' },
+         { label: 'Office Restock & Procurement', value: 'office-restock-procurement' },
+        { label: 'Productivity Tips', value: 'productivity-tips' },
+        { label: 'Business Guides', value: 'business-guides' },
       ],
     },
 
@@ -68,7 +66,7 @@ export const Blogs: CollectionConfig = {
     {
       name: 'author',
       type: 'text',
-      defaultValue: 'Kimani - Office Aura',
+      defaultValue: 'Kimani - OfficeFlow Kenya',
     },
 
     // 📅 Published Date

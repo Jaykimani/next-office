@@ -1,5 +1,5 @@
 import styles from './blog.module.css'
-import Navbar from '@/components/navbar/navbar';
+import ServiceNav from '@/components/servicenav/servnav';
 import Image from 'next/image';
 import BlogCTA from '@/components/blogCTA/blogCTA';
 import Footer from '@/components/footer/footer';
@@ -29,14 +29,14 @@ export async function generateMetadata({params} : Props): Promise<Metadata> {
 
   if (!mainBlog) {
     return {
-      title: 'Blog | Office Aura',
+      title: 'Blog | OfficeFlow Kenya',
     };
   }
 
   return {
     title:
-      mainBlog.seo?.metaTitle ||
-      `${mainBlog.title} | Office Aura`,
+      `${mainBlog.seo?.metaTitle} | OfficeFlow Kenya` ||
+      `${mainBlog.title} | OfficeFlow Kenya`,
 
     description:
       mainBlog.seo?.metaDescription || mainBlog.excerpt,
@@ -46,8 +46,8 @@ export async function generateMetadata({params} : Props): Promise<Metadata> {
     openGraph: {
       title: mainBlog.title,
       description: mainBlog.excerpt,
-      url: `https://www.officeaura.co.ke/blogs/${mainBlog.category}/${mainBlog.slug}`,
-      siteName: 'Office Aura',
+      url: `https://www.officeflow.co.ke/blogs/${mainBlog.category}/${mainBlog.slug}`,
+      siteName: 'OfficeFlow',
       images: [
         {
           url: blogImage || 'logo.png',
@@ -68,7 +68,7 @@ export async function generateMetadata({params} : Props): Promise<Metadata> {
     },
 
     alternates: {
-      canonical: `https://www.officeaura.co.ke/blogs/${mainBlog.category}/${mainBlog.slug}`,
+      canonical: `https://www.officeflow.co.ke/blogs/${mainBlog.category}/${mainBlog.slug}`,
     },
   };
 }
@@ -99,21 +99,21 @@ const Blog = async({params} : Props) => {
     image: blogImage,
     author: {
       '@type': 'Organization',
-      name: mainBlog?.author || 'Office Aura',
+      name: mainBlog?.author || 'OfficeFlow Kenya',
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Office Aura',
+      name: 'OfficeFlow',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://www.officeaura.co.ke/logo.png',
+        url: 'https://www.officeflow.co.ke/logo.png',
       },
     },
     datePublished: mainBlog?.publishedDate,
     dateModified: mainBlog?.updatedAt,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://www.officeaura.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
+      '@id': `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
     },
   };
 
@@ -125,19 +125,19 @@ const Blog = async({params} : Props) => {
       '@type': 'ListItem',
       position: 1,
       name: 'Blog',
-      item: 'https://www.officeaura.co.ke/blogs',
+      item: 'https://www.officeflow.co.ke/blogs',
     },
     {
       '@type': 'ListItem',
       position: 2,
       name: mainBlog?.category,
-      item: `https://www.officeaura.co.ke/blogs/${mainBlog?.category}`,
+      item: `https://www.officeflow.co.ke/blogs/${mainBlog?.category}`,
     },
     {
       '@type': 'ListItem',
       position: 3,
       name: mainBlog?.title,
-      item: `https://www.officeaura.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
+      item: `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
     },
   ],
 };
@@ -156,7 +156,7 @@ const Blog = async({params} : Props) => {
         }}
       /> 
   <div className={styles.blogNav}>
-   <Navbar />
+   <ServiceNav />
   </div>
   <div className={styles.blogInset}>
     <div className={styles.blogInsetContent}>

@@ -1,56 +1,56 @@
 import styles from './blogs.module.css';
-import Navbar from '@/components/navbar/navbar';
+import ServiceNav from '@/components/servicenav/servnav';
 import Image from 'next/image';
 import BlogCTA from '@/components/blogCTA/blogCTA';
 import Footer from '@/components/footer/footer';
 import { getBlogs } from '@/lib/getBlogs';
 import Link from 'next/link';
-import { Metadata } from 'next';
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: 'Office Aura Insights | Office Décor, Workspace Ideas & Productivity Tips in Kenya',
-  
+  title:
+    "Office Supplies, Workplace & Restock Guides | OfficeFlow Blog",
   description:
-    'Explore office décor ideas, desk setup inspiration, productivity tips and buying guides in Kenya. Upgrade your workspace with Office Aura Insights.',
+    "Explore OfficeFlow's blog for expert insights on office supplies, office restock services, workplace productivity, procurement, pantry management, and business operations in Kenya.",
 
   keywords: [
-    'office décor Kenya',
-    'desk setup ideas Kenya',
-    'workspace inspiration Nairobi',
-    'office blog Kenya',
-    'productivity tips Kenya',
-    'home office setup Kenya',
-    'office accessories Kenya',
+    "office supplies Kenya",
+    "office supplies blog",
+    "office restock services",
+    "office procurement Kenya",
+    "workplace productivity",
+    "office management tips",
+    "business office supplies Kenya",
+    "office pantry supplies",
+    "workplace supplies Kenya",
+    "office guides Kenya",
   ],
 
+  alternates: {
+    canonical: "https://www.officeflow.co.ke/blogs",
+  },
+
   openGraph: {
-    title: 'Office Aura Insights | Workspace Ideas & Office Décor Kenya',
+    title:
+      "Office Supplies, Workplace & Restock Guides | OfficeFlow Blog",
     description:
-      'Discover desk setup ideas, office décor inspiration and productivity tips for modern workspaces in Kenya.',
-    url: 'https://www.officeaura.co.ke/blog',
-    siteName: 'Office Aura',
-    images: [
-      {
-        url: 'https://www.officeaura.co.ke/logo.png', // replace with your OG image
-        width: 1200,
-        height: 630,
-        alt: 'Office Aura Blog - Workspace Inspiration',
-      },
-    ],
-    locale: 'en_KE',
-    type: 'website',
+      "Articles, guides, and insights on office supplies, workplace productivity, office procurement, and restock services in Kenya.",
+    url: "https://www.officeflow.co.ke/blogs",
+    siteName: "OfficeFlow",
+    locale: "en_KE",
+    type: "website",
   },
 
   twitter: {
-    card: 'summary_large_image',
-    title: 'Office Aura Insights',
+    card: "summary_large_image",
+    title: "OfficeFlow Blog",
     description:
-      'Workspace inspiration, office décor ideas and productivity tips in Kenya.',
-    images: ['https://www.officeaura.co.ke/og-blog.jpg'],
+      "Office supplies, workplace productivity, procurement, and office restock insights for businesses in Kenya.",
   },
 
-  alternates: {
-    canonical: 'https://www.officeaura.co.ke/blog',
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -74,27 +74,60 @@ const page = async() => {
   minute: "2-digit"
 });
   
-  const structuredData = {
-    '@context': 'https://schema.org',
-    '@type': 'Blog',
-    name: 'Office Aura Insights',
-    description:
-      'Workspace inspiration, office décor ideas and productivity tips in Kenya.',
-    url: 'https://www.officeaura.co.ke/blog',
-    publisher: {
-      '@type': 'Organization',
-      name: 'Office Aura',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://www.officeaura.co.ke/logo.png', // replace with your logo
+  const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.officeflow.co.ke/blogs",
+      url: "https://www.officeflow.co.ke/blogs",
+      name: "OfficeFlow Blog",
+      description:
+        "Expert articles and guides on office supplies, office restock services, workplace productivity, procurement, and business operations in Kenya.",
+      isPartOf: {
+        "@id": "https://www.officeflow.co.ke/#website",
+      },
+      about: {
+        "@id": "https://www.officeflow.co.ke/#organization",
       },
     },
-  };
+
+    {
+      "@type": "WebPage",
+      "@id": "https://www.officeflow.co.ke/blogs#webpage",
+      url: "https://www.officeflow.co.ke/blogs",
+      name: "OfficeFlow Blog",
+      description:
+        "Office supplies, workplace productivity, procurement, and office restock articles for businesses in Kenya.",
+      about: {
+        "@id": "https://www.officeflow.co.ke/#organization",
+      },
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.officeflow.co.ke",
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Blog",
+          item: "https://www.officeflow.co.ke/blogs",
+        },
+      ],
+    },
+  ],
+};
   
   const posts = allBlogs.map((post: any, index: number) => ({
   '@type': 'ListItem',
   position: index + 1,
-  url: `https://www.officeaura.co.ke/blogS/${post.category}/${post.slug}`,
+  url: `https://www.officeflow.co.ke/blogs/${post.category}/${post.slug}`,
   name: post.title,
 }));
 
@@ -107,17 +140,17 @@ const itemListSchema = {
   return (<>
    <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
     <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
 />  
   <div className={styles.blogsMain}>
-    <Navbar />
+    <ServiceNav />
     <div className={styles.mainContent}>
-      <h1>Office<span>Aura</span> Insights!</h1>
-        <p>Workspace inspiration, productivity tips, and office décor ideas in Kenya.</p>
+      <h1>Office<span>Flow</span> Insights!</h1>
+        <p>Insights, guides, and practical tips on office supplies, workplace productivity, procurement, and office restock services in Kenya.</p>
     </div>
   </div>
   <div className={styles.blogsInset}>

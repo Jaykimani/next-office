@@ -104,8 +104,14 @@ const schema = {
   description:
     "OfficeFlow Kenya provides office restock services and workplace supply solutions for businesses in Nairobi and across Kenya.",
 
-  telephone: "+254704610605",
-  email: "support@officeflow.co.ke",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "Customer Service",
+    telephone: "+254704610605",
+    email: "support@officeflow.co.ke",
+    areaServed: "KE",
+    availableLanguage: ["English"]
+  },
 
   priceRange: "$$",
 

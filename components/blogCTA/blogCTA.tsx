@@ -6,11 +6,11 @@ const BlogCTA = () => {
     <>
     <div className={styles.shopCTA}>
     <div className={styles.shopCTAInfo}>
-     <h1>Ready to elevate your workspace<span>?</span></h1>
-     <h4>Shop at OFFICE AURA KENYA for stylish office décor and accessories.</h4>
+     <h1>Need Office Supplies for Your Business?</h1>
+     <h4>OfficeFlow provides office supplies and office restock services for businesses across Nairobi and Kenya.</h4>
           <Link href={'/shop'} style={{textDecoration : 'none', color: 'black'}}>
           <div className={styles.shoppingBtn}>
-          <p>SHOP NOW</p>
+          <p>ORDER NOW</p>
           </div>
           </Link>
     </div>

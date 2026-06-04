@@ -10,6 +10,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useCartStore } from '@/app/store';
 import SearchInput from '../searchInput/search';
+import { FaUserTie } from "react-icons/fa";
+
 
 
 const ShopNav = () => {
@@ -23,6 +25,7 @@ const ShopNav = () => {
     const count = useCartStore((state)=> state.count);
     const items = useCartStore((state)=> state.items);
     const subtotal = useCartStore((state)=> state.subtotal);
+    const [login, setLogin] = useState(false);
 
     useEffect(()=>{
       if(phoneOpt){
@@ -151,6 +154,28 @@ const ShopNav = () => {
              <Image className={styles.svgLogo1} src="/Component 2.svg" alt="" width={100} height={100} />
              </Link>
              <SearchInput />
+             <div className={styles.logShop}>
+             <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)}>
+              <div className={styles.loginTop}>
+              <Link href={'/my-account/sign-in'} style={{display: 'flex', color: 'white'}}>
+              <FaUserTie style={{color : '#ffe100', width: '35px', height: '35px'}}/>
+              <div>
+                <p>WELCOME</p>
+                <p>Sign in/Register</p>
+              </div>
+              </Link>
+              </div>
+              <div className={styles.loginDropdown} style={{display: login ? "block" : "none"}}  onMouseLeave={() => setLogin(false)}>
+              <Link href={'/my-account/sign-in'} style={{textDecoration: 'none', color: 'black'}}>
+              <div>Sign In</div>
+              </Link>
+              
+              <Link href={'/my-account/register'} style={{textDecoration: 'none', color: 'black'}}>
+              <div>Register</div>
+              </Link>
+              
+              </div>
+              </div>
                <Link href={'/cart'} style={{textDecoration: "none"}}>
                <div className={styles.shopIconDiv}>
                <div className={styles.shopInset}>
@@ -160,7 +185,7 @@ const ShopNav = () => {
               <p>KSh {subtotal}.00</p>
              </div>
                </Link>
-             
+               </div>
             </div>
             <div className={styles.shopLinks}>
              <div className={styles.shopLink} onClick={handleDesk} onMouseEnter={handleDeskEnter} onMouseLeave={handleDeskLeave}>

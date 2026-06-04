@@ -570,13 +570,7 @@ export interface Blog {
   title: string;
   slug?: string | null;
   featuredImage: number | Media;
-  category:
-    | 'office-setup'
-    | 'office-styling'
-    | 'productivity'
-    | 'buying-guides'
-    | 'startup-corporate-solutions'
-    | 'workspace-tech-tools';
+  category: 'office-supplies' | 'office-restock-procurement' | 'productivity-tips' | 'business-guides';
   author?: string | null;
   publishedDate: string;
   excerpt: string;

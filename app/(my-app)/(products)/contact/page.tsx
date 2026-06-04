@@ -8,80 +8,87 @@ import Contact from '@/components/contact/contact';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Office Aura Kenya | Office Restock & Workplace Solutions",
+  title: "Contact OfficeFlow Kenya | Office Supplies & Restock Services",
+  
   description:
-    "Get in touch with Office Aura Kenya for office restock services, employee experience kits, and corporate event fulfillment packs across Kenya.",
+    "Contact OfficeFlow Kenya for office supplies, workplace essentials, and office restock services. Reach our team for quotes, business accounts, delivery inquiries, and customer support.",
+
   keywords: [
-    "office aura contact",
-    "office supplies kenya contact",
-    "office restock kenya",
-    "workplace solutions kenya contact",
-    "employee kits kenya",
-    "corporate event packs kenya"
+    "Contact OfficeFlow",
+    "OfficeFlow Kenya contact",
+    "office supplies Kenya contact",
+    "office restock services Kenya",
+    "business office supplies Kenya",
+    "office supplies Nairobi contact",
+    "workplace supplies Kenya",
+    "request office supplies quote",
+    "business accounts Kenya",
   ],
-  openGraph: {
-    title: "Contact Office Aura Kenya",
-    description:
-      "Reach Office Aura Kenya for workplace solutions including office restocking, employee kits, and event fulfillment services.",
-    url: "https://yourdomain.co.ke/contact",
-    siteName: "Office Aura Kenya",
-    type: "website"
-  },
-  twitter: {
-    card: "summary",
-    title: "Contact Office Aura Kenya",
-    description:
-      "Get in touch for office restock services, employee kits, and corporate event packs in Kenya."
-  },
+
   alternates: {
-    canonical: "https://yourdomain.co.ke/contact"
-  }
+    canonical: "https://www.officeflow.co.ke/contact",
+  },
+
+  openGraph: {
+    title: "Contact OfficeFlow Kenya",
+    description:
+      "Get in touch with OfficeFlow for office supplies, workplace essentials, office restock services, and business account inquiries.",
+    url: "https://www.officeflow.co.ke/contact",
+    siteName: "OfficeFlow",
+    locale: "en_KE",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact OfficeFlow Kenya",
+    description:
+      "Contact OfficeFlow for office supplies, office restock services, quotes, and business account support.",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 
 const page = () => {
 
-   const schema = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "@id": "https://www.officeaura.co.ke/#localbusiness",
-        name: "Office Aura Kenya",
-        url: "https://www.officeaura.co.ke",
-        telephone: "+254704610605",
-        image: "https://www.officeaura.co.ke/logo.png",
-        description:
-          "Office Aura Kenya is a workplace solutions company offering office restock services, employee kits, and event fulfillment packs across Kenya.",
-        address: {
-          "@type": "PostalAddress",
-          addressLocality: "Nairobi",
-          addressRegion: "Nairobi County",
-          addressCountry: "KE"
+  const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ContactPage",
+      "@id": "https://www.officeflow.co.ke/contact",
+      url: "https://www.officeflow.co.ke/contact",
+      name: "Contact OfficeFlow Kenya",
+      description:
+        "Contact OfficeFlow for office supplies, office restock services, workplace essentials, business account inquiries, and customer support.",
+      about: {
+        "@id": "https://www.officeflow.co.ke/#organization",
+      },
+    },
+
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: "https://www.officeflow.co.ke",
         },
-        areaServed: {
-          "@type": "Country",
-          name: "Kenya"
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Contact",
+          item: "https://www.officeflow.co.ke/contact",
         },
-        contactPoint: [
-          {
-            "@type": "ContactPoint",
-            telephone: "+254704610605",
-            contactType: "customer support",
-            areaServed: "KE",
-            availableLanguage: ["English", "Swahili"]
-          },
-          {
-            "@type": "ContactPoint",
-            telephone: "+254704610605",
-            contactType: "sales",
-            areaServed: "KE",
-            availableLanguage: ["English", "Swahili"]
-          }
-        ]
-      }
-    ]
-  };
+      ],
+    },
+  ],
+};
 
 
   return (
@@ -93,8 +100,8 @@ const page = () => {
     />
       
         <div className={styles.contactInset}>
-         <h1>Contact OfficeAura – A workspace solutions company in Kenya</h1>
-         <p className={styles.headerP}>Office Aura Kenya is a workplace solutions company offering office restock services, employee kits, and event fulfillment packs across Kenya.</p>
+         <h1>Contact OfficeFlow – An office supplies & restock services company in Kenya</h1>
+         <p className={styles.headerP}>OfficeFlow Kenya is a workplace solutions company offering office supplies acquisition and delivery services, as well as office restock services in Nairobi and across Kenya.</p>
 
         <h2>Reach out</h2>
         <div className={styles.contactInformation}>
@@ -147,7 +154,7 @@ const page = () => {
         </div>
         <h2 style={{color: "white"}}>Our Service Area</h2>
 <p style={{color: "white", fontSize: "17px"}}>
-  Office Aura serves customers across Kenya, including Nairobi, Mombasa,
+  OfficeFlow serves customers across Kenya, including Nairobi, Mombasa,
   Kisumu, Nakuru, Eldoret, and surrounding areas.
 </p>
 

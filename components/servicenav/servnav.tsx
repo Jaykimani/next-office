@@ -63,15 +63,20 @@ const ServiceNav = () => {
              <div className={styles.shopping}> 
               <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)}>
               <div className={styles.loginTop}>
+              <Link href={'/my-account/sign-in'} style={{display: 'flex'}}>
               <FaUserTie style={{color : '#ffe100', width: '35px', height: '35px'}}/>
               <div>
                 <p>WELCOME</p>
                 <p>Sign in/Register</p>
               </div>
+              </Link>
               </div>
               <div className={styles.loginDropdown} style={{display: login ? "block" : "none"}}  onMouseLeave={() => setLogin(false)}>
-              <div>Login</div>
-              <Link href={'/my-account'} style={{textDecoration: 'none', color: 'white'}}>
+              <Link href={'/my-account/sign-in'} style={{textDecoration: 'none', color: 'white'}}>
+              <div>Sign In</div>
+              </Link>
+              
+              <Link href={'/my-account/register'} style={{textDecoration: 'none', color: 'white'}}>
               <div>Register</div>
               </Link>
               
