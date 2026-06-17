@@ -74,3 +74,169 @@
     margin-top: 20px;
     font-size: 20px;
 }
+
+@media screen and (max-width: 800px) {
+    .servicesMain{
+    width: 100%;
+    height: auto;
+    padding: 20px 30px 0;
+    cursor: pointer;
+}
+.servicesMain h1{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 35px;
+    text-decoration: underline;
+    margin-bottom: 25px;
+}
+.servicesInset{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.feature{
+    width: 49%;
+    min-height: 550px;
+    height: 600px;
+    margin-bottom: 40px;
+}
+.featureImage{
+    width: 100%;
+    height: 35%;
+}
+.featureImg{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.featureInfo{
+    width: 100%;
+    height: 68%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 10px 10px;
+}
+.featureInfo h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    margin-bottom: 20px;
+    text-decoration: underline #ffe100 2px;
+}
+.featureList{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    height: 120px;
+}
+.shopbtn{
+    width: 100%;
+    height: 60px;
+    background-color: #ffe100;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.whatsappbtn{
+    width: 100%;
+    height: 60px;
+    background-color: #00ff1a;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
+}
+}
+
+@media screen and (max-width: 600px) {
+     .servicesMain{
+    width: 100%;
+    height: auto;
+    padding: 10px 15px 0;
+    cursor: pointer;
+}
+.servicesMain h1{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    text-decoration: underline;
+    margin-bottom: 35px;
+}
+.servicesInset{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.feature{
+    width: 100%;
+    min-height: 450px;
+    height: 550px;
+    margin-bottom: 40px;
+}
+.featureImage{
+    width: 100%;
+    height: 40%;
+}
+.featureImg{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.featureInfo{
+    width: 100%;
+    height: 55%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0px 10px;
+}
+.featureInfo h4{
+    font-family: 'Roboto', sans-serif;
+    font-size: 23px;
+    margin-bottom: 20px;
+    text-decoration: underline #ffe100 2px;
+}
+.featureList{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 30px;
+    height: 120px;
+}
+.shopbtn{
+    width: 100%;
+    height: 60px;
+    background-color: #ffe100;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+.whatsappbtn{
+    width: 100%;
+    height: 60px;
+    background-color: #00ff1a;
+    color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 15px;
+}
+}

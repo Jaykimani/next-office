@@ -140,6 +140,7 @@
 }
 .termsInset ul li{
     margin: 5px;
+    line-height: 27px;
 }
 .termsInset ul li span{
     font-weight: 600;

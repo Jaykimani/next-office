@@ -1,10 +1,15 @@
-.accountsMain{
+.accountsMain1{
     display: flex;
+}
+.accountsMain2{
+    display: none;
 }
 .accountLeft{
     width: 50%;
     height: 100vh;
-    background-color: black;
+    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.5), rgba(0, 0 ,0 , 0.5)), url('/login2.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -105,6 +110,7 @@
     background-color: #b39e00;
     transition: 0.7s ease;
 }
+
 .accountForm2{
      width: 90%;
     height: 80vh;
@@ -122,6 +128,7 @@
 .accountForm2 div p{
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    size: 14px;
 }
 .accountForm2 div input{
     width: 100%;
@@ -144,4 +151,238 @@
 .accountForm2 button:hover{
     background-color: #b39e00;
     transition: 0.7s ease;
+}
+
+@media screen and (max-width: 800px) {
+    .accountsMain{
+    display: flex;
+}
+.accountLeft{
+    width: 40%;
+    padding: 40px 10px;
+}
+.accountLeft h1{
+    font-size: 10px;
+}
+.svgLogo1{
+    width: 250px;
+    height: 150px;
+    object-fit: contain;
+}
+.accountsBtn{
+    width: 90%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+.accountLink{
+    width: 90%;
+    height: 70px;
+    border: 2px solid white;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.confirm{
+    color: white;
+    margin-top: 40px;
+    font-family: 'Abel', sans-serif;
+    font-size: 20px;  
+    text-align: center;
+}
+.accountRight{
+    width: 60%;
+    height: 100vh;
+    padding: 30px 10px;
+    overflow-y: scroll;
+}
+.accountRight h4{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 22px;
+    text-decoration: underline;
+}
+.accountForm{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+   
+}
+.accountForm div{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+.accountForm div p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+.accountForm div input{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 16px;
+    border: 2px solid rgb(205, 205, 205);
+}
+
+.accountForm2 div input{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 16px;
+    border: 2px solid rgb(205, 205, 205);
+}
+}
+
+@media screen and (max-width: 600px) {
+    .accountsMain1{
+        display: none;
+    }
+    .accountsMain2{
+        display: block;
+        width: 100%;
+        min-height: 100vh;
+        height: auto;
+         background: linear-gradient( to right, rgba(0, 0 ,0 , 0.5), rgba(0, 0 ,0 , 0.5)), url('/login2.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 10px 10px;
+    }
+    .svgDiv{
+        width: 80%;
+        height: auto;
+        margin: 0 auto 10px;
+    }
+    .svgLogo2{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        
+    }
+    .accountsInset{
+        width: 100%;
+        height: auto;
+        background-color: rgba(255, 255, 255, 0.511); /* Semi-transparent */
+  backdrop-filter: blur(5px); /* Blurs everything underneath */
+       padding-bottom: 20px;
+    }
+    .accountsBtns{
+        width: 100%;
+        height: 60px;
+        display: flex;
+    }
+    .accountsLink{
+        width: 50%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    .accountsInset h4{
+    text-align: center;
+    margin: 22px;
+    font-size: 18px;
+    text-decoration: underline;
+}
+.accountsForm{
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+   
+}
+.accountsForm div{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+.accountsForm div p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+.accountsForm div input{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 17px;
+    border: none;
+}
+.accountsRadio{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 17px;
+    
+}
+.accountsRadio:hover{
+    border: 1px solid black;
+    border-radius: 50px;
+}
+.accountsForm button{
+    width: 100%;
+    height: 70px;
+    background-color: #ffe100;
+    color: #ffffff;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+}
+.accountsForm button:hover{
+    background-color: #b39e00;
+    transition: 0.7s ease;
+}
+.accountsForm2{
+     width: 90%;
+    height: auto;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+   
+}
+.accountsForm2 div{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+.accountsForm2 div p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+.accountsForm2 div input{
+    width: 100%;
+    height: 60px;
+    margin-top: 10px;
+    padding-left: 15px;
+    font-size: 17px;
+    background-color: #ffffff;
+    border: none;
+}
+.accountsForm2 div input:focus{
+    outline: none;
+}
+.accountsForm2 button{
+    width: 100%;
+    height: 60px;
+    background-color: #ffe100;
+    color: #ffffff;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    margin: 20px 0;
+}
+.accountsForm2 button:hover{
+    background-color: #b39e00;
+    transition: 0.7s ease;
+
+}
 }

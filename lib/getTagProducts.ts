@@ -2,14 +2,14 @@ import {getPayload} from 'payload';
 import config from '@payload-config';
 
 type ProductCollection =
-  | "office-interior-decor"
-  | "office-greenery"
+  | "office-supplies"
+  | "office-pantry-hydration"
   | "office-workspace-accessories"
   | "office-electronics"
 
 const productCollections: ProductCollection[]  = [
-  "office-interior-decor",
-  "office-greenery",
+  "office-supplies",
+  "office-pantry-hydration",
   "office-workspace-accessories",
   "office-electronics",
 ]

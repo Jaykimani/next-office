@@ -8,6 +8,10 @@ import { FaShoppingCart } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
 import { useCartStore } from '@/app/store';
 import { FaUserTie } from "react-icons/fa";
+import { IoHome } from "react-icons/io5";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoMdInformationCircle } from "react-icons/io";
+import { FaNewspaper } from "react-icons/fa6";
 
 
 const ServiceNav = () => {
@@ -62,15 +66,15 @@ const ServiceNav = () => {
             </div>
              <div className={styles.shopping}> 
               <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)}>
-              <div className={styles.loginTop}>
               <Link href={'/my-account/sign-in'} style={{display: 'flex'}}>
-              <FaUserTie style={{color : '#ffe100', width: '35px', height: '35px'}}/>
+              <div className={styles.loginTop}>
+              <FaUserTie className={styles.userTie}/>
               <div>
                 <p>WELCOME</p>
                 <p>Sign in/Register</p>
               </div>
-              </Link>
               </div>
+              </Link>
               <div className={styles.loginDropdown} style={{display: login ? "block" : "none"}}  onMouseLeave={() => setLogin(false)}>
               <Link href={'/my-account/sign-in'} style={{textDecoration: 'none', color: 'white'}}>
               <div>Sign In</div>
@@ -85,7 +89,7 @@ const ServiceNav = () => {
                <Link href={'/cart'} style={{textDecoration: 'none'}}>
               <div className={styles.outerShopping}>
               <div className={styles.shoppingInset}>
-              <FaShoppingCart style={{color : '#ffe100', width: '35px', height: '35px'}}/>  
+              <FaShoppingCart className={styles.shopCart}/>  
               <span className={styles.shoppingCount}>{count}</span>
               </div>
               <p>KSh {subtotal}.00/=</p>
@@ -104,41 +108,64 @@ const ServiceNav = () => {
             <div className={styles.shop2Div} style={{display: phoneOption ? 'block' : 'none'}}>
             <div ref={shop2DivInsetHome} id={styles.shop2DivInset}>
             <div className={styles.shop2Div1}>
-            <Image className={styles.svgLogo2} src="/Component 5.svg" alt="" width={100} height={100} />
+            <Image className={styles.svgLogo2} src="/Component 2.svg" alt="" width={100} height={100} />
             <MdClose className={styles.optClose} style={{color: 'white'}} fontSize='large' onClick={handleCloseOpt}/>
 
             </div>
+              <Link href={'/my-account/sign-in'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks}>
-              <Link href={'/'} style={{textDecoration: 'none', color: 'white'}}>
-               <h3>Home</h3>
-              </Link>
+               <FaUserTie style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Sign In/Register</h3>  
             </div>
-             
+             </Link>
+            <Link href={'/'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks}>
-               <Link href={'/shop'} style={{textDecoration: 'none', color: 'white'}}>
-               <h3>Shop</h3>
-              </Link>
+               <IoHome style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Home</h3>  
             </div>
+            </Link>
+            <Link href={'/shop'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks}>
-               <Link href={'/contact'} style={{textDecoration: 'none', color: 'white'}}>
-               <h3>Contact</h3>
-              </Link>
+               <FaShoppingCart style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Shop</h3>
             </div>
+            </Link>
+            <Link href={'/contact'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks}>
-              <Link href={'/about'} style={{textDecoration: 'none', color: 'white'}}>
-               <h3>About us</h3>
-              </Link>
+               <FaPhoneAlt style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Contact</h3>
             </div>
+             </Link>
+             <Link href={'/about'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopNavLinks}>
+                <IoMdInformationCircle style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>About us</h3>
+               
+            </div>
+            </Link>
+             <Link href={'/blogs'} style={{textDecoration: "none", color: "white"}}>
              <div className={styles.shopNavLinks}>
-              <Link href={'/blogs'} style={{textDecoration: 'none', color: 'white'}}>
-               <h3>Blogs</h3>
-              </Link>
+              <FaNewspaper style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Blogs</h3>
+              
             </div>
+             </Link>
             </div>
          </div>
         <div className={styles.navbarInset2}>
-        <Image className={styles.svgLogo} src="/Component 5.svg" alt="office aura image" width={500} height={300}/>
+        <Image className={styles.svgLogo} src="/Component 1.svg" alt="office aura image" width={500} height={300}/>
         <div className={styles.shopping}> 
+          <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)}>
+              <Link href={'/my-account/sign-in'} style={{display: 'flex'}}>
+              <div className={styles.loginTop}>
+              <FaUserTie className={styles.userTie}/>
+              <div className={styles.logInfo}>
+                <p>WELCOME</p>
+                <p>Sign in/Register</p>
+              </div>
+              </div>
+              </Link>
+              </div>
           <Link href={'/cart'} style={{textDecoration: 'none', color: 'white'}}>
            <div className={styles.shoppingInset}>
               <FaShoppingCart style={{color : '#ffe100', width: '28px', height: '28px'}}/>  
@@ -147,7 +174,7 @@ const ServiceNav = () => {
           </Link>
              
               
-            </div>
+          </div>
         </div>    
             <div className={styles.homeMenu} onClick={handleOpenOpt}>
                <div className={styles.div1}></div>

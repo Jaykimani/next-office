@@ -155,6 +155,7 @@
 }
 .shippingInset ul li{
     margin: 5px;
+    line-height: 27px;
 }
 .shippingInset ul li span{
     font-weight: 600;

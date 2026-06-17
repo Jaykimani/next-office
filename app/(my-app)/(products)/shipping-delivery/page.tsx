@@ -97,6 +97,7 @@ const page = () => {
     <main className={styles.shippingDelivery}>
      <div className={styles.shippingInset}>
       <h1>Shipping & Delivery — OfficeFlow Kenya</h1>
+      <p><span>Last Updated: 31/05/2026</span></p>
       <p>At OfficeFlow Kenya, we provide reliable office restock delivery services for businesses in Nairobi and across Kenya. We ensure workplaces stay fully stocked with essential office supplies including stationery, printing materials, pantry items, cleaning products, and IT consumables through fast and structured delivery systems.</p>
       <p>This page explains how our office supply delivery and restock system works, including timelines, coverage, and what businesses can expect when partnering with OfficeFlow.</p>
       <div className={styles.divider}></div>

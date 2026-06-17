@@ -216,6 +216,7 @@ const page = () => {
       
      <div className={styles.faqsInset}>
         <h1>Frequently Asked Questions (FAQs) — OfficeFlow Kenya</h1>
+        <p><span>Last Updated: 31/05/2026</span></p>
         <p>Find answers to common questions about OfficeFlow Kenya's office supplies, workplace restock services, delivery options, business accounts, and workplace supply solutions for businesses in Nairobi and across Kenya.</p>
         <div className={styles.divider}></div>
         <h2>1. What is OfficeFlow Kenya?</h2>
@@ -381,7 +382,7 @@ const page = () => {
          <p><FaPhoneAlt style={{marginRight: '10px', color: "green"}}/> Whatsapp: <span>+254 704 610 605</span></p>
          <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <Link href={'/contact'}><span>www.officeflow.co.ke/contact</span></Link></p>
          <p>Our team responds A.S.A.P</p>
-        <p>Thank you for choosing <span>Office Aura Kenya.</span></p>
+        <p>Thank you for choosing <span>OfficeFlow Kenya.</span></p>
      </div>
 
     </div>

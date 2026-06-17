@@ -164,9 +164,9 @@ const page = () => {
             <div className={styles.divider}></div>
             <h2>Contact Us</h2>
             <p>For returns, replacements, or refund requests, please contact:</p>
-            <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeaura.co.ke</span></p>
+            <p><MdEmail style={{marginRight: '10px', color: "green"}}/> Email: <span>support@officeflow.co.ke</span></p>
             <p><FaPhoneAlt style={{marginRight: '10px', color: "green"}}/> Whatsapp: <span>+254 704 610 605</span></p>
-            <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <span>www.officeaura.co.ke/contact</span></p>
+            <p><BiWorld style={{marginRight: '10px', color: "green"}}/> Website: <span>www.officeflow.co.ke/contact</span></p>
             <p>We respond within <span>24–48 hours</span>.</p>
             <div className={styles.divider}></div>
             <h2>OfficeFlow Kenya</h2>

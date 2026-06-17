@@ -146,6 +146,7 @@
 }
 .returnsInset ul li{
     margin: 5px;
+    line-height: 25px;
 }
 .returnsInset ul li span{
     font-weight: 600;

@@ -162,14 +162,14 @@
 }
 .contactInset h1{
     color: white;
-    font-size: 30px;
+    font-size: 25px;
     margin: 20px 0;
-    font-weight: 500;
+    font-weight: 700;
 }
 .headerP{
     color: white;
     margin: 10px 0;
-    font-size: 19px;
+    font-size: 16px;
     line-height: 30px;
 }
 .contactInset h2{
@@ -188,13 +188,13 @@
     align-items: center;
 }
 .contactWhatsapp a{
-       color: rgb(0, 0, 0);
+       color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 17px;
     margin-left: 20px;
 }
 .contactWhatsapp a:hover{
-    color: rgb(220, 220, 220);
+    color: rgb(255, 252, 252);
 }
 .contactInformation{
     width: 100%;

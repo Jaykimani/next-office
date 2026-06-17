@@ -7,9 +7,6 @@ import type { CollectionConfig } from 'payload';
               { label: 'Stationery & Writing Supplies', value: 'stationery-writing-supplies' },
               { label: 'Printing & Paper Supplies', value: 'printing-paper-supplies' }, 
               { label: 'Printer & Ink Supplies', value: 'printer-ink-supplies' }, 
-              { label: 'Pantry & Hydration Supplies', value: 'pantry-hydration-supplies' },
-              { label: 'Cleaning & Hygiene Supplies', value: 'cleaning-hygiene-supplies' },
-              { label: 'IT & Tech Supplies', value: 'it-tech-supplies' },
               
 
   ]
@@ -37,11 +34,7 @@ export const OfficeSupplies: CollectionConfig = {
     {
   name: "category",
   type: "text",
-  defaultValue: "office-interior-decor",
-  admin: {
-    readOnly: true,
-    hidden: true,
-  },
+  defaultValue: "office-supplies",
 },
     {
       name: 'name',

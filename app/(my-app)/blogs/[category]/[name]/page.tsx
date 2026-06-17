@@ -94,7 +94,9 @@ const Blog = async({params} : Props) => {
 
   const blogPostingSchema = {
   "@context": "https://schema.org",
-  "@type": "BlogPosting",
+  "@graph": [
+       {
+         "@type": "BlogPosting",
 
   "@id": `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
 
@@ -122,26 +124,53 @@ const Blog = async({params} : Props) => {
     "@id": `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
   },
 
-  keywords: mainBlog?.seo?.keywords,
-};
-       
-  const breadcrumbSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'BreadcrumbList',
+  keywords: mainBlog?.seo?.keywords
+  },
+  {
+     '@type': 'BreadcrumbList',
   itemListElement: [
     {
-      '@type': 'ListItem',
+      "@type": "ListItem",
       position: 1,
-      name: 'Blog',
-      item: 'https://www.officeflow.co.ke/blogs',
+      name: "Home",
+      item: "https://www.officeflow.co.ke",
     },
     {
-      '@type': 'ListItem',
+      "@type": "ListItem",
       position: 2,
+      name: "Blog",
+      item: "https://www.officeflow.co.ke/blogs",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
       name: mainBlog?.title,
       item: `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
     },
   ],
+  },
+  {
+     "@type": "WebPage",
+
+  "@id": `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}#webpage`,
+
+  url: `https://www.officeflow.co.ke/blogs/${mainBlog?.category}/${mainBlog?.slug}`,
+
+  name: mainBlog?.title,
+
+  description: mainBlog?.excerpt,
+
+  about: {
+    "@id": "https://www.officeflow.co.ke/#organization",
+  },
+  }
+  ]
+  
+};
+       
+  const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+ 
 };
 
   return (<>
@@ -151,12 +180,6 @@ const Blog = async({params} : Props) => {
           __html: JSON.stringify(blogPostingSchema),
         }}
       />
-     <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      /> 
   <div className={styles.blogNav}>
    <ServiceNav />
   </div>

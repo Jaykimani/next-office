@@ -11,8 +11,10 @@ import Image from 'next/image';
 import { useCartStore } from '@/app/store';
 import SearchInput from '../searchInput/search';
 import { FaUserTie } from "react-icons/fa";
-
-
+import { IoHome } from "react-icons/io5";
+import { FaPhoneAlt } from "react-icons/fa";
+import { IoMdInformationCircle } from "react-icons/io";
+import { FaNewspaper } from "react-icons/fa6";
 
 const ShopNav = () => {
     const [desk, setDesk] = useState(false);
@@ -209,7 +211,7 @@ const ShopNav = () => {
                     <p>Printer & Ink Supplies</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/office-supplies/pantry-hydration-supplies'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/office-pantry-hydration'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} >
                     <p>Pantry & Hydration Supplies</p>
                    </div>
@@ -282,41 +284,54 @@ const ShopNav = () => {
          <div className={styles.shop2Div} style={{display: phoneOpt ? 'block' : 'none'}}>
             <div ref={shop2DivInset} id={styles.shop2DivInset}>
             <div className={styles.shop2Div1}>
-            <Image className={styles.svgLogo2} src="/Component 5.svg" alt="" width={100} height={100} />
+            <Image className={styles.svgLogo2} src="/Component 2.svg" alt="" width={100} height={100} />
             <MdClose className={styles.optClose} style={{color: 'white'}} fontSize='large' onClick={handleCloseOpt}/>
 
             </div>
+            <Link href={'/my-account/sign-in'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
-               <Link href={'/'} style={{textDecoration: "none", color: "white"}}>
-                <h3>Home</h3>
-               </Link>
+               <FaUserTie style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Sign In/Register</h3>  
             </div>
+             </Link>
+             <Link href={'/'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
-               <Link href={'/shop'} style={{textDecoration: "none", color: "white"}}>
+               <IoHome style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Home</h3>  
+            </div>
+            </Link>
+            <Link href={'/shop'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
+               <FaShoppingCart style={{color: '#ffe100', width: '27px', height: '27px'}}/>
                 <h3>Shop</h3>
-               </Link>
             </div>
+            </Link>
+            <Link href={'/contact'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
-               <Link href={'/contact'} style={{textDecoration: "none", color: "white"}}>
+               <FaPhoneAlt style={{color: '#ffe100', width: '27px', height: '27px'}}/>
                 <h3>Contact</h3>
-               </Link>
             </div>
+             </Link>
+             <Link href={'/about'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
-               <Link href={'/about'} style={{textDecoration: "none", color: "white"}}>
+                <IoMdInformationCircle style={{color: '#ffe100', width: '27px', height: '27px'}}/>
                 <h3>About us</h3>
-               </Link>
+               
             </div>
+            </Link>
+             <Link href={'/blogs'} style={{textDecoration: "none", color: "white"}}>
              <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
-               <Link href={'/blogs'} style={{textDecoration: "none", color: "white"}}>
+              <FaNewspaper style={{color: '#ffe100', width: '27px', height: '27px'}}/>
                 <h3>Blogs</h3>
-               </Link>
+              
             </div>
+             </Link>
             </div>
          </div>
          <div className={styles.shop2Options}>
          <HiMenuAlt2 className={styles.shop2MenuIcon} fontSize='large' onClick={handleOpenOpt}/>
          <Link href={'/'} style={{textDecoration: "none", color: "black"}}>
-         <Image className={styles.svgLogo2} src="/Component 5.svg" alt="" width={100} height={100} />
+         <Image className={styles.svgLogo2} src="/Component 2.svg" alt="" width={100} height={100} />
          </Link>
          <div className={styles.shopIconDiv}>
             <Link href={'/cart'} style={{textDecoration: "none", color: "white"}}>

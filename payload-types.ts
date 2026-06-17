@@ -72,6 +72,7 @@ export interface Config {
     categories: Category;
     products: Product;
     'office-supplies': OfficeSupply;
+    'office-pantry-hydration': OfficePantryHydration;
     'office-workspace-accessories': OfficeWorkspaceAccessory;
     'office-electronics': OfficeElectronic;
     orders: Order;
@@ -90,6 +91,7 @@ export interface Config {
     categories: CategoriesSelect<false> | CategoriesSelect<true>;
     products: ProductsSelect<false> | ProductsSelect<true>;
     'office-supplies': OfficeSuppliesSelect<false> | OfficeSuppliesSelect<true>;
+    'office-pantry-hydration': OfficePantryHydrationSelect<false> | OfficePantryHydrationSelect<true>;
     'office-workspace-accessories': OfficeWorkspaceAccessoriesSelect<false> | OfficeWorkspaceAccessoriesSelect<true>;
     'office-electronics': OfficeElectronicsSelect<false> | OfficeElectronicsSelect<true>;
     orders: OrdersSelect<false> | OrdersSelect<true>;
@@ -283,6 +285,10 @@ export interface Review {
         value: number | OfficeSupply;
       }
     | {
+        relationTo: 'office-pantry-hydration';
+        value: number | OfficePantryHydration;
+      }
+    | {
         relationTo: 'office-workspace-accessories';
         value: number | OfficeWorkspaceAccessory;
       }
@@ -315,13 +321,77 @@ export interface OfficeSupply {
   /**
    * Select one subcategories
    */
+  subcategory: 'stationery-writing-supplies' | 'printing-paper-supplies' | 'printer-ink-supplies';
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select the type of variation for this product(Optional)
+   */
+  variation?: ('color' | 'size') | null;
+  variants?:
+    | {
+        /**
+         * e.g. Small, Medium, Large, Black, White
+         */
+        option: string;
+        price: number;
+        stock?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  stock: number;
+  delivery: {
+    deliveryTime: string;
+    pickupAvailable?: boolean | null;
+  };
+  tags: string[];
+  description: {
+    productInformation: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    dimensions?: string | null;
+    structuralMaterial?: string | null;
+    color?: string | null;
+    careInstructions?: string | null;
+  };
+  /**
+   * All reviews for this product
+   */
+  reviews?: (number | Review)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-pantry-hydration".
+ */
+export interface OfficePantryHydration {
+  id: number;
+  category?: string | null;
+  name: string;
+  /**
+   * Select one subcategories
+   */
   subcategory:
-    | 'stationery-writing-supplies'
-    | 'printing-paper-supplies'
-    | 'printer-ink-supplies'
-    | 'pantry-hydration-supplies'
-    | 'cleaning-hygiene-supplies'
-    | 'it-tech-supplies';
+    | 'drinking-water'
+    | 'tea-coffee'
+    | 'sugar-sweetener'
+    | 'milk-dairy'
+    | 'biscuits-snacks'
+    | 'disposable-kitchen-supplies';
   slug?: string | null;
   images: (number | Media)[];
   price: number;
@@ -539,6 +609,10 @@ export interface Order {
           value: number | OfficeSupply;
         }
       | {
+          relationTo: 'office-pantry-hydration';
+          value: number | OfficePantryHydration;
+        }
+      | {
           relationTo: 'office-workspace-accessories';
           value: number | OfficeWorkspaceAccessory;
         }
@@ -648,6 +722,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'office-supplies';
         value: number | OfficeSupply;
+      } | null)
+    | ({
+        relationTo: 'office-pantry-hydration';
+        value: number | OfficePantryHydration;
       } | null)
     | ({
         relationTo: 'office-workspace-accessories';
@@ -811,6 +889,47 @@ export interface ProductsSelect<T extends boolean = true> {
  * via the `definition` "office-supplies_select".
  */
 export interface OfficeSuppliesSelect<T extends boolean = true> {
+  category?: T;
+  name?: T;
+  subcategory?: T;
+  slug?: T;
+  images?: T;
+  price?: T;
+  variation?: T;
+  variants?:
+    | T
+    | {
+        option?: T;
+        price?: T;
+        stock?: T;
+        id?: T;
+      };
+  stock?: T;
+  delivery?:
+    | T
+    | {
+        deliveryTime?: T;
+        pickupAvailable?: T;
+      };
+  tags?: T;
+  description?:
+    | T
+    | {
+        productInformation?: T;
+        dimensions?: T;
+        structuralMaterial?: T;
+        color?: T;
+        careInstructions?: T;
+      };
+  reviews?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-pantry-hydration_select".
+ */
+export interface OfficePantryHydrationSelect<T extends boolean = true> {
   category?: T;
   name?: T;
   subcategory?: T;
