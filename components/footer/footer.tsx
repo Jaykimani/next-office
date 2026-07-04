@@ -11,6 +11,9 @@ const Footer = () => {
             </div>
             <div className={styles.footerRight}>
             <div className={styles.footerRightInset}>
+              <Link href={'/my-account/sign-in'} style={{textDecoration: 'none', color: 'white'}}>
+            <p>Sign in/Register</p>
+            </Link>
             <Link href={'/home'} style={{textDecoration: 'none', color: 'white'}}>
             <p>Home</p>
             </Link>

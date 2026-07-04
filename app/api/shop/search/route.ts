@@ -8,12 +8,14 @@ const payload = await getPayload({ config })
 type ProductCollection =
   | "office-supplies"
   | "office-pantry-hydration"
+  | "office-cleaning-hygiene"
   | "office-workspace-accessories"
   | "office-electronics"
 
 const productCollections: ProductCollection[]  = [
   "office-supplies",
   "office-pantry-hydration",
+  "office-cleaning-hygiene",
   "office-workspace-accessories",
   "office-electronics",
 ]
@@ -125,7 +127,7 @@ const tagsArr = [
 const filterTags = tagsArr.filter((c) =>
     c.toLowerCase().includes(query.toLowerCase())
   )
-console.log(filterTags);
+// console.log(filterTags);
 
   
   return NextResponse.json({

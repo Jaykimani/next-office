@@ -9,6 +9,7 @@ import type { CollectionConfig } from 'payload';
               { label: 'Sugar & Sweetener', value: 'sugar-sweetener' }, 
               { label: 'Milk & Dairy', value: 'milk-dairy' },
               { label: 'Biscuits & Snacks', value: 'biscuits-snacks' },
+              { label: 'Condiments & Spices', value: 'condiments-spices' },
               { label: 'Disposable Kitchen Supplies', value: 'disposable-kitchen-supplies' },
               
 

@@ -103,10 +103,13 @@ const Services = () => {
                   <h4>Cleaning & Hygiene supplies</h4>
                   <p className={styles.featureList}>Disinfectant sprays, Hand sanitizers, Air fresheners, Hand towels, Tissue papers, Cleaning detergents, Surface disinfectants, Mops & Brushes e.t.c</p>
                   <div>
-                  <div className={styles.shopbtn}>
+                  <Link href={'/shop/office-cleaning-hygiene'}>
+                   <div className={styles.shopbtn}>
                   <TiShoppingCart style={{width: '30px', height: '30px', marginRight: '15px'}}/>
                   <p>Visit our online shop</p>
                   </div>
+                  </Link>
+                 
                    <div className={styles.whatsappbtn}>
                   <FaWhatsapp style={{width: '30px', height: '30px', marginRight: '15px'}}/>
                   <p>Order from Whatsapp</p>

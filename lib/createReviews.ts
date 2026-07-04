@@ -2,8 +2,9 @@
 import { getPayloadClient } from '@/payloadClient'
 
 type ProductCollection =
-  | "office-interior-decor"
-  | "office-greenery"
+  | "office-supplies"
+  | "office-pantry-hydration"
+  | "office-cleaning-hygiene"
   | "office-workspace-accessories"
   | "office-electronics";
 

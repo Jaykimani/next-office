@@ -47,7 +47,7 @@ const page = async({params} : Props) => {
          <form className={styles.accountForm} style={{display: logreg === 'register' ? 'block' : 'none'}}>
           <div>
             <p>Full Name</p>
-            <input type="text" name="" id="" />
+            <input type="text" name="" id="" autoFocus/>
           </div>
           <div>
             <p>Phone Number</p>

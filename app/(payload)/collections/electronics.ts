@@ -7,13 +7,8 @@ import type { CollectionConfig } from 'payload';
               { label: 'Office Cable Management Tech', value: 'office-cable-management-tech' },
               
   ]
-  const vibes = [
-              { label: 'Minimalist Offfice Vibe', value: 'minimalist-office-vibe' }, 
-              { label: 'Executive/CEO Office Vibe', value: 'executive-office-vibe' },
-              { label: 'Modern Professional Office Vibe', value: 'modern-professional-office-vibe' },
-              { label: 'Creative Studio Office Vibe', value: 'creative-studio-office-vibe' },
-              { label: 'Nature Inspired Office Vibe', value: 'nature-inspired-office-vibe' },          
-  ]
+          
+
 
 export const OfficeElectronics: CollectionConfig = {
   slug: 'office-electronics',

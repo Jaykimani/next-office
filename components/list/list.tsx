@@ -5,7 +5,10 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { IoLogoWhatsapp } from "react-icons/io";
+import { MdAdd } from "react-icons/md";
+import { FaMinus } from "react-icons/fa6";
 import { MdClose } from "react-icons/md";
 import {Categories, shopPopularity, shopPrice} from '@/categories';
 import type { Product } from '@/payload-types';
@@ -177,20 +180,35 @@ function List({ productsArr }: ProductsProps) {
                
                   
                return (
-                    <Link key={item.id} href={`/shop/${item.category}/${item.subcategory}/${item.id}/${item.slug}`} style={{textDecoration: 'none'}}>
-                     <div className={styles.listItem}>
+                     <div key={item.id} className={styles.listItem}>
+                    <Link href={`/shop/${item.category}/${item.subcategory}/${item.id}/${item.slug}`} style={{textDecoration: 'none'}}>
                     <div className={styles.itemImg}>
                       {item.images[0]?.url && (
                       <Image className={styles.itemImage} src={item.images[0].url} alt="" width={200} height={200} />
                       )}
                     </div>
+                    </Link>
                     <div className={styles.itemInfo}>
                       <h4>{item.name?.length > 30 ? item.name.substring(0, 67) + '...' : item.name}</h4>
-                      <p><span>KSh</span> {item.price.toLocaleString('en-US')}/=</p>
-                      <button>View Item</button> 
+                      <h6><span>KSh</span> {item.price.toLocaleString('en-US')}/=</h6>
+                      <div className={styles.itemInfoCounter}>
+                       <div><FaMinus style={{width: "20px", color: "white"}}/></div>
+                       <div>1</div>
+                       <div><MdAdd style={{width: "25px", height: "25px", color: "white"}}/></div>
+                      </div>
+                      <div className={styles.itemBtns}>
+                        <div className={styles.itemCartDiv}>
+                          <MdOutlineAddShoppingCart className={styles.itemCartImg}/>
+                          <p>Add to Cart</p>
+                        </div> 
+                        <div className={styles.itemWhatsappDiv}>
+                          <IoLogoWhatsapp className={styles.itemWhatsappImg}/>
+                        </div>
+                      </div>
+                      
                     </div>
                 </div>
-                    </Link>
+                    
                    
               )})}
                

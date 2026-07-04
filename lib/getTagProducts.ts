@@ -4,12 +4,14 @@ import config from '@payload-config';
 type ProductCollection =
   | "office-supplies"
   | "office-pantry-hydration"
+  | "office-cleaning-hygiene"
   | "office-workspace-accessories"
   | "office-electronics"
 
 const productCollections: ProductCollection[]  = [
   "office-supplies",
   "office-pantry-hydration",
+  "office-cleaning-hygiene",
   "office-workspace-accessories",
   "office-electronics",
 ]
@@ -29,6 +31,7 @@ let newTag = tag.replace(/-/g, " ");
         where: {
               tags: { contains: newTag },
         },
+        limit: 1000,
         select:{
       id: true,
       slug: true,

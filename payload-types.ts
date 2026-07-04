@@ -73,6 +73,7 @@ export interface Config {
     products: Product;
     'office-supplies': OfficeSupply;
     'office-pantry-hydration': OfficePantryHydration;
+    'office-cleaning-hygiene': OfficeCleaningHygiene;
     'office-workspace-accessories': OfficeWorkspaceAccessory;
     'office-electronics': OfficeElectronic;
     orders: Order;
@@ -92,6 +93,7 @@ export interface Config {
     products: ProductsSelect<false> | ProductsSelect<true>;
     'office-supplies': OfficeSuppliesSelect<false> | OfficeSuppliesSelect<true>;
     'office-pantry-hydration': OfficePantryHydrationSelect<false> | OfficePantryHydrationSelect<true>;
+    'office-cleaning-hygiene': OfficeCleaningHygieneSelect<false> | OfficeCleaningHygieneSelect<true>;
     'office-workspace-accessories': OfficeWorkspaceAccessoriesSelect<false> | OfficeWorkspaceAccessoriesSelect<true>;
     'office-electronics': OfficeElectronicsSelect<false> | OfficeElectronicsSelect<true>;
     orders: OrdersSelect<false> | OrdersSelect<true>;
@@ -391,6 +393,7 @@ export interface OfficePantryHydration {
     | 'sugar-sweetener'
     | 'milk-dairy'
     | 'biscuits-snacks'
+    | 'condiments-spices'
     | 'disposable-kitchen-supplies';
   slug?: string | null;
   images: (number | Media)[];
@@ -577,6 +580,75 @@ export interface OfficeElectronic {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-cleaning-hygiene".
+ */
+export interface OfficeCleaningHygiene {
+  id: number;
+  category?: string | null;
+  name: string;
+  /**
+   * Select one subcategories
+   */
+  subcategory:
+    | 'tissue-washroom-supplies'
+    | 'hand-hygiene-supplies'
+    | 'surface-cleaning-products'
+    | 'waste-management-supplies'
+    | 'cleaning-equipment-protective-supplies';
+  slug?: string | null;
+  images: (number | Media)[];
+  price: number;
+  /**
+   * Select the type of variation for this product(Optional)
+   */
+  variation?: ('color' | 'size') | null;
+  variants?:
+    | {
+        /**
+         * e.g. Small, Medium, Large, Black, White
+         */
+        option: string;
+        price: number;
+        stock?: number | null;
+        id?: string | null;
+      }[]
+    | null;
+  stock: number;
+  delivery: {
+    deliveryTime: string;
+    pickupAvailable?: boolean | null;
+  };
+  tags: string[];
+  description: {
+    productInformation: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    };
+    dimensions?: string | null;
+    structuralMaterial?: string | null;
+    color?: string | null;
+    careInstructions?: string | null;
+  };
+  /**
+   * All reviews for this product
+   */
+  reviews?: (number | Review)[] | null;
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "orders".
  */
 export interface Order {
@@ -611,6 +683,10 @@ export interface Order {
       | {
           relationTo: 'office-pantry-hydration';
           value: number | OfficePantryHydration;
+        }
+      | {
+          relationTo: 'office-cleaning-hygiene';
+          value: number | OfficeCleaningHygiene;
         }
       | {
           relationTo: 'office-workspace-accessories';
@@ -726,6 +802,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'office-pantry-hydration';
         value: number | OfficePantryHydration;
+      } | null)
+    | ({
+        relationTo: 'office-cleaning-hygiene';
+        value: number | OfficeCleaningHygiene;
       } | null)
     | ({
         relationTo: 'office-workspace-accessories';
@@ -930,6 +1010,47 @@ export interface OfficeSuppliesSelect<T extends boolean = true> {
  * via the `definition` "office-pantry-hydration_select".
  */
 export interface OfficePantryHydrationSelect<T extends boolean = true> {
+  category?: T;
+  name?: T;
+  subcategory?: T;
+  slug?: T;
+  images?: T;
+  price?: T;
+  variation?: T;
+  variants?:
+    | T
+    | {
+        option?: T;
+        price?: T;
+        stock?: T;
+        id?: T;
+      };
+  stock?: T;
+  delivery?:
+    | T
+    | {
+        deliveryTime?: T;
+        pickupAvailable?: T;
+      };
+  tags?: T;
+  description?:
+    | T
+    | {
+        productInformation?: T;
+        dimensions?: T;
+        structuralMaterial?: T;
+        color?: T;
+        careInstructions?: T;
+      };
+  reviews?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "office-cleaning-hygiene_select".
+ */
+export interface OfficeCleaningHygieneSelect<T extends boolean = true> {
   category?: T;
   name?: T;
   subcategory?: T;
