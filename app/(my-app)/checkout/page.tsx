@@ -129,7 +129,7 @@ function Checkout() {
         <div id={styles.checkout}>
           <div className={styles.checkoutInset}>
             <div className={styles.svgDiv}>
-            <Image className={styles.svgLogo3} src="/Component 6.svg" alt="" width={200} height={200} />
+            <Image className={styles.svgLogo3} src="/Component 1.svg" alt="" width={200} height={200} />
             </div>
           <div className={styles.line}></div>
             <form className={styles.checkoutDiv} onSubmit={handleCreateOrder}>

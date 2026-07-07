@@ -251,8 +251,8 @@ Cutomer whatsapp confirmation: ${whatsappConfirm}
                  <div>
                     <p>+254 704 610 605</p>
                     <p>+254 704 610 605</p>
-                    <p>support@officeaura.co.ke</p>
-                    <Link href={'/contact'}><p>www.officeaura.co.ke/contact</p></Link>
+                    <p>support@officeflow.co.ke</p>
+                    <Link href={'/contact'}><p>www.officeflow.co.ke/contact</p></Link>
                  </div>
                 </div>
                 

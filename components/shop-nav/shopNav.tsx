@@ -216,12 +216,12 @@ const ShopNav = () => {
                     <p>Pantry & Hydration Supplies</p>
                    </div>
                    </Link>
-                   <Link href={'/shop/office-supplies/cleaning-hygiene-supplies'} style={{textDecoration: "none", color: "white"}}>
+                   <Link href={'/shop/office-cleaning-hygiene'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} >
                     <p>Cleaning & Hygiene Supplies</p>
                    </div>
                    </Link>
-                    <Link href={'/shop/office-supplies/it-tech-supplies'} style={{textDecoration: "none", color: "white"}}>
+                    <Link href={'/shop/it-tech-supplies'} style={{textDecoration: "none", color: "white"}}>
                    <div className={styles.shopSublink} >
                     <p>IT & Tech Supplies</p>
                    </div>

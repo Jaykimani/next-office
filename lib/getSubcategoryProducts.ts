@@ -23,7 +23,8 @@ const payload = await getPayload({config});
       images: true,
       price: true,
       category: true,
-      subcategory: true
+      subcategory: true,
+      variants: true
     },
     limit: 100 // The slug of your 
     

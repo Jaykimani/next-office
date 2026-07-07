@@ -33,28 +33,31 @@ export async function generateMetadata(
   let data = await getCategoryType(category)
   let categInfo = data?.docs[0];
   
+  
 
   return {
     metadataBase: new URL('https://yourdomain.com'),
 
-    title: `${categInfo?.name} in Kenya | Office Aura`,
+    title: `${categInfo?.name} in Kenya | OfficeFlow Kenya`,
     description: categInfo?.description,
 
+    keywords: categInfo?.keywords,
+
     alternates: {
-      canonical: `/shop/category/${categInfo?.slug}`,
+      canonical: `/shop/${categInfo?.slug}`,
     },
 
     openGraph: {
       title: `${categInfo?.name} | Office Aura`,
       description: categInfo?.description,
-      url: `/shop/category/${categInfo?.slug}`,
-      siteName: 'Office Aura',
+      url: `/shop/${categInfo?.slug}`,
+      siteName: 'OfficeFlow',
       type: 'website',
     },
 
     twitter: {
       card: 'summary_large_image',
-      title: `${categInfo?.name} | Office Aura`,
+      title: `${categInfo?.name} | OfficeFlow Kenya`,
       description: categInfo?.description
     },
   }
@@ -84,60 +87,81 @@ const Category = async({
 
 const allProducts = seededShuffle(products, today)  
   
+
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'CollectionPage',
-    name: categInfo?.name,
-    description: categInfo?.name,
-    url: `https://yourdomain.com/shop/category/${categInfo?.slug}`,
-  }
-
-  const breadcrumbData = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
+    '@graph' : [
+         {
+        'type': 'CollectionPage',
+         name: categInfo?.name,
+           description: categInfo?.name,
+           url: `https://officeflow.co.ke/shop/${categInfo?.slug}`,
+         },
+         {
+          '@type': 'BreadcrumbList',
     itemListElement: [
       {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://yourdomain.com',
+        item: 'https://officeflow.co.ke',
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: 'Shop',
-        item: 'https://yourdomain.com/shop',
+        item: 'https://officeflow.co.ke/shop',
       },
       {
         '@type': 'ListItem',
         position: 3,
         name: categInfo?.name,
+        item:`https://officeflow.co.ke/shop/${categInfo?.slug}`
       },
     ],
+         },
+         {
+          "@type": "FAQPage",
+  mainEntity: categInfo?.FAQs?.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
+    },
+  })),
+         }
+    ]
+    
   }  
 
   return (<>
    <div id={styles.shopOuter}>
-    {/* CollectionPage Schema */}
+      {/* Breadcrumb Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData),
         }}
-      />
-
-      {/* Breadcrumb Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbData),
-        }}
         />
       <List productsArr = {allProducts}/>
      
         <div className={styles.shopInfo}>
-            <h4>Why invest in the right {categInfo?.name}?</h4>
+            <h1>{categInfo?.name}</h1>
             <p>{categInfo?.['page-description']}</p>
+        </div>
+        <div className={styles.questions}>
+          <h1>FAQs about OfficeFlow's {categInfo?.name}</h1>
+          {categInfo?.FAQs?.map((quiz)=>{
+
+            return (
+              <div key={quiz.id} className={styles.question}>
+            <h4>{quiz.question}</h4>
+            <p>{quiz.answer}</p>
+          </div>
+            )
+          })}
+          
         </div>
         </div>
         <div className={styles.quote}>

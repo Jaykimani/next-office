@@ -13,8 +13,8 @@ import ListItem from '../listitem/listitem';
 import Masonry from "react-masonry-css";
 
 const breakpointColumnsObj = {
-   default: 5,
-    1400: 4,
+  default: 3,
+    1400: 3,
     1100: 3,
     768: 2,
     480: 2

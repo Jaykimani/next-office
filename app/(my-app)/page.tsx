@@ -16,6 +16,7 @@ export const metadata: Metadata = {
   keywords: [
     "office supplies Nairobi",
     "office supplies Kenya",
+    "Buy office supplies online Kenya",
     "office restock services Kenya",
     "workplace supplies Kenya",
     "office consumables Nairobi",

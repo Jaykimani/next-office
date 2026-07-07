@@ -369,17 +369,20 @@
     margin-bottom: 15px;
 }
 .successTop h1{
-    font-size: 30px;
+    font-size: 25px;
+    font-family: 'Playfair Display', sans-serif;
+    margin-bottom: 20px;
 }
 .successTop p {
     margin: 10px 0;
+    font-size: 14px;
     color: rgb(72, 72, 72);
 }
 .orderNumber{
-    width: 100%;
+    width: 70%;
     padding: 8px 8px;
     background-color: rgb(230, 230, 230);
-    margin: 15px auto;
+    margin: 20px auto ;
     border-radius: 20px;
 }
 .successInset{

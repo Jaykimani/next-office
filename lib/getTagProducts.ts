@@ -39,7 +39,8 @@ let newTag = tag.replace(/-/g, " ");
       images: true,
       price: true,
       category: true,
-      subcategory: true
+      subcategory: true,
+      variants: true
       }
       })
     )

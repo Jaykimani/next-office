@@ -8,7 +8,7 @@ const payload = await getPayload({config});
 
   try {
     const data = await payload.find({
-    collection: 'office-interior-decor', // The slug of your
+    collection: 'office-supplies', // The slug of your
     depth: 1, 
     sort: 'id',
     page,

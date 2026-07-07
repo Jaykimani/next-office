@@ -15,7 +15,7 @@ const Services = () => {
                 </div>
                 <div className={styles.featureInfo}>
                   <h4>Stationery & Writing supplies</h4>
-                  <p className={styles.featureList}>Pens, Pencils, Notebooks, Sticky notes, Files, Makers, Highlighters, Erasers, Correction fluid/tape, Diaries, Staplers, Staples, Paper Clips and more ...</p>
+                  <p className={styles.featureList}>Pens, Pencils, Sticky notes,arch files, Makers, Highlighters, Erasers, Correction fluid/tape, Staplers, Staples, Paper Clips and more ...</p>
                   <div>
                   <Link href={'/shop/office-supplies/stationery-writing-supplies'}>
                   <div className={styles.shopbtn}>
@@ -37,7 +37,7 @@ const Services = () => {
                 </div>
               <div className={styles.featureInfo}>
                   <h4>Printing & Paper supplies</h4>
-                  <p className={styles.featureList}>A4 printing paper, Colored paper, Photo paper, Envelopes, Filing materials, Arch files, Manila papers, Flipchart papers, Receipt books, Invoice books, Labels e.t.c</p>
+                  <p className={styles.featureList}>A4 printing paper, Notebooks, Counter books, diaries, Colored paper, Photo paper, Envelopes, Manila papers, Flipchart papers, Receipt books, Invoice books, Labels e.t.c</p>
                   <div>
                   <Link href={'/shop/office-supplies/printing-paper-supplies'}>
                   <div className={styles.shopbtn}>

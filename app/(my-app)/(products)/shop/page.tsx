@@ -1,60 +1,63 @@
 import styles from './shop.module.css'
 import List from '@/components/list/list'
 import Pagination from '@/components/pagination/pagination';
+import { getCategoryType } from '@/lib/getCategoryType';
 import { getProductsList } from '@/lib/getProducts';
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Shop Office Décor & Accessories | Office Aura Kenya",
+export async function generateMetadata(): Promise<Metadata> {
   
-  description:
-    "Browse curated modern office décor, accessories, and workspace essentials at Office Aura. Shop stylish office products in Nairobi with nationwide delivery across Kenya.",
-  
-  keywords: [
-    "shop office décor Nairobi",
-    "office accessories Kenya",
-    "modern office furniture Kenya",
-    "workspace essentials Nairobi",
-    "corporate office décor Kenya",
-    "buy office décor online Kenya",
-  ],
+  let data = await getCategoryType("office-supplies-kenya");
+  let categInfo = data?.docs[0];
 
-  alternates: {
-    canonical: "https://www.officeaura.co.ke/shop",
-  },
+  const url = "https://officeflow.co.ke/shop";
 
-  openGraph: {
-    title: "Shop Modern Office Décor | Office Aura Kenya",
-    description:
-      "Explore curated office décor, executive desk setups, and workspace accessories. Delivered in Nairobi and across Kenya.",
-    url: "https://www.officeaura.co.ke/shop",
-    siteName: "Office Aura",
-    locale: "en_KE",
-    type: "website",
-  },
+  return {
+    title: `${categInfo?.name} | Stationery, Printer Supplies & Office Essentials | OfficeFlow Kenya`,
+    description: categInfo?.description,
+    keywords: categInfo?.keywords,
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Shop Office Décor & Accessories | Office Aura",
-    description:
-      "Curated office décor and workspace accessories available in Nairobi with nationwide delivery across Kenya.",
-  },
-  robots: {
-    index: true,
-    follow: true,
-    nocache: true,
-    googleBot: {
+    alternates: {
+      canonical: url,
+    },
+
+    openGraph: {
+      title: `${categInfo?.name} | Stationery, Printer Supplies & Office Essentials | OfficeFlow Kenya`,
+      description: categInfo?.description,
+      url,
+      siteName: "OfficeFlow",
+      type: "website",
+      locale: "en_KE",
+      images: [
+        {
+          url: "/restock5.jpg",
+          width: 1200,
+          height: 630,
+          alt: "Office Supplies in Kenya - OfficeFlow",
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title: `${categInfo?.name} | Stationery, Printer Supplies & Office Essentials | OfficeFlow Kenya`,
+      description: categInfo?.description,
+      images: ["/restock5.jpg"],
+    },
+
+    robots: {
       index: true,
       follow: true,
-      "max-snippet": -1,
-      "max-image-preview": "large",
-      "max-video-preview": -1
-    }
-  },
-
-  metadataBase: new URL("https://www.officeaura.co.ke"),
-};
-
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+  };
+}
 type Props = {
   searchParams: Promise<{
     page?: string
@@ -83,6 +86,8 @@ const Shop = async({ searchParams }: Props) => {
   const page = Number(params.page) || 1
  
   const allProducts = await getProductsList(page, 30);
+  let categData = await getCategoryType("office-supplies-kenya")
+  let categInfo = categData?.docs[0];
   const resArr = allProducts?.docs;
 
   const today = new Date().getDate()
@@ -98,8 +103,21 @@ const productsArr = resArr && seededShuffle(resArr, today)
         totalPages={allProducts.totalPages}
       />}
         <div className={styles.shopInfo}>
-            <h4>Why invest in the right office decor?</h4>
-            <p>Beyond mere aesthetics, the right office setup significantly impacts your daily work experience. A well-organized and visually appealing office environment can boost morale, reduce stress, and enhance focus, ultimately leading to increased efficiency. From ergonomic accessories that promote comfort, to stylish decor that reflects your personal or company brand, investing in your office space is an investment in your success. Explore our wide range of office solutions including office desk accessories, office lighting solutions, office wall accessories and office greenery solutions today and discover how the perfect blend of functionality and style can create a workspace you'll love. Elevate your office, elevate your work. Find the ideal office decor and office accessories to optimize your workspace and achieve peak performance.</p>
+            <h1>{categInfo?.name}</h1>
+            <p>{categInfo?.['page-description']}</p>
+        </div>
+        <div className={styles.questions}>
+          <h1>FAQs about OfficeFlow's {categInfo?.name}</h1>
+          {categInfo?.FAQs?.map((quiz)=>{
+
+            return (
+              <div key={quiz.id} className={styles.question}>
+            <h4>{quiz.question}</h4>
+            <p>{quiz.answer}</p>
+          </div>
+            )
+          })}
+          
         </div>
         </div>
         <div className={styles.quote}>

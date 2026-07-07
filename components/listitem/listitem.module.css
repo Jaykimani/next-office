@@ -115,6 +115,11 @@ font-family: 'Times New Roman', Times, serif;
     height: 25px;
     color: black;
 }
+.whatsappCta{
+    text-decoration: none;
+    color: black;
+}
+
 
 @media screen and (max-width: 800px) {
     .listItem{
@@ -168,7 +173,7 @@ font-family: 'Times New Roman', Times, serif;
     }
     .listItem2{
         display: block;
-        width: 170px;
+        width: auto;
         height: auto;
         background-color: rgb(54, 54, 54);
         padding-bottom: 8px;
@@ -215,12 +220,10 @@ font-family: 'Times New Roman', Times, serif;
         font-size: 14px;
     }
     .itemInfoCounter2{
-    width: 80%;
+    width: 70%;
     height: 35px;
     display: flex;
     justify-content: space-between;
-    background-color: #181818;
-    border-radius: 30px;
     margin-bottom: 14px;
     margin-left: 5px;
 }
@@ -296,5 +299,8 @@ font-family: 'Times New Roman', Times, serif;
     width: 20px;
     height: 20px;
     color: black;
+}
+.whatsappCta{
+    text-decoration: none;
 }
 }

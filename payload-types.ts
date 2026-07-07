@@ -189,6 +189,14 @@ export interface Category {
   type: 'category' | 'subcategory' | 'vibe';
   description: string;
   'page-description': string;
+  keywords?: string[] | null;
+  FAQs?:
+    | {
+        question: string;
+        answer: string;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -920,6 +928,14 @@ export interface CategoriesSelect<T extends boolean = true> {
   type?: T;
   description?: T;
   'page-description'?: T;
+  keywords?: T;
+  FAQs?:
+    | T
+    | {
+        question?: T;
+        answer?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }

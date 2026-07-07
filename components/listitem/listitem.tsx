@@ -127,7 +127,7 @@ const ListItem = ({ iteminfo }: ProductsProps) => {
       className={styles.whatsappCta}
       title="Chat with us on WhatsApp"
     >
-                          <IoLogoWhatsapp className={styles.itemWhatsappImg2}/>
+                          <IoLogoWhatsapp className={styles.itemWhatsappImg}/>
                           </a>
                         </div>
                       </div>
@@ -147,9 +147,9 @@ const ListItem = ({ iteminfo }: ProductsProps) => {
                       <h4>{iteminfo.name?.length > 20 ? iteminfo.name.substring(0, 30) + '...' : iteminfo.name}</h4>
                       <h6><span>KSh</span> {price.toLocaleString('en-US')}/=</h6>
                       <div className={styles.itemInfoCounter2}>
-                       <div onClick={() => setCounter(counter-=1)}><FaMinus style={{width: "20px", color: "white"}}/></div>
+                       <div onClick={() => setCounter(counter-=1)} style={{backgroundColor: "#282828"}}><FaMinus style={{width: "20px", color: "white"}}/></div>
                        <div>{counter}</div>
-                       <div onClick={() => setCounter(counter+=1)}><MdAdd style={{width: "25px", height: "25px", color: "white"}}/></div>
+                       <div onClick={() => setCounter(counter+=1)} style={{backgroundColor: "#282828"}}><MdAdd style={{width: "25px", height: "25px", color: "white"}}/></div>
                       </div>
                       <div className={styles.variants2}>
                        {iteminfo?.variants?.map((item)=>{
@@ -177,7 +177,7 @@ const ListItem = ({ iteminfo }: ProductsProps) => {
       rel="noopener noreferrer"
       className={styles.whatsappCta}
       title="Chat with us on WhatsApp"
-    >
+      >
                           <IoLogoWhatsapp className={styles.itemWhatsappImg2}/>
                           </a>
                         </div>

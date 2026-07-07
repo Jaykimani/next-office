@@ -82,7 +82,30 @@ export const Categories: CollectionConfig = {
           name: 'page-description',
           type: 'text',
           required: true
-        },    
+        },
+        {
+  name: "keywords",
+  type: "text",
+  hasMany: true,
+  
+},
+        {
+  name: "FAQs",
+  type: "array",
+  required: false,
+  fields: [
+    {
+      name: "question",
+      type: "text",
+      required: true,
+    },
+    {
+      name: "answer",
+      type: "text",
+      required: true,
+    },
+  ],
+},
 
   ],
 }

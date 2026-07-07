@@ -153,7 +153,9 @@ const ServiceNav = () => {
             </div>
          </div>
         <div className={styles.navbarInset2}>
-        <Image className={styles.svgLogo} src="/Component 1.svg" alt="office aura image" width={500} height={300}/>
+        <Link href={'/'}>
+            <Image className={styles.svgLogo} src="/Component 1.svg" alt="office aura image" width={500} height={300}/>
+        </Link>
         <div className={styles.shopping}> 
           <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)}>
               <Link href={'/my-account/sign-in'} style={{display: 'flex'}}>

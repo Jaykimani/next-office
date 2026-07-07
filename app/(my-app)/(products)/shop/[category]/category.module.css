@@ -9,7 +9,7 @@
     padding: 40px;
     margin: 50px auto 0;
 }
-.shopInfo h4{
+.shopInfo h1{
     font-family: 'Playfair Display', sans-serif;
     color: white;
     font-size: 40px;
@@ -21,6 +21,29 @@
     font-size: 21px;
     line-height: 35px;
 }
+.questions{
+    width: 80%;
+    height: auto;
+    padding: 0px 40px;
+    margin: 0 auto;
+    color: white;
+}
+.question{
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+.question h4{
+    font-family: calibri;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.question p{
+    font-family: calibri;
+    font-size: 18px;
+    line-height: 25px;
+}
+
 .quote{
     width: 100%;
     height: auto;
@@ -73,11 +96,11 @@
         height: auto;
         padding: 10px 10px 40px;
     }
-    .shopInfo h4{
+    .shopInfo h{
         font-family: 'Playfair Display', sans-serif;
         color: white;
-        font-size: 35px;
-        margin-bottom: 30px;
+        font-size: 23px;
+        margin-bottom: 25px;
         text-align: center;
 
     }
@@ -88,6 +111,31 @@
         line-height: 33px;
         text-align: left;
     }
+      .questions{
+    width: 100%;
+    height: auto;
+    padding: 0px 10px;
+    margin: 0 auto;
+    color: white;
+}
+.questions h1{
+    font-size: 20px;
+}
+.question{
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+}
+.question h4{
+    font-family: calibri;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.question p{
+    font-family: calibri;
+    font-size: 14px;
+    line-height: 25px;
+}
        .quote{
         width: 100%;
         height: auto;
