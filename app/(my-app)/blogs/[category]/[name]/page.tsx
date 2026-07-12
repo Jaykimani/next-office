@@ -41,7 +41,7 @@ export async function generateMetadata({params} : Props): Promise<Metadata> {
     description:
       mainBlog.seo?.metaDescription || mainBlog.excerpt,
 
-    keywords: mainBlog.seo?.keywords?.split(',') || [],
+    keywords: mainBlog.seo?.keywords,
 
     openGraph: {
       title: mainBlog.title,
@@ -58,6 +58,8 @@ export async function generateMetadata({params} : Props): Promise<Metadata> {
       ],
       locale: 'en_KE',
       type: 'article',
+      publishedTime: mainBlog.createdAt,
+      modifiedTime: mainBlog.updatedAt
     },
 
     twitter: {
@@ -102,7 +104,7 @@ const Blog = async({params} : Props) => {
 
   headline: mainBlog?.title,
 
-  description: mainBlog?.excerpt,
+  description: mainBlog?.seo.metaDescription,
 
   image: blogImage,
 
@@ -110,9 +112,12 @@ const Blog = async({params} : Props) => {
 
   dateModified: mainBlog?.updatedAt,
 
+  inLanguage: "en-KE",
+
   author: {
     "@type": "Organization",
     name: "OfficeFlow",
+    url: "https://officeflow.co.ke",
   },
 
   publisher: {
@@ -158,20 +163,37 @@ const Blog = async({params} : Props) => {
 
   name: mainBlog?.title,
 
-  description: mainBlog?.excerpt,
+  description: mainBlog?.seo.metaDescription,
+
+  inLanguage: "en-KE",
+
+  isPartOf: {
+    "@id": "https://officeflow.co.ke/#website",
+  },
 
   about: {
     "@id": "https://www.officeflow.co.ke/#organization",
   },
+  },
+  {
+     "@type": "FAQPage",
+
+  mainEntity: mainBlog?.seo?.FAQs?.map((faq) => ({
+    "@type": "Question",
+
+    name: faq.question,
+
+    acceptedAnswer: {
+      "@type": "Answer",
+
+      text: faq.answer,
+    },
+  })),
   }
   ]
   
 };
        
-  const breadcrumbSchema = {
-  '@context': 'https://schema.org',
- 
-};
 
   return (<>
    <script

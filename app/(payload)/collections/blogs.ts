@@ -46,7 +46,6 @@ export const Blogs: CollectionConfig = {
       name: 'featuredImage',
       type: 'upload',
       relationTo: 'media', // assuming you have a media collection
-      required: true,
     },
 
     // 📂 Category
@@ -56,9 +55,11 @@ export const Blogs: CollectionConfig = {
       required: true,
       options: [
          { label: 'Office Supplies', value: 'office-supplies' },
-         { label: 'Office Restock & Procurement', value: 'office-restock-procurement' },
+         { label: 'Office Restock', value: 'office-restock' },
+         { label: 'Office Procument', value: 'office-procument' },
         { label: 'Productivity Tips', value: 'productivity-tips' },
         { label: 'Business Guides', value: 'business-guides' },
+        { label: 'Office Setup', value: 'office-setup' },
       ],
     },
 
@@ -124,10 +125,29 @@ export const Blogs: CollectionConfig = {
         {
           name: 'keywords',
           type: 'text',
+          hasMany: true,
+          required: true,
           admin: {
             description: 'Comma separated keywords',
           },
         },
+        {
+  name: "FAQs",
+  type: "array",
+  required: false,
+  fields: [
+    {
+      name: "question",
+      type: "text",
+      required: true,
+    },
+    {
+      name: "answer",
+      type: "text",
+      required: true,
+    },
+  ],
+},
       ],
     },
   ],

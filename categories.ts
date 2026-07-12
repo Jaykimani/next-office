@@ -1,28 +1,28 @@
 export const Categories  = [
     {
     id: 1,
-    title: { id: 'Office Supply Products', name: 'office-supplies' },
-    links: [ { id: 'Stationery & Writing Supplies', name: 'stationery-writing-supplies' },
-              { id: 'Printing & Paper Supplies', name: 'printing-paper-supplies' }, 
-              { id: 'Printer & Ink Supplies', name: 'printer-ink-supplies' }, 
-              { id: 'Pantry & Hydration Supplies', name: 'pantry-hydration-supplies' },
-              { id: 'Cleaning & Hygiene Supplies', name: 'cleaning-hygiene-supplies' },
-              { id: 'IT & Tech Supplies', name: 'it-tech-supplies' },]
+    title: { id: 'Office Supply Products', url: '/shop/office-supplies' },
+    links: [ { id: 'Stationery & Writing Supplies', url: '/shop/office-supplies/stationery-writing-supplies' },
+              { id: 'Printing & Paper Supplies', url: '/shop/office-supplies/printing-paper-supplies' }, 
+              { id: 'Printer & Ink Supplies', url: '/shop/office-supplies/printer-ink-supplies' }, 
+              { id: 'Pantry & Hydration Supplies', url: '/shop/office-pantry-hydration' },
+              { id: 'Cleaning & Hygiene Supplies', url: '/shop/office-cleaning-hygiene' },
+              { id: 'IT & Tech Supplies', url: '/shop/office-it-tech' },]
     },
     {
         id: 3,
-        title: { id: 'Office Workspace Accessories', name: 'office-workspace-accessories' },
-        links: [{ id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
-              { id: 'Office Desk Essentials/Utility Tools', name: 'office-desk-essentials-utility-tools' },
-              { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
+        title: { id: 'Office Workspace Accessories', url: '/shop/office-workspace-accessories' },
+        links: [{ id: 'Office Ergonomic/Comfort Accessories', url: '/shop/office-workspace-accessories/office-ergonomic-comfort-accessories' },
+              { id: 'Office Desk Essentials/Utility Tools', url: '/shop/office-workspace-accessories/office-desk-essentials-utility-tools' },
+              { id: 'Office Productivity/Writing Tools', url: '/shop/office-workspace-accessories/office-productivity-writing-tools' },
               ]
     },
     {
         id: 5,
-        title: { id: 'Office Electronics Solutions', name: 'office-electronics' },
-        links: [ { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
-              { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
-              { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' }
+        title: { id: 'Office Electronics Solutions', name: '/shop/office-electronics' },
+        links: [ { id: 'Office Charging & Power Accessories', name: '/shop/office-electronics/office-charging-power-accessories' },
+              { id: 'Office Computer Accessories', name: '/shop/office-electronics/office-computer-accessories' },
+              { id: 'Office Cable Management Tech', name: '/shop/office-electronics/office-cable-management-tech' }
           ]
     },
 
@@ -30,18 +30,18 @@ export const Categories  = [
 
 
 export const Subcategory = [
-              { id: 'Stationery & Writing Supplies', name: 'stationery-writing-supplies' },
-              { id: 'Printing & Paper Supplies', name: 'printing-paper-supplies' }, 
-              { id: 'Printer & Ink Supplies', name: 'printer-ink-supplies' }, 
-              { id: 'Pantry & Hydration Supplies', name: 'pantry-hydration-supplies' },
-              { id: 'Cleaning & Hygiene Supplies', name: 'cleaning-hygiene-supplies' },
-              { id: 'IT & Tech Supplies', name: 'it-tech-supplies' },
-              { id: 'Office Ergonomic/Comfort Accessories', name: 'office-ergonomic-comfort-accessories' },
-              { id: 'Office Desk Essentials/Utility Tools', name: 'office-desk-essentials-utility-tools' },
-              { id: 'Office Productivity/Writing Tools', name: 'office-productivity-writing-tools' },
-              { id: 'Office Charging & Power Accessories', name: 'office-charging-power-accessories' },
-              { id: 'Office Computer Accessories', name: 'office-computer-accessories' },
-              { id: 'Office Cable Management Tech', name: 'office-cable-management-tech' }
+              { id: 'Stationery & Writing Supplies', url: '/shop/office-supplies/stationery-writing-supplies' },
+              { id: 'Printing & Paper Supplies', url: '/shop/office-supplies/printing-paper-supplies' }, 
+              { id: 'Printer & Ink Supplies', url: '/shop/office-supplies/printer-ink-supplies' }, 
+              { id: 'Pantry & Hydration Supplies', url: '/shop/office-pantry-hydration' },
+              { id: 'Cleaning & Hygiene Supplies', url: '/shop/office-cleaning-hygiene' },
+              { id: 'IT & Tech Supplies', url: '/shop/office-it-tech' },
+             { id: 'Office Ergonomic/Comfort Accessories', url: '/shop/office-workspace-accessories/office-ergonomic-comfort-accessories' },
+              { id: 'Office Desk Essentials/Utility Tools', url: '/shop/office-workspace-accessories/office-desk-essentials-utility-tools' },
+              { id: 'Office Productivity/Writing Tools', url: '/shop/office-workspace-accessories/office-productivity-writing-tools' },
+               { id: 'Office Charging & Power Accessories', name: '/shop/office-electronics/office-charging-power-accessories' },
+              { id: 'Office Computer Accessories', name: '/shop/office-electronics/office-computer-accessories' },
+              { id: 'Office Cable Management Tech', name: '/shop/office-electronics/office-cable-management-tech' }
 ]
 export const shopCategory = [
   {

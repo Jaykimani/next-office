@@ -61,15 +61,40 @@
 }
 .content h2{
     font-size: 26px;
-    margin: 20px 0;
-    font-family: "Oswald", sans-serif;
+    margin: 30px 0 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+}
+.content h3{
+     font-size: 22px;
+    margin: 30px 0 20px;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
 }
 .content h4{
-    font-size: 22px;
+    font-size: 20px;
     margin: 15px 0;
     font-family: "Oswald", sans-serif; 
     font-weight: 500;
+    text-decoration: underline;
+}
+.content h5{
+    width: fit-content;
+    font-size: 20px;
+    margin: 30px 0px 0;
+    font-family: "Oswald", sans-serif; 
+    font-weight: 500;
+    background-color: #a2a2a2;
+    padding: 20px;
+}
+.content h6{
+    width: 80%;
+    font-size: 15px;
+    margin: 0px 0px 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    background-color: #d2d2d2;
+    padding: 20px;
 }
 .content ul{
     margin-left: 50px;
@@ -314,7 +339,7 @@
     .blogNav{
     width: 100%;
     height: 120px;
-    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.5), rgba(0, 0 ,0 , 0.5)), url('/landing.png');
+    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.5), rgba(0, 0 ,0 , 0.5)), url('/blogcta.jpg');
     background-size: cover;
     background-position: center;
     padding: 20px 0px;
@@ -376,29 +401,53 @@
 }
 .content p{
     margin: 15px 0;
-    font-size: 16px;
+    font-size: 15px;
 }
 .content h2{
-    font-size: 25px;
+    font-size: 23px;
     margin: 20px 0;
-    font-family: "Oswald", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+}
+.content h3{
+     font-size: 18px;
+    margin: 20px 0 15px;
+    font-family: "Roboto", sans-serif;
     font-weight: 600;
 }
 .content h4{
-    font-size: 20px;
+    font-size: 18px;
     margin: 15px 0;
     font-family: "Oswald", sans-serif; 
-    font-weight: 600;
+    font-weight: 400;
+}
+.content h5{
+    width: fit-content;
+    font-size: 18px;
+    margin: 20px 0px 0;
+    font-family: "Oswald", sans-serif; 
+    font-weight: 500;
+    background-color: #a2a2a2;
+    padding: 10px;
+}
+.content h6{
+    width: 100%;
+    font-size: 14px;
+    margin: 0px 0px 20px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    background-color: #d2d2d2;
+    padding: 10px;
 }
 .content ul{
-    margin-left: 30px;
+    margin-left: 20px;
 }
 .content ol{
-    margin-left: 30px;
+    margin-left: 20px;
 }
 .content ul li, .content ol li{
-    margin: 10px 20px;
-    font-size: 16px;
+    margin: 10px 15px;
+    font-size: 15px;
 }
 .blogInsetSide{
     width: 100%;

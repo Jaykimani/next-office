@@ -63,14 +63,14 @@ function List({ productsArr }: ProductsProps) {
                {Categories?.map((item)=>{
                 return (
                <div key={item.title.id} className={styles.categoriesDiv}>
-               <Link href={`/shop/${item.title.name}`} style={{textDecoration: "none", color: "#ffe100"}}>
+               <Link href={`${item.title.url}`} style={{textDecoration: "none", color: "#ffe100"}}>
                <h4>{item.title.id}</h4>
                </Link>
                
                {item.links?.map((link)=>{
                 
                 return (
-               <Link key={link.id} href={`/shop/${item.title.name}/${link.name}`} style={{textDecoration: "none", color: "white"}}>
+               <Link key={link.id} href={`${link.url}`} style={{textDecoration: "none", color: "white"}}>
                <div className={styles.categLink}>
                <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
                <p style={{color: 'white'}}>{link.id}</p>
@@ -120,14 +120,14 @@ function List({ productsArr }: ProductsProps) {
              {Categories?.map((item)=>{
                 return (
                 <div key={item.title.id} className={styles.categSection2}>
-              <Link href={`/shop/${item.title.name}`} style={{textDecoration: "none", color: "#ffe100"}}>
+              <Link href={`${item.title.url}`} style={{textDecoration: "none", color: "#ffe100"}}>
               <h4>{item.title.id}</h4>
               </Link>  
                
                {item.links?.map((link)=>{
                 
                 return (
-               <Link key={link.id} href={`/shop/${item.title.name}/${link.name}`} style={{textDecoration: "none", color: "white"}}>
+               <Link key={link.id} href={`${link.url}`} style={{textDecoration: "none", color: "white"}}>
                <div className={styles.categLink2}>
                <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
                <p style={{color: 'white'}}>{link.id}</p>

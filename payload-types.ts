@@ -727,8 +727,14 @@ export interface Blog {
   id: number;
   title: string;
   slug?: string | null;
-  featuredImage: number | Media;
-  category: 'office-supplies' | 'office-restock-procurement' | 'productivity-tips' | 'business-guides';
+  featuredImage?: (number | null) | Media;
+  category:
+    | 'office-supplies'
+    | 'office-restock'
+    | 'office-procument'
+    | 'productivity-tips'
+    | 'business-guides'
+    | 'office-setup';
   author?: string | null;
   publishedDate: string;
   excerpt: string;
@@ -752,13 +758,20 @@ export interface Blog {
    * Example: 5 minutes
    */
   readTime?: string | null;
-  seo?: {
+  seo: {
     metaTitle?: string | null;
     metaDescription?: string | null;
     /**
      * Comma separated keywords
      */
-    keywords?: string | null;
+    keywords: string[];
+    FAQs?:
+      | {
+          question: string;
+          answer: string;
+          id?: string | null;
+        }[]
+      | null;
   };
   updatedAt: string;
   createdAt: string;
@@ -1287,6 +1300,13 @@ export interface BlogsSelect<T extends boolean = true> {
         metaTitle?: T;
         metaDescription?: T;
         keywords?: T;
+        FAQs?:
+          | T
+          | {
+              question?: T;
+              answer?: T;
+              id?: T;
+            };
       };
   updatedAt?: T;
   createdAt?: T;
