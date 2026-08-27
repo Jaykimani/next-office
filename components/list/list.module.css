@@ -2,6 +2,7 @@
     width: 100%;
     height: auto;
     background-color: black;
+    padding-top: 130px;
 }
 .shopListHeader{
     display: none;
@@ -20,7 +21,7 @@
     position: sticky;
     top: 50px;
     left: 0;
-    width: 23%;
+    width: 20%;
     height: auto;
     border-right: 2px solid rgb(174, 174, 174);
     padding: 10px;
@@ -67,7 +68,7 @@
     color: white;
 }
 .shopListItem{
-    width: 77%;
+    width: 80%;
     height: auto;
     padding: 0 20px;
     
@@ -123,6 +124,7 @@
         width: 100%;
         height: auto;
         background-color: black;
+        padding-top: 130px;
     }
     .shopListHeader{
        display: none;
@@ -140,52 +142,15 @@
         width: 100%;
         height: 100%;
         display: flex;
-        padding: 40px 0 0;
+        padding: 40px 0 0 10px;
     }
     .shopCateg{
-        position: sticky;
-        top: 160px;
-        left: 0;
-        width: 25%;
-        height: 80vh;
-        border-right: 2px solid rgb(174, 174, 174);
-        padding: 0px 5px;
-        overflow-y: scroll;
         display: none;
     }
     .shopCateg2{
         display: none;
     }
-    .categSection{
-        width: 100%;
-        height: auto;
-        margin-bottom: 25px;
-    }
-    .categSection h4{
-        font-family: 'Playfair Display', sans-serif;
-        font-size: 18px;
-        color: white;
-        text-align: left;
-        font-weight: 700;
-        margin-bottom: 10px;
-    }
-    .categLink{
-        width: 100%;
-        height: auto;
-        display: flex;
-        align-items: center;
-        margin-left: 0px;
-        border-bottom: 1px solid gray;
-        padding: 5px 0;
-    }
-    .categLink:hover{
-        background-color: black;
-    }
-    .categLink p{
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 15px;
-        color: white;
-    }
+ 
     .shopListItem{
         width: 100%;
         height: auto;
@@ -223,29 +188,9 @@
         width: 100%;
         height: auto;
         background-color: black;
-        
+        padding-top: 0px;
     }
-    .shopListHeader{
-        width: 95%;
-        height: 80px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        color: white;
-        font-family: Calibri;
-    }
-    .listCateg{
-        width: auto;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        font-family: Calibri;
-       background-color: #222222;
-       padding: 0px 10px;
-       cursor: pointer;
-    }
-    
+   
     .shopListInset{
         width: 100%;
         height: 100%;

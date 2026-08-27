@@ -4,6 +4,7 @@ import styles from './shopNav.module.css'
 import { useState, useRef, useEffect} from 'react';
 import { FaShoppingCart } from "react-icons/fa";
 import { MdKeyboardArrowDown } from "react-icons/md";
+import { MdKeyboardArrowRight } from "react-icons/md";
 import { HiMenuAlt2 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
 import Link from 'next/link';
@@ -15,12 +16,10 @@ import { IoHome } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
 import { FaNewspaper } from "react-icons/fa6";
+import { Categories, Subcategory, shopPopularity, shopPrice } from '@/categories';
 
 const ShopNav = () => {
-    const [desk, setDesk] = useState(false);
-    const [light, setLight] = useState(false);
-    const [wall, setWall] = useState(false);
-    const [greenery, setGreenery] = useState(false);
+    
     const [phoneOpt, setPhoneOpt] = useState(false);
     const [shopMenu, setShopMenu] = useState(false);
     const shop2DivInset = useRef<HTMLDivElement | null>(null);
@@ -28,6 +27,18 @@ const ShopNav = () => {
     const items = useCartStore((state)=> state.items);
     const subtotal = useCartStore((state)=> state.subtotal);
     const [login, setLogin] = useState(false);
+    const [shopSort, setShopsort] = useState(false);
+    const [categSort, setCategSort] = useState(false);
+
+    const handleSort = ()=>{
+        setShopsort(!shopSort);
+        setCategSort(false);
+    }
+
+    const handleCategSort = ()=>{
+      setCategSort(!categSort);
+      setShopsort(false);
+    }
 
     useEffect(()=>{
       if(phoneOpt){
@@ -43,70 +54,6 @@ const ShopNav = () => {
 
     }, [items]);
 
-    const handleDesk = ()=>{
-        
-        setDesk(!desk);
-        setLight(false);
-        setWall(false);
-        setGreenery(false);
-    }
-    const handleDeskEnter = (e: any)=>{
-      
-       setDesk(true);
-        setLight(false);
-        setWall(false);
-        setGreenery(false);
-    }
-    const handleDeskLeave = ()=>{
-       setDesk(false);
-        setLight(false);
-        setWall(false);
-        setGreenery(false);
-    }
-  
-    const handleWall = (e: any)=>{
-
-        setDesk(false);
-        setLight(false);
-        setWall(!wall);
-        setGreenery(false);
-    }
-     const handleWallEnter = (e: any)=>{
-
-        setDesk(false);
-        setLight(false);
-        setWall(true);
-        setGreenery(false);
-    }
-     const handleWallLeave = (e: any)=>{
-
-        setDesk(false);
-        setLight(false);
-        setWall(false);
-        setGreenery(false);
-    }
-  
-    const handleGreenery = (e: any)=>{
-        
-        setDesk(false);
-        setLight(false);
-        setWall(false);
-        setGreenery(!greenery);
-    }
-    const handleGreeneryEnter = (e: any)=>{
-        
-        setDesk(false);
-        setLight(false);
-        setWall(false);
-        setGreenery(true);
-    }
-    const handleGreeneryLeave = (e: any)=>{
-        
-        setDesk(false);
-        setLight(false);
-        setWall(false);
-        setGreenery(false);
-    }
 
     const handleOpenOpt = ()=>{
       setPhoneOpt(true);
@@ -116,20 +63,12 @@ const ShopNav = () => {
       setPhoneOpt(false);
     }
 
-    const handleSubcategory = (e: any) => {
-      setDesk(false);
-        setLight(false);
-        setWall(false);
-        setGreenery(false);
-      
-    }
+  
 
 
     return (
         <>
-        <div className={styles.shopContact}>
-            <p>Email: josephkimani1998@gmail.com / Need help? Whatsapp us on 0704610605</p>
-        </div>
+       
         <div id={styles.shop1}>
          <div className={styles.shopNavMenu} style={{display: shopMenu ? "block" : "none"}}>
           <MdClose style={{color: "white", width: "45px", height: "45px", marginBottom: "10px"}} onClick={()=> setShopMenu(false)}/>
@@ -156,12 +95,12 @@ const ShopNav = () => {
              <Image className={styles.svgLogo1} src="/Component 2.svg" alt="" width={100} height={100} />
              </Link>
              <SearchInput />
-             <div className={styles.logShop}>
+          
              <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)}>
               <div className={styles.loginTop}>
               <Link href={'/my-account/sign-in'} style={{display: 'flex', color: 'white'}}>
               <FaUserTie style={{color : '#ffe100', width: '35px', height: '35px'}}/>
-              <div>
+              <div className={styles.welcome}>
                 <p>WELCOME</p>
                 <p>Sign in/Register</p>
               </div>
@@ -178,18 +117,28 @@ const ShopNav = () => {
               
               </div>
               </div>
-               <Link href={'/cart'} style={{textDecoration: "none"}}>
-               <div className={styles.shopIconDiv}>
+               <Link href={'/cart'} style={{textDecoration: "none"}} className={styles.shopIconDiv}>
                <div className={styles.shopInset}>
                <FaShoppingCart className={styles.shopIcon} />
               <span className={styles.shopCount}>{count}</span>
               </div>
               <p>KSh {subtotal}.00</p>
-             </div>
+             
                </Link>
-               </div>
+      
             </div>
-            
+            <div className={styles.shopLinks}>
+              {Subcategory.map((category) => {
+                return (
+                    <Link key={category.id} href={category.url}>
+                    <div className={styles.shopLink}>
+                <p>{category.id}</p>
+                </div>
+                    </Link>
+                )
+              })}
+  
+            </div>
 
         </div>
 
@@ -258,6 +207,84 @@ const ShopNav = () => {
          </div>
          </div>
          <SearchInput />
+            <div className={styles.shopListHeader}>
+                <div className={styles.listCateg}>
+                 <p>Browse Categories</p>
+                 <MdKeyboardArrowDown/>
+                </div>
+                <div className={styles.listCateg}>
+                 <p>Shop by:</p>
+                 <MdKeyboardArrowDown/>
+                </div>
+            </div>
+            <div className={styles.shopCateg2} style={{display: categSort ? 'block' : 'none'}}>
+              <div className={styles.shopCateg2Inset}>
+              <div className={styles.shopCateg2Close} >
+              <MdClose style={{color: 'white', width: '35px', height: '35px'}} onClick={()=>{setCategSort(false)}}/>
+              <p>close</p>
+              </div>
+             {Categories?.map((item)=>{
+                return (
+                <div key={item.title.id} className={styles.categSection2}>
+              <Link href={`${item.title.url}`} style={{textDecoration: "none", color: "#ffe100"}}>
+              <h4>{item.title.id}</h4>
+              </Link>  
+               
+               {item.links?.map((link)=>{
+                
+                return (
+               <Link key={link.id} href={`${link.url}`} style={{textDecoration: "none", color: "white"}}>
+               <div className={styles.categLink2}>
+               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
+               <p style={{color: 'white'}}>{link.id}</p>
+               </div>
+               </Link>
+               
+                )
+               })}
+               
+              </div>
+                )
+              })}
+              </div>
+             </div>
+             <div className={styles.shopCateg2} style={{display: shopSort ? 'block' : 'none'}}>
+              <div className={styles.shopCateg2Inset}>
+              <div className={styles.shopCateg2Close}>
+              <MdClose style={{color: 'white', width: '35px', height: '35px'}} onClick={()=>{setShopsort(false)}}/>
+              <p>close</p>
+              </div>
+               <div className={styles.categSection2}>
+               <h4>Shop by Popularity</h4>
+               {shopPopularity.map((link)=>{
+            
+                return (
+               <div key={link} className={styles.categLink2}>
+               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
+               <p style={{color: 'white'}}>{link}</p>
+               </div>
+               
+                )
+               })}
+               
+              </div>
+               <div className={styles.categSection2}>
+               <h4>Shop by Price </h4>
+               {shopPrice.map((link)=>{
+            
+                return (
+               <div key={link} className={styles.categLink2}>
+               <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
+               <p style={{color: 'white'}}>{link}</p>
+               </div>
+               
+                )
+               })}
+               
+              </div>
+             
+              </div>
+             </div>
         </div>
         </>
     )

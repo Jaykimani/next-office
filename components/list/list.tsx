@@ -47,16 +47,7 @@ function List({ productsArr }: ProductsProps) {
     return(
         <>
         <div id={styles.shopList}>
-            <div className={styles.shopListHeader}>
-                <div className={styles.listCateg} onClick={handleCategSort}>
-                 <p>Browse Categories</p>
-                 <MdKeyboardArrowDown style={{transform: categSort ? 'rotate(180deg)' : 'rotate(0deg)', marginLeft: '20px'}}/>
-                </div>
-                <div className={styles.listCateg} onClick={handleSort}>
-                 <p>Shop by:</p>
-                 <MdKeyboardArrowDown style={{transform: categSort ? 'rotate(180deg)' : 'rotate(0deg)', marginLeft: '20px'}}/>
-                </div>
-            </div>
+         
             <div className={styles.shopListInset}>
              <div className={styles.shopCateg}>
               <div className={styles.categSection}>
@@ -144,7 +135,7 @@ function List({ productsArr }: ProductsProps) {
              </div>
              <div className={styles.shopCateg2} style={{display: shopSort ? 'block' : 'none'}}>
               <div className={styles.shopCateg2Inset}>
-              <div className={styles.shopCateg2Close} >
+              <div className={styles.shopCateg2Close}>
               <MdClose style={{color: 'white', width: '35px', height: '35px'}} onClick={()=>{setShopsort(false)}}/>
               <p>close</p>
               </div>
@@ -179,7 +170,7 @@ function List({ productsArr }: ProductsProps) {
              
               </div>
              </div>
-             <div className={styles.shopListItem}>
+             {/* <div className={styles.shopListItem}>
               <div className={styles.shopListItemInset}>
                <Masonry
     breakpointCols={breakpointColumnsObj}
@@ -198,7 +189,7 @@ function List({ productsArr }: ProductsProps) {
                </Masonry>
               </div>
             
-             </div>
+             </div> */}
               
             </div>
             
