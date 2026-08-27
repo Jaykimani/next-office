@@ -151,7 +151,7 @@
         border-right: 2px solid rgb(174, 174, 174);
         padding: 0px 5px;
         overflow-y: scroll;
-        display: block;
+        display: none;
     }
     .shopCateg2{
         display: none;
@@ -187,7 +187,7 @@
         color: white;
     }
     .shopListItem{
-        width: 75%;
+        width: 100%;
         height: auto;
         padding: 0 0px;
         display: flex;

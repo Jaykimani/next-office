@@ -3,6 +3,8 @@ import type { CollectionConfig } from 'payload';
 
   const subcategories = [            
               { label: 'Office Charging & Power Accessories', value: 'office-charging-power-accessories' },
+              { label: 'Office Data Transfer Accessories', value: 'office-data-transfer-accessories' },
+              { label: 'Office Data Storage Accessories', value: 'office-data-storage-accessories' },
               { label: 'Office Computer Accessories', value: 'office-computer-accessories' },
               { label: 'Office Cable Management Tech', value: 'office-cable-management-tech' },
               

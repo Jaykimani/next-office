@@ -146,7 +146,7 @@ const allProducts = seededShuffle(products, today)
       />
     <List productsArr = {allProducts}/>
         <div className={styles.shopInfo}>
-            <h1>{categInfo?.name}</h1>
+            <h1>{categInfo?.name} in Kenya</h1>
             <p>{categInfo?.['page-description']}</p>
         </div>
          <div className={styles.questions}>

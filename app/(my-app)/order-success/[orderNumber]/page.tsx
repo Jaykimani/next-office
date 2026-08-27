@@ -153,7 +153,7 @@ Cutomer whatsapp confirmation: ${whatsappConfirm}
         <div className={styles.successTop}>
         <Image className={styles.successImg} src="/mark.png" alt="office accent accessories" width={200} height={200}/>
         <h1>Order Successfully Placed!</h1>
-        <p>Thank you for shopping with Office Aura. We've received your order and will begin processing it shortly.</p>
+        <p>Thank you for shopping with OfficeFlow Kenya. We've received your order and will begin processing it shortly.</p>
         <p>You will receive an order confirmation message on whatsapp and email with details of your order.</p>
         <div className={styles.orderNumber}><h4>Your ORDER NUMBER is:<br className={styles.breaker}></br> {data.orderNumber}</h4></div>
         <p>Order date: {formatted}</p>

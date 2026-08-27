@@ -23,10 +23,17 @@ const Services = () => {
                   <p>Visit our online shop</p>
                   </div>
                   </Link>
-                   <div className={styles.whatsappbtn}>
+                  <a
+                  className={styles.whatsappbtn}
+                  href={`https://wa.me/254704610605?text=Hello OfficeFlow Kenya,...`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{textDecoration: 'none', color: 'black', fontSize: '18px'}}
+                  title="Chat with us on WhatsApp"
+                >
                   <FaWhatsapp style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Order from Whatsapp</p>
-                  </div>
+                  <p className={styles.whatsappbtnp}>Order from Whatsapp</p>
+                </a>
                     </div>
                 </div>
 
@@ -45,10 +52,17 @@ const Services = () => {
                   <p>Visit our online shop</p>
                   </div>
                   </Link>
-                   <div className={styles.whatsappbtn}>
+                   <a
+                  className={styles.whatsappbtn}
+                  href={`https://wa.me/254704610605?text=Hello OfficeFlow Kenya,...`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{textDecoration: 'none', color: 'black', fontSize: '18px'}}
+                  title="Chat with us on WhatsApp"
+                >
                   <FaWhatsapp style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Order from Whatsapp</p>
-                  </div>
+                  <p className={styles.whatsappbtnp}>Order from Whatsapp</p>
+                </a>
                   </div>
                 </div>
             </div>
@@ -57,7 +71,7 @@ const Services = () => {
                   <Image className={styles.featureImg} src="/printer2.jpg" alt="fast shipping" width={500} height={500}/>
                 </div>
               <div className={styles.featureInfo}>
-                  <h4>Printer & Ink supplies</h4>
+                  <h4>Printer Consumables</h4>
                   <p className={styles.featureList}>Ink cartridges, Toner cartridges, Printer ribbons, Maintenance kits, Refilling Services, Thermal paper rolls, POS printer rolls</p>
                   <div>
                   <Link href={'/shop/office-supplies/printer-ink-supplies'}>
@@ -67,12 +81,48 @@ const Services = () => {
                   </div>
                   </Link>
                  
-                   <div className={styles.whatsappbtn}>
+                    <a
+                  className={styles.whatsappbtn}
+                  href={`https://wa.me/254704610605?text=Hello OfficeFlow Kenya,...`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{textDecoration: 'none', color: 'black', fontSize: '18px'}}
+                  title="Chat with us on WhatsApp"
+                >
                   <FaWhatsapp style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Order from Whatsapp</p>
-                  </div>
+                  <p className={styles.whatsappbtnp}>Order from Whatsapp</p>
+                </a>
                   </div>
                 </div>  
+            </div>
+            <div className={styles.feature}>
+                 <div className={styles.featureImage}>
+                  <Image className={styles.featureImg} src="/tech.jpg" alt="fast shipping" width={500} height={500}/>
+                </div>
+                <div className={styles.featureInfo}>
+                  <h4>IT & Tech Consumables</h4>
+                  <p className={styles.featureList}>HDMI adapters, USB drives, Ethernet cables, Charging cables, Laptop chargers, Extension cables, Surge protectors, Mouse batteries, Keyboard batteries e.t.c</p>
+                  <div>
+                  <Link href={'/shop/office-electronics'}>
+                  <div className={styles.shopbtn}>
+                  <TiShoppingCart style={{width: '30px', height: '30px', marginRight: '15px'}}/>
+                  <p>Visit our online shop</p>
+                  </div>
+                  </Link>
+                  
+                    <a
+                  className={styles.whatsappbtn}
+                  href={`https://wa.me/254704610605?text=Hello OfficeFlow Kenya,...`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{textDecoration: 'none', color: 'black'}}
+                  title="Chat with us on WhatsApp"
+                >
+                  <FaWhatsapp style={{width: '30px', height: '30px', marginRight: '15px'}}/>
+                  <p className={styles.whatsappbtnp}>Order from Whatsapp</p>
+                </a>
+                  </div>
+                </div>
             </div>
             <div className={styles.feature}>
                  <div className={styles.featureImage}>
@@ -88,10 +138,17 @@ const Services = () => {
                   <p>Visit our online shop</p>
                   </div>
                   </Link>
-                   <div className={styles.whatsappbtn}>
+                   <a
+                  className={styles.whatsappbtn}
+                  href={`https://wa.me/254704610605?text=Hello OfficeFlow Kenya,...`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{textDecoration: 'none', color: 'black', fontSize: '18px'}}
+                  title="Chat with us on WhatsApp"
+                >
                   <FaWhatsapp style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Order from Whatsapp</p>
-                  </div>
+                  <p className={styles.whatsappbtnp}>Order from Whatsapp</p>
+                </a>
                   </div>
                 </div>
             </div>
@@ -110,33 +167,22 @@ const Services = () => {
                   </div>
                   </Link>
                  
-                   <div className={styles.whatsappbtn}>
+                   <a
+                  className={styles.whatsappbtn}
+                  href={`https://wa.me/254704610605?text=Hello OfficeFlow Kenya,...`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{textDecoration: 'none', color: 'black', fontSize: '18px'}}
+                  title="Chat with us on WhatsApp"
+                >
                   <FaWhatsapp style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Order from Whatsapp</p>
-                  </div>
+                  <p className={styles.whatsappbtnp}>Order from Whatsapp</p>
+                </a>
                   </div>
                 </div>
 
             </div>
-            <div className={styles.feature}>
-                 <div className={styles.featureImage}>
-                  <Image className={styles.featureImg} src="/tech.jpg" alt="fast shipping" width={500} height={500}/>
-                </div>
-                <div className={styles.featureInfo}>
-                  <h4>IT & Tech Consumables</h4>
-                  <p className={styles.featureList}>HDMI adapters, USB drives, Ethernet cables, Charging cables, Laptop chargers, Extension cables, Surge protectors, Mouse batteries, Keyboard batteries e.t.c</p>
-                  <div>
-                  <div className={styles.shopbtn}>
-                  <TiShoppingCart style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Visit our online shop</p>
-                  </div>
-                   <div className={styles.whatsappbtn}>
-                  <FaWhatsapp style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Order from Whatsapp</p>
-                  </div>
-                  </div>
-                </div>
-            </div>
+            
         
 
         </div>

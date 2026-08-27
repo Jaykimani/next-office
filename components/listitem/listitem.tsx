@@ -72,7 +72,7 @@ const ListItem = ({ iteminfo }: ProductsProps) => {
        ? `\nImage: ${iteminfo.images[0].url}`
       : ''
 
-       return `Hi! I'm interested in this product:\n\n${iteminfo.name}\nPrice: KES ${iteminfo.price}${imageLine}\nLink: https://yourstore.com`      }
+       return `Hi! I'm interested in this product:\n\n${iteminfo.name}\nPrice: KES ${iteminfo.price}${imageLine}\nLink: https://officeflow.co.ke/shop/${iteminfo.category}/${iteminfo.subcategory}/${iteminfo.id}/${iteminfo.slug}`      }
 
     //   if (cartItems.length) {
     //     return `Hi! I want to order the following items:\n\n${cartItems
@@ -94,7 +94,7 @@ const ListItem = ({ iteminfo }: ProductsProps) => {
                     </div>
                     </Link>
                     <div className={styles.itemInfo}>
-                      <h4>{iteminfo.name?.length > 30 ? iteminfo.name.substring(0, 67) + '...' : iteminfo.name}</h4>
+                      <h4>{iteminfo.name}</h4>
                       <h6><span>KSh</span> {price.toLocaleString('en-US')}/=</h6>
                       <div className={styles.itemInfoCounter}>
                        <div onClick={() => setCounter(counter-=1)}><FaMinus style={{width: "20px", color: "white"}}/></div>
@@ -144,7 +144,7 @@ const ListItem = ({ iteminfo }: ProductsProps) => {
                     </div>
                     </Link>
                     <div className={styles.itemInfo2}>
-                      <h4>{iteminfo.name?.length > 20 ? iteminfo.name.substring(0, 30) + '...' : iteminfo.name}</h4>
+                      <h4>{iteminfo.name}</h4>
                       <h6><span>KSh</span> {price.toLocaleString('en-US')}/=</h6>
                       <div className={styles.itemInfoCounter2}>
                        <div onClick={() => setCounter(counter-=1)} style={{backgroundColor: "#282828"}}><FaMinus style={{width: "20px", color: "white"}}/></div>

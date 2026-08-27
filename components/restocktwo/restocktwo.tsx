@@ -1,6 +1,7 @@
 import styles from './restocktwo.module.css'
 import ServiceNav from '../servicenav/servnav';
 import Image from 'next/image'
+import Link from 'next/link';
 
 
 const Restock2 = () => {
@@ -17,11 +18,21 @@ const Restock2 = () => {
         <h1 className={styles.heading1}>Office Supplies and Restocking Services in Nairobi</h1>
        <p>OfficeFlow provides reliable office supplies in Nairobi for businesses that need fast, consistent, and hassle-free workplace restocking. We supply stationery, printing materials, pantry items, cleaning supplies, and IT consumables with quick delivery across Nairobi.</p>
        <div className={styles.herocta}>
-        <div className={styles.quote}>
-            Request a quote
+          <Link href={'/shop'} className={styles.quote}>
+        <div >
+            Shop Now
         </div>
+        </Link>
         <div className={styles.chat}>
-            Talk to us on Whatsapp
+             <a
+                  href={`https://wa.me/254704610605?text=Hello OfficeFlow Nairobi...`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{textDecoration: 'none', color: 'black', fontSize: '16px'}}
+                  title="Chat with us on WhatsApp"
+                >
+                  Talk to us on Whatsapp
+                </a>
         </div>
        </div>
         </div>     

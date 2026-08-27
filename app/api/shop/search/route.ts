@@ -110,14 +110,14 @@ const subcategories = Categories.flatMap(cat => {
   // find all links that match the query
   const matchedLinks = cat.links.filter(link =>
     link.id.toLowerCase().includes(query.toLowerCase()) ||
-    link.name.toLowerCase().includes(query.toLowerCase())
+    link.url.toLowerCase().includes(query.toLowerCase())
   )
 
   // map each matched link to the desired object
   return matchedLinks.map(link => ({
-    categoryName: cat.title.name,  // parent category slug
+    categoryName: cat.title.url,  // parent category slug
     linkId: link.id,
-    linkName: link.name
+    linkName: link.url
   }))
 })
 

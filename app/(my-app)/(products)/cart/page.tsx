@@ -156,16 +156,12 @@ function Cart() {
                 <div className={styles.cartShipping}>
                     <p className={styles.shippingTitle}>Delivery</p> 
                     <div>
-                     <input type="radio" name="shipping-btn" id="nairobi" onChange={()=> {setShipping('Within Nairobi'); setShippingDate('1 - 2 days')}}/>
+                     <input type="radio" name="shipping-btn" id="nairobi" onChange={()=> {setShipping('Within Nairobi'); setShippingDate('same/next day')}}/>
                      <label htmlFor="nairobi">Within Nairobi</label>
                     </div>
                      <div>
                      <input type="radio" name="shipping-btn" id="outside" onChange={()=> {setShipping('Outside Nairobi'); setShippingDate('2 - 4 days')}}/>
                      <label htmlFor="outside">Outside Nairobi</label>
-                    </div>
-                    <div>
-                    <input type="radio" name="shipping-btn" id="self"  onChange={()=> {setShipping('Self pick-up'); setShippingDate('same/next day')}}/>
-                    <label htmlFor="self">Self Pick-up</label>
                     </div>
                 </div>
                 <div className={styles.cartCalendar} style={{height: calendar ? "auto" : "70px"}}>

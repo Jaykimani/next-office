@@ -29,7 +29,7 @@ const Whatsapp = ({ product, phoneNumber }: WhatsAppCTAProps) => {
        ? `\nImage: ${product.images[0].url}`
       : ''
 
-       return `Hi! I'm interested in this product:\n\n${product.name}\nPrice: KES ${product.price}${imageLine}\nLink: https://yourstore.com${pathname}`      }
+       return `Hi! I'm interested in this product:\n\n${product.name}\nPrice: KES ${product.price}${imageLine}\nLink: https://officeflow.co.ke${pathname}`      }
 
     //   if (cartItems.length) {
     //     return `Hi! I want to order the following items:\n\n${cartItems

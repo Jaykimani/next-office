@@ -1,18 +1,27 @@
 "use server"
 import { getPayloadClient } from '@/payloadClient'
 
-type ProductCollection =
-  | "office-supplies"
-  | "office-pantry-hydration"
-  | "office-cleaning-hygiene"
-  | "office-workspace-accessories"
-  | "office-electronics";
+type ProductReference =
+  | {
+      relationTo: "office-supplies";
+      value: number;
+    }
+  | {
+      relationTo: "office-electronics";
+      value: number;
+    }
+  | {
+      relationTo: "office-pantry-hydration";
+      value: number;
+    }
+  | {
+      relationTo: "office-workspace-accessories";
+      value: number;
+    };
 
+    
 export async function submitReview(data: {
-  product: {
-    relationTo: ProductCollection
-    value: number
-  }
+  product: ProductReference
   title: string
   rating: number
   authorName: string

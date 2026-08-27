@@ -1,27 +1,28 @@
 .contactMain{
     width: 100%;
     height: auto;
-    background-color: black;
+    background-color: rgb(251, 251, 251);
 }
 .contactInset{
     width: 70%;
     height: auto;
-    margin: 50px auto;
+    margin: 0px auto;
+    padding: 30px 0 0;
 }
 .contactInset h1{
-    color: white;
+    color: rgb(6, 6, 6);
     font-size: 45px;
     margin: 20px 0;
-    font-weight: 500;
+    font-weight: 600;
 }
 .headerP{
-    color: white;
+    color: rgb(0, 0, 0);
     margin: 10px 0;
     font-size: 21px;
     line-height: 35px;
 }
 .contactInset h2{
-    color: white;
+    color: rgb(2, 2, 2);
     margin: 20px 0;
 }
 
@@ -54,7 +55,7 @@
     border-bottom: 1px solid rgba(172, 172, 172, 0.432);
 }
 .contactInformation p{
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 23px;
 }
 .contactName{
@@ -78,7 +79,7 @@
     .contactMain{
     width: 100%;
     height: auto;
-    background-color: black;
+    background-color: rgb(255, 255, 255);
 }
 .contactInset{
     width: 90%;
@@ -86,19 +87,19 @@
     margin: 30px auto;
 }
 .contactInset h1{
-    color: white;
+    color: black;
     font-size: 45px;
     margin: 20px 0;
     font-weight: 500;
 }
 .headerP{
-    color: white;
+    color: black;
     margin: 10px 0;
     font-size: 21px;
     line-height: 35px;
 }
 .contactInset h2{
-    color: white;
+    color: black;
     margin: 20px 0;
 }
 
@@ -113,7 +114,7 @@
     align-items: center;
 }
 .contactWhatsapp a{
-       color: white;
+       color: black;
     text-decoration: none;
     font-size: 20px;
     margin-left: 20px;
@@ -131,7 +132,7 @@
     border-bottom: 1px solid rgba(172, 172, 172, 0.432);
 }
 .contactInformation p{
-    color: white;
+    color: black;
     font-size: 23px;
 }
 .contactName{
@@ -153,7 +154,7 @@
     .contactMain{
     width: 100%;
     height: auto;
-    background-color: black;
+    background-color: white;
 }
 .contactInset{
     width: 97%;
@@ -161,19 +162,19 @@
     margin: 30px auto;
 }
 .contactInset h1{
-    color: white;
+    color: black;
     font-size: 25px;
     margin: 20px 0;
     font-weight: 700;
 }
 .headerP{
-    color: white;
+    color: black;
     margin: 10px 0;
     font-size: 16px;
     line-height: 30px;
 }
 .contactInset h2{
-    color: white;
+    color: black;
     margin: 20px 0;
 }
 
@@ -188,7 +189,7 @@
     align-items: center;
 }
 .contactWhatsapp a{
-       color: rgb(255, 255, 255);
+       color: black;
     text-decoration: none;
     font-size: 17px;
     margin-left: 20px;
@@ -207,7 +208,7 @@
     margin: 0 auto;
 }
 .contactInformation p{
-    color: white;
+    color: black;
     font-size: 17px;
 }
 .contactName{

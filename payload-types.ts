@@ -466,10 +466,7 @@ export interface OfficeWorkspaceAccessory {
   /**
    * Select one subcategories
    */
-  subcategory:
-    | 'office-ergonomic-comfort-accessories'
-    | 'office-desk-essentials-utility-tools'
-    | 'office-productivity-writing-tools';
+  subcategory: 'office-ergonomic-comfort-accessories';
   slug?: string | null;
   images: (number | Media)[];
   price: number;
@@ -533,7 +530,12 @@ export interface OfficeElectronic {
   /**
    * Select one subcategories
    */
-  subcategory: 'office-charging-power-accessories' | 'office-computer-accessories' | 'office-cable-management-tech';
+  subcategory:
+    | 'office-charging-power-accessories'
+    | 'office-data-transfer-accessories'
+    | 'office-data-storage-accessories'
+    | 'office-computer-accessories'
+    | 'office-cable-management-tech';
   slug?: string | null;
   images: (number | Media)[];
   price: number;

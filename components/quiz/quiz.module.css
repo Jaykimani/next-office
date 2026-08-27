@@ -1,7 +1,7 @@
 #quiz{
     width: 100%;
     height: auto;
-    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('/quiz2.jpg');
+    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('/blogcta.jpg');
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -159,7 +159,7 @@
 
 @media screen and (max-width: 600px) {
     #quiz{
-        background: linear-gradient( to right, rgba(0, 0 ,0 , 0.4), rgba(0, 0 ,0 , 0.4)), url('/quiz2.jpg');
+        background: linear-gradient( to right, rgba(0, 0 ,0 , 0.4), rgba(0, 0 ,0 , 0.4)), url('/blogcta.jpg');
     }
     .quizInset{
         width: 100%;

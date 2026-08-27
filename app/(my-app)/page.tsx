@@ -187,14 +187,15 @@ export default function Home(){
 
 
     return(<>
-    <div className="whatsapp-btn">
-      <script
+     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(faqData),
       }}
     />
-<a
+    <div className="whatsapp-btn">
+     
+     <a
       href={`https://wa.me/254704610605?text=Hello there...`}
       target="_blank"
       rel="noopener noreferrer"
@@ -211,7 +212,6 @@ export default function Home(){
     <Services />
     <Featured />
     <Quiz />  
-    <Testimony /> 
     <Contact /> 
     <Footer />
     </>

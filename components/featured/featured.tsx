@@ -10,7 +10,7 @@ const Featured = () => {
         <div id={styles.choice}>
           <div className={styles.choice1}>
             <div className={styles.choiceInset}>
-            <h1>Why Choose officeflow Kenya?</h1>
+            <h1>Why Choose OfficeFlow Kenya?</h1>
             <p>OfficeFlow Kenya provides reliable office supply and restock services for businesses across Kenya, helping workplaces stay fully stocked and productive. We simplify office procurement by supplying and restocking essential workplace items including stationery, printing paper, pantry supplies, cleaning products, and IT consumables through convenient delivery solutions. Whether you're a startup, SME, NGO, or corporate office, our customized restock services help reduce procurement time, prevent supply shortages, and keep your operations running smoothly. For businesses looking for dependable office supplies in Nairobi and professional workplace support throughout Kenya, OfficeFlow is your trusted office restock partner.</p>
             
           </div>

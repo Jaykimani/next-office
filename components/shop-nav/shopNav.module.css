@@ -2,11 +2,11 @@
     display: block;
     position: relative;
     width: 100%;
-    height: 140px;
+    height: 100px;
     background-color: black;
     /* box-shadow: 0 3px 20px 2px gray; */
     z-index: 20;
-    padding: 15px;
+    padding: 25px 15px;
     margin: 0;
 }
 #shop2{
@@ -110,6 +110,9 @@
     z-index: 10;
     position: fixed;
     right: 25px;
+    background: black;
+    padding: 5px;
+    border-radius: 10px;
 }
 .shopInset{
     width: 40px;

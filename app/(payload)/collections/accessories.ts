@@ -3,8 +3,7 @@ import type { CollectionConfig } from 'payload';
 
   const subcategories = [
               { label: 'Office Ergonomic/Comfort Accessories', value: 'office-ergonomic-comfort-accessories' },
-              { label: 'Office Desk Essentials/Utility Tools', value: 'office-desk-essentials-utility-tools' },
-              { label: 'Office Productivity/Writing Tools', value: 'office-productivity-writing-tools' },
+             
           
               
 
