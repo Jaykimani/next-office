@@ -2,6 +2,7 @@
     width: 100%;
     height: auto;
     background-color: black;
+    padding: 130px 0;
 }
 .starIcon{
     width: 27px;
@@ -198,6 +199,7 @@
         width: 100%;
         height: auto;
         background-color: black;
+        padding: 0px;
     }
     .infoInset{
         width: 100%;
