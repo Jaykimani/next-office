@@ -299,8 +299,8 @@ export interface Review {
         value: number | OfficePantryHydration;
       }
     | {
-        relationTo: 'office-workspace-accessories';
-        value: number | OfficeWorkspaceAccessory;
+        relationTo: 'office-cleaning-hygiene';
+        value: number | OfficeCleaningHygiene;
       }
     | {
         relationTo: 'office-electronics';
@@ -457,16 +457,21 @@ export interface OfficePantryHydration {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "office-workspace-accessories".
+ * via the `definition` "office-cleaning-hygiene".
  */
-export interface OfficeWorkspaceAccessory {
+export interface OfficeCleaningHygiene {
   id: number;
   category?: string | null;
   name: string;
   /**
    * Select one subcategories
    */
-  subcategory: 'office-ergonomic-comfort-accessories';
+  subcategory:
+    | 'tissue-washroom-supplies'
+    | 'hand-hygiene-supplies'
+    | 'surface-cleaning-products'
+    | 'waste-management-supplies'
+    | 'cleaning-equipment-protective-supplies';
   slug?: string | null;
   images: (number | Media)[];
   price: number;
@@ -590,21 +595,16 @@ export interface OfficeElectronic {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "office-cleaning-hygiene".
+ * via the `definition` "office-workspace-accessories".
  */
-export interface OfficeCleaningHygiene {
+export interface OfficeWorkspaceAccessory {
   id: number;
   category?: string | null;
   name: string;
   /**
    * Select one subcategories
    */
-  subcategory:
-    | 'tissue-washroom-supplies'
-    | 'hand-hygiene-supplies'
-    | 'surface-cleaning-products'
-    | 'waste-management-supplies'
-    | 'cleaning-equipment-protective-supplies';
+  subcategory: 'office-ergonomic-comfort-accessories';
   slug?: string | null;
   images: (number | Media)[];
   price: number;

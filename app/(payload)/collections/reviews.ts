@@ -25,7 +25,7 @@ export const Reviews: CollectionConfig = {
       relationTo: [
         'office-supplies',
         'office-pantry-hydration',
-        'office-workspace-accessories',
+        'office-cleaning-hygiene',
         'office-electronics'
       ], // your products collection slug
       required: true,

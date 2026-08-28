@@ -7,15 +7,15 @@ type ProductReference =
       value: number;
     }
   | {
-      relationTo: "office-electronics";
-      value: number;
-    }
-  | {
       relationTo: "office-pantry-hydration";
       value: number;
     }
   | {
-      relationTo: "office-workspace-accessories";
+      relationTo: "office-cleaning-hygiene";
+      value: number;
+    }
+  | {
+      relationTo: "office-electronics";
       value: number;
     };
 

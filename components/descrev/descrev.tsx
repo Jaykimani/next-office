@@ -15,9 +15,9 @@ reviews : Review[]
 }
 
 type ProductCollection =
-  | "office-interior-decor"
-  | "office-greenery"
-  | "office-workspace-accessories"
+  | "office-supplies"
+  | "office-pantry-hydration"
+  | "office-cleaning-hygiene"
   | "office-electronics";
 
 const Descrev = ({product, reviews}: ProductsProps) => {
