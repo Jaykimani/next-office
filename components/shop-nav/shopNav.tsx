@@ -72,21 +72,48 @@ const ShopNav = () => {
         <div id={styles.shop1}>
          <div className={styles.shopNavMenu} style={{display: shopMenu ? "block" : "none"}}>
           <MdClose style={{color: "white", width: "45px", height: "45px", marginBottom: "10px"}} onClick={()=> setShopMenu(false)}/>
-           <Link href={'/'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
-           <h1>Home</h1>
-           </Link> 
-           <Link href={'/shop'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
-           <h1>Shop</h1>
-           </Link>
-           <Link href={'/contact'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
-           <h1>Contact</h1>
-           </Link>
-            <Link href={'/about'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
-           <h1>About us</h1>
-           </Link>
-            <Link href={'/blogs'} style={{textDecoration: "none", color: "white"}} onClick={()=>{setShopMenu(false)}}>
-           <h1>Blogs</h1>
-           </Link>
+           <Link href={'/my-account/sign-in'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopNavLinks} onClick={()=> setShopMenu(false)}>
+               <FaUserTie style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+               <div>
+                <h3>Business Account</h3>
+                <h3>Sign In/Register</h3>  
+               </div>
+               
+            </div>
+             </Link>
+             <Link href={'/'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopNavLinks} onClick={()=> setShopMenu(false)}>
+               <IoHome style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Home</h3>  
+            </div>
+            </Link>
+            <Link href={'/shop'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopNavLinks} onClick={()=> setShopMenu(false)}>
+               <FaShoppingCart style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Shop</h3>
+            </div>
+            </Link>
+            <Link href={'/contact'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopNavLinks} onClick={()=> setShopMenu(false)}>
+               <FaPhoneAlt style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Contact</h3>
+            </div>
+             </Link>
+             <Link href={'/about'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopNavLinks} onClick={()=> setShopMenu(false)}>
+                <IoMdInformationCircle style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>About us</h3>
+               
+            </div>
+            </Link>
+             <Link href={'/blogs'} style={{textDecoration: "none", color: "white"}}>
+             <div className={styles.shopNavLinks} onClick={()=> setShopMenu(false)}>
+              <FaNewspaper style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Blogs</h3>
+              
+            </div>
+             </Link>
          </div>
             
             <div className={styles.shopTitle}>
@@ -101,7 +128,7 @@ const ShopNav = () => {
               <Link href={'/my-account/sign-in'} style={{display: 'flex', color: 'white'}}>
               <FaUserTie style={{color : '#ffe100', width: '35px', height: '35px'}}/>
               <div className={styles.welcome}>
-                <p>WELCOME</p>
+                <p>Business Account</p>
                 <p>Sign in/Register</p>
               </div>
               </Link>
@@ -153,7 +180,10 @@ const ShopNav = () => {
             <Link href={'/my-account/sign-in'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
                <FaUserTie style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <div>
+                <h3>Business Account</h3>
                 <h3>Sign In/Register</h3>  
+               </div>  
             </div>
              </Link>
              <Link href={'/'} style={{textDecoration: "none", color: "white"}}>
@@ -207,14 +237,14 @@ const ShopNav = () => {
          </div>
          </div>
          <SearchInput />
-            <div className={styles.shopListHeader}>
-                <div className={styles.listCateg}>
+             <div className={styles.shopListHeader}>
+                <div className={styles.listCateg} onClick={handleCategSort}>
                  <p>Browse Categories</p>
-                 <MdKeyboardArrowDown/>
+                 <MdKeyboardArrowDown style={{transform: categSort ? 'rotate(180deg)' : 'rotate(0deg)', marginLeft: '20px'}}/>
                 </div>
-                <div className={styles.listCateg}>
+                <div className={styles.listCateg} onClick={handleSort}>
                  <p>Shop by:</p>
-                 <MdKeyboardArrowDown/>
+                 <MdKeyboardArrowDown style={{transform: categSort ? 'rotate(180deg)' : 'rotate(0deg)', marginLeft: '20px'}}/>
                 </div>
             </div>
             <div className={styles.shopCateg2} style={{display: categSort ? 'block' : 'none'}}>

@@ -175,12 +175,6 @@ Cutomer whatsapp confirmation: ${whatsappConfirm}
              </div>
              <div className={styles.deliveryInformation}>
              <div className={styles.customer}>
-              <h4><IoIosInformationCircle style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Shipping Type</h4>
-                <p>{data.ShippingType}</p>
-                
-                
-             </div>
-             <div className={styles.shipping}>
                <h4><FaHouseUser style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Shipping Address</h4>
                 <p>{data.deliveryAddress.city}</p>
 
@@ -190,15 +184,26 @@ Cutomer whatsapp confirmation: ${whatsappConfirm}
                 <p>{data.deliveryAddress.landmark}</p>
                 
              </div>
-             </div>
-             <div className={styles.additionalShippingInfo}>
-              <div className={styles.addShipInfo}>
+             <div className={styles.shipping}>
                 <h4><FaShippingFast style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Shipping Timeline</h4>
                 <p>{data.DeliveryDate}</p>
               </div>
+             </div>
+             <div className={styles.additionalShippingInfo}>
+
               <div className={styles.addShipInfo}>
-                <h4><FaRoute style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Additional Shipping Information</h4>
+                <h4><FaRoute style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Shipping Route</h4>
                 <p>{data.deliveryAddress.route}</p>
+              </div>
+              <div className={styles.addShipInfo}>
+                <h4><IoIosInformationCircle style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Additional Order Information</h4>
+                <p>{data.AdditionalOrderInformation ? data.AdditionalOrderInformation : "None"}</p>
+              </div>
+             </div>
+              <div className={styles.additionalShippingInfo}>
+              <div className={styles.addShipInfo}>
+                <h4><IoIosInformationCircle style={{color: 'rgb(30, 165, 0)', width: '25px', height: '25px', marginRight: '15px'}}/>Additional Delivery Information</h4>
+                <p>{data.deliveryAddress.AdditionalDeliveryInformation ? data.deliveryAddress.AdditionalDeliveryInformation : "None"}</p>
               </div>
              </div>
              <div className={styles.divider1}></div>

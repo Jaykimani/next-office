@@ -70,7 +70,7 @@ const ServiceNav = () => {
               <div className={styles.loginTop}>
               <FaUserTie className={styles.userTie}/>
               <div>
-                <p>WELCOME</p>
+                <p>Business Account</p>
                 <p>Sign in/Register</p>
               </div>
               </div>

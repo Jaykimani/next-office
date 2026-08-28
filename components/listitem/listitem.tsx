@@ -137,7 +137,7 @@ const ListItem = ({ iteminfo }: ProductsProps) => {
 
                 <div className={styles.listItem2}>
                     <Link href={`/shop/${iteminfo.category}/${iteminfo.subcategory}/${iteminfo.id}/${iteminfo.slug}`} style={{textDecoration: 'none'}}>
-                    <div className={styles.itemImg22}>
+                    <div className={styles.itemImg2}>
                       {iteminfo.images[0]?.url && (
                       <Image className={styles.itemImage2} src={iteminfo.images[0].url} alt="" width={200} height={200} />
                       )}

@@ -136,7 +136,7 @@ function Checkout() {
               <div className={styles.billShip}>
                 <div className={styles.billingForm}>
                   <h4>BILLING & SHIPPING</h4>
-                  <h5>Delivery Information <span style={{color: 'red', fontSize: '12px'}}>(Please fill all fields)</span></h5>
+                  <h5>Delivery Information <span style={{color: 'red', fontSize: '17px'}}>(Please fill all fields)</span></h5>
                   <input type="text" name="full-name" id="" placeholder='Full Name'/>
                   <input type="text" name='phone-number' placeholder='Phone Number(in the format: 0704******)'/>
                   <input type="text" name='email-address' placeholder='Email Address'/>

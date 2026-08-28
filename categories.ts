@@ -46,13 +46,3 @@ export const shopPopularity = ['Most popular', 'Most rated'];
 
 export const shopPrice = ['Low to High', 'High to Low']
 
-//  <div className={styles.shopListHeader}>
-//                 <div className={styles.listCateg} onClick={handleCategSort}>
-//                  <p>Browse Categories</p>
-//                  <MdKeyboardArrowDown style={{transform: categSort ? 'rotate(180deg)' : 'rotate(0deg)', marginLeft: '20px'}}/>
-//                 </div>
-//                 <div className={styles.listCateg} onClick={handleSort}>
-//                  <p>Shop by:</p>
-//                  <MdKeyboardArrowDown style={{transform: categSort ? 'rotate(180deg)' : 'rotate(0deg)', marginLeft: '20px'}}/>
-//                 </div>
-//             </div>
