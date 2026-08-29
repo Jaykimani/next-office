@@ -7,7 +7,10 @@ export const Media: CollectionConfig = {
     mimeTypes: ['image/*'],
   },
   fields: [],
-  access: {
-  read: () => true, // ✅ allow public access
-}
+    access: {
+     read: () => true,
+    create: () => true,
+    update: () => true,
+    delete: () => true,
+  },
 }

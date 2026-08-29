@@ -1,6 +1,7 @@
 import sharp from 'sharp'
 import { FixedToolbarFeature, lexicalEditor } from '@payloadcms/richtext-lexical'
 import { postgresAdapter } from '@payloadcms/db-postgres'
+import { s3Storage } from '@payloadcms/storage-s3'
 import { buildConfig } from 'payload'
 import { Products } from './app/(payload)/collections/products'
 import { OfficeElectronics } from './app/(payload)/collections/electronics'
@@ -15,6 +16,7 @@ import { Blogs } from './app/(payload)/collections/blogs'
 import { OfficeSupplies } from './app/(payload)/collections/supplies'
 import { OfficePantryHydration } from './app/(payload)/collections/pantry'
 import { OfficeCleaningHygiene } from './app/(payload)/collections/cleaning'
+
 
 export default buildConfig({
   admin:{
@@ -32,6 +34,37 @@ export default buildConfig({
       FixedToolbarFeature()
     ]
 }),
+
+
+plugins: [
+  s3Storage({
+    collections: {
+    media: {
+      disablePayloadAccessControl: true,
+      generateFileURL: ({ filename, prefix }) => {
+        const key = prefix ? `${prefix}/${filename}` : filename
+
+        return `${process.env.S3_PUBLIC_URL}/${key}`
+      },
+    },
+    },
+
+    bucket: process.env.S3_BUCKET!,
+
+    config: {
+      credentials: {
+        accessKeyId: process.env.S3_ACCESS_KEY_ID!,
+        secretAccessKey: process.env.S3_SECRET_ACCESS_KEY!,
+      },
+
+      region: process.env.S3_REGION,
+      endpoint: process.env.S3_ENDPOINT,
+
+      forcePathStyle: true,
+    },
+  }),
+],
+
 serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
   // Define and configure your collections in this array
   collections: [Users, Messages, Categories, Products, OfficeSupplies, OfficePantryHydration, OfficeCleaningHygiene,  OfficeWorkspaceAccessories, OfficeElectronics, Orders, Reviews, Media, Blogs],
