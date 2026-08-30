@@ -255,7 +255,7 @@ const ShopNav = () => {
               </div>
              {Categories?.map((item)=>{
                 return (
-                <div key={item.title.id} className={styles.categSection2}>
+                <div key={item.title.id} className={styles.categSection2} onClick={()=>{setCategSort(false)}}>
               <Link href={`${item.title.url}`} style={{textDecoration: "none", color: "#ffe100"}}>
               <h4>{item.title.id}</h4>
               </Link>  
@@ -289,7 +289,7 @@ const ShopNav = () => {
                {shopPopularity.map((link)=>{
             
                 return (
-               <div key={link} className={styles.categLink2}>
+               <div key={link} className={styles.categLink2} onClick={()=>{setShopsort(false)}}>
                <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
                <p style={{color: 'white'}}>{link}</p>
                </div>
@@ -303,7 +303,7 @@ const ShopNav = () => {
                {shopPrice.map((link)=>{
             
                 return (
-               <div key={link} className={styles.categLink2}>
+               <div key={link} className={styles.categLink2} onClick={()=>{setShopsort(false)}}>
                <MdKeyboardArrowRight style={{color: '#ffe100', marginRight: '10px'}}/>
                <p style={{color: 'white'}}>{link}</p>
                </div>
