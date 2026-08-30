@@ -32,7 +32,6 @@ const ListItem = ({ iteminfo }: ProductsProps) => {
 
   
       if(!mediaIsObject(iteminfo.images[0]))  return null
-      console.log(iteminfo.images[0].url);
       
        const handleAddToCart = ()=>{
          if (typeof iteminfo?.images[0] === 'object' && iteminfo.images[0]?.url && price && iteminfo.category) {

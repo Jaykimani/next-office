@@ -15,7 +15,6 @@ const payload = await getPayload({config});
   });
    let product = data.docs;
    
-   console.log(product[0].images);
    
    return product[0]
   } catch (error) {
