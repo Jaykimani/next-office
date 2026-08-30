@@ -7,6 +7,7 @@ const payload = await getPayload({config});
   try {
     const data = await payload.find({
     collection: category,
+    depth: 1,
     where: {
         id:  { equals: productId }
     } // The slug of your 
@@ -14,6 +15,7 @@ const payload = await getPayload({config});
   });
    let product = data.docs;
    
+   console.log(product[0].images);
    
    return product[0]
   } catch (error) {
