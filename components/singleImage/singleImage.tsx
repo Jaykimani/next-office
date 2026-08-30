@@ -169,6 +169,7 @@ const SingleImage = ({imagesArr} : imagesProps) => {
      <div className={styles.infoImg1}>
             <div className={styles.infoImgInset}>
               {imagesArr.map((img)=>{
+              console.log(img);
               
                 return (
                <div key={img} id={String(img)} className={`${styles.infoSubimage}`} onClick={handleSubimage}>
