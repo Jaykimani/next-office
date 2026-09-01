@@ -65,7 +65,7 @@ plugins: [
   }),
 ],
 
-// serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
+serverURL: process.env.NEXT_PUBLIC_SERVER_URL,
   // Define and configure your collections in this array
   collections: [Users, Messages, Categories, Products, OfficeSupplies, OfficePantryHydration, OfficeCleaningHygiene,  OfficeWorkspaceAccessories, OfficeElectronics, Orders, Reviews, Media, Blogs],
 
