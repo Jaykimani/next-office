@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke/privacy-policy",
+    canonical: "https://officeflow.co.ke/privacy-policy",
   },
 
   openGraph: {
     title: "Privacy Policy | OfficeFlow Kenya",
     description:
       "Read OfficeFlow Kenya's Privacy Policy and learn how we collect, use, store, and protect customer information.",
-    url: "https://www.officeflow.co.ke/privacy-policy",
+    url: "https://officeflow.co.ke/privacy-policy",
     siteName: "OfficeFlow",
     locale: "en_KE",
     type: "website",
@@ -54,20 +54,20 @@ const page = () => {
     {
        "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },
-    { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.officeflow.co.ke/privacy-policy" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://officeflow.co.ke/privacy-policy" }
   ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.officeflow.co.ke/privacy-policy",
-      "url": "https://www.officeflow.co.ke/privacy-policy",
+      "@id": "https://officeflow.co.ke/privacy-policy",
+      "url": "https://officeflow.co.ke/privacy-policy",
       "name": "Privacy Policy",
       "isPartOf": {
-        "@id": "https://www.officeflow.co.ke/#website"
+        "@id": "https://officeflow.co.ke/#website"
       },
       "about": {
-        "@id": "https://www.officeflow.co.ke/#organization"
+        "@id": "https://officeflow.co.ke/#organization"
       },
       "description":
         "OfficeFlow Kenya's Privacy Policy."

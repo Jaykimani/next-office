@@ -9,6 +9,9 @@ import { FaWhatsapp } from "react-icons/fa";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
+
+ metadataBase: new URL("https://officeflow.co.ke"),
+
  title: "OfficeFlow Kenya | Office Supplies & Office Restock Services in Nairobi",
   description:
     "OfficeFlow provides office supplies and office restock services in Nairobi and across Kenya. We supply stationery, printing paper, pantry items, cleaning products, and workplace essentials for businesses.",
@@ -28,14 +31,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke",
+    canonical: "https://officeflow.co.ke",
   },
 
   openGraph: {
     title: "OfficeFlow Kenya | Office Supplies & Restock Services",
     description:
       "Reliable office supplies and restock services for businesses in Nairobi and across Kenya. Keep your workplace fully stocked with OfficeFlow.",
-    url: "https://www.officeflow.co.ke",
+    url: "https://officeflow.co.ke",
     siteName: "OfficeFlow",
     locale: "en_KE",
     type: "website",
@@ -61,7 +64,7 @@ export const metadata: Metadata = {
     }
   },
 
-  metadataBase: new URL("https://www.officeflow.co.ke"),
+  
 };
 
 
@@ -73,11 +76,11 @@ export default function Home(){
   "@graph" :[
     {
       "@type": "WebPage",
-  "@id": "https://www.officeflow.co.ke/#homepage",
-  url: "https://www.officeflow.co.ke",
+  "@id": "https://officeflow.co.ke/#homepage",
+  url: "https://officeflow.co.ke",
   name: "OfficeFlow Kenya",
    about: {
-    "@id": "https://www.officeflow.co.ke/#organization"
+    "@id": "https://officeflow.co.ke/#organization"
   }
     },
     {
@@ -87,17 +90,17 @@ export default function Home(){
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://www.officeflow.co.ke"
+      "item": "https://officeflow.co.ke"
     }
   ],
    "about": {
-    "@id": "https://www.officeflow.co.ke/#organization"
+    "@id": "https://officeflow.co.ke/#organization"
   }
     },
   {
   "@type": "FAQPage",
    "about": {
-    "@id": "https://www.officeflow.co.ke/#organization"
+    "@id": "https://officeflow.co.ke/#organization"
   },
   "mainEntity": [
     {

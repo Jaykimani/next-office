@@ -134,6 +134,25 @@
     border-radius: 50%;
     color: #ffe100;
 }
+ .shopNavLinks{
+        width: 95%;
+        height: 80px;
+        margin: 0 auto;
+        text-align: left;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        border-bottom: 1px solid rgb(62, 62, 62);
+    }
+    .shopNavLinks h3{
+        margin-left: 30px;
+        font-size: 19px;
+        font-weight: 500;
+    }
+  .shopNavLinks:hover{
+    background-color: #222222;
+  }  
 .shopLinks{
     width: 95%;
     height: 10px;

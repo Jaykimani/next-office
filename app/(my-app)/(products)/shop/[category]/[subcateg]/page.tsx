@@ -28,15 +28,15 @@ function seededShuffle(array: any[], seed: number) {
 export async function generateMetadata(
   { params }: Props
 ): Promise<Metadata> {
-  const { subcateg } = await params
+  const { category, subcateg } = await params
 
   
-  let category = await getCategoryType(subcateg)
-  let categInfo = category?.docs[0];
+  let categ = await getCategoryType(subcateg)
+  let categInfo = categ?.docs[0];
    
 
   return {
-    metadataBase: new URL('https://yourdomain.com'),
+    metadataBase: new URL('https://officeflow.co.ke'),
 
     title: `${categInfo?.name} in Kenya | Officeflow Kenya`,
     description: categInfo?.description,
@@ -48,7 +48,7 @@ export async function generateMetadata(
     },
 
     openGraph: {
-      title: `${categInfo?.name} | Office Aura`,
+      title: `${categInfo?.name} | OfficeFlow Kenya`,
       description: categInfo?.description,
       url: `/shop/${category}/${categInfo?.slug}`,
       siteName: 'OfficeFlow',
@@ -70,6 +70,7 @@ const Category = async({
 }) => {
 
    const { category, subcateg } = await params
+  
   
   
   const Products = await getSubcategoryProducts(category, subcateg);

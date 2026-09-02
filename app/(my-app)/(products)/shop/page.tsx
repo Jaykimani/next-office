@@ -81,12 +81,36 @@ function seededShuffle(array: any[], seed: number) {
 }
 
 const Shop = async({ searchParams }: Props) => {
+  
+   let categData = await getCategoryType("office-supplies-kenya")
+   let actualCategData = categData?.docs[0];
+   const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "Shop", "item": "https://officeflow.co.ke/shop" }
+  ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://officeflow.co.ke/shop",
+      name: "Shop",
+      url: "https://officeflow.co.ke/shop",
+      description: actualCategData?.description
+    },
+  ]
+};
+
   const params = await searchParams
 
   const page = Number(params.page) || 1
  
   const allProducts = await getProductsList(page, 30);
-  let categData = await getCategoryType("office-supplies-kenya")
+ 
+
   let categInfo = categData?.docs[0];
   const resArr = allProducts?.docs;
 

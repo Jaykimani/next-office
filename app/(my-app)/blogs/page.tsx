@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke/blogs",
+    canonical: "https://officeflow.co.ke/blogs",
   },
 
   openGraph: {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Office Supplies, Workplace & Restock Guides | OfficeFlow Blog",
     description:
       "Articles, guides, and insights on office supplies, workplace productivity, office procurement, and restock services in Kenya.",
-    url: "https://www.officeflow.co.ke/blogs",
+    url: "https://officeflow.co.ke/blogs",
     siteName: "OfficeFlow",
     locale: "en_KE",
     type: "website",
@@ -79,28 +79,28 @@ const page = async() => {
   "@graph": [
     {
       "@type": "CollectionPage",
-      "@id": "https://www.officeflow.co.ke/blogs",
-      url: "https://www.officeflow.co.ke/blogs",
+      "@id": "https://officeflow.co.ke/blogs",
+      url: "https://officeflow.co.ke/blogs",
       name: "OfficeFlow Blog",
       description:
         "Expert articles and guides on office supplies, office restock services, workplace productivity, procurement, and business operations in Kenya.",
       isPartOf: {
-        "@id": "https://www.officeflow.co.ke/#website",
+        "@id": "https://officeflow.co.ke/#website",
       },
       about: {
-        "@id": "https://www.officeflow.co.ke/#organization",
+        "@id": "https://officeflow.co.ke/#organization",
       },
     },
 
     {
       "@type": "WebPage",
-      "@id": "https://www.officeflow.co.ke/blogs#webpage",
-      url: "https://www.officeflow.co.ke/blogs",
+      "@id": "https://officeflow.co.ke/blogs#webpage",
+      url: "https://officeflow.co.ke/blogs",
       name: "OfficeFlow Blog",
       description:
         "Office supplies, workplace productivity, procurement, and office restock articles for businesses in Kenya.",
       about: {
-        "@id": "https://www.officeflow.co.ke/#organization",
+        "@id": "https://officeflow.co.ke/#organization",
       },
     },
 
@@ -111,13 +111,13 @@ const page = async() => {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.officeflow.co.ke",
+          item: "https://officeflow.co.ke",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Blog",
-          item: "https://www.officeflow.co.ke/blogs",
+          item: "https://officeflow.co.ke/blogs",
         },
       ],
     },
@@ -127,7 +127,7 @@ const page = async() => {
   const posts = allBlogs.map((post: any, index: number) => ({
   '@type': 'ListItem',
   position: index + 1,
-  url: `https://www.officeflow.co.ke/blogs/${post.category}/${post.slug}`,
+  url: `https://officeflow.co.ke/blogs/${post.category}/${post.slug}`,
   name: post.title,
 }));
 

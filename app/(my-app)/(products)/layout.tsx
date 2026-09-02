@@ -5,7 +5,7 @@ import styles from './layout2.module.css'
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.officeflow.co.ke"),
+  metadataBase: new URL("https://officeflow.co.ke"),
 
    title: "OfficeFlow Kenya | Office Restock & Workplace Supply Services",
   description:
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke"
+    canonical: "https://officeflow.co.ke"
   }
 };
 

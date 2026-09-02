@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke/terms-and-conditions",
+    canonical: "https://officeflow.co.ke/terms-and-conditions",
   },
 
   openGraph: {
     title: "Terms & Conditions | OfficeFlow Kenya",
     description:
       "Terms & Conditions for using OfficeFlow Kenya's website and office restock services.",
-    url: "https://www.officeflow.co.ke/terms-and-conditions",
+    url: "https://officeflow.co.ke/terms-and-conditions",
     siteName: "OfficeFlow",
     locale: "en_KE",
     type: "website",
@@ -52,15 +52,15 @@ const page = () => {
     {
       "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },
-    { "@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://www.officeflow.co.ke/terms-and-conditions" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "Terms & Conditions", "item": "https://officeflow.co.ke/terms-and-conditions" }
   ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.officeflow.co.ke/terms-and-conditions",
+      "@id": "https://officeflow.co.ke/terms-and-conditions",
       name: "Terms & Conditions",
-      url: "https://www.officeflow.co.ke/terms-and-conditions",
+      url: "https://officeflow.co.ke/terms-and-conditions",
       description:
         "Terms & Conditions governing the use of OfficeFlow Kenya's website and office restock services."
     },

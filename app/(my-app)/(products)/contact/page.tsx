@@ -26,14 +26,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke/contact",
+    canonical: "https://officeflow.co.ke/contact",
   },
 
   openGraph: {
     title: "Contact OfficeFlow Kenya",
     description:
       "Get in touch with OfficeFlow for office supplies, workplace essentials, office restock services, and business account inquiries.",
-    url: "https://www.officeflow.co.ke/contact",
+    url: "https://officeflow.co.ke/contact",
     siteName: "OfficeFlow",
     locale: "en_KE",
     type: "website",
@@ -60,13 +60,13 @@ const page = () => {
   "@graph": [
     {
       "@type": "ContactPage",
-      "@id": "https://www.officeflow.co.ke/contact",
-      url: "https://www.officeflow.co.ke/contact",
+      "@id": "https://officeflow.co.ke/contact",
+      url: "https://officeflow.co.ke/contact",
       name: "Contact OfficeFlow Kenya",
       description:
         "Contact OfficeFlow for office supplies, office restock services, workplace essentials, business account inquiries, and customer support.",
       about: {
-        "@id": "https://www.officeflow.co.ke/#organization",
+        "@id": "https://officeflow.co.ke/#organization",
       },
     },
 
@@ -77,13 +77,13 @@ const page = () => {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.officeflow.co.ke",
+          item: "https://officeflow.co.ke",
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "Contact",
-          item: "https://www.officeflow.co.ke/contact",
+          item: "https://officeflow.co.ke/contact",
         },
       ],
     },

@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke/office-supplies-nairobi",
+    canonical: "https://officeflow.co.ke/office-supplies-nairobi",
   },
 
   openGraph: {
     title: "Office Supplies in Nairobi | OfficeFlow Kenya",
     description:
       "Fast and reliable office supplies delivery in Nairobi. OfficeFlow helps businesses stay stocked with stationery, pantry, cleaning, and IT supplies.",
-    url: "https://www.officeflow.co.ke/office-supplies-nairobi",
+    url: "https://officeflow.co.ke/office-supplies-nairobi",
     siteName: "OfficeFlow",
     locale: "en_KE",
     type: "website",
@@ -58,16 +58,16 @@ const page = () => {
   "@graph": [
     {
       "@type": "WebPage",
-      "@id": "https://www.officeflow.co.ke/office-supplies-nairobi",
-      url: "https://www.officeflow.co.ke/office-supplies-nairobi",
+      "@id": "https://officeflow.co.ke/office-supplies-nairobi",
+      url: "https://officeflow.co.ke/office-supplies-nairobi",
       name: "Office Supplies in Nairobi",
       description:
         "OfficeFlow provides office supplies and office restock services for businesses in Nairobi.",
       isPartOf: {
-        "@id": "https://www.officeflow.co.ke/#website"
+        "@id": "https://officeflow.co.ke/#website"
       },
       about: {
-        "@id": "https://www.officeflow.co.ke/#organization"
+        "@id": "https://officeflow.co.ke/#organization"
       }
     },
 
@@ -78,23 +78,23 @@ const page = () => {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://www.officeflow.co.ke"
+          "item": "https://officeflow.co.ke"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Office Supplies Nairobi",
-          "item": "https://www.officeflow.co.ke/office-supplies-nairobi"
+          "item": "https://officeflow.co.ke/office-supplies-nairobi"
         }
       ],
        "about": {
-    "@id": "https://www.officeflow.co.ke/#organization"
+    "@id": "https://officeflow.co.ke/#organization"
   }
     },
     {
         "@type": "FAQPage",
         "about": {
-         "@id": "https://www.officeflow.co.ke/#organization"
+         "@id": "https://officeflow.co.ke/#organization"
            },
         "mainEntity": [
     {

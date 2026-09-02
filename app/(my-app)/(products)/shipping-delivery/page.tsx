@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     title: "OfficeFlow Shipping & Delivery Kenya | Office Restock Services",
     description:
       "Reliable office supply delivery and restock services in Nairobi and across Kenya. Fast, scheduled workplace deliveries for businesses.",
-    url: "https://your-domain.com/shipping-delivery",
+    url: "https://officeflow.co.ke/shipping-delivery",
     siteName: "OfficeFlow",
     type: "website",
     locale: "en_KE"
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://your-domain.com/shipping-delivery"
+    canonical: "https://officeflow.co.ke/shipping-delivery"
   }
 };
 
@@ -54,8 +54,8 @@ const page = () => {
     {
        "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },
-    { "@type": "ListItem", "position": 2, "name": "Shipping & Delivery", "item": "https://www.officeflow.co.ke/shipping-delivery" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "Shipping & Delivery", "item": "https://officeflow.co.ke/shipping-delivery" }
   ]
     },
     {
@@ -81,7 +81,7 @@ const page = () => {
     {
       "@type": "WebPage",
       "name": "Shipping & Delivery - OfficeFlow",
-      "url": "https://your-domain.com/shipping-delivery",
+      "url": "https://officeflow.co.ke/shipping-delivery",
       "description": "Information about OfficeFlow office restock delivery services in Kenya."
     }
   ]

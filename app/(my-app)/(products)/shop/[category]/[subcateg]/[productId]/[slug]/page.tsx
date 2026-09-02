@@ -43,7 +43,7 @@ export async function generateMetadata(
       : undefined
 
   return {
-    title: `${product.name} | Office Aura`,
+    title: `${product.name} | OfficeFlow Kenya`,
     description:
       `Buy ${product.name} at the best price in Kenya.`,
 
@@ -123,11 +123,11 @@ async function Info({params} : Props) {
     sku: Product?.id,
     brand: {
       '@type': 'Brand',
-      name: 'Office Aura',
+      name: 'OfficeFlow',
     },
     offers: {
       '@type': 'Offer',
-      url: `https://yourdomain.com/shop/${Product?.category}/${Product?.id}/${Product?.slug}`,
+      url: `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}`,
       priceCurrency: 'KES',
       price: Product?.price,
       availability:
@@ -141,7 +141,44 @@ async function Info({params} : Props) {
      "reviewCount": "10"
      }
   }
+  
 
+  const breadCrumbSchema = {
+    '@context': 'https://schema.org/',
+    '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://officeflow.co.ke',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Shop',
+          item: `https://officeflow.co.ke/shop`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: Product?.category,
+          item: `https://officeflow.co.ke/shop/${Product?.category}`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          name: Product?.subcategory,
+          item: `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}`,
+        },
+        {
+          '@type': 'ListItem',
+          position: 5,
+          name: Product?.name,
+          item: `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}`,
+        },
+      ],
+  }
    
 
 
@@ -149,6 +186,18 @@ async function Info({params} : Props) {
 
     return (
         <>
+          <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
+        <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadCrumbSchema),
+        }}
+      />
         <div id={styles.info}>
         <div className={styles.infoInset}>
         <div className={styles.imgInfo}>

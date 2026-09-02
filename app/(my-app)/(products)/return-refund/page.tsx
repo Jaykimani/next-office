@@ -18,14 +18,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke/returns-refunds",
+    canonical: "https://officeflow.co.ke/return-refund",
   },
 
   openGraph: {
     title: "Returns & Refunds Policy | OfficeFlow Kenya",
     description:
       "Learn about OfficeFlow Kenya's policy for returns, replacements, and refunds for office restock and workplace supply orders.",
-    url: "https://www.officeflow.co.ke/returns-refunds",
+    url: "https://officeflow.co.ke/return-refund",
     siteName: "OfficeFlow",
     locale: "en_KE",
     type: "website",
@@ -52,15 +52,15 @@ const page = () => {
     {
        "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },
-    { "@type": "ListItem", "position": 2, "name": "Returns & Refunds", "item": "https://www.officeflow.co.ke/return-refund" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "Returns & Refunds", "item": "https://officeflow.co.ke/return-refund" }
   ]
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.officeflow.co.ke/returns-refunds",
+      "@id": "https://officeflow.co.ke/return-refund",
       "name": "Returns & Refunds Policy",
-      "url": "https://www.officeflow.co.ke/returns-refunds",
+      "url": "https://officeflow.co.ke/return-refund",
       "description":
         "OfficeFlow Kenya's Returns & Refunds Policy covering replacements, refunds, damaged items, and delivery issues."
     }

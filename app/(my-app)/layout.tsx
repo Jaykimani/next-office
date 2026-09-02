@@ -5,7 +5,7 @@ import ScrollToTop from "@/components/scrollTop"
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.officeflow.co.ke"),
+  metadataBase: new URL("https://officeflow.co.ke"),
 
    title: "OfficeFlow Kenya | Office Restock & Workplace Supply Services",
   description:
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke"
+    canonical: "https://officeflow.co.ke"
   }
 };
 
@@ -76,11 +76,11 @@ const schema = {
     
     {
       "@type": ["LocalBusiness", "ProfessionalService"],
-  "@id": "https://www.officeflow.co.ke/#organization",
+  "@id": "https://officeflow.co.ke/#organization",
 
   name: "OfficeFlow",
-  url: "https://www.officeflow.co.ke",
-  image: "https://www.officeflow.co.ke/logo.png",
+  url: "https://officeflow.co.ke",
+  image: "https://officeflow.co.ke/restock5.jpg",
 
   description:
     "OfficeFlow Kenya provides office restock services and workplace supply solutions for businesses in Nairobi and across Kenya.",

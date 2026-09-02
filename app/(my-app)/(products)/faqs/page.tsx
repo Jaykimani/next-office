@@ -25,14 +25,14 @@ export const metadata: Metadata = {
   ],
 
   alternates: {
-    canonical: "https://www.officeflow.co.ke/faqs",
+    canonical: "https://officeflow.co.ke/faqs",
   },
 
   openGraph: {
     title: "FAQs | OfficeFlow Kenya",
     description:
       "Answers to common questions about office supplies, office restock services, delivery, business accounts, and workplace supply solutions in Kenya.",
-    url: "https://www.officeflow.co.ke/faqs",
+    url: "https://officeflow.co.ke/faqs",
     siteName: "OfficeFlow",
     locale: "en_KE",
     type: "website",
@@ -59,7 +59,7 @@ const page = () => {
   "@graph": [
     {
       "@type": "FAQPage",
-      "@id": "https://www.officeflow.co.ke/faqs",
+      "@id": "https://officeflow.co.ke/faqs",
       "mainEntity": [
         {
           "@type": "Question",
@@ -195,8 +195,8 @@ const page = () => {
     {
        "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },
-    { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://www.officeflow.co.ke/faqs" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "FAQs", "item": "https://officeflow.co.ke/faqs" }
   ]
     }
   ]

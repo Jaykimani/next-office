@@ -36,7 +36,7 @@ export async function generateMetadata(
   
 
   return {
-    metadataBase: new URL('https://yourdomain.com'),
+    metadataBase: new URL('https://officeflow.co.ke'),
 
     title: `${categInfo?.name} in Kenya | OfficeFlow Kenya`,
     description: categInfo?.description,
@@ -48,7 +48,7 @@ export async function generateMetadata(
     },
 
     openGraph: {
-      title: `${categInfo?.name} | Office Aura`,
+      title: `${categInfo?.name} | OfficeFlow Kenya`,
       description: categInfo?.description,
       url: `/shop/${categInfo?.slug}`,
       siteName: 'OfficeFlow',

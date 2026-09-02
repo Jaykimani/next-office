@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: "About OfficeFlow Kenya | Workplace Restock Services",
     description:
       "OfficeFlow Kenya provides reliable office restock services in Nairobi and across Kenya, helping businesses stay fully stocked and productive.",
-    url: "https://your-domain.com/about-us",
+    url: "https://officeflow.co.ke/about",
     siteName: "OfficeFlow",
     type: "website",
     locale: "en_KE"
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: "https://your-domain.com/about-us"
+    canonical: "https://officeflow.co.ke/about"
   }
 };
 
@@ -50,18 +50,18 @@ function About() {
       "@type": "AboutPage",
   "name": "About OfficeFlow Kenya",
   "description": "OfficeFlow Kenya is a workplace restock service helping businesses in Nairobi and across Kenya stay fully stocked with essential office supplies and consumables.",
-  "url": "https://your-domain.com/about-us",
+  "url": "https://officeflow.co.ke/about",
   "publisher": {
     "@type": "Organization",
     "name": "OfficeFlow",
-    "url": "https://your-domain.com"
+    "url": "https://officeflow.co.ke"
   }
     },
     {
       "@type": "BreadcrumbList",
      "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.officeflow.co.ke" },
-    { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://www.officeflow.co.ke/about" }
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://officeflow.co.ke" },
+    { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://officeflow.co.ke/about" }
   ]
     }
   ]
