@@ -116,7 +116,8 @@ async function Info({params} : Props) {
    
    const structuredData = {
     '@context': 'https://schema.org/',
-    '@type': 'Product',
+    '@graph' : [{
+       '@type': 'Product',
     name: Product?.name,
     image: firstImage ? [firstImage] : [],
     description: Product?.description,
@@ -140,12 +141,9 @@ async function Info({params} : Props) {
      "ratingValue": "4.6",
      "reviewCount": "10"
      }
-  }
-  
-
-  const breadCrumbSchema = {
-    '@context': 'https://schema.org/',
-    '@type': 'BreadcrumbList',
+    },
+    {
+        '@type': 'BreadcrumbList',
       itemListElement: [
         {
           '@type': 'ListItem',
@@ -178,8 +176,33 @@ async function Info({params} : Props) {
           item: `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}`,
         },
       ],
+    },
+
+     {
+      '@type': 'WebPage',
+      '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#webpage`,
+      url: `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}`,
+      name: Product?.name,
+      description: Product?.description,
+
+      isPartOf: {
+        '@id': `https://officeflow.co.ke#website`,
+      },
+
+      about: {
+        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
+      },
+
+      breadcrumb: {
+        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#breadcrumb`,
+      },
+    },
+
+    ]
+    
   }
-   
+  
+
 
 
 
@@ -190,12 +213,6 @@ async function Info({params} : Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData),
-        }}
-      />
-        <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadCrumbSchema),
         }}
       />
         <div id={styles.info}>
