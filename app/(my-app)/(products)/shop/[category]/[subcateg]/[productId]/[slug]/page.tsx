@@ -276,13 +276,6 @@ async function Info({params} : Props) {
         </div>
          {Product?.subcategory && Product?.category && <Similar category = {Product?.category} subcategory = {Product?.subcategory} id = {Product?.id}/>}
         </div>
-
-         <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
-        }}
-      />
         </div>
     
         </>
