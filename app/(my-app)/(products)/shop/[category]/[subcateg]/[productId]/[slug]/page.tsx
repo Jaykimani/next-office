@@ -106,6 +106,14 @@ async function Info({params} : Props) {
     let sum = theReviews.reduce((acc, item)=> acc + item.rating, 0);
     let overall = theReviews.length && Math.ceil(sum / theReviews.length);
     let overallRatings = {ratings: [overall], people: theReviews.length}
+    let structuredOverall= theReviews.length > 0
+    ? Number(
+        (
+          theReviews.reduce((acc, item) => acc + item.rating, 0) /
+          theReviews.length
+        ).toFixed(1)
+      )
+    : null;
 
     const firstImage =
     Product?.images?.[0] && typeof Product.images[0] !== 'number'
@@ -118,14 +126,12 @@ async function Info({params} : Props) {
     '@context': 'https://schema.org/',
     '@graph' : [{
        '@type': 'Product',
+       '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
     name: Product?.name,
     image: firstImage ? [firstImage] : [],
     description: Product?.description,
     sku: Product?.id,
-    brand: {
-      '@type': 'Brand',
-      name: 'OfficeFlow',
-    },
+   
     offers: {
       '@type': 'Offer',
       url: `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}`,
@@ -135,15 +141,26 @@ async function Info({params} : Props) {
          stock > 0
           ? 'https://schema.org/InStock'
           : 'https://schema.org/OutOfStock',
+
+      seller: {
+          '@type': 'Organization',
+          name: 'OfficeFlow',
+          url: 'https://officeflow.co.ke',
+        },    
     },
-    "aggregateRating": {
-     "@type": "AggregateRating",
-     "ratingValue": "4.6",
-     "reviewCount": "10"
-     }
+   ...(overall !== null
+        ? {
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: structuredOverall,
+              reviewCount: theReviews.length,
+            },
+          }
+        : {}),
     },
     {
         '@type': 'BreadcrumbList',
+        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
       itemListElement: [
         {
           '@type': 'ListItem',
@@ -186,8 +203,12 @@ async function Info({params} : Props) {
       description: Product?.description,
 
       isPartOf: {
-        '@id': `https://officeflow.co.ke#website`,
+        '@id': 'https://officeflow.co.ke#website',
       },
+
+        mainEntity: {
+    '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
+  },
 
       about: {
         '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
