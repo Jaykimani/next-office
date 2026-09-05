@@ -53,10 +53,14 @@ export const metadata: Metadata = {
 
 const page = () => {
 
-    const schema = {
+const schema = {
   "@context": "https://schema.org",
   "@graph": [
-   {
+
+    // --------------------------------
+    // WEB PAGE
+    // --------------------------------
+    {
       "@type": "WebPage",
       "@id": "https://officeflow.co.ke/office-supplies-nairobi#webpage",
       "url": "https://officeflow.co.ke/office-supplies-nairobi",
@@ -72,15 +76,50 @@ const page = () => {
         "@id": "https://officeflow.co.ke/#organization"
       },
 
+      "mainEntity": {
+        "@id": "https://officeflow.co.ke/office-supplies-nairobi#service"
+      },
+
       "breadcrumb": {
         "@id": "https://officeflow.co.ke/office-supplies-nairobi#breadcrumb"
       },
 
-      "mainEntity": {
-        "@id": "https://officeflow.co.ke/#organization"
+      "hasPart": {
+        "@id": "https://officeflow.co.ke/office-supplies-nairobi#faq"
       }
     },
 
+
+    // --------------------------------
+    // SERVICE
+    // --------------------------------
+    {
+      "@type": "Service",
+      "@id": "https://officeflow.co.ke/office-supplies-nairobi#service",
+      "name": "Office Supplies and Restock Services in Nairobi",
+      "serviceType": "Office Restock Services",
+      "description":
+        "OfficeFlow supplies stationery, printing and paper products, printer supplies, pantry essentials, cleaning supplies, IT consumables, and other workplace essentials to businesses in Nairobi.",
+
+      "provider": {
+        "@id": "https://officeflow.co.ke/#organization"
+      },
+
+      "areaServed": {
+        "@type": "City",
+        "name": "Nairobi"
+      },
+
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://officeflow.co.ke/office-supplies-nairobi"
+      }
+    },
+
+
+    // --------------------------------
+    // BREADCRUMB
+    // --------------------------------
     {
       "@type": "BreadcrumbList",
       "@id": "https://officeflow.co.ke/office-supplies-nairobi#breadcrumb",
@@ -100,54 +139,63 @@ const page = () => {
         }
       ]
     },
+
+
+    // --------------------------------
+    // FAQ
+    // --------------------------------
     {
-        "@type": "FAQPage",
-        "about": {
-         "@id": "https://officeflow.co.ke/#organization"
-           },
-        "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do you deliver office supplies to all areas of Nairobi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. OfficeFlow delivers office supplies across Nairobi, including CBD, Westlands, Upper Hill, Kilimani, Karen, Lavington, Gigiri, Industrial Area, Parklands, and other business districts. If your office is located within Nairobi, we can arrange delivery directly to your workplace."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can businesses in Nairobi order office supplies without a restock plan?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Absolutely. Businesses can place one-time orders for office supplies whenever needed. Whether you need printing paper, stationery, pantry items, cleaning supplies, or workplace essentials, OfficeFlow allows you to order as required without committing to a recurring restock plan."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How quickly can office supplies be delivered in Nairobi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most Nairobi orders are delivered within 1 to 2 business days, depending on product availability and order size. For urgent requirements, our team can advise on the fastest available delivery options."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you supply office essentials for large businesses and corporate offices in Nairobi?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. OfficeFlow supplies office essentials for businesses of all sizes, including SMEs, startups, NGOs, schools, clinics, and corporate offices. We can support both routine office supply needs and larger bulk orders for growing organizations in Nairobi."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What office supplies are most commonly ordered by Nairobi businesses?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Many Nairobi businesses regularly order A4 printing paper, notebooks, pens, envelopes, printer cartridges, pantry supplies, tissue paper, cleaning products, and other workplace essentials. OfficeFlow helps businesses keep these frequently used items readily available through convenient ordering and delivery services."
-      }
+      "@type": "FAQPage",
+      "@id": "https://officeflow.co.ke/office-supplies-nairobi#faq",
+
+      "about": {
+        "@id": "https://officeflow.co.ke/office-supplies-nairobi#service"
+      },
+
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do you deliver office supplies to all areas of Nairobi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OfficeFlow delivers office supplies across Nairobi, including CBD, Westlands, Upper Hill, Kilimani, Karen, Lavington, Gigiri, Industrial Area, Parklands, and other business districts. If your office is located within Nairobi, we can arrange delivery directly to your workplace."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can businesses in Nairobi order office supplies without a restock plan?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Businesses can place one-time orders for office supplies whenever needed. Whether you need printing paper, stationery, pantry items, cleaning supplies, or workplace essentials, OfficeFlow allows you to order as required without committing to a recurring restock plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can office supplies be delivered in Nairobi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most Nairobi orders are delivered within 1 to 2 business days, depending on product availability and order size. For urgent requirements, our team can advise on the fastest available delivery options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you supply office essentials for large businesses and corporate offices in Nairobi?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. OfficeFlow supplies office essentials for businesses of all sizes, including SMEs, startups, NGOs, schools, clinics, and corporate offices. We can support both routine office supply needs and larger bulk orders for growing organizations in Nairobi."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What office supplies are most commonly ordered by Nairobi businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many Nairobi businesses regularly order A4 printing paper, notebooks, pens, envelopes, printer cartridges, pantry supplies, tissue paper, cleaning products, and other workplace essentials. OfficeFlow helps businesses keep these frequently used items readily available through convenient ordering and delivery services."
+          }
+        }
+      ]
     }
-  ]
-    }
+
   ]
 };
 
