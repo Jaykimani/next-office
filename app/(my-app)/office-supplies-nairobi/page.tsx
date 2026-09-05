@@ -56,29 +56,41 @@ const page = () => {
     const schema = {
   "@context": "https://schema.org",
   "@graph": [
-    {
+   {
       "@type": "WebPage",
-      "@id": "https://officeflow.co.ke/office-supplies-nairobi",
-      url: "https://officeflow.co.ke/office-supplies-nairobi",
-      name: "Office Supplies in Nairobi",
-      description:
+      "@id": "https://officeflow.co.ke/office-supplies-nairobi#webpage",
+      "url": "https://officeflow.co.ke/office-supplies-nairobi",
+      "name": "Office Supplies in Nairobi",
+      "description":
         "OfficeFlow provides office supplies and office restock services for businesses in Nairobi.",
-      isPartOf: {
+
+      "isPartOf": {
         "@id": "https://officeflow.co.ke/#website"
       },
-      about: {
+
+      "about": {
+        "@id": "https://officeflow.co.ke/#organization"
+      },
+
+      "breadcrumb": {
+        "@id": "https://officeflow.co.ke/office-supplies-nairobi#breadcrumb"
+      },
+
+      "mainEntity": {
         "@id": "https://officeflow.co.ke/#organization"
       }
     },
 
     {
       "@type": "BreadcrumbList",
+      "@id": "https://officeflow.co.ke/office-supplies-nairobi#breadcrumb",
+
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
           "name": "Home",
-          "item": "https://officeflow.co.ke"
+          "item": "https://officeflow.co.ke/"
         },
         {
           "@type": "ListItem",
@@ -86,10 +98,7 @@ const page = () => {
           "name": "Office Supplies Nairobi",
           "item": "https://officeflow.co.ke/office-supplies-nairobi"
         }
-      ],
-       "about": {
-    "@id": "https://officeflow.co.ke/#organization"
-  }
+      ]
     },
     {
         "@type": "FAQPage",

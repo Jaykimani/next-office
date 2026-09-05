@@ -65,6 +65,7 @@ const schema = {
     },
     {
       "@type": "WebSite",
+      "@id": "https://officeflow.co.ke/#website",
       "name": "OfficeFlow",
       "url": "https://officeflow.co.ke",
       "potentialAction": {
