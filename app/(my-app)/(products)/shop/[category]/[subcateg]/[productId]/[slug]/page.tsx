@@ -106,7 +106,7 @@ async function Info({params} : Props) {
     let sum = theReviews.reduce((acc, item)=> acc + item.rating, 0);
     let overall = theReviews.length && Math.ceil(sum / theReviews.length);
     let overallRatings = {ratings: [overall], people: theReviews.length}
-    let structuredOverall= theReviews.length > 0
+    let structuredOverall=  theReviews.length > 0
     ? Number(
         (
           theReviews.reduce((acc, item) => acc + item.rating, 0) /
@@ -148,15 +148,15 @@ async function Info({params} : Props) {
           url: 'https://officeflow.co.ke',
         },    
     },
-   ...(overall !== null
-        ? {
-            aggregateRating: {
-              '@type': 'AggregateRating',
-              ratingValue: structuredOverall,
-              reviewCount: theReviews.length,
-            },
-          }
-        : {}),
+  ...(structuredOverall !== null
+  ? {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        "ratingValue": structuredOverall,
+        "reviewCount": theReviews.length,
+      },
+    }
+  : {}),
     },
     {
         '@type': 'BreadcrumbList',
