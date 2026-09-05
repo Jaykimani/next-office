@@ -124,7 +124,31 @@ async function Info({params} : Props) {
    
    const structuredData = {
     '@context': 'https://schema.org/',
-    '@graph' : [{
+    '@graph' : [
+       {
+      '@type': 'WebPage',
+      '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#webpage`,
+      url: `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}`,
+      name: Product?.name,
+      description: Product?.description,
+
+      isPartOf: {
+        '@id': 'https://officeflow.co.ke#website',
+      },
+
+        mainEntity: {
+    '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
+  },
+
+      about: {
+        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
+      },
+
+      breadcrumb: {
+        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#breadcrumb`,
+      },
+    },
+      {
        '@type': 'Product',
        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
     name: Product?.name,
@@ -160,7 +184,7 @@ async function Info({params} : Props) {
     },
     {
         '@type': 'BreadcrumbList',
-        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
+        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#breadcrumb`,
       itemListElement: [
         {
           '@type': 'ListItem',
@@ -195,29 +219,7 @@ async function Info({params} : Props) {
       ],
     },
 
-     {
-      '@type': 'WebPage',
-      '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#webpage`,
-      url: `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}`,
-      name: Product?.name,
-      description: Product?.description,
-
-      isPartOf: {
-        '@id': 'https://officeflow.co.ke#website',
-      },
-
-        mainEntity: {
-    '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
-  },
-
-      about: {
-        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#product`,
-      },
-
-      breadcrumb: {
-        '@id': `https://officeflow.co.ke/shop/${Product?.category}/${Product?.subcategory}/${Product?.id}/${Product?.slug}#breadcrumb`,
-      },
-    },
+    
 
     ]
     
