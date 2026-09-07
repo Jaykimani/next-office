@@ -14,7 +14,7 @@ const Restock = () => {
      <div className={styles.landing}>
       <div className={styles.landingHero}>
         <div className={styles.heroInset}>
-        <h1 className={styles.heading1}>OfficeFlow -Office supplies & Restock Services in Kenya</h1>
+        <h1 className={styles.heading1}>Office supplies & Restock Services in Kenya</h1>
        <p>Reliable office supplies in Kenya delivered fast to your business. High-quality office essentials for businesses, SMEs, corporates, and organizations across Kenya — including stationery, printing supplies, pantry items, cleaning products, and IT consumables.</p>
        <div className={styles.herocta}>
         <Link href={'/shop'} className={styles.quote}>
