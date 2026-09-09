@@ -1,0 +1,274 @@
+.businessLanding{
+    width: 100%;
+    height: 60vh;
+     background: linear-gradient( to right, rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('/business.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px 0;
+    cursor: pointer;
+}
+.landingContent{
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+}
+.landingContent h1{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 55px;
+    margin: 30px 0;
+}
+.landingContent h1 span{
+    color: #ffe100;
+}
+.landingParagraph{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    width: 70%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+}
+.landingButtons{
+    width: 55%;
+    height: auto;
+    margin: 30px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+        font-family: 'Roboto', sans-serif;
+
+}
+.addBtn{
+    width: 45%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffe100;
+    border-radius: 8px;
+}
+.addBtn p{
+    color: black;
+    margin-left: 20px;
+    font-weight: 600;
+}
+.talkBtn{
+    width: 45%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #ffe100;
+    border-radius: 8px;
+    
+}
+.talkBtn p{
+    color: #ffe100;
+    margin-left: 20px;
+    font-weight: 600;
+    text-align: left;
+}
+.businesswhy{
+    width: 100%;
+    height: auto;
+    padding: 30px 0 50px;
+}
+.businesswhy h2{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 40px;
+}
+.businesswhy h2 span{
+    text-decoration: underline;
+}
+.whyinset{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.insetInfo{
+    width: 15%;
+    height: auto;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+.insetEmoji{
+    width: 85px;
+    height: 85px;
+    background-color: rgb(61, 61, 61);
+    display: grid;
+    place-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+.insetInfo h3{
+    margin: 20px 0;
+    font-size: 20px;
+}
+.insetInfo p{
+    font-size: 16px;
+    color: rgb(96, 96, 96);
+    width: 90%;
+    text-align: center;
+}
+.divider{
+    width: 2px;
+    height: 100px;
+    background-color: gray;
+}
+.businesswho{
+    width: 100%;
+    height: 45vh;
+    background-color: rgb(247, 246, 246);
+    padding: 40px 0;
+}
+.businesswho h2{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+     font-size: 35px;
+    margin-bottom: 40px;
+}
+.businesswho h2 span{
+    text-decoration: underline;
+}
+.whoInset{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.whoInsetInfo{
+    width: 8%;
+    height: 140px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 5px 0;
+    border: 3px solid #ffe100;
+    border-radius: 20px;
+}
+.whoInsetInfo P{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    margin: 20px 0;
+    text-align: center;
+}
+.businesswhat{
+    width: 100%;
+    height: auto;
+    padding: 40px 0 30px;
+}
+.businesswhat h2{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+     font-size: 35px;
+    margin-bottom: 40px;
+}
+.businesswhat h2 span{
+    text-decoration: underline;
+}
+.whatInset{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+.whatInsetInfo{
+    width: 15%;
+    height: 370px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding-bottom: 15px;
+}
+.whatImg{
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.whatContent{
+    width: 100%;
+    height: auto;
+    padding: 0 5px;
+}
+.whatInsetInfo h3{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 15px;
+}
+.whatInsetInfo p{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+    line-height: 25px;
+}
+.readyDiv{
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    padding: 0 40px 0 70px;
+}
+.readyDiv1{
+    width: 50%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.readyDiv1 h1{
+    font-size: 55px;
+    color: white;
+}
+.readyDiv1 h1 span{
+    font-size: 55px;
+    color: #ffe100;
+}
+.readyDiv1 p{
+    color: white;
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: 20px;
+}
+.readyDiv2{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+}
+.readyBtn1{
+    background-color: #ffe100;
+    width: 50%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.readyBtn1 p{
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}
+.readyBtn2{
+    width: 48%;
+    height: 60px;
+    border: 2px solid #ffe100;
+    color: #ffe100;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.readyBtn2 p{
+    margin-left: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+}

@@ -54,6 +54,9 @@ const ServiceNav = () => {
                   <Link className={styles.navbarLink} href={'/shop'} style={{textDecoration: 'none'}}>
                   <p>Shop</p>
                   </Link>
+                  <Link className={styles.navbarLink} href={'/business-accounts'} style={{textDecoration: 'none'}}>
+                  <p>Business Accounts</p>
+                  </Link>
                   <Link className={styles.navbarLink} href={'/about'} style={{textDecoration: 'none'}}>
                   <p>About</p>
                   </Link>
