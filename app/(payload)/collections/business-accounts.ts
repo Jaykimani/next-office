@@ -20,6 +20,68 @@ export const BusinessAccounts: CollectionConfig = {
     ],
   },
 
+  access: {
+  create: () => true,
+
+  read: ({ req }) => {
+    if (!req.user) {
+      return false
+    }
+
+    // OfficeFlow admins/staff
+    if (
+      req.user.collection === 'users' &&
+      req.user.role === 'admin'
+    ) {
+      return true
+    }
+
+    // Business account holder
+    if (req.user.collection === 'business-accounts') {
+      return {
+        id: {
+          equals: req.user.id,
+        },
+      }
+    }
+
+    return false
+  },
+
+  update: ({ req }) => {
+    if (!req.user) {
+      return false
+    }
+
+    // OfficeFlow admins/staff
+    if (
+      req.user.collection === 'users' &&
+      req.user.role === 'admin'
+    ) {
+      return true
+    }
+
+    // Business account holder can update their own account
+    if (req.user.collection === 'business-accounts') {
+      return {
+        id: {
+          equals: req.user.id,
+        },
+      }
+    }
+
+    return false
+  },
+
+  delete: ({ req }) => {
+    // Only OfficeFlow admins can delete business accounts
+    return (
+      req.user?.collection === 'users' &&
+      req.user.role === 'admin'
+    )
+  },
+},
+
   fields: [
     // ---------------------------------------------------
     // BUSINESS INFORMATION

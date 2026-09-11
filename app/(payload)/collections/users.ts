@@ -20,7 +20,7 @@ export const Users: CollectionConfig = {
     // Users can read themselves, admins can read all
     read: ({ req }) => {
     const user = req.user as User | null
-      if (user?.role === 'admin' || user?.role === 'manager') return true
+      if (req.user?.collection === 'users' && user?.role === 'admin' || user?.role === 'manager' && req.user?.collection === 'users') return true
 
       return {
         id: {
@@ -31,7 +31,8 @@ export const Users: CollectionConfig = {
 
     // Users can update themselves, admins can update all
     update: ({ req }) => {
-      if (req.user?.role === 'admin' || req.user?.role === 'manager') return true
+      const user = req.user as User | null
+      if (req.user?.collection === 'users' && user?.role === 'admin' || user?.role === 'manager' && req.user?.collection === 'users') return true
 
       return {
         id: {
@@ -41,7 +42,7 @@ export const Users: CollectionConfig = {
     },
 
     // Only admins can delete users
-    delete: ({ req }) => req.user?.role === 'admin',
+    delete: ({ req }) => req.user?.collection === 'users' && req.user.role === 'admin',
   },
 
   fields: [
@@ -57,8 +58,8 @@ export const Users: CollectionConfig = {
         { label: 'User', value: 'user' }
       ],
       access: {
-        create: ({ req }) => req.user?.role === 'admin',
-        update: ({ req }) => req.user?.role === 'admin',
+        create: ({ req }) => req.user?.collection === 'users' && req.user.role === 'admin',
+        update: ({ req }) => req.user?.collection === 'users' && req.user.role === 'admin',
       },
     },
 
