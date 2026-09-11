@@ -16,6 +16,7 @@ import { Blogs } from './app/(payload)/collections/blogs'
 import { OfficeSupplies } from './app/(payload)/collections/supplies'
 import { OfficePantryHydration } from './app/(payload)/collections/pantry'
 import { OfficeCleaningHygiene } from './app/(payload)/collections/cleaning'
+import { BusinessAccounts } from './app/(payload)/collections/business-accounts'
 
 
 export default buildConfig({
@@ -67,7 +68,7 @@ plugins: [
 
 // serverURL: process.env.SERVER_URL,
   // Define and configure your collections in this array
-  collections: [Users, Messages, Categories, Products, OfficeSupplies, OfficePantryHydration, OfficeCleaningHygiene,  OfficeWorkspaceAccessories, OfficeElectronics, Orders, Reviews, Media, Blogs],
+  collections: [Users, Messages, Categories, Products, OfficeSupplies, OfficePantryHydration, OfficeCleaningHygiene,  OfficeWorkspaceAccessories, OfficeElectronics, Orders, Reviews, Media, Blogs, BusinessAccounts],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || '',

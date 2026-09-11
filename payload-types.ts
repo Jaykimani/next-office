@@ -64,6 +64,7 @@ export type SupportedTimezones =
 export interface Config {
   auth: {
     users: UserAuthOperations;
+    'business-accounts': BusinessAccountAuthOperations;
   };
   blocks: {};
   collections: {
@@ -80,6 +81,7 @@ export interface Config {
     reviews: Review;
     media: Media;
     blogs: Blog;
+    'business-accounts': BusinessAccount;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -100,6 +102,7 @@ export interface Config {
     reviews: ReviewsSelect<false> | ReviewsSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
     blogs: BlogsSelect<false> | BlogsSelect<true>;
+    'business-accounts': BusinessAccountsSelect<false> | BusinessAccountsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -112,15 +115,37 @@ export interface Config {
   globals: {};
   globalsSelect: {};
   locale: null;
-  user: User & {
-    collection: 'users';
-  };
+  user:
+    | (User & {
+        collection: 'users';
+      })
+    | (BusinessAccount & {
+        collection: 'business-accounts';
+      });
   jobs: {
     tasks: unknown;
     workflows: unknown;
   };
 }
 export interface UserAuthOperations {
+  forgotPassword: {
+    email: string;
+    password: string;
+  };
+  login: {
+    email: string;
+    password: string;
+  };
+  registerFirstUser: {
+    email: string;
+    password: string;
+  };
+  unlock: {
+    email: string;
+    password: string;
+  };
+}
+export interface BusinessAccountAuthOperations {
   forgotPassword: {
     email: string;
     password: string;
@@ -780,6 +805,64 @@ export interface Blog {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "business-accounts".
+ */
+export interface BusinessAccount {
+  id: number;
+  businessName: string;
+  businessType:
+    | 'sme'
+    | 'startup'
+    | 'corporate'
+    | 'ngo'
+    | 'school-university'
+    | 'government'
+    | 'law-firm'
+    | 'healthcare'
+    | 'coworking-space'
+    | 'other';
+  businessLocation: string;
+  contactPerson: string;
+  position?:
+    | ('procurement' | 'office-manager' | 'administration' | 'hr' | 'operations' | 'business-owner' | 'other')
+    | null;
+  phone: string;
+  contactMethod: ('business-email' | 'phone-call' | 'direct-messaging' | 'whatsapp')[];
+  supplyCategories: (
+    | 'stationery-writing'
+    | 'printing-paper'
+    | 'printer-ink'
+    | 'pantry-hydration'
+    | 'cleaning-hygiene'
+    | 'it-tech'
+    | 'safety-compliance'
+    | 'other'
+  )[];
+  purchaseFrequency: ('weekly' | 'bi-weekly' | 'monthly' | 'occasionally' | 'as-needed')[];
+  interestedInRestocking: 'yes' | 'no' | 'learn-more';
+  additionalRequirements?: string | null;
+  preferredContactMethod: 'email' | 'phone' | 'whatsapp';
+  accountStatus: 'pending' | 'active' | 'suspended' | 'rejected';
+  updatedAt: string;
+  createdAt: string;
+  email: string;
+  resetPasswordToken?: string | null;
+  resetPasswordExpiration?: string | null;
+  salt?: string | null;
+  hash?: string | null;
+  loginAttempts?: number | null;
+  lockUntil?: string | null;
+  sessions?:
+    | {
+        id: string;
+        createdAt?: string | null;
+        expiresAt: string;
+      }[]
+    | null;
+  password?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -853,12 +936,21 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'blogs';
         value: number | Blog;
+      } | null)
+    | ({
+        relationTo: 'business-accounts';
+        value: number | BusinessAccount;
       } | null);
   globalSlug?: string | null;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
+  user:
+    | {
+        relationTo: 'users';
+        value: number | User;
+      }
+    | {
+        relationTo: 'business-accounts';
+        value: number | BusinessAccount;
+      };
   updatedAt: string;
   createdAt: string;
 }
@@ -868,10 +960,15 @@ export interface PayloadLockedDocument {
  */
 export interface PayloadPreference {
   id: number;
-  user: {
-    relationTo: 'users';
-    value: number | User;
-  };
+  user:
+    | {
+        relationTo: 'users';
+        value: number | User;
+      }
+    | {
+        relationTo: 'business-accounts';
+        value: number | BusinessAccount;
+      };
   key?: string | null;
   value?:
     | {
@@ -1312,6 +1409,41 @@ export interface BlogsSelect<T extends boolean = true> {
       };
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "business-accounts_select".
+ */
+export interface BusinessAccountsSelect<T extends boolean = true> {
+  businessName?: T;
+  businessType?: T;
+  businessLocation?: T;
+  contactPerson?: T;
+  position?: T;
+  phone?: T;
+  contactMethod?: T;
+  supplyCategories?: T;
+  purchaseFrequency?: T;
+  interestedInRestocking?: T;
+  additionalRequirements?: T;
+  preferredContactMethod?: T;
+  accountStatus?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  email?: T;
+  resetPasswordToken?: T;
+  resetPasswordExpiration?: T;
+  salt?: T;
+  hash?: T;
+  loginAttempts?: T;
+  lockUntil?: T;
+  sessions?:
+    | T
+    | {
+        id?: T;
+        createdAt?: T;
+        expiresAt?: T;
+      };
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
