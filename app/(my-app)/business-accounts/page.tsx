@@ -3,6 +3,7 @@ import ServiceNav from '@/components/servicenav/servnav';
 import Quiz3 from '@/components/quizthree/quizthree';
 import Footer from '@/components/footer/footer';
 import Image from 'next/image';
+import Link from 'next/link';
 import { LuUserRoundPlus } from "react-icons/lu";
 import { FiPhone } from "react-icons/fi";
 import { BsLightningCharge } from "react-icons/bs";
@@ -113,14 +114,14 @@ const page = () => {
         dedicated support and bulk pricing designed for businesses in Nairobi and across Kenya.
       </p>
       <div className={styles.landingButtons}>
-        <div className={styles.addBtn}>
+        <Link href={'/my-account/register'} className={styles.addBtn}>
          <LuUserRoundPlus style={{width: '25px', height: '25px'}}/>
          <p>Apply for a Business Account</p>
-        </div>
-        <div className={styles.talkBtn}>
+        </Link>
+        <Link href={'/contact'} className={styles.talkBtn}>
          <FiPhone style={{width: '30px', height: '30px', color: '#ffe100'}}/>
          <p>Speak To Our Team</p>
-        </div>
+        </Link>
       </div>
     </div>
     </div>

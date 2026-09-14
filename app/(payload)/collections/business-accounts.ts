@@ -214,15 +214,15 @@ export const BusinessAccounts: CollectionConfig = {
     // OFFICE SUPPLY REQUIREMENTS
     // ---------------------------------------------------
       {
-      name: 'contactMethod',
+      name: 'preferredContactMethod',
       type: 'select',
       required: true,
       hasMany: true,
       label: 'What is your preferred contact method?',
       options: [
         {
-          label: 'Business Email',
-          value: 'business-email',
+          label: 'Email Address',
+          value: 'email-address',
         },
         {
           label: 'Phone Call',
@@ -247,31 +247,27 @@ export const BusinessAccounts: CollectionConfig = {
       options: [
         {
           label: 'Stationery & Writing Supplies',
-          value: 'stationery-writing',
+          value: 'stationery-writing-supplies',
         },
         {
           label: 'Printing & Paper Supplies',
-          value: 'printing-paper',
+          value: 'printing-paper-supplies',
         },
         {
           label: 'Printer & Ink Supplies',
-          value: 'printer-ink',
-        },
-        {
-          label: 'Pantry & Hydration Supplies',
-          value: 'pantry-hydration',
-        },
-        {
-          label: 'Cleaning & Hygiene Supplies',
-          value: 'cleaning-hygiene',
+          value: 'printer-ink-supplies',
         },
         {
           label: 'IT & Tech Consumables',
-          value: 'it-tech',
+          value: 'it-tech-consumables',
         },
         {
-          label: 'Safety & Compliance Supplies',
-          value: 'safety-compliance',
+          label: 'Pantry & Hydration Supplies',
+          value: 'pantry-hydration-supplies',
+        },
+        {
+          label: 'Cleaning & Hygiene Supplies',
+          value: 'cleaning-hygiene-supplies',
         },
         {
           label: 'Other',
@@ -327,37 +323,6 @@ export const BusinessAccounts: CollectionConfig = {
         {
           label: 'I would like to learn more',
           value: 'learn-more',
-        },
-      ],
-    },
-
-    {
-      name: 'additionalRequirements',
-      type: 'textarea',
-      label: 'Additional Requirements',
-    },
-
-    // ---------------------------------------------------
-    // CONTACT PREFERENCE
-    // ---------------------------------------------------
-
-    {
-      name: 'preferredContactMethod',
-      type: 'select',
-      required: true,
-      label: 'Preferred Contact Method',
-      options: [
-        {
-          label: 'Email',
-          value: 'email',
-        },
-        {
-          label: 'Phone',
-          value: 'phone',
-        },
-        {
-          label: 'WhatsApp',
-          value: 'whatsapp',
         },
       ],
     },

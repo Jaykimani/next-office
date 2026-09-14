@@ -71,7 +71,7 @@ const handleSearchClose = ()=>{
 
   return (
                <div className={styles.shopSearchIcon}>
-               <input ref={searchIn} type="text" name="" id="" value={value} placeholder="I'm looking for ...." onChange={(e) => {setQuery(e.target.value);  setValue(e.target.value)}}/>
+               <input ref={searchIn} type="text" name="" id="" value={value} placeholder="Search products, categories, brands..." onChange={(e) => {setQuery(e.target.value);  setValue(e.target.value)}}/>
                {bar ? <MdClose style={{color: "black", width: '35px', height: '35px'}} onClick={handleSearchClose}/> : <MdOutlineSearch style={{color: "black", width: '35px', height: '35px'}}/> }
                <div className={styles.searchResults} style={{display: bar ? "block" : "none"}}>
 

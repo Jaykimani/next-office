@@ -827,21 +827,18 @@ export interface BusinessAccount {
     | ('procurement' | 'office-manager' | 'administration' | 'hr' | 'operations' | 'business-owner' | 'other')
     | null;
   phone: string;
-  contactMethod: ('business-email' | 'phone-call' | 'direct-messaging' | 'whatsapp')[];
+  preferredContactMethod: ('email-address' | 'phone-call' | 'direct-messaging' | 'whatsapp')[];
   supplyCategories: (
-    | 'stationery-writing'
-    | 'printing-paper'
-    | 'printer-ink'
-    | 'pantry-hydration'
-    | 'cleaning-hygiene'
-    | 'it-tech'
-    | 'safety-compliance'
+    | 'stationery-writing-supplies'
+    | 'printing-paper-supplies'
+    | 'printer-ink-supplies'
+    | 'it-tech-consumables'
+    | 'pantry-hydration-supplies'
+    | 'cleaning-hygiene-supplies'
     | 'other'
   )[];
   purchaseFrequency: ('weekly' | 'bi-weekly' | 'monthly' | 'occasionally' | 'as-needed')[];
   interestedInRestocking: 'yes' | 'no' | 'learn-more';
-  additionalRequirements?: string | null;
-  preferredContactMethod: 'email' | 'phone' | 'whatsapp';
   accountStatus: 'pending' | 'active' | 'suspended' | 'rejected';
   updatedAt: string;
   createdAt: string;
@@ -1421,12 +1418,10 @@ export interface BusinessAccountsSelect<T extends boolean = true> {
   contactPerson?: T;
   position?: T;
   phone?: T;
-  contactMethod?: T;
+  preferredContactMethod?: T;
   supplyCategories?: T;
   purchaseFrequency?: T;
   interestedInRestocking?: T;
-  additionalRequirements?: T;
-  preferredContactMethod?: T;
   accountStatus?: T;
   updatedAt?: T;
   createdAt?: T;

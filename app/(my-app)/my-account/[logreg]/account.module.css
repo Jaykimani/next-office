@@ -150,6 +150,12 @@
     width: 15px;
     margin-left: 15px;
 }
+.caution{
+    width: 100%;
+    padding: 7px 0;
+    color: red;
+    text-align: center;
+}
 .accountForm button:hover{
     background-color: #615601;
     transition: 0.7s ease;

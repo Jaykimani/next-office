@@ -1,6 +1,6 @@
 .shopSearchIcon{
     width: 40%;
-    height: 45px;
+    height: 52px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -8,6 +8,7 @@
     padding: 0 15px;
     border-radius: 50px;
     position: relative;
+    border: 2px solid black;
 }
 .shopSearchIcon input{
     width: 95%;
