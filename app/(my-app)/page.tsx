@@ -132,31 +132,24 @@ export default function Home(){
       "name": "How does OfficeFlow work?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "OfficeFlow is designed to make it easy for businesses to get the office supplies they need. Customers can either order office essentials as needed through our website or create a custom restock plan for scheduled deliveries and ongoing workplace supply management."
+        "text": "OfficeFlow is designed to make it easy for businesses to get the office supplies they need. Customers can either order office essentials as needed through our website or Create an OfficeFlow Business Account to enjoy easier ordering for repeat purchases, restocking requests, and visibility into your office supply spending."
       }
     },
     {
       "@type": "Question",
-      "name": "What is a custom restock plan?",
+      "name": "What is a Restock Service?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A custom restock plan is a personalized office supply program based on your business requirements and usage patterns. Instead of manually reordering supplies every time stock runs low, OfficeFlow helps create a structured supply schedule tailored to your workplace."
+        "text": "A Restock Service is a personalized office supply program based on your business's specific requirements and usage patterns. Instead of manually reordering supplies every time stock runs low, OfficeFlow helps create a structured supply schedule tailored to your workplace."
       }
     },
-     {
-      "@type": "Question",
-      "name": "How can I request an office restock plan from OfficeFlow?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can contact OfficeFlow through our website, WhatsApp, or quote request form to discuss your office requirements and receive a customized workplace restock plan."
-      }
-    },
+    
     {
       "@type": "Question",
-      "name": "Can I set up recurring office deliveries?",
+      "name": "Can I set up a Restock Service for my business?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Businesses using custom restock plans can choose weekly, bi-weekly, monthly, or customized delivery schedules based on their office requirements."
+        "text": "Yes. Businesses with an OfficeFlow Business Account can choose products they want delivered either weekly, bi-weekly, monthly, or create a customized delivery schedule based on their office requirements."
       }
     },
     {

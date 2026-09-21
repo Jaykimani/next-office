@@ -225,8 +225,7 @@ const schema = {
     <Restock2 />
     <Services />
     <Featured2 />
-    <Quiz2 />  
-    <Testimony /> 
+    <Quiz2 />   
     <Contact /> 
     <Footer />
     </>

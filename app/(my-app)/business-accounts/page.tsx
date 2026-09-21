@@ -140,7 +140,7 @@ const page = () => {
                 <BsLightningCharge style={{color: '#ffe100', width: '40px', height: '40px'}}/>
                </div>
                <h3>Faster Ordering</h3>
-               <p>Save time with One-click reordering, favorite products and simplified procument</p>
+               <p>Save time reordering frequently used products instead of scrolling through our whole catalogue</p>
             </div>
             {/* <div className={styles.divider}></div> */}
              <div className={styles.insetInfo}>

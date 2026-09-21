@@ -83,44 +83,33 @@ const Quiz = () => {
                  <p>You can either:</p>
                  <ul>
                   <li>Order office essentials as needed through our website.</li>
-                  <li>Create a custom restock plan for scheduled deliveries and ongoing workplace supply management.</li>
+                  <li>Create an OfficeFlow Business Account to enjoy easier ordering for repeat purchases, restocking requests, and visibility into your office supply spending.</li>
                  </ul>
                  <p>Whether you need a one-time purchase or a long-term supply solution, OfficeFlow helps businesses stay stocked and productive.</p>
                 </div>
               </div>
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>What is a custom restock plan?</h4>
+                <h4>What is a Restock Service?</h4>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>A custom restock plan is a personalized office supply program based on your business's specific requirements and usage patterns.</p>
+                 <p>A Restock Service is a personalized office supply program based on your business's specific requirements and usage patterns.</p>
                  <p>Instead of manually reordering supplies every time stock runs low, OfficeFlow helps you create a structured supply schedule tailored to your workplace.</p>
                 </div>
               </div>
-               <div  className={styles.quizDiv} onClick={handleQuiz}>
-                <div className={styles.quizTop} >
-                <h4>How can I request an office restock plan from OfficeFlow?</h4>
-                 <div className='showIcon'>
-                <MdAddCircle className={styles.add} fontSize='large'/>
-                </div>
-                </div>
-                <div className={styles.quizBottom}>
-                 <p>You can contact OfficeFlow through our website, WhatsApp, or quote request form to discuss your office requirements and receive a customized workplace restock plan.</p>
-                 
-                </div>
-              </div>
+            
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>Can I set up recurring office deliveries?</h4>
+                <h4>Can I set up a Restock Service for my business?</h4>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>Yes. Businesses using custom restock plans can choose weekly, bi-weekly, monthly, or customized delivery schedules based on their office requirements.</p>
+                 <p>Yes. Businesses with an OfficeFlow Business Account can choose products they want delivered either weekly, bi-weekly, monthly, or create a customized delivery schedule based on their office requirements.</p>
                 </div>
               </div>
                <div  className={styles.quizDiv} onClick={handleQuiz}>

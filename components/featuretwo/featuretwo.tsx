@@ -1,6 +1,7 @@
 import styles from './featuretwo.module.css';
-import Image from 'next/image';
-import { MdArrowForward } from "react-icons/md";
+import { FaBuilding } from "react-icons/fa";
+import { VscWorkspaceTrusted } from "react-icons/vsc";
+import { GiKenya } from "react-icons/gi";
 import Link from 'next/link';
 
 const Featured2 = () => {
@@ -24,45 +25,38 @@ const Featured2 = () => {
           
         </div>
 
-        <div id={styles.proof}>
-          <div className={styles.proofInset}>
-            <div className={styles.proofTitle}>
-             <p>Exceptional Customer Service</p>
-            </div>
-            <div className={styles.proofImg}>
-             <Image className={styles.proofImgImg} src="/customer2.jpg" alt="customer service" width={500} height={500}/>
-            </div>
-            <div className={styles.proofDesc}>
-              <p>Our friendly and knowledgeable support team is always ready to assist you.</p>
-            </div>
-
+         <div id={styles.businessAdvert}>
+          <div className={styles.advInfo}>
+        <h1>Business Accounts for<br></br> <span>Smarter Office Procument</span></h1> 
+        <p>Create an OfficeFlow Business Account for easier ordering, repeat purchases, restocking requests, and visibility into your office supply spending.</p>
+        <div className={styles.advIcons}>
+           <div className={styles.advIconsItem}>
+            <span><FaBuilding style={{width: '27px', height: '27px'}}/></span>
+            <p>Built For Businesses</p>
+           </div>
+           <div className={styles.advIconsItem}>
+            <span><VscWorkspaceTrusted style={{width: '27px', height: '27px'}}/></span>
+            <p>Trusted and Reliable</p>
+           </div>
+           <div className={styles.advIconsItem}>
+            <span><GiKenya style={{width: '27px', height: '27px'}}/></span>
+            <p>Serving Customers Nationwide</p>
+           </div>
+        </div>
           </div>
-          <div className={styles.proofInset}>
-            <div className={styles.proofTitle}>
-             <p>On-time, Every time.</p>
+      
+        <div className={styles.advctas}>
+          <Link href={'/business-accounts'} className={styles.advcta1} >
+          <div >
+            <p>Learn More ...</p>
             </div>
-            <div className={styles.proofImg}>
-             <Image className={styles.proofImgImg} src="/shipping.jpg" alt="fast shipping" width={500} height={500}/>
+          </Link>
+          <Link href={'/my-account/register'} className={styles.advcta2}>
+          <div> 
+            <p>Create A Business Account</p>
             </div>
-            <div className={styles.proofDesc}>
-              <p>Experience smooth and reliable delivery, prioritizing speed, safety, and consistency.</p>
-            </div>
-
-          </div>
-          <div className={styles.proofInset}>
-            <div className={styles.proofTitle}>
-             <p>Quality Assured</p>
-            </div>
-            <div className={styles.proofImg}>
-             <Image className={styles.proofImgImg} src="/quality.jpg" alt="competitive pricing" width={500} height={500}/>
-            </div>
-            <div className={styles.proofDesc}>
-              <p>It's simple: uncompromising quality and service you can trust.</p>
-            </div>
-
-          </div>
-
-
+          </Link>
+        </div>
         </div>
         </>
   )

@@ -2,8 +2,8 @@
 #choice{
     width: 100%;
     height: auto;
-    background-color: rgb(255, 255, 255);
-    padding: 40px;
+     background-color: rgb(237, 237, 237);
+    padding: 50px;
 }
 .choice1{
     display: block;
@@ -47,51 +47,103 @@
 .choiceBtn p{
     font-size: 23px;
 }
-#proof{
+#businessAdvert{
     width: 100%;
-    height: 90vh;
-    background-color: rgb(255, 255, 255);
-    padding: 40px;
+    height: 60vh;
+     background: linear-gradient( to right, rgba(0, 0 ,0 , 0.3), rgba(0, 0 ,0 , 0.9)), url('/business.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 30px 20px 30px 50px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }
-.proofInset{
-    width: 25%;
-    height: 90%;
-    background-color: #000000;
-}
-.proofTitle{
-    width: 100%;
-    height: 22%;
-    font-family: 'Playfair Display', sans-serif;
-    color: #ffe100;
-    font-size: 34px;
-    text-align: center;
-    font-weight: 500;
-    padding: 0 10px;
-    display: grid;
-    place-items: center;
-}
-.proofImg{
-    width: 100%;
-    height: 55%;
-}
-.proofImgImg{
-    width: 100%;
+.advInfo{
+    width: 65%;
     height: 100%;
-    object-fit: cover;
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   border-right: 1px solid rgb(77, 77, 77);
 }
-.proofDesc{
-    width: 100%;
-    height: 22%;
-    font-family: 'Playfair Display', sans-serif;
-    color: #ffffff;
+.advInfo h1{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 58px;
+}
+.advInfo h1 span{
+    color: #ffe100;
+    font-size: 65px;
+    font-weight: 800;
+}
+.advInfo p{
+    width: 90%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    margin-top: 30px;
+}
+.advIcons{
+    width: 85%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.advIconsItem{
+    width: 30%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.688);
     text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding-left: 10px;
+}
+.advIconsItem span{
+    width: 60px;
+    height: 60px;
+    background-color: #ffe100d9;
+    border-radius: 50%;
     display: grid;
     place-items: center;
-    padding: 0 20px;
-    font-size: 21px;
 }
+.advIconsItem p{
+    font-size: 16px;
+    margin-top: 0px;
+    color: black;
+    line-height: 25px;
+}
+.advctas{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Roboto', sans-serif;
+}
+.advcta1{
+    width: 95%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe100;
+    border-radius: 60px;
+}
+.advcta2{
+    width: 90%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffe100;
+    color: #ffe100;
+    border-radius: 60px;
+    margin-top: 30px;
+}
+
 
 @media screen and (max-width: 800px) {
     
