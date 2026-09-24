@@ -225,48 +225,48 @@ const page = () => {
     <div className={styles.businesswhat}>
       <h2><span>What</span> You Can Order</h2>
       <div className={styles.whatInset}>
-       <div className={styles.whatInsetInfo}>
+       <Link href={'/shop/office-supplies/stationery-writing-supplies'} className={styles.whatInsetInfo}>
         <Image className={styles.whatImg} src="/statitionery4.jpg" alt="fast shipping" width={500} height={500}/>
         <div className={styles.whatContent}>
          <h3>Stationery & Writing Supplies</h3>
         <p>Pens, Pencils, Sticky notes,arch files, Makers, Highlighters, Erasers e.t.c</p>
         </div>
-       </div>
-         <div className={styles.whatInsetInfo}>
+       </Link>
+         <Link href={'/shop/office-supplies/printing-paper-supplies'} className={styles.whatInsetInfo}>
         <Image className={styles.whatImg} src="/paper4.jpg" alt="fast shipping" width={500} height={500}/>
         <div className={styles.whatContent}>
          <h3>Printing & Paper supplies</h3>
         <p>A4 printing paper, Notebooks, Counter books, diaries, Colored paper, Photo paper, Envelopes, Manila papers e.t.c</p>
         </div>
-       </div>
-         <div className={styles.whatInsetInfo}>
+       </Link>
+         <Link href={'/shop/office-supplies/printer-ink-supplies'} className={styles.whatInsetInfo}>
         <Image className={styles.whatImg} src="/BAPrinter.jpg" alt="fast shipping" width={500} height={500}/>
         <div className={styles.whatContent}>
          <h3>Printer Consumables</h3>
         <p>PInk cartridges, Toner cartridges, Printer ribbons, Maintenance kits, Refilling Services e.t.c</p>
         </div>
-       </div>
-         <div className={styles.whatInsetInfo}>
+       </Link>
+         <Link href={'/shop/office-electronics'} className={styles.whatInsetInfo}>
         <Image className={styles.whatImg} src="/consumable.jpg" alt="fast shipping" width={500} height={500}/>
         <div className={styles.whatContent}>
          <h3>IT & Tech Consumables</h3>
         <p>HDMI adapters, USB drives, Ethernet cables, Charging cables, Laptop chargers, Extension cables e.t.c</p>
         </div>
-       </div>
-         <div className={styles.whatInsetInfo}>
+       </Link>
+         <Link href={'/shop/office-pantry-hydration'} className={styles.whatInsetInfo}>
         <Image className={styles.whatImg} src="/pantry2.jpg" alt="fast shipping" width={500} height={500}/>
         <div className={styles.whatContent}>
          <h3>Pantry & Hydration supplies</h3>
         <p>Drinking water, Dispenser water, Coffee, Tea, Sugar, Disposable cups, Stirrers, Snacks, Milk e.t.c</p>
         </div>
-       </div>
-         <div className={styles.whatInsetInfo}>
+       </Link>
+         <Link href={'/shop/office-cleaning-hygiene'} className={styles.whatInsetInfo}>
         <Image className={styles.whatImg} src="/cleaning1.jpg" alt="fast shipping" width={500} height={500}/>
         <div className={styles.whatContent}>
          <h3>Cleaning & Hygiene supplies</h3>
         <p>Disinfectant sprays, Hand sanitizers, Air fresheners, Hand towels, Tissue papers, Cleaning detergents e.t.c</p>
         </div>
-       </div>
+       </Link>
       </div>
     </div>
     <div className={styles.readyDiv}>
@@ -276,11 +276,11 @@ const page = () => {
       </div>
       <div className={styles.readyDiv2}>
         <div className={styles.readyBtn1}>
-        <LuUserRoundPlus style={{width: '25px', height: '25px'}}/>
+        <LuUserRoundPlus style={{width: '25px', height: '25px'}} className={styles.readyIcons}/>
          <p>Apply for a Business Account</p>
         </div>
         <div className={styles.readyBtn2}>
-        <LuClipboardList style={{width: '25px', height: '25px'}}/>
+        <LuClipboardList style={{width: '25px', height: '25px'}} className={styles.readyIcons}/>
          <p>Request A Quote</p>
         </div>
       </div>

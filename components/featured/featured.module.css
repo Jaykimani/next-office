@@ -176,51 +176,109 @@
        font-size: 20px;
     }
    
-    #proof{
-        width: 100%;
-        height: 70vh;
-        background-color: rgb(255, 255, 255);
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-    }
-    .proofInset{
-        width: 32%;
-        height: 90%;
-        border: 1px solid #ffe100;
-    }
-    .proofTitle{
-        width: 100%;
-        height: 22%;
-        font-family: 'Playfair Display', sans-serif;
-        color: #ffe100;
-        font-size: 23px;
-        text-align: center;
-        font-weight: 500;
-        padding: 0 10px;
-        display: grid;
-        place-items: center;
-    }
-    .proofImg{
-        width: 100%;
-        height: 55%;
-    }
-    .proofImgImg{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    .proofDesc{
-        width: 100%;
-        height: 22%;
-        font-family: 'Playfair Display', sans-serif;
-        color: rgb(0, 0, 0);
-        text-align: center;
-        display: grid;
-        place-items: center;
-        padding: 0 20px;
-        font-size: 15px;
-    }
+   #businessAdvert{
+    width: 100%;
+    height: auto;
+     background: linear-gradient( to bottom, rgba(0, 0 ,0 , 0.3), rgba(0, 0 ,0 , 1)), url('/business.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.advInfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   border-right: none;
+   border-bottom: 1px solid rgb(77, 77, 77);
+   text-align: left;
+   padding-bottom: 30px;
+}
+.advInfo h1{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 53px;
+}
+.advInfo h1 span{
+    color: #ffe100;
+    font-size: 60px;
+    font-weight: 800;
+}
+.advInfo p{
+    width: 100%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 19px;
+    line-height: 30px;
+    margin-top: 30px;
+    font-weight: 600;
+}
+.advIcons{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.advIconsItem{
+    width: 30%;
+    height: 70px;
+    background-color: rgba(255, 255, 255, 0.688);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    border-radius: 60px;
+    padding-left: 10px;
+}
+.advIconsItem span{
+    width: 60px;
+    height: 60px;
+    background-color: #ffe100d9;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.advIconsItem p{
+    font-size: 14px;
+    margin-top: 0px;
+    color: black;
+    line-height: 25px;
+}
+.advctas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    padding: 40px 10px 30px;
+}
+.advcta1{
+    width: 47%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe100;
+    border-radius: 60px;
+}
+.advcta2{
+    width: 47%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffe100;
+    color: #ffe100;
+    border-radius: 60px;
+    margin-top: 0px;
+}
+
 }
 
 
@@ -259,8 +317,109 @@
         font-weight: bold;
         font-size: 18px;
     }
-    #proof{
-      display: none;
-    }
+    #businessAdvert{
+    width: 100%;
+    height: auto;
+     background: linear-gradient( to bottom, rgba(0, 0 ,0 , 0.3), rgba(0, 0 ,0 , 1)), url('/business.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.advInfo{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   border-right: none;
+   border-bottom: 1px solid rgb(77, 77, 77);
+   text-align: left;
+   padding-bottom: 30px;
+}
+.advInfo h1{
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+}
+.advInfo h1 span{
+    color: #ffe100;
+    font-size: 40px;
+    font-weight: 800;
+}
+.advInfo p{
+    width: 100%;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 17px;
+    line-height: 30px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.advIcons{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.advIconsItem{
+    width: 30%;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 60px;
+    padding-left: 0px;
+    padding-top: 10px;
+}
+.advIconsItem span{
+    width: 60px;
+    height: 60px;
+    background-color: #ffe100d9;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+.advIconsItem p{
+    font-size: 14px;
+    margin-top: 10px;
+    color: rgb(254, 253, 253);
+    line-height: 25px;
+}
+.advctas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Roboto', sans-serif;
+    padding: 40px 10px 30px;
+}
+.advcta1{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffe100;
+    border-radius: 60px;
+}
+.advcta2{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ffe100;
+    color: #ffe100;
+    border-radius: 60px;
+    margin-top: 20px;
+}
    
 }

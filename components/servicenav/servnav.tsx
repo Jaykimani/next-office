@@ -12,6 +12,7 @@ import { IoHome } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
 import { FaNewspaper } from "react-icons/fa6";
+import { MdSupervisorAccount } from "react-icons/md";
 
 
 const ServiceNav = () => {
@@ -131,6 +132,12 @@ const ServiceNav = () => {
             <div className={styles.shopNavLinks}>
                <FaShoppingCart style={{color: '#ffe100', width: '27px', height: '27px'}}/>
                 <h3>Shop</h3>
+            </div>
+            </Link>
+            <Link href={'/business-accounts'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopNavLinks}>
+               <MdSupervisorAccount style={{color: '#ffe100', width: '30px', height: '30px'}}/>
+                <h3>Business Accounts</h3>
             </div>
             </Link>
             <Link href={'/contact'} style={{textDecoration: "none", color: "white"}}>
