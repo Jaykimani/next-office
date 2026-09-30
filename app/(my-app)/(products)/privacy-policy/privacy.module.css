@@ -2,7 +2,7 @@
     width: 100%;
     height: auto;
     background-color: rgb(255, 255, 255);
-    padding: 30px 0;
+    padding: 130px 0 30px;
     cursor: pointer;
 }
 .privacyInset{
@@ -115,14 +115,14 @@
     color: rgb(0, 0, 0);
 }
 .privacyInset h1{
-    font-size: 30px;
+    font-size: 25px;
     margin-top: 30px;
 }
 .privacyInset h2{
-    font-size: 23px;
+    font-size: 21px;
 }
 .privacyInset h3{
-    font-size: 19px;
+    font-size: 18px;
 }
 .privacyInset p{
     font-family: 'Times New Roman', Times, serif;

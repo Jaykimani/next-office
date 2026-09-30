@@ -72,95 +72,6 @@
     font-size: 22px;
     text-decoration: underline;
 }
-.accountForm{
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-   
-}
-.accountForm div{
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-.accountForm div p{
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    color: rgb(101, 101, 101);
-}
-.accountForm div p span{
-    color: red;
-}
-.accountForm div input{
-    width: 100%;
-    height: 55px;
-    margin-top: 10px;
-    padding-left: 15px;
-    font-size: 16px;
-    border: 2px solid rgb(97, 97, 97);
-}
-.optionSelector{
-    width: 100%;
-    margin-top: 10px;
-    height: 55px;
-    padding-left: 15px;
-    font-size: 16px;
-    border: 2px solid rgb(97, 97, 97);;
-}
-.optionSelector option{
-    line-height: 60px;
-}
-
-.customCheckbox{
-   width: 100%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    padding-left: 30px;
-   
-}
-.customCheckbox span{
-    margin-left: 20px;
-    transform: translateY(5px);
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-}
-.radioLabel{
-    transform: translateY(5px);
-    font-family: 'Roboto', sans-serif;
-}
-.accountForm button{
-    width: 100%;
-    height: 70px;
-    background-color: #ffe100;
-    color: #ffffff;
-    border: none;
-    font-family: 'Roboto', sans-serif;
-    font-size: 19px;
-    margin-top: 30px;
-}
-.passDiv{
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-}
-.eye{
-    height: 15px;
-    width: 15px;
-    margin-left: 15px;
-}
-.caution{
-    width: 100%;
-    padding: 7px 0;
-    color: red;
-    text-align: center;
-}
-.accountForm button:hover{
-    background-color: #615601;
-    transition: 0.7s ease;
-}
-
 .accountForm2{
      width: 90%;
     height: 80vh;
@@ -202,9 +113,26 @@
     background-color: #b39e00;
     transition: 0.7s ease;
 }
+.passDiv{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.eye{
+    height: 15px;
+    width: 15px;
+    margin-left: 15px;
+}
+.caution{
+    width: 100%;
+    padding: 7px 0;
+    color: red;
+    text-align: center;
+}
 
 @media screen and (max-width: 800px) {
-    .accountsMain{
+   .accountsMain{
     display: flex;
 }
 .accountLeft{
@@ -245,42 +173,6 @@
     font-size: 20px;  
     text-align: center;
 }
-.accountRight{
-    width: 60%;
-    height: 100vh;
-    padding: 30px 10px;
-    overflow-y: scroll;
-}
-.accountRight h4{
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 22px;
-    text-decoration: underline;
-}
-.accountForm{
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-   
-}
-.accountForm div{
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-.accountForm div p{
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-}
-.accountForm div input{
-    width: 100%;
-    height: 50px;
-    margin-top: 10px;
-    padding-left: 15px;
-    font-size: 16px;
-    border: 2px solid rgb(205, 205, 205);
-}
-
 .accountForm2 div input{
     width: 100%;
     height: 50px;
@@ -288,18 +180,17 @@
     padding-left: 15px;
     font-size: 16px;
     border: 2px solid rgb(205, 205, 205);
-}
+} 
 }
 
 @media screen and (max-width: 600px) {
-    .accountsMain1{
+     .accountsMain1{
         display: none;
     }
     .accountsMain2{
         display: block;
         width: 100%;
-        min-height: 100vh;
-        height: auto;
+        height: 100vh;
          background: linear-gradient( to right, rgba(0, 0 ,0 , 0.5), rgba(0, 0 ,0 , 0.5)), url('/login2.jpg');
     background-size: cover;
     background-position: center;
@@ -336,91 +227,44 @@
     }
     .accountsInset h4{
     text-align: center;
-    margin: 22px;
+    margin: 30px;
     font-size: 18px;
     text-decoration: underline;
 }
-.accountsForm{
-    width: 90%;
-    height: auto;
-    margin: 0 auto;
-   
-}
-.accountsForm div{
-    width: 100%;
-    height: auto;
-    margin-bottom: 15px;
-}
-.accountsForm div p{
-    font-family: 'Roboto', sans-serif;
-    font-size: 15px;
-}
-.accountsForm div input{
-    width: 100%;
-    height: 50px;
-    margin-top: 10px;
-    padding-left: 15px;
-    font-size: 17px;
-    border: none;
-}
-.accountsRadio{
-    width: 100%;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    padding: 10px;
-    font-size: 17px;
-    
-}
-.accountsRadio:hover{
-    border: 1px solid black;
-    border-radius: 50px;
-}
-.accountsForm button{
-    width: 100%;
-    height: 70px;
-    background-color: #ffe100;
-    color: #ffffff;
-    border: none;
-    font-family: 'Roboto', sans-serif;
-    font-size: 19px;
-}
-.accountsForm button:hover{
-    background-color: #b39e00;
-    transition: 0.7s ease;
-}
-.accountsForm2{
+.accountForm2{
      width: 90%;
     height: auto;
-    margin: 50px auto;
+    margin:20px auto;
     display: flex;
     flex-direction: column;
    
 }
-.accountsForm2 div{
+.accountForm2 div{
     width: 100%;
     height: auto;
     margin-bottom: 15px;
 }
-.accountsForm2 div p{
+.accountForm2 div p{
     font-family: 'Roboto', sans-serif;
-    font-size: 17px;
+    font-size: 15px;
     margin-bottom: 5px;
 }
-.accountsForm2 div input{
+.accountForm2 div p span{
+    color: red;
+}
+.accountForm2 div input{
     width: 100%;
-    height: 60px;
+    height: 55px;
     margin-top: 10px;
     padding-left: 15px;
     font-size: 17px;
     background-color: #ffffff;
     border: none;
 }
-.accountsForm2 div input:focus{
+.accountForm2 div input:focus{
     outline: none;
 }
-.accountsForm2 button{
+.accountForm2 button{
     width: 100%;
     height: 60px;
     background-color: #ffe100;
@@ -430,7 +274,7 @@
     font-size: 19px;
     margin: 20px 0;
 }
-.accountsForm2 button:hover{
+.accountForm2 button:hover{
     background-color: #b39e00;
     transition: 0.7s ease;
 

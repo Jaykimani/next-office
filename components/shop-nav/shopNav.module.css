@@ -55,6 +55,10 @@
     height: 100%;
     object-fit: cover;
 }
+.searchDiv{
+    width: 40%;
+    
+}
 
 .login{
     display: flex;
@@ -76,7 +80,7 @@
 }
 .loginDropdown{
     position: absolute;
-    top: 130%;
+    top: 95%;
     left: 0;
     width: 110%;
     height: 130px;

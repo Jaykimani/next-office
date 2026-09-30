@@ -20,44 +20,53 @@ import { IoLogoWhatsapp } from "react-icons/io";
 import SearchInput from '@/components/searchInput/search';
 import Charts from '@/components/piechart/piechart';
 import Link from 'next/link';
-
+import ServiceNav from '@/components/servicenav/servnav';
+import { getBusinessAccount } from '@/lib/getBusinessAccount';
 
 
 const page = async() => {
+
+  const user = await getBusinessAccount();
+  console.log(user);
+  
     
   const emoji2 = "\u{1F44B}";
   return (<>
+    <div className={styles.dashNav}>
+          <ServiceNav />
+          </div>
        <main className={styles.overallMain}>
         <div className={styles.dashboardMenu}>
-          <div className={styles.svgImage}>
-            <Image className={styles.svgLogo1} src="/Component 2.svg" alt="" width={100} height={100} />
-          </div>
           <div className={styles.dashboardMenuLinks}>
             <div className={styles.menuLink} id={styles.active}>
-              <MdHome style={{color: '#ffe100', width: '35px', height: '35px'}}/>
+              <MdHome className={styles.dashIcon} style={{color: '#ffe100', width: '35px', height: '35px'}}/>
               <p>Dashboard</p>
             </div>
             <div className={styles.menuLink}>
-              <MdShoppingCart style={{color: '#ffe100', width: '35px', height: '35px'}}/>
+              <MdShoppingCart className={styles.dashIcon} style={{color: '#ffe100', width: '35px', height: '35px'}}/>
               <p>Shop</p>
             </div>
             <div className={styles.menuLink}>
-              <FaBoxOpen style={{color: '#ffe100', width: '30px', height: '30px'}}/>
+              <FaBoxOpen className={styles.dashIcon} style={{color: '#ffe100', width: '30px', height: '30px'}}/>
               <p>My Orders</p>
             </div>
             <div className={styles.menuLink}>
-              <FaRedo style={{color: '#ffe100', width: '30px', height: '30px'}}/>
+              <FaRedo className={styles.dashIcon} style={{color: '#ffe100', width: '30px', height: '30px'}}/>
               <p>Restock Requests</p>
             </div>
             <div className={styles.menuLink}>
-              <FaUserAlt style={{color: '#ffe100', width: '30px', height: '30px'}}/>
+              <FaUserAlt className={styles.dashIcon} style={{color: '#ffe100', width: '30px', height: '30px'}}/>
               <p>Account</p>
             </div>
           </div>
         </div>
         <div className={styles.dashboardContent}>
+         
          <div className={styles.contentHeader}>
-          <SearchInput />
+          <div className={styles.headerSearch}>
+             <SearchInput />
+          </div>
+          
           <div className={styles.contentHeaderInset}>
             <div className={styles.inset1}>
              <MdOutlineShoppingCart style={{width: '30px', height: '30px'}}/>
@@ -92,8 +101,8 @@ const page = async() => {
             </div>
             <div className={styles.statInfo}>
              <h4 style={{marginBottom: '12px'}}>Monthly Spending</h4>
-             <h2 style={{marginBottom: '20px'}}>48,970/=</h2>
-             <p style={{color: 'gray'}}>12% up from last month</p>
+             <h2 style={{marginBottom: '20px'}}>0/=</h2>
+             <p>0% up from last month</p>
             </div>
 
            </div>
@@ -103,8 +112,8 @@ const page = async() => {
             </div>
             <div className={styles.statInfo}>
              <h4 style={{marginBottom: '12px'}}>Pending Orders</h4>
-             <h2 style={{marginBottom: '20px'}}>3</h2>
-             <p style={{color: 'gray', display: 'flex', alignItems: 'center'}}>view orders <MdArrowRightAlt style={{marginLeft: "10px"}}/></p>
+             <h2 style={{marginBottom: '20px'}}>0</h2>
+             <p>view orders <MdArrowRightAlt style={{marginLeft: "10px"}}/></p>
             </div>
 
            </div>
@@ -114,8 +123,8 @@ const page = async() => {
             </div>
             <div className={styles.statInfo}>
              <h4 style={{marginBottom: '12px'}}>Scheduled Deliveries</h4>
-             <h2 style={{marginBottom: '20px'}}>2</h2>
-             <p style={{color: 'gray', display: 'flex', alignItems: 'center'}}>view schedule <MdArrowRightAlt style={{marginLeft: "10px"}}/></p>
+             <h2 style={{marginBottom: '20px'}}>0</h2>
+             <p>view schedule <MdArrowRightAlt style={{marginLeft: "10px"}}/></p>
             </div>
 
            </div>
@@ -276,15 +285,119 @@ const page = async() => {
                       <div className={styles.variants}>
                           <div className={styles.variant}
                            style={{backgroundColor: "black", color: "white"}}>
-                            <p>White</p>
+                            <p style={{color: "white"}}>White</p>
                          </div>
                           <div className={styles.variant}
                            style={{backgroundColor: "black", color: "white"}}>
-                            <p>White</p>
+                            <p style={{color: "white"}}>White</p>
                          </div>
                           <div className={styles.variant}
                            style={{backgroundColor: "black", color: "white"}}>
-                            <p>White</p>
+                            <p style={{color: "white"}}>White</p>
+                         </div>
+                        
+                      </div>
+                      <div className={styles.itemBtns}>
+                        <div className={styles.itemCartDiv} >
+                          <div className={styles.itemCartDivInset}>
+                           <MdOutlineAddShoppingCart className={styles.itemCartImg2}/>
+                          <p>Add to Cart</p>
+                          </div>
+                          
+                        </div> 
+                        <div className={styles.itemWhatsappDiv}>
+                         <a
+      href={`https://wa.me/254704610605?text='Helloo'`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.whatsappCta}
+      title="Chat with us on WhatsApp"
+    >
+                          <IoLogoWhatsapp className={styles.itemWhatsappImg}/>
+                          </a>
+                        </div>
+                      </div>
+                      
+                    </div>
+           </div>
+           <div className={styles.reorderItem}>
+           <Link href={'/'} style={{textDecoration: 'none'}}>
+                    <div className={styles.itemImg}>
+                      <Image className={styles.itemImage} src='/BAStationery.jpg' alt="" width={200} height={200} />
+                    </div>
+                    </Link>
+                    <div className={styles.itemInfo}>
+                      <h4>High Quality Pens</h4>
+                      <h6><span>KSh</span> 3000/=</h6>
+                      <div className={styles.itemInfoCounter}>
+                       <div><FaMinus style={{width: "20px", color: "black"}}/></div>
+                       <div>0</div>
+                       <div><MdAdd style={{width: "25px", height: "25px", color: "black"}}/></div>
+                      </div>
+                      <div className={styles.variants}>
+                          <div className={styles.variant}
+                           style={{backgroundColor: "black", color: "white"}}>
+                            <p style={{color: "white"}}>White</p>
+                         </div>
+                          <div className={styles.variant}
+                           style={{backgroundColor: "black", color: "white"}}>
+                            <p style={{color: "white"}}>White</p>
+                         </div>
+                          <div className={styles.variant}
+                           style={{backgroundColor: "black", color: "white"}}>
+                            <p style={{color: "white"}}>White</p>
+                         </div>
+                        
+                      </div>
+                      <div className={styles.itemBtns}>
+                        <div className={styles.itemCartDiv} >
+                          <div className={styles.itemCartDivInset}>
+                           <MdOutlineAddShoppingCart className={styles.itemCartImg2}/>
+                          <p>Add to Cart</p>
+                          </div>
+                          
+                        </div> 
+                        <div className={styles.itemWhatsappDiv}>
+                         <a
+      href={`https://wa.me/254704610605?text='Helloo'`}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.whatsappCta}
+      title="Chat with us on WhatsApp"
+    >
+                          <IoLogoWhatsapp className={styles.itemWhatsappImg}/>
+                          </a>
+                        </div>
+                      </div>
+                      
+                    </div>
+           </div>
+           <div className={styles.reorderItem}>
+           <Link href={'/'} style={{textDecoration: 'none'}}>
+                    <div className={styles.itemImg}>
+                      <Image className={styles.itemImage} src='/BAStationery.jpg' alt="" width={200} height={200} />
+                    </div>
+                    </Link>
+                    <div className={styles.itemInfo}>
+                      <h4>High Quality Pens</h4>
+                      <h6><span>KSh</span> 3000/=</h6>
+                      <div className={styles.itemInfoCounter}>
+                       <div><FaMinus style={{width: "20px", color: "black"}}/></div>
+                       <div>0</div>
+                       <div><MdAdd style={{width: "25px", height: "25px", color: "black"}}/></div>
+                      </div>
+                      <div className={styles.variants}>
+                          <div className={styles.variant}
+                           style={{backgroundColor: "black", color: "white"}}>
+                            <p style={{color: "white"}}>White</p>
+                         </div>
+                          <div className={styles.variant}
+                           style={{backgroundColor: "black", color: "white"}}>
+                            <p style={{color: "white"}}>White</p>
+                         </div>
+                          <div className={styles.variant}
+                           style={{backgroundColor: "black", color: "white"}}>
+                            <p style={{color: "white"}}>White</p>
                          </div>
                         
                       </div>

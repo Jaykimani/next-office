@@ -16,6 +16,7 @@ import { IoHome } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
 import { FaNewspaper } from "react-icons/fa6";
+import { MdSupervisorAccount } from "react-icons/md";
 import { Categories, Subcategory, shopPopularity, shopPrice } from '@/categories';
 
 const ShopNav = () => {
@@ -121,9 +122,12 @@ const ShopNav = () => {
              <Link href={'/'} style={{textDecoration: "none", color: "black"}}>
              <Image className={styles.svgLogo1} src="/Component 2.svg" alt="" width={100} height={100} />
              </Link>
-             <SearchInput />
+             <div className={styles.searchDiv}>
+                  <SearchInput /> 
+             </div>
+             
           
-             <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)}>
+             <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)} onMouseLeave={() => setLogin(false)}>
               <div className={styles.loginTop}>
               <Link href={'/my-account/sign-in'} style={{display: 'flex', color: 'white'}}>
               <FaUserTie style={{color : '#ffe100', width: '35px', height: '35px'}}/>
@@ -133,7 +137,7 @@ const ShopNav = () => {
               </div>
               </Link>
               </div>
-              <div className={styles.loginDropdown} style={{display: login ? "block" : "none"}}  onMouseLeave={() => setLogin(false)}>
+              <div className={styles.loginDropdown} style={{display: login ? "block" : "none"}}  >
               <Link href={'/my-account/sign-in'} style={{textDecoration: 'none', color: 'black'}}>
               <div>Sign In</div>
               </Link>
@@ -198,6 +202,12 @@ const ShopNav = () => {
                 <h3>Shop</h3>
             </div>
             </Link>
+             <Link href={'/business-accounts'} style={{textDecoration: "none", color: "white"}}>
+            <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
+               <MdSupervisorAccount style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+                <h3>Business Accounts</h3>
+            </div>
+             </Link>
             <Link href={'/contact'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks} onClick={()=> setPhoneOpt(false)}>
                <FaPhoneAlt style={{color: '#ffe100', width: '27px', height: '27px'}}/>

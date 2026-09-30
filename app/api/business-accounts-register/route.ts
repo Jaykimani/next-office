@@ -21,7 +21,6 @@ export async function POST(request: Request) {
       password,
     } = body
 
-   console.log(preferredContactMethod);
    
     const payload = await getPayload({
       config,
@@ -67,7 +66,7 @@ export async function POST(request: Request) {
         
 
         // New accounts must always start as pending
-        accountStatus: 'pending',
+        accountStatus: 'active',
 
         // Payload Auth handles the password securely
         password,

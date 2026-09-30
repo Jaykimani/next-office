@@ -3,11 +3,14 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getPayload } from "payload";
 import config from "@/payload.config";
+import { sendTelegramMessage } from "@/lib/telegram";
+import { createCustomerConfirmationMessage } from '@/lib/createConfirmationMessage';
+
 
 type ProductCollection =
   | "office-supplies"
   | "office-pantry-hydration"
-  | "office-workspace-accessories"
+  | "office-cleaning-hygiene"
   | "office-electronics"
 
 type CartItem = {
@@ -23,7 +26,27 @@ type PaymentMethod =
   | "bank"
   | "cod"
 
+function formatKenyanNumber(phone) {
+  phone = phone.replace(/\s+/g, "")
 
+  if (phone.startsWith("+254")) {
+    return phone.slice(1)
+  }
+
+  if (phone.startsWith("254")) {
+    return phone
+  }
+
+  if (phone.startsWith("0")) {
+    return "254" + phone.slice(1)
+  }
+
+  if (phone.length === 9) {
+    return "254" + phone
+  }
+
+  return phone
+}
 
 
 export async function POST(req: NextRequest) {
@@ -160,18 +183,79 @@ export async function POST(req: NextRequest) {
       },
     });
 
+  
+    const location =  delivery.building && delivery.officeNumber ? `${delivery.city}, ${delivery.areaStreet}, ${delivery.building}, ${delivery.officeNumber}` : `${delivery.city}, ${delivery.areaStreet}`;
+  
+    const whatsappPhone = formatKenyanNumber(customer.phone);
+   const ordermessage = {
+      orderNumber: orderNumber,
+      customerName: customer.name,
+      items: orderItems,
+      subtotal: subtotal,
+      shipping: shipping,
+      total: total,
+      location: location,
+      timeline: deliveryDate,
+      payment : paymentMethod
+     }
+  
+    const customerMessage = createCustomerConfirmationMessage(ordermessage)
+     const whatsappConfirm = `https://wa.me/${whatsappPhone}?text=${customerMessage}`
     
+    const telegramItems = orderItems
+  .map(
+    (item) =>
+      `• ${item.name}${item.variant ? ` (${item.variant})` : ""} × ${item.quantity} @ KSh ${item.price.toLocaleString("en-US")}`
+  )
+  .join("\n");
 
-    // 📦 4️⃣ Optional: Reduce Stock
-    // for (const item of orderItems) {
-    //   await payload.update({
-    //     collection: "products",
-    //     id: item.product,
-    //     data: {
-    //       stock: undefined, // remove if you don’t track stock
-    //     },
-    //   });
-    // }
+const telegramMessage = `🛒 NEW OFFICEFLOW ORDER
+
+Order Number: ${orderNumber}
+
+Customer:
+${customer.name}
+
+Phone:
+${customer.phone}
+
+Email:
+${customer.email}
+
+Delivery:
+${delivery.city}, ${delivery.areaStreet}${
+  delivery.building ? `, ${delivery.building}` : ""
+}${delivery.officeNumber ? `, ${delivery.officeNumber}` : ""}
+
+Items:
+${telegramItems}
+
+Subtotal: KSh ${subtotal.toLocaleString("en-US")}
+
+Shipping: KSh ${shipping.toLocaleString("en-US")}
+
+Total: KSh ${total.toLocaleString("en-US")}
+
+Payment Method:
+${paymentMethod}
+
+Delivery Date:
+${deliveryDate}
+
+Shipping Type:
+${shippingType}
+
+Order Instructions:
+${orderInstructions || "None"}
+
+Cutomer whatsapp confirmation: ${whatsappConfirm}
+`;
+
+try {
+  await sendTelegramMessage(telegramMessage);
+} catch (telegramError) {
+  console.error("Telegram notification failed:", telegramError);
+}
 
     return NextResponse.json({
       success: true,

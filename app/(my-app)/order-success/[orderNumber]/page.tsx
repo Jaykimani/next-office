@@ -11,43 +11,19 @@ import { IoIosInformationCircle } from "react-icons/io";
 import Link from 'next/link';
 import { getPayload } from "payload"
 import config from "@payload-config"
-import twilio from "twilio"
-import { createCustomerConfirmationMessage } from '@/lib/createConfirmationMessage';
-
 
 
 type Props = {
   params: Promise<{ orderNumber: string }>
 }
 
-function formatKenyanNumber(phone) {
-  phone = phone.replace(/\s+/g, "")
-
-  if (phone.startsWith("+254")) {
-    return phone.slice(1)
-  }
-
-  if (phone.startsWith("254")) {
-    return phone
-  }
-
-  if (phone.startsWith("0")) {
-    return "254" + phone.slice(1)
-  }
-
-  if (phone.length === 9) {
-    return "254" + phone
-  }
-
-  return phone
-}
 
 export default async function OrderSuccess({ params }: Props) {
   const{orderNumber} = await params;
   
 
   if (!orderNumber) {
-    return <div>Invalid order.</div>
+    return <div>Invalid order!</div>
   }
 
   const payload = await getPayload({ config })
@@ -76,76 +52,7 @@ export default async function OrderSuccess({ params }: Props) {
   " " +
   date.toLocaleTimeString();
 
-  const location =  data.deliveryAddress.building && data.deliveryAddress.officeNumber ? `${data.deliveryAddress.city}, ${data.deliveryAddress.areaStreet}, ${data.deliveryAddress.building}, ${data.deliveryAddress.officeNumber}` : `${data.deliveryAddress.city}, ${data.deliveryAddress.areaStreet}`;
-
-  const whatsappPhone = formatKenyanNumber(data.customer.phone);
- const ordermessage = {
-    orderNumber: data.orderNumber,
-    customerName: data.customer.name,
-    items: data.items,
-    subtotal: data.subtotal,
-    shipping: data.shipping,
-    total: data.total,
-    location: location,
-    timeline: data.DeliveryDate,
-    payment : data.paymentMethod
-   }
-
-  const customerMessage = createCustomerConfirmationMessage(ordermessage)
-
-  
-try {
-     const items = data.items.map((item) => `• ${item.name}(@${item.price}/=) × ${item.quantity}`)
-    .join("\n");;
-
-    const whatsappConfirm = `https://wa.me/${whatsappPhone}?text=${customerMessage}`
-     
-    const message = `Hello Admin 👋
-
-You have a new order.
-
-Order Number: ${orderNumber}
-
-Items Ordered:
-${items}
-
-Subtotal: Ksh ${data.subtotal.toLocaleString('en-us')}/=
-
-Shipping Fee: Ksh ${data.shipping && data.shipping.toLocaleString('en-us')}/=
-
-Total: KSh ${data.total.toLocaleString('en-us')}/=
-
-Delivery Location is ${location}.
-
-Your delivery timeline is ${data.DeliveryDate}.
-
-Thank you.
-
-Cutomer whatsapp confirmation: ${whatsappConfirm}
-`
-
-  
-   
-
-    const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTHTOKEN)
-
-   client.messages
-    .create({
-        body: message,
-        from: 'whatsapp:+14155238886',
-        to: 'whatsapp:+254704610605'
-    })
-    .then(message => console.log(message.sid))
-    .catch((error) => console.error('Error:', error));
-    
-    
-  } catch (error) {
-    console.log("error sending message");
-    
-  }
-
-
-
+ 
  
 
   return (

@@ -9,78 +9,116 @@ export const BusinessAccounts: CollectionConfig = {
     lockTime: 600 * 1000,
   },
 
+  hooks: {
+    beforeChange: [
+      async ({ data, operation }) => {
+        if (operation === 'create') {
+          data.accountStatus = 'active'
+        }
+
+        return data
+      },
+    ],
+
+    beforeLogin: [
+      async ({ user }) => {
+        if (user.accountStatus === 'pending') {
+          throw new Error(
+            'Your business account is still pending approval. Please wait for OfficeFlow to activate your account.',
+          )
+        }
+
+        if (user.accountStatus === 'suspended') {
+          throw new Error(
+            'Your business account has been suspended. Please contact OfficeFlow for assistance.',
+          )
+        }
+
+        if (user.accountStatus === 'rejected') {
+          throw new Error(
+            'Your business account request was not approved. Please contact OfficeFlow if you need assistance.',
+          )
+        }
+
+        if (user.accountStatus !== 'active') {
+          throw new Error(
+            'Your business account is not currently active.',
+          )
+        }
+
+        return user
+      },
+    ],
+  },
+
   admin: {
     useAsTitle: 'businessName',
+
     defaultColumns: [
       'businessName',
       'contactPerson',
-      'businessEmail',
+      'email',
       'businessType',
       'accountStatus',
     ],
   },
 
   access: {
-  create: () => true,
+    create: () => true,
 
-  read: ({ req }) => {
-    if (!req.user) {
-      return false
-    }
-
-    // OfficeFlow admins/staff
-    if (
-      req.user.collection === 'users' &&
-      req.user.role === 'admin'
-    ) {
-      return true
-    }
-
-    // Business account holder
-    if (req.user.collection === 'business-accounts') {
-      return {
-        id: {
-          equals: req.user.id,
-        },
+    read: ({ req }) => {
+      if (!req.user) {
+        return false
       }
-    }
 
-    return false
-  },
-
-  update: ({ req }) => {
-    if (!req.user) {
-      return false
-    }
-
-    // OfficeFlow admins/staff
-    if (
-      req.user.collection === 'users' &&
-      req.user.role === 'admin'
-    ) {
-      return true
-    }
-
-    // Business account holder can update their own account
-    if (req.user.collection === 'business-accounts') {
-      return {
-        id: {
-          equals: req.user.id,
-        },
+      if (
+        req.user.collection === 'users' &&
+        req.user.role === 'admin'
+      ) {
+        return true
       }
-    }
 
-    return false
-  },
+      if (req.user.collection === 'business-accounts') {
+        return {
+          id: {
+            equals: req.user.id,
+          },
+        }
+      }
 
-  delete: ({ req }) => {
-    // Only OfficeFlow admins can delete business accounts
-    return (
-      req.user?.collection === 'users' &&
-      req.user.role === 'admin'
-    )
+      return false
+    },
+
+    update: ({ req }) => {
+      if (!req.user) {
+        return false
+      }
+
+      if (
+        req.user.collection === 'users' &&
+        req.user.role === 'admin'
+      ) {
+        return true
+      }
+
+      if (req.user.collection === 'business-accounts') {
+        return {
+          id: {
+            equals: req.user.id,
+          },
+        }
+      }
+
+      return false
+    },
+
+    delete: ({ req }) => {
+      return (
+        req.user?.collection === 'users' &&
+        req.user.role === 'admin'
+      )
+    },
   },
-},
 
   fields: [
     // ---------------------------------------------------
@@ -204,12 +242,7 @@ export const BusinessAccounts: CollectionConfig = {
       label: 'Phone / WhatsApp Number',
     },
 
-     {
-      name: 'email',
-      type: 'text',
-      required: true,
-      label: 'Business Email',
-    },
+
     // ---------------------------------------------------
     // OFFICE SUPPLY REQUIREMENTS
     // ---------------------------------------------------
@@ -334,7 +367,7 @@ export const BusinessAccounts: CollectionConfig = {
     {
       name: 'accountStatus',
       type: 'select',
-      defaultValue: 'pending',
+      defaultValue: 'active',
       required: true,
       label: 'Account Status',
       options: [

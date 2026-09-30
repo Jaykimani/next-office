@@ -16,7 +16,7 @@ export function createCustomerConfirmationMessage(order: {
   const message = `
 Hello ${order.customerName} 👋
 
-Thank you for ordering with Office Aura.
+Thank you for ordering with OfficeFlow Kenya.
 
 We have successfully received your order and it is now being processed.
 
@@ -39,8 +39,8 @@ Mode of payment is ${order.payment == 'cod' ? 'Cash On Delivery' : order.payment
 
 Our team will contact you to confirm delivery details.
 
-Thank you for choosing Office Aura. 
-Your one stop shop for Office décor and accessories!
+Thank you for choosing OfficeFlow Kenya. 
+Your one stop shop for Office Supplies and Restock needs!
 `
 
   return encodeURIComponent(message)

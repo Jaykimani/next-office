@@ -3,7 +3,7 @@
     height: auto;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
-    padding: 30px;
+    padding: 130px 30px 30px;
     cursor: pointer;
 }
 .shippingInset{
@@ -121,15 +121,15 @@
     margin: 10px auto;
 }
 .shippingInset h1{
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 20px;
 }
 .shippingInset h2{
-    font-size: 23px;
+    font-size: 21px;
     margin-bottom: 20px;
 }
 .shippingInset h3{
-    font-size: 20px;
+    font-size: 18px;
     margin: 20px 0 10px;
 }
 .shippingInset p{
