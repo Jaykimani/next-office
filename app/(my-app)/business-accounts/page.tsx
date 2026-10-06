@@ -23,12 +23,87 @@ import { LuHospital } from "react-icons/lu";
 import { BsBank2 } from "react-icons/bs";
 import { FaBuildingFlag } from "react-icons/fa6";
 import { LuClipboardList } from "react-icons/lu";
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'OfficeFlow Business Account | Simplify Office Procurement in Kenya',
+  description:
+    'Create an OfficeFlow Business Account for easier office supply ordering, repeat purchases, restocking requests, and better visibility into your workplace procurement in Kenya.',
+
+  alternates: {
+    canonical: 'https://officeflow.co.ke/business-accounts',
+  },
+
+  openGraph: {
+    title: 'OfficeFlow Business Account | Simplify Office Procurement',
+    description:
+      'Create a Business Account with OfficeFlow for easier office supply ordering, repeat purchases, restocking requests, and smarter workplace procurement in Kenya.',
+    url: 'https://officeflow.co.ke/business-accounts',
+    siteName: 'OfficeFlow',
+    type: 'website',
+    locale: 'en_KE',
+  },
+
+  twitter: {
+    card: 'summary_large_image',
+    title: 'OfficeFlow Business Account | Simplify Office Procurement',
+    description:
+      'Make workplace procurement easier with an OfficeFlow Business Account. Order supplies, repeat purchases and manage your office restocking needs.',
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+  },
+}
 
 const page = () => {
 
-  const businessAccountFaqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
+  const businessAccountSchema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': 'https://officeflow.co.ke/business-account#webpage',
+        url: 'https://officeflow.co.ke/business-account',
+        name: 'OfficeFlow Business Account | Simplify Office Procurement in Kenya',
+        description:
+          'Create an OfficeFlow Business Account for easier office supply ordering, repeat purchases, restocking requests, and better visibility into workplace procurement in Kenya.',
+        isPartOf: {
+          '@id': 'https://officeflow.co.ke/#website',
+        },
+        about: {
+          '@id': 'https://officeflow.co.ke/#organization',
+        },
+        breadcrumb: {
+          '@id':
+            'https://officeflow.co.ke/business-account#breadcrumb',
+        },
+        inLanguage: 'en-KE',
+      },
+
+      {
+        '@type': 'BreadcrumbList',
+        '@id':
+          'https://officeflow.co.ke/business-account#breadcrumb',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://officeflow.co.ke/',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Business Account',
+            item: 'https://officeflow.co.ke/business-account',
+          },
+        ],
+      },
+
+      {
+        "@type": "FAQPage",
   "mainEntity": [
     {
       "@type": "Question",
@@ -95,7 +170,10 @@ const page = () => {
       }
     }
   ]
-};
+      }
+    ],
+  }
+
 
 
   return (
@@ -103,7 +181,7 @@ const page = () => {
      <script
   type="application/ld+json"
   dangerouslySetInnerHTML={{
-    __html: JSON.stringify(businessAccountFaqSchema),
+    __html: JSON.stringify(businessAccountSchema),
   }}
 />
     <div className={styles.businessLanding}>

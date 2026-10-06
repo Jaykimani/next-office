@@ -15,7 +15,7 @@ export default function robots(): MetadataRoute.Robots {
         '/search/',
         '/order-cancel/',
         '/order-success/',
-        '/my-account/'
+        '/my-account/',
       ],
     },
     sitemap: `${BASE_URL}/sitemap.xml`,

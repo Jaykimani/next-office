@@ -40,12 +40,12 @@
 }
 .blogInsetImage{
     width: 100%;
-    height: 500px;
+    height: 400px;
 }
 .blogInsetImg{
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
 }
 .content{
     width: 100%;
@@ -96,6 +96,11 @@
     background-color: #d2d2d2;
     padding: 20px;
 }
+/* .content img{
+    width: 80%;
+    height: 400px;
+    object-fit: contain;
+} */
 .content ul{
     margin-left: 50px;
 }
@@ -339,7 +344,7 @@
     .blogNav{
     width: 100%;
     height: 110px;
-    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.5), rgba(0, 0 ,0 , 0.5)), url('/blogcta.jpg');
+    background: linear-gradient( to right, rgba(0, 0 ,0 , 0.7), rgba(0, 0 ,0 , 0.7)), url('/blogcta.jpg');
     background-size: cover;
     background-position: center;
     padding: 20px 0px;

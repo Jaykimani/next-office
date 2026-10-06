@@ -27,8 +27,8 @@ import { getBusinessAccount } from '@/lib/getBusinessAccount';
 const page = async() => {
 
   const user = await getBusinessAccount();
-  console.log(user);
   
+  const [firstName] = user.contactPerson.split(' ');
     
   const emoji2 = "\u{1F44B}";
   return (<>
@@ -81,8 +81,8 @@ const page = async() => {
                <FaCircleUser style={{width: '50px', height: '50px'}}/>
               </div>
               <div className={styles.inset2Info}>
-               <h4>Joseph Kimani</h4>
-               <p>OfficeFlow Kenya</p>
+               <h4>{user.contactPerson}</h4>
+               <p>{user.businessName}</p>
               </div>
               <div className={styles.insetActive} style={{backgroundColor: "rgba(0, 255, 0, 0.5)"}}>
                 <GoDotFill style={{marginRight: '7px'}}/>
@@ -92,7 +92,7 @@ const page = async() => {
             
           </div>
          </div>
-         <h1 className={styles.greeting}>Hello, Joseph {emoji2}</h1>
+         <h1 className={styles.greeting}>Hello, {firstName} {emoji2}</h1>
          <p className={styles.greetingP}>Here's what's happening in your OfficeFlow Account.</p>
          <div className={styles.contentStats}>
            <div className={styles.stat}>
@@ -100,7 +100,7 @@ const page = async() => {
              <FaWallet  style={{width: '30px', height: '30px', color: '#ffe100'}}/>
             </div>
             <div className={styles.statInfo}>
-             <h4 style={{marginBottom: '12px'}}>Monthly Spending</h4>
+             <h4 style={{marginBottom: '12px'}}>Overall Spending</h4>
              <h2 style={{marginBottom: '20px'}}>0/=</h2>
              <p>0% up from last month</p>
             </div>
@@ -158,94 +158,7 @@ const page = async() => {
               </tr>
               </thead>
               <tbody>
-              <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td>Processing...</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
-               <tr>
-                <td>#Ord- 9867564534423</td>
-                <td>8-9-2026</td>
-                <td>7 Items</td>
-                <td>13,099/=</td>
-                <td style={{color: "green"}}>Delivered</td>
-                <td><div className={styles.action}>View</div></td>
-              </tr>
+             
              </tbody>
             </table>
           </div>
@@ -255,12 +168,12 @@ const page = async() => {
               <Charts />
             </div>
            <div className={styles.piechartInfo}>
-            <p><GoDotFill style={{color: 'red', marginRight: "15px", width: '25px', height: '25px'}}/>Stationery & Writing Supplies <span>35%</span></p>
-            <p><GoDotFill style={{color: 'green', marginRight: "15px", width: '25px', height: '25px'}}/> Printing & Paper Supplies <span>35%</span></p>
-            <p><GoDotFill style={{color: 'blue', marginRight: "15px", width: '25px', height: '25px'}}/> Printer Consumables <span>35%</span></p>
-            <p><GoDotFill style={{color: '#ffe100', marginRight: "15px", width: '25px', height: '25px'}}/> IT & Tech Consumables <span>35%</span></p>
-            <p><GoDotFill style={{color: 'black', marginRight: "15px", width: '25px', height: '25px'}}/> Pantry & Hydration Supplies <span>35%</span></p>
-            <p><GoDotFill style={{color: 'gray', marginRight: "15px", width: '25px', height: '25px'}}/> Cleaning & Hygiene Supplies <span>35%</span></p>
+            <p><GoDotFill style={{color: 'red', marginRight: "15px", width: '25px', height: '25px'}}/>Stationery & Writing Supplies <span>0%</span></p>
+            <p><GoDotFill style={{color: 'green', marginRight: "15px", width: '25px', height: '25px'}}/> Printing & Paper Supplies <span>0%</span></p>
+            <p><GoDotFill style={{color: 'blue', marginRight: "15px", width: '25px', height: '25px'}}/> Printer Consumables <span>0%</span></p>
+            <p><GoDotFill style={{color: '#ffe100', marginRight: "15px", width: '25px', height: '25px'}}/> IT & Tech Consumables <span>0%</span></p>
+            <p><GoDotFill style={{color: 'black', marginRight: "15px", width: '25px', height: '25px'}}/> Pantry & Hydration Supplies <span>0%</span></p>
+            <p><GoDotFill style={{color: 'gray', marginRight: "15px", width: '25px', height: '25px'}}/> Cleaning & Hygiene Supplies <span>0%</span></p>
            </div>
           </div>
          </div>
@@ -320,110 +233,7 @@ const page = async() => {
                       
                     </div>
            </div>
-           <div className={styles.reorderItem}>
-           <Link href={'/'} style={{textDecoration: 'none'}}>
-                    <div className={styles.itemImg}>
-                      <Image className={styles.itemImage} src='/BAStationery.jpg' alt="" width={200} height={200} />
-                    </div>
-                    </Link>
-                    <div className={styles.itemInfo}>
-                      <h4>High Quality Pens</h4>
-                      <h6><span>KSh</span> 3000/=</h6>
-                      <div className={styles.itemInfoCounter}>
-                       <div><FaMinus style={{width: "20px", color: "black"}}/></div>
-                       <div>0</div>
-                       <div><MdAdd style={{width: "25px", height: "25px", color: "black"}}/></div>
-                      </div>
-                      <div className={styles.variants}>
-                          <div className={styles.variant}
-                           style={{backgroundColor: "black", color: "white"}}>
-                            <p style={{color: "white"}}>White</p>
-                         </div>
-                          <div className={styles.variant}
-                           style={{backgroundColor: "black", color: "white"}}>
-                            <p style={{color: "white"}}>White</p>
-                         </div>
-                          <div className={styles.variant}
-                           style={{backgroundColor: "black", color: "white"}}>
-                            <p style={{color: "white"}}>White</p>
-                         </div>
-                        
-                      </div>
-                      <div className={styles.itemBtns}>
-                        <div className={styles.itemCartDiv} >
-                          <div className={styles.itemCartDivInset}>
-                           <MdOutlineAddShoppingCart className={styles.itemCartImg2}/>
-                          <p>Add to Cart</p>
-                          </div>
-                          
-                        </div> 
-                        <div className={styles.itemWhatsappDiv}>
-                         <a
-      href={`https://wa.me/254704610605?text='Helloo'`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={styles.whatsappCta}
-      title="Chat with us on WhatsApp"
-    >
-                          <IoLogoWhatsapp className={styles.itemWhatsappImg}/>
-                          </a>
-                        </div>
-                      </div>
-                      
-                    </div>
-           </div>
-           <div className={styles.reorderItem}>
-           <Link href={'/'} style={{textDecoration: 'none'}}>
-                    <div className={styles.itemImg}>
-                      <Image className={styles.itemImage} src='/BAStationery.jpg' alt="" width={200} height={200} />
-                    </div>
-                    </Link>
-                    <div className={styles.itemInfo}>
-                      <h4>High Quality Pens</h4>
-                      <h6><span>KSh</span> 3000/=</h6>
-                      <div className={styles.itemInfoCounter}>
-                       <div><FaMinus style={{width: "20px", color: "black"}}/></div>
-                       <div>0</div>
-                       <div><MdAdd style={{width: "25px", height: "25px", color: "black"}}/></div>
-                      </div>
-                      <div className={styles.variants}>
-                          <div className={styles.variant}
-                           style={{backgroundColor: "black", color: "white"}}>
-                            <p style={{color: "white"}}>White</p>
-                         </div>
-                          <div className={styles.variant}
-                           style={{backgroundColor: "black", color: "white"}}>
-                            <p style={{color: "white"}}>White</p>
-                         </div>
-                          <div className={styles.variant}
-                           style={{backgroundColor: "black", color: "white"}}>
-                            <p style={{color: "white"}}>White</p>
-                         </div>
-                        
-                      </div>
-                      <div className={styles.itemBtns}>
-                        <div className={styles.itemCartDiv} >
-                          <div className={styles.itemCartDivInset}>
-                           <MdOutlineAddShoppingCart className={styles.itemCartImg2}/>
-                          <p>Add to Cart</p>
-                          </div>
-                          
-                        </div> 
-                        <div className={styles.itemWhatsappDiv}>
-                         <a
-      href={`https://wa.me/254704610605?text='Helloo'`}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={styles.whatsappCta}
-      title="Chat with us on WhatsApp"
-    >
-                          <IoLogoWhatsapp className={styles.itemWhatsappImg}/>
-                          </a>
-                        </div>
-                      </div>
-                      
-                    </div>
-           </div>
+           
          </div>
          </div>
         </div>
