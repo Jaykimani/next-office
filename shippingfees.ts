@@ -5,151 +5,151 @@ export const Destinations = [
     },
      {
         location: "Westlands-Museum Hill/State House Rd/Riverside",
-        fee: 250
+        fee: 200
     },
      {
         location: "Westlands-Sarit centre/Gen.Mathenge/SafaricomHQ/ABC place",
-        fee: 300
+        fee: 200
     },
      {
         location: "Westlands-Kangemi/Loresho/Peponi rd/Westgate",
-        fee: 350
+        fee: 200
     },
      {
         location: "Westlands-Mountainview/Upper Kabete/Kitisuru/Springvalley/Uthiru",
-        fee: 400
+        fee: 300
     },
      {
         location: "Westlands-outer",
-        fee: 450
+        fee: 350
     },
      {
         location: "Upperhill-Community/KNH",
-        fee: 250
+        fee: 150
     },
      {
         location: "Upperhill-Kiambere Rd/Mara Rd/Elgon Rd/Lowerhill",
-        fee: 250
+        fee: 150
     },
      {
         location: "Nyayo Stadium/Bunyala Rd/Lusaka Rd/Enterprise Rd",
-        fee: 300
+        fee: 200
     },
      {
         location: "Hurlingham/DOD/Yaya centre",
-        fee: 300
+        fee: 200
     },
      {
         location: "Kileleshwa/Dennis Pritt Rd",
-        fee: 350
-    },
-     {
-        location: "Highridge/Parklands",
-        fee: 300
-    },
-     {
-        location: "Parkland/Limuru Rd",
-        fee: 300
-    },
-     {
-        location: "Gigiri/Village Mkt/UN",
-        fee: 400
-    },
-     {
-        location: "kilimani",
-        fee: 350
-    },
-     {
-        location: "Lavington/Valley Arcade/James Gichuru",
-        fee: 350
-    },
-     {
-        location: "Muthaiga/CID HQ/Karura/Ridgeways/Fourways",
-        fee: 350
-    },
-     {
-        location: "Runda/Roslyn",
-        fee: 450
-    },
-     {
-        location: "Karen",
-        fee: 450
-    },
-     {
-        location: "Nairobi West/South C/The Boma",
-        fee: 300
-    },
-     {
-        location: "South B/Belle View/Likoni Rd",
-        fee: 350
-    },
-     {
-        location: "Mombasa Rd/Ole Sereni/Sameer Park/General Motors/ICD",
-        fee: 350
-    },
-     {
-        location: "Airport North Rd/JKIA/Nyayo estate",
-        fee: 450
-    },
-     {
-        location: "Ngara/Desai Rd/Equity/Park Rd",
         fee: 250
     },
      {
-        location: "Pangani/Juja Rd/Pumwani/Madiwa",
+        location: "Highridge/Parklands",
+        fee: 200
+    },
+     {
+        location: "Parkland/Limuru Rd",
+        fee: 200
+    },
+     {
+        location: "Gigiri/Village Mkt/UN",
         fee: 300
     },
      {
-        location: "Utalii/KCA/Survey/Mathare North/EABL/Garden City/Safari park/USIU",
+        location: "kilimani",
+        fee: 250
+    },
+     {
+        location: "Lavington/Valley Arcade/James Gichuru",
+        fee: 250
+    },
+     {
+        location: "Muthaiga/CID HQ/Karura/Ridgeways/Fourways",
+        fee: 250
+    },
+     {
+        location: "Runda/Roslyn",
         fee: 350
+    },
+     {
+        location: "Karen",
+        fee: 350
+    },
+     {
+        location: "Nairobi West/South C/The Boma",
+        fee: 200
+    },
+     {
+        location: "South B/Belle View/Likoni Rd",
+        fee: 250
+    },
+     {
+        location: "Mombasa Rd/Ole Sereni/Sameer Park/General Motors/ICD",
+        fee: 250
+    },
+     {
+        location: "Airport North Rd/JKIA/Nyayo estate",
+        fee: 350
+    },
+     {
+        location: "Ngara/Desai Rd/Equity/Park Rd",
+        fee: 150
+    },
+     {
+        location: "Pangani/Juja Rd/Pumwani/Madiwa",
+        fee: 200
+    },
+     {
+        location: "Utalii/KCA/Survey/Mathare North/EABL/Garden City/Safari park/USIU",
+        fee: 250
     },
      {
         location: "Showground/Adams Arcade/Dagoreti Corner/Wanyee",
-        fee: 400
+        fee: 300
     },
     {
         location: "Madaraka/T-Mall/Strathmore/Wilson",
-        fee: 350
+        fee: 250
     },
      {
         location: "Lang'ata/Carnivore/ST Mary's/Bomas",
-        fee: 400
+        fee: 300
     },
      {
         location: "Nyayo Highrise/Riara Uni/Kenyatta Mkt/Ngumo/KMTC",
-        fee: 350
+        fee: 250
     },
      {
         location: "Thika Road",
-        fee: 500
+        fee: 400
     },
      {
         location: "Ngong Road",
-        fee: 500
+        fee: 400
     },
      {
         location: "Waiyaki Way",
-        fee: 500
+        fee: 400
     },
      {
         location: "Kiambu Road",
-        fee: 500
+        fee: 400
     },
      {
         location: "Lang'ata Road",
-        fee: 500
+        fee: 400
     },
      {
         location: "Jogoo Road",
-        fee: 500
+        fee: 400
     },
      {
         location: "Limuru Road",
-        fee: 500
+        fee: 400
     },
     {
         location: "Mombasa Road",
-        fee: 500
+        fee: 400
     },
     {
         location: "Juja/Outering",
