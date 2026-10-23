@@ -11,9 +11,6 @@ export async function POST(request: Request) {
       businessType,
       businessLocation,
       contactPerson,
-      email,
-      phone,
-      position,
       supplyCategories,
       purchaseFrequency,
       interestedInRestocking,
@@ -21,7 +18,14 @@ export async function POST(request: Request) {
       password,
     } = body
 
-   
+    const email = typeof contactPerson.email === 'string' ? contactPerson.email.trim().toLowerCase() : ''; 
+    if (!email) { return NextResponse.json( { success: false, message: 'Please provide a valid email address.', }, { status: 400 }, ) }
+    
+    const area = typeof businessLocation.area === 'string' ? businessLocation.area.trim() : ''
+    
+    const personName = typeof contactPerson.personName === 'string' ? contactPerson.personName.trim() : '' ;
+    const phone = typeof contactPerson.phone === 'string' ? contactPerson.phone.trim() : ''
+
     const payload = await getPayload({
       config,
     })
@@ -47,18 +51,28 @@ export async function POST(request: Request) {
       )
     }
 
+    console.log('Business account registration debug:', {
+  email,
+  businessLocation,
+  contactPerson,
+  hasEmail: Boolean(email),
+  hasArea: Boolean(businessLocation?.area),
+})
+
     // Create the Business Account
     const businessAccount = await payload.create({
       collection: 'business-accounts',
-      draft: true,
       data: {
+        email: email.trim().toLowerCase(),
         businessName,
         businessType,
-        businessLocation,
-        contactPerson,
-        position,
-        phone,
-        email,
+        businessLocation : {
+          area,
+         buildingName: typeof businessLocation.buildingName === 'string' ? businessLocation.buildingName.trim() : '', 
+         officeNumber: typeof businessLocation.officeNumber === 'string' ? businessLocation.officeNumber.trim() : '',
+
+        },
+       contactPerson: { personName, phone, email, position: contactPerson.position || undefined, },
         preferredContactMethod,
         supplyCategories,
         purchaseFrequency,

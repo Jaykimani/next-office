@@ -179,26 +179,58 @@ export const BusinessAccounts: CollectionConfig = {
         },
       ],
     },
-
+    
     {
-      name: 'businessLocation',
+      name: "businessLocation",
+      type: "group",
+      fields: [
+        {
+      name: 'area',
       type: 'text',
       required: true,
-      label: 'Business / Office Location',
+      label: 'Area',
     },
+     {
+      name: 'buildingName',
+      type: 'text',
+      label: 'Building Name',
+    },
+     {
+      name: 'officeNumber',
+      type: 'text',
+      label: 'Office Number',
+    },
+      ]
+    },
+    
 
 
     // ---------------------------------------------------
     // CONTACT INFORMATION
     // ---------------------------------------------------
-
     {
       name: 'contactPerson',
+      type: 'group',
+      fields: [
+          {
+      name: 'personName',
       type: 'text',
       required: true,
-      label: 'Contact Person',
+      label: 'Contact Person Name',
     },
 
+      {
+      name: 'phone',
+      type: 'text',
+      required: true,
+      label: 'Phone / WhatsApp Number',
+    },
+          {
+      name: 'email',
+      type: 'text',
+      required: true,
+      label: 'Email Address',
+    },
     {
       name: 'position',
       type: 'select',
@@ -235,13 +267,9 @@ export const BusinessAccounts: CollectionConfig = {
       ],
     },
     
-     {
-      name: 'phone',
-      type: 'text',
-      required: true,
-      label: 'Phone / WhatsApp Number',
+      ]
     },
-
+   
 
     // ---------------------------------------------------
     // OFFICE SUPPLY REQUIREMENTS

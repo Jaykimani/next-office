@@ -4,7 +4,9 @@ export async function createAccountInfo(formData : FormData) {
 
     const businessName = formData.get("business-name") as string;
     const businessType = formData.get("business-type") as string;
-    const businessLocation = formData.get("business-location") as string;
+    const areaStreet = formData.get("area-street") as string;
+    const buildingName = formData.get("building-name") as string;
+    const officeNumber = formData.get("office-number") as string;
     const contactName = formData.get("contact-name") as string;
     const contactPosition = formData.get("contact-position") as string;
     const phoneNumber = formData.get("phone-number") as string;
@@ -20,7 +22,9 @@ export async function createAccountInfo(formData : FormData) {
     let accountInfo = {
         businessName,
         businessType,
-        businessLocation,
+        areaStreet,
+        buildingName,
+        officeNumber,
         contactName,
         contactPosition,
         phoneNumber,

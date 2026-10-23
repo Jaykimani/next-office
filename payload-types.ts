@@ -82,6 +82,7 @@ export interface Config {
     media: Media;
     blogs: Blog;
     'business-accounts': BusinessAccount;
+    'restock-plans': RestockPlan;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -103,6 +104,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     blogs: BlogsSelect<false> | BlogsSelect<true>;
     'business-accounts': BusinessAccountsSelect<false> | BusinessAccountsSelect<true>;
+    'restock-plans': RestockPlansSelect<false> | RestockPlansSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -821,12 +823,19 @@ export interface BusinessAccount {
     | 'healthcare'
     | 'coworking-space'
     | 'other';
-  businessLocation: string;
-  contactPerson: string;
-  position?:
-    | ('procurement' | 'office-manager' | 'administration' | 'hr' | 'operations' | 'business-owner' | 'other')
-    | null;
-  phone: string;
+  businessLocation: {
+    area: string;
+    buildingName?: string | null;
+    officeNumber?: string | null;
+  };
+  contactPerson: {
+    personName: string;
+    phone: string;
+    email: string;
+    position?:
+      | ('procurement' | 'office-manager' | 'administration' | 'hr' | 'operations' | 'business-owner' | 'other')
+      | null;
+  };
   preferredContactMethod: ('email-address' | 'phone-call' | 'direct-messaging' | 'whatsapp')[];
   supplyCategories: (
     | 'stationery-writing-supplies'
@@ -857,6 +866,51 @@ export interface BusinessAccount {
       }[]
     | null;
   password?: string | null;
+}
+/**
+ * Manage recurring restock plans created by OfficeFlow business customers.
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "restock-plans".
+ */
+export interface RestockPlan {
+  id: number;
+  businessAccount: number | BusinessAccount;
+  planName: string;
+  frequency: 'weekly' | 'twice-weekly' | 'monthly' | 'twice-monthly';
+  deliveryTimeline?:
+    | {
+        day: string;
+        id?: string | null;
+      }[]
+    | null;
+  contactPerson?: {
+    name?: string | null;
+    phone?: string | null;
+    email?: string | null;
+  };
+  ContactMeBeforeDelivery?: boolean | null;
+  contactMethod: ('email-address' | 'phone-call' | 'direct-messaging' | 'whatsapp')[];
+  deliveryAddress?: {
+    businessName?: string | null;
+    areaStreet?: string | null;
+    building?: string | null;
+    officeNumber?: string | null;
+  };
+  items: {
+    productId: number;
+    productName?: string | null;
+    productCategory?: string | null;
+    variant?: string | null;
+    price?: number | null;
+    quantity: number;
+    subtotal?: number | null;
+    id?: string | null;
+  }[];
+  total: string;
+  status: 'active' | 'paused' | 'cancelled';
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -937,6 +991,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'business-accounts';
         value: number | BusinessAccount;
+      } | null)
+    | ({
+        relationTo: 'restock-plans';
+        value: number | RestockPlan;
       } | null);
   globalSlug?: string | null;
   user:
@@ -1414,10 +1472,21 @@ export interface BlogsSelect<T extends boolean = true> {
 export interface BusinessAccountsSelect<T extends boolean = true> {
   businessName?: T;
   businessType?: T;
-  businessLocation?: T;
-  contactPerson?: T;
-  position?: T;
-  phone?: T;
+  businessLocation?:
+    | T
+    | {
+        area?: T;
+        buildingName?: T;
+        officeNumber?: T;
+      };
+  contactPerson?:
+    | T
+    | {
+        personName?: T;
+        phone?: T;
+        email?: T;
+        position?: T;
+      };
   preferredContactMethod?: T;
   supplyCategories?: T;
   purchaseFrequency?: T;
@@ -1439,6 +1508,54 @@ export interface BusinessAccountsSelect<T extends boolean = true> {
         createdAt?: T;
         expiresAt?: T;
       };
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "restock-plans_select".
+ */
+export interface RestockPlansSelect<T extends boolean = true> {
+  businessAccount?: T;
+  planName?: T;
+  frequency?: T;
+  deliveryTimeline?:
+    | T
+    | {
+        day?: T;
+        id?: T;
+      };
+  contactPerson?:
+    | T
+    | {
+        name?: T;
+        phone?: T;
+        email?: T;
+      };
+  ContactMeBeforeDelivery?: T;
+  contactMethod?: T;
+  deliveryAddress?:
+    | T
+    | {
+        businessName?: T;
+        areaStreet?: T;
+        building?: T;
+        officeNumber?: T;
+      };
+  items?:
+    | T
+    | {
+        productId?: T;
+        productName?: T;
+        productCategory?: T;
+        variant?: T;
+        price?: T;
+        quantity?: T;
+        subtotal?: T;
+        id?: T;
+      };
+  total?: T;
+  status?: T;
+  updatedAt?: T;
+  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

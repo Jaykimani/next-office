@@ -2,6 +2,145 @@
     width: 100%;
     height: auto;
     background-color: rgb(255, 255, 255);
+    position: relative;
+}
+.restockplan{
+    position: fixed;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 90vh;
+    width: 70%;
+    z-index: 30;
+    background-color: white;
+    border-radius: 30px;
+    border: 2px solid black;
+    padding: 20px 40px;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+.restockHeader{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.restockplan h2{
+    font-family: "Playfair Display", sans-serif;
+    text-align: center;
+}
+.restockInset{
+    width: 95%;
+    height: 70%;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+}
+.restockCategories{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid gray;
+    padding: 20px;
+}
+.restockCategories div{
+    width: 100%;
+    height: 80px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.restockCategories div p:nth-child(1){
+    font-weight: 700;
+}
+.restockContent{
+    width: 70%;
+    height: 100%;
+    padding: 20px 30px;
+}
+.restockContentInset{
+    width: 100%;
+    height: 100%;
+
+}
+.restockContentInset h4{
+    margin-bottom: 30px;
+}
+.dayDiv{
+    width: 70%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 30px;
+   
+}
+.dayDiv p {
+    margin-left: 40px;
+}
+.dayDiv:hover{
+    border: 1px solid gray;
+}
+
+.dates{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.dates p{
+    width: 80px;
+    height: 40px;
+    margin: 10px;
+    display: grid;
+    place-items: center;
+}
+.dates p:hover{
+    border: 1px solid gray;
+}
+.activeDate{
+    background-color: #ffe100;
+}
+.notice{
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    background-color: #c2c1c1;
+    margin: 30px auto;
+    font-size: 17px;
+    line-height: 30px;
+}
+.restockConfirm{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+}
+.message{
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px 0;
+    color: white;
+    font-size: 20px;
+}
+.restockSubmit{
+    width: 40%;
+    height: 70px;
+    background-color: #ffe100;
+    display: grid;
+    place-items: center;
+    margin: 20px auto;
+    font-family: "Roboto", sans-serif;
+}
+.restockSubmit:hover{
+    background-color: #a59203;
+    transition: 0.7s ease;
 }
 .cartInset{
     width: 100%;
@@ -123,6 +262,22 @@
     padding: 20px;
     border-radius: 20px;
 }
+.restockButton{
+    width: 100%;
+    height: 60px;
+    background-color: #ffe100;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+    padding: 0 20px;
+    font-family: "Abel", sans-serif;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+.restockButton p{
+    font-size: 20px;
+}
 .subtotal{
     width: 100%;
     height: auto;
@@ -239,6 +394,147 @@
 }
 
 @media screen and (max-width: 800px) {
+    .restockplan{
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 90vh;
+    width: 90%;
+    z-index: 30;
+    background-color: white;
+    border-radius: 30px;
+    border: 2px solid black;
+    padding: 20px 20px;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+.restockHeader{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.restockplan h2{
+    font-family: "Playfair Display", sans-serif;
+    text-align: center;
+}
+.restockInset{
+    width: 100%;
+    height: 70%;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+}
+.restockCategories{
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid gray;
+    padding: 20px 10px;
+}
+.restockCategories div{
+    width: 100%;
+    height: 80px;
+    padding: 0 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.restockCategories div p{
+    font-size: 15px;
+}
+.restockCategories div p:nth-child(1){
+    font-weight: 700;
+}
+.restockContent{
+    width: 75%;
+    height: 100%;
+    padding: 20px 0px;
+}
+.restockContentInset{
+    width: 100%;
+    height: 100%;
+
+}
+.restockContentInset h4{
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+.dayDiv{
+    width: 70%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 30px;
+   
+}
+.dayDiv p {
+    margin-left: 40px;
+}
+.dayDiv:hover{
+    border: 1px solid gray;
+}
+
+.dates{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.dates p{
+    width: 15%;
+    height: 40px;
+    margin: 10px;
+    display: grid;
+    place-items: center;
+}
+.dates p:hover{
+    border: 1px solid gray;
+}
+.activeDate{
+    background-color: #ffe100;
+}
+.notice{
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    background-color: #c2c1c1;
+    margin: 30px auto;
+    font-size: 16px;
+    line-height: 27px;
+}
+.restockConfirm{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 18px;
+    text-align: center;
+}
+.message{
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px 0;
+    color: white;
+    font-size: 20px;
+}
+.restockSubmit{
+    width: 40%;
+    height: 60px;
+    background-color: #ffe100;
+    display: grid;
+    place-items: center;
+    margin: 20px auto;
+    font-family: "Roboto", sans-serif;
+}
+.restockSubmit:hover{
+    background-color: #a59203;
+    transition: 0.7s ease;
+}
 .cartInset{
     width: 100%;
     height: auto;
@@ -263,7 +559,9 @@
     height: auto;
     padding-left: 0px;
 }
-
+.restockButton p{
+    font-size: 18px;
+}
 .cartItem{
     width: 100%;
     height: 120px;
@@ -421,6 +719,151 @@
 }
 
 @media screen and (max-width: 600px) {
+    .restockplan{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    transform: translateX(0%);
+    height: 100vh;
+    width: 100%;
+    z-index: 30;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 20px 10px;
+    overflow-y: scroll;
+    cursor: pointer;
+}
+.restockHeader{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2cqmax;
+}
+.restockplan h2{
+    font-family: "Playfair Display", sans-serif;
+    text-align: left;
+    font-size: 18px;
+}
+.restockInset{
+    width: 98%;
+    height: auto;
+    margin: 0 auto;
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+.restockCategories{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-right: none;
+    padding: 10px 0px;
+}
+.restockCategories div{
+    width: 100%;
+    height: 50px;
+    padding: 0 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ffe100;
+}
+.restockCategories div p:nth-child(1){
+    font-weight: 700;
+}
+.restockContent{
+    width: 100%;
+    height: 100%;
+    padding: 10px 0px;
+}
+.restockContentInset{
+    width: 100%;
+    height: 100%;
+}
+.restockContentInset h4{
+    margin-bottom: 15px;
+}
+.dayDiv{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding-left: 40px;
+   
+}
+.dayDiv p {
+    margin-left: 40px;
+}
+.dayDiv:hover{
+    border: 1px solid gray;
+}
+
+.dates{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+.dates p{
+    width: 20%;
+    height: 40px;
+    margin: 7px;
+    display: grid;
+    place-items: center;
+}
+.dates p:hover{
+    border: 1px solid gray;
+}
+.activeDate{
+    background-color: #ffe100;
+}
+.notice{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #c2c1c1;
+    margin: 30px auto;
+    font-size: 14px;
+    line-height: 30px;
+}
+.restockConfirm{
+    width: 90%;
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: left;
+}
+.restockConfirm label{
+    display: flex;
+    align-items: center;
+}
+.message{
+    text-align: center;
+    margin-top: 20px;
+    padding: 5px 0;
+    color: white;
+    font-size: 16px;
+}
+.restockSubmit{
+    width: 80%;
+    height: 70px;
+    background-color: #ffe100;
+    display: grid;
+    place-items: center;
+    margin: 30px auto;
+    font-family: "Roboto", sans-serif;
+}
+.restockSubmit:hover{
+    background-color: #a59203;
+    transition: 0.7s ease;
+}
 .cartInset{
     width: 100%;
     height: auto;
@@ -432,6 +875,9 @@
     font-size: 25px;
     text-align: center;
     margin-bottom: 10px;
+}
+.restockButton p{
+    font-size: 18px;
 }
 .cartDiv{
     width: 100%;

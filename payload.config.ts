@@ -17,11 +17,13 @@ import { OfficeSupplies } from './app/(payload)/collections/supplies'
 import { OfficePantryHydration } from './app/(payload)/collections/pantry'
 import { OfficeCleaningHygiene } from './app/(payload)/collections/cleaning'
 import { BusinessAccounts } from './app/(payload)/collections/business-accounts'
+import { RestockPlans } from './app/(payload)/collections/restockplan'
 
 
 export default buildConfig({
   admin:{
       user: Users.slug,
+      autoRefresh: true,
   },
 
   // 👇 THIS IS IMPORTANT
@@ -68,7 +70,7 @@ plugins: [
 
 // serverURL: process.env.SERVER_URL,
   // Define and configure your collections in this array
-  collections: [Users, Messages, Categories, Products, OfficeSupplies, OfficePantryHydration, OfficeCleaningHygiene,  OfficeWorkspaceAccessories, OfficeElectronics, Orders, Reviews, Media, Blogs, BusinessAccounts],
+  collections: [Users, Messages, Categories, Products, OfficeSupplies, OfficePantryHydration, OfficeCleaningHygiene,  OfficeWorkspaceAccessories, OfficeElectronics, Orders, Reviews, Media, Blogs, BusinessAccounts, RestockPlans],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || '',

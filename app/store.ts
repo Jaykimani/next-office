@@ -1,5 +1,12 @@
+import { id } from 'payload/i18n/id';
 import {create} from 'zustand';
 
+type UserInfo = {
+    id: string;
+    name: string;
+    company: string;
+   
+}
 type CartItems = {
     id: number;
     name: string;
@@ -31,6 +38,7 @@ type CheckoutInfo = {
 }
 
 type CartStore = {
+    user: UserInfo;
     count: number;
     subtotal: number;
     items: CartItems[];
@@ -43,9 +51,15 @@ type CartStore = {
     updateAddQuantityTotal: (name: string) => void;
     addCheckoutInformation : (data: CheckoutInfo) => void;
     addCheckoutShippingDate : (data: Partial<CartStore["checkout"]>) => void;
+    addUserInformation : (data: UserInfo) => void;
 }
 
 export const useCartStore = create<CartStore>((set)=>({
+    user: {
+        id: '',
+        name: '',
+        company: '',
+    },
     count: 0,
     subtotal:0,
     items: [],
@@ -100,6 +114,12 @@ export const useCartStore = create<CartStore>((set)=>({
         checkout: {
             ...state.checkout,
             ...data,
+        }
+    })),
+    addUserInformation: (data) => set((state) => ({
+        user: {
+            ...state.user,
+            ...data
         }
     }))
 }))

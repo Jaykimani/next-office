@@ -67,7 +67,7 @@
 }
 .loginDropdown{
     position: absolute;
-    top: 0%;
+    top: 90%;
     left: 0;
     width: 110%;
     height: 130px;
@@ -313,9 +313,43 @@
         border-bottom: 1px solid rgb(63, 63, 63);
         padding-left: 50px;
     }
+    .shopNavLinks1{
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+        
+        color: white;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgb(63, 63, 63);
+        padding-left: 20px;
+    }
+    .shopNavLinks1 h3{
+        margin-left: 50px;
+        font-size: 17px;
+        font-weight: 400;
+        margin-bottom: 5px;
+        text-align: left;
+    }
+    .shopNavLinks1 h3:nth-child(2){
+        color: rgb(161, 161, 161);
+        font-size: 15px;
+    }
+
     .shopNavLinks h3{
         margin-left: 50px;
-        font-size: 18px;
+        font-size: 16px;
+        font-weight: 400;
+    }
+    .accountBtn{
+        padding: 13px 20px;
+        border: 1px solid #ffe100;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    .accountBtn:active{
+        background-color: #ffe100;
     }
     .navbarInset2{
         width: 88%;
@@ -330,15 +364,9 @@
         height: 100%;
         object-fit: contain;
     }
-    .login{
-        margin-right: 15px;
-    }
    
-    .logInfo{
-        display: none;
-    }
     .shoppingInset{
-        margin-right: 20px;
+        margin-right: 40px;
     }
     .shoppingCount{
         position: absolute;

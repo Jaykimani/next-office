@@ -13,13 +13,16 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { IoMdInformationCircle } from "react-icons/io";
 import { FaNewspaper } from "react-icons/fa6";
 import { MdSupervisorAccount } from "react-icons/md";
-
+import { usePathname, useRouter } from 'next/navigation'
 
 const ServiceNav = () => {
     const [phoneOption, setPhoneOption] = useState(false);
     const [login, setLogin] = useState(false);
     const shop2DivInsetHome = useRef<HTMLDivElement | null>(null);
-    const {count, subtotal} = useCartStore((state) => state);
+    const {user, count, subtotal, addUserInformation} = useCartStore((state) => state);
+    const pathname = usePathname();
+    const router = useRouter();
+    
 
     useEffect(()=>{
           if(phoneOption){
@@ -29,7 +32,7 @@ const ServiceNav = () => {
             }
           }
     
-        }, [phoneOption])
+        }, [phoneOption])   
 
      const handleOpenOpt = ()=>{
       setPhoneOption(true);
@@ -38,7 +41,36 @@ const ServiceNav = () => {
     const handleCloseOpt = ()=>{
       setPhoneOption(false);
       window.scrollTo(0,0);
-    }    
+    } 
+    
+        const handleLogout = async () => { 
+       try { 
+        const response = await fetch( '/api/business-accounts/logout', 
+          { 
+            method: 'POST', 
+            credentials: 'same-origin', 
+          }, 
+        ) 
+        
+        if (!response.ok) { 
+          throw new Error('Unable to log out. Please try again.') 
+        } 
+        // Redirect to the business account login page. 
+       
+           const data = {
+        id: '',
+        name: '',
+        company: '',
+      }
+       
+        addUserInformation(data);
+        router.replace('/') 
+        router.refresh() 
+      } catch (error) { 
+        console.error('Logout failed:', error) 
+        alert( error instanceof Error ? error.message : 'Something went wrong while logging out.', ) 
+      }
+    }
     
 
   return (
@@ -69,7 +101,7 @@ const ServiceNav = () => {
               </Link>
             </div>
              <div className={styles.shopping}> 
-              <div className={styles.login} onMouseEnter={() => setLogin(true)} onMouseLeave={() => setLogin(false)}>
+              <div className={styles.login} onMouseEnter={() => setLogin(true)} onMouseLeave={() => setLogin(false)} style={{display: user.id === '' ? "block" : "none"}}>
               <Link href={'/my-account/sign-in'} style={{display: 'flex'}}>
               <div className={styles.loginTop}>
               <FaUserTie className={styles.userTie}/>
@@ -80,13 +112,32 @@ const ServiceNav = () => {
               </div>
               </Link>
               <div className={styles.loginDropdown} style={{display: login ? "block" : "none"}}  >
-              <Link href={'/my-account/sign-in'} style={{textDecoration: 'none', color: 'white'}}>
+              <Link href={`/my-account/sign-in?from=${encodeURIComponent(pathname)}`} style={{textDecoration: 'none', color: 'white'}}>
               <div>Sign In</div>
               </Link>
               
-              <Link href={'/my-account/register'} style={{textDecoration: 'none', color: 'white'}}>
+              <Link href={`/my-account/register?from=${encodeURIComponent(pathname)}`} style={{textDecoration: 'none', color: 'white'}}>
               <div>Register</div>
               </Link>
+              
+              </div>
+              </div>
+              <div className={styles.login} onMouseEnter={() => setLogin(true)} onMouseLeave={() => setLogin(false)} style={{display: user.id !== '' ? "block" : "none"}}>
+               <Link href={'/my-account/sign-in'} style={{display: 'flex', textDecoration: "none"}}>
+              <div className={styles.loginTop}>
+              <FaUserTie className={styles.userTie}/>
+              <div>
+                <p style={{fontWeight: "bold", fontFamily: "Calibri", fontSize: "18px"}}>{user.name}</p>
+                <p style={{fontWeight: "400", fontSize: "15px"}}>{user.company}</p>
+              </div>
+              </div>
+              </Link>
+              <div className={styles.loginDropdown} style={{display: login ? "block" : "none"}}  >
+              <Link href={'/my-account/dashboard'} style={{textDecoration: 'none', color: 'white'}}>
+              <div>Dashboard</div>
+              </Link>
+              
+              <div onClick={handleLogout}>Logout</div>
               
               </div>
               </div>
@@ -116,12 +167,39 @@ const ServiceNav = () => {
             <MdClose className={styles.optClose} style={{color: 'white'}} fontSize='large' onClick={handleCloseOpt}/>
 
             </div>
-              <Link href={'/my-account/sign-in'} style={{textDecoration: "none", color: "white"}}>
-            <div className={styles.shopNavLinks}>
+            <div className={styles.shopNavLinks1} style={{display: user.id === '' ? "flex" : "none"}}>
                <FaUserTie style={{color: '#ffe100', width: '27px', height: '27px'}}/>
-                <h3>Sign In/Register</h3>  
+               <div>
+                <h3>Business Account</h3>
+                <h3>Sign-in/Register</h3>
+                <div style={{display: "flex", width: "100%", marginLeft: "50px", marginTop: "15px"}}>
+                <Link href={`/my-account/sign-in?from=${encodeURIComponent(pathname)}`} style={{textDecoration: 'none', color: 'white'}}>
+                 <p className={styles.accountBtn}>Sign In</p> 
+                 </Link>
+                <Link href={`/my-account/register?from=${encodeURIComponent(pathname)}`} style={{textDecoration: 'none', color: 'white'}}>
+                <p className={styles.accountBtn}>Register</p> 
+                </Link>
+                </div>
+                
+                
+               </div>
             </div>
-             </Link>
+            <div className={styles.shopNavLinks1} style={{display: user.id !== '' ? "flex" : "none"}}>
+               <FaUserTie style={{color: '#ffe100', width: '27px', height: '27px'}}/>
+               <div>
+                <h3>{user.name}</h3>
+                <h3>{user.company}</h3>
+                <div style={{display: "flex", width: "100%", marginLeft: "50px", marginTop: "15px"}}>
+                <Link href={'/my-account/dashboard'} style={{textDecoration: 'none', color: 'white'}}>
+                   <p className={styles.accountBtn}>Dashboard</p> 
+                  </Link> 
+                <p className={styles.accountBtn} onClick={handleLogout}>Logout</p> 
+                </div>
+                
+                
+               </div>
+            </div>
+            
             <Link href={'/'} style={{textDecoration: "none", color: "white"}}>
             <div className={styles.shopNavLinks}>
                <IoHome style={{color: '#ffe100', width: '27px', height: '27px'}}/>
@@ -166,23 +244,12 @@ const ServiceNav = () => {
         <Link href={'/'}>
             <Image className={styles.svgLogo} src="/Component 1.svg" alt="office aura image" width={500} height={300}/>
         </Link>
-        <div className={styles.shopping}> 
-          <div className={styles.login} onClick={() => setLogin(!login)} onMouseEnter={() => setLogin(true)}>
-              <Link href={'/my-account/sign-in'} style={{display: 'flex'}}>
-              <div className={styles.loginTop}>
-              <FaUserTie className={styles.userTie}/>
-              </div>
-              </Link>
-              </div>
           <Link href={'/cart'} style={{textDecoration: 'none', color: 'white'}}>
            <div className={styles.shoppingInset}>
               <FaShoppingCart style={{color : '#ffe100', width: '28px', height: '28px'}}/>  
               <span className={styles.shoppingCount}>{count}</span>
               </div>
-          </Link>
-             
-              
-          </div>
+          </Link>    
         </div>    
             <div className={styles.homeMenu} onClick={handleOpenOpt}>
                <div className={styles.div1}></div>

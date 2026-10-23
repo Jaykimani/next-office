@@ -6,20 +6,23 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaEye } from "react-icons/fa";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation'
 import { setTimeout } from "timers";
-
+import { useCartStore } from '@/app/store';
 
 const page = () => {
     const router = useRouter();
+    const searchParams = useSearchParams()
     const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const [loading, setLoading] = useState(false)
-
+  const {addUserInformation} = useCartStore((state) => state);
     const signinpass = useRef<HTMLInputElement>(null);
     const signinpass2 = useRef<HTMLInputElement>(null);
+
+    const redirectTo = searchParams.get('redirect') || '/'
 
       const toggleSigninPassword = () => {
     if (signinpass.current) {
@@ -60,20 +63,29 @@ const page = () => {
         }),
       })
 
-      const data = await response.json()
+      const returnedInfo = await response.json()
+
 
       if (!response.ok) {
         setError(
-          data?.errors?.[0]?.message ||
-            data?.message ||
+          returnedInfo?.errors?.[0]?.message ||
+            returnedInfo?.message ||
             'Unable to log in. Please check your email and password.',
         )
 
         return
       }
-      setSuccess('Signed-in successfully, you will be directed to your dashboard shortly.')
+
+      const data = {
+        id: returnedInfo.user.id,
+        name: returnedInfo.user.contactPerson.personName,
+        company: returnedInfo.user.businessName,
+      }
+
+      setSuccess('Signed-in successfully')
+      addUserInformation(data);
       setTimeout(() => {
-         router.push('/my-account/dashboard')
+         router.push(redirectTo);
       router.refresh()
       }, 3000);
     } catch (error) {

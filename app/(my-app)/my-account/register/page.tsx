@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { FaEye } from "react-icons/fa";
 import { IoIosArrowRoundBack } from "react-icons/io";
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation'
 import { createAccountInfo } from '@/lib/createAccountInfo';
 import { ThreeDot } from 'react-loading-indicators';
 
@@ -23,6 +23,8 @@ const page = () => {
    const eyePassRef1 = useRef<HTMLInputElement>(null);
    const eyePassConfirm1 = useRef<HTMLInputElement>(null);
     const router = useRouter();
+    const searchParams = useSearchParams();
+    const previousPage = searchParams.get('from') || '/'
 
 
   const togglePassword = () => {
@@ -66,12 +68,12 @@ const page = () => {
     const {accountInfo} = await createAccountInfo(formData);
     console.log(accountInfo);
     
-    const {businessName, businessType, businessLocation, contactName, contactPosition, phoneNumber, emailAddress, contactMethods, categories, periods, restocking, password1, password2} = accountInfo;
+    const {businessName, businessType, areaStreet, buildingName, officeNumber, contactName, contactPosition, phoneNumber, emailAddress, contactMethods, categories, periods, restocking, password1, password2} = accountInfo;
     
     if (
       !businessName ||
       !businessType ||
-      !businessLocation ||
+      !areaStreet ||
       !contactName ||
       !contactPosition ||
       !emailAddress ||
@@ -107,6 +109,18 @@ const page = () => {
       setMessage('Your passwords do not match.')
     }
 
+    let newBusinessLocation = {
+         area : areaStreet,
+         buildingName,
+         officeNumber
+    }
+    let newContactPerson = {
+        personName: contactName,
+        phone: phoneNumber,
+        email: emailAddress,
+        position: contactPosition,       
+    }
+
   const response = await fetch('/api/business-accounts-register', {
   method: 'POST',
   headers: {
@@ -115,11 +129,8 @@ const page = () => {
   body: JSON.stringify({
     businessName,
     businessType,
-    businessLocation,
-    contactPerson : contactName,
-    email : emailAddress,
-    phone : phoneNumber,
-    position: contactPosition,
+    businessLocation : newBusinessLocation,
+    contactPerson : newContactPerson,
     supplyCategories : categories,
     purchaseFrequency : periods,
     interestedInRestocking : restocking,
@@ -138,7 +149,7 @@ if (result.success) {
   setMessage('Account created successfully, you will be directed to your dashboard shortly.')
   
   setTimeout(()=>{
-    router.push('/my-account/dashboard')
+   router.push(`/my-account/sign-in?redirect=${encodeURIComponent(previousPage)}`)
   router.refresh()
   }, 2000)
 } else {
@@ -200,8 +211,16 @@ if (result.success) {
            </select>
           </div>
           <div>
-            <p>Business/Company Location <span>*</span></p>
-            <input type="text" name="business-location" id="" />
+            <p>Business/Company Location / Area or Street name <span>*</span></p>
+            <input type="text" name="area-street" id="" />
+          </div>
+          <div>
+            <p>Building Name</p>
+            <input type="text" name="building-name" id="" />
+          </div>
+          <div>
+            <p>Office Number</p>
+            <input type="text" name="office-number" id="" />
           </div>
           <div>
             <p>Contact Person/Name <span>*</span></p>
@@ -417,6 +436,14 @@ if (result.success) {
           <div>
             <p>Business/Company Location <span>*</span></p>
             <input type="text" name="business-location" id="" />
+          </div>
+             <div>
+            <p>Building Name</p>
+            <input type="text" name="building-name" id="" />
+          </div>
+          <div>
+            <p>Office Number</p>
+            <input type="text" name="office-number" id="" />
           </div>
           <div>
             <p>Contact Person/Name <span>*</span></p>

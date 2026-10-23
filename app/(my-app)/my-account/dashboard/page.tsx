@@ -19,6 +19,7 @@ import { MdOutlineAddShoppingCart } from "react-icons/md";
 import { IoLogoWhatsapp } from "react-icons/io";
 import SearchInput from '@/components/searchInput/search';
 import Charts from '@/components/piechart/piechart';
+import Footer from '@/components/footer/footer';
 import Link from 'next/link';
 import ServiceNav from '@/components/servicenav/servnav';
 import { getBusinessAccount } from '@/lib/getBusinessAccount';
@@ -28,7 +29,8 @@ const page = async() => {
 
   const user = await getBusinessAccount();
   
-  const [firstName] = user.contactPerson.split(' ');
+  
+  const [firstName] = user.contactPerson.personName.split(' ');
     
   const emoji2 = "\u{1F44B}";
   return (<>
@@ -81,7 +83,7 @@ const page = async() => {
                <FaCircleUser style={{width: '50px', height: '50px'}}/>
               </div>
               <div className={styles.inset2Info}>
-               <h4>{user.contactPerson}</h4>
+               <h4>{user.contactPerson.personName}</h4>
                <p>{user.businessName}</p>
               </div>
               <div className={styles.insetActive} style={{backgroundColor: "rgba(0, 255, 0, 0.5)"}}>
@@ -238,6 +240,7 @@ const page = async() => {
          </div>
         </div>
        </main>
+       <Footer />
   </>
     
   )
