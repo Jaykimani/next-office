@@ -1,7 +1,7 @@
 "use client"
 
 import styles from "./login.module.css"
-import { FormEvent, useRef, use, useState } from 'react';
+import { FormEvent, useRef, Suspense, useState } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 import { FaEye } from "react-icons/fa";
@@ -10,7 +10,7 @@ import { useRouter, useSearchParams } from 'next/navigation'
 import { setTimeout } from "timers";
 import { useCartStore } from '@/app/store';
 
-const page = () => {
+const SigninForm = () => {
     const router = useRouter();
     const searchParams = useSearchParams()
     const [email, setEmail] = useState('')
@@ -233,4 +233,10 @@ const page = () => {
   )
 }
 
-export default page
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading registration form...</div>}>
+      <SigninForm />
+    </Suspense>
+  );
+}
