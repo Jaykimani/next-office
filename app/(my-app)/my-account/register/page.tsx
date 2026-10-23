@@ -1,5 +1,5 @@
 "use client";
-import { useRef, use, useState } from 'react';
+import { useRef, Suspense, useState } from 'react';
 import styles from './register.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,7 +10,7 @@ import { createAccountInfo } from '@/lib/createAccountInfo';
 import { ThreeDot } from 'react-loading-indicators';
 
 
-const page = () => {
+const RegisterForm = () => {
   const [caution, setCaution] = useState(false);
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -638,4 +638,10 @@ if (result.success) {
   )
 }
 
-export default page
+export default function Page() {
+  return (
+    <Suspense fallback={<div>Loading registration form...</div>}>
+      <RegisterForm />
+    </Suspense>
+  );
+}
