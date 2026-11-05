@@ -63,6 +63,12 @@ function getMediaUrl(media: number | any) {
 const page = async() => {
 
   const {latestBlog, featuredBlogs, allBlogs} = await getBlogs();
+  console.log("LATEST BLOG:", latestBlog?.title);
+
+console.log(
+  "ALL BLOGS:",
+  allBlogs.map((blog: any) => blog.title)
+);
   const latestImage = getMediaUrl(latestBlog?.featuredImage);
 
   const date = new Date(`${latestBlog?.createdAt}`);
