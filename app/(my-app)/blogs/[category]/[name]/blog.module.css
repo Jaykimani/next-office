@@ -111,6 +111,36 @@
     margin: 10px 20px;
     font-size: 17px;
 }
+.quizes{
+    width: 100%;
+    height: auto;
+    background-color: #eeeeee;
+    padding: 20px 30px;
+
+}
+.quizes h3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+.quiz1{
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+.quiz1 h4{
+    margin-bottom: 7px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.quiz1 p{
+    line-height: 25px;
+    font-size: 16px;
+}
 .blogInsetSide{
     width: 23%;
     height: auto;
@@ -409,7 +439,7 @@
     font-size: 15px;
 }
 .content h2{
-    font-size: 23px;
+    font-size: 21px;
     margin: 20px 0;
     font-family: "Roboto", sans-serif;
     font-weight: 800;
@@ -452,6 +482,36 @@
 }
 .content ul li, .content ol li{
     margin: 10px 15px;
+    font-size: 15px;
+}
+.quizes{
+    width: 100%;
+    height: auto;
+    background-color: #eeeeee;
+    padding: 20px 15px;
+
+}
+.quizes h3{
+    font-family: 'Roboto', sans-serif;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+.quiz1{
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    font-family: 'Roboto', sans-serif;
+
+}
+.quiz1 h4{
+    margin-bottom: 7px;
+    font-size: 17px;
+    font-weight: 600;
+}
+.quiz1 p{
+    line-height: 25px;
     font-size: 15px;
 }
 .blogInsetSide{

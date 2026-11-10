@@ -219,6 +219,19 @@ const Blog = async({params} : Props) => {
      </div>
      <div className={styles.content}>
      <RichTextRenderer content={mainBlog?.content} />
+     
+     </div>
+     <div className={styles.quizes}>
+      <h3>Frequently Asked Questions (FAQs) About this topic</h3>
+      {mainBlog?.seo.FAQs?.map((quiz) => {
+        return (
+            <div key={quiz.id} className={styles.quiz1}>
+         <h4>{quiz.question}</h4>
+         <p>{quiz.answer}</p>
+       </div>
+        )
+      })}
+      
      </div>
     </div>
     <div className={styles.blogInsetSide}>
