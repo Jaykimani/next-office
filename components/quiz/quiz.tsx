@@ -109,7 +109,17 @@ const Quiz = () => {
                 </div>
                 </div>
                 <div className={styles.quizBottom}>
-                 <p>Yes. Businesses with an OfficeFlow Business Account can choose products they want delivered either weekly, bi-weekly, monthly, or create a customized delivery schedule based on their office requirements.</p>
+                 <p>Yes. Businesses can enroll into the OfficeFlow Restock Service by following these steps:</p>
+                 <ol>
+                  <li>Register/Create a Business Account with OfficeFlow</li>
+                  <li>Sign into your business account</li>
+                  <li>Visit our online store, select products that you need restocked and add them to the cart</li>
+                  <li>Go to the Cart page, click 'Add these items to a Restock Plan' button</li>
+                  <li>Choose the restock frequency, either weekly, twice-weekly, monthly or twice-monthly.</li>
+                  <li>Choose the specific days or dates you need the deliveries to be done</li>
+                  <li>Click the submit button</li>
+                 </ol>
+                 <p>Your Restock Plan request is then submitted to OfficeFlow.</p>
                 </div>
               </div>
                <div  className={styles.quizDiv} onClick={handleQuiz}>

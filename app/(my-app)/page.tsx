@@ -149,7 +149,7 @@ export default function Home(){
       "name": "Can I set up a Restock Service for my business?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Businesses with an OfficeFlow Business Account can choose products they want delivered either weekly, bi-weekly, monthly, or create a customized delivery schedule based on their office requirements."
+        "text": "Yes, Businesses can enroll in the OfficeFlow Restock Service by following these steps: 1. Register or create a Business Account with OfficeFlow. 2. Sign in to your business account. 3. Visit the OfficeFlow online store, select the products you need restocked, and add them to your cart. 4. Go to the Cart page and click the 'Add these items to a Restock Plan' button. 5. Choose your preferred restock frequency: weekly, twice-weekly, monthly, or twice-monthly. 6. Select the specific delivery days or dates. 7. Click the Submit button. Your Restock Plan request is then submitted to OfficeFlow."
       }
     },
     {
