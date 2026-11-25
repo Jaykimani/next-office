@@ -1,26 +1,36 @@
+"use client"
 import styles from './services.module.css'
 import Image from 'next/image'
 import { TiShoppingCart } from "react-icons/ti";
 import { FaWhatsapp } from "react-icons/fa6";
+import { ThreeDot } from 'react-loading-indicators';
 import Link from 'next/link';
+import { useState } from 'react';
 
 const Services = () => {
+  const [stationClick, setStationClick] = useState(false);
+  const [paperClick, setPaperClick] = useState(false);
+  const [printerClick, setPrinterClick]= useState(false);
+  const [pantryClick, setPantryClick] = useState(false);
+  const [cleanClick, setCleanClick] = useState(false);
+  const [itClick, setItClick] = useState(false);
+
   return (
     <div className={styles.servicesMain}>
-        <h1>What We Supply</h1>
+        <h2>What We Supply</h2>
         <div className={styles.servicesInset}>
             <div className={styles.feature}>
                 <div className={styles.featureImage}>
                   <Image className={styles.featureImg} src="/stationery.jpg" alt="fast shipping" width={500} height={500}/>
                 </div>
                 <div className={styles.featureInfo}>
-                  <h4>Stationery & Writing supplies</h4>
+                  <h3>Stationery & Writing supplies</h3>
                   <p className={styles.featureList}>Pens, Pencils, Sticky notes,arch files, Makers, Highlighters, Erasers, Correction fluid/tape, Staplers, Staples, Paper Clips and more ...</p>
                   <div>
                   <Link href={'/shop/office-supplies/stationery-writing-supplies'}>
-                  <div className={styles.shopbtn}>
+                  <div className={styles.shopbtn} onClick={()=>{setStationClick(true)}}>
                   <TiShoppingCart style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Visit our online shop</p>
+                  {stationClick ? <ThreeDot variant="pulsate" color="#000000" size="medium" text="" textColor="" /> : <p>Visit our online shop</p>}
                   </div>
                   </Link>
                   <a
@@ -43,13 +53,13 @@ const Services = () => {
                   <Image className={styles.featureImg} src="/paper.jpg" alt="fast shipping" width={500} height={500}/>
                 </div>
               <div className={styles.featureInfo}>
-                  <h4>Printing & Paper supplies</h4>
+                  <h3>Printing & Paper supplies</h3>
                   <p className={styles.featureList}>A4 printing paper, Notebooks, Counter books, diaries, Colored paper, Photo paper, Envelopes, Manila papers, Flipchart papers, Receipt books, Invoice books, Labels e.t.c</p>
                   <div>
                   <Link href={'/shop/office-supplies/printing-paper-supplies'}>
-                  <div className={styles.shopbtn}>
+                  <div className={styles.shopbtn} onClick={()=>{setPaperClick(true)}}>
                   <TiShoppingCart style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Visit our online shop</p>
+                  {paperClick ? <ThreeDot variant="pulsate" color="#000000" size="medium" text="" textColor="" /> : <p>Visit our online shop</p>}
                   </div>
                   </Link>
                    <a
@@ -71,13 +81,13 @@ const Services = () => {
                   <Image className={styles.featureImg} src="/printer2.jpg" alt="fast shipping" width={500} height={500}/>
                 </div>
               <div className={styles.featureInfo}>
-                  <h4>Printer Consumables</h4>
+                  <h3>Printer Consumables</h3>
                   <p className={styles.featureList}>Ink cartridges, Toner cartridges, Printer ribbons, Maintenance kits, Refilling Services, Thermal paper rolls, POS printer rolls</p>
                   <div>
                   <Link href={'/shop/office-supplies/printer-ink-supplies'}>
-                   <div className={styles.shopbtn}>
+                   <div className={styles.shopbtn} onClick={()=>{setPrinterClick(true)}}>
                   <TiShoppingCart style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Visit our online shop</p>
+                  {printerClick ? <ThreeDot variant="pulsate" color="#000000" size="medium" text="" textColor="" /> : <p>Visit our online shop</p>}
                   </div>
                   </Link>
                  
@@ -100,13 +110,13 @@ const Services = () => {
                   <Image className={styles.featureImg} src="/tech.jpg" alt="fast shipping" width={500} height={500}/>
                 </div>
                 <div className={styles.featureInfo}>
-                  <h4>IT & Tech Consumables</h4>
+                  <h3>IT & Tech Consumables</h3>
                   <p className={styles.featureList}>HDMI adapters, USB drives, Ethernet cables, Charging cables, Laptop chargers, Extension cables, Surge protectors, Mouse batteries, Keyboard batteries e.t.c</p>
                   <div>
                   <Link href={'/shop/office-electronics'}>
-                  <div className={styles.shopbtn}>
+                  <div className={styles.shopbtn} onClick={()=>{setItClick(true)}}>
                   <TiShoppingCart style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Visit our online shop</p>
+                  {itClick ? <ThreeDot variant="pulsate" color="#000000" size="medium" text="" textColor="" /> : <p>Visit our online shop</p>}
                   </div>
                   </Link>
                   
@@ -129,13 +139,13 @@ const Services = () => {
                   <Image className={styles.featureImg} src="/pantry.jpg" alt="fast shipping" width={500} height={500}/>
                 </div>
                 <div className={styles.featureInfo}>
-                  <h4>Pantry & Hydration supplies</h4>
+                  <h3>Pantry & Hydration supplies</h3>
                   <p className={styles.featureList}>Drinking water, Dispenser water, Coffee, Tea, Sugar, Disposable cups, Stirrers, Snacks, Milk, Plates, Cutlery, Napkins e.t.c</p>
                   <div>
                     <Link href={'/shop/office-pantry-hydration'}>
-                  <div className={styles.shopbtn}>
+                  <div className={styles.shopbtn} onClick={()=>{setPantryClick(true)}}>
                   <TiShoppingCart style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Visit our online shop</p>
+                  {pantryClick ? <ThreeDot variant="pulsate" color="#000000" size="medium" text="" textColor="" /> : <p>Visit our online shop</p>}
                   </div>
                   </Link>
                    <a
@@ -157,13 +167,13 @@ const Services = () => {
                   <Image className={styles.featureImg} src="/cleaning.jpg" alt="fast shipping" width={500} height={500}/>
                 </div>
                 <div className={styles.featureInfo}>
-                  <h4>Cleaning & Hygiene supplies</h4>
+                  <h3>Cleaning & Hygiene supplies</h3>
                   <p className={styles.featureList}>Disinfectant sprays, Hand sanitizers, Air fresheners, Hand towels, Tissue papers, Cleaning detergents, Surface disinfectants, Mops & Brushes e.t.c</p>
                   <div>
                   <Link href={'/shop/office-cleaning-hygiene'}>
-                   <div className={styles.shopbtn}>
+                   <div className={styles.shopbtn} onClick={()=>{setCleanClick(true)}}>
                   <TiShoppingCart style={{width: '30px', height: '30px', marginRight: '15px'}}/>
-                  <p>Visit our online shop</p>
+                  {cleanClick ? <ThreeDot variant="pulsate" color="#000000" size="medium" text="" textColor="" /> : <p>Visit our online shop</p>}
                   </div>
                   </Link>
                  

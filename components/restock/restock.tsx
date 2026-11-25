@@ -24,7 +24,7 @@ const Restock = () => {
         </Link>
         <div className={styles.chat}>
              <a
-                  href={`https://wa.me/254704610605?text=Hello OfficeFlow Kenya...`}
+                  href={`https://wa.me/254704610605?text=Hello OfficeFlow, we're an office in Kenya looking for office supplies and recurring restocking..`}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{textDecoration: 'none', color: 'black', fontSize: '16px'}}
@@ -37,7 +37,7 @@ const Restock = () => {
         </div>     
       </div>
       <div className={styles.landingImage}>
-        <Image className={styles.landingImg} src="/restock5.jpg" alt="fast shipping" width={500} height={500}/>
+        <Image className={styles.landingImg} src="/restock5.jpg" alt="Office supplies, stationery, and workplace restock delivery in Nairobi, Kenya" width={500} height={500}/>
       </div>
      </div>
 

@@ -28,10 +28,10 @@ const Quiz = () => {
         <div id={styles.quiz}>
             
             <div className={styles.quizInset}>
-              <h1>Frequently Asked Questions(FAQs) About OfficeFlow Kenya</h1>
+              <h2>Frequently Asked Questions(FAQs) About OfficeFlow Kenya</h2>
               <div className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>What is OfficeFlow Kenya?</h4>
+                <h3>What is OfficeFlow Kenya?</h3>
                 <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
@@ -42,7 +42,7 @@ const Quiz = () => {
               </div>
               <div className={styles.quizDiv} onClick={handleQuiz}>
               <div className={styles.quizTop} >
-                <h4>Do you deliver office supplies in Nairobi?</h4>
+                <h3>Do you deliver office supplies in Nairobi?</h3>
                 <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
@@ -53,7 +53,7 @@ const Quiz = () => {
               </div>
               <div className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop}>
-                <h4>What office supplies do you provide?</h4>
+                <h3>What office supplies do you provide?</h3>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>              
@@ -74,7 +74,7 @@ const Quiz = () => {
               </div>
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop}>
-                <h4>How does OfficeFlow work?</h4>
+                <h3>How does OfficeFlow work?</h3>
                 <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>                </div>
@@ -90,7 +90,7 @@ const Quiz = () => {
               </div>
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>What is a Restock Service?</h4>
+                <h3>What is a Restock Service?</h3>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
@@ -103,7 +103,7 @@ const Quiz = () => {
             
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>Can I set up a Restock Service for my business?</h4>
+                <h3>Can I set up a Restock Service for my business?</h3>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
@@ -124,7 +124,7 @@ const Quiz = () => {
               </div>
                <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>How long does delivery take?</h4>
+                <h3>How long does delivery take?</h3>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
@@ -149,7 +149,7 @@ const Quiz = () => {
               </div>
               <div  className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop}>
-                <h4>Who can use OfficeFlow's office restock services?</h4>
+                <h3>Who can use OfficeFlow's office restock services?</h3>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
@@ -160,7 +160,7 @@ const Quiz = () => {
               </div>
               <div className={styles.quizDiv} onClick={handleQuiz}>
                 <div className={styles.quizTop} >
-                <h4>Why should businesses choose OfficeFlow?</h4>
+                <h3>Why should businesses choose OfficeFlow?</h3>
                  <div className='showIcon'>
                 <MdAddCircle className={styles.add} fontSize='large'/>
                 </div>
@@ -176,7 +176,7 @@ const Quiz = () => {
         </div>
 
         <div className={styles.quote}>
-         <h1>SIMPLIFY. SUPPORT. SUCCEED</h1>
+         <p>SIMPLIFY. SUPPORT. SUCCEED</p>
         </div>
         </>
   )

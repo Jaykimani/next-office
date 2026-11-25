@@ -17,7 +17,7 @@
     background-size: cover;
     background-position: center;
 }
-.quizInset h1{
+.quizInset h2{
     color: white;
     text-align: center;
     font-family: 'Playfair Display', sans-serif;
@@ -53,10 +53,10 @@
     padding: 0 15px;
     align-items: center;
 }
-.quizDiv h4{
+.quizDiv h3{
     font-family: 'Playfair Display', sans-serif;
     font-weight: 400;
-    font-size: 23px;
+    font-size: 20px;
 }
 .quizBottom{
     width: 100%;
@@ -98,7 +98,8 @@
     background-color: #ffe100;
     font-family: 'Playfair Display', sans-serif;
     font-style: italic;
-    font-size: 45px;
+    font-size: 65px;
+    font-weight: 700;
     text-align: center;
     display: grid;
     place-items: center;
@@ -113,7 +114,7 @@
         margin: 0 auto;
         padding: 30px 20px;
     }
-    .quizInset h1{
+    .quizInset h2{
         color: white;
         text-align: center;
         font-family: 'Playfair Display', sans-serif;
@@ -140,7 +141,7 @@
         padding: 0 15px;
         align-items: center;
     }
-    .quizDiv h4{
+    .quizDiv h3{
         font-family: 'Playfair Display', sans-serif;
         font-weight: 400;
         font-size: 23px;
@@ -182,7 +183,7 @@
         padding: 10px 10px;
          background: rgb(228, 228, 228);
     }
-    .quizInset h1{
+    .quizInset h2{
         color: #000000;
         text-align: center;
         font-family: 'Playfair Display', sans-serif;
@@ -213,7 +214,7 @@
       .add{
         color: #ffe100;
     }
-    .quizDiv h4{
+    .quizDiv h3{
         font-family: 'Playfair Display', sans-serif;
         font-weight: 600;
         font-size: 18px;
@@ -250,7 +251,7 @@
         background-color: #ffe100;
         font-family: 'Playfair Display', sans-serif;
         font-style: italic;
-        font-size: 16px;
+        font-size: 26px;
         text-align: center;
         display: grid;
         place-items: center;

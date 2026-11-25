@@ -4,7 +4,7 @@ import { getPayloadClient } from '@/payloadClient'
 
 
 export async function createMessage(formData : FormData) {
-
+    const location = formData.get("source-hub") as string;
     const title = formData.get("full-name") as string;
     const phone = formData.get("phone-number") as string;
     const email = formData.get("email") as string;
@@ -16,6 +16,7 @@ export async function createMessage(formData : FormData) {
     const newMessage = await payload.create({
     collection: 'messages',
     data: {
+      location: location,
       name: title,
       phone: phone,
       email: email,

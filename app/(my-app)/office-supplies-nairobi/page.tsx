@@ -1,235 +1,138 @@
-import Restock2 from "@/components/restocktwo/restocktwo"
-import Services from "@/components/services/services"
-import Featured2 from "@/components/featuretwo/featuretwo"
-import Quiz2 from "@/components/quiztwo/quiztwo"
-import Testimony from "@/components/testimony/testimony"
-import Contact from "@/components/contact/contact"
-import Footer from "@/components/footer/footer"
-import { FaWhatsapp } from "react-icons/fa";
-import type { Metadata } from "next";
+// app/office-supplies-nairobi/page.tsx
+import type { Metadata } from 'next';
+import { FaWhatsapp } from 'react-icons/fa';
+import Restock2 from '@/components/restocktwo/restocktwo';
+import ServicesTwo from '@/components/servicestwo/servicestwo';
+import HubLogistics from '@/components/hub-logistics/hub-logistics';
+import Featured2 from '@/components/featuretwo/featuretwo';
+import Quiz2 from '@/components/quiztwo/quiztwo';
+import ContactTwo from '@/components/contacttwo/contacttwo';
+import Footer from '@/components/footer/footer';
+import { NAIROBI_HUBS } from '@/nairobiHubs';
+
+const hub = NAIROBI_HUBS.nairobi;
+const pageUrl = 'https://officeflow.co.ke/office-supplies-nairobi';
 
 export const metadata: Metadata = {
-  title: "Office Supplies in Nairobi | Fast Delivery & Office Restock Services | OfficeFlow",
-  description:
-    "Get office supplies in Nairobi with fast delivery from OfficeFlow. We supply stationery, printing paper, pantry items, cleaning supplies, and offer office restock services for businesses across Nairobi.",
-
-  keywords: [
-    "office supplies Nairobi",
-    "office stationery Nairobi",
-    "office delivery Nairobi",
-    "office restock services Nairobi",
-    "business office supplies Nairobi",
-    "workplace supplies Nairobi",
-    "office consumables Nairobi",
-    "corporate office supplies Nairobi"
-  ],
-
-  alternates: {
-    canonical: "https://officeflow.co.ke/office-supplies-nairobi",
-  },
-
+  title: hub.seoTitle,
+  description: hub.seoDescription,
+  keywords: hub.keywords,
+  alternates: { canonical: pageUrl },
   openGraph: {
-    title: "Office Supplies in Nairobi | OfficeFlow Kenya",
-    description:
-      "Fast and reliable office supplies delivery in Nairobi. OfficeFlow helps businesses stay stocked with stationery, pantry, cleaning, and IT supplies.",
-    url: "https://officeflow.co.ke/office-supplies-nairobi",
-    siteName: "OfficeFlow",
-    locale: "en_KE",
-    type: "website",
+    title: hub.seoTitle,
+    description: hub.seoDescription,
+    url: pageUrl,
+    siteName: 'OfficeFlow',
+    locale: 'en_KE',
+    type: 'website',
   },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "Office Supplies Nairobi | OfficeFlow",
-    description:
-      "Order office supplies in Nairobi with fast delivery and office restock services for businesses.",
-  },
-
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
-const page = () => {
-
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-
-    // --------------------------------
-    // WEB PAGE
-    // --------------------------------
-    {
-      "@type": "WebPage",
-      "@id": "https://officeflow.co.ke/office-supplies-nairobi#webpage",
-      "url": "https://officeflow.co.ke/office-supplies-nairobi",
-      "name": "Office Supplies in Nairobi",
-      "description":
-        "OfficeFlow provides office supplies and office restock services for businesses in Nairobi.",
-
-      "isPartOf": {
-        "@id": "https://officeflow.co.ke/#website"
+export default function NairobiCityPage() {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebPage',
+        '@id': `${pageUrl}#webpage`,
+        url: pageUrl,
+        name: hub.seoTitle,
+        description: hub.seoDescription,
+        isPartOf: { '@id': 'https://officeflow.co.ke/#website' },
+        about: { '@id': 'https://officeflow.co.ke/#organization' },
+        mainEntity: { '@id': `${pageUrl}#service` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+        hasPart: { '@id': `${pageUrl}#faq` },
       },
-
-      "about": {
-        "@id": "https://officeflow.co.ke/#organization"
+      {
+        '@type': 'Service',
+        '@id': `${pageUrl}#service`,
+        name: 'Office Supplies and Restock Services in Nairobi',
+        serviceType: 'Office Restock Services',
+        description: hub.serviceSchemaDescription,
+        provider: { '@id': 'https://officeflow.co.ke/#organization' },
+        areaServed: { '@type': 'City', name: 'Nairobi' },
+        availableChannel: { '@type': 'ServiceChannel', serviceUrl: pageUrl },
       },
-
-      "mainEntity": {
-        "@id": "https://officeflow.co.ke/office-supplies-nairobi#service"
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://officeflow.co.ke/' },
+          { '@type': 'ListItem', position: 2, name: 'Office Supplies Nairobi', item: pageUrl },
+        ],
       },
-
-      "breadcrumb": {
-        "@id": "https://officeflow.co.ke/office-supplies-nairobi#breadcrumb"
+      {
+        '@type': 'FAQPage',
+        '@id': `${pageUrl}#faq`,
+        about: { '@id': `${pageUrl}#service` },
+        mainEntity: hub.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
       },
-
-      "hasPart": {
-        "@id": "https://officeflow.co.ke/office-supplies-nairobi#faq"
-      }
-    },
-
-
-    // --------------------------------
-    // SERVICE
-    // --------------------------------
-    {
-      "@type": "Service",
-      "@id": "https://officeflow.co.ke/office-supplies-nairobi#service",
-      "name": "Office Supplies and Restock Services in Nairobi",
-      "serviceType": "Office Restock Services",
-      "description":
-        "OfficeFlow supplies stationery, printing and paper products, printer supplies, pantry essentials, cleaning supplies, IT consumables, and other workplace essentials to businesses in Nairobi.",
-
-      "provider": {
-        "@id": "https://officeflow.co.ke/#organization"
-      },
-
-      "areaServed": {
-        "@type": "City",
-        "name": "Nairobi"
-      },
-
-      "availableChannel": {
-        "@type": "ServiceChannel",
-        "serviceUrl": "https://officeflow.co.ke/office-supplies-nairobi"
-      }
-    },
-
-
-    // --------------------------------
-    // BREADCRUMB
-    // --------------------------------
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://officeflow.co.ke/office-supplies-nairobi#breadcrumb",
-
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://officeflow.co.ke/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Office Supplies Nairobi",
-          "item": "https://officeflow.co.ke/office-supplies-nairobi"
-        }
-      ]
-    },
-
-
-    // --------------------------------
-    // FAQ
-    // --------------------------------
-    {
-      "@type": "FAQPage",
-      "@id": "https://officeflow.co.ke/office-supplies-nairobi#faq",
-
-      "about": {
-        "@id": "https://officeflow.co.ke/office-supplies-nairobi#service"
-      },
-
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Do you deliver office supplies to all areas of Nairobi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. OfficeFlow delivers office supplies across Nairobi, including CBD, Westlands, Upper Hill, Kilimani, Karen, Lavington, Gigiri, Industrial Area, Parklands, and other business districts. If your office is located within Nairobi, we can arrange delivery directly to your workplace."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Can businesses in Nairobi order office supplies without a restock plan?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Absolutely. Businesses can place one-time orders for office supplies whenever needed. Whether you need printing paper, stationery, pantry items, cleaning supplies, or workplace essentials, OfficeFlow allows you to order as required without committing to a recurring restock plan."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How quickly can office supplies be delivered in Nairobi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Most Nairobi orders are delivered within 1 to 2 business days, depending on product availability and order size. For urgent requirements, our team can advise on the fastest available delivery options."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Do you supply office essentials for large businesses and corporate offices in Nairobi?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes. OfficeFlow supplies office essentials for businesses of all sizes, including SMEs, startups, NGOs, schools, clinics, and corporate offices. We can support both routine office supply needs and larger bulk orders for growing organizations in Nairobi."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What office supplies are most commonly ordered by Nairobi businesses?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Many Nairobi businesses regularly order A4 printing paper, notebooks, pens, envelopes, printer cartridges, pantry supplies, tissue paper, cleaning products, and other workplace essentials. OfficeFlow helps businesses keep these frequently used items readily available through convenient ordering and delivery services."
-          }
-        }
-      ]
-    }
-
-  ]
-};
-
+    ],
+  };
 
   return (
     <>
-    <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify(schema),
-  }}
-/>
-    <div className="whatsapp-btn">
-<a
-      href={`https://wa.me/254704610605?text=Hello there...`}
-      target="_blank"
-      rel="noopener noreferrer"
-      style={{textDecoration: 'none', color: 'white', fontSize: '18px'}}
-      title="Chat with us on WhatsApp"
-    >
-      <FaWhatsapp className="whats-logo"/>
-    </a>
-    <p className="chat">Chat with us</p>
-    </div>
-    
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
 
-    <Restock2 />
-    <Services />
-    <Featured2 />
-    <Quiz2 />   
-    <Contact /> 
-    <Footer />
+      <div className="whatsapp-btn">
+        <a
+          href={`https://wa.me/254704610605?text=${encodeURIComponent(hub.whatsappMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ textDecoration: 'none', color: 'white', fontSize: '18px' }}
+          title="Chat with us on WhatsApp"
+        >
+          <FaWhatsapp className="whats-logo" />
+        </a>
+        <p className="chat">Chat with us</p>
+      </div>
+
+      <Restock2
+        hubName={hub.name}
+        customH1={hub.h1}
+        customSubheadline={hub.subheadline}
+        primaryCtaLabel={hub.primaryCtaLabel}
+        primaryCtaHref={hub.primaryCtaHref}
+        whatsappMessage={hub.whatsappMessage}
+        imageAlt={hub.heroImageAlt}
+      />
+      <ServicesTwo
+        hubName={hub.name}
+        sectionHeading={hub.servicesHeading}
+        sectionIntro={hub.servicesIntro}
+        categoryOrder={hub.categoryOrder}
+      />
+      <HubLogistics
+        currentSlug={hub.slug}
+        hubName={hub.name}
+        roadsCovered={hub.roadsCovered}
+        deliveryTurnaround={hub.deliveryTurnaround}
+        buildingAccessNote={hub.buildingAccessNote}
+        idealForSectors={hub.idealForSectors}
+      />
+      <Featured2
+        hubName={hub.name}
+        whyHeading={hub.whyHeading}
+        whyLongBody={hub.whyLongBody}
+        whyShortBody={hub.whyShortBody}
+        businessPitch={hub.businessPitch}
+      />
+      <Quiz2 hubName={hub.name} heading={hub.faqHeading} faqs={hub.faqs} />
+      <ContactTwo
+        hubName={hub.name}
+        heading={hub.contactHeading}
+        messagePlaceholder={hub.contactPlaceholder}
+      />
+      <Footer />
     </>
-  )
+  );
 }
-
-export default page

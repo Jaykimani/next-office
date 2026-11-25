@@ -20,12 +20,12 @@
     font-family: 'Playfair Display', sans-serif;
 
 }
-.choiceInset h1{
-    font-size: 70px;
+.choiceInset h2{
+    font-size: 60px;
     margin-bottom: 40px;
 }
 .choiceInset p{
-    font-size: 20px;
+    font-size: 18px;
     line-height: 35px;
     font-family: 'Roboto', sans-serif;
 }
@@ -65,12 +65,12 @@
    justify-content: center;
    border-right: 1px solid rgb(77, 77, 77);
 }
-.advInfo h1{
+.advInfo h2{
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 58px;
 }
-.advInfo h1 span{
+.advInfo h2 span{
     color: #ffe100;
     font-size: 65px;
     font-weight: 800;
@@ -163,7 +163,7 @@
         font-family: 'Playfair Display', sans-serif;
     
     }
-    .choiceInset h1{
+    .choiceInset h2{
         font-size: 50px;
         margin-bottom: 40px;
     }
@@ -198,12 +198,12 @@
    text-align: left;
    padding-bottom: 30px;
 }
-.advInfo h1{
+.advInfo h2{
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 53px;
 }
-.advInfo h1 span{
+.advInfo h2 span{
     color: #ffe100;
     font-size: 60px;
     font-weight: 800;
@@ -305,7 +305,7 @@
         font-family: 'Playfair Display', sans-serif;
     
     }
-    .choiceInset h1{
+    .choiceInset h2{
         font-size: 35px;
         margin-bottom: 40px;
     }
@@ -339,12 +339,12 @@
    text-align: left;
    padding-bottom: 30px;
 }
-.advInfo h1{
+.advInfo h2{
     color: white;
     font-family: 'Roboto', sans-serif;
     font-size: 30px;
 }
-.advInfo h1 span{
+.advInfo h2 span{
     color: #ffe100;
     font-size: 40px;
     font-weight: 800;

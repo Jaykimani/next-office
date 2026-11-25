@@ -198,6 +198,7 @@ export interface User {
  */
 export interface Message {
   id: number;
+  location?: string | null;
   name: string;
   phone: string;
   email: string;
@@ -1078,6 +1079,7 @@ export interface UsersSelect<T extends boolean = true> {
  * via the `definition` "messages_select".
  */
 export interface MessagesSelect<T extends boolean = true> {
+  location?: T;
   name?: T;
   phone?: T;
   email?: T;

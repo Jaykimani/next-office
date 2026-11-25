@@ -19,6 +19,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: 'weekly',
       priority: 0.95,
     },
+     {
+      url: `${BASE_URL}/office-supplies-nairobi/westlands`,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+     {
+      url: `${BASE_URL}/office-supplies-nairobi/upper-hill`,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
+     {
+      url: `${BASE_URL}/office-supplies-nairobi/nairobi-cbd`,
+      changeFrequency: 'weekly',
+      priority: 0.95,
+    },
     {
       url: `${BASE_URL}/shop`,
       changeFrequency: 'weekly',

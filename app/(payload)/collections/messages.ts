@@ -19,6 +19,10 @@ export const Messages: CollectionConfig = {
      * NAME
      */
     {
+      name: 'location',
+      type: 'text',
+    },
+    {
       name: 'name',
       type: 'text',
       required: true,

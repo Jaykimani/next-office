@@ -27,11 +27,12 @@ const  Contact = () => {
   return (
     <>
         <div id={styles.contact}>
-          <h1>Contact Us</h1>
+          <h2>Contact Us</h2>
           <div className={styles.contactInset}>
             <div className={styles.contactForm}>
               <form onSubmit={handleSubmit} className={styles.contForm}>
                 <label>Fill in the form</label>
+                <input type="hidden" name="source-hub" value='Nairobi' />
                 <input type="text" name="full-name" id="" placeholder='Full Name'/>
                 <input type="text" name="phone-number" id="" placeholder='Phone Number'/>
                 <input type="text" name="email" id="" placeholder='Email Address'/>

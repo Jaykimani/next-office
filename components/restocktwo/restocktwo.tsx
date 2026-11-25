@@ -1,49 +1,79 @@
-import styles from './restocktwo.module.css'
+import styles from './restocktwo.module.css';
 import ServiceNav from '../servicenav/servnav';
-import Image from 'next/image'
+import Image from 'next/image';
 import Link from 'next/link';
 
+export interface Restock2Props {
+  hubName?: string;
+  customH1?: string;
+  customSubheadline?: string;
+  primaryCtaLabel?: string;
+  primaryCtaHref?: string;
+  whatsappMessage?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+}
 
-const Restock2 = () => {
-  
+const Restock2 = ({
+  hubName,
+  customH1,
+  customSubheadline,
+  primaryCtaLabel,
+  primaryCtaHref,
+  whatsappMessage,
+  imageSrc = '/restock5.jpg',
+  imageAlt,
+}: Restock2Props) => {
+  const encodedWhatsapp = encodeURIComponent(
+    whatsappMessage ||
+      `Hello OfficeFlow, we're an office in ${hubName} looking for office supplies and recurring restocking.`
+  );
+
+  const resolvedAlt =
+    imageAlt ||
+    `Office supplies, stationery, and workplace restock delivery in ${hubName}`;
 
   return (
     <main>
-     <div className={styles.navbar}>
-     <ServiceNav />
-     </div>
-     <div className={styles.landing}>
-      <div className={styles.landingHero}>
-        <div className={styles.heroInset}>
-        <h1 className={styles.heading1}>Office Supplies and Restocking Services in Nairobi</h1>
-       <p>OfficeFlow provides reliable office supplies in Nairobi for businesses that need fast, consistent, and hassle-free workplace restocking. We supply stationery, printing materials, pantry items, cleaning supplies, and IT consumables with quick delivery across Nairobi.</p>
-       <div className={styles.herocta}>
-          <Link href={'/shop'} className={styles.quote}>
-        <div >
-            Shop Now
-        </div>
-        </Link>
-        <div className={styles.chat}>
-             <a
-                  href={`https://wa.me/254704610605?text=Hello OfficeFlow Nairobi...`}
+      <div className={styles.navbar}>
+        <ServiceNav />
+      </div>
+      <div className={styles.landing}>
+        <div className={styles.landingHero}>
+          <div className={styles.heroInset}>
+            <h1 className={styles.heading1}>{customH1}</h1>
+            <p>{customSubheadline}</p>
+            <div className={styles.herocta}>
+              <Link href={'/shop'} className={styles.quote}>
+                <div>{primaryCtaLabel}</div>
+              </Link>
+              <div className={styles.chat}>
+                <a
+                  href={`https://wa.me/254704610605?text=${encodedWhatsapp}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={{textDecoration: 'none', color: 'black', fontSize: '16px'}}
-                  title="Chat with us on WhatsApp"
+                  style={{ textDecoration: 'none', color: 'black', fontSize: '16px' }}
+                  title={`Chat with OfficeFlow about ${hubName} delivery`}
                 >
                   Talk to us on Whatsapp
                 </a>
+              </div>
+            </div>
+          </div>
         </div>
-       </div>
-        </div>     
+        <div className={styles.landingImage}>
+          <Image
+            className={styles.landingImg}
+            src={imageSrc}
+            alt={resolvedAlt}
+            width={500}
+            height={500}
+            priority
+          />
+        </div>
       </div>
-      <div className={styles.landingImage}>
-        <Image className={styles.landingImg} src="/restock5.jpg" alt="fast shipping" width={500} height={500}/>
-      </div>
-     </div>
-
     </main>
-  )
-}
+  );
+};
 
-export default Restock2
+export default Restock2;
