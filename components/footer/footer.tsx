@@ -2,6 +2,10 @@ import styles from './footer.module.css';
 import Link from 'next/link';
 
 const NAIROBI_HUB_LINKS = [
+    {
+    href: '/office-supplies-nairobi',
+    label: 'Office Supplies Nairobi City',
+  },
   {
     href: '/office-supplies-nairobi/westlands',
     label: 'Office Supplies Westlands',
