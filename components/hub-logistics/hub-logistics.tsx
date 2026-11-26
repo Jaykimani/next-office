@@ -150,15 +150,28 @@ const HubLogistics = ({
           >
             All Nairobi Hubs
           </Link>
-          {siblingHubs.map((hub) => (
             <Link
-              key={hub.slug}
-              href={`/office-supplies-nairobi/${hub.slug}`}
+              key={'westlands'}
+              href={`/office-supplies-nairobi/westlands`}
               style={{ color: '#FFE100', textDecoration: 'underline' }}
             >
-              Office Supplies {hub.name}
+              Office Supplies Westlands
             </Link>
-          ))}
+            <Link
+              key={'upper-hill'}
+              href={`/office-supplies-nairobi/upper-hill`}
+              style={{ color: '#FFE100', textDecoration: 'underline' }}
+            >
+              Office Supplies Upper Hill
+            </Link>
+            <Link
+              key={'nairobi-cbd'}
+              href={`/office-supplies-nairobi/nairobi-cbd`}
+              style={{ color: '#FFE100', textDecoration: 'underline' }}
+            >
+              Office Supplies Nairobi CBD
+            </Link>
+          
         </div>
       </div>
     </section>
